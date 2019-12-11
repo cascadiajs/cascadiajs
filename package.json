@@ -1,0 +1,23 @@
+{
+  "name": "cascadiajs",
+  "version": "1.0.0",
+  "description": "A website to aggregate speaker/talks info across all CascadiaJS conferences",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "slugify": "^1.3.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cascadiajs/cascadiajs.git"
+  },
+  "author": "Carter Rabasa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cascadiajs/cascadiajs/issues"
+  },
+  "homepage": "https://github.com/cascadiajs/cascadiajs#readme"
+}

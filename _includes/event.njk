@@ -1,0 +1,12 @@
+---
+layout: layout
+---
+<pre>
+name: {{name }}
+location: {{ location }}
+url: {{ url }}
+</pre>
+
+<a href="/tags/{{ name | slug }}">Talks</a>
+
+{{ content | safe }}
