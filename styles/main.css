@@ -6,6 +6,7 @@ html, body {
 
 body {
     font-family: canada-type-gibson, sans-serif;
+    background-color: #ddd;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,6 +35,12 @@ header a:hover {
     text-decoration: underline;
 }
 
+#main {
+    background-color: #fff;
+    padding: 20px;
+    min-height:100%;
+}
+
 .card {
     padding: 5px;
     border-radius: 4px;
@@ -41,13 +48,9 @@ header a:hover {
 }
 
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: #ddd;
-    }
     #main {
         background-color: #fff;
         width: 50vw;
-        height:100%;
         margin: 0 auto;
         padding: 20px 40px;
     }
