@@ -13,3 +13,7 @@ title: Home
 * [Events](/events)
 * [Speakers](/speakers)
 * [Talks](/talks)
+
+## Code
+
+The code for this website is hosted on <a href="https://github.com/cascadiajs/cascadiajs">Github</a>.
