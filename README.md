@@ -1,3 +1,6 @@
+---
+layout: layout
+---
 # CascadiaJS - All Up
 
 A website for all things CascadiaJS

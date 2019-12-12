@@ -3,8 +3,11 @@ let renderTalkLink = (talk) => {
     return `<a href="${talk.url}">${talk.data.title}</a>`
 }
 
-module.exports = function ({ collections }) {
-    return `<ul>
-    ${collections.Talk.map((talk) => `<li>${renderTalkLink(talk)}</li>`).join("\n")}
-    </ul>`;
-};
+module.exports = {
+    data: () => { return {layout: 'layout', title: 'Talks'}},
+    render: ({ title, collections }) => {
+        return `<h1>${title}</h1><ul>
+        ${collections.Talk.map((talk) => `<li>${renderTalkLink(talk)}</li>`).join("\n")}
+        </ul>`
+    }
+}

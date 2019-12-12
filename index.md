@@ -1,5 +1,6 @@
 ---
-
+layout: layout
+title: Home
 ---
 # CascadiaJS - a conference for web developers in the Pacific Northwest
 

@@ -11,9 +11,11 @@ let speakerRender = (speaker, talks) => {
     `
 }
 
-module.exports = function ({ collections }) {
-    //console.log(collections)
-    return `<ul>
-        ${collections.Speaker.map((speaker) => speakerRender(speaker, collections.Talk)).join("\n")}
-    </ul>`;
+module.exports = {
+    data: () => { return {layout: 'layout', title: 'Speakers'}},
+    render: ({ title, collections }) => {
+        return `<h1>${title}</h1><ul>
+            ${collections.Speaker.map((speaker) => speakerRender(speaker, collections.Talk)).join("\n")}
+        </ul>`;
+    }
 };

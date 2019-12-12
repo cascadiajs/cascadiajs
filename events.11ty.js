@@ -2,12 +2,14 @@ module.exports = {
     data: () => {
         return {
             layout: 'layout',
+            title: 'Events'
         }
     },
-    render: ({collections}) => {
+    render: ({title, collections}) => {
         let events = collections.Event
-        return `<ul>
-        ${events.map((event) => `<li><a href="${event.url }">${event.data.name}</a></li>`).join(",")}
+        return `<h1>${title}</h1>
+        <ul>
+        ${events.map((event) => `<li><a href="${event.url }">${event.data.name}</a></li>`).join("")}
         </ul>`;
     }
 }

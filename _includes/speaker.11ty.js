@@ -1,7 +1,8 @@
 module.exports = {
     data: () => {
         return {
-            layout: "layout"
+            layout: "layout",
+            title: "Speaker"
         }
     },
     render: ({ name, image, location, pronouns, twitter, url, company, collections }) => {
