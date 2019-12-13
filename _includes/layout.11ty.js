@@ -16,6 +16,7 @@ module.exports = {
         <a href="/events">Events</a>
         <a href="/speakers">Speakers</a>
         <a href="/talks">Talks</a>
+        <a href="/api">API</a>
     </header>
     <div id="main">
     ${ content}
