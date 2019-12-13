@@ -1,4 +1,5 @@
 ---
+title: API
 layout: layout
 ---
 # API Docs
