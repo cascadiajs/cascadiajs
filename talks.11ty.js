@@ -7,7 +7,7 @@ module.exports = {
     data: () => { return {layout: 'layout', title: 'Talks'}},
     render: ({ title, collections }) => {
         return `<h1>${title}</h1><ul>
-        ${collections.Talk.map((talk) => `<li>${renderTalkLink(talk)}</li>`).join("\n")}
+        ${collections.talks.map((talk) => `<li>${renderTalkLink(talk)}</li>`).join("\n")}
         </ul>`
     }
 }

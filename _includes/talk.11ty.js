@@ -6,12 +6,13 @@ module.exports = {
             layout: "layout"
         }
     },
-    render: ({ title, speaker, tags, abstract, slides, ytID, resources, collections }) => {
-        let speakerPage = collections.Speaker.find(s => s.data.name === speaker) || {}
+    render: ({ title, event, speaker, tags, abstract, slides, ytID, resources, collections }) => {
+        let speakerPage = collections.speakers.find(s => s.data.name === speaker) || {}
         return `
 <h1>${title}</h1>
 <div class="card">
     <p><img src="${ speakerPage.data.image }"/></p>
+    <p>Event: <a href="/events/${ slugify(event, {lower: true}) }">${ event }</a></p>
     <p>Speaker: <a href="${ speakerPage.url }">${ speaker }</a></p>
     <p>Tags: [${ tags.map(t => `<a href="/tags/${slugify(t, {lower: true})}">${t}</a>`).join(", ") }]</p>
     <p>Abstract:<br/><br/>${ abstract }</p>

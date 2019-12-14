@@ -5,6 +5,5 @@ image: https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1
 pronouns: she/her
 twitter: shortdiv
 company: Netlify
-tags: ["Speaker"]
 layout: speaker
 ---

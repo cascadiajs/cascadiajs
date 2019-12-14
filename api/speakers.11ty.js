@@ -5,7 +5,7 @@ module.exports = {
         }
     },
     render: ({collections}) => {
-        return JSON.stringify(collections.Speaker.map((speaker) => {
+        return JSON.stringify(collections.speakers.map((speaker) => {
              let {name, location, pronouns, twitter, url, image, company} = speaker.data; 
              return {name, location, pronouns, twitter, url, image, company} 
         }))

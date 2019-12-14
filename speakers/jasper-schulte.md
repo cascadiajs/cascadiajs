@@ -6,6 +6,5 @@ pronouns: he/him
 twitter: zjaaspoer
 url: undefined
 company: TripAdvisor
-tags: ["Speaker"]
 layout: speaker
 ---

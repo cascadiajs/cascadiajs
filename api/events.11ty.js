@@ -5,6 +5,6 @@ module.exports = {
         }
     },
     render: ({collections}) => {
-        return JSON.stringify(collections.Event.map((event) => { let {name, location, url} = event.data; return {name, location, url} }))
+        return JSON.stringify(collections.events.map((event) => { let {name, location, url} = event.data; return {name, location, url} }))
     }
 }

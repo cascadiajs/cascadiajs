@@ -6,6 +6,5 @@ pronouns: he/him
 twitter: trivikram
 url: https://fizbuz.com/u/trivikr
 company: Amazon
-tags: ["Speaker"]
 layout: speaker
 ---

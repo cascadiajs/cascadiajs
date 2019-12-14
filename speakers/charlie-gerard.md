@@ -6,6 +6,5 @@ pronouns: she/her
 twitter: devdevcharlie
 url: https://fizbuz.com/u/charliegerard
 company: Atlassian
-tags: ["Speaker"]
 layout: speaker
 ---

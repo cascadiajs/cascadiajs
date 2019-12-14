@@ -6,6 +6,5 @@ pronouns: he/him
 twitter: cnunciato
 url: https://fizbuz.com/u/cnunciato
 company: Pulumi
-tags: ["Speaker"]
 layout: speaker
 ---

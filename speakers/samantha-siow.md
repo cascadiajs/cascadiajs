@@ -6,6 +6,5 @@ pronouns: she/her
 twitter: samanthassiow
 url: https://fizbuz.com/u/samantha
 company: Slack
-tags: ["Speaker"]
 layout: speaker
 ---

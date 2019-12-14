@@ -3,8 +3,7 @@ let slugify = require('slugify')
 module.exports = {
     data: () => {
         return {
-            layout: "layout",
-            title: "Event"
+            layout: "layout"
         }
     },
     render: ({ name, location, url, content, collections }) => {
@@ -12,7 +11,10 @@ module.exports = {
         <h1>${name }</h1>
         <p>location: ${ location }</p>
         <p>website: <a href="${ url }">${ url }</a></p>
-        <p><a href="/tags/${ slugify(name, {lower: true}) }">Talks</a></p>
+        <p>Talks:</a></p>
+        <ul>
+        ${collections.talks.filter(t => t.data.event === name).map(t => `<li><a href="${t.url}">${t.data.title}</a></li>`).join("\n")}
+        </ul>
         ${ content }`
     }
 }

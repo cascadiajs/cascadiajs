@@ -5,6 +5,5 @@ image: https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1
 pronouns: he/him
 twitter: eranhammer
 company: Sideway, Inc
-tags: ["Speaker"]
 layout: speaker
 ---

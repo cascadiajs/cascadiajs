@@ -5,6 +5,5 @@ image: https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1
 twitter: noah_adams
 url: https://fizbuz.com/u/noah
 company: Mobify
-tags: ["Speaker"]
 layout: speaker
 ---

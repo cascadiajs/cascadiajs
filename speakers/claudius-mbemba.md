@@ -6,6 +6,5 @@ pronouns: he/him
 twitter: mbembaships
 url: https://fizbuz.com/u/user1m
 company: Neu
-tags: ["Speaker"]
 layout: speaker
 ---

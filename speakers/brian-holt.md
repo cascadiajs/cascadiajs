@@ -6,6 +6,5 @@ pronouns: he/him
 twitter: holtbt
 url: https://fizbuz.com/u/btholt
 company: Microsoft
-tags: ["Speaker"]
 layout: speaker
 ---

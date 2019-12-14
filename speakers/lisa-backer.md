@@ -6,6 +6,5 @@ pronouns: she/her
 twitter: eshtadc
 url: https://fizbuz.com/u/eshtadc
 company: DockYard
-tags: ["Speaker"]
 layout: speaker
 ---

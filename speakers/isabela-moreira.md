@@ -6,6 +6,5 @@ pronouns: she/her
 twitter: isabelacmor
 url: https://fizbuz.com/u/isabelacmor
 company: Cedar AI
-tags: ["Speaker"]
 layout: speaker
 ---

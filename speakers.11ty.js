@@ -15,7 +15,7 @@ module.exports = {
     data: () => { return {layout: 'layout', title: 'Speakers'}},
     render: ({ title, collections }) => {
         return `<h1>${title}</h1><ul>
-            ${collections.Speaker.map((speaker) => speakerRender(speaker, collections.Talk)).join("\n")}
+            ${collections.speakers.map((speaker) => speakerRender(speaker, collections.talks)).join("\n")}
         </ul>`;
     }
 };

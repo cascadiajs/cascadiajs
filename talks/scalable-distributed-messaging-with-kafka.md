@@ -1,7 +1,8 @@
 ---
 title: "Scalable Distributed Messaging with Kafka"
 speaker: Claudius Mbemba
-tags: ["Talk", "CascadiaJS 2019", "Claudius Mbemba"]
+event: CascadiaJS 2019
+tags: ["Cloud", "Kafka", "Scaling"]
 slides: https://claudiusmbemba.com/public/slides/cjs2019.pdf
 abstract: "Kafka is a production-ready, scalable, distributed streaming platform that’s being used by top companies around the world. Learn how you can turn Kafka into a powerful pub-sub mechanism for your own projects."
 ytID: KHRabSbB5wk

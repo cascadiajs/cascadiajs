@@ -6,6 +6,5 @@ pronouns: he/him
 twitter: recursivefunk
 url: https://fizbuz.com/u/recursivefunk
 company: Till
-tags: ["Speaker"]
 layout: speaker
 ---

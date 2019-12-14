@@ -6,6 +6,5 @@ pronouns: she/her
 twitter: kinu
 url: https://fizbuz.com/u/kinu
 company: Google
-tags: ["Speaker"]
 layout: speaker
 ---

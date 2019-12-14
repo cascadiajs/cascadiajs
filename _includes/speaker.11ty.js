@@ -1,12 +1,11 @@
 module.exports = {
     data: () => {
         return {
-            layout: "layout",
-            title: "Speaker"
+            layout: "layout"
         }
     },
     render: ({ name, image, location, pronouns, twitter, url, company, collections }) => {
-        let talks = collections.Talk.filter(t => t.data.speaker === name)
+        let talks = collections.talks.filter(t => t.data.speaker === name)
             .map(t => `<li><a href="${t.url}">${ t.data.title }</a></li>`).join("\n")
         return `
 <h1>${name}</h1>

@@ -5,7 +5,7 @@ module.exports = {
         }
     },
     render: ({collections}) => {
-        return JSON.stringify(collections.Talk.map((talk) => {
+        return JSON.stringify(collections.talks.map((talk) => {
              let {title, speaker, tags, abstract, ytID} = talk.data; 
              return {title, speaker, tags, abstract, ytID} 
         }))

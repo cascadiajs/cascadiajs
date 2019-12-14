@@ -1,4 +1,5 @@
 let slugify = require('slugify')
+let urlToTitle = require('./_includes/title_builder')
 
 module.exports = {
     data: () => { 
@@ -9,14 +10,15 @@ module.exports = {
                 alias: 'tag'
             },
             permalink: ({tag}) => `/tags/${ slugify(tag, {lower: true}) }/`,
-            title: 'Tagged',
             layout: 'layout'
         }
     },
     render: ({ collections, tag }) => {
         return `<h1>Tagged “${ tag }”</h1>
-<ol>
-${collections[tag].map(post => `<li><a href="${ post.url }">${ post.data.title }</a></li>`).join("")}
-</ol>`
+            <ol>
+                ${collections[tag]
+                    .map(post => `<li><a href="${ post.url }">${ urlToTitle(post.url) }</a></li>`)
+                    .join("")}
+            </ol>`
     }
 }
