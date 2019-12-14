@@ -18,7 +18,11 @@ module.exports = {
     <p>Abstract:<br/><br/>${ abstract }</p>
     ${ slides ? "<p>Slides: " + `<a href="${slides}">${slides}</a></p>` : "" }
     ${ resources ? "<p>Resources:<ul>" + resources.map(r => `<li><a href="${r}">${r}</a></li>`) + "</ul>" : "" }
-    ${ ytID ? `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${ytID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` : ``}
+    <p>Video:<br/><br/>
+    ${ ytID 
+        ? `<div class="video-container"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${ytID}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` 
+        : `<i>This talk was not recorded, we're sorry.</i>`}
+    </p>
 </div>`
     }
 }
