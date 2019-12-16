@@ -1,7 +1,7 @@
 let urlToTitle = require('./title_builder')
 
 module.exports = {
-    render: ({ page, renderData, title, content }) => {
+    render: ({ pkg, page, renderData, title, content }) => {
         return `
 <!doctype html>
 <html lang="en">
@@ -10,7 +10,7 @@ module.exports = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CascadiaJS DB ${ title ? `>> ${title}` :urlToTitle(page.url) }</title>
     <link rel="stylesheet" href="https://use.typekit.net/nln6hzq.css">
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css?v=${pkg.version}">
     </head>
     <body>
     <header>
