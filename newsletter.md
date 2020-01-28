@@ -1,3 +1,7 @@
+---
+layout: layout
+title: Mailing List FAQ
+---
 # Newsletter Info and FAQ
 
 ## How did my email get subscribed to the CascadiaJS email newsletter?
