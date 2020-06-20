@@ -13,5 +13,8 @@ module.exports = function (eleventyConfig) {
     })
     eleventyConfig.addCollection("events", function(collections) {
         return collections.items.filter(page => page.filePathStem.startsWith('/events/'))
-    })   
+    })
+    eleventyConfig.addCollection("meetups", function(collections) {
+        return collections.items.filter(page => page.filePathStem.startsWith('/meetups/'))
+    })      
 }
