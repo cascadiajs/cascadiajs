@@ -6,7 +6,7 @@ title: Home
 
 ## Coming Up
 
-* [CascadiaJS 2020](https://2020.cascadiajs.com)
+* Sign-up for our [mailing list](http://eepurl.com/dPmCkT) to hear about upcoming CascadiaJS events.
 
 ## Past
 

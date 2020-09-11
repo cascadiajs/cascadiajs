@@ -1,6 +1,6 @@
 let renderTalkLink = (talk) => {
     //console.log(talk) 
-    return `<a href="${talk.url}">${talk.data.title}</a>`
+    return `<a href="${ talk.url }">${ talk.data.title } (${ talk.data.event })</a>`
 }
 
 module.exports = {

@@ -1,7 +1,7 @@
 let slugify = require('slugify')
 
 let talkRender = (talk) => {
-    return `<a href="${talk.url}">${talk.data.title}</a>`
+    return `<a href="${talk.url}">${talk.data.event}</a>`
 }
 
 let speakerRender = (speaker, talks) => {
