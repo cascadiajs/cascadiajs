@@ -1,15 +1,18 @@
+// creates a page for each tags and displays the talks associated with it.
+
 let slugify = require('slugify')
-let urlToTitle = require('./_includes/title_builder')
+let urlToTitle = require('../_includes/title_builder')
 
 module.exports = {
     data: () => { 
         return {
             pagination: {
-                data: 'collections',
+                data: 'collections.tagList',
                 size: 1,
                 alias: 'tag'
             },
-            permalink: ({tag}) => `/tags/${ slugify(tag, {lower: true}) }/`,
+
+            permalink: ({ tag }) => `/tags/${ slugify(tag, {lower: true}) }/`,
             layout: 'layout'
         }
     },
