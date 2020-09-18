@@ -1,7 +1,10 @@
 module.exports = {
     data: () => {
         return {
-            layout: "layout"
+            layout: "layout",
+            eleventyComputed: {
+                pageTitle: data => `Speakers - ${ data.name }`
+            }
         }
     },
     render: ({ name, image, location, pronouns, twitter, url, company, collections }) => {

@@ -6,9 +6,9 @@ module.exports = {
         }
     },
     render: ({title, collections}) => {
-        return `<h1>${title}</h1>
+        return `<h1>${ title }</h1>
         <ul>
-        ${collections.events.map((event) => `<li><a href="${event.url }">${event.data.name}</a></li>`).join("")}
+        ${ collections.events.sort((a, b) => {return b.data.date.getTime() - a.data.date.getTime()}).map((event) => `<li><a href="${ event.url }">${ event.data.name }</a></li>`).join("")}
         </ul>`;
     }
 }
