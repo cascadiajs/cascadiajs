@@ -1,4 +1,6 @@
 let slugify = require('slugify')
+let { strcmp } = require('../_includes/utils')
+
 
 let renderTalkLink = (talk) => {
     //console.log(talk) 
@@ -14,7 +16,7 @@ module.exports = {
     },
     render: ({ title, collections }) => {
         return `<h1>${title}</h1><ul>
-        ${collections.talks.map((talk) => `<li>${renderTalkLink(talk)}</li>`).join("\n")}
+        ${collections.talks.sort((a,b) => strcmp(a.data.title, b.data.title)).map((talk) => `<li>${renderTalkLink(talk)}</li>`).join("\n")}
         </ul>`
     }
 }

@@ -1,8 +1,5 @@
 let slugify = require('slugify')
-
-/*let talkRender = (talk) => {
-    return `<a href="${talk.url}">${talk.data.event}</a>`
-}*/
+let { strcmp } = require('../_includes/utils')
 
 let speakerRender = (speaker, talks) => {
     talks = talks.filter(talk => talk.data.speaker === speaker.data.name)
@@ -20,7 +17,7 @@ module.exports = {
     },
     render: ({ title, collections }) => {
         return `<h1>${title}</h1><ul>
-            ${collections.speakers.map((speaker) => speakerRender(speaker, collections.talks)).join("\n")}
+            ${collections.speakers.sort((a,b) => strcmp(a.data.name, b.data.name)).map((speaker) => speakerRender(speaker, collections.talks)).join("\n")}
         </ul>`;
     }
 };

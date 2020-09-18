@@ -1,3 +1,11 @@
+const strcmp = (a, b) => {
+    return a.toUpperCase() > b.toUpperCase()
+      ? 1
+      : a.toUpperCase() < b.toUpperCase()
+      ? -1
+      : 0
+}
+
 let initCap = (str) => {
     return str && str[0].toUpperCase()+str.slice(1)
 }
@@ -10,4 +18,8 @@ let urlToTitle = (url) => {
         : ""
 }
 
-module.exports = urlToTitle
+module.exports = {
+    strcmp,
+    initCap,
+    urlToTitle
+}
