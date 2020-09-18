@@ -1,3 +1,5 @@
+const slugify = require('slugify')
+
 module.exports = {
     data: () => {
         return {
@@ -9,7 +11,7 @@ module.exports = {
     },
     render: ({ name, image, location, pronouns, twitter, url, company, collections }) => {
         let talks = collections.talks.filter(t => t.data.speaker === name)
-            .map(t => `<li><a href="${t.url}">${ t.data.title }</a></li>`).join("\n")
+            .map(t => `<li><a href="${t.url}">${ t.data.title }</a> - <a href="/events/${ slugify(t.data.event.toLowerCase()) }">${ t.data.event }</a></li>`).join("\n")
         return `
 <h1>${name}</h1>
 <img src="${ image }"/>
