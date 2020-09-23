@@ -1,4 +1,4 @@
-let urlToTitle = require('./title_builder')
+let { urlToTitle } = require('./utils')
 
 module.exports = {
     render: ({ pkg, /*page,*/ title, pageTitle, content }) => {
