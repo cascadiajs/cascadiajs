@@ -7,3 +7,4 @@ abstract: "The JavaScript ecosystem is about to change in a big way. New technol
 ytID: 65R4th-rixM
 layout: talk
 ---
+![talk illustration](https://2020.cascadiajs.com/images/speakers/fred-k-schott-illustration.png)

@@ -7,3 +7,4 @@ abstract: "This talk will explore how digital musical instruments can interface 
 ytID: MIFg1DGNWI4
 layout: talk
 ---
+![talk illustration](https://2020.cascadiajs.com/images/speakers/scott-ammon-illustration.png)
