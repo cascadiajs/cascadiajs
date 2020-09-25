@@ -10,12 +10,12 @@ module.exports = {
             }
         }
     },
-    render: ({ title, event, speaker, tags, abstract, ytID, collections, content }) => {
+    render: ({ title, event, speaker, tags, abstract, ytId, collections, content }) => {
         let speakerPage = collections.speakers.find(s => s.data.name === speaker) || {}
         return `
 <h1>${title}</h1>
 <div class="card">
-    ${ ytID ? `<div class="video-container"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${ ytID }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ``}
+    ${ ytId ? `<div class="video-container"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${ ytId }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ``}
     <p>Event: <a href="/events/${ slugify(event, {lower: true}) }">${ event }</a></p>
     <p>Speaker: <a href="${ speakerPage.url }">${ speaker }</a></p>
     <p>Tags: [${ tags.map(t => `<a href="/tags/${ slugify(t, {lower: true})}">${ t }</a>`).join(", ") }]</p>

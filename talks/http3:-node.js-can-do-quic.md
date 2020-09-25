@@ -4,7 +4,7 @@ speaker: Trivikram Kamat
 event: CascadiaJS 2019
 tags: ["Node.js", "HTTP/3", "QUIC"]
 abstract: "Work is currently underway to develop an implementation of the new QUIC protocol with Node.js core. While still very experimental and new, this protocol will enable exciting new possibilities and applications. This talk will introduce the fundamentals of QUIC and the prototype implementation being developed."
-ytID: Kqgv4Xs8yDI
+ytId: Kqgv4Xs8yDI
 layout: talk
 ---
 ### Resources

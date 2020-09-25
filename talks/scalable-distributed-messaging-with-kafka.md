@@ -4,7 +4,7 @@ speaker: Claudius Mbemba
 event: CascadiaJS 2019
 tags: ["Cloud", "Kafka", "Scaling"]
 abstract: "Kafka is a production-ready, scalable, distributed streaming platform that’s being used by top companies around the world. Learn how you can turn Kafka into a powerful pub-sub mechanism for your own projects."
-ytID: KHRabSbB5wk
+ytId: KHRabSbB5wk
 layout: talk
 ---
 ### Resources

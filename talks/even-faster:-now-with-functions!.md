@@ -4,6 +4,6 @@ speaker: Brian Leroux
 event: CascadiaJS 2018
 tags: ["Serverless"]
 abstract: "The secret weapon of serverless architectures is extremely fast deployments with zero downtime. Surgical deploys allow for updating a single function in place within 1 second. All this adds up to faster iterations, which means quicker turnaround and that equals: super stoked devs!"
-ytID: KkJ3DLDUfUY
+ytId: KkJ3DLDUfUY
 layout: talk
 ---
