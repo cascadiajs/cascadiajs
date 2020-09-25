@@ -1,9 +1,9 @@
 ---
-title: "i18n | l10n - The Principles for a More Accessible Web"
+title: "internationalization | localization - The Principles for a More Accessible Web"
 speaker: Romulo Cintra Espirito Santo
 event: CascadiaJS 2020
-tags: ["a11y","i18n","l10n"]
-abstract: "The present and the future of i18n and l10n in the browser."
+tags: ["accessibility","internationalization","localization"]
+abstract: "The present and the future of internationalization and localization in the browser."
 ytId: jFbnPNGEh-I
 layout: talk
 ---

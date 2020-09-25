@@ -2,7 +2,7 @@
 title: The Several Ways to Construct an Object
 speaker: Noah Adams
 event: CascadiaJS 2019
-tags: ["JavaScript"]
+tags: ["javascript"]
 abstract: We will explore, in escalating levels of absurdity, the many ways JavaScript provides to create objects. Along the way we'll discover some weird corners, astonishing facts and come to appreciate the commonalities of constructors, classes, prototypes, closures and `Function.prototype.bind()`.
 layout: talk
 ---

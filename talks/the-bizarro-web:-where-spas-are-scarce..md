@@ -2,7 +2,7 @@
 title: "The Bizarro Web: Where SPAs are Scarce."
 speaker: Kyle Jacobson
 event: CascadiaJS 2019
-tags: ["Single Page Apps", "Web Standards"]
+tags: ["spa", "web standards"]
 abstract: "Now's a good time to turn a critical eye toward our single page app assumptions.\nThe evolution of the web was never on an inevitable path; it was a loosely-coordinated series of decisions by standards-making bodies, browser makers, and developers that could have gone very differently. It still can."
 layout: talk
 ---

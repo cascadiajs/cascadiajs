@@ -32,7 +32,7 @@ This will return a JSON document that contains an array of Talk objects:
 ```json
 [
     {
-        "title":"Accessibility is a Hydra",
+        "title":"accessibility is a Hydra",
         "speaker":"EJ Mason",
         "tags":["Talk","CascadiaJS 2019","EJ Mason"],
         "abstract":"When Hercules fought the hydra, its heads would grow back no matter how many times he cut them off. Web accessibility professionals put repeated effort toward fighting accessibility barriers, and often feel like their work is never done. If we want to prevail against accessibility barriers, we have to understand our own hydra: we have to talk about ableism.",

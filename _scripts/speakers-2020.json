@@ -107,7 +107,7 @@
     {
       "location": "Denver, CO",
       "track": "lightning",
-      "topics": ["a11y", "UI"],
+      "topics": ["accessibility", "UI"],
       "url": "https://jdsteinbach.com",
       "pixelated": "6f833820958f1e797517f53db34de604d54d1df5",
       "abstract": "Modal windows are a complicated yet common UI component. Most helper libraries solve issues like styles, portals, or state. We're going to dig into major accessibility needs for modal windows.",
@@ -124,7 +124,7 @@
     {
       "location": "Kaunas, Lithuania",
       "track": "lightning",
-      "topics": ["a11y"],
+      "topics": ["accessibility"],
       "pixelated": "fc7f8bbeb8195509be4f86b1010cffb9652fda9f",
       "abstract": "Knowing how to build accessible products is important but it's just as important to know why we build products to be accessible. Basic human decency aside, there's a plethora of reasons for building products that everyone can use. In this talk, we'll explore the concept of accessibility in order to better understand its necessity and the ramifications involved in building non accessible products. We'll also answer pressing questions like \"How do I know if this thing I built is accessible?\" and \"Whose job is it to ensure accessibility?\" (Spoiler: it's everyone's job)",
       "name": "Jemima Abu",
@@ -132,7 +132,7 @@
       "company": "Telesoftas",
       "pronouns": "she/her",
       "reveal": "2020-06-24T09:30:00-07:00",
-      "title": "Understanding Accessibility as a Concept",
+      "title": "Understanding accessibility as a Concept",
       "ytId": "QSXdTuD9Rak",
       "key": "jemima-abu",
       "table": "speakers"
@@ -286,15 +286,15 @@
     {
       "location": "Barcelona, Spain",
       "track": "main",
-      "topics": ["a11y", "i18n", "l10n"],
+      "topics": ["accessibility", "internationalization", "localization"],
       "pixelated": "08dc534ca089669bfe2052d451ca72a4b86d981c",
-      "abstract": "The present and the future of i18n and l10n in the browser.",
+      "abstract": "The present and the future of internationalization and localization in the browser.",
       "name": "Romulo Cintra Espirito Santo",
       "twitter": "romulocintra",
       "company": "Silk - CaixaBank",
       "pronouns": "he/him",
       "reveal": "2020-06-23T14:30:00-07:00",
-      "title": "i18n | l10n - The Principles for a More Accessible Web",
+      "title": "internationalization | localization - The Principles for a More Accessible Web",
       "ytId": "jFbnPNGEh-I",
       "key": "romulo-cintra",
       "table": "speakers"

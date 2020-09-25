@@ -2,7 +2,7 @@
 title: "\"App Not Ejected Properly\""
 speaker: Gilad Gray
 event: CascadiaJS 2019
-tags: ["React.js"]
+tags: ["react.js"]
 abstract: "So you've ejected your create-react-app and you're free-falling through Node build code. Allow me to build you a parachute on the way down. We'll demystify the build process and reverse-engineer the webpack puzzle so you can sleep again."
 layout: talk
 ---
