@@ -6,7 +6,7 @@ title: Home
 
 ## Coming Up
 
-* Sign-up for our [mailing list](http://eepurl.com/dPmCkT) to hear about upcoming CascadiaJS events.
+* [CascadiaJS 2021](https://2021.cascadiajs.com) on Nov 3-4, 2021
 
 ## Past
 
