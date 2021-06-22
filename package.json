@@ -1,6 +1,6 @@
 {
   "name": "cascadiajs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A website to aggregate speaker/talks info across all CascadiaJS conferences",
   "main": "",
   "dependencies": {},
