@@ -1,20 +1,19 @@
 {
   "name": "cascadiajs",
   "version": "1.0.4",
-  "description": "A website to aggregate speaker/talks info across all CascadiaJS conferences",
-  "main": "",
-  "dependencies": {},
+  "description": "An evergreen website for the CascadiaJS conference and community",
+  "dependencies": {
+    "@architect/functions": "^4.0.0",
+    "@begin/data": "^3.0.0",
+    "esm": "^3.2.25",
+    "front-matter": "^4.0.2",
+    "marked": "^3.0.4"    
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@architect/sandbox": "^4.4.0",
-    "slugify": "^1.4.5"
+    "@architect/sandbox": "^4.4.0"
   },
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy build",
-    "push": "npm version patch && git push && git push origin --tags"
+    "start": "npx sandbox"
   },
   "repository": {
     "type": "git",
