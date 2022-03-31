@@ -8,6 +8,9 @@ fingerprint true
 @http
 get /
 
+@views
+src src/views
+
 @tables
 data
   scopeID *String
