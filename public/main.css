@@ -76,7 +76,7 @@ header a:hover {
 @media only screen and (min-width: 768px) {
     #main {
         background-color: #fff;
-        width: 50vw;
+        width: 60vw;
         margin: 0 auto;
         padding: 20px 40px;
     }
