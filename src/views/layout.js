@@ -9,7 +9,7 @@ module.exports = function Layout ({ path, title, content }) {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>CascadiaJS ${ title ? `- ${ title }` : `` }</title>
           <link rel="stylesheet" href="https://use.typekit.net/nln6hzq.css">
-          <link rel="stylesheet" href="${ arc.static('/main.css') }">
+          <link rel="stylesheet" href="${ arc.static('/main.blah') }">
           <!-- ${ path } -->
       </head>
       <body>
