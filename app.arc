@@ -7,6 +7,7 @@ fingerprint true
 
 @http
 get /
+get /*
 
 @views
 src src/views

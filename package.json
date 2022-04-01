@@ -10,7 +10,7 @@
     "marked": "^4.0.12"
   },
   "devDependencies": {
-    "@architect/architect": "^10.2.0",
+    "@architect/architect": "^10.2.1",
     "@architect/sandbox": "^5.2.0",
     "fast-csv": "^4.3.6"
   },
