@@ -7,6 +7,7 @@ fingerprint true
 
 @http
 get /
+post /signup
 get /*
 
 @views

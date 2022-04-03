@@ -21,6 +21,11 @@ img {
     max-width: 100%;
 }
 
+input {
+    display: block;
+    margin-bottom: 8px;
+}
+
 header {
     padding: 5px;
     background-color: #0d29ff;

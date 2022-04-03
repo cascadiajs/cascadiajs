@@ -7,7 +7,8 @@
     "@begin/data": "^4.0.0",
     "esm": "^3.2.25",
     "front-matter": "^4.0.2",
-    "marked": "^4.0.12"
+    "marked": "^4.0.12",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "@architect/architect": "^10.2.1",

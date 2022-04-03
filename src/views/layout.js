@@ -14,7 +14,7 @@ module.exports = function Layout ({ path, title, content }) {
       </head>
       <body>
       <header>
-          <a href="/">Home</a>
+          <a href="/">/home</a>
       </header>
       <div id="main">
       ${ content}

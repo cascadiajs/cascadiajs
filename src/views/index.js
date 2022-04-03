@@ -19,6 +19,8 @@ let Template = function() {
         <li><a target="_blank" href="https://2013.cascadiajs.com">2013</a></li>
         <li><a target="_blank" href="https://2012.cascadiajs.com">2012</a></li>
     </ul>
+    <h2>Mailing List</h2>
+    <p>Stay up-to-date on upcoming CFPs, events and other fun announcements by joining our <a href="/signup">community mailing list</a>.</p>
     <h2>Code</h2>
     <p>The code for this website is hosted on <a href="https://github.com/cascadiajs/cascadiajs">Github</a>.</p>
 `
