@@ -12,30 +12,32 @@ async function signup(req) {
     'Authorization': `Basic ${ Buffer.from(process.env.CIO_SITE_ID + ':' + process.env.CIO_API_KEY).toString('base64') }`,
     'Content-Type': 'application/json'
   }
-  // if a segment_id exists, add this user to the segment
-  if (segment_id !== undefined) {
-    payload = {ids: [ email_address ]}
-    let url = `https://track.customer.io/api/v1/segments/${ segment_id }/add_customers?id_type=email`
-    console.log(url)
-    let body = JSON.stringify(payload)
-    console.log(body)
-    let res1 = await fetch(url, {
-      method: 'POST',
-      headers,
-      body,
-    })
-    console.log(await res1.text())
-  }
+  let payload, res, url, body
   // set the payload for the create/update API call
   let created_at = Math.floor(Date.now() / 1000)
-  let payload = { created_at, first_name, last_name }
+  payload = { created_at, first_name, last_name }
   // call REST API to update customer
-  let res2 = await fetch(`https://track.customer.io/api/v1/customers/${ encodeURIComponent(email_address) }`, {
+  res = await fetch(`https://track.customer.io/api/v1/customers/${ encodeURIComponent(email_address) }`, {
     method: 'PUT',
     headers,
     body: JSON.stringify(payload),
   })
-  console.log(await res2.text())
+  console.log(await res.text())
+
+  // if a segment_id exists, add this user to the segment
+  if (segment_id !== undefined) {
+    payload = {ids: [ email_address ]}
+    url = `https://track.customer.io/api/v1/segments/${ segment_id }/add_customers?id_type=email`
+    console.log(url)
+    body = JSON.stringify(payload)
+    console.log(body)
+    res = await fetch(url, {
+      method: 'POST',
+      headers,
+      body,
+    })
+    console.log(await res.text())
+  }
   // if a form request, redirection to next steps
   if (req.headers['content-type'] !== 'application/json') {
     return { location: '/signup-next-steps' }
