@@ -4,7 +4,9 @@ let fetch = require('node-fetch')
 exports.handler = arc.http.async(signup)
 
 async function signup(req) {
+  console.log(req.body)
   let { first_name, last_name, email_address, segment_id } = req.body
+  
   // set customer.io REST API headers
   let headers = {
     'Authorization': `Basic ${ Buffer.from(process.env.CIO_SITE_ID + ':' + process.env.CIO_API_KEY).toString('base64') }`,
@@ -28,7 +30,11 @@ async function signup(req) {
       body: JSON.stringify(payload),
     })
   }
-  // redirect to /signup-next-steps
-  let location = '/signup-next-steps'
-  return { location }
+  // if a form request, redirection to next steps
+  if (req.headers['content-type'] !== 'application/json') {
+    return { location: '/signup-next-steps' }
+  }
+  else {
+    return { json: { ok: true } }
+  }
 }
