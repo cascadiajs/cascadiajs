@@ -16,19 +16,21 @@ async function signup(req) {
   // set the payload for the create/update API call
   let payload = { created_at, first_name, last_name }
   // call REST API to create/update customer
-  await fetch(`https://track.customer.io/api/v1/customers/${ encodeURIComponent(email_address) }`, {
+  let res = await fetch(`https://track.customer.io/api/v1/customers/${ encodeURIComponent(email_address) }`, {
     method: 'PUT',
     headers,
     body: JSON.stringify(payload),
   })
+  console.log(await res.text())
   // if a segment_id exists, add this user to the segment
   if (segment_id !== undefined) {
     payload = {ids: [ email_address ]}
-    let res = await fetch(`https://track.customer.io/api/v1/segments/${ segment_id }/add_customers?id_type=email`, {
+    res = await fetch(`https://track.customer.io/api/v1/segments/${ segment_id }/add_customers?id_type=email`, {
       method: 'POST',
       headers,
       body: JSON.stringify(payload),
     })
+    console.log(await res.text())
   }
   // if a form request, redirection to next steps
   if (req.headers['content-type'] !== 'application/json') {
