@@ -1,7 +1,7 @@
 ---
 title: Welcome to CascadiaJS!
 ---
-Your email address is confirmed. Welcome to our community! 
+Your email address is confirmed, welcome to our community! 
 
 Here are some other ways you can connect with us:
 
