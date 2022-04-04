@@ -19,23 +19,23 @@ async function signup(req) {
     console.log(url)
     let body = JSON.stringify(payload)
     console.log(body)
-    res = await fetch(url, {
+    let res1 = await fetch(url, {
       method: 'POST',
       headers,
       body,
     })
-    console.log(await res.text())
+    console.log(await res1.text())
   }
   // set the payload for the create/update API call
   let created_at = Math.floor(Date.now() / 1000)
   let payload = { created_at, first_name, last_name }
   // call REST API to update customer
-  let res = await fetch(`https://track.customer.io/api/v1/customers/${ encodeURIComponent(email_address) }`, {
+  let res2 = await fetch(`https://track.customer.io/api/v1/customers/${ encodeURIComponent(email_address) }`, {
     method: 'PUT',
     headers,
     body: JSON.stringify(payload),
   })
-  console.log(await res.text())
+  console.log(await res2.text())
   // if a form request, redirection to next steps
   if (req.headers['content-type'] !== 'application/json') {
     return { location: '/signup-next-steps' }
