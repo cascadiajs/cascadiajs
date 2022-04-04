@@ -25,10 +25,14 @@ async function signup(req) {
   // if a segment_id exists, add this user to the segment
   if (segment_id !== undefined) {
     payload = {ids: [ email_address ]}
-    res = await fetch(`https://track.customer.io/api/v1/segments/${ segment_id }/add_customers?id_type=email`, {
+    let url = `https://track.customer.io/api/v1/segments/${ segment_id }/add_customers?id_type=email`
+    console.log(url)
+    let body = JSON.stringify(payload)
+    console.log(body)
+    res = await fetch(url, {
       method: 'POST',
       headers,
-      body: JSON.stringify(payload),
+      body,
     })
     console.log(await res.text())
   }
