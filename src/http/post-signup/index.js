@@ -15,7 +15,7 @@ async function signup(req) {
   // build profile object
   let created_at = Math.floor(Date.now() / 1000) // set created_at to a Unix timestamp
   let unsubscribed = false // necessary if the person unsubscribed and is now trying to re-subscribe
-  let profile = { ...subscriptions, first_name, last_name, email_address, created_at, unsubscribed }
+  let profile = { ...subscriptions, first_name, last_name, created_at, unsubscribed }
   // set customer.io REST API headers
   let headers = {
     'Authorization': `Basic ${ Buffer.from(process.env.CIO_SITE_ID + ':' + process.env.CIO_API_KEY).toString('base64') }`,
