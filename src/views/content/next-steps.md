@@ -1,7 +1,9 @@
 ---
-title: Please Confirm Your Email Address
+title: Thanks and Next Steps
 ---
-Thanks! We have sent an email to the address you provided. 
+**If you are signing-up for the first time:**
+
+We have sent an email to the address you provided. 
 
 - Please click the link in order to confirm that the email address belongs to you.
 
@@ -9,4 +11,6 @@ Thanks! We have sent an email to the address you provided.
 
 - To ensure you recieve our emails, please filter emails from info@cascadiajs.com to your Primary inbox.
 
-![CascadiaJS 2019 family photo](https://2022.cascadiajs.com/images/past/cjs19-family.jpg)
+**If you are updating your mailing list preferences:**
+
+Nothing to do for you!

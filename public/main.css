@@ -21,9 +21,17 @@ img {
     max-width: 100%;
 }
 
-input {
+input[type=text] {
     display: block;
     margin-bottom: 8px;
+}
+
+#unsubscribe {
+    color: red;
+}
+
+button {
+    margin: 16px 16px 16px 0;
 }
 
 header {
