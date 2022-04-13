@@ -1,3 +1,4 @@
 node_modules
 public/static.json
+static/shared/static.json
 .env
