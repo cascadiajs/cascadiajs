@@ -28,6 +28,7 @@ async function verify(req) {
     }
   }
   else {
+    console.log(obj)
     response = { location: "/error?m=unknown" }
   }
 

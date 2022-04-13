@@ -3,7 +3,7 @@
   "version": "3.0.15",
   "description": "An evergreen website for the CascadiaJS conference and community",
   "dependencies": {
-    "@architect/functions": "^5.0.4",
+    "@architect/functions": "^5.0.5",
     "@begin/data": "^4.0.0",
     "esm": "^3.2.25",
     "front-matter": "^4.0.2",
