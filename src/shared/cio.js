@@ -6,7 +6,7 @@ async function tracking_api({ method, url, body }) {
     'Authorization': `Basic ${ Buffer.from(process.env.CIO_SITE_ID + ':' + process.env.CIO_API_KEY).toString('base64') }`,
     'Content-Type': 'application/json'
   }
-  console.log(method, headers, url, body)
+  //console.log(method, headers, url, body)
   return await fetch(url, { method, headers, body })
 }
 

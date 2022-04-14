@@ -10,7 +10,7 @@ async function verify(req) {
   query.append('id_type', 'email')
   query.append('type', 'event')
   query.append('name', 'login-attempt')
-  let url = `https://api.customer.io/v1/customers/${ encodeURIComponent(email_address) }/activities?${ query }`
+  let url = `https://api.customer.io/v1/customers/${ encodeURIComponent(email_address) }/activities?${ query.toString() }`
   let res = await app_api({ method: 'GET', url })
   let obj = await res.json()
   let response
@@ -21,15 +21,19 @@ async function verify(req) {
       .sort((a, b) => { return b.timestamp - a.timestamp}) // sort in reserve chron order
     if (activities.length > 0 && activities[0].data.token === token) {
       // set session
-      response = { location: '/home' }
+      let session = {
+        logged_in: true,
+        email_address
+      }
+      return { session, location: '/home' }
     }
     else {
-      response = { location: "/error?m=no-token-found" }
+      response = { location: '/error?m=no-token-found' }
     }
   }
   else {
-    console.log(obj)
-    response = { location: "/error?m=unknown" }
+    //console.log(obj)
+    response = { location: '/error?m=unknown' }
   }
 
   return response

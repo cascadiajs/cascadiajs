@@ -10,6 +10,7 @@ get  /
 get  /home
 get  /verify
 post /login
+post /logout
 post /signup
 post /unsubscribe
 get  /*
