@@ -4,6 +4,8 @@ let fetch = require('node-fetch')
 exports.handler = arc.http.async(signup)
 
 async function signup(req) {
+  // keep this for now, until we figure out where the empty email API requests are coming from
+  console.log(req.body)
   let { first_name, last_name, email_address, list, lists } = req.body
   // build profile object
   //let created_at = Math.floor(Date.now() / 1000) // set created_at to a Unix timestamp
