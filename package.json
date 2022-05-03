@@ -1,6 +1,6 @@
 {
   "name": "cascadiajs",
-  "version": "3.0.18",
+  "version": "3.0.19",
   "description": "An evergreen website for the CascadiaJS conference and community",
   "dependencies": {
     "@architect/functions": "^5.0.5",
