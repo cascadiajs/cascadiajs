@@ -1,31 +1,37 @@
 {
-  "name": "cascadiajs",
-  "version": "3.0.19",
-  "description": "An evergreen website for the CascadiaJS conference and community",
-  "dependencies": {
-    "@architect/functions": "^5.0.5",
-    "@begin/data": "^4.0.0",
-    "esm": "^3.2.25",
-    "front-matter": "^4.0.2",
-    "marked": "^4.0.12",
-    "node-fetch": "^2.6.7"
+  "name": "enhance-app",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "npx enhance dev",
+    "lint": "eslint ./app/**/*.mjs --fix",
+    "enhance": "enhance"
   },
   "devDependencies": {
-    "@architect/architect": "^10.2.2",
-    "@architect/sandbox": "^5.2.0",
-    "fast-csv": "^4.3.6"
+    "@enhance/cli": "latest",
+    "@enhance/types": "^0.6.1",
+    "eslint": "^8.49.0"
   },
-  "scripts": {
-    "start": "npx sandbox"
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ]
+    },
+    "ignorePatterns": [],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2022
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cascadiajs/cascadiajs.git"
-  },
-  "author": "Carter Rabasa",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cascadiajs/cascadiajs/issues"
-  },
-  "homepage": "https://github.com/cascadiajs/cascadiajs#readme"
+  "dependencies": {
+    "@enhance/arc-plugin-enhance": "^9.1.3",
+    "@enhance/styles-cribsheet": "^0.0.9",
+    "front-matter": "^4.0.2",
+    "marked": "^10.0.0"
+  }
 }
