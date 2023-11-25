@@ -15,12 +15,12 @@ export default function Head() {
       <link rel="stylesheet" href="/_public/styles/main.css">
       <meta name="description" content="CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!">
       <meta property="og:description" content="CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!" />
-      <meta name="image" property="og:image" content="https://cascadiajs.com/_public/splash.png" />
+      <meta name="image" property="og:image" content="https://cascadiajs.com/_public/images/splash.png" />
       <meta name="url" property="og:url" content="https://cascadiajs.com" />
       <meta name="type" property="og:type" content="website" />
       <meta name="author" content="Carter Rabasa">
       <meta property="og:title" content="CascadiaJS - a JS conf for the PacNW" />
-      <meta name="twitter:image" content="https://cascadiajs.com/_public/splash.png">
+      <meta name="twitter:image" content="https://cascadiajs.com/_public/images/splash.png">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@cascadiajs">
       <meta name="twitter:title" content="CascadiaJS - a JS conf for the PacNW">

@@ -6,7 +6,7 @@ export async function get(req) {
   const { path } = req;
   const page = path.substr(1);
   const filePath = new URL(`../markdown/${page}.md`, import.meta.url);
-  console.log(filePath);
+  //console.log(filePath);
   let docMarkdown;
   try {
     docMarkdown = readFileSync(filePath, "utf-8");

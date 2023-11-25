@@ -10,3 +10,6 @@ enhance/styles-cribsheet
 
 @begin
 appID KKK697MK
+
+@aws
+runtime nodejs18.x
