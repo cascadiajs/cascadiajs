@@ -20,10 +20,12 @@ export default function MainHeader({ html }) {
     <nav>
       <div class="wide">
         <div class="logo">
-          <img
-            height="64"
-            src="/_public/images/horizontal-2024-dark-blue.svg"
-          />
+          <a href="/2024"
+            ><img
+              height="64"
+              src="/_public/images/horizontal-2024-dark-blue.svg"
+              alt="CascadiaJS 2024 logo"
+          /></a>
         </div>
         <div class="push"><a href="/2024/cfp">Call for Presenters</a></div>
       </div>
