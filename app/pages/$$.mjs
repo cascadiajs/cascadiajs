@@ -13,7 +13,7 @@ export default function ({ html, state }) {
       }
 
       #page .page-title {
-        background-color: #ff9866;
+        background-color: #cfd3e4;
       }
 
       #page .page-title div {

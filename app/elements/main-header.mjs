@@ -3,23 +3,20 @@ export default function MainHeader({ html, state }) {
   const { path } = store;
   return html`
     <style>
-      header #logo svg {
+      #logo img {
         height: 56px;
         width: auto;
       }
 
-      header nav {
+      nav {
         padding: 0;
         text-align: center;
       }
 
-      header nav.primary {
-        background-color: #112378;
-      }
-
-      header nav.secondary {
+      nav {
+        font-size: 16px;
         background-color: #17c37b;
-        padding: 4px 0;
+        padding: 12px;
       }
 
       header > section.alert {
@@ -40,25 +37,20 @@ export default function MainHeader({ html, state }) {
       nav a {
         display: inline-block;
         margin: 4px;
-        font-family: alkaline-caps, monospace;
-        font-size: 1.125em;
-        font-weight: 400;
+        font-family: "mono45-headline", monospace;
+        font-size: 21px;
+        font-weight: 500;
         text-decoration: none;
         padding-right: 5px;
       }
 
-      nav.primary a,
-      nav.primary a:visited {
-        color: #fff5cc;
-      }
-
-      nav.secondary a,
-      nav.secondary a:visited {
+      nav a,
+      nav a:visited {
         color: #112378;
       }
 
       nav a:hover {
-        color: #ffcf07;
+        text-decoration: underline;
       }
 
       @media only screen and (min-width: 768px) {
@@ -84,21 +76,30 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <nav class="primary">
-        <div class="wide">
-          <div id="logo">
-            <a href="/">
-              <img src="/_public/favicon.svg" alt="CascadiaJS logo" />
-            </a>
-          </div>
-          <div class="push"><a href="/2024">2024</a></div>
-          <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
-          <div class="spacer">
-            <a href="/code-of-conduct">Code of Conduct</a>
-          </div>
-        </div>
-      </nav>
-      ${path && path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ``}
+      ${path && path.startsWith("/2024")
+        ? html`<nav class="primary">
+              <div class="wide">
+                <div><a href="/">← Back to Home</a></div>
+              </div>
+            </nav>
+            <nav-2024></nav-2024>`
+        : html` <nav class="primary">
+            <div class="wide">
+              <div id="logo">
+                <a href="/">
+                  <img
+                    src="/_public/images/logo-wordmark-horizontal.svg"
+                    alt="CascadiaJS logo"
+                  />
+                </a>
+              </div>
+              <div class="push"><a href="/2024">CascadiaJS 2024</a></div>
+              <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
+              <div class="spacer">
+                <a href="/code-of-conduct">Code of Conduct</a>
+              </div>
+            </div>
+          </nav>`}
     </header>
   `;
 }

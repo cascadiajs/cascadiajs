@@ -1,7 +1,30 @@
 export default function MainHeader({ html }) {
   return html`
-    <nav class="secondary">
+    <style>
+      nav {
+        padding: 10px;
+        background-color: #ccf1db;
+        font-family: "mono45-headline", monospace;
+        font-weight: 500;
+      }
+
+      nav a,
+      nav a:visited {
+        color: #112378;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <nav>
       <div class="wide">
+        <div class="logo">
+          <img
+            height="64"
+            src="/_public/images/horizontal-2024-dark-blue.svg"
+          />
+        </div>
         <div class="push"><a href="/2024/cfp">Call for Presenters</a></div>
       </div>
     </nav>

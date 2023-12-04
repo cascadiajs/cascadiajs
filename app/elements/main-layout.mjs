@@ -2,7 +2,7 @@ export default function MainLayout({ html }) {
   return html`
     <style>
       #root {
-        background-color: #fff5cc;
+        background-color: #fffbeb;
         color: #112378;
         width: 100%;
         height: 100%;

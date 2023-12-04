@@ -4,7 +4,7 @@ html, body {
 }
 
 h1 {
-    font-family: alkaline-caps, sans-serif;
+    font-family: "mono45-headline", sans-serif;
 }
 
 h2, h3, h4, h5, h6 {
@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.125em;
     margin: 32px 0 16px 0;
     color: #112378;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h1 { font-size: 40px; }
