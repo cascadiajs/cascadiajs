@@ -96,6 +96,18 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
+                  src="/_public/images/features/a11y.gif"
+                  alt="illustration of a welcome mat"
+                />
+              </div>
+              <h2>Accessibility</h2>
+              <p>
+               In order to build an inclusive community for web developers we work hard to make our event as accessible as possible. Stay tuned for more info on this!
+              </p>
+            </div>
+            <div class="feature">
+              <div>
+                <img
                   src="/_public/images/features/activities.gif"
                   alt="illustration of a pickleball racquet"
                 />
