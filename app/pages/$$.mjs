@@ -52,13 +52,14 @@ export default function ({ html, state }) {
         margin: 0;
       }
 
-      #page .page-body,
-      #page .page-title div {
-        width: 50%;
-        margin: 0 auto;
-      }
-
       @media only screen and (min-width: 768px) {
+
+        #page .page-body,
+        #page .page-title div {
+          width: 50%;
+          margin: 0 auto;
+        }
+        
         #page .page-body.wide,
         #page .page-title div.wide {
           width: 70%;
