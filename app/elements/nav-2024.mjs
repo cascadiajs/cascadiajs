@@ -1,15 +1,16 @@
 export default function MainHeader({ html }) {
   return html`
     <style>
-      nav {
+      nav.secondary {
         padding: 10px;
         background-color: #ccf1db;
         font-family: "mono45-headline", monospace;
+        font-size: 21px;
         font-weight: 500;
       }
 
-      nav a,
-      nav a:visited {
+      nav.secondary a,
+      nav.secondary a:visited {
         color: #112378;
       }
 
@@ -17,7 +18,7 @@ export default function MainHeader({ html }) {
         text-decoration: underline;
       }
     </style>
-    <nav>
+    <nav class="secondary">
       <div class="wide">
         <div class="logo">
           <a href="/2024"

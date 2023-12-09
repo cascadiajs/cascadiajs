@@ -11,12 +11,34 @@ export default function MainHeader({ html, state }) {
       nav {
         padding: 0;
         text-align: center;
-      }
-
-      nav {
-        font-size: 16px;
         background-color: #17c37b;
         padding: 12px;
+      }
+
+      nav a {
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      nav.primary {
+        font-size: 16px;
+      }
+
+      nav.primary a {
+        display: inline-block;
+        margin: 4px;
+        font-family: "mono45-headline", monospace;
+        font-size: 21px;
+        font-weight: 500;
+        padding-right: 5px;
+      }
+
+      nav a,
+      nav a:visited {
+        color: #112378;
       }
 
       header > section.alert {
@@ -32,25 +54,6 @@ export default function MainHeader({ html, state }) {
       header > section.alert a,
       header > section.alert a:visited {
         color: #112378;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 4px;
-        font-family: "mono45-headline", monospace;
-        font-size: 21px;
-        font-weight: 500;
-        text-decoration: none;
-        padding-right: 5px;
-      }
-
-      nav a,
-      nav a:visited {
-        color: #112378;
-      }
-
-      nav a:hover {
-        text-decoration: underline;
       }
 
       @media only screen and (min-width: 768px) {
@@ -77,7 +80,7 @@ export default function MainHeader({ html, state }) {
     </style>
     <header>
       ${path && path.startsWith("/2024")
-        ? html`<nav class="primary">
+        ? html`<nav class="back">
               <div class="wide">
                 <div><a href="/">← Back to Home</a></div>
               </div>

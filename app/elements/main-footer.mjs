@@ -9,7 +9,7 @@ export default function MainFooter({ html }) {
       }
       h2 {
         font-size: 16px;
-        font-family: alkaline-caps, sans-serif;
+        font-family: mono45-headline, sans-serif;
         font-weight: 500;
       }
 

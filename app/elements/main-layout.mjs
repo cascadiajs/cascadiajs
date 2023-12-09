@@ -3,13 +3,13 @@ export default function MainLayout({ html }) {
     <style>
       #root {
         background-color: #fffbeb;
-        color: #112378;
+        color: #020800;
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         font-weight: 200;
-        font-family: canada-type-gibson, sans-serif;
+        font-family: freight-sans-pro, sans-serif;
         font-size: 18px;
         line-height: 1.125em;
       }

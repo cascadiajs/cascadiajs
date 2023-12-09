@@ -7,15 +7,22 @@ h1 {
     font-family: "mono45-headline", sans-serif;
 }
 
-h2, h3, h4, h5, h6 {
-    font-family: alkaline, sans-serif;
+h2, h3, h4 {
+    font-family: freight-macro-pro, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
     line-height: 1.125em;
     margin: 32px 0 16px 0;
     color: #112378;
+}
+
+h1, h2 {
     font-weight: 500;
+}
+
+h3, h4 {
+    font-weight: 600;
 }
 
 h1 { font-size: 40px; }
@@ -23,6 +30,8 @@ h1 { font-size: 40px; }
 h2 { font-size: 32px; }
 
 h3 { font-size: 24px; }
+
+h3 { font-size: 18px; }
 
 h2 img {
     height: 35px;
@@ -109,7 +118,7 @@ div.highlight {
 
 /* start CTA */
 .cta {
-    font-family: alkaline-caps, sans-serif;
+    font-family: mono45-headline, sans-serif;
     background-color: #0033FF;
     border: 4px solid #0033FF;
     font-weight: 500;
@@ -141,6 +150,7 @@ span.cta {
     color: #0033FF;
     background: none;
     border: 4px solid #0033FF;
+    font-weight: 300;
 }
 
 
