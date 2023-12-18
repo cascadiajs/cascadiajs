@@ -24,7 +24,7 @@ export default function ({ html /*state*/ }) {
         </section>
         <section id="teaser" class="landing">
           <h1>We're Back!</h1>
-          <p style="width:600px; text-align:left; margin:0 auto">
+          <p style="max-width:600px; text-align:left; margin:0 auto">
             CascadiaJS 2024 is coming BACK to Seattle, WA and will run from June
             19 - 22. We'll host a Welcome Reception on June 19, have 2 days of
             talks and workshops on June 20 and 21 and get out and about the
