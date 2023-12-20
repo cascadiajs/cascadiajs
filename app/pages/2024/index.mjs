@@ -13,27 +13,70 @@ export default function ({ html /*state*/ }) {
         min-width: 300px;
         max-width: 400px;
       }
+
+      #hero {
+        text-align: left;
+      }
+
+      #hero .label-name {
+        font-family: mono45-headline;
+        font-size: 18px;
+        text-decoration: underline;
+        color: #112378;
+        margin: 0;
+      }
+
+      #hero .label-value {
+        font-family: freight-macro-pro;
+        font-size: 24px;
+        color: #112378;
+        font-weight: 400;
+        line-height: 1.3em;
+      }
+
+      @media only screen and (min-width: 768px) {
+        #hero {
+          display: flex;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        #hero article {
+          flex: 1;
+        }
+
+        #hero article:first-child {
+          margin-right: 16px;
+        }
+      }
     </style>
     <main-layout>
       <div id="landing">
         <section id="hero" class="landing">
-          <img
-            src="/_public/images/cascadiajs-family-2019.jpg"
-            alt="CascadiaJS family photo in 2019"
-          />
-        </section>
-        <section id="teaser" class="landing">
-          <h1>We're Back!</h1>
-          <p style="width:600px; text-align:left; margin:0 auto">
-            CascadiaJS 2024 is coming BACK to Seattle, WA and will run from June
-            19 - 22. We'll host a Welcome Reception on June 19, have 2 days of
-            talks and workshops on June 20 and 21 and get out and about the
-            Seattle area for a day of activities on June 22!
-            <br /><br />
-            We'll have more information to share soon, but for now please
-            consider submitting a talk idea to <a href="/2024/cfp">our CFP</a>.
-            Every developer has a story to tell, and we want to hear yours!
-          </p>
+          <article>
+            <h2>A JavaScript conference for the Pacific Northwest</h2>
+            <br/>
+            <div class="label-name">Date</div>
+            <div class="label-value">June 19-22, 2024</div>
+            <br/>
+            <div class="label-name">Venue</div>
+            <div class="label-value">Town Hall<br/>Seattle, WA, USA</div>
+            <br/>
+            <p>
+              CascadiaJS 2024 is coming BACK to Seattle, WA and will run from June
+              19 - 22. We'll host a Welcome Reception on June 19, have 2 days of
+              talks and workshops on June 20 and 21 and get out and about the
+              Seattle area for a day of activities on June 22!
+              <br /><br />
+              Our CFP is OPEN, please
+              consider <a href="/2024/cfp">submitting a talk</a>.
+              Every developer has a story to tell, and we want to hear yours!
+            </p>
+            <div class="cta primary"><a href="https://ti.to/event-loop/cascadiajs-2024/discount/EARLYBIRD">Early Bird tickets on sale now</a></div>
+          </article>
+          <article>
+            <img src="/_public/images/sasquatch.gif" alt="Sasquatch having ChatGPT write his code for him while chilling on a beach"/>
+          </article>
         </section>
 
         <section id="features" class="landing">
