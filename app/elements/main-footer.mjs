@@ -66,7 +66,7 @@ export default function MainFooter({ html }) {
           <h2>Stay Connected</h2>
           <ul>
             <li>
-              <a target="_blank" href="https://discord.gg/cascadiajs"
+              <a target="_blank" href="https://discord.gg/kkYR86GM29"
                 >Join our Discord</a
               >
             </li>
