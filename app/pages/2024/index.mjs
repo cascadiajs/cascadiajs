@@ -72,6 +72,9 @@ export default function ({ html /*state*/ }) {
               consider <a href="/2024/cfp">submitting a talk</a>.
               Every developer has a story to tell, and we want to hear yours!
             </p>
+            <p>
+              We are limiting Early Bird tickets to <b>150</b>, so make sure you get yours before they sell out! 
+            </p>
             <div class="cta primary"><a href="https://ti.to/event-loop/cascadiajs-2024/discount/EARLYBIRD">Early Bird tickets on sale now</a></div>
           </article>
           <article>

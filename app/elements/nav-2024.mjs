@@ -28,7 +28,8 @@ export default function MainHeader({ html }) {
               alt="CascadiaJS 2024 logo"
           /></a>
         </div>
-        <div class="push"><a href="/2024/cfp">Call for Presenters</a></div>
+        <div class="push"><a href="/2024/travel">Travel Info</a></div>
+        <div class="spacer"><a href="/2024/cfp">Call for Presenters</a></div>
       </div>
     </nav>
   `;
