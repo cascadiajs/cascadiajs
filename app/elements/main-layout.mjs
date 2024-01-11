@@ -16,6 +16,7 @@ export default function MainLayout({ html }) {
 
       .landing {
         padding: 32px 32px;
+        text-align: center;
       }
 
       .landing h1 {
@@ -44,9 +45,7 @@ export default function MainLayout({ html }) {
           grid-template-rows: auto 1fr auto;
         }
 
-        section.landing {
-          text-align: center;
-        }
+
 
         #testimonials div {
           display: flex;

@@ -3,6 +3,8 @@ title: Travel Info
 excerpt: How to get to CascadiaJS and where to stay
 ---
 
+We've worked with the following hotels to secure discounts for your stay in Seattle during CascadiaJS 2024! Please read the description below and make note of the deadlines for booking with the discount.
+
 ## Hotel Monaco Seattle
 
 ![Hotel Monaco Seattle (Kimpton)](/_public/images/2024/travel/kimpton-hotel-monaco.jpg)
