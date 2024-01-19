@@ -67,6 +67,21 @@ export default function MainLayout({ html }) {
           <h1>Testimonials</h1>
           <div>
             <div>
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The reason why <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw">@CascadiaJS</a> is one of my favorite conferences is because you can truly feel the passion and care that everyone puts into it. There&#39;s a real sense of community, it&#39;s amazing 🙌👏💜</p>&mdash; Charlie Gerard (@devdevcharlie) <a href="https://twitter.com/devdevcharlie/status/1565509276021362688?ref_src=twsrc%5Etfw">September 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div>
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Once again, <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw">@CascadiaJS</a> did not disappoint—I love that we have a community-focused conference right in the PNW. It&#39;s always inspiring to hear about what people are making, stretch my perspective, and meet new friends.<br><br>Also Sunriver resort was awesome 🤘<a href="https://twitter.com/hashtag/CascadiaJS?src=hash&amp;ref_src=twsrc%5Etfw">#CascadiaJS</a> <a href="https://t.co/SKlPeHibHE">pic.twitter.com/SKlPeHibHE</a></p>&mdash; Mark Palfreeman 🪐 (@markpalfreeman) <a href="https://twitter.com/markpalfreeman/status/1566111262014320640?ref_src=twsrc%5Etfw">September 3, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div>  
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Happy 10th Birthday <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw">@CascadiaJS</a>, and thanks to <a href="https://twitter.com/crtr0?ref_src=twsrc%5Etfw">@crtr0</a> and <a href="https://twitter.com/carrie_k?ref_src=twsrc%5Etfw">@carrie_k</a> for shepherding this amazing conference! Can&#39;t wait for <a href="https://twitter.com/hashtag/CascadiaJS?src=hash&amp;ref_src=twsrc%5Etfw">#CascadiaJS</a> 2024! <a href="https://t.co/Pu8p0oewer">pic.twitter.com/Pu8p0oewer</a></p>&mdash; Jeremy&#39;s got a #NewThing 🇺🇲🇺🇦 (@IAmJerdog) <a href="https://twitter.com/IAmJerdog/status/1565544078590504961?ref_src=twsrc%5Etfw">September 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div>  
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">On my way out of <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw">@CascadiaJS</a>, feeling grateful for the work that <a href="https://twitter.com/crtr0?ref_src=twsrc%5Etfw">@crtr0</a>, his family, the staff and volunteers, sponsors, speakers, and all put into this family reunion. <br><br>Some wonderful memories were made, and the combination of nature and lovely people made it so special. <a href="https://t.co/F4JC0318pe">pic.twitter.com/F4JC0318pe</a></p>&mdash; Tejas Kumar (@TejasKumar_) <a href="https://twitter.com/TejasKumar_/status/1566127865594355712?ref_src=twsrc%5Etfw">September 3, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div>  
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Wow, what a week at <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw">@CascadiaJS</a>! Our team thoroughly enjoyed connecting with other engineers, learning from various talks, &amp; experiencing beautiful Sunriver, OR. We wanted to thank everyone who helped organize this event; it was spectacular, and we cannot wait to be back in 2024. <a href="https://t.co/vCO33rBTFa">pic.twitter.com/vCO33rBTFa</a></p>&mdash; Formidable, Now Nearform (@FormidableLabs) <a href="https://twitter.com/FormidableLabs/status/1567143084957237251?ref_src=twsrc%5Etfw">September 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div>  
               <blockquote class="twitter-tweet">
                 <p lang="en" dir="ltr">
                   I&#39;m absolutely blown away by how much
