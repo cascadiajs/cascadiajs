@@ -75,7 +75,7 @@ export default function ({ html /*state*/ }) {
             <p>
               We are limiting Early Bird tickets to <b>150</b>, so make sure you get yours before they sell out! 
             </p>
-            <div class="cta primary"><a href="https://ti.to/event-loop/cascadiajs-2024/discount/EARLYBIRD">Early Bird tickets on sale now</a></div>
+            <div class="cta primary"><a href="/2024/tickets">Early Bird tickets on sale now</a></div>
           </article>
           <article>
             <img src="/_public/images/sasquatch.gif" alt="Sasquatch having ChatGPT write his code for him while chilling on a beach"/>

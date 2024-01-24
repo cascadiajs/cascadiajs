@@ -30,6 +30,7 @@ export default function MainHeader({ html }) {
         </div>
         <div class="push"><a href="/2024/travel">Travel Info</a></div>
         <div class="spacer"><a href="/2024/cfp">Call for Presenters</a></div>
+        <div class="spacer"><a href="/2024/tickets">Tickets</a></div>
       </div>
     </nav>
   `;
