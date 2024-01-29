@@ -68,7 +68,7 @@ strong {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 18px;
-    min-width: 400px;
+    max-width: 343px;
 }
 
 .styled-table thead tr {
@@ -92,7 +92,6 @@ strong {
     font-style: normal;
 }
 
-
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
@@ -103,8 +102,10 @@ strong {
 }
 
 .note-emphasis {
+    display: inline-block;
     background-color: #ffd007; 
     padding: 2px 5px;
+    margin-top: 2px;
     font-family: freight-macro-pro, serif; 
     font-weight: 400; 
     font-style: italic;
@@ -227,4 +228,10 @@ span.cta {
         margin: 0 auto;
         width: 70%;
     }
+
+    .styled-table {
+        max-width: 100%;
+        min-width: 400px;
+    }
+
 }
