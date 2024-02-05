@@ -14,8 +14,8 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
     </thead>
     <tbody>
     <tr class="faded"><td>Super Early Bird</td><td>Oct - Dec 31st, 2023</td><td>50% off</td></tr>
-    <tr><td>Early Bird <span class="note-emphasis">On sale now!</span></td><td>Jan 1 - Feb 4, 2024</td><td>35% off</td></tr>
-    <tr><td>Regular Bird</td><td>Feb 5 - May 26, 2024</td><td>20% off</td></tr>
+    <tr class="faded"><td>Early Bird</td><td>Jan 1 - Feb 4, 2024</td><td>35% off</td></tr>
+    <tr><td>Regular Bird <span class="note-emphasis">On sale now!</span></td><td>Feb 5 - May 26, 2024</td><td>20% off</td></tr>
     <tr><td>Full Price</td><td>May 27 - June 20, 2024</td><td>no discount</td></tr>
     </tbody>
 </table>
@@ -29,7 +29,7 @@ For group/team purchases, please email us at info@cascadiajs.com. We can separat
 ## Purchase a Ticket
 
 <div>
-    <tito-widget event="event-loop/cascadiajs-2024" discount-code="EARLYBIRD"></tito-widget>
+    <tito-widget event="event-loop/cascadiajs-2024" discount-code="REGULARBIRD"></tito-widget>
 </div>
 
 <script async src="https://js.tito.io/v2" async>

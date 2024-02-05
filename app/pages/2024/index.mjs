@@ -67,15 +67,15 @@ export default function ({ html /*state*/ }) {
               19 - 22. We'll host a Welcome Reception on June 19, have 2 days of
               talks and workshops on June 20 and 21 and get out and about the
               Seattle area for a day of activities on June 22!
-              <br /><br />
+              <!--br /><br />
               Our CFP is OPEN, please
               consider <a href="/2024/cfp">submitting a talk</a>.
-              Every developer has a story to tell, and we want to hear yours!
+              Every developer has a story to tell, and we want to hear yours!-->
             </p>
             <p>
               We are limiting Early Bird tickets to <b>150</b>, so make sure you get yours before they sell out! 
             </p>
-            <div class="cta primary"><a href="/2024/tickets">Early Bird tickets on sale now</a></div>
+            <div class="cta primary"><a href="/2024/tickets">Regular Bird tickets on sale now</a></div>
           </article>
           <article>
             <img src="/_public/images/sasquatch.gif" alt="Sasquatch having ChatGPT write his code for him while chilling on a beach"/>
