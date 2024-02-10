@@ -63,6 +63,11 @@ export default function MainLayout({ html }) {
       <main-header></main-header>
       <main id="content">
         <slot></slot>
+        <section id="sponsors" class="landing">
+        <h1>Our Sponsors</h1>
+          <sponsors-grid></sponsors-grid>
+        <div class="cta"><a target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vRwyyQ5-nrKrMEZpoc_ZRJh6ovIJdFi9K4KFR85iQ_VDyzXwyL_Z1anTcjZd_23Cy3wG-oYTcnT7xNi/pub">Sponsor Our Event</a></div>
+        </section>
         <section id="testimonials" class="landing">
           <h1>Testimonials</h1>
           <div>
