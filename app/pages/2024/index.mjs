@@ -72,23 +72,23 @@ export default function ({ html /*state*/ }) {
               consider <a href="/2024/cfp">submitting a talk</a>.
               Every developer has a story to tell, and we want to hear yours!-->
             </p>
-            <p>
-              We are limiting Early Bird tickets to <b>150</b>, so make sure you get yours before they sell out! 
-            </p>
             <div class="cta primary"><a href="/2024/tickets">Regular Bird tickets on sale now</a></div>
           </article>
           <article>
             <img src="/_public/images/sasquatch.gif" alt="Sasquatch having ChatGPT write his code for him while chilling on a beach"/>
           </article>
         </section>
-
+        <section id="speakers" class="landing">
+          <h1>Our Speakers</h1>
+          <speakers-grid></speakers-grid>
+        </section>
         <section id="features" class="landing">
           <h1>Features</h1>
           <div id="features-container">
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/venue.gif"
+                  src="/_public/images/2024/features/venue.gif"
                   alt="illustration of Sunriver Resort"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/talks.gif"
+                  src="/_public/images/2024/features/talks.gif"
                   alt="illustration of a microphone"
                 />
               </div>
@@ -115,7 +115,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/workshops.gif"
+                  src="/_public/images/2024/features/workshops.gif"
                   alt="illustration of merit badge"
                 />
               </div>
@@ -129,7 +129,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/allinclusive.gif"
+                  src="/_public/images/2024/features/allinclusive.gif"
                   alt="illustration of a meal"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/a11y.gif"
+                  src="/_public/images/2024/features/a11y.gif"
                   alt="illustration of a welcome mat"
                 />
               </div>
@@ -154,7 +154,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/activities.gif"
+                  src="/_public/images/2024/features/activities.gif"
                   alt="illustration of a pickleball racquet"
                 />
               </div>
@@ -168,7 +168,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/jobfair.gif"
+                  src="/_public/images/2024/features/jobfair.gif"
                   alt="illustration of a Help Wanted sign"
                 />
               </div>
@@ -181,7 +181,7 @@ export default function ({ html /*state*/ }) {
             <div class="feature">
               <div>
                 <img
-                  src="/_public/images/features/startup.gif"
+                  src="/_public/images/2024/features/startup.gif"
                   alt="illustration of a unicorn"
                 />
               </div>

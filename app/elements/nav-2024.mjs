@@ -1,6 +1,10 @@
 export default function MainHeader({ html }) {
   return html`
     <style>
+      .logo {
+        margin-bottom: 12px;
+      }
+
       nav.secondary {
         padding: 10px;
         background-color: #ccf1db;
@@ -16,6 +20,12 @@ export default function MainHeader({ html }) {
 
       nav a:hover {
         text-decoration: underline;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo {
+          margin-bottom: 0;
+        }
       }
     </style>
     <nav class="secondary">

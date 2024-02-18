@@ -28,6 +28,12 @@ const sponsors = [
         tier: 'community',
         logo: 'langchain.svg',
         name: 'LangChain'
+    },
+    { 
+        id: 'google',
+        tier: 'community',
+        logo: 'google.png',
+        name: 'Google'
     }
 ]
 
@@ -121,7 +127,7 @@ export default function Sponsors({ html }) {
                 <div class="tier-wrap"><div class="tier-inner"><div class="tier-label">${ tier }</div></div></div>
                 <div class="${ tier } tier">
                 ${ sponsors.filter(s => s.tier === tier).map(s => /*html*/`
-                    <div><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>
+                    <div><img src="/_public/images/2024/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>
                 `).join('') }
                 </div>
             `: ''}        
