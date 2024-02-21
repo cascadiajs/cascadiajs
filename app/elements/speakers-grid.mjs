@@ -5,14 +5,14 @@ const speakers = [
         company: "Microsoft",
         image: "aaron-gustafson.jpg",
         location: "Seattle, WA, USA"
-    }/*,
+    },
     { 
         id: "aiden-bai",
         name: "Aiden Bai",
         company: "million.dev",
         image: "aiden-bai.jpg",
         location: "San Francisco, CA, USA"
-    }*/,
+    },
     { 
         id: "dominic-farolino",
         name: "Dominic Farolino",
@@ -100,7 +100,7 @@ const speakers = [
     { 
         id: "tejas-kumar",
         name: "Tejas Kumar",
-        company: "Self-employed",
+        company: "Consultant @ DevRel",
         image: "tejas-kumar.jpg",
         location: "Berlin, Germany"
     },
@@ -202,12 +202,6 @@ export default function Sponsors({ html }) {
                 </div>
             </div>
             `).join('')}
-            <div class="person">
-                <div class="person-photo"><img src="/_public/images/2024/speakers/pixelated.png" alt="Pixelated Photo"/></div>
-                <div class="person-info">
-                    <div class="person-name">Secret</div>
-                </div>
-            </div> 
             <div class="person">
                 <div class="person-photo"><img src="/_public/images/2024/speakers/pixelated.png" alt="Pixelated Photo"/></div>
                 <div class="person-info">
