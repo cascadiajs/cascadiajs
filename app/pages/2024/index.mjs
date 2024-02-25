@@ -1,4 +1,5 @@
-export default function ({ html /*state*/ }) {
+export default function ({ html }) {
+
   return html` <style>
       #features-container {
         display: flex;

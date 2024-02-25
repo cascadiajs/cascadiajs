@@ -1,0 +1,727 @@
+[
+    {
+        "id": "aaron-turner",
+        "name": "Aaron Turner",
+        "location": "Los Angeles, CA",
+        "pronouns": "he/him",
+        "twitter": "torch2424",
+        "url": "https://fizbuz.com/u/torch2424",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/aaron-turner.jpg",
+        "company": "Wasmer"
+    },
+    {
+        "id": "amber-hoak",
+        "name": "Amber Hoak",
+        "location": "Silverdale, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/amber-hoak.jpg",
+        "pronouns": "she/her"
+    },
+    {
+        "id": "april-speight",
+        "name": "April Speight",
+        "location": "Los Angeles, CA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/april-speight.jpg",
+        "pronouns": "she/her"
+    },
+    {
+        "id": "atishay-jain",
+        "name": "Atishay Jain",
+        "image": "https://2018.cascadiajs.com//speakers/atishay.jpg",
+        "twitter": null
+    },
+    {
+        "id": "beryl-egerter",
+        "name": "Beryl Egerter",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/beryle-egerter.jpg",
+        "company": "Zillow Group"
+    },
+    {
+        "id": "brea-gaudioso",
+        "name": "Brea Gaudioso",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/brea-gaudioso.jpg",
+        "company": "Tune"
+    },
+    {
+        "id": "brian-holt",
+        "name": "Brian Holt",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/brian-holt.jpg",
+        "pronouns": "he/him",
+        "twitter": "holtbt",
+        "url": "https://fizbuz.com/u/btholt",
+        "company": "Microsoft"
+    },
+    {
+        "id": "brian-leroux",
+        "name": "Brian Leroux",
+        "image": "https://2018.cascadiajs.com//speakers/leroux.jpg",
+        "twitter": "brianleroux"
+    },
+    {
+        "id": "charlie-gerard",
+        "name": "Charlie Gerard",
+        "location": "Sydney, AU",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/charlie-gerard.jpg",
+        "pronouns": "she/her",
+        "twitter": "devdevcharlie",
+        "url": "https://fizbuz.com/u/charliegerard",
+        "company": "Atlassian"
+    },
+    {
+        "id": "christian-nunciato",
+        "name": "Christian Nunciato",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/christian-nunciato.jpg",
+        "pronouns": "he/him",
+        "twitter": "cnunciato",
+        "url": "https://fizbuz.com/u/cnunciato",
+        "company": "Pulumi"
+    },
+    {
+        "id": "claudius-mbemba",
+        "name": "Claudius Mbemba",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/claudius-mbemba.jpg",
+        "pronouns": "he/him",
+        "twitter": "mbembaships",
+        "url": "https://fizbuz.com/u/user1m",
+        "company": "Neu"
+    },
+    {
+        "id": "dan-mckeon",
+        "name": "Dan McKeon",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/dan-mckeon.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "daniel-lemay",
+        "name": "Daniel Lemay",
+        "location": "Portland, OR",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/daniel-lemay.jpg",
+        "pronouns": "he/him",
+        "twitter": "dslemay",
+        "company": "Phase2 Technology"
+    },
+    {
+        "id": "daria-caraway",
+        "name": "Daria Caraway",
+        "location": "Denver, CO",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/daria-caraway.jpg",
+        "pronouns": "she/her",
+        "twitter": "darcar31",
+        "company": "Workday"
+    },
+    {
+        "id": "divya-sasidharan",
+        "name": "Divya Sasidharan",
+        "location": "Boston, MA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/divya-sasidharan.jpg",
+        "pronouns": "she/her",
+        "twitter": "shortdiv",
+        "company": "Netlify"
+    },
+    {
+        "id": "dominik-kundel",
+        "name": "Dominik Kundel",
+        "location": "San Francisco, CA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/dominik-kundel.jpg",
+        "pronouns": "he/him",
+        "twitter": "DKundel",
+        "company": "Twilio"
+    },
+    {
+        "id": "ej-mason",
+        "name": "EJ Mason",
+        "location": "Los Angeles, CA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/ej-mason.jpg",
+        "pronouns": "he/him",
+        "twitter": "codeability",
+        "company": "Webflow"
+    },
+    {
+        "id": "elgin-skye-mclaren",
+        "name": "Elgin-Skye McLaren",
+        "image": "https://2018.cascadiajs.com//speakers/elgin-mcLaren.jpg",
+        "twitter": "elginskye"
+    },
+    {
+        "id": "eran-hammer",
+        "name": "Eran Hammer",
+        "location": "Los Gatos, CA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/eran-hammer.jpg",
+        "pronouns": "he/him",
+        "twitter": "eranhammer",
+        "company": "Sideway, Inc"
+    },
+    {
+        "id": "evan-tahler",
+        "name": "Evan Tahler",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/evan-tahler.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "faddah-wolf",
+        "name": "Faddah Wolf",
+        "image": "https://2018.cascadiajs.com//speakers/faddah.jpg",
+        "twitter": "yuetsu"
+    },
+    {
+        "id": "fred-k-schott",
+        "name": "Fred K Schott",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/fred-k-schott.jpg",
+        "twitter": "FredKSchott"
+    },
+    {
+        "id": "geoff-cox",
+        "name": "Geoff Cox",
+        "location": "Seattle, WA",
+        "image": "https://2019.cascadiajs.com/speakers/geoff-cox",
+        "company": "Knock"
+    },
+    {
+        "id": "gilad-gray",
+        "name": "Gilad Gray",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/gilad-gray.jpg",
+        "company": "Peregrine Technologies"
+    },
+    {
+        "id": "ginger-chien",
+        "name": "Ginger Chien",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/ginger-chien.jpg",
+        "pronouns": "she/her",
+        "twitter": "spacepupster",
+        "company": "LEAGUE at AT&T"
+    },
+    {
+        "id": "glenn-block",
+        "name": "Glenn Block",
+        "image": "https://2018.cascadiajs.com//speakers/gblock.jpg",
+        "twitter": "gblock"
+    },
+    {
+        "id": "guillaume-peugniez",
+        "name": "Guillaume Peugniez",
+        "location": "Vancouver, BC",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/guillaume-peugniez.jpg",
+        "url": "https://fizbuz.com/u/mrpeu",
+        "company": "For Hire"
+    },
+    {
+        "id": "hannah-ingham",
+        "name": "Hannah Ingham",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/hannah-ingham.jpg",
+        "company": "Slalom"
+    },
+    {
+        "id": "injoong-yoon",
+        "name": "Injoong Yoon",
+        "location": "Portland, OR",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/injoong-yoon.jpg",
+        "company": "Tivix, Inc."
+    },
+    {
+        "id": "isabela-moreira",
+        "name": "Isabela Moreira",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/isabela-moreira.jpg",
+        "pronouns": "she/her",
+        "twitter": "isabelacmor",
+        "url": "https://fizbuz.com/u/isabelacmor",
+        "company": "Cedar AI"
+    },
+    {
+        "id": "ishan-anand",
+        "name": "Ishan Anand",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/ishan-anand.jpg",
+        "company": "Moovweb"
+    },
+    {
+        "id": "james-snell",
+        "name": "James Snell",
+        "image": "https://2018.cascadiajs.com//speakers/snell.jpg",
+        "twitter": "jasnell"
+    },
+    {
+        "id": "james-steinbach",
+        "name": "James Steinbach",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/james-steinbach.jpg",
+        "twitter": "jdsteinbach"
+    },
+    {
+        "id": "jasper-schulte",
+        "name": "Jasper Schulte",
+        "location": "Amsterdam, NE",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/jasper-schulte.jpg",
+        "pronouns": "he/him",
+        "twitter": "zjaaspoer",
+        "url": "undefined",
+        "company": "TripAdvisor"
+    },
+    {
+        "id": "jemima-abu",
+        "name": "Jemima Abu",
+        "location": "Kaunas, Lithuania",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/jemima-abu.jpg",
+        "pronouns": "she/her",
+        "twitter": "jemimaabu"
+    },
+    {
+        "id": "jerome-hardaway",
+        "name": "Jerome Hardaway",
+        "location": "Nashville, TN",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/jerome-hardaway.jpg",
+        "pronouns": "he/him",
+        "twitter": "JeromeHardaway",
+        "company": "Vets Who Code"
+    },
+    {
+        "id": "jim-liu",
+        "name": "Jim Liu",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/jim-liu.jpg",
+        "company": "Nordstrom"
+    },
+    {
+        "id": "joel-hooks",
+        "name": "Joel Hooks",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/joel-hooks.jpg",
+        "twitter": "jhooks"
+    },
+    {
+        "id": "johnny-ray-austin",
+        "name": "Johnny Ray Austin",
+        "location": "Washington, DC",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/johnny-ray-austin.jpg",
+        "pronouns": "he/him",
+        "twitter": "recursivefunk",
+        "url": "https://fizbuz.com/u/recursivefunk",
+        "company": "Till"
+    },
+    {
+        "id": "julie-busch",
+        "name": "Julie Busch",
+        "image": "https://2018.cascadiajs.com//speakers/julie.jpg",
+        "twitter": null
+    },
+    {
+        "id": "kelsey-breseman",
+        "name": "Kelsey Breseman",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/kelsey-breseman.jpg",
+        "twitter": "ifoundtheme"
+    },
+    {
+        "id": "kinuko-yasuda",
+        "name": "Kinuko Yasuda",
+        "location": "Tokyo, JP",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/kinuko-yasuda.jpg",
+        "pronouns": "she/her",
+        "twitter": "kinu",
+        "url": "https://fizbuz.com/u/kinu",
+        "company": "Google"
+    },
+    {
+        "id": "kristofer-joseph",
+        "name": "Kristofer Joseph",
+        "location": "San Francisco, CA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/kristofer-joseph.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "kyle-jacobson",
+        "name": "Kyle Jacobson",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/kyle-jacobson.jpg",
+        "company": "LiveStories"
+    },
+    {
+        "id": "kyle-simpson",
+        "name": "Kyle Simpson",
+        "location": "Austin, TX",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/kyle-simpson.jpg",
+        "pronouns": "he/him",
+        "twitter": "getify"
+    },
+    {
+        "id": "laker-sparks",
+        "name": "Laker Sparks",
+        "image": "https://2018.cascadiajs.com//speakers/laker.png",
+        "twitter": "UristMcSparks"
+    },
+    {
+        "id": "lauren-lee",
+        "name": "Lauren Lee",
+        "image": "https://2018.cascadiajs.com//speakers/laurenlee.jpg",
+        "twitter": "LoLoCoding"
+    },
+    {
+        "id": "lisa-backer",
+        "name": "Lisa Backer",
+        "location": "Washington, DC",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/lisa-backer.jpg",
+        "pronouns": "she/her",
+        "twitter": "eshtadc",
+        "url": "https://fizbuz.com/u/eshtadc",
+        "company": "DockYard"
+    },
+    {
+        "id": "megan-slater",
+        "name": "Megan Slater",
+        "image": "https://2018.cascadiajs.com//speakers/slater.jpg",
+        "twitter": "meslater1030"
+    },
+    {
+        "id": "memo-doring",
+        "name": "Memo Döring",
+        "image": "https://2018.cascadiajs.com//speakers/memo.png",
+        "twitter": "memodoring"
+    },
+    {
+        "id": "michael-lange",
+        "name": "Michael Lange",
+        "image": "https://2018.cascadiajs.com//speakers/michael-lange.jpg",
+        "twitter": "DingoEatingFuzz"
+    },
+    {
+        "id": "mikeal-rogers",
+        "name": "Mikeal Rogers",
+        "image": "https://2018.cascadiajs.com//speakers/mikeal.png",
+        "twitter": "mikeal"
+    },
+    {
+        "id": "myriam-e-walden-duarte",
+        "name": "Myriam E Walden-Duarte",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/myriam-e-walden-duarte.jpg",
+        "pronouns": "she/her"
+    },
+    {
+        "id": "najla-elmachtoub",
+        "name": "Najla Elmachtoub",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/najla-elmachtoub.jpg",
+        "twitter": "najtube"
+    },
+    {
+        "id": "noah-adams",
+        "name": "Noah Adams",
+        "location": "Vancouver, BC",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/noah-adams.jpg",
+        "twitter": "noah_adams",
+        "url": "https://fizbuz.com/u/noah",
+        "company": "Mobify"
+    },
+    {
+        "id": "pantelis-kalogiros",
+        "name": "Pantelis Kalogiros",
+        "location": "San Francisco, CA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/pantelis-kalogiros.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "patrick-woo",
+        "name": "Patrick Woo",
+        "image": "https://2018.cascadiajs.com//speakers/patrickwoo.jpg",
+        "twitter": "patrickwoo"
+    },
+    {
+        "id": "pranshu-bajpai",
+        "name": "Pranshu Bajpai",
+        "image": "https://2018.cascadiajs.com//speakers/pranshu.jpg",
+        "twitter": "amirootyet"
+    },
+    {
+        "id": "rachelle-rathbone",
+        "name": "Rachelle Rathbone",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/rachelle-rathbone.jpg",
+        "pronouns": "she/her"
+    },
+    {
+        "id": "rahat-chowdhury",
+        "name": "Rahat Chowdhury",
+        "location": "New York City",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/rahat-chowdhury.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "romulo-cintra-espirito-santo",
+        "name": "Romulo Cintra Espirito Santo",
+        "location": "Barcelona, Spain",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/romulo-cintra-espirito-santo.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "ruth-john",
+        "name": "Ruth John",
+        "image": "https://2018.cascadiajs.com/speakers/ruth.jpg",
+        "twitter": "Rumyra"
+    },
+    {
+        "id": "saimon-sharif",
+        "name": "Saimon Sharif",
+        "location": "New York, NY",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/saimon-sharif.jpg",
+        "pronouns": "he/him",
+        "twitter": "saimonsharif",
+        "company": "Attune"
+    },
+    {
+        "id": "samantha-siow",
+        "name": "Samantha Siow",
+        "location": "San Francisco, CA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/samantha-siow.jpg",
+        "pronouns": "she/her",
+        "twitter": "samanthassiow",
+        "url": "https://fizbuz.com/u/samantha",
+        "company": "Slack"
+    },
+    {
+        "id": "sangeetha-kp",
+        "name": "Sangeetha KP",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/sangeetha-kp.jpg",
+        "pronouns": "she/her"
+    },
+    {
+        "id": "scott-ammon",
+        "name": "Scott Ammon",
+        "location": "Seattle, WA",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/scott-ammon.jpg",
+        "pronouns": "he/him/his"
+    },
+    {
+        "id": "shannon-capper",
+        "name": "Shannon Capper",
+        "image": "https://2018.cascadiajs.com//speakers/shannon-capper.jpg",
+        "twitter": null
+    },
+    {
+        "id": "shannon-foster",
+        "name": "Shannon Foster",
+        "image": "https://2018.cascadiajs.com//speakers/shannon-foster.jpg",
+        "twitter": "SheCanTech"
+    },
+    {
+        "id": "shawn-wang",
+        "name": "Shawn Wang",
+        "location": "Singapore",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/shawn-wang.jpg",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "simon-korzunov",
+        "name": "Simon Korzunov",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/simon-korzunov.jpg",
+        "company": "Dropbox"
+    },
+    {
+        "id": "tara-vancil",
+        "name": "Tara Vancil",
+        "image": "https://2018.cascadiajs.com//speakers/taravancil.jpg",
+        "twitter": "taravancil"
+    },
+    {
+        "id": "tianyu-pu",
+        "name": "Tianyu Pu",
+        "location": "Amsterdam",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/tianyu-pu.jpg",
+        "pronouns": "she/her"
+    },
+    {
+        "id": "tiger-oakes",
+        "name": "Tiger Oakes",
+        "location": "Vancouver, BC",
+        "image": "https://create-4jr-staging.begin.app/_static/2020/tiger-oakes.jpg",
+        "twitter": "not_woods",
+        "pronouns": "he/him"
+    },
+    {
+        "id": "tre-ammatuna",
+        "name": "Tre Ammatuna",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/tre-tuna.jpg",
+        "company": "Leafly",
+        "twitter": "tretuna"
+    },
+    {
+        "id": "trivikram-kamat",
+        "name": "Trivikram Kamat",
+        "location": "Seattle, WA",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/trivikram-kamat.jpg",
+        "pronouns": "he/him",
+        "twitter": "trivikram",
+        "url": "https://fizbuz.com/u/trivikr",
+        "company": "Amazon"
+    },
+    {
+        "id": "vincent-sanders",
+        "name": "Vincent Sanders",
+        "location": "Portland, OR",
+        "image": "https://2019.cascadiajs.com/speakers/vincent-sanders",
+        "company": "TG4 Solutions"
+    },
+    {
+        "id": "will-klein",
+        "name": "Will Klein",
+        "image": "https://2018.cascadiajs.com//speakers/will.jpg",
+        "twitter": "WillsLab"
+    },
+    {
+        "id": "yehuda-katz",
+        "name": "Yehuda Katz",
+        "image": "https://2018.cascadiajs.com//speakers/yehuda.jpg",
+        "twitter": "wycats"
+    },
+    {
+        "id": "yuraima-estevez",
+        "name": "Yuraima Estevez",
+        "location": "New York, NY",
+        "image": "https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/speakers/yuraima-estevez.jpg",
+        "pronouns": "she/her",
+        "twitter": "Yurm04",
+        "company": "NYT"
+    },
+    {
+        "id": "aaron-gustafson",
+        "name": "Aaron Gustafson",
+        "company": "Microsoft",
+        "twitter": "aarongustafson",
+        "image": "aaron-gustafson.jpg",
+        "location": "Seattle, WA, USA"
+    },
+    {
+        "id": "aiden-bai",
+        "name": "Aiden Bai",
+        "company": "million.dev",
+        "image": "aiden-bai.jpg",
+        "location": "San Francisco, CA, USA"
+    },
+    {
+        "id": "dominic-farolino",
+        "name": "Dominic Farolino",
+        "company": "Google",
+        "twitter": "domfarolino",
+        "image": "dominic-farolino.jpg",
+        "location": "Cambridge, MA, USA"
+    },
+    {
+        "id": "geoff-rich",
+        "name": "Geoff Rich",
+        "company": "Ordergroove",
+        "image": "geoff-rich.jpg",
+        "location": "Tacoma, WA, USA"
+    },
+    {
+        "id": "henri-helvetica",
+        "name": "Henri Helvetica",
+        "company": "command-h",
+        "image": "henri-helvetica.jpg",
+        "location": "Toronto, Canada"
+    },
+    {
+        "id": "herve-aniglo",
+        "name": "Herve Aniglo",
+        "company": "Black Girls Code",
+        "image": "herve-aniglo.jpg",
+        "location": "Atlanta, GA, USA"
+    },
+    {
+        "id": "jacob-lee",
+        "name": "Jacob Lee",
+        "company": "LangChain",
+        "image": "jacob-lee.jpg",
+        "location": "San Francisco, CA, USA"
+    },
+    {
+        "id": "jerome-woody",
+        "name": "Jerome Woody",
+        "company": "Discogs",
+        "image": "jerome-woody.jpg",
+        "location": "Seattle, WA, USA"
+    },
+    {
+        "id": "josh-goldberg",
+        "name": "Josh Goldberg",
+        "company": "Freelance / Open Source",
+        "image": "josh-goldberg.jpg",
+        "location": "Philadelphia, PA, USA"
+    },
+    {
+        "id": "kristen-thayer",
+        "name": "Kristen M Thayer",
+        "company": "Seesaw Learning",
+        "image": "kristen-thayer.jpg",
+        "location": "Seattle, WA, USA"
+    },
+    {
+        "id": "molly-jean-bennett",
+        "name": "Molly Jean Bennett",
+        "company": "Grow Therapy",
+        "image": "molly-jean-bennett.jpg",
+        "location": "Portland, OR, USA"
+    },
+    {
+        "id": "penelope-mclachlan",
+        "name": "Penelope McLachlan",
+        "company": "Google",
+        "image": "penelope-mclachlan.jpg",
+        "location": "Vancouver, BC, Canada"
+    },
+    {
+        "id": "rachel-lee-nabors",
+        "name": "Rachel Lee Nabors",
+        "company": "Consultant",
+        "image": "rachel-lee-nabors.jpg",
+        "location": "London, UK"
+    },
+    {
+        "id": "rizel-scarlett",
+        "name": "Rizel Scarlett",
+        "company": "TBD",
+        "image": "rizel-scarlett.jpg",
+        "location": "Boston, MA, USA"
+    },
+    {
+        "id": "swyx",
+        "name": "Shawn Swyx Wang",
+        "company": "smol.ai",
+        "image": "swyx.jpg",
+        "location": "San Francisco, CA, USA"
+    },
+    {
+        "id": "shruti-kapoor",
+        "name": "Shruti Kapoor",
+        "company": "Slack",
+        "image": "shruti-kapoor.jpg",
+        "location": "Washington, DC, USA"
+    },
+    {
+        "id": "tejas-kumar",
+        "name": "Tejas Kumar",
+        "company": "Consultant @ DevRel",
+        "image": "tejas-kumar.jpg",
+        "location": "Berlin, Germany"
+    },
+    {
+        "id": "tracy-lee",
+        "name": "Tracy Lee",
+        "company": "This Dot",
+        "image": "tracy-lee.jpg",
+        "location": "Atlanta, GA, USA"
+    },
+    {
+        "id": "tyler-sticka",
+        "name": "Tyler Sticka",
+        "company": "Cloud Four",
+        "image": "tyler-sticka.jpg",
+        "location": "Portland, OR, USA"
+    }
+]

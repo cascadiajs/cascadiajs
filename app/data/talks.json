@@ -1,0 +1,1061 @@
+[
+    {
+        "id": "accessibility-is-a-hydra",
+        "speaker_id": "ej-mason",
+        "event_id": "cascadiajs-2019",
+        "title": "accessibility is a Hydra",
+        "tags": [
+            "accessibility"
+        ],
+        "abstract": "When Hercules fought the hydra, its heads would grow back no matter how many times he cut them off. Web accessibility professionals put repeated effort toward fighting accessibility barriers, and often feel like their work is never done. If we want to prevail against accessibility barriers, we have to understand our own hydra: we have to talk about ableism.",
+        "ytId": "SDdsD5AmKYA"
+    },
+    {
+        "id": "app-not-ejected-properly",
+        "speaker_id": "gilad-gray",
+        "event_id": "cascadiajs-2019",
+        "title": "\"App Not Ejected Properly\"",
+        "tags": [
+            "react.js"
+        ],
+        "abstract": "So you've ejected your create-react-app and you're free-falling through Node build code. Allow me to build you a parachute on the way down. We'll demystify the build process and reverse-engineer the webpack puzzle so you can sleep again."
+    },
+    {
+        "id": "augmenting-the-internet-with-browser-extensions",
+        "speaker_id": "shannon-capper",
+        "event_id": "cascadiajs-2018",
+        "title": "Augmenting the Internet with Browser Extensions",
+        "tags": [
+            "browser",
+            "extensions"
+        ],
+        "abstract": "A browser extension can give you the power to add a whole new user experience to any page on the Internet, but it also introduces some unique problems. In this talk, we’ll discuss some of the challenges my team at Textio faced when we built an extension to augment the writing experience on pages across the web, as well as the solutions we discovered for making our plugin low-profile and extensible.",
+        "ytId": "OguVJXIbHdU"
+    },
+    {
+        "id": "authentication-for-the-rest-of-us",
+        "speaker_id": "divya-sasidharan",
+        "event_id": "cascadiajs-2019",
+        "title": "Authentication for the REST of Us",
+        "tags": [
+            "authentication"
+        ],
+        "abstract": "Authentication is a complicated subject that is hard to grok, let’s unpack all kinds of auth concepts and examine how we can apply them to our applications.",
+        "ytId": "wma2f_cqRnw"
+    },
+    {
+        "id": "binary-encoding-in-javascript",
+        "speaker_id": "simon-korzunov",
+        "event_id": "cascadiajs-2019",
+        "title": "Binary Encoding in JavaScript",
+        "tags": [
+            "web assembly"
+        ],
+        "abstract": "A story about efficient communication between JS and Rust, and how binary encoding might be used with WebWorkers and WebAssembly."
+    },
+    {
+        "id": "building-a-culture-of-learning-and-growth",
+        "speaker_id": "tre-ammatuna",
+        "event_id": "cascadiajs-2018",
+        "title": "Building a Culture of Learning and Growth",
+        "tags": [
+            "culture"
+        ],
+        "abstract": "From junior dev to C-level executive, continued education and growth are keys to success in today rapidly advancing tech industry. Everyone benefits from a culture built around these ideas that help you and your team not only keep up with the changes, but also share knowledge already gained.",
+        "ytId": "x2jq0lvUu68"
+    },
+    {
+        "id": "building-better-communities-with-mental-health-support",
+        "speaker_id": "rahat-chowdhury",
+        "event_id": "cascadiajs-2020",
+        "title": "Building Better Communities with Mental Health Support",
+        "tags": [
+            "mental health"
+        ],
+        "abstract": "Navigating through communities in tech can be a stressful experience, especially to those who live with a mental illness. In this talk Rahat explores why it is important to begin a conversation about Mental Health and acknowledging some of the things that need to change in the current culture of tech communities with a focus on Bootcamps and Tech Events.",
+        "ytId": "atcAfv5ewng"
+    },
+    {
+        "id": "building-for-budgets",
+        "speaker_id": "aaron-turner",
+        "event_id": "cascadiajs-2019",
+        "title": "Building for Budgets",
+        "tags": [
+            "web assembly",
+            "web workers",
+            "accessibility"
+        ],
+        "abstract": "A personal story of living in a low income family. With tips on how modern web technologies, like WebAssembly and Web Workers, can bring new experiences to the web for budget devices that struggled to run these experiences before.",
+        "ytId": "CYVs9hllqZY"
+    },
+    {
+        "id": "codemods:-refactoring-javascript-using-javascript",
+        "speaker_id": "saimon-sharif",
+        "event_id": "cascadiajs-2019",
+        "title": "Codemods: Refactoring JavaScript using JavaScript",
+        "tags": [
+            "refactoring"
+        ],
+        "abstract": "With codemods, engineers can programmatically refactor their code, saving hundreds of hours while reducing tech debt. I’ll share my love, struggles, and successes applying them in a large codebase. We’ll see my favorite codemods along with tips on how to use them effectively, and also write one from scratch.",
+        "ytId": "t8aQ5zVaEgU"
+    },
+    {
+        "id": "complex-geometry-in-html",
+        "speaker_id": "pantelis-kalogiros",
+        "event_id": "cascadiajs-2020",
+        "title": "Complex Geometry in HTML! A story of Constrained Creativity",
+        "tags": [
+            "css",
+            "3d",
+            "performance"
+        ],
+        "abstract": "We have all seen rotating cubes and used transformZ(0) for some quick boost in performance. But what else are 3d transforms good for? Let's see how we can construct complex geometry, and build a full first person game rendered entirely in html/css and js! Pushing the limits of what a technology is supposed to do, can unlock a world of creativity and out of the box thinking.",
+        "ytId": "cpxOgme8d24"
+    },
+    {
+        "id": "controlling-a-swarm-of-drones-with-javascript",
+        "speaker_id": "jasper-schulte",
+        "event_id": "cascadiajs-2019",
+        "title": "Controlling a Swarm of Drones with JavaScript",
+        "tags": [
+            "node.js",
+            "hardware"
+        ],
+        "abstract": "We're pretty used to drones flying around us by now. Until now most of these drones were still controlled by a human operator. But what if we could control them solely using our code? In this talk I will show how to control multiple drones using JavaScript. With the help of Node.js we'll send commands to the drones and read back their telemetry. I will talk about the difficulties of flying and keeping control of a drone completely without human interference. At the end we will actually have a small swarm of drones flying on stage!",
+        "ytId": "GTkp6d1q5IA"
+    },
+    {
+        "id": "conversational-semantics-for-the-web",
+        "speaker_id": "aaron-gustafson",
+        "event_id": "cascadiajs-2018",
+        "title": "Conversational Semantics for the Web",
+        "tags": [
+            "semantic web",
+            "voice"
+        ],
+        "abstract": "Over time, your users will become more accustomed to and reliant on voice-based interactions with their computers and, thereby, the web. Enabling them to complete critical tasks without a visual user interface will be crucial for the long-term success of your website. In this session, Aaron Gustafson will discuss how smart markup choices can improve the overall usability and accessibility of your projects without disrupting your current workflow.",
+        "ytId": "gZiysmuwwMA"
+    },
+    {
+        "id": "creative-architectures:-graphql-rest-and-netlify-serverless",
+        "speaker_id": "hannah-ingham",
+        "event_id": "cascadiajs-2019",
+        "title": "Creative Architectures: GraphQL, REST & Netlify Serverless",
+        "tags": [
+            "graphql",
+            "rest",
+            "serverless"
+        ],
+        "abstract": "The best of both worlds: have your REST, and GraphQL too! Explore a demo application that uses GraphQL and REST APIs, powered with Netlify serverless functions, for a better developer experience."
+    },
+    {
+        "id": "creative-coding-and-opening-up-open-source",
+        "speaker_id": "elgin-skye-mclaren",
+        "event_id": "cascadiajs-2018",
+        "title": "Creative Coding & Opening Up Open Source",
+        "tags": [
+            "art",
+            "open source"
+        ],
+        "abstract": "This presentation is about coding interactive art in the browser. I will talk about p5js — what it is, and what we as developers can learn from its intentionally inclusive community.",
+        "ytId": "Nod5D8JtqKk"
+    },
+    {
+        "id": "creative-collaboration:-building-a-universal-design-system",
+        "speaker_id": "julie-busch",
+        "event_id": "cascadiajs-2018",
+        "title": "Creative Collaboration: Building a Universal Design System",
+        "tags": [
+            "design"
+        ],
+        "abstract": "Condé Nast, the publisher of such titles as WIRED, The New Yorker, GQ, Vogue, and Vanity Fair, consolidated the codebases of their 20+ websites to improve development speed and product flexibility. Multiple engineering teams built various interconnected components of the new software from the ground up; concurrently, design teams created a system that allows the publications to share the same code and retain their unique look and feel. This presentation explores early challenges of this change and how the evolution of our workflow streamlined the design and development process.",
+        "ytId": "Yz6Jxdf9PH8"
+    },
+    {
+        "id": "developing-your-community-brand",
+        "speaker_id": "joel-hooks",
+        "event_id": "cascadiajs-2020",
+        "title": "Developing Your Community Brand",
+        "tags": [
+            "career"
+        ],
+        "abstract": "Your community brand is your reputation and it can happen by accident or it can be designed. If you are intentional and thoughtful about how you create and interact with your community will play a huge role in your career and potential opportunities. Being intentional and following a few simple patterns can take your career to the next level and help you achieve your potential.",
+        "ytId": "wOnvJQ9nPSY"
+    },
+    {
+        "id": "down-the-rabbit-hole-with-webvr",
+        "speaker_id": "shannon-foster",
+        "event_id": "cascadiajs-2018",
+        "title": "Down the rabbit hole with WebVR",
+        "tags": [
+            "webvr"
+        ],
+        "abstract": "The evolution of user interactivity on the web has birthed the growing advancements of web innovation and creativity. Pushing developers and designers to look for unique ways to engage and immerse our users. From utilizing AR in online retail to show what products would physically look like either in a living space or on the users themselves, to banking in VR where low-poly animations are used to teach money management. Let's explore available VR tools, from A-Frame and beyond, and different use cases for developing in VR for the web.",
+        "ytId": "H8crihughSc"
+    },
+    {
+        "id": "enabling-web-developers-to-build-the-future-of-the-web",
+        "speaker_id": "yehuda-katz",
+        "event_id": "cascadiajs-2018",
+        "title": "Enabling Web Developers to Build the Future of the Web",
+        "tags": [
+            "web standards"
+        ],
+        "abstract": "",
+        "ytId": "3bStv_QbFlo"
+    },
+    {
+        "id": "even-faster:-now-with-functions!",
+        "speaker_id": "brian-leroux",
+        "event_id": "cascadiajs-2018",
+        "title": "Even Faster: now with Functions!",
+        "tags": [
+            "serverless"
+        ],
+        "abstract": "The secret weapon of serverless architectures is extremely fast deployments with zero downtime. Surgical deploys allow for updating a single function in place within 1 second. All this adds up to faster iterations, which means quicker turnaround and that equals: super stoked devs!",
+        "ytId": "KkJ3DLDUfUY"
+    },
+    {
+        "id": "fair-trade-open-source",
+        "speaker_id": "eran-hammer",
+        "event_id": "cascadiajs-2019",
+        "title": "Fair Trade Open Source",
+        "tags": [
+            "open source"
+        ],
+        "abstract": "What does “sustainable open source” means and how we can create a common vocabulary discussing it? Different people have very different motivations behind their open source work and what makes it sustainable (for them). We'll take a strall through the open source funding landscape and discuss what fairness means.",
+        "ytId": "qVMo54BUqEA"
+    },
+    {
+        "id": "faster-development-with-gatsby-themes:-a-case-study-with-major-league-soccer",
+        "speaker_id": "daniel-lemay",
+        "event_id": "cascadiajs-2019",
+        "title": "Faster development with Gatsby Themes: A Case Study with Major League Soccer",
+        "tags": [
+            "gatsby.js"
+        ],
+        "abstract": "From providing multilingual support to shared componentry, config and more, Gatsby Themes enable you to quickly spin up new sites. Discover lessons learned from using themes in production for a Major League Soccer multi-site platform."
+    },
+    {
+        "id": "fostering-the-next-generation-of-developers",
+        "speaker_id": "laker-sparks",
+        "event_id": "cascadiajs-2018",
+        "title": "Fostering the Next Generation of Developers",
+        "tags": [
+            "kids coding",
+            "education"
+        ],
+        "abstract": "When you hear about a development studio, you may typically think about a group of industry experts with years of experience and education. But there is a new generation of emerging developers who are not content to wait for college, or even high school to get in the game. As the head of Information Experience on Roblox, Laker Sparks has seen young hobbyist programmers transform into multi-million dollar development teams. In this talk, he will share his learnings and observations about the experiences and challenges of these young developers, and then discuss resources and techniques you can use to help foster this next generation of developers and creators.",
+        "ytId": "l5XRKT0jWZk"
+    },
+    {
+        "id": "from-script-to-screen",
+        "speaker_id": "injoong-yoon",
+        "event_id": "cascadiajs-2019",
+        "title": "From Script to Screen",
+        "tags": [
+            "writing"
+        ],
+        "abstract": "Screenwriting and writing code are surprisingly similar in some ways. In this talk, we'll explore those similarities and what the rules and conventions of screenwriting can teach us about writing better code."
+    },
+    {
+        "id": "futurist-code-bases-integrating-js-of-the-future-today",
+        "speaker_id": "brian-holt",
+        "event_id": "cascadiajs-2019",
+        "title": "Futurist Code Bases - Integrating JS of the Future Today",
+        "tags": [
+            "javascript"
+        ],
+        "ytId": "VeIkhgb-i68"
+    },
+    {
+        "id": "hitchhiker's-guide-to-web-standards",
+        "speaker_id": "dominic-farolino",
+        "event_id": "cascadiajs-2018",
+        "title": "Hitchhiker's Guide to Web Standards",
+        "tags": [
+            "web standards"
+        ],
+        "abstract": "Web standards and their corresponding organizations can be your best friend, and extremely daunting at the same time. As a web developer, you are in the unique position of being able to influence the platform you develop on every day - so come and learn how the world of web standards works, how to contribute to the web standards community, and about some of the latest platform trends.",
+        "ytId": "z2SbknMWtp0"
+    },
+    {
+        "id": "how-i-graduated-from-react-to-vanilla-javascript",
+        "speaker_id": "dan-mckeon",
+        "event_id": "cascadiajs-2020",
+        "title": "How I Graduated from React to Vanilla JavaScript",
+        "tags": [
+            "javascript",
+            "react.js"
+        ],
+        "abstract": "After falling in love with React, I found myself thrust into the seemingly boring world of vanilla JavaScript. While at first I missed the conveniences of modern JS frameworks, it turned out I found a certain beauty in vanilla. Learn how we use vanilla JavaScript to build a cross-framework, accessible design system, and the insights we’ve gathered along the way.",
+        "ytId": "m5qDSIO-Glo"
+    },
+    {
+        "id": "how-i-learned-to-stop-worrying-and-let-the-robot-publish-to-npm",
+        "speaker_id": "evan-tahler",
+        "event_id": "cascadiajs-2020",
+        "title": "How I learned to Stop Worrying and Let the Robot Publish to NPM",
+        "tags": [
+            "typescript",
+            "devops",
+            "devtools",
+            "npm"
+        ],
+        "abstract": "As professional developers, we /probably/ don’t deploy code directly to production and we /usually/ test things first.  There’s a whole world of tools and best practices like Git Flow, Continuous Integration, and Review Apps to help us build and deploy our apps and websites... but what about the developer tools we use every day?  This talk will focus on how to parallel some of these same best-practices when making developer tools and frameworks.  Together we will build a CI/CD pipeline for publishing to packages to NPM.",
+        "ytId": "rM5PxymAJY8"
+    },
+    {
+        "id": "how-linters-compilers-and-other-cool-things-work",
+        "speaker_id": "will-klein",
+        "event_id": "cascadiajs-2018",
+        "title": "How Linters, Compilers & Other Cool Things Work",
+        "tags": [
+            "tooling",
+            "ast"
+        ],
+        "abstract": "Step inside your everyday JavaScript tools, and you’ll find the abstract syntax tree. With the AST, let’s discover how our tools work, how we can extend them, and build a better understanding of computer language along the way.",
+        "ytId": "JMqZgUNkqgk"
+    },
+    {
+        "id": "how-to-be-a-web-av-artist",
+        "speaker_id": "ruth-john",
+        "event_id": "cascadiajs-2018",
+        "title": "How To Be a Web AV Artist",
+        "tags": [
+            "web midi",
+            "web audio",
+            "dataviz"
+        ],
+        "abstract": "Come and be fascinated by the world of audio visualisation in a browser. This isn’t just about creating stunning data vis to music! We see how we can pipe data realtime into custom properties to enhance our visuals. Ruth will re-address how we analyse sound via the Web Audio API and proposes a better way of processing the data to better suit music. And, to top it all off, we harness the Web MIDI API for full hardware control as well. You may not think it, but this really is a talk with a great deal of take-aways and new techniques for you to consider in your coding life.",
+        "ytId": "Dt4I-96C-pg"
+    },
+    {
+        "id": "how-to-have-an-amicable-breakup-with-a-javascript-library",
+        "speaker_id": "daria-caraway",
+        "event_id": "cascadiajs-2019",
+        "title": "How to Have an Amicable Breakup With A JavaScript Library",
+        "tags": [
+            "dependencies",
+            "javascript"
+        ],
+        "abstract": "Choosing a JavaScript library is a lot like dating: the longer you commit yourself, the messier it is when you decide to break up.  Whether something better comes along, or the library is deprecated, changing a dependency often requires a lot of time or leaves the code in a less attractive state. In this talk you will learn some techniques that will help ease the pain of this situation.",
+        "ytId": "ZIIeBOLOgTw"
+    },
+    {
+        "id": "how-to-succeed-with-inclusion-initiatives",
+        "speaker_id": "ginger-chien",
+        "event_id": "cascadiajs-2019",
+        "title": "How to Succeed with Inclusion Initiatives",
+        "tags": [
+            "culture",
+            "inclusivity"
+        ],
+        "abstract": "Leadership and staff must take intentional, self-aware personal risks to steer workplace culture toward inclusion and its economic benefits. This requires permission and a moral directive from the top to create space, incentivizing management to role model vulnerable and remarkable behaviors, giving employees opportunities to participate in and create their own inclusion activities that involve discovery and testing of personal comfort zones, and to openly reward successes.",
+        "ytId": "Ug9k8J_5wvs"
+    },
+    {
+        "id": "how-user-centered-build-time-integration-tests-benefit-you-and-your-users",
+        "speaker_id": "beryl-egerter",
+        "event_id": "cascadiajs-2019",
+        "title": "How User Centered Build Time Integration Tests Benefit You and Your Users",
+        "tags": [
+            "testing",
+            "accessibility"
+        ],
+        "abstract": "This talk will cover the factors and decisions that led my team to prefer user centered build time integration tests for our web applications as well as how it allows us to create automated accessibility tests throughout an interaction workflow."
+    },
+    {
+        "id": "http3:-node.js-can-do-quic",
+        "speaker_id": "trivikram-kamat",
+        "event_id": "cascadiajs-2019",
+        "title": "HTTP/3: Node.js can do QUIC",
+        "tags": [
+            "node.js",
+            "http",
+            "quic"
+        ],
+        "abstract": "Work is currently underway to develop an implementation of the new QUIC protocol with Node.js core. While still very experimental and new, this protocol will enable exciting new possibilities and applications. This talk will introduce the fundamentals of QUIC and the prototype implementation being developed.",
+        "ytId": "Kqgv4Xs8yDI"
+    },
+    {
+        "id": "human-centered-on-call-practices",
+        "speaker_id": "najla-elmachtoub",
+        "event_id": "cascadiajs-2020",
+        "title": "Human Centered On-Call Practices",
+        "tags": [
+            "devops",
+            "mental health"
+        ],
+        "abstract": "In a \"move fast and break things!\" world, what happens when the things we’re breaking are our people and teams? In this talk, we’ll walk through a real example of my team’s on-call process, where alarm and burnout became the norm in the midst of revenue-driven deadlines. We’ll discuss how taking a human-centered and data-driven approach to resolve this process debt resulted in a happier team and more robust software, and how this framework can be applied more generally.",
+        "ytId": "y8LHjX9XUsg"
+    },
+    {
+        "id": "i18n-or-l10n-the-principles-for-a-more-accessible-web",
+        "speaker_id": "romulo-cintra-espirito-santo",
+        "event_id": "cascadiajs-2020",
+        "title": "internationalization | localization - The Principles for a More Accessible Web",
+        "tags": [
+            "accessibility",
+            "internationalization",
+            "localization"
+        ],
+        "abstract": "The present and the future of internationalization and localization in the browser.",
+        "ytId": "jFbnPNGEh-I"
+    },
+    {
+        "id": "lessons-in-webassembly:-client-side-video-editing",
+        "speaker_id": "megan-slater",
+        "event_id": "cascadiajs-2018",
+        "title": "Lessons in WebAssembly: Client Side Video Editing",
+        "tags": [
+            "web assembly",
+            "video",
+            "react.js"
+        ],
+        "abstract": "WebAssembly elicits hopes about everything from importing new functionalities into browser based applications, to the potential (and in some circles hoped for) death of JavaScript. This talk is for folks who are curious about the real world applications and limitations of WebAssembly as it exists today. We'll follow along the journey of some intrepid developers as they integrate the popular FFmpeg multimedia framework into a React application for the purposes of editing video client side.",
+        "ytId": "ziXYqUZqaEk"
+    },
+    {
+        "id": "let's-talk-about-mentoring",
+        "speaker_id": "glenn-block",
+        "event_id": "cascadiajs-2018",
+        "title": "Let’s Talk About Mentoring",
+        "tags": [
+            "culture",
+            "career"
+        ],
+        "abstract": "Throughout my career I've had many mentors who have been critical to my own growth. I'll just say it, you should have a mentor and you should be a mentor. Intrigued to know why? Come to this talk. In this session we'll talk about why you should care about mentoring and how it can help you with your career, how you can find a mentor, the components of a mentor-lationship, what makes a good mentor, and how you can become one.",
+        "ytId": "WsTYfQXF8MA"
+    },
+    {
+        "id": "machine-learning-for-front-end-devs",
+        "speaker_id": "charlie-gerard",
+        "event_id": "cascadiajs-2019",
+        "title": "Machine Learning for Front-End Devs",
+        "tags": [
+            "machine learning"
+        ],
+        "abstract": "Machine learning can have some pretty complicated concepts to grasp if you’re not a data scientist. However, recent developments in tooling make it more and more accessible for developers and people with little or no experience. In this presentation, we will talk about the different applications, possibilities, tools and resources, as well as show a few examples and demos, so you can get started building your own experiments using machine learning in JavaScript.",
+        "ytId": "xB8lkqxQluw"
+    },
+    {
+        "id": "making-newbie-friendly-codebases",
+        "speaker_id": "jerome-hardaway",
+        "event_id": "cascadiajs-2019",
+        "title": "Making Newbie Friendly Codebases",
+        "tags": [
+            "culture",
+            "inclusivity"
+        ],
+        "abstract": "This talk is about simple rules to making your codebases newbie friendly and jerk proof.",
+        "ytId": "6tSYnCQ5gIo"
+    },
+    {
+        "id": "making-reusable-svgs-with-react",
+        "speaker_id": "isabela-moreira",
+        "event_id": "cascadiajs-2019",
+        "title": "Making Reusable SVGs with React",
+        "tags": [
+            "svg",
+            "react.js"
+        ],
+        "abstract": "Learn how to merge your creative side with your coding side in this live-coding talk! Leveraging the practice of reusable code and React components, we’ll create SVG images and animations that can be extended, adapted, and reused throughout your app. See how a few tweaks and props injected into your standard SVG code can give you the power of composable and reusable components!",
+        "ytId": "frIFkXhHR4k"
+    },
+    {
+        "id": "memory-leaks-and-the-havoc-they-wreak",
+        "speaker_id": "will-klein",
+        "event_id": "cascadiajs-2020",
+        "title": "Memory Leaks and the Havoc They Wreak",
+        "tags": [
+            "debugging"
+        ],
+        "abstract": "Managing memory in our applications can be a real challenge, unless we use JavaScript, which does it for us. Then it can be an absolute mystery! Let's discover how memory leaks can happen to us, and explore how memory management and garbage collection really work.",
+        "ytId": "Ju69sQjDbKY"
+    },
+    {
+        "id": "mo-problems-mo-nads",
+        "speaker_id": "kyle-simpson",
+        "event_id": "cascadiajs-2020",
+        "title": "Mo' Problems, Mo' Nads",
+        "tags": [
+            "functional programming",
+            "javascript"
+        ],
+        "abstract": "Monads; just that word probably either made you shudder or roll your eyes. But don't run away!\r\n\r\nFunctional Programming (FP) offers many benefits to our programs, even in a loose/flexible language like JS. But we often avoid them just because of intimidating terminology, notation, and math theory. Rarely is this more prevalent than with monads.\r\n\r\nThis talk is not a dissertation on monads and broader category theory. We're merely dipping our toe into the shallow end here, not plunging head first into the deep end. But I hope maybe it entices you to swim around, because the water's actually quite pleasant!\r\n\r\nWe'll look at familiar problems in code that we typically solve imperatively, and then see how some of the de-mystified behaviors associated with monads (and friends!) can help. After this talk, I hope you'll look more closely at monads and other algebraic structures.\r\n\r\nTopics illustrated: selecting values with conditional logic, forking behavior on exceptions, and juggling asynchronous side effects.",
+        "ytId": "PXwtCYymzjE"
+    },
+    {
+        "id": "modal-windows-for-everyone",
+        "speaker_id": "james-steinbach",
+        "event_id": "cascadiajs-2020",
+        "title": "Modal Windows for Everyone",
+        "tags": [
+            "accessibility",
+            "ui"
+        ],
+        "abstract": "Modal windows are a complicated yet common UI component. Most helper libraries solve issues like styles, portals, or state. We're going to dig into major accessibility needs for modal windows.",
+        "ytId": "UoIV6IWuJCY"
+    },
+    {
+        "id": "move-over-gui-let's-build-a-vui-with-javascript!",
+        "speaker_id": "memo-doring",
+        "event_id": "cascadiajs-2018",
+        "title": "Move over GUI, let's build a VUI with JavaScript!",
+        "tags": [
+            "voice"
+        ],
+        "abstract": "The ability to use our voice to to interact with technology opens up a whole new world of posibilites for users, designers and developers. Join us at this session where we will talk about the best practices we have uncovered in the rapidly evolving voice first ecosystem. The session will include a live-coding demo on using AWS Lambda to building and deploy a VUI in minutes.",
+        "ytId": "HjWr40_N1Fg"
+    },
+    {
+        "id": "mson-lang-everyone-can-make-software",
+        "speaker_id": "geoff-cox",
+        "event_id": "cascadiajs-2019",
+        "title": "MSON Lang - Everyone Can Make Software",
+        "tags": [
+            "languages",
+            "no code"
+        ],
+        "abstract": "MSON is a declarative language that has the capabilities of an object-oriented language. The MSON compiler allows you to generate apps from JSON. The ultimate goal of MSON is to allow anyone to develop software visually."
+    },
+    {
+        "id": "musical-creativity-in-the-browser",
+        "speaker_id": "scott-ammon",
+        "event_id": "cascadiajs-2020",
+        "title": "Musical Creativity in the Browser",
+        "tags": [
+            "music",
+            "web midi"
+        ],
+        "abstract": "This talk will explore how digital musical instruments can interface with the web using MIDI to expand hardware hacking abilities. We’ll explore many ways to harness the power of the web to expand our musical and software creativity.",
+        "ytId": "MIFg1DGNWI4"
+    },
+    {
+        "id": "my-assistant-misty",
+        "speaker_id": "april-speight",
+        "event_id": "cascadiajs-2020",
+        "title": "My Assistant Misty",
+        "tags": [
+            "hardware",
+            "api"
+        ],
+        "abstract": "Explore how to take AI assistants to a new level by programming a robot as your personal assistant. Learn about Misty Robotics and how to program a robot with JavaScript!",
+        "ytId": "CoYHpmgKa7Q"
+    },
+    {
+        "id": "n-api-the-new-native-in-node.js",
+        "speaker_id": "atishay-jain",
+        "event_id": "cascadiajs-2018",
+        "title": "N-API - The new native in node.js",
+        "tags": [
+            "n-api",
+            "node.js",
+            "native code"
+        ],
+        "abstract": "Ever tried calling C++ from Node or Electron. Hate native modules because of the compilation and maintenance issues. This talk is all about the solution to this problem - N-API that is stable with node 10. C++ to Node.js interop is a lot of fun.",
+        "ytId": "E0w7Tc0f2fA"
+    },
+    {
+        "id": "no-code-know-code",
+        "speaker_id": "jim-liu",
+        "event_id": "cascadiajs-2019",
+        "title": "No Code/Know Code",
+        "tags": [
+            "no code"
+        ],
+        "abstract": "In this talk I will dive deep into how as a developer, you can combine your coding expertise with knowledge of NoCode tools to help folks who need help validating an idea, testing the market, and getting feedback from real customers. We will also explore the direction NoCode is headed and the role developers will play in the future."
+    },
+    {
+        "id": "observing-node.js",
+        "speaker_id": "james-snell",
+        "event_id": "cascadiajs-2018",
+        "title": "Observing Node.js",
+        "tags": [
+            "node.js",
+            "debugging",
+            "observability"
+        ],
+        "abstract": "Understanding what is really happening within your Node.js processes can be... Difficult. I'll pull back the curtain and demonstrate tools and techniques for observing Node.js.",
+        "ytId": "C8dwQw7M8Pk"
+    },
+    {
+        "id": "oh-sweet-gif",
+        "speaker_id": "rachelle-rathbone",
+        "event_id": "cascadiajs-2020",
+        "title": "Oh Sweet, Gif",
+        "tags": [
+            "gifs",
+            "side projects"
+        ],
+        "abstract": "For over 30 years GIFs have brought life to the internet, but some are unable to enjoy their magic, irony and humor. Others simply despise them. Hear how I built a GIF sharing site that attacks that problem head on by building an app that will make GIFs accessible for all, while getting a free SEO boost from Google.",
+        "ytId": "dwfmlOyOETk"
+    },
+    {
+        "id": "open-source-and-the-volunteer-workforce",
+        "speaker_id": "michael-lange",
+        "event_id": "cascadiajs-2018",
+        "title": "Open Source and the Volunteer Workforce",
+        "tags": [
+            "open source",
+            "community"
+        ],
+        "abstract": "How did a band of merry volunteers build an open data platform to promote civic discourse in Portland? The answer involves open source tools, trial and error, cognizant community building, and JavaScript!",
+        "ytId": "Ec5j5ajtrG4"
+    },
+    {
+        "id": "portable-distributable-web-content-with-web-packaging",
+        "speaker_id": "kinuko-yasuda",
+        "event_id": "cascadiajs-2019",
+        "title": "Portable, Distributable Web Content with Web Packaging",
+        "tags": [
+            "web packaging",
+            "web standards"
+        ],
+        "abstract": "The Chrome Loading team has been tackling various “page loading” problems. From optimizing the networking and loading stack, to helping web developers make their site's experience better with new powerful web platform features, we strive for enabling delightful user experiences on the web. In this talk I'd like to talk about one of those new features, which is called \"Web Packaging\".  Web Packaging is a set of proposals that allows web content to be digitally signed and packaged, so that the content can become \"portable\", i.e. it can not only be retrieved from the original publisher’s site, but also via a fast cache, over p2p protocol, via an SD card, or virtually anything you can think of.  We believe this can increase the availability of web content for a wider audience, even where internet connectivity isn’t always available!",
+        "ytId": "JEpSHI4Nydg"
+    },
+    {
+        "id": "privacy-and-cx-analytics",
+        "speaker_id": "guillaume-peugniez",
+        "event_id": "cascadiajs-2019",
+        "title": "Privacy and CX Analytics",
+        "tags": [
+            "privacy"
+        ],
+        "abstract": "User behavior is higly informative to improve a software. But it comes with as much value as risks. Let's be mindful of ways to gather \"customer experience\" anayltics while preserving the users privacy."
+    },
+    {
+        "id": "programming-the-cloud-with-javascript",
+        "speaker_id": "christian-nunciato",
+        "event_id": "cascadiajs-2019",
+        "title": "Programming the Cloud with JavaScript",
+        "tags": [
+            "cloud",
+            "javascript",
+            "infrastructure"
+        ],
+        "abstract": "We've come a _long_ way with JavaScript --- and yet the range of what we can do with this language only seems to keep expanding. In this talk, I'll share a little about how I came to care about infrastructure as code, then show how we can use JavaScript to create not just our beloved front-end apps and services, but also the cloud infrastructure we need to bring them out into the world.",
+        "ytId": "nfridRBNfds"
+    },
+    {
+        "id": "raiders-of-the-javascript-based-malware",
+        "speaker_id": "pranshu-bajpai",
+        "event_id": "cascadiajs-2018",
+        "title": "Raiders of the Javascript-based Malware",
+        "tags": [
+            "javascript",
+            "security"
+        ],
+        "abstract": "Some modern malware are designed entirely in Javascript and executed using the default Windows Script Host or within the user's browser. In this talk, we discuss the design, operation, and implementation intricacies of Javascript-based ransomware and cryptojacking malware.",
+        "ytId": "aoCRE0WoFx8"
+    },
+    {
+        "id": "rebuilding-a-faster-lazier-slack",
+        "speaker_id": "samantha-siow",
+        "event_id": "cascadiajs-2019",
+        "title": "Rebuilding a Faster, Lazier Slack",
+        "tags": [
+            "javascript",
+            "native apps",
+            "electron"
+        ],
+        "abstract": "A new version of Slack is rolling out for our desktop customers, built from the ground up to be faster, more efficient, and easier to work on. In this talk, I’ll focus on our move from an eager data model to a lazily loaded and incomplete data model, and how that made for a speedier Slack experience.",
+        "ytId": "dHRwmvWnblE"
+    },
+    {
+        "id": "reclaiming-the-web-with-peer-to-peer-protocols",
+        "speaker_id": "tara-vancil",
+        "event_id": "cascadiajs-2018",
+        "title": "Reclaiming the Web with peer-to-peer protocols",
+        "tags": [
+            "p2p",
+            "web",
+            "dat"
+        ],
+        "abstract": "Tara is the co-creator of the Beaker Browser, a browser for exploring and building the peer-to-peer Web. She's part of Blue Link Labs, a team of Web enthusiasts behind the Beaker Browser, the Dat protocol, and hashbase.io. She's dedicated to building the Web of tomorrow as a Web for all.",
+        "ytId": "2Q9TlvqE9_Y"
+    },
+    {
+        "id": "relax-it's-iotea-time",
+        "speaker_id": "myriam-e-walden-duarte",
+        "event_id": "cascadiajs-2020",
+        "title": "Relax, it's IoTea Time!",
+        "tags": [
+            "hardware",
+            "api",
+            "iot"
+        ],
+        "abstract": "If, like me, you thought that IoT is only for people who have tons of experience with electronics and are geniuses of software development, I want to share with you how that statement is false, and how adventuring with IoT has helped me during the pandemic times.",
+        "ytId": "ZI4wFRSoeHw"
+    },
+    {
+        "id": "saving-data-to-the-dweb",
+        "speaker_id": "kelsey-breseman",
+        "event_id": "cascadiajs-2020",
+        "title": "Saving Data to the DWeb",
+        "tags": [
+            "dweb",
+            "ipfs",
+            "dat"
+        ],
+        "abstract": "The Environmental Data & Governance Initiative monitors how the state presents (or fails to present) environmental data to the public. This is the perspective from which we approach the decentralized web: public ownership of public data. In this beginner-friendly talk, we walk through each step in the technical process of uploading data into IPFS and Dat: how it works, and how it's important to stewardship of critical data.",
+        "ytId": "imfMkFFmsnQ"
+    },
+    {
+        "id": "scalable-distributed-messaging-with-kafka",
+        "speaker_id": "claudius-mbemba",
+        "event_id": "cascadiajs-2019",
+        "title": "Scalable Distributed Messaging with Kafka",
+        "tags": [
+            "cloud",
+            "kafka",
+            "scaling"
+        ],
+        "abstract": "Kafka is a production-ready, scalable, distributed streaming platform that’s being used by top companies around the world. Learn how you can turn Kafka into a powerful pub-sub mechanism for your own projects.",
+        "ytId": "KHRabSbB5wk"
+    },
+    {
+        "id": "snowpack-webpack-and-the-third-age-of-javaScript",
+        "speaker_id": "fred-k-schott",
+        "event_id": "cascadiajs-2020",
+        "title": "Snowpack, Webpack and the Third Age of JavaScript",
+        "tags": [
+            "javascript",
+            "es modules",
+            "http",
+            "wasm"
+        ],
+        "abstract": "The JavaScript ecosystem is about to change in a big way. New technologies like ES Modules (aka ESM), HTTP/3 and WASM are all coming together to re-define how you build for the web and beyond. This talk explores these new technologies, their impact, and how Internet Explorer may be involved in the most influential evolution of all.",
+        "ytId": "65R4th-rixM"
+    },
+    {
+        "id": "spa-at-scale",
+        "speaker_id": "patrick-woo",
+        "event_id": "cascadiajs-2018",
+        "title": "SPA at Scale",
+        "tags": [
+            "spa",
+            "scaling"
+        ],
+        "abstract": "Many modern web applications are built as single page apps (SPA), with the goals to scale the application for customers, increase developer velocity for feature development, and speed up new team member ramp up time. In this talk we will share top 5 lessons learn - in hindsight, what would we do/don’t do when building a large scale SPA.",
+        "ytId": "Zr51LyznkZI"
+    },
+    {
+        "id": "svg-canvas-and-webgl",
+        "speaker_id": "amber-hoak",
+        "event_id": "cascadiajs-2020",
+        "title": "SVG, Canvas, and WebGL: The Power, the Beauty, and the Cost",
+        "tags": [
+            "svg",
+            "canvas",
+            "webgl",
+            "dataviz"
+        ],
+        "abstract": "Do you want to tell meaningful stories with your data? We will explore the path towards building gpu-performant custom visuals, overcoming pain points, and navigating the tooling landscape in SVG, canvas, and webGL.",
+        "ytId": "wjtfQ8NI2T8"
+    },
+    {
+        "id": "tackling-the-tradeoffs-of-graphql",
+        "speaker_id": "tre-ammatuna",
+        "event_id": "cascadiajs-2019",
+        "title": "Tackling the tradeoffs of GraphQL",
+        "tags": [
+            "graphql"
+        ],
+        "abstract": "Everyone wants to talk about the amazing powers of GraphQL. However, we all know nothing comes without tradeoffs. So, let's talk about them."
+    },
+    {
+        "id": "teaching-the-sighted-to-touch-and-feel-a-bit-more",
+        "speaker_id": "faddah-wolf",
+        "event_id": "cascadiajs-2018",
+        "title": "Teaching the Sighted to Touch & Feel a Bit More",
+        "tags": [
+            "accessibility",
+            "react.js",
+            "react native"
+        ],
+        "abstract": "Braille is becoming more and more ubiquitous in many common spaces — airports, malls, libraries, etc. A college in Oregon needed an App built to help teach the friends & family of those who are sight impaired how to read Braille. Faddah Wolf will go over what accessibility options there are in common Mobile OS's, how he created a React Native six-key-input keyboard for Braille and how you can contribute to this Open Source project.",
+        "ytId": "QLwV34UJ8I8"
+    },
+    {
+        "id": "the-acid-base-conundrum",
+        "speaker_id": "sangeetha-kp",
+        "event_id": "cascadiajs-2020",
+        "title": "The ACID/BASE Conundrum",
+        "tags": [
+            "databases"
+        ],
+        "abstract": "When we start a new project, we are often posed with the task of setting up a data store. The arises the inevitable question \"Should I use a SQL based store or NOSQL one\". We might tend to lean towards SQL due to it's familiarity and ubiquity; or lean towards NoSQL due to its ease and low setup cost. In this talk, we will look at database choices through a different lens. Taking inspiration from CAP theorem we will understand the ACID/BASE properties of datatbases that will act as guiding principles for choosing database.",
+        "ytId": "_9ZmbCknLmM"
+    },
+    {
+        "id": "the-bizarro-web:-where-spas-are-scarce.",
+        "speaker_id": "kyle-jacobson",
+        "event_id": "cascadiajs-2019",
+        "title": "The Bizarro Web: Where SPAs are Scarce.",
+        "tags": [
+            "spa",
+            "web standards"
+        ],
+        "abstract": "Now's a good time to turn a critical eye toward our single page app assumptions.\nThe evolution of the web was never on an inevitable path; it was a loosely-coordinated series of decisions by standards-making bodies, browser makers, and developers that could have gone very differently. It still can."
+    },
+    {
+        "id": "the-death-of-the-full-stack-developer",
+        "speaker_id": "johnny-ray-austin",
+        "event_id": "cascadiajs-2019",
+        "title": "The Death of the Full Stack Developer",
+        "tags": [
+            "culture",
+            "career"
+        ],
+        "abstract": "What does it even mean to be a full stack developer in 2019? Can one developer realistically have a solid understanding of all the components of a modern web stack? Let's zoom out and talk about just how far we've come, and how to set realistic expectations for developers.",
+        "ytId": "wMATDe2fywI"
+    },
+    {
+        "id": "the-future-of-the-web",
+        "speaker_id": "mikeal-rogers",
+        "event_id": "cascadiajs-2018",
+        "title": "The Future of the Web",
+        "tags": [
+            "web",
+            "p2p"
+        ],
+        "abstract": "The original vision of the Internet was for a fully decentralized system that empowered its users at the edges. In the many years since the birth of The Web we’ve moved more towards centralized structures to solve the issues of scale and data and it has not come without consequence. In order to move past these issues we need new primitives for a new vision of The Web that can be decentralized.",
+        "ytId": "83Gws-dPL8A"
+    },
+    {
+        "id": "the-gatekeeper-and-the-gardener:-building-an-api-composition-layer",
+        "speaker_id": "brea-gaudioso",
+        "event_id": "cascadiajs-2019",
+        "title": "The Gatekeeper and the Gardener: Building an API Composition Layer",
+        "tags": [
+            "api"
+        ],
+        "abstract": "Building an API might be easy, but building one that is intuitive, digestible, and fun to integrate with is another ballgame. I’ll cover the importance and best practices of a composition layer, architecting for your audience, and creating a seamless developer experience."
+    },
+    {
+        "id": "the-operating-system-of-you",
+        "speaker_id": "shawn-wang",
+        "event_id": "cascadiajs-2020",
+        "title": "The Operating System of You",
+        "tags": [
+            "career",
+            "coding"
+        ],
+        "abstract": "Developers are mostly humans that run the same \"hardware\". Therefore most performance differences, especially the ones we can control, are down to our \"OS\" - our conscious prioritization and processing - and \"firmware\" - our unconscious personality and reactions. What can we do to better take care of our \"hardware\", and what does running better \"software\" look like?",
+        "ytId": "KBi_LZTCrgU"
+    },
+    {
+        "id": "the-past-present-and-future-of-favicons",
+        "speaker_id": "tiger-oakes",
+        "event_id": "cascadiajs-2020",
+        "title": "The Past, Present, and Future of Favicons",
+        "tags": [
+            "web"
+        ],
+        "abstract": "Favicons are everywhere, representing your site on tabs, bookmarks, home screens, and more. Did you know favicons were snuck into Internet Explorer, how Apple was once a major proponent for web apps, or that a single icon design can automatically fit alongside other mobile apps on any device? Let's dive into the history and future of website icons, and show you how to make your website and PWA icons shine on a variety of screens.",
+        "ytId": "F_UIPs0umnE"
+    },
+    {
+        "id": "the-programmer's-bookshelf",
+        "speaker_id": "lisa-backer",
+        "event_id": "cascadiajs-2019",
+        "title": "The Programmer's Bookshelf",
+        "tags": [
+            "learning",
+            "best practices"
+        ],
+        "abstract": "The Pragmatic Programmer, The Mythical Man-Month, The Cathedral & the Bazaar - these are among the classic works that we are told should be on every programmer's bookshelf. Often, they make it to the shelf, but remain unread. Have you ever wondered why these books are considered such beacons to our community? Have you maybe even felt guilty for not reading them all? We'll go through the \"cliff notes\" edition of these classics, and even a few future classics to inspire you to check out what’s on your own bookshelf.",
+        "ytId": "uZdRYQbIvMs"
+    },
+    {
+        "id": "the-several-ways-to-construct-an-object",
+        "speaker_id": "noah-adams",
+        "event_id": "cascadiajs-2019",
+        "title": "The Several Ways to Construct an Object",
+        "tags": [
+            "javascript"
+        ],
+        "abstract": "We will explore, in escalating levels of absurdity, the many ways JavaScript provides to create objects. Along the way we'll discover some weird corners, astonishing facts and come to appreciate the commonalities of constructors, classes, prototypes, closures and `Function.prototype.bind()`."
+    },
+    {
+        "id": "the-zen-of-git",
+        "speaker_id": "tianyu-pu",
+        "event_id": "cascadiajs-2020",
+        "title": "The Zen of Git",
+        "tags": [
+            "git"
+        ],
+        "abstract": "Git is a version control system that's widely used and often misunderstood. Is it possible to really understand how it works, and maybe, just maybe, enjoy using it? This talk is for anyone who has used Git before and would like to learn more about how it actually works. I plan to talk about the internals of Git, including how objects are stored, and how things like branches and tags fit into this representation. With this foundation, I also want to deep-dive and examine how commonly used commands (like git reset, git checkout, git merge and git rebase, among many others) can be understood in terms of what has already been covered in the talk.",
+        "ytId": "5Gq3KVvcfDk"
+    },
+    {
+        "id": "to-all-the-code-i've-loved-before",
+        "speaker_id": "yuraima-estevez",
+        "event_id": "cascadiajs-2019",
+        "title": "To all the Code I've Loved Before",
+        "tags": [
+            "learning",
+            "career"
+        ],
+        "abstract": "From writing your first “Hello, World!” program, to maintaining your an unruly legacy system, and everything in between, the code we write shapes us.  This is a love letter to all the code I’ve written, read, reviewed and (sometimes) loathed.",
+        "ytId": "n2XHlGClwwk"
+    },
+    {
+        "id": "understanding-accessibility-as-a-concept",
+        "speaker_id": "jemima-abu",
+        "event_id": "cascadiajs-2020",
+        "title": "Understanding accessibility as a Concept",
+        "tags": [
+            "accessibility"
+        ],
+        "abstract": "Knowing how to build accessible products is important but it's just as important to know why we build products to be accessible. Basic human decency aside, there's a plethora of reasons for building products that everyone can use. In this talk, we'll explore the concept of accessibility in order to better understand its necessity and the ramifications involved in building non accessible products. We'll also answer pressing questions like \"How do I know if this thing I built is accessible?\" and \"Whose job is it to ensure accessibility?\" (Spoiler: it's everyone's job)",
+        "ytId": "QSXdTuD9Rak"
+    },
+    {
+        "id": "watt-you-didn't-know-about-amp",
+        "speaker_id": "ishan-anand",
+        "event_id": "cascadiajs-2019",
+        "title": "Watt you didn't know about AMP",
+        "tags": [
+            "amp",
+            "performance"
+        ],
+        "abstract": "AMP is proprietary and owned by Google! AMP doesn't allow JavaScript! AMP is unit of current! Only one of those is true. This talk will cover the latest news, address popular misconceptions, and give you a new perspective on the web's most widely misunderstood framework."
+    },
+    {
+        "id": "we-all-have-a-voice",
+        "speaker_id": "claudius-mbemba",
+        "event_id": "cascadiajs-2020",
+        "title": "We All Have a Voice",
+        "tags": [
+            "society"
+        ],
+        "abstract": "A call to action for all of us in tech to help fight systemic racism.",
+        "ytId": "44zef9X2V-8"
+    },
+    {
+        "id": "what-they-see-is-what-they-will-be",
+        "speaker_id": "vincent-sanders",
+        "event_id": "cascadiajs-2019",
+        "title": "What They See Is What They Will Be",
+        "tags": [
+            "culture",
+            "inclusivity"
+        ],
+        "abstract": "I believe that building more inclusive tech communities begins with the youth. What they see is what they’ll be. Dedicating time to the youth will not only open their eyes to a future in tech, but it will help existing members of the tech community to understand their privilege."
+    },
+    {
+        "id": "when-porgs-scream-at-webpack-and-other-stories",
+        "speaker_id": "dominik-kundel",
+        "event_id": "cascadiajs-2019",
+        "title": "When Porgs Scream at Webpack and Other Stories",
+        "tags": [
+            "javascript",
+            "hardware"
+        ],
+        "abstract": "For many web developers the world of hardware is very intimidating. There is no easy way to go back from a broken to a working project state. You break something, you replace it — there is no Ctrl/Cmd + z. However, getting a project to work is incredibly fun and rewarding. In this talk we'll be talking about different ways you can use your JavaScript knowledge to build your own hardware projects.",
+        "ytId": "3wx806HOgnA"
+    },
+    {
+        "id": "why-i-chose-to-modularize-the-ducks-in-my-react-app",
+        "speaker_id": "lauren-lee",
+        "event_id": "cascadiajs-2018",
+        "title": "Why I chose to modularize the ducks in my React App ",
+        "tags": [
+            "react.js"
+        ],
+        "abstract": "React and Redux are awesome but the state management can be overwhelming for beginners. This talk is all about how to keep your code DRY, scalable, and maintainable- the dream trifecta!- regardless of its size and scope. Creating “ducks”, or modularized components, allows you to keep all of your state in one place and avoid creating a new file for every single action and reducer. This talk will cover how to create those ducks!",
+        "ytId": "jr7D4VAzNig"
+    },
+    {
+        "id": "you-might-not-need-a-build-step",
+        "speaker_id": "kristofer-joseph",
+        "event_id": "cascadiajs-2020",
+        "title": "You Might Not Need a Build Step",
+        "tags": [
+            "es modules",
+            "bundling"
+        ],
+        "abstract": "Use the current web platform to live in a build step free future today.",
+        "ytId": "W63DVu3UK3Q"
+    },
+    {
+        "speaker_id": "aaron-gustafson",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "aiden-bai",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "dominic-farolino",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "geoff-rich",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "henri-helvetica",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "herve-aniglo",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "jacob-lee",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "jerome-woody",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "josh-goldberg",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "kristen-thayer",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "molly-jean-bennett",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "penelope-mclachlan",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "rachel-lee-nabors",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "rizel-scarlett",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "swyx",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "shruti-kapoor",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "tejas-kumar",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "tracy-lee",
+        "event_id": "cascadiajs-2024"
+    },
+    {
+        "speaker_id": "tyler-sticka",
+        "event_id": "cascadiajs-2024"
+    }
+]

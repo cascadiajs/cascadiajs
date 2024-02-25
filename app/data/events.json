@@ -1,0 +1,28 @@
+[
+    {
+        "id": "cascadiajs-2018",
+        "name": "CascadiaJS 2018",
+        "location": "Seattle, WA, USA",
+        "url": "https://2018.cascadiajs.com",
+        "date": "2018-11-15T00:00:00.000Z",
+        "content": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/l0jV-Mc2I68\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+    },
+    {
+        "id": "cascadiajs-2019",
+        "name": "CascadiaJS 2019",
+        "location": "Seattle, WA, USA",
+        "url": "https://2019.cascadiajs.com",
+        "tickets": "https://2019.cascadiajs.com/tickets",
+        "date": "2019-11-07T00:00:00.000Z",
+        "content": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/4bFj9aavP6Y\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+    },
+    {
+        "id": "cascadiajs-2020",
+        "name": "CascadiaJS 2020",
+        "location": "Cyberspace",
+        "url": "https://2020.cascadiajs.com",
+        "tickets": "https://2020.cascadiajs.com",
+        "date": "2020-09-01T00:00:00.000Z",
+        "content": "![CascadiaJS 2020 family photo](http://2020.cascadiajs.com/images/cjs20-family.jpg)"
+    }
+]
