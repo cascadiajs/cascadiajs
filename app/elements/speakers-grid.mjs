@@ -70,6 +70,13 @@ const speakers = [
         location: "Seattle, WA, USA"
     },
     { 
+        id: "molly-jean-bennett",
+        name: "Molly Jean Bennett",
+        company: "Grow Therapy",
+        image: "molly-jean-bennett.jpg",
+        location: "Portland, OR, USA"
+    },
+    { 
         id: "penelope-mclachlan",
         name: "Penelope McLachlan",
         company: "Google",
@@ -203,22 +210,40 @@ export default function Sponsors({ html }) {
             </div>
             `).join('')}
             <div class="person">
-                <div class="person-photo"><img src="/_public/images/2024/speakers/pixelated.png" alt="Pixelated Photo"/></div>
+                <div class="person-photo"><img src="/_public/images/2024/speakers/ai-sasquatch.webp" alt="secret speaker"/></div>
                 <div class="person-info">
                     <div class="person-name">Secret</div>
                 </div>
             </div> 
             <div class="person">
-                <div class="person-photo"><img src="/_public/images/2024/speakers/pixelated.png" alt="Pixelated Photo"/></div>
+                <div class="person-photo"><img src="/_public/images/2024/speakers/ai-salmon.webp" alt="secret speaker"/></div>
+                <div class="person-info">
+                    <div class="person-name">Secret</div>
+                </div>
+            </div>
+            <div class="person">
+                <div class="person-photo"><img src="/_public/images/2024/speakers/ai-seahawk.webp" alt="secret speaker"/></div>
                 <div class="person-info">
                     <div class="person-name">Secret</div>
                 </div>
             </div> 
             <div class="person">
-                <div class="person-photo"><img src="/_public/images/2024/speakers/pixelated.png" alt="Pixelated Photo"/></div>
+                <div class="person-photo"><img src="/_public/images/2024/speakers/ai-tree.webp" alt="secret speaker"/></div>
+                <div class="person-info">
+                    <div class="person-name">Secret</div>
+                </div>
+            </div>
+            <div class="person">
+                <div class="person-photo"><img src="/_public/images/2024/speakers/ai-mushroom.webp" alt="secret speaker"/></div>
                 <div class="person-info">
                     <div class="person-name">Secret</div>
                 </div>
             </div> 
+            <div class="person">
+                <div class="person-photo"><img src="/_public/images/2024/speakers/ai-mountain.webp" alt="secret speaker"/></div>
+                <div class="person-info">
+                    <div class="person-name">Secret</div>
+                </div>
+            </div>
         </div>`
 }
