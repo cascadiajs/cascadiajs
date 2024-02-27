@@ -24,5 +24,33 @@
         "tickets": "https://2020.cascadiajs.com",
         "date": "2020-09-01T00:00:00.000Z",
         "content": "![CascadiaJS 2020 family photo](http://2020.cascadiajs.com/images/cjs20-family.jpg)"
+    },
+    {
+        "id": "cascadiajs-2021",
+        "name": "CascadiaJS 2021",
+        "location": "Hybrid",
+        "url": "https://2021.cascadiajs.com",
+        "tickets": "https://2021.cascadiajs.com",
+        "date": "2021-11-03T00:00:00.000Z",
+        "content": "![CascadiaJS 2021 family photo](https://2021.cascadiajs.com/images/cjs20-family.jpg)"
+    },
+    {
+        "id": "cascadiajs-2022",
+        "name": "CascadiaJS 2022",
+        "location": "Sun River, OR",
+        "url": "https://2022.cascadiajs.com",
+        "tickets": "https://2022.cascadiajs.com",
+        "date": "2022-08-30T00:00:00.000Z",
+        "content": "![CascadiaJS 2022 family photo](https://2022.cascadiajs.com/images/cjs22-family-photo.jpg)"
+    },
+    {
+        "id": "cascadiajs-2024",
+        "name": "CascadiaJS 2024",
+        "location": "Seattle, WA",
+        "url": "https://cascadiajs.com/2024",
+        "tickets": "https://cascadiajs.com/2024",
+        "date": "2024-06-20T00:00:00.000Z",
+        "content": "![CascadiaJS 2024 teaser image](https://cascadiajs.com/_public/images/2024/main-page-illo-2024-8026a5403d.png)"
     }
+
 ]
