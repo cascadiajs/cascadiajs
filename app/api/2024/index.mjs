@@ -13,7 +13,11 @@ export async function get(req) {
   // find all talks for CascadiaJS 2024
   const talks = await talksCollection.find({event_id: "405fff2e-6083-4aae-b518-18a08cacc463"}).toArray()
   // build a list of speakers for these talks
-  const speakers = await Promise.all(talks.map(async t => { return await speakersCollection.findOne({_id: t.speaker_id}) }))
+  const speakers = await speakersCollection.find({
+    _id: {
+      "$in": talks.map(t => t.speaker_id)
+    }  
+  }).toArray()
 
   const { path } = req;
   return {
