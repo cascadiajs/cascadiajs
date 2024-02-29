@@ -8,10 +8,13 @@ const {
 const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
 
 export async function get(req) {
+  const eventsCollection = await db.collection("events")
   const speakersCollection = await db.collection("speakers")
   const talksCollection = await db.collection("talks")
+  // find the id for CascadiaJS 2024
+  const event = await eventsCollection.findOne({slug: 'cascadiajs-2024'})
   // find all talks for CascadiaJS 2024
-  const talks = await talksCollection.find({event_id: "405fff2e-6083-4aae-b518-18a08cacc463"}).toArray()
+  const talks = await talksCollection.find({event_id: event._id}).toArray()
   // build a list of speakers for these talks
   const speakers = await speakersCollection.find({
     _id: {
