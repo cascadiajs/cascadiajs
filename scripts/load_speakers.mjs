@@ -4,11 +4,10 @@ import { AstraDB } from '@datastax/astra-db-ts'
 
 const {
     ASTRA_DB_API_ENDPOINT,
-    ASTRA_DB_APPLICATION_TOKEN,
-    ASTRA_DB_NAMESPACE
-  } = process.env
+    ASTRA_DB_APPLICATION_TOKEN
+} = process.env
 
-const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT, ASTRA_DB_NAMESPACE || "default_keyspace")
+const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
 
 async function main() {
     const file = fs.readFileSync(process.cwd() + "/app/data/speakers.json", "utf-8")
@@ -20,7 +19,11 @@ async function main() {
         const chunk = cleaned.slice(i, i + chunkSize);
         chunks.push(chunk);
     }
+
+    await db.createCollection('speakers');
+
     const collection = await db.collection("speakers")
+
     for (let i = 0; i < chunks.length; i++) {
         const insertData = chunks[i]
         const response = await collection.insertMany(insertData)

@@ -5,16 +5,15 @@ import { AstraDB } from '@datastax/astra-db-ts'
 
 const {
     ASTRA_DB_API_ENDPOINT,
-    ASTRA_DB_APPLICATION_TOKEN,
-    ASTRA_DB_NAMESPACE
-  } = process.env
+    ASTRA_DB_APPLICATION_TOKEN
+} = process.env
 
-const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT, ASTRA_DB_NAMESPACE || "default_keyspace")
+const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
 
 async function main() {
     const file = fs.readFileSync(process.cwd() + "/app/data/talks.json", "utf-8")
     const talks = JSON.parse(file)
-    
+    await db.createCollection('talks');
     const talksCol = await db.collection("talks")
     const speakersCol = await db.collection("speakers")
     const eventsCol = await db.collection("events")
