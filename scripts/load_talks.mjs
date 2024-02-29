@@ -1,13 +1,15 @@
 import fs from 'fs'
 import 'dotenv/config'
+import slugify from 'slugify'
 import { AstraDB } from '@datastax/astra-db-ts'
 
 const {
     ASTRA_DB_API_ENDPOINT,
-    ASTRA_DB_APPLICATION_TOKEN
-} = process.env
+    ASTRA_DB_APPLICATION_TOKEN,
+    ASTRA_DB_NAMESPACE
+  } = process.env
 
-const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
+const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT, ASTRA_DB_NAMESPACE || "default_keyspace")
 
 async function main() {
     const file = fs.readFileSync(process.cwd() + "/app/data/talks.json", "utf-8")
@@ -27,6 +29,10 @@ async function main() {
         t.event_id = (await eventsCol.findOne({slug: t.event_id}))._id 
         // map the speaker_id to the value in Astra
         t.speaker_id = (await speakersCol.findOne({slug: t.speaker_id}))._id 
+        // create a slug for the talk
+        if (t.title) {
+            t.slug = slugify(t.title, { lower: true })
+        }
         cleaned.push(t)
     }
     
