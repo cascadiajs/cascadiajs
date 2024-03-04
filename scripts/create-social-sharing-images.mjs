@@ -63,7 +63,7 @@ async function createImages(env, password) {
         console.log(`Generating a screen shot for ${ file }`)
         const stub = file.split('.md')[0]
         await page.goto(`${ localBase }/${ stub }?social`)
-        await page.screenshot({ path: `${dest}/${ stub }-share.png` })
+        await page.screenshot({ path: `${dest}/${ stub }.png` })
       }
     }
   }
@@ -96,10 +96,6 @@ async function createImages(env, password) {
   await sandbox.end()
   //})
 }
-
-
-
-
 
 function main() {
   let env = process.argv[2]
