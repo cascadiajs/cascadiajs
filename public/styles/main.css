@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: freight-sans-pro, sans-serif;
 }
 
 h1 {
@@ -30,8 +31,6 @@ h1 { font-size: 40px; }
 h2 { font-size: 32px; }
 
 h3 { font-size: 24px; }
-
-h3 { font-size: 18px; }
 
 h2 img {
     height: 35px;

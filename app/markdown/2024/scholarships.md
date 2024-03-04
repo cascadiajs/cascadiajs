@@ -1,5 +1,8 @@
 ---
 title: Opportunity Scholarships
+image: /_public/images/past/cjs19-scholarships.jpg
+excerpt: Help us make this the most diverse and inclusive CascadiaJS yet!
+
 ---
 ![conference family photo](/_public/images/past/cjs19-family-photo.jpg)
 

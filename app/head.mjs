@@ -2,28 +2,38 @@
 //const { linkTag } = getStyles;
 // ${linkTag()}
 
-export default function Head() {
+import { getBaseUrl } from '../shared/utils/base-url.mjs'
+
+export default function Head(state) {
+  const { store, req } = state
+  const { sharing = {} } = store
+  const { path } = req
+  const baseUrl = getBaseUrl(req)
+  //console.log(sharing)
+  const title = sharing.sharingTitle || "CascadiaJS - a JS conf for the PacNW"
+  const description = sharing.sharingDescription || "CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!"
+  const image = sharing.sharingImage || "/_public/images/splash.png"
   return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>CascadiaJS - a JS conf for the PacNW</title>
+      <title>${ title }</title>
       <link rel="icon" href="/_public/favicon.svg">
       <link rel="stylesheet" href="https://use.typekit.net/nln6hzq.css">
       <link rel="stylesheet" href="/_public/styles/main.css">
-      <meta name="description" content="CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!">
-      <meta property="og:description" content="CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!" />
-      <meta name="image" property="og:image" content="https://cascadiajs.com/_public/images/splash.png" />
-      <meta name="url" property="og:url" content="https://cascadiajs.com" />
+      <meta name="description" content="${ description }">
+      <meta property="og:description" content="${ description }" />
+      <meta name="image" property="og:image" content="${ baseUrl }${ image }" />
+      <meta name="url" property="og:url" content="${ baseUrl }${ path }" />
       <meta name="type" property="og:type" content="website" />
-      <meta name="author" content="Carter Rabasa">
-      <meta property="og:title" content="CascadiaJS - a JS conf for the PacNW" />
-      <meta name="twitter:image" content="https://cascadiajs.com/_public/images/splash.png">
+      <meta name="author" content="CascadiaJS">
+      <meta property="og:title" content="${ title }" />
+      <meta name="twitter:image" content="${ baseUrl }${ image }">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@cascadiajs">
-      <meta name="twitter:title" content="CascadiaJS - a JS conf for the PacNW">
+      <meta name="twitter:title" content="${ title }">
     </head>
 `;
 }

@@ -9,8 +9,10 @@
   "devDependencies": {
     "@enhance/cli": "latest",
     "@enhance/types": "^0.6.1",
+    "cloudinary": "^2.0.2",
     "dotenv": "^16.4.5",
     "eslint": "^8.49.0",
+    "puppeteer": "^22.3.0",
     "slugify": "^1.6.6",
     "uuid": "^9.0.1",
     "yaml": "^2.4.0"

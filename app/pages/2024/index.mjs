@@ -81,7 +81,7 @@ export default function ({ html }) {
         </section>
         <section id="speakers" class="landing">
           <h1>Our Speakers</h1>
-          <speakers-grid></speakers-grid>
+          <talks-grid></talks-grid>
         </section>
         <section id="features" class="landing">
           <h1>Features</h1>

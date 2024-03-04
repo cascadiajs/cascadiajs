@@ -54,13 +54,6 @@ export default function MainFooter({ html }) {
       <div class="wide">
         <section id="when-where">
           <h2>CascadiaJS - a JSConf for the PNW</h2>
-          <a href="http://carrie.rabasa.com"
-            ><img
-              src="/_public/images/logo-carrie-rabasa.svg"
-              width="150"
-              height="48"
-              alt="Visual Identity by Carrie Rabasa"
-          /></a>
         </section>
         <section id="stay-connected" class="push">
           <h2>Stay Connected</h2>

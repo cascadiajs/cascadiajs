@@ -2,7 +2,6 @@
 title: Call for Presenters
 image: /_public/images/past/cjs19-speaker-aaron.jpg
 excerpt: Every developer has a story, what's yours?
-caption: Aaron Turner speaking at CascadiaJS 2019
 ---
 
 ![Aaron Turner CascadiaJS 2019 speaker](/_public/images/past/cjs19-speaker-aaron.jpg)

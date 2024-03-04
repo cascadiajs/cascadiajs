@@ -1,7 +1,7 @@
 ---
 title: Code of Conduct
+image: /_public/images/past/cjs18-pronoun-stickers.jpg
 excerpt: CascadiaJS is a safe and inclusive event for everyone
-image: https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/2018-pronoun-stickers.jpg
 ---
 
 ![pronoun stickers](https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/2018-pronoun-stickers.jpg)
