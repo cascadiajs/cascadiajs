@@ -30,14 +30,14 @@ export async function getTalks({ query }) {
 }
 
 export async function saveTalk({ body }) {
-    const { _id, event_id, title, abstract, tags, short } = body
+    const { _id, title, abstract, tags, short } = body
     let tagsArray
     let slug
     if (tags && tags !== "") {
         tagsArray = tags.split(',')
     }
     if (title) {
-        slug = slugify(title, { lower: true })
+        slug = slugify(title, { lower: true, strict: true })
     }
     const talksCollection = await db.collection("talks")
     await talksCollection.updateOne({ _id }, { $set: { title, abstract, slug, tags: tagsArray, short } })
