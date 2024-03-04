@@ -8,9 +8,14 @@ import * as puppeteer from "puppeteer"
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-const baseUrl = "http://localhost:3333"
+async function createImages(env, password) {
 
-async function createImages() {
+  // define the local URL base for the static Markdown files
+  const localBase = "http://localhost:3333"
+
+  // define the remote URL base for the speakers API request
+  const remoteBase = `https://${ env === "staging" ? "staging." : "" }cascadiajs.com`
+
   // start the sandbox webserver
   await sandbox.start()
 
@@ -57,17 +62,17 @@ async function createImages() {
       if (title && image && excerpt) {
         console.log(`Generating a screen shot for ${ file }`)
         const stub = file.split('.md')[0]
-        await page.goto(`${ baseUrl }/${ stub }?social`)
+        await page.goto(`${ localBase }/${ stub }?social`)
         await page.screenshot({ path: `${dest}/${ stub }-share.png` })
       }
     }
   }
 
   //const talks = await findTalks({ query: { event_id: 'db5c0904-e0e2-43c7-af4a-8d0184dd6b9c' }})
-  const response = await fetch(`${ baseUrl}/admin/talks?event_id=db5c0904-e0e2-43c7-af4a-8d0184dd6b9c`, {
+  const response = await fetch(`${ remoteBase }/admin/talks?event_id=db5c0904-e0e2-43c7-af4a-8d0184dd6b9c`, {
     headers: {
       "Accept": "application/json",
-      "X-CASCADIAJS-PASS": process.env.SECRET_PASSWORD
+      "X-CASCADIAJS-PASS": password
     },
   })
   const json = await response.json()
@@ -77,7 +82,7 @@ async function createImages() {
     if (talk.slug) {
       const path = '2024/talks/' + talk.slug
       console.log(`Generating a screen shot for ${ path }`)
-      const fullUrl = `${ baseUrl }/${ path }?social`
+      const fullUrl = `${ remoteBase }/${ path }?social`
       //console.log(fullUrl)
       await page.goto(fullUrl)
       await page.screenshot({ path: `${dest}/${ path }.png` })
@@ -92,4 +97,14 @@ async function createImages() {
   //})
 }
 
-createImages()
+
+
+
+
+function main() {
+  let env = process.argv[2]
+  let password = process.argv[3]
+  createImages(env, password)
+}
+
+main()
