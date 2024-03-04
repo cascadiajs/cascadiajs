@@ -1,13 +1,6 @@
-import { AstraDB } from '@datastax/astra-db-ts'
+import { getConnection } from "./connection.mjs"
 import { findSpeakers } from './speakers.mjs'
 import { findEvents } from './events.mjs'
-
-const {
-  ASTRA_DB_API_ENDPOINT,
-  ASTRA_DB_APPLICATION_TOKEN
-} = process.env
-
-const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
 
 async function inflateTalks(talks) {
     // get speakers for these talks
@@ -32,6 +25,7 @@ async function inflateTalks(talks) {
 }
 
 async function findTalks({ query, limit = 100, inflate = false }) {
+    const db = getConnection()
     // get talks
     const talksCollection = await db.collection("talks")
     let talks = await talksCollection.find(query, { limit }).toArray()
@@ -42,6 +36,7 @@ async function findTalks({ query, limit = 100, inflate = false }) {
 }
 
 async function findTalk({ query, inflate = false }) {
+    const db = getConnection()
     const talksCollection = await db.collection("talks")
     let talk = await talksCollection.findOne(query)
     if (inflate) {

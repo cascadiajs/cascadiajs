@@ -24,14 +24,14 @@ export default function SocialSharing ({ html, state }) {
             font-family:freight-macro-pro,sans-serif;
             color:#112378;
             font-size:80px;
-            line-height:70px;
+            line-height:75px;
             font-weight:700;
             margin-bottom:24px;
         }
         
         #social-excerpt {
             color:#112378;
-            font-size:30px;
+            font-size:50px;
             line-height:1.3em
         }        
         </style>

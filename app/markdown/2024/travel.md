@@ -1,7 +1,7 @@
 ---
-title: Getting to Cascadia and Where to Stay
+title: Travel Info
 image: /_public/images/2024/travel/kimpton-hotel-monaco.jpg
-excerpt: All the information about how to get to Cascadia and where to stay while you're here. Hotel discounts expiring soon, don't wait!
+excerpt: How to get to Cascadia and where to stay while you're here. Hotel discounts expiring soon!
 ---
 
 We've worked with the following hotels to secure discounts for your stay in Seattle during CascadiaJS 2024! Please read the description below and make note of the deadlines for booking with the discount.

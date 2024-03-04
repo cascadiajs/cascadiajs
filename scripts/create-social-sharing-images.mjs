@@ -5,16 +5,15 @@ import { readFileSync, readdirSync } from "node:fs";
 import fm from "front-matter";
 import * as sandbox from "@architect/sandbox"
 import * as puppeteer from "puppeteer"
+import { findTalks } from '../shared/data/talks.mjs'
+import { findEvent } from '../shared/data/events.mjs'
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-async function createImages(env, password) {
+async function createImages() {
 
   // define the local URL base for the static Markdown files
-  const localBase = "http://localhost:3333"
-
-  // define the remote URL base for the speakers API request
-  const remoteBase = `https://${ env === "staging" ? "staging." : "" }cascadiajs.com`
+  const baseUrl = "http://localhost:3333"
 
   // start the sandbox webserver
   await sandbox.start()
@@ -50,7 +49,7 @@ async function createImages(env, password) {
     // only process Markdown files
     if (file.endsWith('.md')) {
       let docMarkdown;
-      let filePath = `${ source }/${ file }`
+      let filePath = `${source}/${file}`
       try {
         docMarkdown = readFileSync(filePath, "utf-8");
       } catch (_err) {
@@ -60,32 +59,25 @@ async function createImages(env, password) {
       let { attributes } = fm(docMarkdown)
       let { title, image, excerpt } = attributes
       if (title && image && excerpt) {
-        console.log(`Generating a screen shot for ${ file }`)
+        console.log(`Generating a screen shot for ${file}`)
         const stub = file.split('.md')[0]
-        await page.goto(`${ localBase }/${ stub }?social`)
-        await page.screenshot({ path: `${dest}/${ stub }.png` })
+        await page.goto(`${baseUrl}/${stub}?social`)
+        await page.screenshot({ path: `${dest}/${stub}.png` })
       }
     }
   }
 
-  //const talks = await findTalks({ query: { event_id: 'db5c0904-e0e2-43c7-af4a-8d0184dd6b9c' }})
-  const response = await fetch(`${ remoteBase }/admin/talks?event_id=db5c0904-e0e2-43c7-af4a-8d0184dd6b9c`, {
-    headers: {
-      "Accept": "application/json",
-      "X-CASCADIAJS-PASS": password
-    },
-  })
-  const json = await response.json()
-  const { talks } = json
-  //console.log(talks)
+  const event = await findEvent({ query: { slug: 'cascadiajs-2024'}})
+  const talks = await findTalks({ query: { event_id: event._id }})
+  
   for (const talk of talks) {
     if (talk.slug) {
       const path = '2024/talks/' + talk.slug
-      console.log(`Generating a screen shot for ${ path }`)
-      const fullUrl = `${ remoteBase }/${ path }?social`
+      console.log(`Generating a screen shot for ${path}`)
+      const fullUrl = `${baseUrl}/${path}?social`
       //console.log(fullUrl)
       await page.goto(fullUrl)
-      await page.screenshot({ path: `${dest}/${ path }.png` })
+      await page.screenshot({ path: `${dest}/${path}.png` })
     }
   }
 
@@ -98,9 +90,7 @@ async function createImages(env, password) {
 }
 
 function main() {
-  let env = process.argv[2]
-  let password = process.argv[3]
-  createImages(env, password)
+  createImages()
 }
 
 main()

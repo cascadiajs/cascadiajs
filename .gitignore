@@ -1,5 +1,7 @@
 node_modules/
 .env
+.env.stage
+.env.prod
 
 # Enhance temp files
 .enhance/

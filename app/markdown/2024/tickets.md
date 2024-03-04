@@ -1,7 +1,7 @@
 ---
 title: Tickets to CascadiaJS 2024
 image: /_public/images/past/cjs22-happyhour.jpg
-excerpt: All the information about how to buy tickets to the big show. Discounts expiring soon, don't wait!
+excerpt: Supplies are limited, don't miss out!
 ---
 
 ## Ticket Release Schedule
