@@ -9,6 +9,7 @@ function talk(t) {
         </p>` : ''}
         <form action=/admin/talks method=post>
           <input type=${ t ? 'hidden' : 'text' } name=_id value="${ t ? t._id : '' }">
+          <input type=${ t ? 'hidden' : 'text' } name=event_id value="${ t ? t.event_id : '' }">
           <input type=text name=title placeholder="Title" value="${ t ? t.title : '' }">
           <textarea name=abstract placeholder="Abstract">${ t ? t.abstract : '' }</textarea>
           <input type=text name=short placeholder="Short Description" value="${ t ? t.short : '' }">

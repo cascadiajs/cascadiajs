@@ -30,7 +30,7 @@ export async function getTalks({ query }) {
 }
 
 export async function saveTalk({ body }) {
-    const { _id, title, abstract, tags, short } = body
+    const { _id, title, abstract, tags, short, event_id } = body
     let tagsArray
     let slug
     if (tags && tags !== "") {

@@ -25,8 +25,8 @@ export default function PersonDetail({ html, state }) {
             <p>${ company }</p>
             <h3>Links</h3>
             <div class="person-links">
-            ${ twitter ? `<div><i class="fab fa-twitter"></i> <a target="_blank" href="https://twitter.com/${ twitter }">@${ twitter }</a></div>` : '' }
-            ${ url ? `<div><i class="fa fa-globe"></i> <a target="_blank" href="${ url }">${ url.split("://")[1] }</a></div>` : '' }
+            ${ twitter ? `<p><i class="fab fa-twitter"></i> <a target="_blank" href="https://twitter.com/${ twitter }">@${ twitter }</a></p>` : '' }
+            ${ url ? `<p><i class="fa fa-globe"></i> <a target="_blank" href="${ url }">${ url.split("://")[1] }</a></p>` : '' }
             </div>
         </div>
       
