@@ -1,6 +1,6 @@
 function talk(t) {
     return `<details>
-        <summary>${ t ? t.title : 'New Talk' }</summary>
+        <summary>${ t ? (t.title || t.speaker.name) : 'New Talk' }</summary>
         ${ t ? `
         <p>
             Speaker: ${ t.speaker.name }<br/>
