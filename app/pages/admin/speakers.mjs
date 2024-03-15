@@ -17,7 +17,8 @@ export default function ({ html, state }) {
     return html`
         <admin-layout>
             <h1>Speakers</h1>
-            ${ speakers.map(speaker).join('')}
+            ${ speakers.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)).map(speaker).join('')}
+            ${ speaker() }
         </admin-layout>
     `
 }
