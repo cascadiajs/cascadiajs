@@ -9,7 +9,7 @@ export async function get({ path, query}) {
   try {
     docMarkdown = readFileSync(filePath, "utf-8");
   } catch (_err) {
-    console.log(_err);
+    //console.log(_err);
     return { statusCode: 404 };
   }
 

@@ -4,47 +4,25 @@ image: /_public/images/2024/travel/kimpton-hotel-monaco.jpg
 excerpt: How to get to Cascadia and where to stay while you're here. Hotel discounts expiring soon!
 ---
 
-We've worked with the following hotels to secure discounts for your stay in Seattle during CascadiaJS 2024! Please read the description below and make note of the deadlines for booking with the discount.
+## Getting to CascadiaJS in Seattle, WA
 
-## Hotel Monaco Seattle
+There are lots of ways to get to Seattle, WA, let's review!
 
-![Hotel Monaco Seattle (Kimpton)](/_public/images/2024/travel/kimpton-hotel-monaco.jpg)
+### Take the Hacker Train
 
-A boutique hotel in downtown Seattle, very close to Town Hall. Amenities include free wifi in guest rooms, use of custom PUBLIC bikes, access to the fitness center, and coffee and tea in the lobby every morning.
+Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouver, BC there is **no better way** to get to CascadiaJS than to join your fellow devs on the Hacker Train.
 
-* Deadline to book: May 06, 2024
-* $299 USD per night
-* 5 min walk to Town Hall
-* 3 min walk to Westlake Station (Link light rail)
-* For assistance, contact Crystal.Wagner@hotelmonaco.com
+[[Explore the Hacker Train]](/2024/hacker-train)
 
-<div class="cta secondary"><a href="https://www.kimptonhotels.com/redirect?path=asearch&brandCode=KI&localeCode=en&regionCode=1&hotelCode=SEASM&checkInDate=19&checkInMonthYear=052024&checkOutDate=22&checkOutMonthYear=052024&rateCode=6CBARC&_PMID=99801505&GPC=JS1&cn=no&viewfullsite=true">BOOK</a></div>
+### Fly in to Seatac
 
-## Residence Inn Seattle Downtown / Convention Center
+The closest airport to Seattle in [Seatac (SEA)](https://www.portseattle.org/sea-tac). 
 
-![Residence Inn Seattle Downtown / Convention Center (Marriott)](/_public/images/2024/travel/marriott-res-inn.jpg)
+Once you arrive, the cheapest and easiest way to get to Seattle in on the [Light Rail](https://www.soundtransit.org/ride-with-us/stops-stations/seatac-airport-station). Just take 1 Line north to downtown.
 
-This is a great choice if you're bringing family with you. The rooms are the biggest of these 3 options and have a pull-out sofa and kitchen. Amenities include free wifi and breakfast.
 
-* Deadline to book: May 20, 2024
-* $259 USD per night
-* 13 min walk to Town Hall
-* 8 min walk to Westlake Station (Link light rail)
-* To get the discounted rate for more than 3 nights, contact Stephanie.Faludi@marriott.com
+## Lodging in Seattle, WA
 
-<div class="cta secondary"><a href="https://www.marriott.com/events/start.mi?id=1702402840256&key=GRP">BOOK</a></div>
+We've worked with the several hotels to secure discounts for your stay in Seattle during CascadiaJS 2024! Please read the description below and make note of the deadlines for booking with the discount.
 
-## Moxy Seattle Downtown
-
-![Moxy Seattle Downtown (Marriott)](/_public/images/2024/travel/marriott-moxy.jpg)
-
-Cozy rooms for people who don't mind a longer walk to Town Hall. Bar check-in with welcome drink; communal, flexible spaces; self-service; tech-enabled everything.
-
-* Deadline to book: May 20, 2024
-* $239 USD per night
-* 30 min walk to Town Hall
-* 23 min bus ride to Town Hall
-* 20 min walk to Westlake Station (Link light rail)
-* To get the discounted rate for more than 3 nights, contact Stephanie.Faludi@marriott.com
-
-<div class="cta secondary"><a href="https://www.marriott.com/events/start.mi?id=1702402325796&key=GRP">BOOK</a></div>
+[[Explore Hotels]](/2024/hotels)
