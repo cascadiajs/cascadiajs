@@ -3,37 +3,50 @@ const sponsors = [
         id: 'datastax',
         tier: 'gold',
         logo: 'datastax.svg',
-        name: 'DataStax'
+        name: 'DataStax',
+        url: 'https://www.datastax.com'
     },
     { 
         id: 'stytch',
         tier: 'gold',
         logo: 'stytch.svg',
-        name: 'Stytch'
+        name: 'Stytch',
+        url: 'https://stytch.com/'
     },
     { 
         id: 'temporal',
         tier: 'gold',
         logo: 'temporal.svg',
-        name: 'Temporal'
+        name: 'Temporal',
+        url: 'https://temporal.io/'
     },
     { 
         id: 'codingscape',
         tier: 'gold',
         logo: 'codingscape.svg',
-        name: 'Codingscape'
+        name: 'Codingscape',
+        url: 'https://codingscape.com'
+    },
+    { 
+        id: 'hookdeck',
+        tier: 'community',
+        logo: 'hookdeck.svg',
+        name: 'HookDeck',
+        url: 'https://hookdeck.com?ref=cascadiajs-2024'
     },
     { 
         id: 'langchain',
         tier: 'community',
         logo: 'langchain.svg',
-        name: 'LangChain'
+        name: 'LangChain',
+        url: 'https://langchain.com'
     },
     { 
         id: 'google',
         tier: 'community',
         logo: 'google.png',
-        name: 'Google'
+        name: 'Google',
+        url: 'https://google.com'
     }
 ]
 
@@ -127,7 +140,7 @@ export default function Sponsors({ html }) {
                 <div class="tier-wrap"><div class="tier-inner"><div class="tier-label">${ tier }</div></div></div>
                 <div class="${ tier } tier">
                 ${ sponsors.filter(s => s.tier === tier).map(s => /*html*/`
-                    <div><img src="/_public/images/2024/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>
+                    <div><a target="_new" href="${ s.url }"><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>
                 `).join('') }
                 </div>
             `: ''}        
