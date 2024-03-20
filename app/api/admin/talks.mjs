@@ -34,7 +34,7 @@ export async function saveTalk({ body }) {
     let tagsArray
     let slug
     if (tags && tags !== "") {
-        tagsArray = tags.split(',')
+        tagsArray = tags.split(',').map(t => t.trim())
     }
     if (title) {
         slug = slugify(title, { lower: true, strict: true })

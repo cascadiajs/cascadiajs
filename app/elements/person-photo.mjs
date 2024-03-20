@@ -4,7 +4,7 @@ export default function PersonPhoto({ html, state }) {
     return html`
         <style>
         .person-photo {
-            background-color:    #ccf1db;
+            /*background-color:    #ccf1db;*/
             display:             flex;
             height:              ${ large ? '300px' : '250px'};
             width:               ${ large ? '300px' : '250px'};
@@ -14,18 +14,18 @@ export default function PersonPhoto({ html, state }) {
         }
 
         .person-photo img {
-            filter:              grayscale(100%) contrast(1) blur(0px);
+            /*filter:              grayscale(100%) contrast(1) blur(0px);*/
             flex:                1 0 100%;
             height:              ${ large ? '300px' : '250px'};
             max-width:           ${ large ? '300px' : '250px'};
-            mix-blend-mode:      multiply;
+            /*mix-blend-mode:      multiply;*/
             object-fit:          cover;
-            opacity:             1;
+            /*opacity:             1;*/
             position:            relative;
             width:               ${ large ? '300px' : '250px'};
         }
 
-        .person-photo::before {
+        /*.person-photo::before {
             background-color:    #112378;
             bottom:              0;
             content:             '';
@@ -37,7 +37,7 @@ export default function PersonPhoto({ html, state }) {
             top:                 0;
             width:               ${ large ? '300px' : '250px'};
             z-index:             1;
-        }
+        }*/
         </style>
         <div class="person-photo">
             <img src="${ image }" alt="photo of ${ name }"/>

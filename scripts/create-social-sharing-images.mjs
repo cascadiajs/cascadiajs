@@ -16,7 +16,7 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 
 
-async function createImages(command) {
+async function createImages(command, argument) {
 
   // define the local URL base for the static Markdown files
   const baseUrl = "http://localhost:3333"
@@ -50,7 +50,12 @@ async function createImages(command) {
 
   if (command === 'pages') {
     // generate social sharing images for pages defined by the markdown directory 
-    const files = readdirSync(source, { recursive: true })
+    let files = readdirSync(source, { recursive: true })
+
+    if (argument) {
+      files = files.filter(f => f === argument)
+      console.log(files)
+    }
 
     for (const file of files) {
       // only process Markdown files
@@ -84,7 +89,11 @@ async function createImages(command) {
 
   if (command === 'speakers') {
     const event = await findEvent({ query: { slug: 'cascadiajs-2024'}})
-    const talks = await findTalks({ query: { event_id: event._id }})
+    let talks = await findTalks({ query: { event_id: event._id }})
+    
+    if (argument) {
+      talks = talks.filter(t => t.slug === argument)
+    }
     
     for (const talk of talks) {
       if (talk.slug) {
@@ -107,7 +116,8 @@ async function createImages(command) {
 
 function main() {
   let command = process.argv[2]
-  createImages(command)
+  let argument = process.argv[3]
+  createImages(command, argument)
 }
 
 main()
