@@ -79,7 +79,7 @@ async function createImages(command, argument) {
       }
     }
     // manually process pages
-    for (const path of ['2024']) {
+    for (const path of ['2024', '2024/schedule']) {
       console.log(`Generating a screen shot for ${path}`)
       const fullUrl = `${baseUrl}/${path}?social`
       await page.goto(fullUrl)

@@ -1,6 +1,6 @@
 export default function PageLayout({ html, state }) {
     const { attrs } = state
-    const { title } = attrs
+    const { title, width = "narrow" } = attrs
     return html`
         <style>
         #page {
@@ -51,7 +51,7 @@ export default function PageLayout({ html, state }) {
 
             #page .page-body,
             #page .page-title div {
-                width: 50%;
+                width: ${ width === "narrow" ?  "50%" : "70%" };
                 margin: 0 auto;
             }
             
