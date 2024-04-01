@@ -17,8 +17,8 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
     <tbody>
     <tr class="faded"><td>Super Early Bird</td><td>Oct - Dec 31st, 2023</td><td>50% off</td></tr>
     <tr class="faded"><td>Early Bird</td><td>Jan 1 - Feb 4, 2024</td><td>35% off</td></tr>
-    <tr><td>Regular Bird <span class="note-emphasis">On sale now!</span></td><td>Feb 5 - May 26, 2024</td><td>20% off</td></tr>
-    <tr><td>Full Price</td><td>May 27 - June 20, 2024</td><td>no discount</td></tr>
+    <tr><td>Regular Bird <span class="note-emphasis">On sale now!</span></td><td>Feb 5 - May 3, 2024</td><td>20% off</td></tr>
+    <tr><td>Full Price</td><td>May 4 - June 20, 2024</td><td>no discount</td></tr>
     </tbody>
 </table>
 

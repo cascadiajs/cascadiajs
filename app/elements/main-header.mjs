@@ -44,7 +44,7 @@ export default function MainHeader({ html, state }) {
       header > section.alert {
         background-color: #ffd007;
         padding: 8px;
-        font-family: alkaline-caps, monospace;
+        font-family: "mono45-headline", monospace;
         font-weight: 500;
         color: #112378;
         text-align: center;
@@ -79,6 +79,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
+      <section class="alert"><i class="fa-solid fa-ticket"></i> We've launched <a href="/2024/tickets">No Frills</a> tickets for $199!</section>
       ${path && path.startsWith("/2024")
         ? html`<nav class="back">
               <div class="wide">
