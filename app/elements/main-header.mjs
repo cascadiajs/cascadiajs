@@ -79,7 +79,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert"><i class="fa-solid fa-ticket"></i> We've launched <a href="/2024/tickets">No Frills</a> tickets!</section>
+      <section class="alert">⏰ Deadline for <a href="/2024/tickets">20% off tickets</a> & conference hoodie is May 3!</section>
       ${path && path.startsWith("/2024")
         ? html`<nav class="back">
               <div class="wide">

@@ -22,6 +22,19 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
     </tbody>
 </table>
 
+## Other Ticket Types
+
+If you are a student, are self-employed or are on a budget, we've got you covered!
+
+<table class="styled-table">
+    <tbody>
+    <tr><td>Indie Dev</span></td><td>Must work for a educational institution, a non-profit organization or a company with fewer than 10 employees.</td></tr>
+    <tr><td>Student</span></td><td>Designed for students who are not working in tech full-time.</td></tr>
+    <tr><td>No Frills</span></td><td>Does not come with any swag, meals or drink tickets (no frills!), but you'll have access to all the talks, all the workshops and both evening social events.</td></tr>
+    <tr><td>Significant Other</span></td><td>Designed for significant others who want to participate in the social parts of the conference.</td></tr>
+    </tbody>
+</table>
+
 ## Group Sales and Registration
 
 We ask people to register for their ticket themselves (and not on behalf of someone else) because during the registration process we ask folks to agree to our Code of Conduct and we collect important personal information, such as hoodie sizes and dietary restrictions.
