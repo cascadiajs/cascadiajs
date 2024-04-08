@@ -17,6 +17,15 @@ export default function Head(state) {
     <!DOCTYPE html>
     <html lang="en">
     <head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBTPEH9RZW"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBTPEH9RZW');
+      </script>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${ title }</title>

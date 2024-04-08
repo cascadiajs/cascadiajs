@@ -201,6 +201,9 @@ export default function ({ html, state }) {
               </div>
             </div>
           </section>
+          <section id="organizers" class="landing">
+            <organizers-grid></organizers-grid>
+          </section>
         </div></main-layout
       >`;
   }

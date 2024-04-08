@@ -1,6 +1,6 @@
 export default function TalkItem({ html, state }) {
     const { attrs } = state
-    const { name, company, location } = attrs
+    const { name, company, role, location } = attrs
     return html`
         <style>
         .person-name {
@@ -23,7 +23,9 @@ export default function TalkItem({ html, state }) {
         </style>
         <div class="person-name">${ name }</div>
         <div class="person-misc">
-            ${ company ? company : '' }<br/>${ location ? location : '' }
+            ${ company ? company + '<br/>' : '' }
+            ${ role ? role + '<br/>' : '' }
+            ${ location ? location : '' }
         </div>       
     `
 }
