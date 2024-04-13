@@ -1,7 +1,7 @@
 import "dotenv/config"
 import { join } from "path"
 import * as url from "url"
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, mkdirSync } from "node:fs";
 import fm from "front-matter";
 import * as sandbox from "@architect/sandbox"
 import * as puppeteer from "puppeteer"
@@ -51,10 +51,8 @@ async function createImages(command, argument) {
   if (command === 'pages') {
     // generate social sharing images for pages defined by the markdown directory 
     let files = readdirSync(source, { recursive: true })
-
     if (argument) {
       files = files.filter(f => f === argument)
-      console.log(files)
     }
 
     for (const file of files) {
@@ -74,16 +72,21 @@ async function createImages(command, argument) {
           console.log(`Generating a screen shot for ${file}`)
           const stub = file.split('.md')[0]
           await page.goto(`${baseUrl}/${stub}?social`)
+          // make the directory in case it doesn't exist
+          const baseDir = dest + '/' + file.split('/').slice(0, -1).join('/')
+          mkdirSync(baseDir, { recursive: true })
           await page.screenshot({ path: `${dest}/${stub}.png` })
         }
       }
     }
     // manually process pages
-    for (const path of ['2024', '2024/schedule']) {
-      console.log(`Generating a screen shot for ${path}`)
-      const fullUrl = `${baseUrl}/${path}?social`
-      await page.goto(fullUrl)
-      await page.screenshot({ path: `${dest}/${path}.png` })
+    if (!argument) {
+      for (const path of ['2024', '2024/schedule']) {
+        console.log(`Generating a screen shot for ${path}`)
+        const fullUrl = `${baseUrl}/${path}?social`
+        await page.goto(fullUrl)
+        await page.screenshot({ path: `${dest}/${path}.png` })
+      }
     }
   }
 

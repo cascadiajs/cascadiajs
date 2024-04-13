@@ -3,7 +3,6 @@ title: Tickets to CascadiaJS 2024
 image: /_public/images/past/cjs22-happyhour.jpg
 excerpt: Supplies are limited, don't miss out!
 ---
-
 ## Ticket Release Schedule
 
 Tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
@@ -40,6 +39,10 @@ If you are a student, are self-employed or are on a budget, we've got you covere
 We ask people to register for their ticket themselves (and not on behalf of someone else) because during the registration process we ask folks to agree to our Code of Conduct and we collect important personal information, such as hoodie sizes and dietary restrictions.
 
 For group/team purchases, please email us at info@cascadiajs.com. We can separate the payment process from the registration process. We can also provide group discounts for groups of 5 or more. Thank you!
+
+## Need Help Convicing Your Boss?
+
+We know it's not always easy to get your manager or company to send you to a tech conference, so we've put together [some resources](/2024/boss-letter) to help you make the case! 
 
 ## Purchase a Ticket
 

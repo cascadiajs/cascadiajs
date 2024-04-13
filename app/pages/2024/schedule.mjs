@@ -63,16 +63,25 @@ function DayZero({ ticket = undefined }) {
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">9am - 5pm</div>
+                    <div class="when">9am - noon</div>
                     <div class="what">
-                        <div class="title">Training TBD</div>
-                        <p>Stay tuned for a full-day training workshop!</p>
+                        <div class="title">Intro to React Server Components</div>
+                        <p>In this morning workshop, we’ll build and iterate on an app that takes advantage of the server components architecture to build a high-performance application. Along the way, we’ll get comfortable with best practices in React routing, caching, and data loading.</p>
+                        <div class="cta"><a href="/2024/trainings/intro-react-server-components">More Info</a></div>
+                    </div>
+                </div>
+                <div class="show-item">       
+                <div class="when">1pm - 4pm</div>
+                    <div class="what">
+                        <div class="title">AI for React Developers</div>
+                        <p>Knowledge of AI tooling is critical for future proofing the careers of React developers, and the Vercel suite of AI tools is an approachable on-ramp. In this course, we’ll take a closer look at the Vercel AI SDK and how this can help React developers build streaming interfaces with JavaScript and Next.js. We’ll also incorporate additional 3rd party APIs to build and deploy a music visualization app.</p>
+                        <div class="cta"><a href="/2024/trainings/ai-for-react-developers">More Info</a></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="location">The Collective</div>
+        <div class="location">Stoup Brewing (Capitol Hill)</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
