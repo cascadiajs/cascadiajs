@@ -7,7 +7,7 @@ const { SECRET_PASSWORD } = process.env
 
 async function checkAuth({ session, headers }) {
     const authorized = headers['x-cascadiajs-pass'] === SECRET_PASSWORD || !!(session.authorized)
-    if (!authorized) return { location: '/login' }
+    if (!authorized) return { location: '/admin/login' }
 }
 
 export async function getSpeakers({ query }) {

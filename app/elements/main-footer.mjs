@@ -37,12 +37,13 @@ export default function MainFooter({ html }) {
         footer div {
           display: flex;
         }
-        #stay-connected {
+        #stay-connected, #legal {
           margin-right: 40px;
         }
         #when-where,
         #stay-connected,
-        #past-events {
+        #past-events,
+        #legal  {
           text-align: left;
         }
         #when-where {
@@ -54,6 +55,13 @@ export default function MainFooter({ html }) {
       <div class="wide">
         <section id="when-where">
           <h2>CascadiaJS - a JSConf for the PNW</h2>
+        </section>
+        <section id="legal">
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/tos">Terms of Service</a></li>
+          </ul>
         </section>
         <section id="stay-connected" class="push">
           <h2>Stay Connected</h2>
