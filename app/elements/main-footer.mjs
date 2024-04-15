@@ -61,6 +61,7 @@ export default function MainFooter({ html }) {
           <ul>
             <li><a href="/privacy">Privacy Policy</a></li>
             <li><a href="/tos">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
           </ul>
         </section>
         <section id="stay-connected" class="push">
