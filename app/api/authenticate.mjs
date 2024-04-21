@@ -1,4 +1,5 @@
 import * as stytch from 'stytch'
+import { upsertUser } from '../../shared/data/users.mjs'
 
 export async function get({ query }) {
     const { stytch_token_type, token } = query
@@ -11,7 +12,13 @@ export async function get({ query }) {
       }
     );
         
-    const resp = await client.oauth.authenticate({ token})
+    const oauth = await client.oauth.authenticate({ token})
+    const id = oauth.oauth_user_registration_id
+    const name = oauth.user.name
+    const email = oauth.user.emails[0].email
+    const email_verified = oauth.user.emails[0].verified
+    const profile_photo = oauth.user.providers[0].profile_picture_url
+    const resp = await upsertUser({ id, name, email, email_verified, profile_photo, oauth_payload: oauth })
     console.log(resp)
     return {
       location: '/'

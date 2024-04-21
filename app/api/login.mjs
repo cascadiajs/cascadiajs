@@ -1,8 +1,12 @@
-export async function post({ body }) {
-    const authorized = body.password === process.env.SECRET_PASSWORD
+import { getBaseUrl } from '../../shared/utils/base-url.mjs'
+
+export async function get(req) {
+  const baseUrl = getBaseUrl(req)
+  const REDIRECT_URL = baseUrl + '/authenticate'
   
-    return {
-      location: '/admin',
-      session: { authorized }
+  return {
+    json: {
+      REDIRECT_URL
     }
+  }
 }
