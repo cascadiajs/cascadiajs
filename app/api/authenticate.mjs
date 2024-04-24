@@ -8,7 +8,7 @@ export async function get({ query }) {
     const client = new stytch.Client({
         project_id: process.env.STYTCH_PROJECT_ID,
         secret: process.env.STYTCH_SECRET,
-        env: stytch.envs.test,
+        /*env: stytch.envs.test,*/
       }
     );
         
@@ -22,8 +22,6 @@ export async function get({ query }) {
     const resp = await upsertUser({ id, name, email, email_verified, profile_photo, oauth_provider, oauth_payload: oauth })
     
     console.log(resp)
-
-
 
     return {
       location: '/live',
