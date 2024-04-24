@@ -18,9 +18,16 @@ export async function get({ query }) {
     const email = oauth.user.emails[0].email
     const email_verified = oauth.user.emails[0].verified
     const profile_photo = oauth.user.providers[0].profile_picture_url
-    const resp = await upsertUser({ id, name, email, email_verified, profile_photo, oauth_payload: oauth })
+    const oauth_provider = oauth.provider_type
+    const resp = await upsertUser({ id, name, email, email_verified, profile_photo, oauth_provider, oauth_payload: oauth })
+    
     console.log(resp)
+
+
+
     return {
-      location: '/'
+      location: '/live',
+      session: { id, name }
     }
+
 }

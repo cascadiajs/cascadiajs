@@ -1,15 +1,9 @@
-import { AstraDB } from '@datastax/astra-db-ts'
-
-const {
-  ASTRA_DB_API_ENDPOINT,
-  ASTRA_DB_APPLICATION_TOKEN,
-  SECRET_PASSWORD
-} = process.env
-
-const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
+import { findEvents, upsertEvent } from "../../../shared/data/events.mjs"
 
 export const get = [checkAuth, getEvents]
 export const post = [checkAuth, saveEvent]
+
+const { SECRET_PASSWORD } = process.env
 
 async function checkAuth({ session, headers }) {
     const authorized = headers['x-cascadiajs-pass'] === SECRET_PASSWORD || !!(session.authorized)
@@ -17,8 +11,7 @@ async function checkAuth({ session, headers }) {
 }
 
 export async function getEvents() {
-    const eventsCollection = await db.collection("events")
-    const events = await eventsCollection.find().toArray()
+    const events = await findEvents()
     return {
         json: {
             events
@@ -28,8 +21,7 @@ export async function getEvents() {
 
 export async function saveEvent({ body }) {
     const { _id, name } = body
-    const eventsCollection = await db.collection("events")
-    await eventsCollection.updateOne({ _id }, { $set: { name } })
+    await upsertEvent({ _id, name } )
     return {
         location: '/admin/events'
     }

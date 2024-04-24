@@ -2,6 +2,8 @@ import { getConnection } from "./connection.mjs"
 import { findSpeakers } from './speakers.mjs'
 import { findEvents } from './events.mjs'
 
+const COLLECTION = "talks"
+
 async function inflateTalks(talks) {
     // get speakers for these talks
     const speakers = await findSpeakers({
@@ -27,7 +29,7 @@ async function inflateTalks(talks) {
 async function findTalks({ query, limit = 100, inflate = false }) {
     const db = getConnection()
     // get talks
-    const talksCollection = await db.collection("talks")
+    const talksCollection = await db.collection(COLLECTION)
     let talks = await talksCollection.find(query, { limit }).toArray()
     if (inflate) {
         talks = await inflateTalks(talks)
@@ -37,7 +39,7 @@ async function findTalks({ query, limit = 100, inflate = false }) {
 
 async function findTalk({ query, inflate = false }) {
     const db = getConnection()
-    const talksCollection = await db.collection("talks")
+    const talksCollection = await db.collection(COLLECTION)
     let talk = await talksCollection.findOne(query)
     if (inflate) {
         talk = (await inflateTalks([talk])).pop()
@@ -45,7 +47,22 @@ async function findTalk({ query, inflate = false }) {
     return talk
 }
 
+async function upsertTalk({ id, title, abstract, tags, short, event_id }) {
+    let tagsArray
+    let slug
+    if (tags && tags !== "") {
+        tagsArray = tags.split(',').map(t => t.trim())
+    }
+    if (title) {
+        slug = slugify(title, { lower: true, strict: true })
+    }
+    const db = getConnection()
+    const talksCollection = await db.collection(COLLECTION)
+    return await talksCollection.updateOne({ _id: id }, { $set: { title, abstract, slug, tags: tagsArray, short } })
+}
+
 export {
     findTalks,
-    findTalk
+    findTalk,
+    upsertTalk
 }

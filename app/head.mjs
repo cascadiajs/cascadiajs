@@ -1,7 +1,3 @@
-//import { getStyles } from "@enhance/arc-plugin-styles";
-//const { linkTag } = getStyles;
-// ${linkTag()}
-
 import { getBaseUrl } from '../shared/utils/base-url.mjs'
 
 export default function Head(state) {

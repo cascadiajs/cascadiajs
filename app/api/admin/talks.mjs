@@ -1,14 +1,5 @@
 import slugify from 'slugify'
-import { AstraDB } from '@datastax/astra-db-ts'
-import { findTalks } from '../../../shared/data/talks.mjs'
-
-const {
-  ASTRA_DB_API_ENDPOINT,
-  ASTRA_DB_APPLICATION_TOKEN,
-  SECRET_PASSWORD
-} = process.env
-
-const db = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT)
+import { findTalks, upsertTalk } from '../../../shared/data/talks.mjs'
 
 export const get = [checkAuth, getTalks]
 export const post = [checkAuth, saveTalk]
@@ -29,18 +20,8 @@ export async function getTalks({ query }) {
     }
 }
 
-export async function saveTalk({ body }) {
-    const { _id, title, abstract, tags, short, event_id } = body
-    let tagsArray
-    let slug
-    if (tags && tags !== "") {
-        tagsArray = tags.split(',').map(t => t.trim())
-    }
-    if (title) {
-        slug = slugify(title, { lower: true, strict: true })
-    }
-    const talksCollection = await db.collection("talks")
-    await talksCollection.updateOne({ _id }, { $set: { title, abstract, slug, tags: tagsArray, short } })
+export async function saveTalk({ _id, title, abstract, tags, short, event_id }) {
+    await upsertTalk({ id: _id, title, abstract, tags, short, event_id })
     return {
         location: '/admin/talks?event_id=' + event_id
     }

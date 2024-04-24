@@ -7,7 +7,7 @@ excerpt: Supplies are limited, don't miss out!
 
 Tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
 
-*NOTE: Folks purchase a ticket after June 1 are not guaranteed a hoodie or a hoodie in their preferred size.*
+<b>NOTE: Folks purchase a ticket after <span class="note-emphasis">May 3</span> are not guaranteed a hoodie or a hoodie in their preferred size.</b>
 
 <table class="styled-table">
     <thead>
