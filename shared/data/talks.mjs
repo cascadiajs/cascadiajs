@@ -1,3 +1,4 @@
+import slugify from 'slugify'
 import { getConnection } from "./connection.mjs"
 import { findSpeakers } from './speakers.mjs'
 import { findEvents } from './events.mjs'
@@ -47,7 +48,8 @@ async function findTalk({ query, inflate = false }) {
     return talk
 }
 
-async function upsertTalk({ id, title, abstract, tags, short, event_id }) {
+async function upsertTalk(talk) {
+    const { _id, title, abstract, tags, short, event_id, speaker_id } = talk
     let tagsArray
     let slug
     if (tags && tags !== "") {
@@ -57,8 +59,15 @@ async function upsertTalk({ id, title, abstract, tags, short, event_id }) {
         slug = slugify(title, { lower: true, strict: true })
     }
     const db = getConnection()
-    const talksCollection = await db.collection(COLLECTION)
-    return await talksCollection.updateOne({ _id: id }, { $set: { title, abstract, slug, tags: tagsArray, short } })
+    const collection = await db.collection(COLLECTION)
+    let response
+    if (_id) {
+        response = collection.updateOne({ _id }, { $set: { title, abstract, slug, tags: tagsArray, short, event_id, speaker_id } })
+    }
+    else {
+        response = await collection.insertOne({ title, abstract, slug, tags: tagsArray, short, event_id, speaker_id })
+    }
+    return response
 }
 
 export {

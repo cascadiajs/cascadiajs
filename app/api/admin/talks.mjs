@@ -1,8 +1,9 @@
-import slugify from 'slugify'
 import { findTalks, upsertTalk } from '../../../shared/data/talks.mjs'
 
 export const get = [checkAuth, getTalks]
 export const post = [checkAuth, saveTalk]
+
+const { SECRET_PASSWORD } = process.env
 
 async function checkAuth({ session, headers }) {
     const authorized = headers['x-cascadiajs-pass'] === SECRET_PASSWORD || !!(session.authorized)
@@ -20,8 +21,10 @@ export async function getTalks({ query }) {
     }
 }
 
-export async function saveTalk({ _id, title, abstract, tags, short, event_id }) {
-    await upsertTalk({ id: _id, title, abstract, tags, short, event_id })
+export async function saveTalk({ body }) {
+    console.log(body)
+    const { _id, event_id, speaker_id, title, abstract, tags, short } = body
+    await upsertTalk({ _id, event_id, speaker_id, title, abstract, tags, short })
     return {
         location: '/admin/talks?event_id=' + event_id
     }

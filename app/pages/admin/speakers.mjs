@@ -2,7 +2,8 @@ function speaker(e) {
     return `<details>
         <summary>${ e ? e.name : 'New Speaker' }</summary>
         <form action=/admin/speakers method=post>
-          <input type=${ e ? 'hidden' : 'text' } name=_id placeholder="id" value="${ e ? e._id : '' }">
+          ${ e ? `<input type=hidden name=_id placeholder="id" value="${e._id}"` : '' }
+          <input type=text name=slug placeholder="Slug" value="${ e ? e.name : '' }">
           <input type=text name=name placeholder="Name" value="${ e ? e.name : '' }">
           <input type=text name=image placeholder="Image" value="${ e ? e.image : '' }">
           <input type=text name=url placeholder="Website" value="${ e ? e.url : '' }">

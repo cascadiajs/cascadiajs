@@ -1,4 +1,5 @@
 function talk(t) {
+    console.log(t)
     return `<details>
         <summary>${ t ? (t.title || t.speaker.name) : 'New Talk' }</summary>
         ${ t ? `
@@ -8,8 +9,9 @@ function talk(t) {
             Slug: ${ t.slug }
         </p>` : ''}
         <form action=/admin/talks method=post>
-          <input type=${ t ? 'hidden' : 'text' } name=_id value="${ t ? t._id : '' }">
-          <input type=${ t ? 'hidden' : 'text' } name=event_id value="${ t ? t.event_id : '' }">
+        ${ t ? `<input type=hidden name=_id value="${ t._id}">` : '' }
+          <input type=${ t ? 'hidden' : 'text' } name=event_id placeholder="event_id" value="${ t ? t.event_id : '' }">
+          <input type=${ t ? 'hidden' : 'text' } name=speaker_id placeholder="speaker_id" value="${ t ? t.speaker_id : '' }">
           <input type=text name=title placeholder="Title" value="${ t ? t.title : '' }">
           <textarea name=abstract placeholder="Abstract">${ t ? t.abstract : '' }</textarea>
           <input type=text name=short placeholder="Short Description" value="${ t ? t.short : '' }">
