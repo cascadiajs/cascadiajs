@@ -19,8 +19,8 @@ export async function getSpeakers({ query }) {
 }
 
 export async function saveSpeaker({ body }) {
-    const { _id, slug, name, image, url, twitter } = body
-    await upsertSpeaker({ _id, slug, name, image, url, twitter })
+    const { _id, slug, name, image, url, twitter, company, location, pronouns } = body
+    await upsertSpeaker({ _id, slug, name, image, url, twitter, company, location, pronouns })
     return {
         location: '/admin/speakers'
     }

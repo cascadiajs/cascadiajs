@@ -10,12 +10,6 @@ import { findEvent } from '../shared/data/events.mjs'
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-
-
-
-
-
-
 async function createImages(command, argument) {
 
   // define the local URL base for the static Markdown files

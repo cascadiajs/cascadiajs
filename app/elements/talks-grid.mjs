@@ -33,7 +33,7 @@ export default function Talks({ html, state }) {
                 company="${ t.speaker.company }" 
                 location="${ t.speaker.location }"
             ></talks-item>`).join('')}
-        ${ ["ai-sasquatch", "ai-salmon", "ai-seahawk", "ai-tree", "ai-mushroom"].map(image => `
+        ${ ["ai-sasquatch", "ai-salmon", "ai-seahawk", "ai-tree"].map(image => `
             <talks-item
                 image="/_public/images/speakers/${ image }.webp" 
                 name="Secret" 
