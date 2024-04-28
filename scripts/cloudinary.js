@@ -35,31 +35,41 @@ const uploadImage = async (imagePath) => {
 };
 
 
-const createImageTag = (publicId) => {
+const createImageUrl = (publicId) => {
     // Create an image tag with transformations applied to the src URL
-    let imageTag = cloudinary.image(publicId, {
+    let imageUrl = cloudinary.url(publicId, {
         transformation: [
             { width: 1200, crop: "scale" },
             {
                 overlay: {
-                    font_family: "arial", font_size: 48, 
-                    text: "HEADLINE HEADLINE HEADLINE HEADLINE HEADLINE HEADLINE HEADLINE HEADLINE",
+                    font_family: "Roboto Slab", font_size: 48, 
+                    text: "First Name Last Name",
                     
-                }, width: 500, crop: "fit"
+                }, width: 771, gravity: "west", crop: "fit", x: 230, y: -30, color: "#112378"
+            },
+            {
+                overlay: {
+                    font_family: "Roboto Mono", font_size: 40, 
+                    text: "Conference Attendee",
+                    
+                }, gravity: "west", crop: "fit", x: 480, y: 50, color: "#112378"
+            },
+            {
+                overlay: {
+                    font_family: "Roboto Mono", font_size: 48, 
+                    text: "#001",
+                    
+                }, gravity: "south_east", crop: "fit", x: 100, y: 80, color: "#112378", angle: 90
             },
             { 
-                flags: "layer_apply", x: 300
-            },
-            { 
-                overlay: "cfp" 
-            },
-            { 
-                flags: "layer_apply", x: -300 
+                overlay: {
+                    url: "https://cascadiajs.com/_public/images/speakers/henri-helvetica-eaa1936218.jpg"
+                }, width: 197, radius: "max", x: -264, y: 135
             }
         ]
     })
 
-    return imageTag;
+    return imageUrl;
 };
 
 
@@ -80,9 +90,9 @@ const createImageTag = (publicId) => {
     //const colors = await getAssetInfo('social-sharing-card');
 
     // Create an image tag, using two of the colors in a transformation
-    const imageTag = await createImageTag('social-sharing-card');
+    const imageUrl = await createImageUrl('cascadiajs-ticket-2024');
 
     // Log the image tag to the console
-    console.log(imageTag);
+    console.log(imageUrl);
 
 })();

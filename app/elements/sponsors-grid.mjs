@@ -47,6 +47,48 @@ const sponsors = [
         logo: 'google.png',
         name: 'Google',
         url: 'https://google.com'
+    },
+    { 
+        id: 'begin',
+        tier: 'community',
+        logo: 'begin.svg',
+        name: 'Begin',
+        url: 'https://begin.com'
+    },
+    { 
+        id: 'mux',
+        tier: 'community',
+        logo: 'mux.png',
+        name: 'Mux',
+        url: 'https://mux.com'
+    },
+    { 
+        id: 'seattlejs',
+        tier: 'community',
+        logo: 'seattlejs.png',
+        name: 'SeattleJS',
+        url: 'https://seattlejs.com'
+    },
+    { 
+        id: 'seattle-node',
+        tier: 'community',
+        logo: 'seattle-node.png',
+        name: 'Seattle Node',
+        url: 'https://www.meetup.com/seattle-node-js/'
+    },
+    { 
+        id: 'seattle-reactjs',
+        tier: 'community',
+        logo: 'seattle-reactjs.jpg',
+        name: 'Seattle React.js',
+        url: 'https://www.meetup.com/seattle-react-js/'
+    },
+    { 
+        id: 'pdx-angular',
+        tier: 'community',
+        logo: 'portland-angular.jpg',
+        name: 'Portland Angular.js',
+        url: 'https://www.meetup.com/ngpdxers/'
     }
 ]
 
