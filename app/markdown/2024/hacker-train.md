@@ -18,18 +18,13 @@ NOTE: the routes below are just the ones that get you TO Seattle on June 19, so 
 ## Departing Vancouver, BC
 
 * Wednesday, June 19
+* Departs Vancouver (Pacific Central Station) at 4:45pm, arrives Seattle (King St Station) at 9:10pm
 
-We need your help is deciding between three options:
-
-1. Leaving on the train at 7:15am and arriving with plenty of time to see Seattle and attend the Welcome Reception
-2. Leaving on the train at 4:45pm, but missing the Welcome Reception
-3. Leaving on a bus at 1pm, and arriving in time for the Welcome Reception
-
-<div class="cta"><a target="_blank" href="https://airtable.com/appYEQ4JXnRFkHgNQ/pagTiyLKEtmKo9Lpw/form">Fill-out Survey</a></div>
+<div class="cta"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train Ticket</a></div>
 
 ## Departing Portland, OR
 
 * Wednesday, June 19
-* Departs PDX (Union Station) at 10:40am, arrives SEA (King St Station) at 2:05pm
+* Departs Portland (Union Station) at 10:40am, arrives Seattle (King St Station) at 2:05pm
 
-<div class="cta"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Ticket</a></div>
+<div class="cta"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train Ticket</a></div>
