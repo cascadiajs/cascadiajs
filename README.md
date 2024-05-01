@@ -61,6 +61,12 @@ If you need to run/test the mailing list subscription action (`POST /signup`) yo
 
 `npm start`
 
+## Generating social sharing images for speakers and other web pages
+
+You'll need to install puppeteer globally first:
+
+`PUPPETEER_EXPERIMENTAL_CHROMIUM_MAC_ARM=true npm i puppeteer -g`
+
 ## Making contributions
 
 If you would like to make a contribution, please fork this repo and send us a pull request.

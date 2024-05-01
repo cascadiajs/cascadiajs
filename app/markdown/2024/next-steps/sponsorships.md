@@ -11,7 +11,7 @@ excerpt: Information for sponsors of CascadiaJS 2024
 - [Swag](#swag)
 - [Rentals](#rentals)
 
-## Venue
+<h2 id="venue">Venue</h2>
 
 [Town Hall Seattle](https://townhallseattle.org/)<br />
 1119 8th Ave<br />
@@ -47,7 +47,8 @@ c/o Town Hall Seattle<br />
 1119 8th Avenue<br />
 Seattle, WA 98101
 
-## Registration
+<h2 id="registration">Registration</h2>
+
 Pick up your badge at the Welcome Reception on June 19th, or on the morning of June 20th when you arrive to set up. If you have team members who are arriving later, conference staff will be available to check them in at any point during the conference. 
 
 ### Welcome Reception & Pre-Registration
@@ -57,13 +58,16 @@ Wednesday, June 19th<br />
 
 The Welcome Reception is an opportunity for folks to pre-register, get their badge, pick up swag and hang out with fellow attendees.
 
-## Lodging
+<h2 id="lodging">Lodging</h2>
+
 We've secured discounts with 3 hotels near the venue: [https://cascadiajs.com/2024/hotels](https://cascadiajs.com/2024/hotels)
 
-## Swag
+<h2 id="swag">Swag</h2>
+
 Gold sponsors can show off their brand by including 1 swag item in a bag that will be given to all attendees! The items need to be provided to CascadiaJS organizers by 7:00 am on June 20th so we can bag them up before attendees arrive. 
 
-## Rentals
+<h2 id="rentals">Rentals</h2>
+
 If you need to rent screens/monitors or other A/V equipment, here are three companies that provide that service: 
 
 - [Audio Visual Factory](https://www.avfactory.com/) (recommended by the venue staff)
