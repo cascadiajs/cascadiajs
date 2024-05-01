@@ -30,7 +30,7 @@ This is a great choice if you're bringing family with you. The rooms are the big
 * $259 USD per night
 * 13 min walk to Town Hall
 * 8 min walk to Westlake Station (Link light rail)
-* To get the discounted rate for more than 3 nights, contact Stephanie.Faludi@marriott.com
+* Please book through the booking link below. If you would like to reserve for dates that are outside of the booking link window, please book what is available and then email Stephanie.Faludi@marriott.com to extend your already existing reservation. She will gladly do so, if the rooms are available.
 
 <div class="cta secondary"><a href="https://www.marriott.com/events/start.mi?id=1702402840256&key=GRP">BOOK</a></div>
 
@@ -45,6 +45,6 @@ Cozy rooms for people who don't mind a longer walk to Town Hall. Bar check-in wi
 * 30 min walk to Town Hall
 * 23 min bus ride to Town Hall
 * 20 min walk to Westlake Station (Link light rail)
-* To get the discounted rate for more than 3 nights, contact Stephanie.Faludi@marriott.com
+* Please book through the booking link below. If you would like to reserve for dates that are outside of the booking link window, please book what is available and then email Stephanie.Faludi@marriott.com to extend your already existing reservation. She will gladly do so, if the rooms are available.
 
 <div class="cta secondary"><a href="https://www.marriott.com/events/start.mi?id=1702402325796&key=GRP">BOOK</a></div>
