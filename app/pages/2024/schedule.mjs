@@ -1,11 +1,12 @@
-function renderSpeaker(time, speaker = {title: "Talk", name: ""}) {
-
+function renderSpeaker(time, speaker) {
     return /*html*/`
     <div class="show-item">
         <div class="when">${ time }</div>
         <div class="what">
-            <div class="title"><a href="/speakers/${ speaker.key }">${ speaker.title }</a></div>
-            <div class="speaker">${ speaker.name }</div>
+            <div class="title">
+                ${ speaker ? `<a href="/speakers/${ speaker.key }">${ speaker.title }</a>` : `TBD` }
+            </div>
+            <div class="speaker">${ speaker ? speaker.name : "" }</div>
         </div>
     </div>`
 }

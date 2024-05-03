@@ -202,6 +202,7 @@ export default function ({ html, state }) {
             </div>
           </section>
           <section id="organizers" class="landing">
+            <h1>Organizers and Volunteers</h1>
             <organizers-grid></organizers-grid>
           </section>
         </div></main-layout
