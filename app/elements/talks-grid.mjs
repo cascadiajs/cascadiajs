@@ -17,7 +17,7 @@ export default function Talks({ html, state }) {
         }
         </style>
         <div class="talks-list">
-        ${ talks.filter((t) => t.slug).map(t => /*html*/`
+        ${ talks.filter((t) => t.slug).sort(() => Math.random() - 0.5).map(t => /*html*/`
             <talks-item
                 slug="${ t.slug }" 
                 image="/_public/images/speakers/${ t.speaker.image }" 
