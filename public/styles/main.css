@@ -220,6 +220,21 @@ span.cta {
 	background-color: #ccc;
     border: 4px solid #666;
 }
+
+a.buy, a.buy:visited {
+    display: inline-block;
+    margin: 16px 0;
+    background: #FFD007 0% 0% no-repeat padding-box;
+    color: #112378;
+    padding: 16px;
+}
+
+a.buy:hover {
+    background: #fff6cd;
+    color: #112378;
+}
+
+
 /* end CTA */
 
 @media only screen and (min-width: 768px) {
