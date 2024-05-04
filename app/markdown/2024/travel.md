@@ -12,7 +12,8 @@ There are lots of ways to get to Seattle, WA, let's review!
 
 Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouver, BC there is **no better way** to get to CascadiaJS than to join your fellow devs on the Hacker Train.
 
-[[Explore the Hacker Train]](/2024/hacker-train)
+<div class="cta secondary"><a href="/2024/hacker-train">Explore the Hacker Train</a></div>
+
 
 ### Fly in to Seatac
 
@@ -20,9 +21,8 @@ The closest airport to Seattle in [Seatac (SEA)](https://www.portseattle.org/sea
 
 Once you arrive, the cheapest and easiest way to get to Seattle in on the [Light Rail](https://www.soundtransit.org/ride-with-us/stops-stations/seatac-airport-station). Just take 1 Line north to downtown.
 
-
 ## Lodging in Seattle, WA
 
 We've worked with the several hotels to secure discounts for your stay in Seattle during CascadiaJS 2024! Please read the description below and make note of the deadlines for booking with the discount.
 
-[[Explore Hotels]](/2024/hotels)
+<div class="cta secondary"><a href="/2024/hotels">Explore Hotels</a></div>

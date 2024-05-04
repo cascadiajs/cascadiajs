@@ -3,13 +3,16 @@ title: Sponsor Information
 image: /_public/images/past/cjs22-happyhour.jpg
 excerpt: Information for sponsors of CascadiaJS 2024
 ---
-
-## On this page
-- [Venue](#venue)
-- [Registration](#registration)
-- [Lodging](#lodging)
-- [Swag](#swag)
-- [Rentals](#rentals)
+<div id="toc">
+<h2>On This Page</h2>
+    <ul>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#lodging">Lodging</a></li>
+        <li><a href="#swag">Swag</a></li>
+        <li><a href="#rentals">Rentals</a></li>
+    </ul>
+</div>
 
 <h2 id="venue">Venue</h2>
 
@@ -31,9 +34,15 @@ Sponsors can begin setup at 6:30am. Doors open to attendees at 8:00am.
 7:00am - 11:00pm<br />
 All conference/sponsor items need to be removed from Town Hall by 11pm.
 
-### Hallway track booth locations
+### Booths
 
-All Gold sponsor booths will be located in the main lobby. Booth locations TBD.
+All Gold sponsor booths will be located in the main lobby. When you arrive, go to the right and look for a table with your company's name on it.
+
+Each booth consists of a 6 foot table and two chairs, wired for power. 
+
+We recommend that sponsors bring a single, pop-up banner to place alongside their booth (see photo below).
+
+![moovweb](/_public/images/past/cjs19-moovweb.jpg)
 
 ### Shipping
 Items can be shipped directly to Town Hall. Storage space is limited at the venue, so if you have large items or more than a few boxes to send, please contact us first. 

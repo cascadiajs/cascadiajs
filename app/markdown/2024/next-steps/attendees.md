@@ -1,0 +1,41 @@
+---
+title: Attendee Next Steps
+image: /_public/images/splash.png
+excerpt: Lodging, Travel, Guest Passes and more!
+---
+<div id="toc">
+<h2>On This Page</h2>
+    <ul>
+        <li><a href="#get-ready-for-the-conference">Get Ready for the Conference</a></li>
+        <li><a href="#spread-the-word">Spread the Word</a></li>
+        <li><a href="#connect-with-our-community">Connect with our Community</a></li>
+    </ul>
+</div>
+
+<h2 id="get-ready-for-the-conference">Get Ready for the Conference</h2>
+
+Now that you've registered for the conference, here is a guide to help you get ready:
+
+<div class="cta secondary"><a href="/2024/attend">Attending CascadiaJS Guide</a></div>
+
+Please don't hesistate to ping us on Discord or email us at info@cascadiajs.com if you have any questions!
+
+<h2 id="spread-the-word">Spread the Word</h2>
+
+We're running a contest to see who can rally the most people to join them at the conference! All you need to do is:
+
+- Email info@cascadiajs.com and tell us you're in 👍
+- We'll send you a customized referral code that will give your friends & colleagues 35% off tickets
+- The top five referrers will be invited to the Friends of Cascadia pre-party at Stoup Brewing on June 19
+
+That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because like most good things in life, the more the merrier! 🥳
+
+
+<h2 id="connect-with-our-community">Connect with our Community</h2>
+
+You don't have to wait until June 19 to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
+
+1. Join our [Discord Community](https://discord.gg/kkYR86GM29)
+1. Follow us on [Twitter](https://twitter.com/CascadiaJS), [LinkedIn](https://www.linkedin.com/showcase/cascadiajs), [BlueSky](https://bsky.app/profile/cascadiajs.bsky.social) or [Threads](https://www.threads.net/@cascadia_js)
+
+![CascadiaJS 2019 family photo](/_public/images/past/cjs19-family-photo.jpg)

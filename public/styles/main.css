@@ -23,7 +23,7 @@ h1, h2 {
 }
 
 h3, h4 {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 h1 { font-size: 40px; }
@@ -60,7 +60,7 @@ blockquote {
 }
 
 strong {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .styled-table {
@@ -233,6 +233,40 @@ a.buy:hover {
     background: #fff6cd;
     color: #112378;
 }
+
+#toc {
+    /*background-color: #eee;
+    padding: 8px 16px;
+    border: 1px solid #112378;*/
+    margin-bottom: 16px;
+}
+
+#toc h2 {
+    font-family: "mono45-headline", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+#toc a, #toc a:visited {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#toc a:hover {
+    text-decoration: underline;
+}
+
+#toc ul {
+    padding-inline-start: 0;
+}
+
+#page #toc li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 
 
 /* end CTA */

@@ -5,7 +5,7 @@ export default function TalkItem({ html, state }) {
         <style>
         .person-name {
             font-family: freight-macro-pro, sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1em;
             font-size: 24px;
             margin: 0;
