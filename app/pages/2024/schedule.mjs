@@ -54,20 +54,50 @@ function DayZero({ ticket = undefined }) {
     <div id="day-zero" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            Pre-Conf<br/>June 19
+            Pre-Conf<br/>June 18
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Location TBD</div>
+        <div class="location">Downtown Seattle</div>
+        <div class="day-content">
+            <div class="show track">   
+                <div class="show-item">       
+                    <div class="when">9am - noon</div>
+                    <div class="what">
+                        <div class="title">Intro to Data Structures in JavaScript</div>
+                        <p>Intimidated by data structures and algorithms? Fearing the traditional whiteboard interview? Has your educational journey not yet presented you with a proper introduction to the classic data structures of computer science and Big-O notation? Let's take some time to tackle these topics and level up your CS skillset!</p>
+                        <div class="cta"><a href="/2024/trainings/intro-data-structures">More Info</a></div>
+                    </div>
+                </div>
+                <div class="show-item">       
+                <div class="when">1pm - 4pm</div>
+                    <div class="what">
+                        <div class="title">Advanced Data Structures in JavaScripts</div>
+                        <p>In the Intro to Data Structures session, we started from scratch and learned how to build Linked Lists, Stacks and Queues using pure JavaScript. Now we're going to spend the afternoon building up from there to master Binary Trees and k-ary Trees, and Hash Tables. </p>
+                        <div class="cta"><a href="/2024/trainings/advanced-data-structures">More Info</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-header">
+            <h2 class="day-date">
+            June 19
+            </h2>
+            <aside class="day-timezone">
+            All times in PDT (UTC-7)
+            </aside>
+        </div>
+        <div class="location">Downtown Seattle</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
                     <div class="when">9am - noon</div>
                     <div class="what">
                         <div class="title">Intro to React Server Components</div>
-                        <p>In this morning workshop, we’ll build and iterate on an app that takes advantage of the server components architecture to build a high-performance application. Along the way, we’ll get comfortable with best practices in React routing, caching, and data loading.</p>
+                        <p>In this morning workshop, we'll build and iterate on an app that takes advantage of the server components architecture to build a high-performance application. Along the way, we'll get comfortable with best practices in React routing, caching, and data loading.</p>
                         <div class="cta"><a href="/2024/trainings/intro-react-server-components">More Info</a></div>
                     </div>
                 </div>
@@ -75,7 +105,7 @@ function DayZero({ ticket = undefined }) {
                 <div class="when">1pm - 4pm</div>
                     <div class="what">
                         <div class="title">AI for React Developers</div>
-                        <p>Knowledge of AI tooling is critical for future proofing the careers of React developers, and the Vercel suite of AI tools is an approachable on-ramp. In this course, we’ll take a closer look at the Vercel AI SDK and how this can help React developers build streaming interfaces with JavaScript and Next.js. We’ll also incorporate additional 3rd party APIs to build and deploy a music visualization app.</p>
+                        <p>Knowledge of AI tooling is critical for future proofing the careers of React developers, and the Vercel suite of AI tools is an approachable on-ramp. In this course, we'll take a closer look at the Vercel AI SDK and how this can help React developers build streaming interfaces with JavaScript and Next.js. We'll also incorporate additional 3rd party APIs to build and deploy a music visualization app.</p>
                         <div class="cta"><a href="/2024/trainings/ai-for-react-developers">More Info</a></div>
                     </div>
                 </div>
@@ -351,18 +381,25 @@ function ActivityDay() {
         </div>
         <div class="day-content">
             <div class="show track">   
-                <div class="location">Downtown</div>
+                <div class="location">Greenlake</div>
                 <div class="show-item"> 
-                    <div class="when">10am - noon</div>
+                    <div class="when">9am - 11am</div>
                     <div class="what">
-                        <div class="title">5K Sculpture Garden Fun Run</div>
+                        <div class="title">5K Greenlake fun run & coffee</div>
+                    </div>
+                </div>
+                <div class="location">Magnuson Park</div>
+                <div class="show-item"> 
+                    <div class="when">9am - 11am</div>
+                    <div class="what">
+                        <div class="title">Dog romp at the off-leash dog park</div>
                     </div>
                 </div>
                 <div class="location">Seattle Center</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
                     <div class="what">
-                        <div class="title">Group Visit to the Space Needle</div>
+                        <div class="title">Visit to the Space Needle</div>
                     </div>
                 </div>
             </div>

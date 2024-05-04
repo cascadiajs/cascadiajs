@@ -5,6 +5,8 @@ excerpt: Hands-on trainings from professionals in JS & AI development!
 ---
 We are thrilled to offer pre-conference hands-on trainings from these amazing professionals in JS & AI development!
 
+Note: these Training Workshops require the purchase of a separate ticket and ARE NOT included with a Conference ticket.
+
 <table class="styled-table">
     <tbody>
     <tr><td><a href="/2024/trainings/intro-data-structures">Intro to Data Structures in JavaScript</a></td><td>Brook Riggio</td><td>June 18, 9am - noon</td></tr>
