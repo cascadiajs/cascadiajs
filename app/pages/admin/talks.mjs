@@ -1,5 +1,5 @@
-function talk(t) {
-    console.log(t)
+function talk(t, event_id) {
+    //console.log(t)
     return `<details>
         <summary>${ t ? (t.title || t.speaker.name) : 'New Talk' }</summary>
         ${ t ? `
@@ -10,7 +10,7 @@ function talk(t) {
         </p>` : ''}
         <form action=/admin/talks method=post>
         ${ t ? `<input type=hidden name=_id value="${ t._id}">` : '' }
-          <input type=${ t ? 'hidden' : 'text' } name=event_id placeholder="event_id" value="${ t ? t.event_id : '' }">
+          <input type=hidden name=event_id value="${ t ? t.event_id : event_id }">
           <input type=${ t ? 'hidden' : 'text' } name=speaker_id placeholder="speaker_id" value="${ t ? t.speaker_id : '' }">
           <input type=text name=title placeholder="Title" value="${ t ? t.title : '' }">
           <textarea name=abstract placeholder="Abstract">${ t ? t.abstract : '' }</textarea>
@@ -23,12 +23,12 @@ function talk(t) {
 
 
 export default function ({ html, state }) {
-    const { talks } = state.store
+    const { talks, event_id } = state.store
     return html`
         <admin-layout>
             <h1>Talks</h1>
-            ${ talks.map(talk).join('')}
-            ${ talk() }
+            ${ talks.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)).map(talk).join('')}
+            ${ talk(undefined, event_id) }
         </admin-layout>
     `
 }

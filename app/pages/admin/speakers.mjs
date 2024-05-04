@@ -1,16 +1,16 @@
-function speaker(e) {
+function speaker(s) {
     return `<details>
-        <summary>${ e ? e.name : 'New Speaker' }</summary>
+        <summary>${ s ? s.name : 'New Speaker' }</summary>
         <form action=/admin/speakers method=post>
-          ${ e ? `<input type=hidden name=_id placeholder="id" value="${e._id}"` : '' }
-          <input type=text name=slug placeholder="Slug" value="${ e ? e.name : '' }">
-          <input type=text name=name placeholder="Name" value="${ e ? e.name : '' }">
-          <input type=text name=image placeholder="Image" value="${ e ? e.image : '' }">
-          <input type=text name=url placeholder="Website" value="${ e ? e.url : '' }">
-          <input type=text name=twitter placeholder="Twitter" value="${ e ? e.twitter : '' }">
-          <input type=text name=location placeholder="Location" value="${ e ? e.location : '' }">
-          <input type=text name=company placeholder="Company" value="${ e ? e.company : '' }">
-          <input type=text name=pronouns placeholder="Pronouns" value="${ e ? e.pronouns : '' }">
+          ${ s ? `<input type=text name=_id placeholder="id" value="${s._id}" disabled>` : '' }
+          <input type=text name=slug placeholder="Slug" value="${ s ? s.name : '' }">
+          <input type=text name=name placeholder="Name" value="${ s ? s.name : '' }">
+          <input type=text name=image placeholder="Image" value="${ s ? s.image : '' }">
+          <input type=text name=url placeholder="Website" value="${ s ? s.url : '' }">
+          <input type=text name=twitter placeholder="Twitter" value="${ s ? s.twitter : '' }">
+          <input type=text name=location placeholder="Location" value="${ s ? s.location : '' }">
+          <input type=text name=company placeholder="Company" value="${ s ? s.company : '' }">
+          <input type=text name=pronouns placeholder="Pronouns" value="${ s ? s.pronouns : '' }">
           <button>Save</button>
         </form>
       </details>`

@@ -16,13 +16,14 @@ export async function getTalks({ query }) {
     //console.log(talks)
     return {
         json: {
-            talks
+            talks,
+            event_id: query.event_id
         }
     }
 }
 
 export async function saveTalk({ body }) {
-    console.log(body)
+    //console.log(body)
     const { _id, event_id, speaker_id, title, abstract, tags, short } = body
     await upsertTalk({ _id, event_id, speaker_id, title, abstract, tags, short })
     return {

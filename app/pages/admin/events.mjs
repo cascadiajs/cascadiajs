@@ -16,7 +16,7 @@ export default function ({ html, state }) {
     return html`
         <admin-layout>
             <h1>Events</h1>
-            ${ events.map(event).join('')}
+            ${ events.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)).map(event).join('')}
         </admin-layout>
     `
 }

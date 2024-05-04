@@ -67,6 +67,10 @@ You'll need to install puppeteer globally first:
 
 `PUPPETEER_EXPERIMENTAL_CHROMIUM_MAC_ARM=true npm i puppeteer -g`
 
+Then link it so that you can run the script
+
+`npm link puppeteer`
+
 ## Making contributions
 
 If you would like to make a contribution, please fork this repo and send us a pull request.
