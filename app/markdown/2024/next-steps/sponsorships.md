@@ -1,6 +1,5 @@
 ---
 title: Sponsor Information
-image: /_public/images/past/cjs22-happyhour.jpg
 excerpt: Information for sponsors of CascadiaJS 2024
 ---
 <div id="toc">

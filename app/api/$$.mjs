@@ -22,7 +22,7 @@ export async function get({ path, query}) {
   const sharing = {
     social,
     title,
-    image,
+    image: image || '/_public/images/past/cjs19-family-photo.jpg',
     description: excerpt,
     sharingTitle: 'CascadiaJS 2024 | ' + title,
     sharingImage: '/_public/images/sharing' + path + '.png',

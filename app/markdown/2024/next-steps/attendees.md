@@ -1,7 +1,6 @@
 ---
 title: Attendee Next Steps
-image: /_public/images/splash.png
-excerpt: Lodging, Travel, Guest Passes and more!
+excerpt: Information for attendees of CascadiaJS 2024
 ---
 <div id="toc">
 <h2>On This Page</h2>

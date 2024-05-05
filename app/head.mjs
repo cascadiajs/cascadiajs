@@ -8,7 +8,7 @@ export default function Head(state) {
   //console.log(sharing)
   const title = sharing.sharingTitle || "CascadiaJS - a JS conf for the PacNW"
   const description = sharing.sharingDescription || "CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!"
-  const image = sharing.sharingImage || "/_public/images/splash.png"
+  const image = sharing.sharingImage || "/_public/images/sharing/2024.png"
   return `
     <!DOCTYPE html>
     <html lang="en">

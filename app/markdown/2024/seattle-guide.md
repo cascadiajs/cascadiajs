@@ -1,6 +1,6 @@
 ---
 title: Guide to Seattle
-image: /_public/images/sdfsdfsdf
+image: /_public/images/2024/seattle.jpg
 excerpt: The hacker guide to Seattle, WA
 ---
 

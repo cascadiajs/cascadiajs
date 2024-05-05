@@ -1,5 +1,6 @@
 ---
 title: Speaker Handbook
+excerpt: Information for speakers at CascadiaJS 2024
 ---
 <div id="toc">
 <h2>On This Page</h2>

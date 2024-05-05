@@ -1,5 +1,6 @@
 ---
 title: Scholarship Application Next Steps
+excerpt: Information for scholarship applicants for CascadiaJS 2024
 ---
 Thank you for submitting a Scholarship application <i class="fas fa-thumbs-up"></i>
 

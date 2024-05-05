@@ -62,7 +62,7 @@ async function createImages(command, argument) {
         // pull out any front-matter key/values
         let { attributes } = fm(docMarkdown)
         let { title, image, excerpt } = attributes
-        if (title && image && excerpt) {
+        if (title) {
           console.log(`Generating a screen shot for ${file}`)
           const stub = file.split('.md')[0]
           await page.goto(`${baseUrl}/${stub}?social`)

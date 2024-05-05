@@ -1,6 +1,6 @@
 ---
 title: Attending the Conference
-image: /_public/images/splash.png
+image: /_public/images/past/cjs19-family-photo.jpg
 excerpt: Lodging, Travel, Guest Passes and more!
 ---
 ## Preparing for the Conference
