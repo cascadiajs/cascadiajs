@@ -43,9 +43,37 @@ const organizers = [
     },
     {
         id: '',
+        name: 'Andre Wiggins',
+        image: 'andre-wiggins.jpg',
+        location: 'Seattle, WA',
+        role: 'Seattle Lead'
+    },
+    {
+        id: '',
+        name: 'Bibiana Marocco De Souza',
+        image: 'bibiana-marocco-de-souza.jpg',
+        location: 'Vancouver, BC',
+        role: 'Vancouver Lead'
+    },
+    {
+        id: '',
+        name: 'Joel Hooks',
+        image: 'joel-hooks.jpg',
+        location: 'Vancouver, WA',
+        role: 'Portland Lead'
+    },
+    {
+        id: '',
         name: 'Kelli Rockwell',
         image: 'kelli-rockwell.jpg',
         location: 'Seattle, WA',
+        role: 'Volunteer'
+    },
+    {
+        id: '',
+        name: 'Shivay Lamba',
+        image: 'shivay-lamba.jpg',
+        location: 'Delhi, India',
         role: 'Volunteer'
     }
 ]

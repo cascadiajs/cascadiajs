@@ -12,7 +12,7 @@ We've worked with the following hotels to secure discounts for your stay in Seat
 
 A boutique hotel in downtown Seattle, very close to Town Hall. Amenities include free wifi in guest rooms, use of custom PUBLIC bikes, access to the fitness center, and coffee and tea in the lobby every morning.
 
-* Deadline to book: May 06, 2024
+* Deadline to book: <span class="highlight warning">May 06, 2024</span>
 * $299 USD per night
 * 5 min walk to Town Hall
 * 3 min walk to Westlake Station (Link light rail)
@@ -26,7 +26,7 @@ A boutique hotel in downtown Seattle, very close to Town Hall. Amenities include
 
 This is a great choice if you're bringing family with you. The rooms are the biggest of these 3 options and have a pull-out sofa and kitchen. Amenities include free wifi and breakfast.
 
-* Deadline to book: May 20, 2024
+* Deadline to book: <span class="highlight warning">May 20, 2024</span>
 * $259 USD per night
 * 13 min walk to Town Hall
 * 8 min walk to Westlake Station (Link light rail)
@@ -40,7 +40,7 @@ This is a great choice if you're bringing family with you. The rooms are the big
 
 Cozy rooms for people who don't mind a longer walk to Town Hall. Bar check-in with welcome drink; communal, flexible spaces; self-service; tech-enabled everything.
 
-* Deadline to book: May 20, 2024
+* Deadline to book: <span class="highlight warning">May 20, 2024</span>
 * $239 USD per night
 * 30 min walk to Town Hall
 * 23 min bus ride to Town Hall

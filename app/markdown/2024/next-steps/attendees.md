@@ -6,11 +6,18 @@ excerpt: Lodging, Travel, Guest Passes and more!
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
+        <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
         <li><a href="#get-ready-for-the-conference">Get Ready for the Conference</a></li>
         <li><a href="#spread-the-word">Spread the Word</a></li>
         <li><a href="#connect-with-our-community">Connect with our Community</a></li>
     </ul>
 </div>
+
+<h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
+
+Prior to the conference, we are teaming up with Brook Riggio (Code Fellows) and Eve Porcello (Moon Highway) to organize 2 days of training workshops prior to CascadiaJS 2024. Each training workshop is a half-day (morning or afternoon) and you need to purchase those tickets separately.
+
+<div class="cta secondary"><a href="/2024/trainings">Training Workshops Guide</a></div>
 
 <h2 id="get-ready-for-the-conference">Get Ready for the Conference</h2>
 
