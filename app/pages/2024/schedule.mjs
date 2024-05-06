@@ -1,12 +1,13 @@
-function renderSpeaker(time, speaker) {
+function renderSpeaker(time, talk) {
+    //console.log(talk)
     return /*html*/`
     <div class="show-item">
         <div class="when">${ time }</div>
         <div class="what">
             <div class="title">
-                ${ speaker ? `<a href="/speakers/${ speaker.key }">${ speaker.title }</a>` : `TBD` }
+                ${ talk ? `<a href="/2024/talks/${ talk.slug }">${ talk.title }</a>` : `TBD` }
             </div>
-            <div class="speaker">${ speaker ? speaker.name : "" }</div>
+            <div class="speaker">${ talk ? talk.speaker.name : "" }</div>
         </div>
     </div>`
 }
@@ -128,7 +129,8 @@ function DayZero({ ticket = undefined }) {
 `
 }
 
-function DayOne({ speakers, ticket = undefined }) {
+function DayOne({ talks, ticket = undefined }) {
+    //console.log(talks)
     return /*html*/`
     <div id="day-one" class="day">
         <div class="day-header">
@@ -161,31 +163,31 @@ function DayOne({ speakers, ticket = undefined }) {
                     <div class="when">09:00</div>
                     <div class="what"><div class="title">Opening Remarks</div></div>
                 </div>
-                ${ renderSpeaker("09:30")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("09:30", talks.find(t => t.speaker.slug === 'rachel-lee-nabors'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'tyler-sticka'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'tracy-lee'))}
                 <div class="show-item">       
                     <div class="when">11:00</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("11:30")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
-                <div class="location">The Forum</div>
+                ${ renderSpeaker("11:30", talks.find(t => t.speaker.slug === 'molly-jean-bennett'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jerome-woody'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'logan-gore'))}
+                <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:20</div>
                     <div class="what"><div class="title"><i class="fas fa-taco"></i> Lunch</div></div>
                 </div>
                 <div class="location">Great Hall</div>
-                ${ renderSpeaker("14:00")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'jacob-lee'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'tejas-kumar'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'josh-goldberg'))}
                 <div class="show-item">       
                     <div class="when">15:30</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("16:00")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("16:00", talks.find(t => t.speaker.slug === 'herve-aniglo'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'penelope-mclachlan'))}
                 ${ renderSpeaker("")}
                 <div class="show-item">       
                     <div class="when">17:30</div>
@@ -195,13 +197,13 @@ function DayOne({ speakers, ticket = undefined }) {
                     <div class="when">18:00</div>
                     <div class="what"><div class="title">Closing Day One</div></div>
                 </div>
-                <div class="location">The Forum</div>
+                <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
                     <div class="what"><div class="title"><i class="fas fa-burger"></i> Dinner</div></div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">19:30</div>
+                    <div class="when">18:30</div>
                     <div class="what"><div class="title"><i class="fas fa-handshake"></i> Job Fair and Social</div></div>
                 </div>
                 <div class="show-item">       
@@ -214,7 +216,7 @@ function DayOne({ speakers, ticket = undefined }) {
 
             <div class="workshop track">
                 <h3>Workshop Track</h3>
-                <div class="location">The Forum</div>
+                <div class="location">Reading Room</div>
                 <div class="show-item">       
                     <div class="when">10:30</div>
                     <div class="what">
@@ -237,7 +239,7 @@ function DayOne({ speakers, ticket = undefined }) {
 `
 }
 
-function DayTwo({ speakers, ticket = undefined }) {
+function DayTwo({ talks, ticket = undefined }) {
     return /*html*/`
     <div id="day-two" class="day">
         <div class="day-header">
@@ -267,7 +269,7 @@ function DayTwo({ speakers, ticket = undefined }) {
                 ${ renderSpeaker("11:30")}
                 ${ renderSpeaker("")}
                 ${ renderSpeaker("")}
-                <div class="location">The Forum</div>
+                <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:20</div>
                     <div class="what"><div class="title"><i class="fas fa-taco"></i> Lunch</div></div>
@@ -287,17 +289,17 @@ function DayTwo({ speakers, ticket = undefined }) {
                     <div class="when">18:00</div>
                     <div class="what"><div class="title">Closing Day Two</div></div>
                 </div>
-                <div class="location">The Forum</div>
+                <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
                     <div class="what"><div class="title"><i class="fas fa-burger"></i> Dinner</div></div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">19:30</div>
+                    <div class="when">18:30</div>
                     <div class="what"><div class="title"><i class="fas fa-handshake"></i> Startup Fair and Social</div></div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">20:00</div>
+                    <div class="when">19:30</div>
                     <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> Karaoke</div></div>
                 </div>
                 <div class="show-item">       
@@ -311,7 +313,7 @@ function DayTwo({ speakers, ticket = undefined }) {
 
             <div class="workshop track">
                 <h3>Workshop Track</h3>
-                <div class="location">The Forum</div>
+                <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">10:30</div>
                     <div class="what">
@@ -332,39 +334,6 @@ function DayTwo({ speakers, ticket = undefined }) {
         </div>
     </div>
 
-`
-}
-
-function TrainingDays() {
-    return /*html*/`
-    <div id="day-training" class="day">
-        <div class="day-header">
-            <h2 class="day-date">
-            Pre-Conf<br/>June 19
-            </h2>
-            <aside class="day-timezone">
-            All times in PDT (UTC-7)
-            </aside>
-        </div>
-        <div class="day-content">
-            <div class="show track">   
-                <div class="location">Heritage 1</div>
-                <div class="show-item"> 
-                    <div class="when">9am - 4pm</div>
-                    <div class="what">
-                        <div class="training title"><a href="/trainings/data-structures">Demystifying Data Structures</a></div>
-                    </div>
-                </div>
-                <div class="location">Heritage 2</div>
-                <div class="show-item"> 
-                    <div class="when">9am - 4pm</div>
-                    <div class="what">
-                        <div class="training title"><a href="/trainings/nextjs">Full-Stack Next.js Monorepo for Production Ready React+TypeScript Apps</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 `
 }
 
@@ -410,7 +379,7 @@ function ActivityDay() {
 
 export default function ({ html, state }) {
     let { store } = state
-    let { sharing, speakers, ticket } = store
+    let { sharing, talks, ticket } = store
     if (sharing?.social !== undefined) {
       const { image, title, description } = sharing
       return html`<social-sharing image="${ image }" title="${ title }" description="${ description }"></social-sharing>`
@@ -633,8 +602,8 @@ export default function ({ html, state }) {
             <simple-page title="Schedule" width="wide">
                 <div id="conf-schedule">
                 ${ DayZero({ ticket }) }
-                ${ DayOne({ speakers, ticket }) }
-                ${ DayTwo({ speakers, ticket }) }
+                ${ DayOne({ talks, ticket }) }
+                ${ DayTwo({ talks, ticket }) }
                 ${ ActivityDay() }
                 </div>
             </simple-page>
