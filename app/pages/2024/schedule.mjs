@@ -204,7 +204,7 @@ function DayOne({ talks, ticket = undefined }) {
                 </div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-handshake"></i> Job Fair and Social</div></div>
+                    <div class="what"><div class="title"><i class="fas fa-handshake"></i> <a href="/2024/job-fair">Job Fair</a> and Social</div></div>
                 </div>
                 <div class="show-item">       
                     <div class="when">22:00</div>
@@ -259,32 +259,32 @@ function DayTwo({ talks, ticket = undefined }) {
                     <div class="when">09:00</div>
                     <div class="what"><div class="title">Opening Remarks</div></div>
                 </div>
-                ${ renderSpeaker("09:30")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("09:30", talks.find(t => t.speaker.slug === 'dominic-farolino'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'geoff-rich'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'aaron-gustafson'))}
                 <div class="show-item">       
                     <div class="when">11:00</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("11:30")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("11:30", talks.find(t => t.speaker.slug === 'kristen-thayer'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'aiden-bai'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'TBD'))}
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:20</div>
                     <div class="what"><div class="title"><i class="fas fa-taco"></i> Lunch</div></div>
                 </div>
                 <div class="location">Great Hall</div>
-                ${ renderSpeaker("14:00")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'henri-helvetica'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'shruti-kapoor'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'rizel-scarlett'))}
                 <div class="show-item">       
                     <div class="when">15:30</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("16:30")}
-                ${ renderSpeaker("")}
-                ${ renderSpeaker("")}
+                ${ renderSpeaker("16:30", talks.find(t => t.speaker.slug === 'TBD'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jason-lengstorf'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'swyx'))}
                 <div class="show-item">       
                     <div class="when">18:00</div>
                     <div class="what"><div class="title">Closing Day Two</div></div>
@@ -296,7 +296,7 @@ function DayTwo({ talks, ticket = undefined }) {
                 </div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-handshake"></i> Startup Fair and Social</div></div>
+                    <div class="what"><div class="title"><i class="fas fa-handshake"></i> <a href="/2024/startup-fair">Startup Fair</a> and Social</div></div>
                 </div>
                 <div class="show-item">       
                     <div class="when">19:30</div>
