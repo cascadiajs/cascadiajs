@@ -1,6 +1,6 @@
 {
   "name": "cascadiajs-website",
-  "version": "4.0.78",
+  "version": "4.0.79",
   "scripts": {
     "start": "npx enhance dev",
     "lint": "eslint ./app/**/*.mjs --fix",
