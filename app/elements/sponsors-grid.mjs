@@ -28,6 +28,13 @@ const sponsors = [
         url: 'https://codingscape.com'
     },
     { 
+        id: 'infobip',
+        tier: 'gold',
+        logo: 'infobip.svg',
+        name: 'Infobip',
+        url: 'http://infobip.com/developers'
+    },
+    { 
         id: 'hookdeck',
         tier: 'community',
         logo: 'hookdeck.svg',
