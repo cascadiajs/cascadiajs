@@ -1,10 +1,13 @@
 function talk(t, event_id) {
-    //console.log(t)
+    if (t && !t.speaker) {
+        console.log(t)
+    }
+    
     return `<details>
-        <summary>${ t ? (t.title || t.speaker.name) : 'New Talk' }</summary>
+        <summary>${ t ? (t.title || t.speaker?.name) : 'New Talk' }</summary>
         ${ t ? `
         <p>
-            Speaker: ${ t.speaker.name }<br/>
+            Speaker: ${ t.speaker?.name }<br/>
             Event: ${ t.event.name }<br/>
             Slug: ${ t.slug }
         </p>` : ''}
@@ -18,6 +21,13 @@ function talk(t, event_id) {
           <input type=text name=tags placeholder="Tags" value="${ t && t.tags ? t.tags.join(',') : '' }">
           <button>Save</button>
         </form>
+        ${ t ? `
+        <form action=/admin/talks method=post>
+            <input type=hidden name=_id value="${t._id}">
+            <input type=hidden name=event_id value="${t.event_id}">
+            <input type=hidden name=__delete value="true">
+            <button>Delete</button>
+        </form>` : '' }
       </details>`
   }
 

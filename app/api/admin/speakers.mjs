@@ -1,7 +1,7 @@
-import { findSpeakers, upsertSpeaker } from "../../../shared/data/speakers.mjs"
+import { findSpeakers, upsertSpeaker, deleteSpeaker } from "../../../shared/data/speakers.mjs"
 
 export const get = [checkAuth, getSpeakers]
-export const post = [checkAuth, saveSpeaker]
+export const post = [checkAuth, saveOrDeleteSpeaker]
 
 const { SECRET_PASSWORD } = process.env
 
@@ -18,9 +18,14 @@ export async function getSpeakers({ query }) {
     }
 }
 
-export async function saveSpeaker({ body }) {
-    const { _id, slug, name, image, url, twitter, company, location, pronouns } = body
-    await upsertSpeaker({ _id, slug, name, image, url, twitter, company, location, pronouns })
+export async function saveOrDeleteSpeaker({ body }) {
+    const { _id, slug, name, image, url, twitter, company, location, pronouns, __delete } = body
+    if (__delete) {
+        await deleteSpeaker(_id)
+    }
+    else {
+        await upsertSpeaker({ _id, slug, name, image, url, twitter, company, location, pronouns })
+    }
     return {
         location: '/admin/speakers'
     }

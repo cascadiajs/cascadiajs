@@ -1,7 +1,7 @@
-import { findTalks, upsertTalk } from '../../../shared/data/talks.mjs'
+import { findTalks, upsertTalk, deleteTalk } from '../../../shared/data/talks.mjs'
 
 export const get = [checkAuth, getTalks]
-export const post = [checkAuth, saveTalk]
+export const post = [checkAuth, saveOrDeleteTalk]
 
 const { SECRET_PASSWORD } = process.env
 
@@ -22,10 +22,15 @@ export async function getTalks({ query }) {
     }
 }
 
-export async function saveTalk({ body }) {
-    //console.log(body)
-    const { _id, event_id, speaker_id, title, abstract, tags, short } = body
-    await upsertTalk({ _id, event_id, speaker_id, title, abstract, tags, short })
+export async function saveOrDeleteTalk({ body }) {
+    const { _id, event_id, speaker_id, title, abstract, tags, short, __delete } = body
+    if (__delete) {
+        await deleteTalk(_id)
+    }
+    else {
+        await upsertTalk({ _id, event_id, speaker_id, title, abstract, tags, short })
+    }
+    
     return {
         location: '/admin/talks?event_id=' + event_id
     }

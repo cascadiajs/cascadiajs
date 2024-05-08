@@ -70,8 +70,16 @@ async function upsertTalk(talk) {
     return response
 }
 
+async function deleteTalk(_id) {
+    const db = getConnection()
+    const collection = await db.collection(COLLECTION)
+    return await collection.deleteOne({ _id })
+}
+
+
 export {
     findTalks,
     findTalk,
-    upsertTalk
+    upsertTalk,
+    deleteTalk
 }
