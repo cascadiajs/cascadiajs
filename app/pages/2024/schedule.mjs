@@ -325,7 +325,7 @@ function DayTwo({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">13:30</div>
                     <div class="what">
-                        <div class="title">Workshop #4</div>
+                        <div class="title"><a href="/2024/workshops/building-ai-apps">Building a GenAI enabled web experience</a></div>
                         <div class="speaker">
                         </div>
                     </div>
