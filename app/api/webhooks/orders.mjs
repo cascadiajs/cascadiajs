@@ -1,5 +1,5 @@
 import * as crypto from "crypto"
-import { deleteTicket, upsertTicket } from "../../../shared/data/tito.mjs" 
+import { deleteTicket, findTicket, upsertTicket } from "../../../shared/data/tito.mjs" 
 
 export const post = async function(req) {
   //console.log(req)
@@ -49,10 +49,9 @@ async function registrationFinished(req) {
   const { id: event_id, title: event_title} = event
   // an order can include multiple tickets, write ticket data to the DB
   for (let ticket of registation_payload.tickets) {
-    const _id = ticket.reference
-    const { release_id, release_title, release_slug } = ticket
-    const ticket_number = parseInt(registation_payload.receipt.number)
-    await upsertTicket({ _id, release_id, release_title, release_slug, ticket_number, event_id, event_title })
+    const { reference, release_id, release_title, release_slug } = ticket
+    const number = parseInt(registation_payload.receipt.number)
+    await upsertTicket({ reference, release_id, release_title, release_slug, number, event_id, event_title })
   }
 
   return {
@@ -63,7 +62,8 @@ async function registrationFinished(req) {
 
 async function ticketCompletedOrUpdated(req) {
   const tito_payload = req.body
-  const _id = tito_payload.reference
+  const ticket = await findTicket({ reference: tito_payload.reference })
+  const _id = ticket._id
   const { name: full_name, email } = tito_payload
   // update the name and email associated with this ticket
   await upsertTicket({ _id, full_name, email })
@@ -74,8 +74,9 @@ async function ticketCompletedOrUpdated(req) {
 }
 
 async function ticketVoided(req) {
-  let titoTicket = req.body
-  let _id = titoTicket.reference
+  let tito_payload = req.body
+  const ticket = await findTicket({ reference: tito_payload.reference })
+  const _id = ticket._id
   // delete the ticket
   await deleteTicket(_id)
   return {

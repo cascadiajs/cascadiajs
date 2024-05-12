@@ -1,7 +1,5 @@
-import fs from 'fs'
 import 'dotenv/config'
 import { insertTickets } from '../shared/data/tito.mjs'
-import { release } from 'os'
 
 const {
     TITO_API_KEY
@@ -78,11 +76,11 @@ async function main() {
 
         tickets = tickets.concat(json.tickets.map(t => {
             return {
-                _id: t.reference,
+                reference: t.reference,
                 release_id: t.release_id,
                 release_title: RELEASES.find(r => r.id === t.release_id).title,
                 release_slug: RELEASES.find(r => r.id === t.release_id).slug,
-                ticket_number: t.number,
+                number: t.number,
                 event_id: "cascadiajs-2024",
                 event_title: "CascadiaJS 2024",
                 full_name: t.name,
@@ -97,7 +95,7 @@ async function main() {
         }
     }
 
-    console.log(tickets)
+    //console.log(tickets)
 
     // write tickets to DB
     await insertTickets(tickets)

@@ -9,21 +9,25 @@ async function findTickets({ query, limit = 100 } = {}) {
     return await collection.find(query, { limit }).toArray()
 }
 
-async function findTicket({ query }) {
+async function findTicket(query) {
   const db = getConnection()
   query._type = "ticket"
   const collection = await db.collection(COLLECTION)
   return await collection.findOne(query)
 }
 
-async function upsertTicket({ _id, release_id, release_title, release_slug, ticket_number, event_id, event_title, full_name, email }) {
+async function upsertTicket({ _id, reference, release_id, release_title, release_slug, number, event_id, event_title, full_name, email }) {
   const db = getConnection()
   const collection = await db.collection(COLLECTION)
-  return await collection.updateOne(
-    { _id },
-    { $set: { _type: "ticket", release_id, release_title, release_slug, ticket_number, event_id, event_title, full_name, email }},
-    { upsert: true }
-  )
+  if (_id) {
+    await collection.updateOne(
+      { _id },
+      { $set: { _type: "ticket", reference, release_id, release_title, release_slug, number, event_id, event_title, full_name, email }}
+    )
+  }
+  else {
+    await collection.insertOne({ _type: "ticket", reference, release_id, release_title, release_slug, number, event_id, event_title, full_name, email })  
+  }
 }
 
 async function insertTickets(tickets) {
@@ -38,10 +42,17 @@ async function deleteTicket(_id) {
   return await collection.deleteOne({ _id })
 }
 
+async function deleteAllTickets() {
+  const db = getConnection()
+  const collection = await db.collection(COLLECTION)
+  return await collection.deleteMany({ _type: "ticket" })
+}
+
 export {
   findTickets,
   findTicket,
   upsertTicket,
   deleteTicket,
-  insertTickets
+  insertTickets,
+  deleteAllTickets
 }

@@ -2,12 +2,12 @@ import { getConnection } from "./connection.mjs"
 
 const COLLECTION = "users"
 
-async function upsertUser({ id, name, email, profile_photo, oauth_provider, oauth_payload }) {
+async function upsertUser({ _id, name, email, profile_photo, oauth_provider, oauth_payload, ticket_ref }) {
   const db = getConnection()
   const collection = await db.collection(COLLECTION)
   return await collection.updateOne(
-    { _id: id },
-    { $set: { name, email, profile_photo, oauth_provider, oauth_payload }},
+    { _id },
+    { $set: { name, email, profile_photo, oauth_provider, oauth_payload, ticket_ref }},
     { upsert: true }
   )
 }
@@ -24,8 +24,15 @@ async function findUser({ query }) {
   return await collection.findOne(query)
 }
 
+async function deleteUser(query) {
+  const db = getConnection()
+  const collection = await db.collection(COLLECTION)
+  return await collection.deleteOne(query)
+}
+
 export {
   upsertUser,
   findUsers,
-  findUser
+  findUser,
+  deleteUser
 }

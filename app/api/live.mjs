@@ -1,14 +1,15 @@
-async function checkAuth({ session, headers }) {
-  const authorized = !!(session.id)
+async function checkAuth({ session }) {
+  //console.log(session)
+  const authorized = !!(session.userId)
   if (!authorized) return { location: '/login' }
 }
 
 export const get = [checkAuth, getLive]
 
-export async function getLive(req) {
+export async function getLive({ session }) {
+  const { userId, userName } = session
+  //console.log(userId, userName)
   return {
-    json: {
-      foo: "bar"      
-    }
+    json: { userId, userName }
   }
 }
