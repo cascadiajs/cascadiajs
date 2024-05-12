@@ -3,12 +3,80 @@ title: Startup Fair
 excerpt: Check-out early stage startups building the next generation of AI & dev tools!
 image: /_public/images/past/cjs22-startup-fair.jpg
 ---
-![CascadiaJS 2014](/_public/images/past/cjs22-startup-fair.jpg)
+![CascadiaJS 2014](/_public/images/past/cjs19-moovweb.jpg)
 
 Following the talks on Day Two, we're putting on our 2nd annual Startup Fair! [Last year's event](https://2022.cascadiajs.com/conference/startup-fair) was amazing and we can't wait to run it again this year with an emphasis on AI. 
 
 This event will take place on the evening of June 21st and run from 6pm - 9pm. The purpose of the Startup Fair is to showcase early stage startup building the next generation of AI and developer tools to our community.
 
+We invited early-stage startups to apply, and after several rounds of review we are excited to announce the startups that will be exhibiting!
+
+<style>
+    #startup-fair-sponsors {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #startup-fair-sponsors img {
+        display: inline-block;
+        height: 75px;
+        margin: 16px 24px;
+    }
+
+    .tag {
+        display: inline-block;
+        background-color: #CFD3E4;
+        text-decoration: none;
+        margin: 3px;
+        padding: 8px;
+    }
+</style>
+
+<div id="startup-fair-sponsors">
+    <img src="/_public/images/sponsors/copilotkit.png" alt="CopilotKit logo"/>
+    <img src="/_public/images/sponsors/yoodli.png" alt="Yoodli logo"/>
+    <img src="/_public/images/sponsors/milliondev.png" alt="Million.dev logo"/>
+    <img src="/_public/images/sponsors/hookdeck.png" alt="Hookdeck logo"/>
+</div>
+
+<h2 id="copilotkit">CopilotKit</h2>
+
+The breakout framework + platform for building deeply-integrated, fully-customized AI Copilots.
+
+<span class="tag">Launched - Has Users</span> <span class="tag">Open to Funding</span>
+
+<div class="cta secondary"><a target="_blank" href="https://www.copilotkit.ai/">copilotkit.ai</a></div>
+
+
+<h2 id="yoodli">Yoodli</h2>
+
+Grammarly for speech.
+
+<span class="tag">Launched - Has Users</span> <span class="tag">Open to Funding</span>
+
+<div class="cta secondary"><a target="_blank" href="https://www.yoodli.ai">yoodli.ai</a></div>
+
+
+<h2 id="milliondev">Million.dev</h2>
+
+Make websites faster, automatically.
+
+<span class="tag">Launched - Has Users</span> <span class="tag">Not Raising</span>
+
+<div class="cta secondary"><a target="_blank" href="https://million.dev">million.dev</a></div>
+
+
+<h2 id="hookdeck">Hookdeck</h2>
+
+A reliable event gateway for asynchronous applications.
+
+<span class="tag">Launched - Has Users</span> <span class="tag">Not Raising</span>
+
+<div class="cta secondary"><a target="_blank" href="https://hookdeck.com">hookdeck.com</a></div>
+
+
+<!-- 
 If you're a founder and you'd like to exhibit, all you need to do it apply. The application process is easy, just tell us a little bit about your company and what you're building. Applications will be accepted on a rolling basis and will either close on <span class="highlight warning">Friday, May 3</span> or once we hit our cap of 5 startups, so please don't delay. Startups who are invited to participate in the Startup Fair will recieve:
 
 <i class="fas fa-ticket"></i> 50% off tickets to the conference
@@ -20,3 +88,4 @@ If you're a founder and you'd like to exhibit, all you need to do it apply. The 
 If you have any questions, please reach out to us at info@cascadiajs.com. 
 
 <div class="cta"><a target="_blank" href="https://airtable.com/appYEQ4JXnRFkHgNQ/shr6hINnHIkyyBNBB">Apply</a></div>
+-->
