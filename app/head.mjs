@@ -3,12 +3,13 @@ import { getBaseUrl } from '../shared/utils/base-url.mjs'
 export default function Head(state) {
   const { store, req } = state
   const { sharing = {} } = store
-  const { path } = req
   const baseUrl = getBaseUrl(req)
   //console.log(sharing)
   const title = sharing.sharingTitle || "CascadiaJS - a JS conf for the PacNW"
   const description = sharing.sharingDescription || "CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!"
   const image = sharing.sharingImage || "/_public/images/sharing/2024.png"
+  const path = sharing.sharingPath || req.path
+
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -31,7 +32,7 @@ export default function Head(state) {
       <meta name="description" content="${ description }">
       <meta property="og:description" content="${ description }" />
       <meta name="image" property="og:image" content="${ baseUrl }${ image }" />
-      <meta name="url" property="og:url" content="${ baseUrl }${ path }" />
+      <meta name="url" property="og:url" content="${baseUrl}${ path }" />
       <meta name="type" property="og:type" content="website" />
       <meta name="author" content="CascadiaJS">
       <meta property="og:title" content="${ title }" />
