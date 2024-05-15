@@ -1,4 +1,6 @@
 import cloudinary from 'cloudinary'
+import { findTicket } from '../../shared/data/tito.mjs';
+import { findUser } from '../../shared/data/users.mjs';
 
 // Return "https" URLs by setting secure: true
 cloudinary.v2.config({
@@ -6,34 +8,34 @@ cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME
 });
 
-const createImageUrl = ({ profile_image, full_name, ticket_type, ticket_number }) => {
+const createImageUrl = ({ profileImage, fullName, ticketType, ticketNumber }) => {
     let imageUrl = cloudinary.v2.url("cascadiajs-ticket-2024", {
         transformation: [
             { width: 1200, crop: "scale" },
             {
                 overlay: {
                     font_family: "Roboto Slab", font_size: 48, 
-                    text: full_name,
+                    text: fullName,
                     
                 }, width: 771, gravity: "west", crop: "fit", x: 230, y: -30, color: "#112378"
             },
             {
                 overlay: {
                     font_family: "Roboto Mono", font_size: 40, 
-                    text: ticket_type,
+                    text: ticketType,
                     
                 }, gravity: "west", crop: "fit", x: 480, y: 50, color: "#112378"
             },
             {
                 overlay: {
                     font_family: "Roboto Mono", font_size: 48, 
-                    text: ticket_number,
+                    text: ticketNumber,
                     
                 }, gravity: "south_east", crop: "fit", x: 100, y: 80, color: "#112378", angle: 90
             },
             { 
                 overlay: {
-                    url: profile_image
+                    url: profileImage
                 }, width: 197, radius: "max", x: -264, y: 135
             }
         ]
@@ -42,19 +44,46 @@ const createImageUrl = ({ profile_image, full_name, ticket_type, ticket_number }
     return imageUrl;
 };
 
-
-
 export async function get({ query }) {
   // get user_id
-  const { user_id } = query
+  const { ticketId, image } = query
   // fetch user info from db
-  const profile_image = "https://cascadiajs.com/_public/images/speakers/henri-helvetica-eaa1936218.jpg"
-  const full_name = "Henri Helvetica"
-  const ticket_type = "Conference Speaker"
-  const ticket_number = "#" + (9).toString().padStart(4, '0')
-  // pass profile_image, full_name, ticket_type and ticket_number
-  const location = createImageUrl({ profile_image, full_name, ticket_type, ticket_number })
-  return {
-    location
+  const ticket = await findTicket({ _id: ticketId })
+  //console.log(ticket)
+  if (ticket) {
+    const fullName = ticket.full_name
+    const ticketType = ticket.release_title
+    const ticketNumber = "#" + ticket.number.toString().padStart(4, '0')
+    const user = await findUser({ _id: ticket.user_id })
+    const profileImage = user.profile_photo
+    if (image) {
+    // pass profile_image, full_name, ticket_type and ticket_number
+        const location = createImageUrl({ profileImage, fullName, ticketType, ticketNumber })
+        return {
+            location
+        }
+    }
+    else {
+        const sharing = {
+            sharingTitle: `Join ${fullName} at CascadiaJS 2024!`,
+            sharingImage: '/tickets?ticketId=' + ticketId + '&image=true',
+            sharingDescription: 'Don\'t miss CascadiaJS 2024, June 19 - 22 in Seattle, WA!'
+        }
+        return {
+            json: {
+                fullName,
+                ticketId,
+                sharing
+            }
+        }
+    }
   }
+  else {
+    return {
+      status: 404,
+      json: { error: "Ticket not found" }
+    } 
+  }
+  
+
 }

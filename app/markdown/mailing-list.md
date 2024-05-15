@@ -8,7 +8,7 @@ selections or unsubscribe anytime!
 
 ## Sign-up for Emails</h2>
 
-<form method="post" action="/signup">
+<form method="post" action="/mailing_list">
 <input
     type="text"
     name="first_name"

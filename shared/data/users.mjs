@@ -2,12 +2,12 @@ import { getConnection } from "./connection.mjs"
 
 const COLLECTION = "users"
 
-async function upsertUser({ _id, name, email, profile_photo, oauth_provider, oauth_payload, ticket_ref }) {
+async function upsertUser({ _id, name, email, profile_photo, oauth_provider, oauth_payload }) {
   const db = getConnection()
   const collection = await db.collection(COLLECTION)
   return await collection.updateOne(
     { _id },
-    { $set: { name, email, profile_photo, oauth_provider, oauth_payload, ticket_ref }},
+    { $set: { name, email, profile_photo, oauth_provider, oauth_payload }},
     { upsert: true }
   )
 }

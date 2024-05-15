@@ -11,12 +11,12 @@ export async function post({ body }) {
   const { ticketRef } = body
   //console.log(ticketRef)
   // look-up ticketRef in database, if found set session
-  const doc = await findTicket({ _id: ticketRef })
+  const doc = await findTicket({ reference: ticketRef })
   if (doc) {
     //console.log(doc)
     return {
       location: "/login",
-      session: { ticketRef }
+      session: { ticketId: doc._id }
     }
   }
   else {
