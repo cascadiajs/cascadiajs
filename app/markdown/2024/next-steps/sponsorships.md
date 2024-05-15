@@ -72,7 +72,7 @@ We've secured discounts with 3 hotels near the venue: [https://cascadiajs.com/20
 
 <h2 id="swag">Swag</h2>
 
-Gold sponsors can show off their brand by including 1 swag item in a bag that will be given to all attendees! The items need to be provided to CascadiaJS organizers by 7:00 am on June 20th so we can bag them up before attendees arrive. 
+Gold sponsors can show off their brand by including 1 swag item in a bag that will be given to all attendees! The items need to be provided to CascadiaJS organizers (at the registration table) by 7:00 am on June 20th so we can bag them up before attendees arrive. 
 
 <h2 id="rentals">Rentals</h2>
 
