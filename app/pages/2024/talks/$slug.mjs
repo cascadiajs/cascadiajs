@@ -50,7 +50,7 @@ export default function ({ html, state }) {
             twitter="${ speaker.twitter }" 
             url="${ speaker.url }">
           </person-detail> 
-          <div class="cta"><a href="/2024/tickets">🎟️ Get Your 20% off Ticket Today</a></div>
+          <div class="cta"><a href="/2024/tickets">🎟️ Get Your Ticket Today!</a></div>
         </simple-page>  
       </main-layout>
     `
