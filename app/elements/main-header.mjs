@@ -79,7 +79,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert">⏰ Deadline for <a href="/2024/tickets">20% off tickets</a> & conference hoodie is May 17!</section>
+      <section class="alert">Tickets for the <a href="/2024/trainings">pre-conf Training Workshops</a> are almost sold out!</section>
       ${path && path.startsWith("/2024")
         ? html`<nav class="back">
               <div class="wide">
