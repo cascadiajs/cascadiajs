@@ -12,6 +12,16 @@ Before you leave your home to travel to Seattle, make sure you've got everything
 - Snacks, if you need to nosh regularly throughout the day
 - Clothes appropriate for sunny and 70's during the day, dipping to the low 60's at night
 
+## Venue
+
+Town Hall Seattle<br />
+1119 8th Ave<br />
+Seattle, WA 98101
+
+Please enter through the 8th Avenue entrance. The doors are accessible via a ramp and lead, at-grade, into the Main Lobby level. The lobby has an at-grade elevator serving the Great Hall, where all talks will take place.
+
+Visit the Town Hall website for information on <a href="https://townhallseattle.org/locations-and-entrances/">location and entrances</a>, <a href="https://townhallseattle.org/public-transit/">public transit</a>, <a href="https://townhallseattle.org/parking/">parking</a> (including bike parking!) and <a href="https://townhallseattle.org/accessibility/">accessibility</a>.  
+
 ## Travel
 
 There are many ways to get to and from Seattle, so please check-out our Travel Guide for information.
