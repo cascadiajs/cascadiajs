@@ -48,3 +48,15 @@ Cozy rooms for people who don't mind a longer walk to Town Hall. Bar check-in wi
 * Please book through the booking link below. If you would like to reserve for dates that are outside of the booking link window, please book what is available and then email Stephanie.Faludi@marriott.com to extend your already existing reservation. She will gladly do so, if the rooms are available.
 
 <div class="cta secondary"><a href="https://www.marriott.com/events/start.mi?id=1702402325796&key=GRP">BOOK</a></div>
+
+
+## Hotels Near Link Light Rail Stations
+
+You may also find hotels within your budget near these light rail stations:
+
+* <a href="https://maps.app.goo.gl/D9qDicWdB85CUdyk7">Northgate</a> (29 min trip to Town Hall)
+
+* <a href="https://maps.app.goo.gl/wqCkznCYG9cnXWtU9">SeaTac/Airport</a> (48 min trip to Town Hall)
+
+* <a href="https://maps.app.goo.gl/2JVNj7cRezShFE7a9">Tukwila International Blvd</a> (42 min trip to Town Hall)
+
