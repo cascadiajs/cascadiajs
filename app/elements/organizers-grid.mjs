@@ -36,17 +36,10 @@ const organizers = [
     },
     {
         id: '',
-        name: 'Greg Bulmash',
-        image: 'greg-bulmash.jpg',
-        location: 'Lynwood, WA',
-        role: 'Speaker Wrangler'
-    },
-    {
-        id: '',
         name: 'Andre Wiggins',
         image: 'andre-wiggins.jpg',
         location: 'Seattle, WA',
-        role: 'Seattle Lead'
+        role: 'Speaker Wrangler'
     },
     {
         id: '',
