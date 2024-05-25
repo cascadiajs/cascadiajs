@@ -26,6 +26,7 @@ function hallwayTrack({ticket = undefined}) {
                 <div><img src="/_public/images/sponsors/codingscape.svg" alt="Codingscape logo"/></a></div>
                 <div><img src="/_public/images/sponsors/stytch.svg" alt="Stytch logo"/></a></div>
                 <div><img src="/_public/images/sponsors/temporal.svg" alt="Temporal logo"/></a></div>
+                <div><img src="/_public/images/sponsors/infobip.svg" alt="Infobip logo"/></a></div>
             </div>
         </div>
     </div>
@@ -313,7 +314,7 @@ function DayTwo({ talks, ticket = undefined }) {
 
             <div class="workshop track">
                 <h3>Workshop Track</h3>
-                <div class="location">Main Lobby</div>
+                <div class="location">Reading Room</div>
                 <div class="show-item">       
                     <div class="when">10:30</div>
                     <div class="what">

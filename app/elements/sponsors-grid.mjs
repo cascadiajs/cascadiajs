@@ -1,10 +1,10 @@
 const sponsors = [
     { 
-        id: 'datastax',
+        id: 'temporal',
         tier: 'gold',
-        logo: 'datastax.svg',
-        name: 'DataStax',
-        url: 'https://www.datastax.com'
+        logo: 'temporal.svg',
+        name: 'Temporal',
+        url: 'https://temporal.io/'
     },
     { 
         id: 'stytch',
@@ -14,11 +14,11 @@ const sponsors = [
         url: 'https://stytch.com/'
     },
     { 
-        id: 'temporal',
+        id: 'datastax',
         tier: 'gold',
-        logo: 'temporal.svg',
-        name: 'Temporal',
-        url: 'https://temporal.io/'
+        logo: 'datastax.svg',
+        name: 'DataStax',
+        url: 'https://www.datastax.com'
     },
     { 
         id: 'codingscape',
@@ -68,6 +68,20 @@ const sponsors = [
         logo: 'mux.png',
         name: 'Mux',
         url: 'https://mux.com'
+    },
+    { 
+        id: 'cloudinary',
+        tier: 'community',
+        logo: 'cloudinary.png',
+        name: 'Cloudinary',
+        url: 'https://cloudinary.com'
+    },
+    { 
+        id: 'codecrafters',
+        tier: 'community',
+        logo: 'codecrafters.png',
+        name: 'CodeCrafters',
+        url: 'https://app.codecrafters.io/join?via=cascadiajs'
     },
     { 
         id: 'seattlejs',

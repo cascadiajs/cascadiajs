@@ -68,6 +68,27 @@ const organizers = [
         image: 'shivay-lamba.jpg',
         location: 'Delhi, India',
         role: 'Volunteer'
+    },
+    {
+        id: '',
+        name: 'Kate Pond',
+        image: 'kate-pond.jpg',
+        location: 'Seattle, WA',
+        role: 'Volunteer'
+    },
+    {
+        id: '',
+        name: 'Justin Oliver Lee',
+        image: 'justin-oliver-lee.jpg',
+        location: 'Seattle, WA',
+        role: 'Volunteer'
+    },
+    {
+        id: '',
+        name: 'FX Wood',
+        image: 'fx-wood.jpg',
+        location: 'Seattle, WA',
+        role: 'Volunteer'
     }
 ]
 

@@ -3,6 +3,12 @@ title: Tickets to CascadiaJS 2024
 image: /_public/images/past/cjs22-happyhour.jpg
 excerpt: Supplies are limited, don't miss out!
 ---
+## 🆕 Register for the Livestream
+
+If you can't be there in person, join us online for the livestream edition of CascadiaJS 2024!
+
+<div class="secondary cta"><a href="/2024/livestream" aria-label="Livestream">More Info</a></div>
+
 ## Ticket Release Schedule
 
 Tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
