@@ -6,7 +6,7 @@ excerpt: Eve Porcello
 ![Eve Porcello](/_public/images/sharing/2024/trainings/ai-for-react-developers.png)
 
 * When: Wednesday, June 19 (1pm - 4pm)
-* Where: Downtown Seattle
+* Where: AWS Skills Center, [1915 Terry Ave, Seattle, WA 98101](https://goo.gl/maps/QT1UkJ9iq9cWGiJ36)
 * Instructor: [Eve Porcello](https://twitter.com/eveporcello)
 
 Knowledge of AI tooling is critical for future proofing the careers of React developers, and the Vercel suite of AI tools is an approachable on-ramp. In this course, we’ll take a closer look at the Vercel AI SDK and how this can help React developers build streaming interfaces with JavaScript and Next.js. We’ll also incorporate additional 3rd party APIs to build and deploy a music visualization app.

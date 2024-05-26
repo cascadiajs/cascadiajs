@@ -80,7 +80,7 @@ export default function ({ html, state }) {
                 consider <a href="/2024/cfp">submitting a talk</a>.
                 Every developer has a story to tell, and we want to hear yours!-->
               </p>
-              <div class="cta primary"><a href="/2024/tickets">Regular Bird tickets on sale now</a></div>
+              <div class="cta primary"><a href="/2024/tickets">Tickets on sale now</a></div>
             </article>
             <article>
               <img src="/_public/images/sasquatch.gif" alt="Sasquatch having ChatGPT write his code for him while chilling on a beach"/>

@@ -6,7 +6,7 @@ excerpt: Brook Riggio
 ![Brook Riggio](/_public/images/sharing/2024/trainings/intro-data-structures.png)
 
 * When: Tuesday, June 18 (9am - noon)
-* Where: Downtown Seattle
+* Where: AWS Skills Center, [1915 Terry Ave, Seattle, WA 98101](https://goo.gl/maps/QT1UkJ9iq9cWGiJ36)
 * Instructor: [Brook Riggio](https://www.linkedin.com/in/brookr/)
 
 🫣Intimidated by data structures and algorithms? 🙀Fearing the traditional whiteboard interview? Has your educational journey not yet presented you with a proper introduction 🧑‍🏫to the classic data structures of computer science and Big-O notation? 

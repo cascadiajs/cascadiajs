@@ -362,14 +362,21 @@ function ActivityDay() {
                 <div class="show-item"> 
                     <div class="when">9am - 11am</div>
                     <div class="what">
-                        <div class="title">Dog romp at the off-leash dog park</div>
+                        <div class="title">Dog romp at the off-leash dog park sponsored by <img src="/_public/images/sponsors/hookdeck.svg" alt="Hookdeck logo"></div>
                     </div>
                 </div>
                 <div class="location">Seattle Center</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
                     <div class="what">
-                        <div class="title">Visit to the Space Needle</div>
+                        <div class="title">Visit to the Space Needle sponsored by <img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"></div>
+                    </div>
+                </div>
+                <div class="location">Miller Park</div>
+                <div class="show-item"> 
+                    <div class="when">10am - noon</div>
+                    <div class="what">
+                        <div class="title">Pickle Ball <i class="fa-solid fa-pickleball"></i></div>
                     </div>
                 </div>
             </div>

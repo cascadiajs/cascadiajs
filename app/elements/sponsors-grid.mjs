@@ -35,6 +35,13 @@ const sponsors = [
         url: 'http://infobip.com/developers'
     },
     { 
+        id: 'tbd',
+        tier: 'bronze',
+        logo: 'tbd.svg',
+        name: 'TBD',
+        url: 'https://tbd.website'
+    },
+    { 
         id: 'hookdeck',
         tier: 'community',
         logo: 'hookdeck.svg',

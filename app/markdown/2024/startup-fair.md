@@ -35,7 +35,7 @@ We invited early-stage startups to apply, and after several rounds of review we 
 
 <div id="startup-fair-sponsors">
     <img src="/_public/images/sponsors/copilotkit.png" alt="CopilotKit logo"/>
-    <img src="/_public/images/sponsors/yoodli.png" alt="Yoodli logo"/>
+    <!--img src="/_public/images/sponsors/yoodli.png" alt="Yoodli logo"/-->
     <img src="/_public/images/sponsors/milliondev.png" alt="Million.dev logo"/>
     <img src="/_public/images/sponsors/hookdeck.png" alt="Hookdeck logo"/>
 </div>
@@ -48,7 +48,7 @@ The breakout framework + platform for building deeply-integrated, fully-customiz
 
 <div class="cta secondary"><a target="_blank" href="https://www.copilotkit.ai/">copilotkit.ai</a></div>
 
-
+<!-->
 <h2 id="yoodli">Yoodli</h2>
 
 Grammarly for speech.
@@ -56,7 +56,7 @@ Grammarly for speech.
 <span class="tag">Launched - Has Users</span> <span class="tag">Open to Funding</span>
 
 <div class="cta secondary"><a target="_blank" href="https://www.yoodli.ai">yoodli.ai</a></div>
-
+-->
 
 <h2 id="milliondev">Million.dev</h2>
 

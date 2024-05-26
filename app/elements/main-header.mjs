@@ -99,9 +99,8 @@ export default function MainHeader({ html, state }) {
               </div>
               <div class="push"><a href="/2024">CascadiaJS 2024</a></div>
               <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
-              <div class="spacer">
-                <a href="/code-of-conduct">Code of Conduct</a>
-              </div>
+              <div class="spacer"><a href="/code-of-conduct">Code of Conduct</a></div>
+              <div class="spacer"><a href="/home">Login</a></div>
             </div>
           </nav>`}
     </header>

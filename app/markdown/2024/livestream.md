@@ -21,4 +21,4 @@ Hop into the CascadiaJS Video Selfie Booth! Record yourself saying "hello", down
 
 The Video Selfie Booth is brought to you by our friends at [Mux](/sponsors/mux).-->
 
-<div class="cta"><a target="_blank" href="https://ti.to/event-loop/cascadiajs-2024/with/qj3j-9j9ncq" aria-label="Buy Tickets">Get Your FREE Virtual Ticket</a></div>
+<div class="cta"><a target="_blank" href="https://ti.to/event-loop/cascadiajs-2024/with/qj3j-9j9ncq" aria-label="Buy Tickets">Get Your FREE Livestream Ticket</a></div>

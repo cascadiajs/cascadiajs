@@ -6,7 +6,7 @@ excerpt: Eve Porcello
 ![Eve Porcello](/_public/images/sharing/2024/trainings/intro-react-server-components.png)
 
 * When: Wednesday, June 19 (9am - noon)
-* Where: Downtown Seattle
+* Where: AWS Skills Center, [1915 Terry Ave, Seattle, WA 98101](https://goo.gl/maps/QT1UkJ9iq9cWGiJ36)
 * Instructor: [Eve Porcello](https://twitter.com/eveporcello)
 
 In this morning workshop, we’ll build and iterate on an app that takes advantage of the server components architecture to build a high-performance application. Along the way, we’ll get comfortable with best practices in React routing, caching, and data loading.
