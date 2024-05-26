@@ -5,12 +5,21 @@ excerpt: Information for attendees of CascadiaJS 2024
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
+        <li><a href="#complete-registration">Complete Registration</a></li>
         <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
         <li><a href="#get-ready-for-the-conference">Get Ready for the Conference</a></li>
         <li><a href="#spread-the-word">Spread the Word</a></li>
         <li><a href="#connect-with-our-community">Connect with our Community</a></li>
     </ul>
 </div>
+
+<h2 id="complete-registration">Complete Registration</h2>
+
+Use the button below to complete the registration process. You'll need the ticket reference that is attached to the email that you get from Tito when you registered. It is a 4 letter code followed by a number, like <code>ABCD-3</code>.
+
+This will create your official CascadiaJS account and give you access to RSVP links for the Workshop Track, the post-conference Activity Day and more!
+
+<div class="cta primary"><a href="/signup">Complete Registration</a></div>
 
 <h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
 
