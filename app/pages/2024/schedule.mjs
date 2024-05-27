@@ -62,7 +62,7 @@ function DayZero({ ticket = undefined }) {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Downtown Seattle</div>
+        <div class="location">AWS Skills Center</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
@@ -81,6 +81,14 @@ function DayZero({ ticket = undefined }) {
                         <div class="cta"><a href="/2024/trainings/advanced-data-structures">More Info</a></div>
                     </div>
                 </div>
+                <div class="show-item">       
+                <div class="when">5pm - 7pm</div>
+                    <div class="what">
+                        <div class="title">SeattleJS Code Katas</div>
+                        <p>Code Katas are a fun way to do coding exercises, in any language you want. It's a good practice to keep increasing your skills as a coder. You can practice the same kata over and over to continue improving, get feedback from others, and move on to more difficult problems to solve.</p>
+                        <div class="cta"><a target="_blank" href="https://www.meetup.com/seattlejs/events/299899759/">More Info</a></div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -92,7 +100,20 @@ function DayZero({ ticket = undefined }) {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Downtown Seattle</div>
+        <div class="location">Union Station</div>
+        <div class="day-content">
+            <div class="show track">   
+                <div class="show-item">       
+                    <div class="when">10:10am</div>
+                    <div class="what">
+                        <div class="title">Portland Hacker Train</div>
+                        <p>Meet up with your fellow hackers for a ride up to Seattle!</p>
+                        <div class="cta"><a href="/2024/hacker-train">More Info</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="location">AWS Skills Center</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
@@ -113,7 +134,19 @@ function DayZero({ ticket = undefined }) {
                 </div>
             </div>
         </div>
-
+        <div class="location">Pacific Central Station</div>
+        <div class="day-content">
+            <div class="show track">   
+                <div class="show-item">       
+                    <div class="when">4:15pm</div>
+                    <div class="what">
+                        <div class="title">Vancouver Hacker Train</div>
+                        <p>Meet up with your fellow hackers for a ride down to Seattle!</p>
+                        <div class="cta"><a href="/2024/hacker-train">More Info</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="location">Stoup Brewing (Capitol Hill)</div>
         <div class="day-content">
             <div class="show track">   
@@ -149,13 +182,6 @@ function DayOne({ talks, ticket = undefined }) {
                 <div class="what"><div class="title"><i class="fas fa-door-open"></i> Doors Open and Registration</div></div>
             </div>
         </div>
-        <!--div class="location">Landmark</div>
-        <div class="day-content">
-            <div class="show-item">       
-                <div class="when">08:30</div>
-                <div class="what"><div class="title">Child Care by <img src="/images/sponsors/formidable.svg"/></div></div>
-            </div>
-        </div-->
         <div class="day-content">
             <div class="main track">   
                 <h3>Talk Track</h3>

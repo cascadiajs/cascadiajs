@@ -20,11 +20,17 @@ NOTE: the routes below are just the ones that get you TO Seattle on June 19, so 
 * Wednesday, June 19
 * Departs Vancouver (Pacific Central Station) at 4:45pm, arrives Seattle (King St Station) at 9:10pm
 
-<div class="cta"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train Ticket</a></div>
+<div class="cta secondary"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train Ticket</a></div>
 
 ## Departing Portland, OR
 
 * Wednesday, June 19
 * Departs Portland (Union Station) at 10:40am, arrives Seattle (King St Station) at 2:05pm
 
-<div class="cta"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train Ticket</a></div>
+<div class="cta secondary"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train Ticket</a></div>
+
+## Let us know you're taking the Hacker Train!
+
+After you buy your ticket, please let us know you're coming so that your Train Captain has an accurate roster and can contact you about meeting up at the train station.
+
+<div class="cta"><a target="_blank" href="https://airtable.com/appYEQ4JXnRFkHgNQ/shrXjdYwRv8vrkyY1">RSVP</a></div>
