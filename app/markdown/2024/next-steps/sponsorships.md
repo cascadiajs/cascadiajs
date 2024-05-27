@@ -22,9 +22,11 @@ Seattle, WA 98101
 Use the main entrance on 8th Ave.
 
 ### Parking
+
 There is no onsite parking, but there are several parking garages nearby. Visit the [Town Hall website](https://townhallseattle.org/parking/) for more information on parking and public transportation.
 
 ### Venue Access
+
 **Thursday, June 20 (Day One)**<br />
 6:30am - 9:30pm<br />
 Sponsors can begin setup at 6:30am. Doors open to attendees at 8:00am. 

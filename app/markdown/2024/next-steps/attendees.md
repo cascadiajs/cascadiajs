@@ -45,7 +45,6 @@ We're running a contest to see who can rally the most people to join them at the
 
 That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because like most good things in life, the more the merrier! 🥳
 
-
 <h2 id="connect-with-our-community">Connect with our Community</h2>
 
 You don't have to wait until June 19 to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
