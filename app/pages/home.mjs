@@ -31,8 +31,8 @@ export default function ({ html, state }) {
                 <thead>
                     <tr><th>Activity</th><th>Location</th><th>RSVP</th></tr>
                 </thead>
-                <tr><td>5K Fun Run</td><td>Greenlake</td><td>RSVP TBD</td></tr>
-                <tr><td>Pickle Ball</td><td>Miller Park</td><td>RSVP TBD</td></tr>
+                <tr><td>5K Fun Run</td><td>Greenlake</td><td><a target="_blank" href="https://lu.ma/65nqcezz">RSVP</a></td></tr>
+                <tr><td>Pickle Ball</td><td>Miller Park</td><td><a target="_blank" href="https://lu.ma/84v4ndmr">RSVP</a></td></tr>
                 <tr><td>Space Needle</td><td>Seattle Center</td><td>RSVP TBD</td></tr>
                 <tr><td>Dog romp</td><td>Magnuson Park off-leash dog park</td><td><a target="_blank" href="https://lu.ma/uy7jhx9r">RSVP</a></td></tr>
             </table>
