@@ -32,9 +32,11 @@ export async function get({ query, session }) {
     }
     // else, use the email to look up the user in the database, if found, set session
     else {
-        const user = await findUser({ email: oauth.user.emails[0].email })
+        console.log(oauth.user.emails[0].email)
+        //const user = await findUser({ email: oauth.user.emails[0].email })
+        console.log(oauth.oauth_user_registration_id)
+        const user = await findUser({ _id: oauth.oauth_user_registration_id })
         console.log(user)
-        //const user = await findUser({ _id: oauth.oauth_user_registration_id })
         if (user) {
             // find the ticket associated with this user
             const ticket = await findTicket({ user_id: user._id })
