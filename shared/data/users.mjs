@@ -18,7 +18,7 @@ async function findUsers({ query, limit = 100 }) {
     return await collection.find(query, { limit }).toArray()
 }
 
-async function findUser({ query }) {
+async function findUser(query) {
   const db = getConnection()
   const collection = await db.collection(COLLECTION)
   return await collection.findOne(query)
