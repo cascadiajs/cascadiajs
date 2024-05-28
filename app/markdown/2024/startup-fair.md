@@ -38,6 +38,7 @@ We invited early-stage startups to apply, and after several rounds of review we 
     <!--img src="/_public/images/sponsors/yoodli.png" alt="Yoodli logo"/-->
     <img src="/_public/images/sponsors/milliondev.png" alt="Million.dev logo"/>
     <img src="/_public/images/sponsors/hookdeck.png" alt="Hookdeck logo"/>
+    <img src="/_public/images/sponsors/hal9.png" alt="Hal9 logo"/>
 </div>
 
 <h2 id="copilotkit">CopilotKit</h2>
@@ -48,7 +49,7 @@ The breakout framework + platform for building deeply-integrated, fully-customiz
 
 <div class="cta secondary"><a target="_blank" href="https://www.copilotkit.ai/">copilotkit.ai</a></div>
 
-<!-->
+<!--
 <h2 id="yoodli">Yoodli</h2>
 
 Grammarly for speech.
@@ -74,6 +75,14 @@ A reliable event gateway for asynchronous applications.
 <span class="tag">Launched - Has Users</span> <span class="tag">Not Raising</span>
 
 <div class="cta secondary"><a target="_blank" href="https://hookdeck.com">hookdeck.com</a></div>
+
+<h2 id="hal9">Hal9</h2>
+
+Hal9 is a data application platform for non-technical and technical users to collaborate
+
+<span class="tag">Launched - Has Users</span> <span class="tag">Actively Raising</span>
+
+<div class="cta secondary"><a target="_blank" href="https://hal9.com">hal9.com</a></div>
 
 
 <!-- 
