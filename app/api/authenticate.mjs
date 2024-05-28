@@ -4,7 +4,7 @@ import { upsertTicket, findTicket } from '../../shared/data/tito.mjs';
 
 export async function get({ query, session }) {
     const { stytch_token_type, token } = query
-    console.log(stytch_token_type, token)
+    //console.log(stytch_token_type, token)
     
     const client = new stytch.Client({
         project_id: process.env.STYTCH_PROJECT_ID,
@@ -32,15 +32,15 @@ export async function get({ query, session }) {
     }
     // else, use the email to look up the user in the database, if found, set session
     else {
-        console.log(oauth.user.emails[0].email)
+        //console.log(oauth.user.emails[0].email)
         //const user = await findUser({ email: oauth.user.emails[0].email })
-        console.log(oauth.oauth_user_registration_id)
+        //console.log(oauth.oauth_user_registration_id)
         const user = await findUser({ _id: oauth.oauth_user_registration_id })
-        console.log(user)
+        //console.log(user)
         if (user) {
             // find the ticket associated with this user
             const ticket = await findTicket({ user_id: user._id })
-            console.log(ticket)
+            //console.log(ticket)
             return {
                 location: '/home',
                 session: { userId: user._id, userName: user.name, ticketId: ticket._id }
