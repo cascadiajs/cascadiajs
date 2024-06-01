@@ -1,5 +1,6 @@
 import { findEvent } from "../../../shared/data/events.mjs"
 import { findTalks } from "../../../shared/data/talks.mjs"
+import { findUsers } from "../../../shared/data/users.mjs"
 
 export async function get({ path, query }) {
   // find the id for CascadiaJS 2024
@@ -7,7 +8,8 @@ export async function get({ path, query }) {
   //console.log(event)
   // find all talks for CascadiaJS 2024
   const talks = await findTalks({ query: { event_id: event._id }, inflate: true})
-  // return values
+  // find all the attendees for CascadiaJS 2024
+  const attendees = await findUsers({ query: {}, limit: 1000 })
   const { social } = query
   // set social sharing info
   const sharing = {
@@ -24,7 +26,8 @@ export async function get({ path, query }) {
     json: {
       path,
       talks,
-      sharing
+      sharing,
+      attendees
     },
   };
 }

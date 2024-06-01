@@ -1,6 +1,6 @@
 export default function ({ html, state }) {
   let { store } = state
-  let { sharing } = store
+  let { sharing, attendees } = store
   if (sharing.social !== undefined) {
     const { image, title, description } = sharing
     return html`<social-sharing image="${ image }" title="${ title }" description="${ description }"></social-sharing>`
@@ -40,6 +40,19 @@ export default function ({ html, state }) {
           color: #112378;
           font-weight: 400;
           line-height: 1.3em;
+        }
+
+        #attendee-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        #attendee-list img {
+            display: block;
+            margin: 8px;
+            height: 100px;
         }
 
         @media only screen and (min-width: 768px) {
@@ -205,7 +218,13 @@ export default function ({ html, state }) {
             <h1>Organizers and Volunteers</h1>
             <organizers-grid></organizers-grid>
           </section>
-        </div></main-layout
-      >`;
+          <section id="directory" class="landing">
+            <h1>Conference Directory</h1>
+            <div id="attendee-list">
+            ${ attendees.sort(() => Math.random() - 0.5).map(t => /*html*/`<img src="${ t.profile_photo }" alt="avatar image" referrerpolicy="no-referrer"/>`).join("")}
+            </div>
+          </section
+        </div>
+      </main-layout>`;
   }
 }

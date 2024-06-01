@@ -7,6 +7,7 @@ import * as sandbox from "@architect/sandbox"
 import * as puppeteer from "puppeteer"
 import { findTalks } from '../shared/data/talks.mjs'
 import { findEvent } from '../shared/data/events.mjs'
+import { sponsors } from '../shared/data/sponsors.mjs'
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -103,6 +104,20 @@ async function createImages(command, argument) {
       }
     }
   }
+
+  if (command === 'sponsors') {
+    for (const sponsor of sponsors) {
+        if (['platinum', 'gold', 'silver'].includes(sponsor.tier)) {
+          const path = '2024/sponsors/' + sponsor.id
+          console.log(`Generating a screen shot for ${path}`)
+          const fullUrl = `${baseUrl}/${path}?social`
+          //console.log(fullUrl)
+          await page.goto(fullUrl)
+          await page.screenshot({ path: `${dest}/${path}.png` })        
+        }
+    }
+  }
+
   console.log("Shutting down")
   // shut down te browser
   await browser.close()
