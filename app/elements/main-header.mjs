@@ -83,7 +83,7 @@ export default function MainHeader({ html, state }) {
       ${path && path.startsWith("/2024")
         ? html`<nav class="back">
               <div class="wide">
-                <div><a href="/">← Back to Home</a></div>
+                <div><a href="/">← Back to Homepage</a></div>
               </div>
             </nav>
             <nav-2024></nav-2024>`
@@ -100,7 +100,6 @@ export default function MainHeader({ html, state }) {
               <div class="push"><a href="/2024">CascadiaJS 2024</a></div>
               <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
               <div class="spacer"><a href="/code-of-conduct">Code of Conduct</a></div>
-              <div class="spacer"><a href="/home">Login</a></div>
             </div>
           </nav>`}
     </header>

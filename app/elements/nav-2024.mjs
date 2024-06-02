@@ -43,6 +43,7 @@ export default function MainHeader({ html }) {
         <!--div class="spacer"><a href="/2024/scholarships">Scholarships</a></div-->
         <div class="spacer"><a href="/2024/calls">Open Calls</a></div>
         <div class="spacer"><a href="/2024/trainings">Training Workshops</a></div>
+        <div class="spacer"><a href="/login">Login</a></div>
         <div class="spacer"><a class="buy" href="/2024/tickets">Tickets</a></div>
       </div>
     </nav>

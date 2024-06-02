@@ -13,7 +13,7 @@ export async function get({ query, session }) {
       }
     );
     const oauth = await client.oauth.authenticate({ token})
-    console.log(oauth)
+    //console.log(oauth)
     // if there is a ticketId in the user's session, this is a sign-up operation, create record
     if (session.ticketId) {
       const _id = oauth.oauth_user_registration_id
