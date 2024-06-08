@@ -36,10 +36,17 @@ export async function get({ query, session }) {
         //const user = await findUser({ email: oauth.user.emails[0].email })
         //console.log(oauth.oauth_user_registration_id)
         const user = await findUser({ _id: oauth.oauth_user_registration_id })
-        console.log(oauth.oauth_user_registration_id, user)
+        //console.log(oauth.oauth_user_registration_id, user)
         if (user) {
             // find the ticket associated with this user
-            const ticket = await findTicket({ user_id: user._id })
+            let ticket = await findTicket({ user_id: user._id })
+            // if, for some reason, a ticket can't be found with this user id, fall back on using the email address
+            if (!ticket) {
+              console.log('no ticket found with user id, trying email ', user.email)
+              ticket = await findTicket({ email: user.email })
+              // now, update the ticket to reference this (correct?) Stytch user id
+              await upsertTicket({ _id: ticket._id, user_id: user._id })
+            }
             console.log(ticket)
             return {
                 location: '/home',
