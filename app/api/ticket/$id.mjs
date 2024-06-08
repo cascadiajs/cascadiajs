@@ -1,6 +1,6 @@
 import cloudinary from 'cloudinary'
-import { findTicket } from '../../shared/data/tito.mjs';
-import { findUser } from '../../shared/data/users.mjs';
+import { findTicket } from '../../../shared/data/tito.mjs';
+import { findUser } from '../../../shared/data/users.mjs';
 
 // Return "https" URLs by setting secure: true
 cloudinary.v2.config({
@@ -44,9 +44,9 @@ const createImageUrl = ({ profileImage, fullName, ticketType, ticketNumber }) =>
     return imageUrl;
 };
 
-export async function get({ query }) {
-    // get user_id
-    const { ticketId, image } = query
+export async function get({ query, pathParameters }) {
+    const { image } = query
+    const { id: ticketId } = pathParameters
     if (!ticketId) {
         return {
             status: 404
@@ -72,9 +72,9 @@ export async function get({ query }) {
             else {
                 const sharing = {
                     sharingTitle: `Join ${fullName} at CascadiaJS 2024!`,
-                    sharingImage: '/ticket?image=true&ticketId=' + ticketId,
+                    sharingImage: `/ticket/${ ticketId }?image=true`,
                     sharingDescription: 'Don\'t miss CascadiaJS 2024, June 19 - 22 in Seattle, WA!',
-                    sharingPath: '/ticket?ticketId=' + ticketId
+                    sharingPath: '/ticket/' + ticketId
                 }
                 return {
                     json: {
