@@ -36,11 +36,11 @@ export async function get({ query, session }) {
         //const user = await findUser({ email: oauth.user.emails[0].email })
         //console.log(oauth.oauth_user_registration_id)
         const user = await findUser({ _id: oauth.oauth_user_registration_id })
-        //console.log(user)
+        console.log(oauth.oauth_user_registration_id, user)
         if (user) {
             // find the ticket associated with this user
             const ticket = await findTicket({ user_id: user._id })
-            //console.log(ticket)
+            console.log(ticket)
             return {
                 location: '/home',
                 session: { userId: user._id, userName: user.name, ticketId: ticket._id }
