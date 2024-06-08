@@ -3,7 +3,7 @@ function speaker(s) {
         <summary>${ s ? s.name : 'New Speaker' }</summary>
         <form action=/admin/speakers method=post>
           ${ s ? `<input type=text name=_id placeholder="id" value="${s._id}" readonly>` : '' }
-          <input type=text name=slug placeholder="Slug" value="${ s ? s.name : '' }">
+          <input type=text name=slug placeholder="Slug" value="${ s ? s.slug : '' }">
           <input type=text name=name placeholder="Name" value="${ s ? s.name : '' }">
           <input type=text name=image placeholder="Image" value="${ s ? s.image : '' }">
           <input type=text name=url placeholder="Website" value="${ s ? s.url : '' }">

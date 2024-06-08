@@ -3,7 +3,6 @@ export default function ({ html, state }) {
     const { STYTCH_PUBLIC_TOKEN } = process.env
     return html`
     <main-layout>
-
         <div style="width: 50%; margin: 60px auto">
             <div id="stytch-sdk"></div>
         </div>

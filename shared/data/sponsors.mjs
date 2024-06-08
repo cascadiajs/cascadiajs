@@ -42,6 +42,7 @@ const sponsors = [
         logoSquare: 'infobip-square.jpg',
         name: 'Infobip',
         url: 'http://infobip.com/developers',
+        video: '501085031dc9b27bcc6936548aa0fefa',
         description: 'Infobip is a global leader in the field of omnichannel communication powering a broad range of messaging channels, tools and solutions for advanced customer engagement, authentication, and security. We help our clients and partners overcome the complexity of consumer communications, grow their business, and enhance the customer experience quickly, securely, and reliably.'
     },
     { 
@@ -50,6 +51,13 @@ const sponsors = [
         logo: 'tbd.svg',
         name: 'TBD',
         url: 'https://tbd.website'
+    },
+    { 
+        id: 'sentry',
+        tier: 'bronze',
+        logo: 'sentry.svg',
+        name: 'Sentry',
+        url: 'https://sentry.io'
     },
     { 
         id: 'hookdeck',
