@@ -1,7 +1,7 @@
 ---
 title: From “its broken” to “fix is out”
 image: /_public/images/workshops/sarah-guthals.jpg
-excerpt: Tejas Kumar
+excerpt: Sarah Guthals
 ---
 ![Sarah Guthals](/_public/images/workshops/sarah-guthals.jpg)
 
