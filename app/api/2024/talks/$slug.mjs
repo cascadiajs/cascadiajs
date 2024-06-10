@@ -6,7 +6,7 @@ export async function get({pathParameters, query, path}) {
   const { social } = query
 
   // get ID for CascadiaJS 2024 event
-  const event = await findEvent({query: { slug: "cascadiajs-2024"}})
+  const event = await findEvent({ slug: "cascadiajs-2024"})
   const event_id = event._id
   // get talk
   const talk = await findTalk({query: { event_id, slug }, inflate: true })  

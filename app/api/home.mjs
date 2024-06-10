@@ -1,4 +1,5 @@
 import { findTicket } from '../../shared/data/tito.mjs'
+import { findEvent } from '../../shared/data/events.mjs'
 
 async function checkAuth({ session }) {
   //console.log(session)
@@ -12,8 +13,9 @@ export async function getHome({ session }) {
   const { userId, userName, ticketId } = session
   const ticket = await findTicket({ _id: ticketId })
   const releaseId = ticket.release_id
-  //console.log(session)
+  const event = await findEvent({ name: 'CascadiaJS 2024' })
+  const playbackId = event.playbackId
   return {
-    json: { userId, userName, ticketId, releaseId }
+    json: { userId, userName, ticketId, releaseId, playbackId }
   }
 }

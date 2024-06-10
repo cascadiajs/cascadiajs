@@ -1,12 +1,23 @@
 const IN_PERSON_RELEASE_IDS = [1469997, 1487843, 1489836, 1492670, 1484904, 1484368, 1484705]
 
 export default function ({ html, state }) {
-    const userName = state?.store?.userName
-    const ticketId = state?.store?.ticketId
-    const releaseId = state?.store?.releaseId
+    const { userName, ticketId, releaseId, playbackId } = state?.store || {}
     return html`
     <main-layout>
         <simple-page title="Hello ${ userName.first_name }!">
+            <h2>Watch the Livestream</h2>
+            ${ playbackId ? html`  
+            <mux-player
+              stream-type="on-demand"
+              playback-id="${ playbackId }"
+              metadata-video-title="CascadiaJS 2024 Livestream"
+              metadata-viewer-user-id="embed"
+              muted="true"
+              autoplay="any"
+              default-hidden-captions>
+            </mux-player>
+            <script src="https://unpkg.com/@mux/mux-player"></script>`
+            : 'The livestream will be available here on 6/20 and 6/21 starting at 9am PT.'}
             <h2>Virtual Ticket</h2>
             <p><img width="500" src="/ticket/${ ticketId }?image=true" /></p>
             <p>

@@ -44,10 +44,10 @@ export async function get({ query, session }) {
             if (!ticket) {
               console.log('no ticket found with user id, trying email ', user.email)
               ticket = await findTicket({ email: user.email })
+              console.log(ticket)
               // now, update the ticket to reference this (correct?) Stytch user id
               await upsertTicket({ _id: ticket._id, user_id: user._id })
             }
-            console.log(ticket)
             return {
                 location: '/home',
                 session: { userId: user._id, userName: user.name, ticketId: ticket._id }

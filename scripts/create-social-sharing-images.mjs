@@ -86,7 +86,7 @@ async function createImages(command, argument) {
   }
 
   if (command === 'talks') {
-    const event = await findEvent({ query: { slug: 'cascadiajs-2024'}})
+    const event = await findEvent({ slug: 'cascadiajs-2024'})
     let talks = await findTalks({ query: { event_id: event._id }})
     
     if (argument) {

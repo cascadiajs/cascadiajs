@@ -9,6 +9,7 @@
   "devDependencies": {
     "@enhance/cli": "latest",
     "@enhance/types": "^0.6.1",
+    "@mux/mux-node": "^8.7.1",
     "dotenv": "^16.4.5",
     "eslint": "^8.49.0",
     "slugify": "^1.6.6",

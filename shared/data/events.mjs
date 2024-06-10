@@ -8,7 +8,7 @@ async function findEvents({ query, limit = 100 } = {}) {
     return await collection.find(query, { limit }).toArray()
 }
 
-async function findEvent({ query }) {
+async function findEvent(query) {
   const db = getConnection()
   const collection = await db.collection(COLLECTION)
   return await collection.findOne(query)
