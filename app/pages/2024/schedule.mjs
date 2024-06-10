@@ -240,7 +240,7 @@ function DayOne({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">13:30</div>
                     <div class="what">
-                        <div class="title"><a href="/2024/workshops/debugging-apps">From “its broken” to “fix is out”</a></div>
+                        <div class="title"><a href="/2024/workshops/debugging-web-apps">From “its broken” to “fix is out”</a></div>
                         <div class="speaker">"Something is broken": are hopefully words you never have to hear from your users. Even worse is when you don’t know how to fix that “something”. Join this workshop to learn how to make sure users are heard, alerts are alerting, and priorities are prioritized. Spend your dev cycles more on new features and less on digging through logs, trying to figure out how to repro an issue, or guessing what part of your codebase is the culprit.</div>
                     </div>
                 </div>
