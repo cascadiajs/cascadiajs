@@ -10,3 +10,5 @@ excerpt: Rizel Scarlett
 * Instructor: [Rizel Scarlett](https://twitter.com/blackgirlbytes)
 
 The answer is: yes, you can buy booze with a JSON web token! Join this hands-on workshop to learn how mobile driver's license apps leverage a special JSON Web Token and W3C standard called Verifiable Credentials to digitally prove to both the vendor and the delivery company that a buyer is of legal drinking age.
+
+<div class="cta"><a href="/2024/tickets">🎟️ Get Your Ticket Today!</a></div>

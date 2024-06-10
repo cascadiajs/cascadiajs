@@ -26,6 +26,8 @@ Knowledge of how to build a web application.
 - Deconstruct distributed tracing
 - Discover ways to make debugging faster
 
+<div class="cta"><a href="/2024/tickets">🎟️ Get Your Ticket Today!</a></div>
+
 ## About 
 
 Sarah Guthals is the Director of Developer Relations at Sentry. With a Ph.D. in Computer Science from UC San Diego, her passion is to design content, software, and companies that focus on engaging developers in learning new skills, technologies, and tools to improve their developer workflow.
