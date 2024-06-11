@@ -43,6 +43,8 @@ Each booth consists of a 6 foot table and two chairs, wired for power.
 
 We recommend that sponsors bring a single, pop-up banner to place alongside their booth (see photo below).
 
+Recommended booth times are 8am - 6pm. Both evening social events will be held in the main lobby, so you're welcome to staff your booth during these times as well, but it's optional.
+
 ![moovweb](/_public/images/past/cjs19-moovweb.jpg)
 
 ### Shipping
