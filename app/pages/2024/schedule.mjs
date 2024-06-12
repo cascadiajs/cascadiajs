@@ -193,7 +193,7 @@ function DayOne({ talks, ticket = undefined }) {
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:15</div>
-                    <div class="what"><div class="title"><i class="fas fa-taco"></i> Lunch</div></div>
+                    <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2024/meals">Lunch</a></div></div>
                 </div>
                 <div class="location">Great Hall</div>
                 ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'herve-aniglo'))}
@@ -213,7 +213,7 @@ function DayOne({ talks, ticket = undefined }) {
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> Opening Party by <img src="/_public/images/sponsors/infobip.svg"/></div></div>
+                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> <a href="/2024/meals">Dinner</a> and Opening Party by <img src="/_public/images/sponsors/infobip.svg"/></div></div>
                 </div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
@@ -302,7 +302,7 @@ function DayTwo({ talks, ticket = undefined }) {
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> Closing Party by <img src="/_public/images/sponsors/datastax.svg"/></div></div>
+                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> <a href="/2024/meals">Dinner</a> and Closing Party by <img src="/_public/images/sponsors/datastax.svg"/></div></div>
                 </div>
                 <div class="show-item">       
                     <div class="when">18:30</div>

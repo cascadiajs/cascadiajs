@@ -30,19 +30,17 @@ If you are coming from Portland, OR or Vancouver, BC you should definitely check
 
 <div class="cta secondary"><a href="/2024/travel">Travel Guide</a></div>
 
+## Meals
+
+If you purchased a ticket that includes meals, please review [our menus](/2024/meals) for June 20 and June 21. We have done our best to accommodate folks with dietary restrictions, but if you have special needs that are not covered here please make sure you plan appropriately.
+
 <!--
 ## Seattle Guide
 
 <div class="cta secondary"><a href="/2024/seattle-guide">Seattle Guide</a></div>
 -->
 
-<!--
-## Significant Other Track
 
-Resources and tips for having fun at CascadiaJS as a Guest.
-
-<div class="cta secondary"><a href="/2024/so-track">Significant Other Track</a></div>
--->
 
 ## Bringing Guests
 
@@ -52,13 +50,3 @@ If you would like your guest to join you in Town Hall and for other activities, 
 
 <div class="cta secondary"><a href="/2024/tickets">Buy Significant Other Ticket</a></div>
 
-<!--
-## Pets
-
-CascadiaJS is a pet-friendly conference! Here are some important rules and guidelines to keep in mind:
-
-- Sunriver Resort offers [pet-friendly rooms](https://www.sunriverresort.com/hotel-and-vacation-rentals-overview/rooms-overview/pet-friendly-lodging-hotels-bend-central-oregon-activities).
-- Pets CANNOT be left in Sunriver Resort guest rooms unattended.
-- Pets will be welcome at all of our events that take place outside.
-- Pets will be welcome in a specific section of the Talk Track room, but will not be allowed in the Expo Hall or at the indoor workshops or evening events.
--->
