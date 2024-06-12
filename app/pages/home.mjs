@@ -38,7 +38,7 @@ export default function ({ html, state }) {
                 <tr><td>6/20 morning</td><td><a href="/2024/workshops/w3c-verifiable-credentials">Can You Buy Booze with a JSON Web Token?</a></td><td><a target="_blank" href="https://ti.to/event-loop/cascadiajs-2024/with/dp1r-xy2jpc">RSVP</a></td></tr>
                 <tr><td>6/20 afternoon</td><td><a href="/2024/workshops/debugging-web-apps">From “its broken” to “fix is out”</a></td><td><a target="_blank" href="https://ti.to/event-loop/cascadiajs-2024/with/7rvix2cbzcc">RSVP</a></td></tr>
                 <tr><td>6/21 morning</td><td><a href="/2024/workshops/building-ai-apps">Building a GenAI enabled web experience</a></td><td><a target="_blank" href="https://ti.to/event-loop/cascadiajs-2024/with/jtfbxvrrrfe">RSVP</a></td></tr>
-                <tr><td>6/21 afternoon</td><td>TBD</td><td></a></td></tr>
+                <tr><td>6/21 afternoon</td><td><a href="/2024/workshops/adding-auth-to-apps">Building a better auth experience for your apps</a></td><td><a target="_blank" href="https://ti.to/event-loop/cascadiajs-2024/with/2e1-gg9rpva">RSVP</a></td></tr>
             </table>` 
                 : ``}
             <h2>Hallway Track</h2>

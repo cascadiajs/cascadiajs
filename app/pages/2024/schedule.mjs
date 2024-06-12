@@ -334,8 +334,8 @@ function DayTwo({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">13:30</div>
                     <div class="what">
-                        <div class="title">Workshop #4</div>
-                        <div class="speaker"></div>
+                        <div class="title"><a href="/2024/workshops/adding-auth-to-apps">Building a better auth experience for your apps</a></div>
+                        <div class="speaker">Scaling authentication systems is a complex and critical task for any application, especially as customer requirements evolve. This workshop will introduce developers to Stytch, a powerful developer platform designed to scale and future-proof your authentication system.</div>
                     </div>
                 </div>
             </div>
