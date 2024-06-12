@@ -43,9 +43,6 @@ Advanced Features (45 minutes)
 
 - Multi-Tenancy and User Management: Explore Stytch's scalable data models for managing users in B2C and B2B applications.
 - Fraud Detection Tools: Introduce Stytch's fraud detection features like device fingerprinting and how to integrate them.
-
-Hands-On Lab (60 minutes)
-
 - Guided tour of Stytch B2B SaaS Apps: Participants will follow along as we explore auth concepts and  solutions using Stytch in [pre-built UI](https://github.com/stytchauth/stytch-b2b-saas-pre-built-ui-example) and [headless](https://github.com/stytchauth/stytch-b2b-saas-headless-example) applications built with Stytch.
 - Q&A and Troubleshooting: Address any issues participants encounter and answer questions.
 
