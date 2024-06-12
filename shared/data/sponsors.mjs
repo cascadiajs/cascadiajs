@@ -6,6 +6,7 @@ const sponsors = [
         logoSquare: 'temporal-square.jpg',
         name: 'Temporal',
         url: 'https://temporal.io/',
+        video: '3c35df76a866b30cd714e87c82508815',
         description: 'Temporal is an open source durable execution platform that abstracts away the complexity of building scalable, distributed applications and lets developers focus on what matters – delivering reliable applications, faster. It improves meaningful engineering metrics that are directly tied to revenue, like development velocity and system reliability, and allows you to track every step of every application execution, so you gain valuable insight into your business. Temporal Cloud provides a managed service backed by the originators of the project. It has been adopted by thousands for mission-critical applications, including Stripe, Netflix, AlaskaAir, Snap, Datadog, and Hashicorp. Learn more at temporal.io.'
     },
     { 
