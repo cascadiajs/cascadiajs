@@ -18,7 +18,7 @@ excerpt: Menus and dietary info
 * Mediterranean Veggie Sandwich: roasted squash, lemon herb marinated tofu, smoked eggplant pepper spread, lettuce, tomato [g] [v]
 * Pesto Turkey Sandwich: provolone cheese, lettuce, tomato, pesto aioli [g] [d] 
 * Roast Beef and Cheddar Sandwich: garlic aioli, lettuce, and tomato [g] [d] [e] 
-* Island Grain Bowl with Huli Huli Squash: brown rice/quinoa blend, cucumber, roasted pumpkin seeds, cabbage, carrot, roasted broccoli, miso ginger dressing [gf] 
+* Island Grain Bowl with Huli Huli Squash: brown rice/quinoa blend, cucumber, roasted pumpkin seeds, cabbage, carrot, roasted broccoli, miso ginger dressing [gf] [v] 
 * Green Goddess Cobb Salad with Chicken: greens, radish, tomato, bleu cheese, boiled egg, green goddess dressing [gf] [d] [e] 
 
 
