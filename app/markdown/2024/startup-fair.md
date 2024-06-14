@@ -5,7 +5,7 @@ image: /_public/images/past/cjs22-startup-fair.jpg
 ---
 ![CascadiaJS 2014](/_public/images/past/cjs19-moovweb.jpg)
 
-Following the talks on Day Two, we're putting on our 2nd annual Startup Fair! [Last year's event](https://2022.cascadiajs.com/conference/startup-fair) was amazing and we can't wait to run it again this year with an emphasis on AI. 
+Following the talks on Day Two, we're putting on our 2nd annual Startup Fair! [The 2022 event](https://2022.cascadiajs.com/conference/startup-fair) was amazing and we can't wait to run it again this year with an emphasis on AI. 
 
 This event will take place on the evening of June 21st and run from 6pm - 9pm. The purpose of the Startup Fair is to showcase early stage startup building the next generation of AI and developer tools to our community.
 
@@ -35,7 +35,7 @@ We invited early-stage startups to apply, and after several rounds of review we 
 
 <div id="startup-fair-sponsors">
     <img src="/_public/images/sponsors/copilotkit.png" alt="CopilotKit logo"/>
-    <!--img src="/_public/images/sponsors/yoodli.png" alt="Yoodli logo"/-->
+    <img src="/_public/images/sponsors/docduck.png" alt="DocDuck logo"/>
     <img src="/_public/images/sponsors/milliondev.png" alt="Million.dev logo"/>
     <img src="/_public/images/sponsors/hookdeck.png" alt="Hookdeck logo"/>
     <img src="/_public/images/sponsors/hal9.png" alt="Hal9 logo"/>
@@ -49,15 +49,14 @@ The breakout framework + platform for building deeply-integrated, fully-customiz
 
 <div class="cta secondary"><a target="_blank" href="https://www.copilotkit.ai/">copilotkit.ai</a></div>
 
-<!--
-<h2 id="yoodli">Yoodli</h2>
 
-Grammarly for speech.
+<h2 id="docduck">DocDuck</h2>
 
-<span class="tag">Launched - Has Users</span> <span class="tag">Open to Funding</span>
+Actionable feedback for your developer docs.
 
-<div class="cta secondary"><a target="_blank" href="https://www.yoodli.ai">yoodli.ai</a></div>
--->
+<span class="tag">MVP</span> <span class="tag">Open to Funding</span>
+
+<div class="cta secondary"><a target="_blank" href="https://docduck.dev/">docduck.dev</a></div>
 
 <h2 id="milliondev">Million.dev</h2>
 
