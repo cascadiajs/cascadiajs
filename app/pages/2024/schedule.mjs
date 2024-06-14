@@ -263,6 +263,12 @@ function DayTwo({ talks, ticket = undefined }) {
         </div>
         <div class="location">Town Hall</div>
         <div class="day-content">
+            <div class="show-item">       
+                <div class="when">08:00</div>
+                <div class="what"><div class="title"><i class="fas fa-door-open"></i> Doors Open and Registration</div></div>
+            </div>
+        </div>
+        <div class="day-content">
             <div class="main track">   
                 <h3>Talk Track</h3>
                 <div class="location">Great Hall</div>
