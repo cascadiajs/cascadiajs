@@ -60,7 +60,7 @@ function DayZero({ ticket = undefined }) {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">AWS Skills Center</div>
+        <div class="location">Silicon Valley Bank</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
@@ -77,6 +77,10 @@ function DayZero({ ticket = undefined }) {
                         <p>In the Intro to Data Structures session, we started from scratch and learned how to build Linked Lists, Stacks and Queues using pure JavaScript. Now we're going to spend the afternoon building up from there to master Binary Trees and k-ary Trees, and Hash Tables. </p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="location">AWS Skills Center</div>
+            <div class="day-content">
                 <div class="show-item">       
                 <div class="when">5pm - 7pm</div>
                     <div class="what">
