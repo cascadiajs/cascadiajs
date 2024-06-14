@@ -8,7 +8,9 @@ excerpt: Information for sponsors of CascadiaJS 2024
         <li><a href="#venue">Venue</a></li>
         <li><a href="#registration">Registration</a></li>
         <li><a href="#lodging">Lodging</a></li>
+        <li><a href="#raffle">Raffle</a></li>
         <li><a href="#swag">Swag</a></li>
+        <li><a href="#discord">Discord</a></li>
         <li><a href="#rentals">Rentals</a></li>
     </ul>
 </div>
@@ -25,15 +27,19 @@ Use the main entrance on 8th Ave.
 
 There is no onsite parking, but there are several parking garages nearby. Visit the [Town Hall website](https://townhallseattle.org/parking/) for more information on parking and public transportation.
 
-### Venue Access
+### Venue Access & Load-in
 
 **Thursday, June 20 (Day One)**<br />
-6:30am - 9:30pm<br />
-Sponsors can begin setup at 6:30am. Doors open to attendees at 8:00am. 
+Sponsor load-in and set up: 6:30am - 8:00am<br />
+Doors open to attendees: 8:00am<br />
+Day end: 10:00pm
 
 **Friday, June 21 (Day Two)**<br />
-7:00am - 11:00pm<br />
-All conference/sponsor items need to be removed from Town Hall by 11pm.
+Sponsor load-in and set up: 7:00am - 8:00am<br />
+Doors open to attendees: 8:00am<br />
+Day end: 11:00pm
+
+All conference/sponsor items must be removed from Town Hall by 11:00pm.
 
 ### Booths
 
@@ -43,7 +49,7 @@ Each booth consists of a 6 foot table and two chairs, wired for power.
 
 We recommend that sponsors bring a single, pop-up banner to place alongside their booth (see photo below).
 
-Recommended booth times are 8am - 6pm. Both evening social events will be held in the main lobby, so you're welcome to staff your booth during these times as well, but it's optional.
+Recommended booth times are 8:00am - 6:00pm. Both evening social events will be held in the main lobby, so you're welcome to staff your booth during these times as well, but it's optional.
 
 ![moovweb](/_public/images/past/cjs19-moovweb.jpg)
 
@@ -65,7 +71,7 @@ Pick up your badge at the Welcome Reception on June 19th, or on the morning of J
 
 ### Welcome Reception & Pre-Registration
 Wednesday, June 19th<br />
-7pm - 9pm<br />
+7:00pm - 9:00pm<br />
 [Stoup Brewing](https://www.stoupbrewing.com/capitol-hill/) (1158 Broadway, Seattle, WA 98122)
 
 The Welcome Reception is an opportunity for folks to pre-register, get their badge, pick up swag and hang out with fellow attendees.
@@ -74,9 +80,19 @@ The Welcome Reception is an opportunity for folks to pre-register, get their bad
 
 We've secured discounts with 3 hotels near the venue: [https://cascadiajs.com/2024/hotels](https://cascadiajs.com/2024/hotels)
 
+<h2 id="raffle">Raffle</h2>
+
+We do not have traditional lead scanners at our event, so our plan for lead capture is to run a scavenger hunt for our attendees. Every attendee will need to visit all of the Gold sponsor booths (who are providing a raffle prize) and do a few extra things to qualify for the raffle. We'll share contact info for every attendee who participates in the raffle following the event.
+
+If you're participating in the raffle, please plan on presenting your prize to the winner on stage at the closing on Day 2 (at 6:00pm).
+
 <h2 id="swag">Swag</h2>
 
-Gold sponsors can show off their brand by including 1 swag item in a bag that will be given to all attendees! The items need to be provided to CascadiaJS organizers (at the registration table) by 7:00 am on June 20th so we can bag them up before attendees arrive. 
+Gold sponsors can show off their brand by including 1 small swag item or stickers in small bags that will be given to all attendees! This is optional. The items need to be provided to CascadiaJS organizers (at the registration table) by 7:00 am on June 20th so we can bag them up before attendees arrive. 
+
+<h2 id="discord">Discord</h2>
+
+[Join our Discord](https://discord.gg/kkYR86GM29) to engage with attendees who are watching the live stream. Gold sponsors will have a channel created for their company. Hiring? Post jobs in the #jobs channel!
 
 <h2 id="rentals">Rentals</h2>
 
