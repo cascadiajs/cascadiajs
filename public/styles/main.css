@@ -154,6 +154,10 @@ div.highlight {
     background-color: #17C37B;
 }
 
+.highlight.info {
+    background-color: #cfd3e4;
+}
+
 .highlight.warning {
     background-color: #ffcf07;
 }

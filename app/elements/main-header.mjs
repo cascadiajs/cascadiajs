@@ -79,7 +79,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert">Tickets for the <a href="/2024/trainings">pre-conf Training Workshops</a> are almost sold out!</section>
+      <section class="alert">📺 Register for our FREE <a href="/2024/livestream">Livestream</a> of all the talks!</section>
       ${path && path.startsWith("/2024")
         ? html`<nav class="back">
               <div class="wide">
