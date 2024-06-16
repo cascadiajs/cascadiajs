@@ -32,7 +32,7 @@ excerpt: Menus and dietary info
 * NW Wild Mushroom Flatbread served with herbs and truffle oil [g] [d] 
 * Meze Platter [d] with feta cheese, kalamata olives, marinated artichokes, dolmas roasted red pepper and feta dip and smokey roasted eggplant dip [gf] [d] served with pita bread [g]
 * Vegan stuffed mushrooms [gf] [v] [n] filled with roasted eggplant and topped with almond herb topping
-* Cupcakes
+* Cupcakes [v and gf options]
 
 ## June 21
 
