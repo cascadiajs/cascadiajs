@@ -543,6 +543,7 @@ export default function ({ html, state }) {
         }
         
         .hallway .sponsors>div {
+            text-align: center;
             height: 30px;
             margin: 24px;
         }
