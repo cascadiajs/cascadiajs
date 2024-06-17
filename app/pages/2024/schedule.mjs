@@ -49,7 +49,7 @@ function hallwayTrack({ticket = undefined}) {
     `
 }
 
-function DayZero({ ticket = undefined }) {
+function June18() {
     return /*html*/`
     <div id="day-zero" class="day">
         <div class="day-header">
@@ -90,7 +90,13 @@ function DayZero({ ticket = undefined }) {
                 </div>
             </div>
         </div>
+    </div>
+`
+}
 
+function June19() {
+    return /*html*/`
+    <div id="day-zero" class="day">
         <div class="day-header">
             <h2 class="day-date">
             June 19
@@ -162,6 +168,15 @@ function DayOne({ talks, ticket = undefined }) {
     //console.log(talks)
     return /*html*/`
     <div id="day-one" class="day">
+        <div class="day-header">
+            <h2 class="day-date">
+            Conference
+            </h2>
+        </div>
+        <div class="location">Map of Main Floor</div>
+        <div class="day-content">
+            <img src="/_public/images/2024/venue-layout.png" alt="venue map"/>
+        </div>
         <div class="day-header">
             <h2 class="day-date">
             Day One<br/>June 20
@@ -360,7 +375,7 @@ function ActivityDay() {
     <div id="day-training" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            Post-Conf Activity Day<br/>June 22
+            Post-Conf<br/>Activity Day<br/>June 22
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
@@ -626,7 +641,8 @@ export default function ({ html, state }) {
         <main-layout>
             <simple-page title="Schedule" width="wide">
                 <div id="conf-schedule">
-                ${ DayZero({ ticket }) }
+                ${ June18() }
+                ${ June19() }
                 ${ DayOne({ talks, ticket }) }
                 ${ DayTwo({ talks, ticket }) }
                 ${ ActivityDay() }
