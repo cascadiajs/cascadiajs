@@ -1,10 +1,30 @@
-const IN_PERSON_RELEASE_IDS = [1469997, 1487843, 1489836, 1492670, 1484904, 1484368, 1484705]
+const RELEASES = [
+    { id: 1469997, title: 'Conference Attendee', hasWorkshops: true, hasActivities: true },
+    { id: 1487843, title: 'Conference Student Attendee', hasWorkshops: true, hasActivities: true },
+    { id: 1489836, title: 'Conference Indie Attendee', hasWorkshops: true, hasActivities: true },
+    { id: 1492670, title: 'Conference No Frills', hasWorkshops: true, hasActivities: false },
+    { id: 1500503, title: 'Conference Livestream', hasWorkshops: true, hasActivities: true },
+    { id: 1484904, title: 'Conference Attendee + Full Scholarship', hasWorkshops: false, hasActivities: true },
+    { id: 1492669, title: 'Conference Significant Other', hasWorkshops: false, hasActivities: true },
+    { id: 1484368, title: 'Conference Volunteers', hasWorkshops: true, hasActivities: true },
+    { id: 1484705, title: 'Conference Speaker', hasWorkshops: true, hasActivities: true },
+]
 
 export default function ({ html, state }) {
     const { userName, ticketId, releaseId, playbackId } = state?.store || {}
+    const release = RELEASES.find(r => r.id === releaseId)
     return html`
     <main-layout>
         <simple-page title="Hello ${ userName.first_name }!">
+            <h2>Ticket Info</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Ticket Type</th><th>In Person Workshops?</th><th>Activity Day?</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>${ release.title }</td><td>${ release.hasWorkshops ? 'Yes' : 'No' }</td><td>${ release.hasActivities ? 'Yes' : 'No' }</td></tr>
+                </tbody>
+            </table>
             <h2>Watch the Livestream</h2>
             ${ playbackId ? html`  
             <mux-player
@@ -27,7 +47,7 @@ export default function ({ html, state }) {
             </p>
             <h2>Talk Track</h2>
             <p>You can always find the updated schedule of talk <a href="/2024/schedule">here</a> and all of them will be streaming LIVE right here on 6/20 and 6/21.</p>
-            ${ IN_PERSON_RELEASE_IDS.includes(releaseId) 
+            ${ release.hasWorkshops 
                 ? html`
             <h2>Workshop Track</h2>
             <p>All the workshop below are free and included in your ticket. Space is limited, so RSVP to reserve your seat!</p>
@@ -43,7 +63,7 @@ export default function ({ html, state }) {
                 : ``}
             <h2>Hallway Track</h2>
             <p>Our hallway track is where you can meet other attendees, chat with speakers, and participate in other fun activities. If you're joining us virtually, make sure to <a target="_blank" href="https://discord.gg/kkYR86GM29">join our Discord</a>!</p>            
-            ${ IN_PERSON_RELEASE_IDS.includes(releaseId) 
+            ${ release.hasActivities
                 ? html`
             <h2>Post-Conference Activity Day</h2>
             <p>All the workshop below are free and included in your ticket. Space is limited, so RSVP to reserve your seat!</p>
