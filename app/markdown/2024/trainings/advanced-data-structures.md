@@ -6,7 +6,7 @@ excerpt: Brook Riggio
 ![Brook Riggio](/_public/images/sharing/2024/trainings/advanced-data-structures.png)
 
 * When: Tuesday, June 18 (1pm - 4pm)
-* Where: AWS Skills Center, [1915 Terry Ave, Seattle, WA 98101](https://goo.gl/maps/QT1UkJ9iq9cWGiJ36)
+* Where: Silicon Valley Bank 920 5th Ave Suite 300, Seattle, WA 98104
 * Instructor: [Brook Riggio](https://www.linkedin.com/in/brookr/)
 
 In the [Intro to Data Structures](./intro-data-structures) session, we started from scratch and learned how to build Linked Lists, Stacks and Queues using pure JavaScript. 
