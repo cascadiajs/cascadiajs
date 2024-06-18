@@ -216,7 +216,7 @@ function DayOne({ talks, ticket = undefined }) {
                 </div>
                 <div class="location">Great Hall</div>
                 ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'herve-aniglo'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'penelope-mclachlan'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'brian-leroux'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'aaron-gustafson'))}
                 <div class="show-item">       
                     <div class="when">15:30</div>
