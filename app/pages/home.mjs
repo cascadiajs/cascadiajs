@@ -73,7 +73,7 @@ export default function ({ html, state }) {
                 </thead>
                 <tr><td>5K Fun Run</td><td>Greenlake</td><td><a target="_blank" href="https://lu.ma/65nqcezz">RSVP</a></td></tr>
                 <tr><td>Pickle Ball</td><td>Miller Park</td><td><a target="_blank" href="https://lu.ma/84v4ndmr">RSVP</a></td></tr>
-                <tr><td>Space Needle</td><td>Seattle Center</td><td>RSVP TBD</td></tr>
+                <tr><td>Space Needle</td><td>Seattle Center</td><td>Share a picture of your favorite moment from CascadiaJS on Twitter and use the hashtags #CascadiaJS and #SpaceNeedleTrip and we'll randomly pick 12 folks to join us! Stop by our booth so we can get your contact info in case you win!</td></tr>
                 <tr><td>Dog romp</td><td>Magnuson Park off-leash dog park</td><td><a target="_blank" href="https://lu.ma/uy7jhx9r">RSVP</a></td></tr>
             </table>` 
             : ``}
