@@ -235,10 +235,6 @@ function DayOne({ talks, ticket = undefined }) {
                     <div class="what"><div class="title"><i class="fas fa-party-horn"></i> <a href="/2024/meals">Dinner</a> and Opening Party by <img src="/_public/images/sponsors/infobip.svg"/></div></div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-handshake"></i> <a href="/2024/job-fair">Job Fair</a></div></div>
-                </div>
-                <div class="show-item">       
                     <div class="when">22:00</div>
                     <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Day One Close</div></div>
                 </div>
