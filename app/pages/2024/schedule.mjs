@@ -253,7 +253,7 @@ function DayOne({ talks, ticket = undefined }) {
                     </div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">13:30</div>
+                    <div class="when">14:00</div>
                     <div class="what">
                         <div class="title"><a href="/2024/workshops/debugging-web-apps">From “its broken” to “fix is out”</a></div>
                         <div class="speaker">"Something is broken": are hopefully words you never have to hear from your users. Even worse is when you don’t know how to fix that “something”. Join this workshop to learn how to make sure users are heard, alerts are alerting, and priorities are prioritized. Spend your dev cycles more on new features and less on digging through logs, trying to figure out how to repro an issue, or guessing what part of your codebase is the culprit.</div>
@@ -353,7 +353,7 @@ function DayTwo({ talks, ticket = undefined }) {
                     </div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">13:30</div>
+                    <div class="when">14:00</div>
                     <div class="what">
                         <div class="title"><a href="/2024/workshops/adding-auth-to-apps">Building a better auth experience for your apps</a></div>
                         <div class="speaker">Scaling authentication systems is a complex and critical task for any application, especially as customer requirements evolve. This workshop will introduce developers to Stytch, a powerful developer platform designed to scale and future-proof your authentication system.</div>
