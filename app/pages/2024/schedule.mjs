@@ -383,28 +383,28 @@ function ActivityDay() {
                 <div class="show-item"> 
                     <div class="when">9am - 11am</div>
                     <div class="what">
-                        <div class="title">5K Greenlake fun run & coffee</div>
+                        <div class="title"><a href="https://lu.ma/65nqcezz" target="_blank">5K Greenlake fun run & coffee</a> led by Henri Helvetica</div>
                     </div>
                 </div>
                 <div class="location">Magnuson Park</div>
                 <div class="show-item"> 
                     <div class="when">9am - 11am</div>
                     <div class="what">
-                        <div class="title">Dog romp at the off-leash dog park sponsored by <img src="/_public/images/sponsors/hookdeck.svg" alt="Hookdeck logo"></div>
+                        <div class="title"><a href="https://lu.ma/uy7jhx9r" target="_blank">Dog romp at the off-leash dog park</a> led by Carter Rabasa sponsored by <img src="/_public/images/sponsors/hookdeck.svg" alt="Hookdeck logo"></div>
                     </div>
                 </div>
                 <div class="location">Seattle Center</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
                     <div class="what">
-                        <div class="title">Visit to the Space Needle sponsored by <img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"></div>
+                        <div class="title"><a href="https://lu.ma/avh75hdw" target="_blank">Visit to the Space Needle</a> led by Tejas Kumar sponsored by <img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"></div>
                     </div>
                 </div>
                 <div class="location">Miller Park</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
                     <div class="what">
-                        <div class="title">Pickle Ball <i class="fa-solid fa-pickleball"></i></div>
+                        <div class="title"><a href="https://lu.ma/84v4ndmr" target="_blank">Pickle Ball <i class="fa-solid fa-pickleball"></i></a> led by Lantz Warrick</div>
                     </div>
                 </div>
             </div>
