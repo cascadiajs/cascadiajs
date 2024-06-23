@@ -93,11 +93,15 @@ export default function ({ html, state }) {
                 consider <a href="/2024/cfp">submitting a talk</a>.
                 Every developer has a story to tell, and we want to hear yours!-->
               </p>
-              <div class="cta primary"><a href="/2024/tickets">Tickets on sale now</a></div>
+              <div class="cta primary"><a href="#">Tickets SOLD OUT</a></div>
             </article>
             <article>
               <img src="/_public/images/sasquatch.gif" alt="Sasquatch having ChatGPT write his code for him while chilling on a beach"/>
             </article>
+          </section>
+          <section id="farewell" class="landing">
+            <h1>See You Next Time!</h1>
+            <p><img src="/_public/images/2024/cjs24-family.jpg" alt="2024 family photo"/></p>
           </section>
           <section id="speakers" class="landing">
             <h1>Our Speakers</h1>
