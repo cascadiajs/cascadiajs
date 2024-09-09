@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@datastax/astra-db-ts": "^1.1.0",
-    "@enhance/arc-plugin-enhance": "^9.5.1",
+    "@enhance/arc-plugin-enhance": "^11.0.4",
     "@enhance/styles-cribsheet": "^0.0.9",
     "cloudinary": "^2.2.0",
     "front-matter": "^4.0.2",
