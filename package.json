@@ -2,9 +2,10 @@
   "name": "cascadiajs-website",
   "version": "4.0.146",
   "scripts": {
-    "start": "npx enhance dev",
+    "enhance": "enhance",
     "lint": "eslint ./app/**/*.mjs --fix",
-    "enhance": "enhance"
+    "start": "npx enhance dev",
+    "test": "npm run lint && echo add tests"
   },
   "dependencies": {
     "@datastax/astra-db-ts": "^1.1.0",

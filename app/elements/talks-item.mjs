@@ -1,7 +1,7 @@
 export default function TalkItem({ html, state }) {
-    const { attrs } = state
-    const { slug, image, name, title, company, location } = attrs
-    return html`
+  const { attrs } = state
+  const { slug, image, name, title, company, location } = attrs
+  return html`
         <style>
         .talk-item a {
             text-decoration: none;

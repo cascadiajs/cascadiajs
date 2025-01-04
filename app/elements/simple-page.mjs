@@ -1,7 +1,7 @@
 export default function PageLayout({ html, state }) {
-    const { attrs } = state
-    const { title, width = "narrow" } = attrs
-    return html`
+  const { attrs } = state
+  const { title, width = "narrow" } = attrs
+  return html`
         <style>
         #page {
             min-height: 400px;

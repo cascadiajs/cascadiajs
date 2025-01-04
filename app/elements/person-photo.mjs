@@ -1,7 +1,7 @@
 export default function PersonPhoto({ html, state }) {
-    const { attrs } = state
-    const { name, image, overlay, large } = attrs
-    return html`
+  const { attrs } = state
+  const { name, image, overlay, large } = attrs
+  return html`
         <style>
         .person-photo {
             /*background-color:    #ccf1db;*/

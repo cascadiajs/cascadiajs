@@ -1,11 +1,11 @@
 const MESSAGES = {
-    'invalid-ticket': 'Invalid ticket reference',
-    'must-signup': 'You must sign up using your ticket reference to login'
+  'invalid-ticket': 'Invalid ticket reference',
+  'must-signup': 'You must sign up using your ticket reference to login'
 }
 
 export default function ({ html, state }) {
-    const error = state?.store?.error
-    return html`
+  const error = state?.store?.error
+  return html`
     <main-layout>
         <simple-page title="Sign Up" width="narrow">
         ${ error ? html`<p><span class="highlight error">${ MESSAGES[error] }</span></p>` : "" }

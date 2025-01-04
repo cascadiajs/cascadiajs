@@ -1,5 +1,5 @@
 export default function AdminLayout({ html }) {
-    return html`
+  return html`
         <style>
         #root {
             height: 100%;
