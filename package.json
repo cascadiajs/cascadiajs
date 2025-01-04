@@ -6,16 +6,23 @@
     "lint": "eslint ./app/**/*.mjs --fix",
     "enhance": "enhance"
   },
+  "dependencies": {
+    "@datastax/astra-db-ts": "^1.1.0",
+    "@enhance/arc-plugin-enhance": "^11.0.4",
+    "@enhance/styles-cribsheet": "^0.0.9",
+    "cloudinary": "^2.2.0",
+    "front-matter": "^4.0.2",
+    "marked": "^10.0.0",
+    "stytch": "^10.14.0"
+  },
   "devDependencies": {
     "@architect/architect": "^11.1.0",
-    "@enhance/cli": "latest",
+    "@enhance/cli": "^1.2.1",
     "@enhance/types": "^0.6.1",
     "@mux/mux-node": "^8.7.1",
     "dotenv": "^16.4.5",
     "eslint": "^8.49.0",
-    "slugify": "^1.6.6",
-    "uuid": "^9.0.1",
-    "yaml": "^2.4.0"
+    "slugify": "^1.6.6"
   },
   "eslintConfig": {
     "env": {
@@ -33,14 +40,5 @@
       "sourceType": "module",
       "ecmaVersion": 2022
     }
-  },
-  "dependencies": {
-    "@datastax/astra-db-ts": "^1.1.0",
-    "@enhance/arc-plugin-enhance": "^11.0.4",
-    "@enhance/styles-cribsheet": "^0.0.9",
-    "cloudinary": "^2.2.0",
-    "front-matter": "^4.0.2",
-    "marked": "^10.0.0",
-    "stytch": "^10.14.0"
   }
 }
