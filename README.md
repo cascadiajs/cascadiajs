@@ -4,10 +4,6 @@
 
 This website is built on [Enhance](https://enhance.dev) and deploys with [Architect](https://arc.codes).
 
-It currently depends on the following external services:
-
-- [Customer.io](https://customer.io) - Mailing list
-
 ## Enhance Structure
 
 Enhance is an opinionated HTML web framework that renders pages on the server and supports [progressive enhancement](https://enhance.dev/docs/learn/why-enhance) on the client for SPA-like experiences.
