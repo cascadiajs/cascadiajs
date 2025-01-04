@@ -1,7 +1,7 @@
 export default function TalkItem({ html, state }) {
-    const { attrs } = state
-    const { name, company, role, location } = attrs
-    return html`
+  const { attrs } = state
+  const { name, company, role, location } = attrs
+  return html`
         <style>
         .person-name {
             font-family: freight-macro-pro, sans-serif;

@@ -1,7 +1,7 @@
 export default function PersonDetail({ html, state }) {
-    const { attrs } = state
-    const { name, image, pronouns, location, company, twitter, url, large } = attrs
-    return html`
+  const { attrs } = state
+  const { name, image, pronouns, location, company, twitter, url, large } = attrs
+  return html`
         <style>
         :host {
             display: flex

@@ -1,8 +1,8 @@
 export default function SocialSharing ({ html, state }) {
-    const { store } = state
-    const { sharing } = store
-    const { image, title, description } = sharing
-    return html`
+  const { store } = state
+  const { sharing } = store
+  const { image, title, description } = sharing
+  return html`
         <style>
         #social-image {
             position:absolute;

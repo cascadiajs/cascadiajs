@@ -1,7 +1,7 @@
 export default function ({ html, state }) {
-    const { REDIRECT_URL } = state.store 
-    const { STYTCH_PUBLIC_TOKEN } = process.env
-    return html`
+  const { REDIRECT_URL } = state.store 
+  const { STYTCH_PUBLIC_TOKEN } = process.env
+  return html`
     <main-layout>
         <simple-page title="Log In" width="narrow">
             <div class="highlight info">Note: you must <a href="/signup">sign-up</a> using your CascadiaJS ticket information before you can log-in.</div>

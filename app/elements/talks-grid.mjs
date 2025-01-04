@@ -1,6 +1,6 @@
 export default function Talks({ html, state }) {
-    const { talks } = state.store
-    return html`
+  const { talks } = state.store
+  return html`
         <style>
         .talks-list {
             display: flex;
