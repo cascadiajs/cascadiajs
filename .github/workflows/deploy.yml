@@ -1,4 +1,4 @@
-name: Begin deploy
+name: Deploy
 
 on: [ push, pull_request ]
 
@@ -15,17 +15,3 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-
-      - name: Deploy to staging
-        if: github.ref == 'refs/heads/main'
-        uses: beginner-corp/actions/deploy@main
-        with:
-          begin_token: ${{ secrets.BEGIN_TOKEN }}
-          begin_env_name: staging
-
-      - name: Deploy to production
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: beginner-corp/actions/deploy@main
-        with:
-          begin_token: ${{ secrets.BEGIN_TOKEN }}
-          begin_env_name: production
