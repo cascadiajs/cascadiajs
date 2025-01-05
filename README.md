@@ -10,6 +10,7 @@ Enhance is an opinionated HTML web framework that renders pages on the server an
 
 An Enhace app has two top-level directories: `app` and `public`.
 
+
 ### The `app` Directory
 
 The `app` directory contains all the code for our application, in addition to Markdown files that power many of the static webpages.
