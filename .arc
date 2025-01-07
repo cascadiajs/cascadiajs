@@ -9,4 +9,4 @@ enhance/arc-plugin-enhance
 enhance/styles-cribsheet
 
 @aws
-region us-west-1
+region us-west-2
