@@ -49,7 +49,7 @@ export default function ({ html /*state*/ }) {
         <h2>We're a community for JavaScript developers in the Pacific Northwest.</h2>
         <br/>
         <p>
-          We create events that will help you level up, grow your network, find a job and have fun! In 2024 we're bringing our conference back to Seattle for 4 days of talks, workshops and karaoke.
+          We create events that will help you level up, grow your network, find a job and have fun! In 2025 we'll be back in Seattle for 4 days of talks, workshops and karaoke.
         </p>
         <div class="cta primary"><a href="/2025">2025 Conference details</a></div>
       </article>
