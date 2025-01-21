@@ -1,6 +1,7 @@
 export default function MainHeader({ html, state }) {
-  const { store } = state;
-  const { path } = store;
+  const { store = {} } = state;
+  const { path = "" } = store
+  //console.log(path)
   return html`
     <style>
       #logo img {
@@ -80,13 +81,14 @@ export default function MainHeader({ html, state }) {
     </style>
     <header>
       <!--section class="alert">📺 Register for our FREE <a href="/2024/livestream">Livestream</a> of all the talks!</section-->
-      ${path && path.startsWith("/2024")
+      ${path && (path.startsWith("/2024") || path.startsWith("/2025"))
     ? html`<nav class="back">
               <div class="wide">
                 <div><a href="/">← Back to Homepage</a></div>
               </div>
             </nav>
-            <nav-2024></nav-2024>`
+            ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
+            ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}`
     : html` <nav class="primary">
             <div class="wide">
               <div id="logo">
@@ -97,7 +99,7 @@ export default function MainHeader({ html, state }) {
                   />
                 </a>
               </div>
-              <div class="push"><a href="/2024">CascadiaJS 2024</a></div>
+              <div class="push"><a href="/2025">CascadiaJS 2025</a></div>
               <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
               <div class="spacer"><a href="/code-of-conduct">Code of Conduct</a></div>
             </div>

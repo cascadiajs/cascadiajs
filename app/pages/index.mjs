@@ -51,7 +51,7 @@ export default function ({ html /*state*/ }) {
         <p>
           We create events that will help you level up, grow your network, find a job and have fun! In 2024 we're bringing our conference back to Seattle for 4 days of talks, workshops and karaoke.
         </p>
-        <div class="cta primary"><a href="/2024">2024 Conference details</a></div>
+        <div class="cta primary"><a href="/2025">2025 Conference details</a></div>
       </article>
       <article>
         <img src="/_public/images/2024/main-page-illo-2024.png" alt="hero image of 2024 event"/>

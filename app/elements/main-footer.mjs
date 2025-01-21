@@ -100,6 +100,9 @@ export default function MainFooter({ html }) {
           <h2>Past Events</h2>
           <ul>
             <li>
+              <a target="_blank" href="/2024">2024</a>
+            </li>
+            <li>
               <a target="_blank" href="https://2022.cascadiajs.com">2022</a>
             </li>
             <li>

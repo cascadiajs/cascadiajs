@@ -6,8 +6,8 @@ export default function Head(state) {
   const baseUrl = getBaseUrl(req)
   //console.log(sharing)
   const title = sharing.sharingTitle || "CascadiaJS - a JS conf for the PacNW"
-  const description = sharing.sharingDescription || "CascadiaJS 2024 is coming up on June 19 - 22 in Seattle, WA!"
-  const image = sharing.sharingImage || "/_public/images/sharing/2024.png"
+  const description = sharing.sharingDescription || "CascadiaJS 2025 is coming up on September 19 - 22 in Seattle, WA!"
+  const image = sharing.sharingImage || "/_public/images/2025/social.png"
   const path = sharing.sharingPath || req.path
 
   return `

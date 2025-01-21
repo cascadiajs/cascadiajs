@@ -1,0 +1,52 @@
+export default function MainHeader({ html }) {
+  return html`
+    <style>
+      .logo {
+        margin-bottom: 12px;
+      }
+
+      nav.secondary {
+        padding: 10px;
+        background-color: #ccf1db;
+        font-family: "mono45-headline", monospace;
+        font-size: 21px;
+        font-weight: 500;
+      }
+
+      nav.secondary a,
+      nav.secondary a:visited {
+        color: #112378;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+    <!--nav class="secondary">
+      <div class="wide">
+        <div class="logo">
+          <a href="/2024"
+            ><img
+              height="64"
+              src="/_public/images/horizontal-2024-dark-blue.svg"
+              alt="CascadiaJS 2024 logo"
+          /></a>
+        </div>
+        <div class="push"><a href="/2024/schedule">Schedule</a></div>
+        <div class="spacer"><a href="/2024/attend">Attending</a></div>
+        <div class="spacer"><a href="/2024/scholarships">Scholarships</a></div>
+        <div class="spacer"><a href="/2025/cfp">Call for Papers</a></div>
+        <div class="spacer"><a href="/2024/trainings">Training</a></div>
+        <div class="spacer"><a href="/2024/livestream">Livestream</a></div>
+        <div class="spacer"><a href="/home">Login</a></div>
+        <div class="spacer"><a class="buy" href="/2024/tickets">Tickets</a></div>
+      </div>
+    </nav-->
+  `;
+}

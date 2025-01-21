@@ -1,4 +1,6 @@
-export default function MainLayout({ html }) {
+export default function MainLayout({ html, state }) {
+  const { store = {} } = state;
+  const { path = "" } = store;
   return html`
     <style>
       #root {
@@ -64,9 +66,9 @@ export default function MainLayout({ html }) {
       <main id="content">
         <slot></slot>
         <section id="sponsors" class="landing">
-        <h1>Our Sponsors</h1>
-          <sponsors-grid></sponsors-grid>
-        <div class="cta"><a target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vRwyyQ5-nrKrMEZpoc_ZRJh6ovIJdFi9K4KFR85iQ_VDyzXwyL_Z1anTcjZd_23Cy3wG-oYTcnT7xNi/pub">Sponsor Our Event</a></div>
+        ${path.startsWith("/2024") ? html`<h1>Our Sponsors</h1><sponsors-grid-2024></sponsors-grid-2024>` 
+        : html`<h1>Past Sponsors</h1><sponsors-grid></sponsors-grid><div class="cta"><a target="_blank" href="mailto:info@cascadiajs.com">Sponsor Our Event</a></div>`}
+        
         </section>
         <section id="testimonials" class="landing">
           <h1>Testimonials</h1>
