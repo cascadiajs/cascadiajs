@@ -28,25 +28,26 @@ export default function MainHeader({ html }) {
         }
       }
     </style>
-    <!--nav class="secondary">
+    <nav class="secondary">
       <div class="wide">
         <div class="logo">
-          <a href="/2024"
+          <a href="/2025"
             ><img
               height="64"
-              src="/_public/images/horizontal-2024-dark-blue.svg"
-              alt="CascadiaJS 2024 logo"
+              src="/_public/images/2025/horizontal-dark-blue.svg"
+              alt="CascadiaJS 2025 logo"
           /></a>
         </div>
-        <div class="push"><a href="/2024/schedule">Schedule</a></div>
+        <!--div class="push"><a href="/2024/schedule">Schedule</a></div>
         <div class="spacer"><a href="/2024/attend">Attending</a></div>
         <div class="spacer"><a href="/2024/scholarships">Scholarships</a></div>
         <div class="spacer"><a href="/2025/cfp">Call for Papers</a></div>
         <div class="spacer"><a href="/2024/trainings">Training</a></div>
         <div class="spacer"><a href="/2024/livestream">Livestream</a></div>
-        <div class="spacer"><a href="/home">Login</a></div>
-        <div class="spacer"><a class="buy" href="/2024/tickets">Tickets</a></div>
+        <div class="spacer"><a href="/home">Login</a></div-->
+        <div class="push"><a href="/2025/cfp">CFP</a></div>
+        <div class="spacer"><a class="buy" href="/2025/tickets">Tickets</a></div>
       </div>
-    </nav-->
+    </nav>
   `;
 }

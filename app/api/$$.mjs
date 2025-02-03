@@ -25,7 +25,7 @@ export async function get({ path, query}) {
     image: image || '/_public/images/past/cjs19-family-photo.jpg',
     description: excerpt,
     sharingTitle: 'CascadiaJS | ' + title,
-    sharingImage: '/_public/images/sharing' + path + '.png',
+    sharingImage: (path.indexOf('2025') > 0 ? '/_public/images/2025/social-sharing-general.png' : '/_public/images/sharing' + path + '.png'),
     sharingDescription: excerpt
   }
 
