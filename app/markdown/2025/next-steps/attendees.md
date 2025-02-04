@@ -2,6 +2,7 @@
 title: Attendee Next Steps
 excerpt: Information for attendees of CascadiaJS 2025
 ---
+<!--
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
@@ -44,10 +45,10 @@ We're running a contest to see who can rally the most people to join them at the
 - The top five referrers will be invited to the Friends of Cascadia pre-party at Stoup Brewing on June 19
 
 That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because like most good things in life, the more the merrier! 🥳
-
+-->
 <h2 id="connect-with-our-community">Connect with our Community</h2>
 
-You don't have to wait until June 19 to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
+You don't have to wait until the conference to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
 
 1. Join our [Discord Community](https://discord.gg/kkYR86GM29)
 1. Follow us on [Twitter](https://twitter.com/CascadiaJS), [LinkedIn](https://www.linkedin.com/showcase/cascadiajs), [BlueSky](https://bsky.app/profile/cascadiajs.bsky.social) or [Threads](https://www.threads.net/@cascadia_js)
