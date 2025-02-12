@@ -51,6 +51,6 @@ That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because lik
 You don't have to wait until the conference to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
 
 1. Join our [Discord Community](https://discord.gg/kkYR86GM29)
-1. Follow us on [Twitter](https://twitter.com/CascadiaJS), [LinkedIn](https://www.linkedin.com/showcase/cascadiajs), [BlueSky](https://bsky.app/profile/cascadiajs.bsky.social) or [Threads](https://www.threads.net/@cascadia_js)
+1. Follow us on [Twitter](https://twitter.com/CascadiaJS), [LinkedIn](https://www.linkedin.com/showcase/cascadiajs), [BlueSky](https://bsky.app/profile/cascadiajs.com) or [Threads](https://www.threads.net/@cascadia_js)
 
 ![CascadiaJS 2019 family photo](/_public/images/past/cjs19-family-photo.jpg)
