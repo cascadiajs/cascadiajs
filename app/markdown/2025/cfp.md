@@ -47,7 +47,7 @@ If we accept your proposal to speak, the following items are taken care of by us
 
 <i class="fas fa-ticket-alt"></i> Full VIP ticket to CascadiaJS.
 
-<i class="fas fa-globe"></i> Speakers will be provided transportation to Seattle and lodging for 3 nights.
+<i class="fas fa-globe"></i> Speakers will be provided transportation to Seattle (up to $500 for domestic flights, and up to $1,000 for international flights) and lodging for 3 nights.
 
 <i class="fas fa-gifts"></i> A few surprises!
 
