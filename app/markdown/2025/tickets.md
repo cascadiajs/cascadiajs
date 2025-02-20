@@ -12,8 +12,8 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
     <tr><th>Release</th><th>Dates</th><th>Discount</th></tr>
     </thead>
     <tbody>
-    <tr><td>Blind Bird</td><td>Jan 1 - Feb 16</td><td>$499</td></tr>
-    <tr><td>Early Bird</td><td>Feb 17 - Apr 27</td><td>$599</td></tr>
+    <tr><td>Blind Bird</td><td>Jan 1 - Feb 21</td><td>$499</td></tr>
+    <tr><td>Early Bird</td><td>Feb 22 - Apr 27</td><td>$599</td></tr>
     <tr><td>Regular Bird</td><td>Apr 28 - Aug 17</td><td>$699</td></tr>
     <tr><td>Full Price</td><td>Aug 18 - Sept 18</td><td>$799</td></tr>
     </tbody>
