@@ -78,8 +78,8 @@ export default function MainFooter({ html }) {
               >
             </li>
             <li>
-              <a target="_blank" href="https://twitter.com/cascadiajs"
-                >Follow us on Twitter</a
+              <a target="_blank" href="https://bsky.app/profile/cascadiajs.com"
+                >Follow us on Bluesky</a
               >
             </li>
             <li>
