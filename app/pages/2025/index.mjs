@@ -102,14 +102,13 @@ export default function ({ html, state }) {
                 <div>
                   <img
                     src="/_public/images/2024/features/venue.gif"
-                    alt="illustration of Sunriver Resort"
+                    alt="illustration of Town Hall"
                   />
                 </div>
                 <h2>Town Hall</h2>
                 <p>
                   Town Hall Seattle is a landmark historic building located within
-                  walking distance of Downtown and Capitol Hill. It's where we
-                  held CascadiaJS in 2019 and we can't wait to be back!
+                  walking distance of Downtown and Capitol Hill. 
                 </p>
               </div>
               <div class="feature">
@@ -146,9 +145,9 @@ export default function ({ html, state }) {
                     alt="illustration of a meal"
                   />
                 </div>
-                <h2>All Inclusive</h2>
+                <h2>Fun Hangs</h2>
                 <p>
-                  Your ticket includes access to all the talks, meals, social events and post-conference activities!
+                  Your full conference ticket includes the welcome reception, 2 days of light breakfast & lunch, all day coffee, a closing party with dinner & karaoke, and post-conference activities!
                 </p>
               </div>
               <div class="feature">
@@ -160,7 +159,7 @@ export default function ({ html, state }) {
                 </div>
                 <h2>Accessibility</h2>
                 <p>
-                In order to build an inclusive community for web developers we work hard to make our event as accessible as possible. Stay tuned for more info on this!
+                In order to build an inclusive community for web developers we work hard to make our event as accessible as possible. 
                 </p>
               </div>
               <div class="feature">
