@@ -58,11 +58,11 @@ export default function ({ html /*state*/ }) {
       </article>
     </section>
     <section id="trailer" class="landing">
-    <h1>Check-out our 2024 Trailer!</h1>
+    <h1>Check-out our 2025 Trailer!</h1>
     <div id="trailer-container">
     <div id="trailer-video" style="position: relative; padding-top: 56.25%;">
       <iframe
-        src="https://customer-err733fa36e0jnfx.cloudflarestream.com/d060af2223f2862dcdc98539679752f2/iframe?muted=true&preload=true&autoplay=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2Fd060af2223f2862dcdc98539679752f2%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+        src="https://customer-err733fa36e0jnfx.cloudflarestream.com/0fc55c4b23dc61ea6e06b7ae1a58efff/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2F0fc55c4b23dc61ea6e06b7ae1a58efff%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
         loading="lazy"
         style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
         allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
