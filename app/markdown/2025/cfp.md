@@ -35,7 +35,7 @@ There are a few kinds of talks that we're NOT looking for:
 
 We look for talks that tell a story -- it can address issues that developers struggle with, break down and explain complicated topics, and cover new ground in web technology. But it should be a personal story, _your_ story. For example, feel free to submit a talk about your experiences with LangchainJS. But it should go well beyond what a developer can find on the LangchainJS "getting started" page and should cover things you learned, things that surprised you, and why you think other folks should consider it for their projects.
 
-If you're looking for inspiration, please check-out some [topic suggestions](#cfp-faq) below in our CFP FAQ.
+If you're looking for inspiration, please check-out some topic suggestions below in our CFP FAQ.
 
 ## AI
 
