@@ -2,6 +2,7 @@
 //import { findTalks } from "../../../shared/data/talks.mjs"
 //import { findUsers } from "../../../shared/data/users.mjs"
 //import attendees from "../../../shared/data/users.json" assert { type: "json" };
+import organizers from "../../../shared/data/organizers.json" assert { type: "json" }
 
 export async function get({ path, query }) {
   // find the id for CascadiaJS 2024
@@ -29,7 +30,8 @@ export async function get({ path, query }) {
       path,
       //talks,
       sharing,
-      //attendees
+      //attendees,
+      organizers: organizers["2025"]
     },
   };
 }
