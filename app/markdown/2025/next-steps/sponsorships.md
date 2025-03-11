@@ -11,6 +11,7 @@ excerpt: Information for sponsors of CascadiaJS 2025
         <li><a href="#lodging">Lodging</a></li>
         <li><a href="#raffle">Raffle</a></li>
         <li><a href="#swag">Swag</a></li>
+        <li><a href="#video">Video Clips</a></li>
         <li><a href="#discord">Discord</a></li>
         <li><a href="#rentals">Rentals</a></li>
     </ul>
