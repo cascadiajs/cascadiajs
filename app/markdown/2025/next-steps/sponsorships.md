@@ -107,7 +107,7 @@ Diamond, Platinum, Gold and Silver sponsors can show off their brand by includin
 
 <h2 id="video">Video Clips</h2>
 
-Diamond, Platinum and Gold sponsors can provide a video clip (no longer than 2 minutes) that promotes their company and products. This video will be played during the live event and on the livestream. [Here's an example](https://www.cascadiajs.com/2024/sponsors/temporal) from our 2024 event.
+Diamond, Platinum and Gold sponsors can provide a video clip (no longer than 2 minutes) that promotes their company and products. This video will be played during the live event and on the livestream. [Here's an example](https://cascadiajs.com/2024/sponsors/temporal) from our 2024 event.
 
 [Use this link](https://www.dropbox.com/request/eMb2yLATY7HIue3cz5yT) to submit your video.
 
