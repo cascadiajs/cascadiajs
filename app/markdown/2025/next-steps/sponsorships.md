@@ -71,7 +71,7 @@ Sponsors need to provide their own linens for tables.
 
 We recommend that Gold sponsors bring a single, pop-up banner to place alongside their booth (see photo below). Diamond and Platinum sponsors will have space for an additional banner.
 
-Recommended booth times are 8:00am - 6:00pm. 
+Recommended booth times are 8:00am - 6:00pm on September 18th and 19th. 
 
 ![moovweb](/_public/images/past/cjs19-moovweb.jpg)
 
@@ -82,14 +82,14 @@ Information about lead capture will be provided closer to the event.
 
 <h2 id="registration">Registration</h2>
 
-Pick up your badge at the Welcome Reception on September 17th, or on the morning of September 18th when you arrive to set up. If you have team members who are arriving later, conference staff will be available to check them in at any point during the conference. 
+Pick up your badge at the Welcome Reception on September 17th, or on the morning of September 18th when you arrive to set up your booth. If you have team members who are arriving later, conference staff will be available to check them in at any point during the conference. 
 
 ### Welcome Reception & Pre-Registration
 Wednesday, September 17th<br />
 Tentatively 7:00pm - 9:00pm<br />
 Town Hall (Forum level)
 
-The Welcome Reception is an opportunity for folks to pre-register, get their badge and conference hoodie, and hang out with fellow attendees!
+The Welcome Reception is an opportunity for folks to pre-register, get their badge and conference hoodie, and hang out with fellow attendees! We encourage sponsors to attend, grab their badge, and have fun. 
 
 <h2 id="lodging">Lodging</h2>
 
@@ -97,9 +97,11 @@ We've secured discounts with 2 hotels near the venue: [https://cascadiajs.com/20
 
 <h2 id="raffle">Raffle</h2>
 
-To encourage attendee engagement at sponsor booths we're running a scavenger hunt/raffle. Attendees will need to visit all of the participating sponsor booths and do a few extra things to qualify to win a prize. We'll share contact info for every attendee who participates in the raffle following the event.
+To encourage attendee engagement at sponsor booths we're running a scavenger hunt/raffle. Attendees will need to visit all of the participating sponsor booths and do a few extra things to qualify to win a prize. In order to participate, sponsors need to provide a prize. We recommend prizes in the $100-300 range. Some recent examples are Apple Airpod Pros, a [Lego set](https://www.lego.com/en-us/product/dune-atreides-royal-ornithopter-10327?gclid=Cj0KCQjwsPCyBhD4ARIsAPaaRf0GEwUAbr5nlu8_h8_QYmg93oG0U9kGH-Kp1GGNOPk6RdiaK058rDMaAiyWEALw_wcB&ef_id=Cj0KCQjwsPCyBhD4ARIsAPaaRf0GEwUAbr5nlu8_h8_QYmg93oG0U9kGH-Kp1GGNOPk6RdiaK058rDMaAiyWEALw_wcB%3AG%3As&s_kwcid=AL%21790%213%21695971563321%21%21%21g%21%21%2121172147888%21158672194057&cmp=KAC-INI-GOOGUS-GO-US_GL-EN-BR-PS-CONSIDER-ESCAPE-ICONS-SHOP-GP-DSA-RN-CIDNA00000-ICONS_DSA&gad_source=1), and [Looking Glass Go](https://checkout.lookingglassfactory.com/products/looking-glass-go).
 
 If you're participating in the raffle, please plan on presenting your prize to the winner on stage at the closing on Day 2 (at 6:00pm).
+
+We'll share contact info for every attendee who participates in the raffle following the event.
 
 <h2 id="swag">Swag</h2>
 
