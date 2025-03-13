@@ -25,10 +25,45 @@ export async function get({ path, query }) {
     sharingDescription: 'CascadiaJS 2025 is coming up Sept 18 - 19 in Seattle, WA!'
   }
 
+  const talks = [
+    {
+      speaker: {
+        name: 'Shruti Kapoor',
+        image: 'shruti-kapoor.jpg',
+        company: 'Educator & Content Creator',
+        location: 'Seattle, WA'
+      }
+    },
+    {
+      speaker: {
+        name: 'Kevin Whinnery',
+        image: 'kevin-whinnery.jpg',
+        company: 'Open AI',
+        location: 'Minneapolis, MN'
+      }
+    },
+    {
+      speaker: {
+        name: 'Brian Leroux',
+        image: 'brian-leroux.jpg',
+        company: 'Sanity',
+        location: 'Nanaimo, BC'
+      }
+    },
+    {
+      speaker: {
+        name: 'Rachel Lee Nabors',
+        image: 'rachel-lee-nabors.jpg',
+        company: 'TinyFish',
+        location: 'London, UK'
+      }
+    }
+  ]
+
   return {
     json: {
       path,
-      //talks,
+      talks,
       sharing,
       //attendees,
       organizers: organizers["2025"]

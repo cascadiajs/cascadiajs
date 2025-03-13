@@ -3,23 +3,20 @@ export default function ({ html, state }) {
   let { sharing } = store
   if (sharing.social !== undefined) {
     const { image, title, description } = sharing
-    return html`<social-sharing image="${ image }" title="${ title }" description="${ description }"></social-sharing>`
+    return html`<social-sharing image="${image}" title="${title}" description="${description}"></social-sharing>`
   }
   else {
     return html`
       <style>
         #features-container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);;
+            grid-template-rows: repeat(3, 1fr);;
+            gap: 32px;
         }
 
-        .feature {
-          text-align: center;
-          margin: 24px;
-          flex: 1;
-          min-width: 300px;
-          max-width: 400px;
+        .feature img{
+          max-width: 250px;
         }
 
         #hero {
@@ -95,78 +92,115 @@ export default function ({ html, state }) {
               <img src="/_public/images/2025/hero-camper.png" alt="Sasquatch driving a camper van"/>
             </article>
           </section>
+          <section id="speakers" class="landing">
+            <h1>Speakers</h1>
+            <talks-grid></talks-grid>
+            <div class="cta"><a href="/2025/cfp">Apply to Speak</a></div>
+          </section>
           <section id="features" class="landing">
             <h1>Features</h1>
             <div id="features-container">
               <div class="feature">
                 <div>
                   <img
-                    src="/_public/images/2024/features/venue.gif"
+                    src="/_public/images/2025/features/venue.gif"
                     alt="illustration of Town Hall"
                   />
                 </div>
                 <h2>Town Hall</h2>
                 <p>
-                  Town Hall Seattle is a landmark historic building located within
-                  walking distance of Downtown and Capitol Hill. 
+                  Our venue is a beautiful historic building located within walking distance of downtown, Capitol Hill, and several light rail stops.
                 </p>
               </div>
               <div class="feature">
                 <div>
                   <img
-                    src="/_public/images/2024/features/talks.gif"
+                    src="/_public/images/2025/features/talks.gif"
                     alt="illustration of a microphone"
                   />
                 </div>
-                <h2>20+ Awesome Speakers</h2>
+                <h2>30+ Awesome Speakers</h2>
                 <p>
-                  We are being joined by a wonderful line-up of speakers covering
-                  everything from the latest in the web/JS to building with AI.
+                  You’ll hear from a diverse lineup of speakers covering everything from the latest in web and JavaScript to the interaction of web technologies and AI.
                 </p>
               </div>
               <div class="feature">
                 <div>
                   <img
-                    src="/_public/images/2024/features/workshops.gif"
-                    alt="illustration of merit badge"
+                    src="/_public/images/2025/features/community.gif"
+                    alt="illustration of friends hanging out"
                   />
                 </div>
-                <h2>Hands-on Workshops</h2>
+                <h2>Hallway Track</h2>
                 <p>
-                  Running parallel to the talks, there will be hands-on workshops
-                  to choose from if you care to roll-up your sleeves and do some
-                  coding.
+                  Take advantage of breaks, meals, evening events and organized ice breakers to meet people, connect and grow your network!
                 </p>
               </div>
               <div class="feature">
                 <div>
                   <img
-                    src="/_public/images/2024/features/allinclusive.gif"
+                    src="/_public/images/2025/features/allinclusive.gif"
                     alt="illustration of a meal"
                   />
                 </div>
-                <h2>Fun Hangs</h2>
+                <h2>All-inclusive</h2>
                 <p>
-                  Your full conference ticket includes the welcome reception, 2 days of light breakfast & lunch, all day coffee, a closing party with dinner & karaoke, and post-conference activities!
+                Your full conference ticket includes a welcome reception, 2 days of light breakfast & lunch, all day coffee, and a closing party with dinner. 
                 </p>
               </div>
               <div class="feature">
                 <div>
                   <img
-                    src="/_public/images/2024/features/a11y.gif"
+                    src="/_public/images/2025/features/a11y.gif"
                     alt="illustration of a welcome mat"
                   />
                 </div>
                 <h2>Accessibility</h2>
                 <p>
-                In order to build an inclusive community for web developers we work hard to make our event as accessible as possible. 
+                  From our Scholarship Program to hosting CascadiaJS in an accessible venue, our goal is to make this event available to as many people as possible and build an inclusive community for web developers.
                 </p>
               </div>
               <div class="feature">
                 <div>
                   <img
-                    src="/_public/images/2024/features/activities.gif"
-                    alt="illustration of a pickleball racquet"
+                    src="/_public/images/2025/features/companies.gif"
+                    alt="illustration of a welcome mat"
+                  />
+                </div>
+                <h2>Top Web + AI Companies</h2>
+                <p>
+                  Our Expo Hall will be filled with many of the top companies building tools in the web and AI space. Stay tuned for more updates on who will be exhibiting this year!
+                </p>
+              </div>
+              <div class="feature">
+                <div>
+                  <img
+                    src="/_public/images/2025/features/hackertrain.gif"
+                    alt="illustration of a laptop with stickers"
+                  />
+                </div>
+                <h2>Hacker Train</h2>
+                <p>
+                  If you live in Portland, OR or Vancouver, BC there is no better way to get to CascadiaJS than to join your fellow devs on the Hacker Train. Ditch the car, make some friends and fork repos on the train Wi-Fi as you head to Seattle.
+                </p>
+              </div>
+              <div class="feature">
+                <div>
+                  <img
+                    src="/_public/images/2025/features/karaoke.gif"
+                    alt="illustration of inside the train"
+                  />
+                </div>
+                <h2>Karaoke</h2>
+                <p>
+                We’re continuing our annual tradition of closing out the conference with an epic night of karaoke, and we’ve hired one of the PNW’s best karaoke DJs to help us do it. Don’t miss it!
+                </p>
+              </div>
+              <div class="feature">
+                <div>
+                  <img
+                    src="/_public/images/2025/features/activities.gif"
+                    alt="illustration of a karaoke screen"
                   />
                 </div>
                 <h2>Outdoor Activities</h2>
