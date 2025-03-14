@@ -8,16 +8,7 @@ export default function ({ html, state }) {
   else {
     return html`
       <style>
-        #features-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);;
-            grid-template-rows: repeat(3, 1fr);;
-            gap: 32px;
-        }
 
-        .feature img{
-          max-width: 250px;
-        }
 
         #hero {
           text-align: left;
@@ -65,6 +56,17 @@ export default function ({ html, state }) {
 
           #hero article:first-child {
             margin-right: 16px;
+          }
+
+          #features-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);;
+            grid-template-rows: repeat(3, 1fr);;
+            gap: 32px;
+        }
+
+          .feature img{
+            max-width: 250px;
           }
         }
       </style>
