@@ -43,13 +43,13 @@ While we are a JS/web conference, we are very interested in the interaction of w
 
 ## What we take care of
 
-If we accept your proposal to speak, the following items are taken care of by us:
+If we accept your proposal to speak, you'll receive:
 
-<i class="fas fa-ticket-alt"></i> Full VIP ticket to CascadiaJS.
+<i class="fas fa-ticket-alt"></i> a full VIP ticket to CascadiaJS,
 
-<i class="fas fa-globe"></i> Speakers will be provided transportation to Seattle (up to $500 for domestic flights, and up to $1,000 for international flights) and lodging for 3 nights.
+<i class="fas fa-globe"></i> transportation to Seattle and lodging for 3 nights, for 25-minute speakers (we cover up to $500 for domestic flights, and up to $1,000 for international flights), 
 
-<i class="fas fa-gifts"></i> A few surprises!
+<i class="fas fa-gifts"></i> and a few surprises!
 
 ## How to submit a proposal
 
