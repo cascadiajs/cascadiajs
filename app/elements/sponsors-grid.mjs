@@ -28,7 +28,7 @@ export default function Sponsors({ html }) {
         }
         </style>
         <div class="sponsors-grid">
-        ${ sponsors.map(s => /*html*/`
+        ${ sponsors.sort((a, b) => a.name.localeCompare(b.name)).map(s => /*html*/`
             <div><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></div>
         `).join('') }
         </div>`

@@ -1,7 +1,6 @@
 const sponsors = [
     { 
         id: 'temporal',
-        tier: 'gold',
         logo: 'temporal.svg',
         logoSquare: 'temporal-square.jpg',
         name: 'Temporal',
@@ -11,7 +10,6 @@ const sponsors = [
     },
     { 
         id: 'stytch',
-        tier: 'gold',
         logo: 'stytch.svg',
         logoSquare: 'stytch-square.jpg',
         name: 'Stytch',
@@ -20,7 +18,6 @@ const sponsors = [
     },
     { 
         id: 'datastax',
-        tier: 'gold',
         logo: 'datastax.svg',
         logoSquare: 'datastax-square.jpg',
         name: 'DataStax',
@@ -29,7 +26,6 @@ const sponsors = [
     },
     { 
         id: 'codingscape',
-        tier: 'gold',
         logo: 'codingscape.svg',
         logoSquare: 'codingscape-square.jpg',
         name: 'Codingscape',
@@ -38,7 +34,6 @@ const sponsors = [
     },
     { 
         id: 'infobip',
-        tier: 'gold',
         logo: 'infobip.svg',
         logoSquare: 'infobip-square.jpg',
         name: 'Infobip',
@@ -48,94 +43,189 @@ const sponsors = [
     },
     { 
         id: 'tbd',
-        tier: 'bronze',
         logo: 'tbd.svg',
         name: 'TBD',
         url: 'https://tbd.website'
     },
     { 
         id: 'sentry',
-        tier: 'bronze',
         logo: 'sentry.svg',
         name: 'Sentry',
         url: 'https://sentry.io'
     },
     { 
         id: 'hookdeck',
-        tier: 'community',
         logo: 'hookdeck.svg',
         name: 'HookDeck',
         url: 'https://hookdeck.com?ref=cascadiajs-2024'
     },
     { 
         id: 'langchain',
-        tier: 'community',
         logo: 'langchain.svg',
         name: 'LangChain',
         url: 'https://langchain.com'
     },
     { 
         id: 'google',
-        tier: 'community',
         logo: 'google.png',
         name: 'Google',
         url: 'https://google.com'
     },
     { 
-        id: 'begin',
-        tier: 'community',
-        logo: 'begin.svg',
-        name: 'Begin',
-        url: 'https://begin.com'
-    },
-    { 
         id: 'mux',
-        tier: 'community',
         logo: 'mux.png',
         name: 'Mux',
         url: 'https://mux.com'
     },
     { 
         id: 'cloudinary',
-        tier: 'community',
         logo: 'cloudinary.png',
         name: 'Cloudinary',
         url: 'https://cloudinary.com'
     },
     { 
         id: 'codecrafters',
-        tier: 'community',
         logo: 'codecrafters.png',
         name: 'CodeCrafters',
         url: 'https://app.codecrafters.io/join?via=cascadiajs'
     },
     { 
-        id: 'seattlejs',
-        tier: 'community',
-        logo: 'seattlejs.png',
-        name: 'SeattleJS',
-        url: 'https://seattlejs.com'
+        id: 'appwrite',
+        logo: 'appwrite.png',
+        name: 'appwrite',
+        url: 'https://appwrite.io'
     },
     { 
-        id: 'seattle-node',
-        tier: 'community',
-        logo: 'seattle-node.png',
-        name: 'Seattle Node',
-        url: 'https://www.meetup.com/seattle-node-js/'
+        id: 'circle',
+        logo: 'circle.png',
+        name: 'Circle',
+        url: 'https://www.circle.com'
     },
     { 
-        id: 'seattle-reactjs',
-        tier: 'community',
-        logo: 'seattle-reactjs.jpg',
-        name: 'Seattle React.js',
-        url: 'https://www.meetup.com/seattle-react-js/'
+        id: 'circleci',
+        logo: 'circleci.svg',
+        name: 'CircleCI',
+        url: 'https://circleci.com'
     },
     { 
-        id: 'pdx-angular',
-        tier: 'community',
-        logo: 'portland-angular.jpg',
-        name: 'Portland Angular.js',
-        url: 'https://www.meetup.com/ngpdxers/'
+        id: 'courier.png',
+        logo: 'courier.png',
+        name: 'Courier',
+        url: 'https://courier.com'
+    },
+    { 
+        id: 'datadog',
+        logo: 'datadog.png',
+        name: 'Datadog',
+        url: 'https://www.datadoghq.com'
+    },
+    { 
+        id: 'dolbyio',
+        logo: 'dolby.svg',
+        name: 'Dolby.io',
+        url: 'https://dolby.io/'
+    },
+    { 
+        id: 'elastic',
+        logo: 'elastic.svg',
+        name: 'Elastic',
+        url: 'https://www.elastic.co/'
+    },
+    { 
+        id: 'hasura',
+        logo: 'hasura.png',
+        name: 'Hasura',
+        url: 'https://hasura.io'
+    },
+    { 
+        id: 'lacework',
+        logo: 'lacework.png',
+        name: 'Lacework',
+        url: 'https://lacework.com'
+    },
+    { 
+        id: 'netlify',
+        logo: 'netlify.svg',
+        name: 'Netlify',
+        url: 'https://www.netlify.com'
+    },
+    { 
+        id: 'new-relic',
+        logo: 'new-relic.svg',
+        name: 'New Relic',
+        url: 'https://newrelic.com'
+    },
+    { 
+        id: 'nx',
+        logo: 'nx.png',
+        name: 'Nx',
+        url: 'https://nx.dev'
+    },
+    { 
+        id: 'openjs',
+        logo: 'openjs.svg',
+        name: 'OpenJS Foundation',
+        url: 'https://openjsf.org'
+    },
+    { 
+        id: 'postman',
+        logo: 'postman.svg',
+        name: 'Postman',
+        url: 'https://www.postman.com'
+    },
+    { 
+        id: 'retool',
+        logo: 'retool.png',
+        name: 'Retool',
+        url: 'https://retool.com'
+    },
+    { 
+        id: 'salesforce-devs',
+        logo: 'salesforcedevs.png',
+        name: 'Salesforce Developers',
+        url: 'https://developer.salesforce.com'
+    },
+    { 
+        id: 'saucelabs',
+        logo: 'saucelabs.png',
+        name: 'Sauce Labs',
+        url: 'https://saucelabs.com'
+    },
+    { 
+        id: 'stateful',
+        logo: 'stateful.svg',
+        name: 'Stateful',
+        url: 'https://stateful.com'
+    },
+    { 
+        id: 'tmobile',
+        logo: 'tmobile.png',
+        name: 'T-Mobile',
+        url: 'https://www.t-mobile.com'
+    },
+    { 
+        id: 'twilio',
+        logo: 'twilio.svg',
+        name: 'Twilio',
+        url: 'https://www.twilio.com'
+    },
+    { 
+        id: 'unbounce',
+        logo: 'unbounce.png',
+        name: 'Unbounce',
+        url: 'https://unbounce.com'
+    },
+    { 
+        id: 'vonage',
+        logo: 'vonage.png',
+        name: 'Vonage',
+        url: 'https://www.vonage.com'
+    },
+    { 
+        id: 'xata',
+        logo: 'xata.svg',
+        name: 'Xata',
+        url: 'https://xata.io'
     }
 ]
 

@@ -145,9 +145,9 @@ export default function ({ html, state }) {
                     alt="illustration of a meal"
                   />
                 </div>
-                <h2>All-inclusive</h2>
+                <h2>Treats Galore</h2>
                 <p>
-                Your full conference ticket includes a welcome reception, 2 days of light breakfast & lunch, all day coffee, and a closing party with dinner. 
+                Your full conference ticket includes access to multiple social events, yummy snacks, unlimited coffee and and the best conference swag around! 
                 </p>
               </div>
               <div class="feature">
