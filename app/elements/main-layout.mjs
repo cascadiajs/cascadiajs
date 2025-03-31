@@ -78,6 +78,9 @@ export default function MainLayout({ html, state }) {
               <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I LOVE CascadiaJS. Incredible conference in a beautiful city with solid lineups, wonderful staff, and just the right amount of silly. Also <a href="https://twitter.com/crtr0?ref_src=twsrc%5Etfw">@crtr0</a> at karaoke. 💙<br><br>Congrats &amp; thanks again for such a wonderful time! <a href="https://t.co/3jhkI8O6Su">https://t.co/3jhkI8O6Su</a></p>&mdash; Josh Goldberg 🦋 (@JoshuaKGoldberg) <a href="https://twitter.com/JoshuaKGoldberg/status/1804535853739556963?ref_src=twsrc%5Etfw">June 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div>
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I 💚 CascadiaJS bc it feels like the cool, cult classic of JS events.<br><br>It’s got everything — a dedicated fan base of 10+ years, close family vibes, long held traditions (the best karaoke!), sublime locale, and a flair for the atypical/creative conf sessions.<br><br>Def apply + attend! <a href="https://t.co/yqrEbh0icL">https://t.co/yqrEbh0icL</a></p>&mdash; Michelle Bakels (@MichelleBakels) <a href="https://twitter.com/MichelleBakels/status/1905588634130014503?ref_src=twsrc%5Etfw">March 28, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div>
               <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The reason why <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw">@CascadiaJS</a> is one of my favorite conferences is because you can truly feel the passion and care that everyone puts into it. There&#39;s a real sense of community, it&#39;s amazing 🙌👏💜</p>&mdash; Charlie Gerard (@devdevcharlie) <a href="https://twitter.com/devdevcharlie/status/1565509276021362688?ref_src=twsrc%5Etfw">September 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div>
@@ -249,25 +252,7 @@ export default function MainLayout({ html, state }) {
                 >
               </blockquote>
             </div>
-            <div>
-              <blockquote class="twitter-tweet">
-                <p lang="en" dir="ltr">
-                  So about
-                  <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw"
-                    >@CascadiaJS</a
-                  >
-                  last year…
-                  <a href="https://t.co/iFsMyd71FA"
-                    >pic.twitter.com/iFsMyd71FA</a
-                  >
-                </p>
-                &mdash; Michelle Bakels (@MichelleBakels)
-                <a
-                  href="https://twitter.com/MichelleBakels/status/1486119944630775808?ref_src=twsrc%5Etfw"
-                  >January 25, 2022</a
-                >
-              </blockquote>
-            </div>
+            
             <div>
               <blockquote class="twitter-tweet">
                 <p lang="en" dir="ltr">
