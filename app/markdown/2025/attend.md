@@ -11,6 +11,7 @@ excerpt: Lodging, Travel, Guest Passes and more!
         <li><a href="#venue">Venue</a></li>
         <li><a href="#travel">Travel & Lodging</a></li>
         <li><a href="#meals">Meals</a></li>
+        <li><a href="#childcare">Childcare</a></li>
     </ul>
 </div>
 
@@ -44,6 +45,10 @@ If you are coming from Portland, OR or Vancouver, BC you should definitely check
 <h2 id="meals">Meals</h2>
 
 We'll publish menus as the event gets closer. 
+
+<h2 id="childcare">Childcare</h2>
+
+Thanks to our wonderful sponsor Mastra, we are offering FREE, professional, on-site child care for kids 10 and under. Spots are limited. <a href="/2025/childcare">Learn more and sign up.</a>
 
 <!--
 If you purchased a ticket that includes meals, please review [our menus](/2024/meals) for June 20 and June 21. We have done our best to accommodate folks with dietary restrictions, but if you have special needs that are not covered here please make sure you plan appropriately.
