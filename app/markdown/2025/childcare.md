@@ -7,6 +7,7 @@ excerpt: We are offering free child care so you can get away and enjoy the confe
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
+        <li><a href="#hours">Sign Up</a></li>
         <li><a href="#hours">Hours</a></li>
         <li><a href="#location">Location</a></li>
         <li><a href="#bring">What to Bring</a></li>
@@ -14,20 +15,25 @@ excerpt: We are offering free child care so you can get away and enjoy the confe
     </ul>
 </div>
 
-Thanks to our wonderful sponsor [Mastra](https://mastra.ai/), we are offering FREE, professional, on-site child care for kids 12 and under through [A-List Nanny Services](https://www.alistnannyservices.com/). Spots are limited. If you sign-up and decide later that you don't need childcare, please let us know so that we can make that spot available to another family.
+<h2 id="signup">Sign Up</h2>
 
-<div class="cta"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/shrVIbTe4AAvb8vrX">Sign Up</a></div>
+<img src="/_public/images/2025/childcare-sponsored-by.svg" alt="Childcare sponsored by Mastra" style="max-width:150px;float:right">
+
+Thanks to our wonderful sponsor [Mastra](https://mastra.ai/), we are offering FREE, professional, on-site child care for kids 10 and under through [A-List Nanny Services](https://www.alistnannyservices.com/). Spots are limited. If you sign-up and decide later that you don't need childcare, please let us know so that we can make that spot available to another family.
+
+
+<div class="cta secondary"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/shrVIbTe4AAvb8vrX">Sign Up</a></div>
 
 <h2 id="hours">Hours</h2>
 
-### September 18
-Daytime: 8:00am - 6pm (We ask that you take your child during lunch to give our caregivers a break; exact time TBD)
+**September 18**<br/>
+Daytime: 8:00 am-6:00 pm 
 
-### September 19
-Daytime: 8:00am - 6pm (Lunch break TBD)
-Evening: 7pm - 10pm
+**September 19**<br/>
+Daytime: 8:00 am-6:00 pm<br/>
+Evening: 7:00 pm-10:00 pm
   
-You're welcome to drop off and pick up your child at any time during the shifts that you're signed up for.
+You're welcome to drop off and pick up your child at any time during the shifts that you're signed up for. We ask that you take your child during lunch and dinner to give our caregivers a break; exact time TBD. 
 
 <h2 id="location">Location</h2>
 
