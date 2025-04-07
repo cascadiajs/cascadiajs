@@ -91,7 +91,7 @@ For the purposes of the CFP, please record the 2-minute video using ASL and incl
 
 ## We’re here to help!
 
-There are a million reasons why you might not think you’re qualified or capable of giving a talk, let alone at CascadiaJS. We are here to prove you wrong. If all you have is a gut feeling that you have something important to share with people, we are here to help you hone your idea and craft a great submission. We are happy to connect you with experienced speakers to help prepare your submission. Just [join our Discord](https://discord.gg/cascadiajs) and head over to the #cfp channel.
+There are a million reasons why you might not think you’re qualified or capable of giving a talk, let alone at CascadiaJS. We are here to prove you wrong. If all you have is a gut feeling that you have something important to share with people, we are here to help you hone your idea and craft a great submission. We are happy to connect you with experienced speakers to help prepare your submission. Just [join our Discord](https://discord.gg/kkYR86GM29) and head over to the #cfp channel.
 
 If you are a new speaker, once your talk has been accepted we will commit to working with you to give an awesome talk. This includes reviewing and advising on slides and helping you practice giving your talk. We can hook you up with local groups or set up a stage for you and a bunch of friends in advance, so you can practice in front of a friendly crowd. Again, whatever else you might need, we’re here to help.
 
