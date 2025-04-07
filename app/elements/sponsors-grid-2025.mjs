@@ -7,7 +7,7 @@ const sponsors = [
         logo: 'gensx.png',
         logoSquare: 'gensx.png',
         name: 'GenSX',
-        url: 'https://github.com/gensx-inc/gensx',
+        url: 'https://www.gensx.com/',
         description: 'GenSX is a simple typescript framework for building agents and workflows with reusable React-like components.\n\nGenSX takes a lot of inspiration from React, but the programming model is very different - it’s a Node.js framework designed for data flow.\n\nBut if you know how to write a react component, then building an agent will feel easy and familiar.'
     },
     {
@@ -18,6 +18,14 @@ const sponsors = [
         name: 'Elastic',
         url: 'https://www.elastic.co/',
         description: 'Elastic is a search company that builds open source search engines and tools. Elastic is the company behind Elasticsearch, Kibana, Beats, and Logstash.'
+    },
+    {
+        id: 'mastra',
+        tier: 'bronze',
+        logo: 'mastra.svg',
+        name: 'Mastra',
+        url: 'https://www.mastra.ai/',
+        description: 'The TypeScript Agent Framework. From the team that brought you Gatsby: prototype and productionize AI features with a modern Javascript stack.'
     },
     {
         id: 'seattlejs',

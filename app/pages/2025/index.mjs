@@ -74,7 +74,7 @@ export default function ({ html, state }) {
         <div id="landing">
           <section id="hero" class="landing">
             <article>
-              <h2>A JavaScript conference for the Pacific Northwest</h2>
+              <h2>A Web + AI conference for the Pacific Northwest</h2>
               <br/>
               <div class="label-name">Date</div>
               <div class="label-value">Sept 17-20, 2025</div>
