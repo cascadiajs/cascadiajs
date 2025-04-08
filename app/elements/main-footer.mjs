@@ -54,7 +54,7 @@ export default function MainFooter({ html }) {
     <footer>
       <div class="wide">
         <section id="when-where">
-          <h2>CascadiaJS - a JSConf for the PNW</h2>
+          <h2>CascadiaJS - a Web + AI conf for the PNW</h2>
         </section>
         <section id="legal">
           <h2>Legal</h2>
