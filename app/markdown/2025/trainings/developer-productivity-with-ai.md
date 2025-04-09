@@ -7,6 +7,9 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
+**Location:** Seattle, WA (exact location TBD)
+
+
 AI is changing how we write code, and you're about to become fluent in these new tools. We'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks.
 
 ### Morning - AI Fundamentals
