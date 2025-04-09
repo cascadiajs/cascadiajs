@@ -7,6 +7,8 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
+**Location:** Seattle, WA (exact location TBD)
+
 Ready to level up your JavaScript skills? Let's dive into TypeScript and Deno to build more reliable applications. We'll start with TypeScript basics and work our way up to building full applications with Deno.
 
 ### Morning - TypeScript Essentials
