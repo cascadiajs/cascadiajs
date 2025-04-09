@@ -7,6 +7,8 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
+**Location:** Seattle, WA (exact location TBD)
+
 Let's explore what makes modern React applications truly powerful. We'll combine Server Components with robust data management patterns to build fast, scalable apps that your users will love.
 
 ### Morning - Modern React & Server Components
