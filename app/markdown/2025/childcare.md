@@ -19,7 +19,7 @@ excerpt: We are offering free child care so you can get away and enjoy the confe
 
 <p><img src="/_public/images/2025/childcare-sponsored-by.svg" alt="Childcare sponsored by Mastra" style="height:50px"></p>
 
-Thanks to our wonderful sponsor [Mastra](https://mastra.ai/), we are offering FREE, professional, on-site child care for kids 10 and under through [A-List Nanny Services](https://www.alistnannyservices.com/). Spots are limited. If you sign-up and decide later that you don't need childcare, please let us know so that we can make that spot available to another family.
+Thanks to our wonderful sponsor [Mastra](https://mastra.ai/), we are offering FREE, professional, on-site child care for kids 10 and under through [A-List Nanny Services](https://www.alistnannyservices.com/). Spots are limited and available only to people who have purchased a conference ticket. If you sign-up and decide later that you don't need childcare, please let us know so that we can make that spot available to another family.
 
 <div class="cta secondary"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/shrVIbTe4AAvb8vrX">Sign Up</a></div>
 
