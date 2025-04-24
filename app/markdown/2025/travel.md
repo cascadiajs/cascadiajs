@@ -10,7 +10,7 @@ There are lots of ways to get to Seattle, WA, let's review.
 
 ### Take the Hacker Train
 
-Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouver, BC there is **no better way** to get to CascadiaJS than to join your fellow devs on the Hacker Train. Stay tuned for more information on how to reserve your spot.
+Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouver, BC (or any Amtrak spot in between) there is **no better way** to get to CascadiaJS than to join your fellow devs on the Hacker Train. Please complete the [Hacker Train Survey](https://airtable.com/app4aehCXEydAuxKX/pagVs4dpxC3tosLYH/form) if you're interested and we'll follow up with instructions for how to secure your spot.
 
 ### Fly in to Seatac
 
