@@ -46,11 +46,30 @@ We're running a contest to see who can rally the most people to join them at the
 
 That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because like most good things in life, the more the merrier! 🥳
 -->
+
+<h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
+
+Prior to the conference, we are teaming up with Eve Porcello (Moon Highway) to provide 3 days of training workshops. You need to purchase these tickets separately.
+
+<div class="cta secondary"><a href="/2025/trainings">Training Workshops Guide</a></div>
+
+<h2 id="pre-conf-trainings">Book your Travel & Lodging</h2>
+
+Traveling to Seattle and need to a place to stay while you're in town? Look no further than our Travel Guide for the scoop on hotel discounts and the best way to get to Seattle (hint: it's the Hacker Train).
+
+<div class="cta secondary"><a href="/2025/travel">Travel Guide</a></div>
+
+<h2 id="pre-conf-trainings">Reserve Childcare</h2>
+
+Thanks to our wonderful sponsor Mastra, we are offering FREE, professional, on-site child care for kids 10 and under. Spots are limited.
+
+<div class="cta secondary"><a href="/2025/childcare">Reserve Childcare</a></div>
+
 <h2 id="connect-with-our-community">Connect with our Community</h2>
 
 You don't have to wait until the conference to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
 
 1. Join our [Discord Community](https://discord.gg/kkYR86GM29)
-1. Follow us on [Twitter](https://twitter.com/CascadiaJS), [LinkedIn](https://www.linkedin.com/showcase/cascadiajs), [BlueSky](https://bsky.app/profile/cascadiajs.com) or [Threads](https://www.threads.net/@cascadia_js)
+1. Follow us on [BlueSky](https://bsky.app/profile/cascadiajs.com), [LinkedIn](https://www.linkedin.com/showcase/cascadiajs), [Twitter](https://twitter.com/CascadiaJS), or [Threads](https://www.threads.net/@cascadia_js)
 
 ![CascadiaJS 2019 family photo](/_public/images/past/cjs19-family-photo.jpg)
