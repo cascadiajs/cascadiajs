@@ -65,11 +65,11 @@ All sponsor booths will be located in the main lobby. When you arrive, look for 
 
 Diamond and Platinum booths consist of 2 6-foot tables and four chairs, and have access to a power outlet. 
 
-Gold booths consist of a single 6-foot table and two chairs, and have access to a power outlet. 
+All other booths consist of a single 6-foot table and two chairs, and have access to a power outlet. 
 
 Sponsors need to provide their own linens for tables.
 
-We recommend that Gold sponsors bring a single, pop-up banner to place alongside their booth (see photo below). Diamond and Platinum sponsors will have space for an additional banner.
+We recommend that booth sponsors bring a single, pop-up banner to place alongside their booth (see photo below). Diamond and Platinum sponsors will have space for an additional or larger banner.
 
 Recommended booth times are 8:00am - 6:00pm on September 18th and 19th. 
 
