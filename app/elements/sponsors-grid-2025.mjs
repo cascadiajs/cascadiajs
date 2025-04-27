@@ -20,6 +20,24 @@ const sponsors = [
         description: 'Elastic is a search company that builds open source search engines and tools. Elastic is the company behind Elasticsearch, Kibana, Beats, and Logstash.'
     },
     {
+        id: 'ilf',
+        tier: 'silver',
+        logo: 'ilf.png',
+        logoSquare: 'ilf.png',
+        name: 'Inter Ledger Foundation',
+        url: 'https://interledger.org/',
+        description: 'The Interledger Foundation is a non-profit organization that supports the development of the Interledger Protocol and its ecosystem. The Interledger Protocol is a protocol for sending payments across different payment networks.'
+    },
+    {
+        id: 'signalfire',
+        tier: 'silver',
+        logo: 'signalfire.png',
+        logoSquare: 'signalfire.png',
+        name: 'SignalFire',
+        url: 'https://signalfire.com/',
+        description: 'SignalFire is a venture capital firm that invests in early stage technology companies. SignalFire is a remote-first company that uses AI to help its portfolio companies grow.'
+    },
+    {
         id: 'mastra',
         tier: 'bronze',
         logo: 'mastra.svg',
@@ -44,6 +62,42 @@ const sponsors = [
         name: 'VanJS',
         url: 'https://vanjs.org',
         description: 'VanJS is a community of JavaScript developers in Vancouver. We meet monthly to share knowledge and learn from each other.'
+    },
+    {
+        id: 'ai-portland',
+        tier: 'community',
+        logo: 'ai-portland.png',
+        logoSquare: 'ai-portland.png',
+        name: 'AI Portland',
+        url: 'https://www.meetup.com/ai-portland/',
+        description: 'AI Portland is a community of AI enthusiasts in Portland. We meet monthly to share knowledge and learn from each other.'
+    },
+    {
+        id: 'bellingham-codes',
+        tier: 'community',
+        logo: 'bellingham-codes.png',
+        logoSquare: 'bellingham-codes.png',
+        name: 'Bellingham Codes',
+        url: 'https://www.meetup.com/bellingham-codes/',
+        description: 'Bellingham Codes is a community of developers in Bellingham. We meet monthly to share knowledge and learn from each other.'
+    },
+    {
+        id: 'codeandcoffee',
+        tier: 'community',
+        logo: 'codeandcoffee.png',
+        logoSquare: 'codeandcoffee.png',
+        name: 'Code & Coffee',
+        url: 'https://www.codeandcoffee.com/',
+        description: 'Code & Coffee is a community of developers who meet weekly to share knowledge and learn from each other.'
+    },
+    {
+        id: 'oss4ai',
+        tier: 'community',
+        logo: 'oss4ai.png',
+        logoSquare: 'oss4ai.png',
+        name: 'OSS4AI',
+        url: 'https://lu.ma/oss4ai',
+        description: 'OSS4AI is a community of developers who are interested in open source AI. We meet monthly to share knowledge and learn from each other.'
     }
 ]
 

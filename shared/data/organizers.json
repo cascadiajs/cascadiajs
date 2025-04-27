@@ -114,12 +114,19 @@
       "location": "Portland, OR",
       "role": "Emcee"
     },
-  {
+    {
       "id": "",
       "name": "Bibiana Souza",
       "image": "bibiana-marocco-de-souza.jpg",
       "location": "Vancouver, BC",
       "role": "Vancouver Lead"
+    },
+    {
+      "id": "",
+      "name": "Yujian Tang",
+      "image": "yujian-tang.jpg",
+      "location": "Seattle, WA",
+      "role": "AI Lead"
     }
   ]
 }
