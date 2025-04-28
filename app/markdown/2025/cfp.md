@@ -12,7 +12,7 @@ excerpt: Every developer has a story, what's yours?
 
 <i class="fas fa-clock"></i> Conference talks come in two flavors: 25-minute or lightning ⚡️ (< 10 minutes)
 
-<i class="fas fa-calendar-alt"></i> CFP closes on <span class="highlight warning">April 27</span>.
+<i class="fas fa-calendar-alt"></i> CFP closes on ~~April 27~~ <span class="highlight warning">May 11</span>.
 
 <i class="fas fa-hand-heart"></i> We provide support and mentorship for new speakers.
 
@@ -97,9 +97,9 @@ If you are a new speaker, once your talk has been accepted we will commit to wor
 
 ## The selection process
 
-- April 27 - The CFP closes
-- May 4 - Review complete
-- May 5 - Final decisions made, emails sent out
+- May 11 - The CFP closes
+- May 19 - Review complete
+- May 20 - Final decisions made, emails sent out
 
 <div class="cta"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/shrmsz59oMh0VscDv">Submit Proposal</a></div>
 
