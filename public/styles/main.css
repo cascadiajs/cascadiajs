@@ -271,7 +271,18 @@ a.buy:hover {
     padding: 0;
 }
 
+.icon {
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    width: 14px;
+    height: 14px;
+}
 
+div.icon {
+    display: inline-block;
+}
 
 /* end CTA */
 

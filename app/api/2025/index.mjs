@@ -29,33 +29,81 @@ export async function get({ path, query }) {
     {
       speaker: {
         name: 'Shruti Kapoor',
-        image: 'shruti-kapoor.jpg',
-        company: 'Educator & Content Creator',
-        location: 'Seattle, WA'
+        image: 'shruti-kapoor-illo.svg',
+        company: '',
+        location: 'Seattle, WA, USA',
+        linkedin: 'https://www.linkedin.com/in/shrutikapoor08/',
+        x: 'https://x.com/shrutikapoor08'
+      }
+    },
+    {
+      speaker : {
+        name: 'Kent C. Dodds',
+        image: 'kent-dodds-illo.svg',
+        company: '',
+        location: 'Salt Lake City, UT, USA',
+        linkedin: 'https://www.linkedin.com/in/kentcdodds/',
+        x: 'https://x.com/kentcdodds'
       }
     },
     {
       speaker: {
-        name: 'Kevin Whinnery',
-        image: 'kevin-whinnery.jpg',
-        company: 'Open AI',
-        location: 'Minneapolis, MN'
+        name: 'Jack Herrington',
+        image: 'jack-herrington-illo.svg',
+        company: '',
+        location: 'Portland, OR, USA',
+        linkedin: 'https://www.linkedin.com/in/jherr/',
+        x: 'https://x.com/jherr'
       }
     },
     {
       speaker: {
         name: 'Brian Leroux',
-        image: 'brian-leroux.jpg',
-        company: 'Sanity',
-        location: 'Nanaimo, BC'
+        image: 'brian-leroux-illo.svg',
+        company: '',
+        location: 'Nanaimo, BC, Canada',
+        linkedin: 'https://www.linkedin.com/in/brianleroux/',
+        x: 'https://x.com/brianleroux'
       }
     },
     {
       speaker: {
         name: 'Rachel Lee Nabors',
-        image: 'rachel-lee-nabors.jpg',
-        company: 'TinyFish',
-        location: 'London, UK'
+        image: 'rachel-lee-nabors-illo.svg',
+        company: '',
+        location: 'London, United Kingdom',
+        linkedin: 'https://www.linkedin.com/in/rachelnabors/',
+        x: 'https://x.com/rachelnabors'
+      }
+    },
+    {
+      speaker: {
+        name: 'Michael Liendo',
+        image: 'michael-liendo-illo.svg',
+        company: '',
+        location: 'Davenport, IA, USA',
+        linkedin: 'https://www.linkedin.com/in/focusotter/',
+        x: 'https://x.com/focusotter'
+      }
+    },
+    {
+      speaker: {
+        name: 'Phil Nash',
+        image: 'phil-nash-illo.svg',
+        company: '',
+        location: 'Melbourne, Australia',
+        linkedin: 'https://www.linkedin.com/in/philnash/',
+        x: 'https://x.com/philnash'
+      }
+    },
+    {
+      speaker: {
+        name: 'Peter-Paul Koch',
+        image: 'ppk-illo.svg',
+        company: '',
+        location: 'Amsterdam, Netherlands',
+        linkedin: 'https://www.linkedin.com/in/peter-paul-koch-b0b9/',
+        x: 'https://x.com/ppk'
       }
     }
   ]

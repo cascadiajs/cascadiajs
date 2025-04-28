@@ -32,6 +32,8 @@ export default function Talks({ html, state }) {
                 name="${ t.speaker.name }" 
                 company="${ t.speaker.company }" 
                 location="${ t.speaker.location }"
+                linkedin="${ t.speaker.linkedin }"
+                x="${ t.speaker.x }"
             ></talks-item>`).join('')}
         </div>`
 }

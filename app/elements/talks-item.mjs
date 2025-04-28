@@ -1,6 +1,6 @@
 export default function TalkItem({ html, state }) {
   const { attrs } = state
-  const { slug, image, name, title, company, location } = attrs
+  const { slug, image, name, title, company, location, linkedin, x } = attrs
   return html`
         <style>
         .talk-item a {
@@ -10,6 +10,15 @@ export default function TalkItem({ html, state }) {
         .talk-item:hover person-info .person-name, .talk-item:hover person-info .person-misc {
             color: #0033ff;
         }
+
+        .talk-item person-info .icon {
+            background-color: #112378;
+        }
+
+        .talk-item:hover person-info .icon {
+            background-color: #0033ff;
+        }
+
 
         @media only screen and (min-width: 768px) {
             .person-photo {
@@ -58,9 +67,9 @@ export default function TalkItem({ html, state }) {
                 <person-photo 
                     image="${ image }" 
                     name="${ name }"
-                    overlay="Coming Soon">
+                    overlay="Talk Info Coming Soon">
                 </person-photo>
-                <person-info name="${ name }" company="${ company || "" }" location="${ location || "" }"></person-info>
+                <person-info name="${ name }" company="${ company || "" }" location="${ location || "" }" linkedin="${ linkedin || "" }" x="${ x || "" }"></person-info>
             </div>
         `}
         </div>   
