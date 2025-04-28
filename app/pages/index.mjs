@@ -46,7 +46,7 @@ export default function ({ html /*state*/ }) {
     <section id="hero" class="landing">
       <article>
         <div class="pre-header">Connecting devs since 2012</div>
-        <h2>We're a community for JavaScript developers in the Pacific Northwest.</h2>
+        <h2>We're a community for web + AI developers in the Pacific Northwest.</h2>
         <br/>
         <p>
           We create events that will help you level up, grow your network, find a job and have fun! In 2025 we'll be back in Seattle for 4 days of talks, workshops and karaoke.
