@@ -8,7 +8,7 @@ excerpt: Marketing copy and visual assets for CascadiaJS
     <ul>
         <li><a href="#copy">Marketing Copy</a></li>
         <li><a href="#social">Social Media</a></li>
-        <li><a href="#logo">Logo</a></li>
+        <li><a href="#logos">Logo</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </div>
@@ -32,27 +32,30 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 [https://x.com/CascadiaJS/status/1917045416857899165](https://x.com/CascadiaJS/status/1917045416857899165)
 
+### Hashtag
+#CascadiaJS
+
 ### Social Sharing Image
 
 <img src="/_public/images/media-kit/social-sharing-general.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
 <div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png">DOWNLOAD</a></div>
 
-<h2 id="logo">Logo</h2>
+<h2 id="logos">Logo</h2>
 
 <p>
-![CascadiaJS logo green](/_public/images/media-kit/mediakit-logo-green.png)<br/>
+<img src="/_public/images/media-kit/mediakit-logo-green.png" alt="CascadiaJS logo, green" style="max-width: 300px;"><br/>
 CascadiaJS green logo<br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-green.zip">DOWNLOAD</a></div>
 </p>
 
 <p>
-![CascadiaJS logo dark blue](/_public/images/media-kit/mediakit-logo-darkblue.png)<br/>
+<img src="/_public/images/media-kit/mediakit-logo-darkblue.png" alt="CascadiaJS logo, dark blue" style="max-width: 300px;"><br/>
 CascadiaJS green logo<br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-darkblue.zip">DOWNLOAD</a></div>
 </p>
 
 <p>
-![CascadiaJS logo white](/_public/images/media-kit/mediakit-logo-white.png)<br/>
+<img src="/_public/images/media-kit/mediakit-logo-white.png" alt="CascadiaJS logo, white" style="max-width: 300px;"><br/>
 CascadiaJS green logo<br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-white.zip">DOWNLOAD</a></div>
 </p>
