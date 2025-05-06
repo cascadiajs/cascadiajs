@@ -43,7 +43,7 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 <h2 id="logos">Logo</h2>
 
 <p>
-<img src="/_public/images/media-kit/mediakit-logos.png" alt="CascadiaJS logos"><br/>
+<img src="/_public/images/media-kit/mediakit-logos.png" alt="CascadiaJS logos" style="border: 1px solid #112378"><br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logos.zip">DOWNLOAD Zip</a></div>
 </p>
 
