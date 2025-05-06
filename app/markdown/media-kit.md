@@ -38,24 +38,15 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 ### Social Sharing Image
 
 <img src="/_public/images/media-kit/social-sharing-general.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
-<div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png">DOWNLOAD</a></div>
+<div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png">DOWNLOAD PNG</a></div>
 
 <h2 id="logos">Logo</h2>
 
 <p>
-<img src="/_public/images/media-kit/mediakit-logo-green.png" alt="Green CascadiaJS logo for dark backgrounds." style="max-width: 300px;"><br/>
-<div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-green.zip">DOWNLOAD</a></div>
+<img src="/_public/images/media-kit/mediakit-logos.png" alt="CascadiaJS logos"><br/>
+<div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logos.zip">DOWNLOAD Zip</a></div>
 </p>
 
-<p>
-<img src="/_public/images/media-kit/mediakit-logo-darkblue.png" alt="Dark blue CascadiaJS logo for light backgrounds." style="max-width: 300px;border: 1px solid #112378"><br/>
-<div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-darkblue.zip">DOWNLOAD</a></div>
-</p>
-
-<p>
-<img src="/_public/images/media-kit/mediakit-logo-white.png" alt="White CascadiaJS logo for black backgrounds." style="max-width: 300px;"><br/>
-<div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-white.zip">DOWNLOAD</a></div>
-</p>
 
 <h2 id="contact">Contact</h2>
 <p>Carter Rabasa, Organizer<br/>
