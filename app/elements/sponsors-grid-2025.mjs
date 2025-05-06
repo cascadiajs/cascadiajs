@@ -11,6 +11,15 @@ const sponsors = [
         description: 'GenSX is a simple typescript framework for building agents and workflows with reusable React-like components.\n\nGenSX takes a lot of inspiration from React, but the programming model is very different - it’s a Node.js framework designed for data flow.\n\nBut if you know how to write a react component, then building an agent will feel easy and familiar.'
     },
     {
+        id: 'cloudflare',
+        tier: 'gold',
+        logo: 'cloudflare.png',
+        logoSquare: 'cloudflare.png',
+        name: 'Cloudflare',
+        url: 'https://www.cloudflare.com/',
+        description: 'Cloudflare is a global network that helps to make everything you connect to the Internet secure, private, fast, and reliable. Cloudflare provides a wide range of services including DDoS protection, web application firewall, content delivery network, and more.'
+    },
+    {
         id: 'elastic',
         tier: 'gold',
         logo: 'elastic.svg',
