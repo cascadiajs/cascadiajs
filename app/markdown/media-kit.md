@@ -34,28 +34,28 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 ### Social Sharing Image
 
-![Social sharing image](/_public/images/media-kit/social-sharing-general.png)<br/>
+<img src="/_public/images/media-kit/social-sharing-general.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
 <div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png">DOWNLOAD</a></div>
 
 <h2 id="logo">Logo</h2>
 
-<div style="float:left">
-![CascadiaJS logo - green](/_public/images/2025/media-kit/mediakit-logo-green.png)<br/>
+<p>
+![CascadiaJS logo green](/_public/images/media-kit/mediakit-logo-green.png)<br/>
 CascadiaJS green logo<br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-green.zip">DOWNLOAD</a></div>
-</div>
+</p>
 
-<div style="float:left">
-![CascadiaJS logo - dark blue](/_public/images/2025/media-kit/mediakit-logo-darkblue.png)<br/>
+<p>
+![CascadiaJS logo dark blue](/_public/images/media-kit/mediakit-logo-darkblue.png)<br/>
 CascadiaJS green logo<br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-darkblue.zip">DOWNLOAD</a></div>
-</div>
+</p>
 
-<div style="float:left">
-![CascadiaJS logo - white](/_public/images/2025/media-kit/mediakit-logo-white.png)<br/>
+<p>
+![CascadiaJS logo white](/_public/images/media-kit/mediakit-logo-white.png)<br/>
 CascadiaJS green logo<br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-white.zip">DOWNLOAD</a></div>
-</div>
+</p>
 
 <h2 id="contact">Contact</h2>
 <p>Carter Rabasa<br/>
