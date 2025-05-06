@@ -17,7 +17,7 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 <p>CascadiaJS is the premier web + AI conference in the Pacific Northwest. Every year the conference brings together hundreds of web developers to help them level up their skills, grow their network, have fun and make new friends.</p>
 
-<p>This year is their 12th event, which will be held at Town Hall, a vibrant gathering place in the heart of Seattle. The conference will run from September 17 - 20, 2025 and will include talks from industry experts, evening social events, outdoor activities, and so much more!</p>
+<p>This year marks their 12th event, which will be held at Town Hall, a vibrant gathering place in the heart of Seattle. The conference will run from September 17 - 20, 2025 and will include talks from industry experts, evening social events, outdoor activities, and so much more!</p>
 
 <h2 id="social">Social Media</h2>
 
@@ -43,28 +43,25 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 <h2 id="logos">Logo</h2>
 
 <p>
-<img src="/_public/images/media-kit/mediakit-logo-green.png" alt="CascadiaJS logo, green" style="max-width: 300px;"><br/>
-CascadiaJS green logo<br/>
+<img src="/_public/images/media-kit/mediakit-logo-green.png" alt="Green CascadiaJS logo for dark backgrounds." style="max-width: 300px;"><br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-green.zip">DOWNLOAD</a></div>
 </p>
 
 <p>
-<img src="/_public/images/media-kit/mediakit-logo-darkblue.png" alt="CascadiaJS logo, dark blue" style="max-width: 300px;"><br/>
-CascadiaJS green logo<br/>
+<img src="/_public/images/media-kit/mediakit-logo-darkblue.png" alt="Dark blue CascadiaJS logo for light backgrounds." style="max-width: 300px;border: 1px solid #112378"><br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-darkblue.zip">DOWNLOAD</a></div>
 </p>
 
 <p>
-<img src="/_public/images/media-kit/mediakit-logo-white.png" alt="CascadiaJS logo, white" style="max-width: 300px;"><br/>
-CascadiaJS green logo<br/>
+<img src="/_public/images/media-kit/mediakit-logo-white.png" alt="White CascadiaJS logo for black backgrounds." style="max-width: 300px;"><br/>
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logo-white.zip">DOWNLOAD</a></div>
 </p>
 
 <h2 id="contact">Contact</h2>
-<p>Carter Rabasa<br/>
+<p>Carter Rabasa, Organizer<br/>
 carter@cascadiajs.com</p>
 
-<p>Carrie Rabasa<br/>
+<p>Carrie Rabasa, Organizer<br/>
 carrie@cascadiajs.com</p>
 
 
