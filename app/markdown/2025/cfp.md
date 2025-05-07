@@ -114,7 +114,7 @@ Sometimes it helps to see what kind of talks we've selected in the past! Check o
 Below are a few topics that we think are interesting, but it’s more about you and the story you want to tell.
 
 - AI (LLMs, Chains, Agents, Vector DBs, NLP)
-- APIs and protocols (Web Assemnly)
+- APIs and protocols (Web Assembly)
 - Decentralized Web (AT Proto)
 - Going beyond touch & text (AR, VR, voice)
 - New additions to the Web Platform (CSS page transitions, etc)
