@@ -62,7 +62,7 @@ export default function MainFooter({ html }) {
           <h2>CascadiaJS - a Web + AI conf for the PNW</h2>
         </section>
         <section id="media-kit">
-          <h2>a href="/media-kit">Media Kit</a></h2>
+          <h2><a href="/media-kit">Media Kit</a></h2>
         </section>
         
         <section id="legal">
