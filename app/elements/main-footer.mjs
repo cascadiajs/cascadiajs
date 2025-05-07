@@ -61,11 +61,11 @@ export default function MainFooter({ html }) {
         <section id="when-where">
           <h2>CascadiaJS - a Web + AI conf for the PNW</h2>
         </section>
-        <section id="media-kit" class="push">
+        <section id="media-kit">
           <h2><a href="/media-kit">Media Kit</a></h2>
         </section>
         
-        <section id="legal">
+        <section id="legal" class="push">
           <h2>Legal</h2>
           <ul>
             <li><a href="/privacy">Privacy Policy</a></li>
@@ -73,7 +73,7 @@ export default function MainFooter({ html }) {
             <li><a href="/cookies">Cookie Policy</a></li>
           </ul>
         </section>
-        <section id="stay-connected" class="push">
+        <section id="stay-connected">
           <h2>Stay Connected</h2>
           <ul>
             <li>
