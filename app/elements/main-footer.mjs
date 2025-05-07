@@ -61,7 +61,7 @@ export default function MainFooter({ html }) {
         <section id="when-where">
           <h2>CascadiaJS - a Web + AI conf for the PNW</h2>
         </section>
-        <section id="media-kit">
+        <section id="media-kit" class="push">
           <h2><a href="/media-kit">Media Kit</a></h2>
         </section>
         
