@@ -29,6 +29,10 @@ export default function MainFooter({ html }) {
         color: #fff5cc;
       }
 
+      footer a:hover {
+        text-decoration: underline;
+      }
+
       footer a,
       footer a:visited {
         text-decoration: none;
@@ -43,7 +47,8 @@ export default function MainFooter({ html }) {
         #when-where,
         #stay-connected,
         #past-events,
-        #legal  {
+        #legal,
+        #media-kit {
           text-align: left;
         }
         #when-where {
@@ -56,6 +61,10 @@ export default function MainFooter({ html }) {
         <section id="when-where">
           <h2>CascadiaJS - a Web + AI conf for the PNW</h2>
         </section>
+        <section id="media-kit">
+          <h2>a href="/media-kit">Media Kit</a></h2>
+        </section>
+        
         <section id="legal">
           <h2>Legal</h2>
           <ul>
