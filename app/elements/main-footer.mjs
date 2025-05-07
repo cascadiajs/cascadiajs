@@ -41,7 +41,7 @@ export default function MainFooter({ html }) {
         footer div {
           display: flex;
         }
-        #stay-connected, #legal {
+        #stay-connected, #legal, #media-kit {
           margin-right: 40px;
         }
         #when-where,
