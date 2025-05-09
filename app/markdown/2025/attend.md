@@ -22,7 +22,9 @@ Before you leave your home to travel to Seattle, make sure you've got everything
 - A government-issued photo ID if you plan on drinking alchohol
 - A water bottle
 - Snacks, if you need to nosh regularly throughout the day
-- Clothes appropriate for sunny and 70's during the day, dipping to the low 50's at night
+- Clothes appropriate for sunny and high 70's during the day, dipping to the low 60's at night
+
+Check-out our [map](/2025/map) to familiarize yourself with where our venue and recommended hotels are.
 
 <h2 id="venue">Venue</h2>
 

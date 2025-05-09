@@ -107,6 +107,15 @@ const sponsors = [
         name: 'OSS4AI',
         url: 'https://lu.ma/oss4ai',
         description: 'OSS4AI is a community of developers who are interested in open source AI. We meet monthly to share knowledge and learn from each other.'
+    },
+    {
+        id: 'viata',
+        tier: 'community',
+        logo: 'viata.svg',
+        logoSquare: 'viata.png',
+        name: 'Viata',
+        url: 'https://viata.ai',
+        description: 'Viata lets event organizers build beautiful, customized travel maps for their attendees.'
     }
 ]
 
