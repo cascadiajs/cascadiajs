@@ -92,6 +92,11 @@ export default function MainFooter({ html }) {
               >
             </li>
             <li>
+              <a target="_blank" href="mailto:info@cascadiajs.com"
+                >Send us an email</a
+              >
+            </li>
+            <li>
               <a
                 target="_blank"
                 href="https://github.com/cascadiajs/cascadiajs/"
