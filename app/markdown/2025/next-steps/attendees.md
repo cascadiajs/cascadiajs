@@ -2,18 +2,19 @@
 title: Attendee Next Steps
 excerpt: Information for attendees of CascadiaJS 2025
 ---
-<!--
+
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
-        <li><a href="#complete-registration">Complete Registration</a></li>
         <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
-        <li><a href="#get-ready-for-the-conference">Get Ready for the Conference</a></li>
-        <li><a href="#spread-the-word">Spread the Word</a></li>
-        <li><a href="#connect-with-our-community">Connect with our Community</a></li>
+        <li><a href="#cascadia-connect">Make a New Friend</a></li>
+        <li><a href="#travel">Book Travel & Lodging</a></li>
+        <li><a href="#childcare">Reserve Childcare</a></li>
+        <li><a href="#connect-with-our-community">Connect with Our Community</a></li>
     </ul>
 </div>
 
+<!--
 <h2 id="complete-registration">Complete Registration</h2>
 
 Use the button below to complete the registration process. You'll need the ticket reference that is attached to the email that you get from Tito when you registered. It is a 4 letter code followed by a number, like <code>ABCD-3</code>.
@@ -53,13 +54,19 @@ Prior to the conference, we are teaming up with Eve Porcello (Moon Highway) to p
 
 <div class="cta secondary"><a href="/2025/trainings">Training Workshops Guide</a></div>
 
-<h2 id="pre-conf-trainings">Book your Travel & Lodging</h2>
+<h2 id="cascadia-connect">Make a New Friend!</h2>
+
+Meeting new people at a conference can be tough. We want to make it easier. We launched Cascadia Connect to help connect you with another attendee during the conference — maybe at the Welcome Reception (Sept 17), over coffee, or just to swap notes between talks. Think of it as a low-pressure way to meet one cool new person. You don’t have to be a first-time attendee to join in — everyone’s welcome!
+
+<div class="cta secondary"><a href="https://airtable.com/app4aehCXEydAuxKX/pag7dXPfJZEMPcHid/form">Sign Up</a></div>
+
+<h2 id="travel">Book Travel & Lodging</h2>
 
 Traveling to Seattle and need to a place to stay while you're in town? Look no further than our Travel Guide for the scoop on hotel discounts and the best way to get to Seattle (hint: it's the Hacker Train).
 
 <div class="cta secondary"><a href="/2025/travel">Travel Guide</a></div>
 
-<h2 id="pre-conf-trainings">Reserve Childcare</h2>
+<h2 id="childcare">Reserve Childcare</h2>
 
 Thanks to our wonderful sponsor Mastra, we are offering FREE, professional, on-site child care for kids 10 and under. Spots are limited.
 
