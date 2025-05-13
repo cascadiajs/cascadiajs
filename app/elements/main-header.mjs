@@ -80,7 +80,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert">Early Bird <a href="/2025/tickets">tickets</a> extended until May 11th - $200 OFF!</section>
+      <!--section class="alert">Early Bird <a href="/2025/tickets">tickets</a> extended until May 11th - $200 OFF!</section-->
       ${path && (path.startsWith("/2024") || path.startsWith("/2025"))
     ? html`<nav class="back">
               <div class="wide">
