@@ -127,6 +127,34 @@
       "image": "yujian-tang.jpg",
       "location": "Seattle, WA",
       "role": "AI Lead"
+    },
+    {
+      "id": "",
+      "name": "Kate Pond",
+      "image": "kate-pond.jpg",
+      "location": "Seattle, WA",
+      "role": "Hallway Track"
+    },
+    {
+      "id": "",
+      "name": "Sarah Guthals",
+      "image": "sarah-guthals.jpg",
+      "location": "Seattle, WA",
+      "role": "Talk Review"
+    },
+    {
+      "id": "",
+      "name": "Andre Wiggins",
+      "image": "andre-wiggins.jpg",
+      "location": "Seattle, WA",
+      "role": "Talk Review"
+    },
+    {
+      "id": "",
+      "name": "Jim Liu",
+      "image": "jim-liu.jpg",
+      "location": "Seattle, WA",
+      "role": "Talk Review"
     }
   ]
 }

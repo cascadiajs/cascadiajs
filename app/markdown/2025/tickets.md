@@ -9,12 +9,12 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
 
 <table class="styled-table">
     <thead>
-    <tr><th>Release</th><th>Dates</th><th>Discount</th></tr>
+    <tr><th>Release</th><th>Dates</th><th>Price</th></tr>
     </thead>
     <tbody>
-    <tr><td>Blind Bird</td><td>Jan 1 - Feb 21</td><td>$499</td></tr>
-    <tr><td>Early Bird</td><td>Feb 22 - May 11</td><td>$599</td></tr>
-    <tr><td>Regular Bird</td><td>May 12 - Aug 17</td><td>$699</td></tr>
+    <tr class="passed"><td>Blind Bird</td><td>Jan 1 - Feb 21</td><td>$499</td></tr>
+    <tr class="passed"><td>Early Bird</td><td>Feb 22 - May 11</td><td>$599</td></tr>
+    <tr class="active-row"><td>Regular Bird</td><td>May 12 - Aug 17</td><td>$699</td></tr>
     <tr><td>Full Price</td><td>Aug 18 - Sept 18</td><td>$799</td></tr>
     </tbody>
 </table>
@@ -49,5 +49,16 @@ We know it's not always easy to get your manager or company to send you to a tec
 <div>
     <tito-widget event="event-loop/cascadiajs-2025"></tito-widget>
 </div>
+
+<iframe
+  src="https://lu.ma/embed/event/evt-YA27EpJuKXHwUdH/simple"
+  width="100%"
+  height="800"
+  frameborder="0"
+  style="border: 1px solid #bfcbda88; border-radius: 4px;"
+  allowfullscreen=""
+  aria-hidden="false"
+  tabindex="0"
+></iframe>
 
 <script async src="https://js.tito.io/v2" async>

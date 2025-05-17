@@ -47,6 +47,15 @@ const sponsors = [
         description: 'SignalFire is a venture capital firm that invests in early stage technology companies. SignalFire is a remote-first company that uses AI to help its portfolio companies grow.'
     },
     {
+        id: 'atono',
+        tier: 'silver',
+        logo: 'atono.svg',
+        logoSquare: 'atono.png',
+        name: 'Atono',
+        url: 'https://atono.io/',
+        description: 'Atono is an all-in-one platform designed to help autonomous, cross-functional teams build better software together.\n\nPlan, build, run, and improve your product with timelines, user stories, feature flags, usage tracking, and in-browser bug reporting – bringing your team together in one place.'
+    },
+    {
         id: 'mastra',
         tier: 'bronze',
         logo: 'mastra.svg',
@@ -116,7 +125,24 @@ const sponsors = [
         name: 'Viata',
         url: 'https://viata.ai',
         description: 'Viata lets event organizers build beautiful, customized travel maps for their attendees.'
-    }
+    },
+    {
+        id: 'codeday',
+        tier: 'community',
+        logo: 'codeday.svg',
+        logoSquare: 'codeday.png',
+        name: 'CodeDay',
+        url: 'https://codeday.org',
+        description: 'CodeDay is a global movement of students who are passionate about technology and coding. We host events and workshops to help students learn and grow their skills.'
+    },
+    {
+        id: 'newtechnw',
+        tier: 'community',
+        logo: 'ntnw.png',
+        logoSquare: 'ntnw.png',
+        name: 'NewTech Northwest',
+        url: 'https://newtechnw.com',
+        description: 'NewTech Northwest is a community of tech enthusiasts in the Pacific Northwest. We meet monthly to share knowledge and learn from each other.'    }
 ]
 
 export default function Sponsors({ html }) {
