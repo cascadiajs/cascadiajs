@@ -46,25 +46,25 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 ### Social Sharing Images
 
-<img src="/_public/images/media-kit/social-sharing-general.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
+<img src="/_public/images/media-kit/social-sharing-general.png" alt="Social sharing image" style="border: 1px solid #112378">
 <div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png" download>DOWNLOAD PNG</a></div><br/>
 
-<img src="/_public/images/media-kit/social-general.png" alt="Social sharing image"><br/>
+<img src="/_public/images/media-kit/social-general.png" alt="Social sharing image">
 <div class="cta secondary"><a href="/_public/images/media-kit/social-general.png" download>DOWNLOAD PNG</a></div><br/>
 
-<img src="/_public/images/media-kit/social-connect.png" alt="Social sharing image"><br/>
+<img src="/_public/images/media-kit/social-connect.png" alt="Social sharing image">
 <div class="cta secondary"><a href="/_public/images/media-kit/social-connect.png" download>DOWNLOAD PNG</a></div><br/>
 
-<img src="/_public/images/media-kit/social-karaoke.png" alt="Social sharing image"><br/>
+<img src="/_public/images/media-kit/social-karaoke.png" alt="Social sharing image">
 <div class="cta secondary"><a href="/_public/images/media-kit/social-karaoke.png" download>DOWNLOAD PNG</a></div><br/>
 
-<img src="/_public/images/media-kit/social-familyphoto.png" alt="Social sharing image"><br/>
+<img src="/_public/images/media-kit/social-familyphoto.png" alt="Social sharing image">
 <div class="cta secondary"><a href="/_public/images/media-kit/social-familyphoto.png" download>DOWNLOAD PNG</a></div>
 
 <h2 id="logos">Logo</h2>
 
 <p>
-<img src="/_public/images/media-kit/mediakit-logos.png" alt="CascadiaJS logos" style="border: 1px solid #112378"><br/>
+<img src="/_public/images/media-kit/mediakit-logos.png" alt="CascadiaJS logos" style="border: 1px solid #112378">
 <div class="cta secondary"><a href="/_public/files/media-kit/cascadiajs-logos.zip">DOWNLOAD Zip</a></div>
 </p>
 
