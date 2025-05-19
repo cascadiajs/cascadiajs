@@ -15,9 +15,18 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 <h2 id="copy">Marketing Copy</h2>
 
-<p>CascadiaJS is the premier web + AI conference in the Pacific Northwest. Every year the conference brings together hundreds of web developers to help them level up their skills, grow their network, have fun and make new friends.</p>
+<p>CascadiaJS is an annual reunion of web developers in the Pacific Northwest and beyond, where friends new and old meet to celebrate our unique community, share knowledge and explore ideas on the cutting edge of the web, JavaScript and AI. </p>
 
-<p>This year marks their 12th event, which will be held at Town Hall, a vibrant gathering place in the heart of Seattle. The conference will run from September 17 - 20, 2025 and will include talks from industry experts, evening social events, outdoor activities, and so much more!</p>
+<p>We are a conference for devs by devs. You’ll hear technical talks from top engineers, get connected to industry-leading companies and discuss what you’ve learned during our hallway track with 500+ other attendees.</p>
+
+<p>This is an event designed to help you level up your skills, build your network and have fun for a few days in the beautiful PNW. </p>
+
+<p>This year's CascadiaJS will be in Seattle on Sept 18-19 and will feature:</p>
+
+* 30+ amazing speakers 
+* Leading web + AI companies
+* Excellent networking and social events
+* Meals, unlimited coffee, and the best conference swag around
 
 <h2 id="social">Social Media</h2>
 
@@ -30,15 +39,27 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 ### Top Tweet
 
-[https://x.com/CascadiaJS/status/1917045416857899165](https://x.com/CascadiaJS/status/1917045416857899165)
+[https://x.com/CascadiaJS/status/1924534646798483910](https://x.com/CascadiaJS/status/1924534646798483910)
 
 ### Hashtag
 #CascadiaJS
 
-### Social Sharing Image
+### Social Sharing Images
 
 <img src="/_public/images/media-kit/social-sharing-general.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
-<div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png">DOWNLOAD PNG</a></div>
+<div class="cta secondary"><a href="/_public/images/media-kit/social-sharing-general.png" download>DOWNLOAD PNG</a></div>
+
+<img src="/_public/images/media-kit/social-general.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
+<div class="cta secondary"><a href="/_public/images/media-kit/social-general.png" download>DOWNLOAD PNG</a></div>
+
+<img src="/_public/images/media-kit/social-connect.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
+<div class="cta secondary"><a href="/_public/images/media-kit/social-connect.png" download>DOWNLOAD PNG</a></div>
+
+<img src="/_public/images/media-kit/social-karaoke.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
+<div class="cta secondary"><a href="/_public/images/media-kit/social-karaoke.png" download>DOWNLOAD PNG</a></div>
+
+<img src="/_public/images/media-kit/social-familyphoto.png" alt="Social sharing image" style="border: 1px solid #112378"><br/>
+<div class="cta secondary"><a href="/_public/images/media-kit/social-familyphoto.png" download>DOWNLOAD PNG</a></div>
 
 <h2 id="logos">Logo</h2>
 
