@@ -36,9 +36,9 @@ You can qualify for a $200-off Indie Dev discount if you are between jobs, self-
 
 ## Group Sales and Registration
 
-We ask people to register for their ticket themselves (and not on behalf of someone else) because during the registration process we ask folks to agree to our Code of Conduct and we collect important personal information, such as hoodie sizes and dietary restrictions.
+For group/team purchases, please email us at info@cascadiajs.com. Discounts start at 10% off for groups of 5 or more. 
 
-For group/team purchases, please email us at info@cascadiajs.com. We can separate the payment process from the registration process. We can also provide group discounts for groups of 5 or more. Thank you!
+We'll separate the payment process from the registration process so that each person registers for their ticket themselves (and not on behalf of someone else). During the registration process we ask folks to agree to our Code of Conduct and we collect important personal information, such as hoodie sizes and dietary restrictions.
 
 ## Need Help Convicing Your Manager?
 
