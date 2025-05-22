@@ -88,16 +88,6 @@ export async function get({ path, query }) {
     },
     {
       speaker: {
-        name: 'Phil Nash',
-        image: 'phil-nash-illo.svg',
-        company: '',
-        location: 'Melbourne, Australia',
-        linkedin: 'https://www.linkedin.com/in/philnash/',
-        x: 'https://x.com/philnash'
-      }
-    },
-    {
-      speaker: {
         name: 'Peter-Paul Koch',
         image: 'ppk-illo.svg',
         company: '',
