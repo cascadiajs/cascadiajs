@@ -58,16 +58,6 @@ export async function get({ path, query }) {
     },
     {
       speaker: {
-        name: 'Brian Leroux',
-        image: 'brian-leroux-illo.svg',
-        company: '',
-        location: 'Nanaimo, BC, Canada',
-        linkedin: 'https://www.linkedin.com/in/brianleroux/',
-        x: 'https://x.com/brianleroux'
-      }
-    },
-    {
-      speaker: {
         name: 'Rachel Lee Nabors',
         image: 'rachel-lee-nabors-illo.svg',
         company: '',
