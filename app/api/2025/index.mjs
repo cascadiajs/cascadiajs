@@ -68,16 +68,6 @@ export async function get({ path, query }) {
     },
     {
       speaker: {
-        name: 'Michael Liendo',
-        image: 'michael-liendo-illo.svg',
-        company: '',
-        location: 'Davenport, IA, USA',
-        linkedin: 'https://www.linkedin.com/in/focusotter/',
-        x: 'https://x.com/focusotter'
-      }
-    },
-    {
-      speaker: {
         name: 'Peter-Paul Koch',
         image: 'ppk-illo.svg',
         company: '',

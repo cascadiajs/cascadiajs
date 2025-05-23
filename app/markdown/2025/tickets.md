@@ -34,9 +34,11 @@ You can qualify for a $200-off Indie Dev discount if you are between jobs, self-
 </tbody>
 </table-->
 
-## Group Sales and Registration
+## Bring a Friend, Save $50
 
-Come with your friends and get $50 off per ticket! When you select to buy 2-4 Regular Bird or Regular Bird Indie tickets below, you'll see the discount applied to the ticket price. During checkout, enter your friend's first name, last name and email address, and select "I don't have this info right now" for the additional information. They'll receive an email with a link to their ticket page so they can provide this information and agree to our Code of Conduct. 
+Come with your friends and get $50 off per ticket! When you select to buy 2-4 Regular Bird or Regular Bird Indie tickets below, you'll see the discount applied to the ticket price. During checkout, enter your friend's first name, last name and email address, and select "I don't have this info right now" for the additional information. They'll receive an email with a link to their ticket page so they can provide this information and agree to our Code of Conduct.
+
+## Group Sales and Registration
 
 For group/team purchases of 5 people or more, please email us at info@cascadiajs.com. Discounts start at 10% off. 
 

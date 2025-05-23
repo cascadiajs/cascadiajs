@@ -8,7 +8,9 @@ export default function ({ html, state }) {
   else {
     return html`
       <style>
-
+        #landing article h2 {
+          margin-bottom: 16px;
+        }
 
         #hero {
           text-align: left;
@@ -43,6 +45,20 @@ export default function ({ html, state }) {
             height: 100px;
         }
 
+        #pitch {
+          background: #ccf1db;
+          text-align: center;
+          padding: 64px 64px;
+        }
+
+        #pitch p, #coming-soon {
+          color: #112378;
+          font-size: 24px;
+          line-height: 1.5em;
+          font-family: freight-macro-pro;
+          font-weight: 400;
+        }
+
         @media only screen and (min-width: 768px) {
           #hero {
             display: flex;
@@ -68,6 +84,10 @@ export default function ({ html, state }) {
           .feature img{
             max-width: 250px;
           }
+
+          #pitch {
+            padding: 64px 160px;
+          }
         }
       </style>
       <main-layout>
@@ -75,30 +95,42 @@ export default function ({ html, state }) {
           <section id="hero" class="landing">
             <article>
               <h2>A Web + AI conference for the Pacific Northwest</h2>
-              <br/>
+               <p>
+                CascadiaJS is a community-driven conference for developers in the PNW and beyond. You will hear from 40+ speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
+              </p>
               <div class="label-name">Date</div>
               <div class="label-value">Sept 17-20, 2025</div>
               <br/>
-              <div class="label-name">Venue</div>
-              <div class="label-value">Town Hall<br/>Seattle, WA, USA</div>
-              <br/>
-              <p>
-                CascadiaJS 2025 is coming BACK to Seattle, WA and will run from Sept
-                17 - 20. We'll host a Welcome Reception on Sept 17, have 2 days of
-                talks on Sept 18 and 19 and get out and about the
-                Seattle area for a day of activities on Sept 20!
-              </p>
-              <div class="cta primary"><a href="/2025/tickets">Tickets On Sale!</a></div>
+              <div style="display: flex; align-items: center;">
+                <div style="margin-right: 32px;">
+                  <div class="label-name">Main Event</div>
+                  <div class="label-value">Town Hall<br/>Seattle, WA 🇺🇸</div>
+                  <div class="cta primary"><a href="/2025/tickets">Tickets On Sale!</a></div>
+                </div>
+                <div style="">
+                  <div class="label-name">YVR Edition</div>
+                  <div class="label-value">BCIT<br/>Vancouver, BC 🇨🇦</div>
+                  <div class="cta secondary"><a href="/2025/yvr">Learn More</a></div>
+                </div>
+              </div>
             </article>
             <article>
               <img src="/_public/images/2025/hero-camper.png" alt="Sasquatch driving a camper van"/>
             </article>
           </section>
+          <section id="pitch">
+          <p><strong>CascadiaJS</strong> is an annual reunion of <strong>web developers</strong> in the <strong>Pacific Northwest</strong> and beyond, where <strong>friends</strong> new and old meet to celebrate our unique community, share knowledge and explore ideas on the cutting edge of the <strong>web, JavaScript and AI</strong>.</p>
+          <p>We are a conference <strong>for devs by devs</strong>. You'll hear technical talks from <strong>top engineers</strong>, get connected to <strong>industry-leading companies</strong> and discuss what you've learned during our hallway track with <strong>500+ other</strong> attendees.</p>
+          <p>This is an event designed to help you <strong>level up</strong> your skills, <strong>build your network</strong> and <strong>have fun</strong> for a few days in the <strong>beautiful PNW</strong>.</p>
+          </section>
           <section id="speakers" class="landing">
             <h1>Speakers</h1>
             <talks-grid></talks-grid>
-            <div class="cta"><a href="/2025/cfp">Apply to Speak</a></div>
+            <div id="coming-soon">
+              More speakers <strong>coming soon</strong>!
+            </div>
           </section>
+
           <section id="features" class="landing">
             <h1>Features</h1>
             <div id="features-container">
