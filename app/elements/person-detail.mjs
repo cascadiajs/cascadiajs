@@ -3,17 +3,19 @@ export default function PersonDetail({ html, state }) {
   const { name, image, pronouns, location, company, twitter, url, large, x, linkedin } = attrs
   return html`
         <style>
-        :host {
-            display: flex
-        }
-    
-        .more {
-            margin-left: 16px;
-            flex: 1
-        }
-
         .more h3 {
             margin: 0 0 4px 0;
+        }
+
+        @media only screen and (min-width: 768px) {
+            :host {
+                display: flex
+            }      
+            
+            .more {
+                margin-left: 16px;
+                flex: 1
+            }
         }
         </style>
         <person-photo image="/_public/images/speakers/${ image }" name="${ name }" large="${ large }"></person-photo>
