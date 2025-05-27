@@ -74,6 +74,15 @@ export default function ({ html, state }) {
             margin-right: 16px;
           }
 
+          #venues {
+            display: flex; 
+            align-items: center;
+          }
+
+          #venues #main-event {
+            margin-right: 32px;
+          }
+
           #features-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);;
@@ -101,8 +110,8 @@ export default function ({ html, state }) {
               <div class="label-name">Date</div>
               <div class="label-value">Sept 17-20, 2025</div>
               <br/>
-              <div style="display: flex; align-items: center;">
-                <div style="margin-right: 32px;">
+              <div id="venues">
+                <div id="main-event">
                   <div class="label-name">Main Event</div>
                   <div class="label-value">Town Hall<br/>Seattle, WA 🇺🇸</div>
                   <div class="cta primary"><a href="/2025/tickets">Tickets On Sale!</a></div>

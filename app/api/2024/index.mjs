@@ -30,7 +30,8 @@ export async function get({ path, query }) {
       talks,
       sharing,
       attendees,
-      organizers: organizers["2024"]
+      organizers: organizers["2024"],
+      year: 2024,
     },
   };
 }

@@ -20,9 +20,9 @@ export default function Talks({ html, state }) {
         ${ talks.filter((t) => t.slug).sort(() => Math.random() - 0.5).map(t => /*html*/`
             <talks-item
                 slug="${ t.slug }" 
-                image="/_public/images/speakers/${ t.speaker.image }" 
-                name="${ t.speaker.name }" 
                 title="${ t.title }" 
+                image="/_public/images/speakers/${ t.speaker.image }" 
+                name="${ t.speaker.name }"
                 company="${ t.speaker.company }" 
                 location="${ t.speaker.location }"
             ></talks-item>`).join('')}
@@ -32,8 +32,6 @@ export default function Talks({ html, state }) {
                 name="${ t.speaker.name }" 
                 company="${ t.speaker.company }" 
                 location="${ t.speaker.location }"
-                linkedin="${ t.speaker.linkedin }"
-                x="${ t.speaker.x }"
             ></talks-item>`).join('')}
         </div>`
 }

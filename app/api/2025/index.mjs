@@ -3,6 +3,7 @@
 //import { findUsers } from "../../../shared/data/users.mjs"
 //import attendees from "../../../shared/data/users.json" assert { type: "json" };
 import organizers from "../../../shared/data/organizers.json" assert { type: "json" }
+import talks from "../../../shared/data/2025/talks.json" assert { type: "json" }
 
 export async function get({ path, query }) {
   // find the id for CascadiaJS 2024
@@ -25,66 +26,14 @@ export async function get({ path, query }) {
     sharingDescription: 'CascadiaJS 2025 is coming up Sept 18 - 19 in Seattle, WA!'
   }
 
-  const talks = [
-    {
-      speaker: {
-        name: 'Shruti Kapoor',
-        image: 'shruti-kapoor-illo.svg',
-        company: '',
-        location: 'Seattle, WA, USA',
-        linkedin: 'https://www.linkedin.com/in/shrutikapoor08/',
-        x: 'https://x.com/shrutikapoor08'
-      }
-    },
-    {
-      speaker : {
-        name: 'Kent C. Dodds',
-        image: 'kent-dodds-illo.svg',
-        company: '',
-        location: 'Salt Lake City, UT, USA',
-        linkedin: 'https://www.linkedin.com/in/kentcdodds/',
-        x: 'https://x.com/kentcdodds'
-      }
-    },
-    {
-      speaker: {
-        name: 'Jack Herrington',
-        image: 'jack-herrington-illo.svg',
-        company: '',
-        location: 'Portland, OR, USA',
-        linkedin: 'https://www.linkedin.com/in/jherr/',
-        x: 'https://x.com/jherr'
-      }
-    },
-    {
-      speaker: {
-        name: 'Rachel Lee Nabors',
-        image: 'rachel-lee-nabors-illo.svg',
-        company: '',
-        location: 'London, United Kingdom',
-        linkedin: 'https://www.linkedin.com/in/rachelnabors/',
-        x: 'https://x.com/rachelnabors'
-      }
-    },
-    {
-      speaker: {
-        name: 'Peter-Paul Koch',
-        image: 'ppk-illo.svg',
-        company: '',
-        location: 'Amsterdam, Netherlands',
-        linkedin: 'https://www.linkedin.com/in/peter-paul-koch-b0b9/',
-        x: 'https://x.com/ppk'
-      }
-    }
-  ]
-
   return {
     json: {
       path,
       talks,
       sharing,
       //attendees,
-      organizers: organizers["2025"]
+      organizers: organizers["2025"],
+      year: 2025,
     },
   };
 }

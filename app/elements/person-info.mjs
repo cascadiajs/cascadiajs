@@ -22,11 +22,6 @@ export default function TalkItem({ html, state }) {
         }            
         </style>
         <div class="person-name">${ name }</div>
-        ${ linkedin || x ? html`
-        <div>
-            ${ linkedin ? html`<a href="${ linkedin }" target="_new"><div class="icon" style="mask-image: url('/_public/images/icons/icon-linkedin.svg')"></div></a>` : `` }
-            ${ x ? html`<a href="${ x }" target="_new"><div class="icon" style="mask-image: url('/_public/images/icons/icon-twitter.svg')"></div></a>` : `` }
-        </div>`: ``}
         <div class="person-misc">
             ${ company ? company + '<br/>' : '' }
             ${ role ? role + '<br/>' : '' }

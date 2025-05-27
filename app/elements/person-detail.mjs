@@ -1,6 +1,6 @@
 export default function PersonDetail({ html, state }) {
   const { attrs } = state
-  const { name, image, pronouns, location, company, twitter, url, large } = attrs
+  const { name, image, pronouns, location, company, twitter, url, large, x, linkedin } = attrs
   return html`
         <style>
         :host {
@@ -25,7 +25,8 @@ export default function PersonDetail({ html, state }) {
             <p>${ company }</p>
             <h3>Links</h3>
             <div class="person-links">
-            ${ twitter ? `<p><i class="fab fa-twitter"></i> <a target="_blank" href="https://twitter.com/${ twitter }">@${ twitter }</a></p>` : '' }
+            ${ x || twitter ? `<p><i class="fab fa-twitter"></i> <a target="_blank" href="https://twitter.com/${ x || twitter }">@${ x || twitter }</a></p>` : '' }
+            ${ linkedin ? `<p><i class="fab fa-linkedin"></i> <a target="_blank" href="https://linkedin.com/in/${ linkedin }">${ name }</a></p>` : '' }
             ${ url ? `<p><i class="fa fa-globe"></i> <a target="_blank" href="${ url }">${ url.split("://")[1] }</a></p>` : '' }
             </div>
         </div>

@@ -1,6 +1,21 @@
+function talkItem(attrs) {
+    const { slug, image, name, title, company, location } = attrs
+    return `
+        <div class="speaker">
+            <person-photo
+                image="${ image }" 
+                name="${ name }" 
+                overlay="${ slug ? title : "Talk Info Coming Soon" }">
+            </person-photo>
+            <person-info name="${ name }" company="${ company || "" }" location="${ location || "" }"></person-info>
+        </div>
+    `
+}
+
 export default function TalkItem({ html, state }) {
-  const { attrs } = state
-  const { slug, image, name, title, company, location, linkedin, x } = attrs
+  const { attrs, store } = state
+  const { year } = store
+  const { slug } = attrs
   return html`
         <style>
         .talk-item a {
@@ -52,26 +67,7 @@ export default function TalkItem({ html, state }) {
         }
         </style>
         <div class="talk-item">
-        ${ slug ? `
-            <a href="/2024/talks/${ slug }">
-                <div class="speaker">
-                    <person-photo
-                        image="${ image }" 
-                        name="${ name }" 
-                        overlay="${ title }">
-                    </person-photo>
-                    <person-info name="${ name }" company="${ company }" location="${ location }"></person-info>
-                </div>
-            </a>` : `
-            <div class="speaker">
-                <person-photo 
-                    image="${ image }" 
-                    name="${ name }"
-                    overlay="Talk Info Coming Soon">
-                </person-photo>
-                <person-info name="${ name }" company="${ company || "" }" location="${ location || "" }" linkedin="${ linkedin || "" }" x="${ x || "" }"></person-info>
-            </div>
-        `}
+        ${ slug ? ` <a href="${ year }/talks/${ slug }">${ talkItem(attrs) }` : talkItem(attrs) }   
         </div>   
     `
 }
