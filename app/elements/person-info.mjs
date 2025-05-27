@@ -1,6 +1,6 @@
 export default function TalkItem({ html, state }) {
   const { attrs } = state
-  const { name, company, role, location, linkedin, x } = attrs
+  const { name, company, role, location } = attrs
   return html`
         <style>
         .person-name {

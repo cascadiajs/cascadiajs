@@ -1,6 +1,6 @@
 function talkItem(attrs) {
-    const { slug, image, name, title, company, location } = attrs
-    return `
+  const { slug, image, name, title, company, location } = attrs
+  return `
         <div class="speaker">
             <person-photo
                 image="${ image }" 
