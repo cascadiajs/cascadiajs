@@ -18,7 +18,7 @@ export default function PersonDetail({ html, state }) {
             }
         }
         </style>
-        <person-photo image="/_public/images/speakers/${ image }" name="${ name }" large="${ large }"></person-photo>
+        <person-photo image="${ image.startsWith("/") ? image : `/_public/images/speakers/${ image }`}" name="${ name }" large="${ large }"></person-photo>
         <div class="more">
             ${ pronouns ? `<h3>Pronouns</h3><p>${ pronouns }</p>` : '' }
             <h3>Location</h3>

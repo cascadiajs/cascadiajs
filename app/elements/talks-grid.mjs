@@ -21,14 +21,14 @@ export default function Talks({ html, state }) {
             <talks-item
                 slug="${ t.slug }" 
                 title="${ t.title }" 
-                image="/_public/images/speakers/${ t.speaker.image }" 
+                image="${ t.speaker.image.startsWith("/") ? t.speaker.image : `/_public/images/speakers/${ t.speaker.image }`}" 
                 name="${ t.speaker.name }"
                 company="${ t.speaker.company }" 
                 location="${ t.speaker.location }"
             ></talks-item>`).join('')}
         ${ talks.filter((t) => !t.slug).sort(() => Math.random() - 0.5).map(t => /*html*/`
             <talks-item
-                image="/_public/images/speakers/${ t.speaker.image }" 
+                image="${ t.speaker.image.startsWith("/") ? t.speaker.image : `/_public/images/speakers/${ t.speaker.image }`}" 
                 name="${ t.speaker.name }" 
                 company="${ t.speaker.company }" 
                 location="${ t.speaker.location }"

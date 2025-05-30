@@ -2,7 +2,7 @@
   {
     "speaker": {
       "name": "Shruti Kapoor",
-      "image": "shruti-kapoor-illo.svg",
+      "image": "/_public/images/2025/speakers/shruti-kapoor.png",
       "company": "",
       "location": "Seattle, WA, USA",
       "linkedin": "https://www.linkedin.com/in/shrutikapoor08/",
@@ -15,7 +15,7 @@
     "abstract": "For decades, users have interacted with our applications using links and forms, but that's not enough for users anymore. They want to use natural language. Let's talk about how that changes what we build.",
     "speaker": {
       "name": "Kent C. Dodds",
-      "image": "kent-dodds-illo.svg",
+      "image": "/_public/images/2025/speakers/kent-dodds.png",
       "company": "EpicAI.pro",
       "location": "Salt Lake City, UT, USA",
       "linkedin": "kentcdodds",
@@ -25,7 +25,7 @@
   {
     "speaker": {
       "name": "Jack Herrington",
-      "image": "jack-herrington-illo.svg",
+      "image": "/_public/images/2025/speakers/jack-herrington.png",
       "company": "",
       "location": "Portland, OR, USA",
       "linkedin": "https://www.linkedin.com/in/jherr/",
@@ -35,7 +35,7 @@
   {
     "speaker": {
       "name": "Rachel Lee Nabors",
-      "image": "rachel-lee-nabors-illo.svg",
+      "image": "/_public/images/2025/speakers/rachel-lee-nabors.png",
       "company": "",
       "location": "London, United Kingdom",
       "linkedin": "https://www.linkedin.com/in/rachelnabors/",
@@ -44,12 +44,12 @@
   },
   {
     "speaker": {
-      "name": "Peter-Paul Koch",
-      "image": "ppk-illo.svg",
+      "name": "Adam Argyle",
+      "image": "/_public/images/2025/speakers/adam-argyle.png",
       "company": "",
-      "location": "Amsterdam, Netherlands",
-      "linkedin": "https://www.linkedin.com/in/peter-paul-koch-b0b9/",
-      "x": "https://x.com/ppk"
+      "location": "Seattle, WA, USA",
+      "linkedin": "https://www.linkedin.com/in/adamargyle/",
+      "x": "https://x.com/argyleink"
     }
   }
 ]
