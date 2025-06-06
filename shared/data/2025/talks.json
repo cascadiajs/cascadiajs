@@ -6,7 +6,7 @@
     "speaker": {
       "name": "Shruti Kapoor",
       "image": "/_public/images/2025/speakers/shruti-kapoor.png",
-      "company": "",
+      "company": "Content Creator",
       "location": "Seattle, WA, USA",
       "linkedin": "https://www.linkedin.com/in/shrutikapoor08/",
       "x": "https://x.com/shrutikapoor08"
@@ -32,7 +32,7 @@
     "speaker": {
       "name": "Jack Herrington",
       "image": "/_public/images/2025/speakers/jack-herrington.png",
-      "company": "",
+      "company": "Blue Collar Coder",
       "location": "Portland, OR, USA",
       "linkedin": "https://www.linkedin.com/in/jherr/",
       "x": "https://x.com/jherr"
@@ -45,17 +45,20 @@
     "speaker": {
       "name": "Rachel Lee Nabors",
       "image": "/_public/images/2025/speakers/rachel-lee-nabors.png",
-      "company": "",
+      "company": "Dressed for Space",
       "location": "London, United Kingdom",
       "linkedin": "https://www.linkedin.com/in/rachelnabors/",
       "x": "https://x.com/rachelnabors"
     }
   },
   {
+    "title": "Oops, CSS got away from me... send halp!",
+    "slug": "oops-css-got-away-from-me-send-halp",
+    "abstract": "A fast paced, animated, and jam packed tik-talk on CSS features from the past ~5 years. CSS has moved so fast, don't feel bad you aren't all caught up, no one is. This talk will teach you as many things as possible while providing good examples of practical use cases. Syntax, typography, color, architecture, and more.",
     "speaker": {
       "name": "Adam Argyle",
       "image": "/_public/images/2025/speakers/adam-argyle.png",
-      "company": "",
+      "company": "Indie",
       "location": "Seattle, WA, USA",
       "linkedin": "https://www.linkedin.com/in/adamargyle/",
       "x": "https://x.com/argyleink"
