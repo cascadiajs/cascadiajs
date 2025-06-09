@@ -63,5 +63,20 @@
       "linkedin": "https://www.linkedin.com/in/adamargyle/",
       "x": "https://x.com/argyleink"
     }
+  },
+  {
+    "title": "Motion control with multimodal AI",
+    "slug": "motion-control-with-multimodal-ai",
+    "abstract": "What if you could use multimodal LLMs to interact with websites or IoT devices using motion control? As advancements in multimodal AI offer new opportunities to push the boundaries of what can be done with this technology, I started wondering how it could be leveraged from the perspective of human-computer interaction. In this talk, I will take you through my research experimenting with building motion-controlled prototypes using LLMs in JavaScript.",
+    "speaker": {
+      "name": "Charlie Gerard",
+      "image": "/_public/images/2025/speakers/charlie-gerard.png",
+      "company": "CrowdStrike",
+      "location": "Oakland, CA, USA",
+      "linkedin": "https://www.linkedin.com/in/charliegerard/",
+      "x": "https://x.com/devdevcharlie",
+      "bluesky": "https://bsky.app/profile/devdevcharlie.com",
+      "github": "https://github.com/charliegerard"
+    }
   }
 ]
