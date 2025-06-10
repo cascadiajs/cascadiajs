@@ -1,6 +1,9 @@
 export default function PersonDetail({ html, state }) {
   const { attrs } = state
   const { name, image, pronouns, location, company, twitter, url, large, x, linkedin } = attrs
+  // HACK!!!!
+  const links = (attrs.links ? JSON.parse(attrs.links) : [])
+  // END HACK
   return html`
         <style>
         .more h3 {
@@ -30,6 +33,7 @@ export default function PersonDetail({ html, state }) {
             ${ x || twitter ? `<p><i class="fab fa-twitter"></i> <a target="_blank" href="https://twitter.com/${ x || twitter }">@${ x || twitter }</a></p>` : '' }
             ${ linkedin ? `<p><i class="fab fa-linkedin"></i> <a target="_blank" href="https://linkedin.com/in/${ linkedin }">${ name }</a></p>` : '' }
             ${ url ? `<p><i class="fa fa-globe"></i> <a target="_blank" href="${ url }">${ url.split("://")[1] }</a></p>` : '' }
+            ${ links ? links.map(l => `<p><i class="fa-brands fa-${ l.type }"></i> <a target="_blank" href="${ l.url }">${ l.url }</a></p>`).join('') : '' }
             </div>
         </div>
       

@@ -7,6 +7,7 @@ export default function ({ html, state }) {
   let { store } = state
   let { talk, sharing } = store
   let { speaker, title, abstract, tags, short } = talk
+  //console.log(speaker.links)
   if (sharing.social !== undefined) {
     const { image, title } = sharing
     return html`<social-sharing image="${ image }" title="${ title }" description="${ short }"></social-sharing>`
@@ -47,6 +48,7 @@ export default function ({ html, state }) {
             pronouns="${ speaker.pronouns}" 
             location="${ speaker.location }" 
             company="${ speaker.company }" 
+            ${ speaker.links ? `links=${JSON.stringify(speaker.links)}` : '' }
             x="${ speaker.x }" 
             linkedin="${ speaker.linkedin }"
             url="${ speaker.url }">

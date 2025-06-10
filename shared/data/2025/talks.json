@@ -78,5 +78,22 @@
       "bluesky": "https://bsky.app/profile/devdevcharlie.com",
       "github": "https://github.com/charliegerard"
     }
+  },
+  {
+    "title": "Seeing Beyond the Framework Illusion",
+    "slug": "seeing-beyond-the-framework-illusion",
+    "abstract": "We defend our beloved frameworks passionately. But what are they actually doing for us? Watch as I build the same app with and without a framework, revealing their true role and curing your framework FOMO.",
+    "speaker": {
+      "name": "Sean C. Davis",
+      "image": "/_public/images/2025/speakers/sean-davis.png",
+      "company": "Netlify",
+      "location": "Cincinnati, Ohio, US",
+      "links": [
+        {
+          "type": "bluesky",
+          "url": "https://bsky.app/profile/seancdavis.com"
+        }
+      ]
+    }
   }
 ]
