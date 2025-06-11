@@ -18,7 +18,7 @@ We’re excited to be hosting folks at BCIT’s new Tech Collider room located a
 
 <i class="fa-regular fa-handshake"></i> Take advantage of breaks, meals, evening events and organized ice breakers to meet people, connect and grow your network!
 
-<i class="fa-solid fa-burger-soda"></i> Your full conference ticket includes a healthy lunch on both days,, yummy snacks, unlimited coffee and and the best conference swag around!
+<i class="fa-solid fa-burger-soda"></i> Your full conference ticket includes a healthy lunch on both days, yummy snacks, unlimited coffee and and the best conference swag around!
 
 <i class="fa-solid fa-hand-holding-heart"></i> From our Scholarship Program to hosting CascadiaJS in an accessible venue, our goal is to make this event available to as many people as possible and build an inclusive community for web developers.
 
