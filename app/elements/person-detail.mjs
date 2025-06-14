@@ -23,11 +23,11 @@ export default function PersonDetail({ html, state }) {
         </style>
         <person-photo image="${ image.startsWith("/") ? image : `/_public/images/speakers/${ image }`}" name="${ name }" large="${ large }"></person-photo>
         <div class="more">
-            ${ pronouns ? `<h3>Pronouns</h3><p>${ pronouns }</p>` : '' }
             <h3>Location</h3>
             <p>${ location }</p>
             <h3>Company</h3>
             <p>${ company }</p>
+            ${ pronouns ? `<h3>Pronouns</h3><p>${ pronouns }</p>` : '' }
             <h3>Links</h3>
             <div class="person-links">
             ${ x || twitter ? `<p><i class="fab fa-twitter"></i> <a target="_blank" href="https://twitter.com/${ x || twitter }">@${ x || twitter }</a></p>` : '' }

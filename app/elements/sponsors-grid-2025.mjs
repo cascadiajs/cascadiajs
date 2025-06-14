@@ -29,6 +29,15 @@ const sponsors = [
     description: 'Elastic is a search company that builds open source search engines and tools. Elastic is the company behind Elasticsearch, Kibana, Beats, and Logstash.'
   },
   {
+    id: 'arcjet',
+    tier: 'gold',
+    logo: 'arcjet.svg',
+    logoSquare: 'arcjet.svg',
+    name: 'ArcJet',
+    url: 'https://arcjet.com/',
+    description: 'Security doesn\'t have to be a pain. Bot detection. Rate limiting. Email validation. Attack protection. Data redaction. A developer-first approach to security.'
+  },
+  {
     id: 'ilf',
     tier: 'silver',
     logo: 'ilf.png',

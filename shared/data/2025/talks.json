@@ -8,8 +8,10 @@
       "image": "/_public/images/2025/speakers/shruti-kapoor.png",
       "company": "Content Creator",
       "location": "Seattle, WA, USA",
-      "linkedin": "https://www.linkedin.com/in/shrutikapoor08/",
-      "x": "https://x.com/shrutikapoor08"
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/shrutikapoor08/" },
+        { "type": "x", "url": "https://x.com/shrutikapoor08" }
+      ]
     }
   },
   {
@@ -21,8 +23,10 @@
       "image": "/_public/images/2025/speakers/kent-dodds.png",
       "company": "EpicAI.pro",
       "location": "Salt Lake City, UT, USA",
-      "linkedin": "kentcdodds",
-      "x": "kentcdodds"
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/kentcdodds" },
+        { "type": "x", "url": "https://x.com/kentcdodds" }
+      ]
     }
   },
   {
@@ -34,8 +38,10 @@
       "image": "/_public/images/2025/speakers/jack-herrington.png",
       "company": "Blue Collar Coder",
       "location": "Portland, OR, USA",
-      "linkedin": "https://www.linkedin.com/in/jherr/",
-      "x": "https://x.com/jherr"
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/jherr/" },
+        { "type": "x", "url": "https://x.com/jherr" }
+      ]
     }
   },
   {
@@ -47,8 +53,10 @@
       "image": "/_public/images/2025/speakers/rachel-lee-nabors.png",
       "company": "Dressed for Space",
       "location": "London, United Kingdom",
-      "linkedin": "https://www.linkedin.com/in/rachelnabors/",
-      "x": "https://x.com/rachelnabors"
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/rachelnabors/" },
+        { "type": "x", "url": "https://x.com/rachelnabors" }
+      ]
     }
   },
   {
@@ -60,8 +68,10 @@
       "image": "/_public/images/2025/speakers/adam-argyle.png",
       "company": "Indie",
       "location": "Seattle, WA, USA",
-      "linkedin": "https://www.linkedin.com/in/adamargyle/",
-      "x": "https://x.com/argyleink"
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/adamargyle/" },
+        { "type": "x", "url": "https://x.com/argyleink" }
+      ]
     }
   },
   {
@@ -73,10 +83,12 @@
       "image": "/_public/images/2025/speakers/charlie-gerard.png",
       "company": "CrowdStrike",
       "location": "Oakland, CA, USA",
-      "linkedin": "https://www.linkedin.com/in/charliegerard/",
-      "x": "https://x.com/devdevcharlie",
-      "bluesky": "https://bsky.app/profile/devdevcharlie.com",
-      "github": "https://github.com/charliegerard"
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/charliegerard/" },
+        { "type": "x", "url": "https://x.com/devdevcharlie" },
+        { "type": "bluesky", "url": "https://bsky.app/profile/devdevcharlie.com" },
+        { "type": "github", "url": "https://github.com/charliegerard" }
+      ]
     }
   },
   {
@@ -92,6 +104,353 @@
         {
           "type": "bluesky",
           "url": "https://bsky.app/profile/seancdavis.com"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Lies I Was Told About Collaborative Editing",
+    "slug": "lies-i-was-told-about-collaborative-editing",
+    "abstract": "You use Linear and Notion. You've read the blog posts about \"sync engines\" and \"local first\" software. You want that kind of product experience too, so you install some fancy CRDT libraries and expect things to Just Work™. Well, you're about to learn what we're going to discuss in this talk: that this problem is perhaps not so simple after all.",
+    "speaker": {
+      "name": "Alex Clemmer",
+      "image": "/_public/images/2025/speakers/alex-clemmer.png",
+      "company": "Moment",
+      "location": "Seatte, WA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/hausdorff_space" }
+      ]
+    }
+  },
+  {
+    "title": "Unlocking User Insights with LLMs to Design Smarter UI and Flows",
+    "slug": "unlocking-user-insights-with-llms-to-design-smarter-ui-and-flows",
+    "abstract": "Discover how LLM-based classifiers can reveal insights into user behavior, enhance user flows, and pave the way for personalized, dynamic experiences. Explore future directions for smarter UI design.",
+    "speaker": {
+      "name": "Amber Hoak",
+      "image": "/_public/images/2025/speakers/amber-hoak.png",
+      "company": "Microsoft Research",
+      "location": "Seatte, WA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/amber_hoak" }
+      ]
+    }
+  },
+  {
+    "title": "JavaScript: The Origin Story",
+    "slug": "javascript-the-origin-story",
+    "abstract": "JavaScript wasn't always the cool kid on the block. In this talk, we'll follow how a lil 10-day hackathon became the cornerstone of modern web dev.",
+    "speaker": {
+      "name": "Annie Sexton",
+      "pronouns": "she/her",
+      "image": "/_public/images/2025/speakers/annie-sexton.png",
+      "company": "Fly.io",
+      "location": "Portland, OR, USA",
+      "bluesky": "https://bsky.app/profile/anniesexton.com"
+    }
+  },
+  {
+    "title": "AI-Powered Magic, Live on Stage",
+    "slug": "ai-powered-magic-live-on-stage",
+    "abstract": "Experience a magic show like no other—powered by AI. In this interactive session, you'll witness illusions built using AI, Twilio, code, & real magic. Dev or not, you'll leave wondering: Did AI just read my mind?",
+    "speaker": {
+      "name": "Anthony Dellavecchia",
+      "image": "/_public/images/2025/speakers/anthony-dellavecchia.png",
+      "pronouns": "he/him/his",
+      "company": "Twilio",
+      "location": "Seatte, WA, USA",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/anthonyjdella/"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Third-Party Scripts, Surviving the Wild West of the Web",
+    "slug": "third-party-scripts-surviving-the-wild-west-of-the-web",
+    "abstract": "As third-party script developers, we constantly work in environments we don't fully control. We must handle unexpected issues introduced by different browsers, quirky customizations made by the primary developer team, and security restrictions we can't easily bypass. In this introductory-level session, I will share first-hand experiences and practical guidance derived from building and deploying third-party scripts to improve your team's confidence and workflow efficiency.",
+    "speaker": {
+      "name": "Anton Zalaldinov",
+      "image": "/_public/images/2025/speakers/anton-zalaldinov.png",
+      "company": "Affirm",
+      "pronouns": "",
+      "location": "Vancouver, BC, Canada",
+      "links": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/zalaldinov/"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Coding for the Senses",
+    "slug": "coding-for-the-senses",
+    "abstract": "Explore how to code for sight, sound, touch, and more! Learn how creative frontend tools can turn websites into full-sensory experiences that feel as good as they function.",
+    "speaker": {
+      "name": "Bree Hall",
+      "image": "/_public/images/2025/speakers/bree-hall.png",
+      "company": "HubSpot",
+      "pronouns": "She/her/hers",
+      "location": "Atlanta, GA, USA",
+      "links": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/briannahall0"
+        }
+      ]
+    }
+  },
+  {
+    "title": "From Rewrites to AI Agents for App Modernization",
+    "slug": "from-rewrites-to-ai-agents-for-app-modernization",
+    "abstract": "Break the costly rewrite cycle. Learn how AI agents can continuously modernize your codebase by automatically removing tech debt, keeping apps current without disruptive rewrites.",
+    "speaker": {
+      "name": "Brittany Ellich",
+      "image": "/_public/images/2025/speakers/brittany-ellich.png",
+      "company": "GitHub",
+      "pronouns": "she/her",
+      "location": "Portland, OR, USA",
+      "bluesky": "https://bsky.app/profile/brittanyellich.com"
+    }
+  },
+  {
+    "title": "AI and Accessibility: We Got a Lot to Talk About",
+    "slug": "ai-and-accessibility-we-got-a-lot-to-talk-about",
+    "abstract": "In the rapidly evolving landscape of technology, Artificial Intelligence (AI) stands out as a game-changer our industry. But what are the implications for accessibility and building compliant and inclusive experiences?\n\nIn this talk, we will discuss AI and accessibility in all its nuances. From significant advancements that improve experiences for all users to major concerns around the ethics and organizational investments in accessibility, we will cover it all. Either way, AI is here and we got a lot to talk about to ensure accessibility remains at the forefront of our work.",
+    "speaker": {
+      "name": "Cat Johnson",
+      "image": "/_public/images/2025/speakers/cat-johnson.png",
+      "company": "Khan Academy",
+      "pronouns": "she/her",
+      "location": "Seatte, WA, USA",
+      "links": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/catandthemachines/"
+        },
+        {
+          "type": "bluesky",
+          "url": "https://bsky.app/profile/catandthemachines.bsky.social"
+        },
+        {
+          "type": "url",
+          "url": "https://catandthemachines.com"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/catandthemachines"
+        }
+      ]
+    }
+  },
+  {
+    "title": "ATProto Can Be as Simple as a WebSocket",
+    "slug": "atproto-can-be-as-simple-as-a-websocket",
+    "abstract": "This lightning talk will cover the basics of ATProto and its decentralized nature. We'll also see how simple it can be to listen to every message from Bluesky using a few lines of WebSocket code.",
+    "speaker": {
+      "name": "Chris Griffing",
+      "image": "/_public/images/2025/speakers/chris-griffing.png",
+      "company": "GitKraken",
+      "pronouns": "he/him/his",
+      "location": "Redmond, WA USA",
+      "bluesky": "https://bsky.app/profile/cmgriffing.bsky.social"
+    }
+  },
+  {
+    "title": "AI-Powered Gamification for the Web",
+    "slug": "ai-powered-gamification-for-the-web",
+    "abstract": "Discover how to bring AI-powered gamification to your projects with adaptive difficulty, live sentiment feedback, and dynamic content that learns from user actions.",
+    "speaker": {
+      "name": "Courtney Yatteau",
+      "image": "/_public/images/2025/speakers/courtney-yatteau.png",
+      "company": "esri",
+      "pronouns": "she/her/hers",
+      "location": "Alexandria, Virginia, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/c_yatteau" },
+        { "type": "github", "url": "https://www.linkedin.com/in/courtneyyatteau/" }
+      ]
+    }
+  },
+  {
+    "title": "Let's destroy the video player ",
+    "slug": "lets-destroy-the-video-player",
+    "abstract": "Every video player looks the same until you rebuild one with Three.js, simulated physics, and some 90s arcade chaos.",
+    "speaker": {
+      "name": "Dave Kiss",
+      "image": "/_public/images/2025/speakers/dave-kiss.png",
+      "company": "Mux",
+      "pronouns": "he/him/his",
+      "location": "Cleveland, Ohio, USA",
+      "url": "https://davekiss.com"
+    }
+  },
+  {
+    "title": "When Vibe Coding Isn't Good Enough",
+    "slug": "when-vibe-coding-isnt-good-enough",
+    "abstract": "Do you vibe code? In this talk we'll look at an alternate way of dealing with prompts as you build your frontend applications using AI agentic editors. We'll look at the pros and cons of \"design driven prompting\" and how you can use it to create your next app.",
+    "speaker": {
+      "name": "Erik Hanchett",
+      "image": "/_public/images/2025/speakers/erik-hanchett.png",
+      "company": "AWS",
+      "pronouns": "he/him",
+      "location": "Reno, NV, USA",
+      "bluesky": "https://bsky.app/profile/erikch.bsky.social"
+    }
+  },
+  {
+    "title": "Think Fast: OnDevice Vector Features",
+    "slug": "think-fast-ondevice-vector-features",
+    "abstract": "Did you know a phone could do that? Integrate on-device AI qualities into your React Native apps. The future is real-time, offline intelligence. In this session, we'll explore providing contextual information—all without relying on the cloud. ",
+    "speaker": {
+      "name": "Gant Laborde",
+      "image": "/_public/images/2025/speakers/gant-laborde.png",
+      "company": "Infinite Red",
+      "pronouns": "He/him",
+      "location": "New Orleans, Louisiana, USA",
+      "bluesky": "https://bsky.app/profile/gantlaborde.com"
+    }
+  },
+  {
+    "title": "Becoming a code review champ",
+    "slug": "becoming-a-code-review-champ",
+    "abstract": "Reviewing code is every engineer's responsibility! Learn some strategies to become a code review champ for your team, while fostering a culture of mentorship and learning.",
+    "speaker": {
+      "name": "Isabela McLenachen",
+      "image": "/_public/images/2025/speakers/isabela-mclenachen.png",
+      "company": "Disney",
+      "pronouns": "she/her",
+      "location": "Seatte, WA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/isabelacmor" }
+      ]
+    }
+  },
+  {
+    "title": "View Source for AI: GPT in Vanilla JavaScript",
+    "slug": "view-source-for-ai-gpt-in-vanilla-javascript",
+    "abstract": "We'll demystify LLM internals for web developers using a real LLM implemented entirely in vanilla JavaScript that runs in the browser. No Ph.D. needed!",
+    "speaker": {
+      "name": "Ishan Anand",
+      "image": "/_public/images/2025/speakers/ishan-anand.png",
+      "company": "Freelance",
+      "pronouns": "he/him/his",
+      "location": "Seatte, WA, USA",
+      "links": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/ishananand/"
+        }
+      ]
+    }
+  },
+  {
+    "title": "There's no such thing as web components",
+    "slug": "theres-no-such-thing-as-web-components",
+    "abstract": "How do web components work? Are they fast? When does it make sense to use them? The answer is is more nuanced than you might think because, as it turns out, there's no such thing as web components. ",
+    "speaker": {
+      "name": "Jeremy Elbourn",
+      "image": "/_public/images/2025/speakers/jeremy-elbourn.png",
+      "company": "Google",
+      "pronouns": "he/him",
+      "location": "Seattle, WA, USA",
+      "bluesky": "https://bsky.app/profile/jelbourn.bsky.social"
+    }
+  },
+  {
+    "title": "Observability Now! Building a case for hybrid instrumentation",
+    "slug": "observability-now-building-a-case-for-hybrid-instrumentation",
+    "abstract": "Observability isn't one-size-fits-all. This talk shows how combining OpenTelemetry's automatic and manual instrumentation gives you fast setup and deep insight. Learn to filter noise, add custom spans, and turn raw telemetry into real understanding. All with open source tech!",
+    "speaker": {
+      "name": "Justin Castilla",
+      "image": "/_public/images/2025/speakers/justin-castilla.png",
+      "company": "Elastic",
+      "pronouns": "he/him/his",
+      "location": "Port Orchard, WA, USA",
+      "links": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/justincastilla/"
+        }
+      ]
+    }
+  },
+  {
+    "title": "What's in your <head>",
+    "slug": "whats-in-your-head",
+    "abstract": "A quick refresher on the <head> element: dive into metadata, script, and style tags, and learn to craft platform-specific link previews to control how your site appears across the web.",
+    "speaker": {
+      "name": "Justin Rastelli",
+      "image": "/_public/images/2025/speakers/justin-rastelli.png",
+      "company": "Slalom",
+      "pronouns": "he/him/his",
+      "location": "Seattle, WA, USA",
+      "bluesky": "https://bsky.app/profile/gregle.dev"
+    }
+  },
+  {
+    "title": "Pushing the Limits of Big Data in the Browser",
+    "slug": "pushing-the-limits-of-big-data-in-the-browser",
+    "abstract": "A radical new take on how to architect large data applications entirely in JavaScript – no python required. This talk covers how I built the open-source libraries Hyparquet and HighTable for loading Apache Parquet files client-side in the browser.",
+    "speaker": {
+      "name": "Kenny Daniel",
+      "image": "/_public/images/2025/speakers/kenny-daniel.png",
+      "company": "Hyperparam",
+      "pronouns": "",
+      "location": "Seattle, WA, USA",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/platypii"
+        }
+      ]
+    }
+  },
+  {
+    "title": "AI That Gets the Picture: Building Video-Aware Assistants",
+    "slug": "ai-that-gets-the-picture-building-video-aware-assistants",
+    "abstract": "Building AI assistants that understand video content using Model Context Protocol, multimodal RAG, and TypeScript. Finally unlock the knowledge trapped in videos using tools you know and some new ones",
+    "speaker": {
+      "name": "Kevin Dela Rosa",
+      "image": "/_public/images/2025/speakers/kevin-dela-rosa.png",
+      "company": "Cloudglue",
+      "pronouns": "he/him/his",
+      "location": "Seatte, WA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/kdrwins" }
+      ]
+    }
+  },
+  {
+    "title": "Escaping Reactivity Hell: Why State Feels Hard (and What to Do About It)",
+    "slug": "escaping-reactivity-hell-why-state-feels-hard-and-what-to-do-about-it",
+    "abstract": "Promises freed us from callback hell. But reactivity hell—debug loops, messy effects, brittle state—still haunts us. Signalium is a library inspired by Hooks, powered by Signals, that reimagines state to break the cycle.",
+    "speaker": {
+      "name": "Kristen Hewell Garrett",
+      "image": "/_public/images/2025/speakers/kristen-hewell-garrett.png",
+      "company": "Phantom",
+      "pronouns": "she/her/hers",
+      "location": "Arlington, VA, USA",
+      "bluesky": "https://bsky.app/profile/pzuraq.bsky.social"
+    }
+  },
+  {
+    "title": "A World Without Builds",
+    "slug": "a-world-without-builds",
+    "abstract": "In the early days of modern web applications, we wrote JavaScript that ran more or less directly in the browser. As the web grew in popularity and complexity, tools like bundlers and  transpilers gave us tremendous flexibility and power—but also introduced a widening gap between the code we write and the code the browser actually executes.\n\nIn this talk, we'll examine how modern browsers have evolved to allow us to narrow that gap with features such as ECMAScript modules (ESM) and import maps, enabling applications to ship without traditional build steps. We'll cover the fundamentals of ESM in the browser, address common challenges (including dependency management and React's ESM quirks), and explore how far you can take build-free applications—even into production. Finally, we'll look ahead to emerging browser capabilities and experimental libraries that promise a simpler, more understandable, web development experience—while preserving the power and flexibility of today's ecosystem.",
+    "speaker": {
+      "name": "Ryan Roemer",
+      "image": "/_public/images/2025/speakers/ryan-roemer.png",
+      "company": "Nearform",
+      "pronouns": "he/him/his",
+      "location": "Seatte, WA, USA",
+      "links": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/ryanroemer/"
         }
       ]
     }
