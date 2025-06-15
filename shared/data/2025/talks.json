@@ -146,7 +146,9 @@
       "image": "/_public/images/2025/speakers/annie-sexton.png",
       "company": "Fly.io",
       "location": "Portland, OR, USA",
-      "bluesky": "https://bsky.app/profile/anniesexton.com"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/anniesexton.com" }
+      ]
     }
   },
   {
@@ -213,7 +215,9 @@
       "company": "GitHub",
       "pronouns": "she/her",
       "location": "Portland, OR, USA",
-      "bluesky": "https://bsky.app/profile/brittanyellich.com"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/brittanyellich.com" }
+      ]
     }
   },
   {
@@ -256,7 +260,9 @@
       "company": "GitKraken",
       "pronouns": "he/him/his",
       "location": "Redmond, WA USA",
-      "bluesky": "https://bsky.app/profile/cmgriffing.bsky.social"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/cmgriffing.bsky.social" }
+      ]
     }
   },
   {
@@ -298,7 +304,9 @@
       "company": "AWS",
       "pronouns": "he/him",
       "location": "Reno, NV, USA",
-      "bluesky": "https://bsky.app/profile/erikch.bsky.social"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/erikch.bsky.social" }
+      ]
     }
   },
   {
@@ -311,7 +319,9 @@
       "company": "Infinite Red",
       "pronouns": "He/him",
       "location": "New Orleans, Louisiana, USA",
-      "bluesky": "https://bsky.app/profile/gantlaborde.com"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/gantlaborde.com" }
+      ]
     }
   },
   {
@@ -357,7 +367,12 @@
       "company": "Google",
       "pronouns": "he/him",
       "location": "Seattle, WA, USA",
-      "bluesky": "https://bsky.app/profile/jelbourn.bsky.social"
+      "links": [
+        {
+          "type": "bluesky",
+          "url": "https://bsky.app/profile/jelbourn.bsky.social"
+        }
+      ]
     }
   },
   {
@@ -379,16 +394,18 @@
     }
   },
   {
-    "title": "What's in your <head>",
+    "title": "What's in your &lt; head &gt;",
     "slug": "whats-in-your-head",
-    "abstract": "A quick refresher on the <head> element: dive into metadata, script, and style tags, and learn to craft platform-specific link previews to control how your site appears across the web.",
+    "abstract": "A quick refresher on the &lt;head&gt; element: dive into metadata, script, and style tags, and learn to craft platform-specific link previews to control how your site appears across the web.",
     "speaker": {
       "name": "Justin Rastelli",
       "image": "/_public/images/2025/speakers/justin-rastelli.png",
       "company": "Slalom",
       "pronouns": "he/him/his",
       "location": "Seattle, WA, USA",
-      "bluesky": "https://bsky.app/profile/gregle.dev"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/gregle.dev" }
+      ]
     }
   },
   {
@@ -434,7 +451,9 @@
       "company": "Phantom",
       "pronouns": "she/her/hers",
       "location": "Arlington, VA, USA",
-      "bluesky": "https://bsky.app/profile/pzuraq.bsky.social"
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/pzuraq.bsky.social" }
+      ]
     }
   },
   {
