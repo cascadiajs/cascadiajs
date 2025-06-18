@@ -150,7 +150,7 @@ const sponsors = [
     logo: 'ntnw.png',
     logoSquare: 'ntnw.png',
     name: 'NewTech Northwest',
-    url: 'https://newtechnw.com',
+    url: 'https://www.newtechnorthwest.com/',
     description: 'NewTech Northwest is a community of tech enthusiasts in the Pacific Northwest. We meet monthly to share knowledge and learn from each other.'   
   },
   {
