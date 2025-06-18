@@ -3,6 +3,8 @@ title: TypeScript & Deno Foundations
 image: /_public/images/training/eve-porcello.jpg
 excerpt: Eve Porcello
 ---
+![Eve Porcello](/_public/images/training/eve-porcello.jpg)
+
 **When:** Monday, Sept 15 (9am - 4pm)
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)

@@ -3,6 +3,8 @@ title: Modern React & Data Management
 image: /_public/images/training/eve-porcello.jpg
 excerpt: Eve Porcello
 ---
+![Eve Porcello](/_public/images/training/eve-porcello.jpg)
+
 **When:** Wednesday, Sept 17 (9am - 4pm)
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)

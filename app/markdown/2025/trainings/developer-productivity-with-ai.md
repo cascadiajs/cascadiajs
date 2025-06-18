@@ -3,6 +3,8 @@ title: Developer Productivity with AI
 image: /_public/images/training/eve-porcello.jpg
 excerpt: Eve Porcello
 ---
+![Eve Porcello](/_public/images/training/eve-porcello.jpg)
+
 **When:** Tuesday, Sept 16 (9am - 4pm)
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)

@@ -151,7 +151,17 @@ const sponsors = [
     logoSquare: 'ntnw.png',
     name: 'NewTech Northwest',
     url: 'https://newtechnw.com',
-    description: 'NewTech Northwest is a community of tech enthusiasts in the Pacific Northwest. We meet monthly to share knowledge and learn from each other.'    }
+    description: 'NewTech Northwest is a community of tech enthusiasts in the Pacific Northwest. We meet monthly to share knowledge and learn from each other.'   
+  },
+  {
+    id: 'infinite-read',
+    tier: 'community',
+    logo: 'infinitered.png',
+    logoSquare: 'infinitered.png',
+    name: 'Infinite Red',
+    url: 'https://infinite.red',
+    description: 'Infinite Red is a mobile app development company that specializes in React Native. We build beautiful, high-quality apps for iOS and Android.'   
+  }
 ]
 
 export default function Sponsors({ html }) {
