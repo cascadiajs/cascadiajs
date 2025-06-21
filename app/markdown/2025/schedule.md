@@ -30,7 +30,7 @@ In this full-day workshop from Moon Highway you'll explore what makes modern Rea
 
 We're holding a Welcome Reception at Town Hall from 6:00pm - 8:30pm so you can get your badge, pick up swag and meet fellow attendees. Come by and have a drink on us! Attending by yourself or want to meet more people? Sign up for [Cascadia Connect](https://airtable.com/app4aehCXEydAuxKX/pag7dXPfJZEMPcHid/form) and we'll introduce you to another attendee so you can get a head start on growing your network. 
 
-<p>Welcome Reception sponsored by SignalFire<br />
+<p>Welcome Reception sponsored by <br /><br />
 <img src="/_public/images/sponsors/signalfire.png" alt="SignalFire logo" style="height:50px"></p>
  
 
@@ -50,7 +50,7 @@ Our friends from SeattleJS are planning a rooftop BBQ. More information coming s
 
 We'll have another full day of talks, followed by dinner and a Closing Party you don't want to miss. Unwind with food, drinks, and great company. You’re not just attending a conference—you’re joining a community. Stick around for [DJ SummerSoft](https://www.instagram.com/djsummersoft/?hl=en) and karaoke from [Baby Ketten](https://babyketten.com/wa/).
 
-<p>Closing Party sponsored by Cloudflare<br />
+<p>Closing Party sponsored by <br /><br />
 <img src="/_public/images/sponsors/cloudflare.png" alt="Cloudflare logo" style="height:50px"></p>
 
 ## Post-Conference
