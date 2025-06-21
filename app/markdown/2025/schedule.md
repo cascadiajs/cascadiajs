@@ -28,23 +28,11 @@ In this full-day workshop from Moon Highway you'll explore what makes modern Rea
 
 ### Wed, Sept 17 - Welcome Reception
 
-We're holding a Welcome Reception at Town Hall from 6:00pm - 8:30pm so you can get your badge, pick up swag and meet fellow attendees. Come by and have a drink on us! Attending by yourself or want to meet more people? Sign up for [Cascadia Connect](https://airtable.com/app4aehCXEydAuxKX/pag7dXPfJZEMPcHid/form) and we'll introduce you to another attendee so you can get a head start on growing your network. 
-
-<p>Welcome Reception sponsored by <img src="/_public/images/sponsors/signalfire.png" alt="SignalFire logo" style="height:25px"></p>
- 
+We're holding a Welcome Reception at Town Hall from 6:00pm - 8:30pm so you can get your badge, pick up swag and meet fellow attendees. Come by and have a drink on us! Attending by yourself or want to meet more people? Sign up for [Cascadia Connect](https://airtable.com/app4aehCXEydAuxKX/pag7dXPfJZEMPcHid/form) and we'll introduce you to another attendee so you can get a head start on growing your network.  
 
 ### Thu, Sept 18 - Day One
 
 The doors will open at 8:00am for registration and a full day of talks. Drop your kids off at the [free childcare](/2025/childcare), grab a coffee and get ready for powerful talks packed with insights, stories, and real-world advice to fuel your work and leave you inspired. A light breakfast, lunch, and coffee will be provided.
-
-<p>Our Expo Hall will be filled with many of the top companies building tools in the web and AI space:</p>
-
-<img src="/_public/images/sponsors/gensx.svg" alt="GenSX logo" style="height:25px"><br/>
-<img src="/_public/images/sponsors/cloudflare.png" alt="Cloudflare logo" style="height:25px"><br/>
-<img src="/_public/images/sponsors/elastic.svg" alt="Elastic logo" style="height:25px"><br/>
-<img src="/_public/images/sponsors/arcjet.svg" alt="Arcjet logo" style="height:25px"><br/>
-<img src="/_public/images/sponsors/ilf.png" alt="Interledger logo" style="height:25px"><br/>
-<img src="/_public/images/sponsors/atono.svg" alt="Atono logo" style="height:25px"><br/>
 
 #### Post-talk Hangouts
 
@@ -57,8 +45,6 @@ Our friends from SeattleJS are planning a rooftop BBQ. More information coming s
 ### Fri, Sept 19 - Day Two
 
 We'll have another full day of talks, followed by dinner and a Closing Party you don't want to miss. Unwind with food, drinks, and great company. You’re not just attending a conference—you’re joining a community. Stick around for [DJ SummerSoft](https://www.instagram.com/djsummersoft/?hl=en) and karaoke from [Baby Ketten](https://babyketten.com/wa/).
-
-<p>Closing Party sponsored by <img src="/_public/images/sponsors/cloudflare.png" alt="Cloudflare logo" style="height:25px"></p>
 
 ## Post-Conference
 
