@@ -8,35 +8,57 @@ The CascadiaJS conference takes place on Sept 18 and 19 at Town Hall Seattle. Bu
 
 ### Mon, Sept 15 - Training Workshop - TypeScript & Deno Foundations
 
-lorem ipsum 
+Ready to level up your JavaScript skills? In this full-day workshop from Moon Highway you'll dive into TypeScript and Deno to build more reliable applications. 
+
+<div class="cta secondary"><a href="/2025/trainings/typescript-and-deno-foundations">More info & tickets</a></div>
 
 ### Tue, Sept 16 - Training Workshop - Developer Productivity with AI
 
-lorem ipsum 
+AI is changing how we write code, and you're about to become fluent in these new tools. In this full-day workshop from Moon Highway you'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks.
+
+<div class="cta secondary"><a href="/2025/trainings/developer-productivity-with-ai">More info & tickets</a></div>
 
 ### Wed, Sept 17 - Training Workshop - Modern React & Data Management
+
+In this full-day workshop from Moon Highway you'll explore what makes modern React applications truly powerful. We'll combine Server Components with robust data management patterns to build fast, scalable apps that your users will love.
+
+<div class="cta secondary"><a href="/2025/trainings/modern-react-and-data-management">More info & tickets</a></div>
 
 ## CascadiaJS 2025
 
 ### Wed, Sept 17 - Welcome Reception
 
-We are holding a Welcome Reception that will run from 3pm - 6pm and function as an opportunity for folks to register and hang out with fellow attendees. When you check-in to Sunriver Resort, you'll be directed to the Welcome Reception. We will serve drinks and light appetizers, but please make sure to make [plans for dinner](https://www.sunriverresort.com/dining-eat-drink/food-and-drinks-overview).
+We're holding a Welcome Reception at Town Hall from 6:00pm - 8:30pm so you can get your badge, pick up swag and meet fellow attendees. Come by and have a drink on us! Attending by yourself or want to meet more people? Sign up for [Cascadia Connect](https://airtable.com/app4aehCXEydAuxKX/pag7dXPfJZEMPcHid/form) and we'll introduce you to another attendee so you can get a head start on growing your network. 
 
+<p>Welcome Reception sponsored by SignalFire<br />
+<img src="/_public/images/sponsors/signalfire.png" alt="SignalFire logo" style="height:50px"></p>
+ 
 
 ### Thu, Sept 18 - Day One
 
-lorem ipsum 
+The doors will open at 8:00am for registration and a full day of talks. Grab a coffee and get ready for powerful talks packed with insights, stories, and real-world advice to fuel your work and leave you inspired. A light breakfast, lunch, and coffee will be provided.
 
-### Thu, Sept 18 - SeattleJS After Party
+#### Post-talk Hangouts
 
-lorem ipsum 
+Looking for some new friends to have dinner with? We're going to set up a board for attendees to sign up for small group hangouts. Stay tuned for more information on this. 
+
+#### SeattleJS After Party
+
+Our friends from SeattleJS are planning a rooftop BBQ. More information coming soon.
 
 ### Fri, Sept 19 - Day Two
 
-lorem ipsum 
+We'll have another full day of talks, followed by dinner and a Closing Party you don't want to miss. Unwind with food, drinks, and great company. You’re not just attending a conference—you’re joining a community. Stick around for [DJ SummerSoft](https://www.instagram.com/djsummersoft/?hl=en) and karaoke from [Baby Ketten](https://babyketten.com/wa/).
+
+<p>Closing Party sponsored by Cloudflare<br />
+<img src="/_public/images/sponsors/cloudflare.png" alt="Cloudflare logo" style="height:50px"></p>
 
 ## Post-Conference
 
 ### Sat, Sept 20 - Seattle AI Hackathon
 
-lorem ipsum 
+Don't want to the good times to end? We don't want you to leave either, so we're planning a hackathon. More information coming soon.
+
+### Sat, Sept 20 - Activities
+
+Get out and about in Seattle with some fellow attendees! Whether you're into running a 5k, playing pickleball, or a chill hike, we'll have an activity for you. More information coming soon.
