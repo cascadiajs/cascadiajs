@@ -48,10 +48,12 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 
 ## Post-Conference
 
-### Sat, Sept 20 - Seattle AI Hackathon
+### Sat, Sept 20
+
+#### Seattle AI Hackathon
 
 Don't want to the good times to end? We don't want you to leave either, so we're planning a hackathon. More information coming soon.
 
-### Sat, Sept 20 - Activities
+#### Outdoor Activities
 
 Get out and about in Seattle with some fellow attendees! Whether you're into running a 5k, playing pickleball, or a chill hike, we'll have an activity for you. More information coming soon.
