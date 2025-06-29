@@ -473,5 +473,36 @@
         }
       ]
     }
+  },
+  {
+    "title": "Piloting AI coding agents",
+    "slug": "piloting-ai-coding-agents",
+    "abstract": "AI coding agents can make you 10x more productive than you were before. But it can also be 10x easier to paint yourself into a corner. In this talk, we'll explore techniques for piloting AI coding agents effectively, so you can spend your brain power solving problems that matter.",
+    "speaker": {
+      "name": "Kevin Whinnery",
+      "image": "/_public/images/2025/speakers/kevin-whinnery.png",
+      "company": "OpenAI",
+      "pronouns": "he/him",
+      "location": "Minneapolis, MN, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/kevinwhinnery" }
+      ]
+    }
+
+  },
+  {
+    "title": "AIdentity Crisis: Can I be proud of this?",
+    "slug": "aidentity-crisis-can-i-be-proud-of-this",
+    "abstract": "I'm proud of my kids. I didn't do the work—they did. I just prompted them. Same with AI. When it makes something bonkers, I still feel proud. Should I? I do. It's weird. Let’s get used to it. Let’s chat.",
+    "speaker": {
+      "name": "Craig Dennis",
+      "image": "/_public/images/2025/speakers/craig-dennis.png",
+      "company": "Cloudflare",
+      "pronouns": "he/him/his",
+      "location": "Portland, OR, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/craigdennis" }
+      ]
+    }
   }
 ]
