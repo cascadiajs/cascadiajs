@@ -1,5 +1,6 @@
 import * as crypto from "crypto"
 import { deleteTicket, findTicket, upsertTicket } from "../../../shared/data/tito.mjs" 
+import { addSubscriber, tagSubscriber } from "../../../shared/data/kit.mjs"
 
 export const post = async function(req) {
   //console.log(req)
@@ -67,6 +68,10 @@ async function ticketCompletedOrUpdated(req) {
   const { name: full_name, email } = tito_payload
   // update the name and email associated with this ticket
   await upsertTicket({ _id, full_name, email })
+  // subscribe this user to Kit.com
+  await addSubscriber({ email_address: email })
+  // attach the "attending-cascadiajs2025" tag to the user
+  await tagSubscriber({ email_address: email, tag_id: 8070622 })
   return {
     statusCode: 200,
     json: { success: true }

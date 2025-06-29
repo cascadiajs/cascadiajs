@@ -86,7 +86,7 @@ async function main() {
         release_title: RELEASES.find(r => r.id === t.release_id).title,
         release_slug: RELEASES.find(r => r.id === t.release_id).slug,
         number: t.number,
-        event_id: "cascadiajs-2025",
+        event_id: "1143718",
         event_title: "CascadiaJS 2025",
         full_name: t.name,
         email: t.email
@@ -103,7 +103,7 @@ async function main() {
   console.log(tickets)
 
   // write tickets to DB
-  //await insertTickets(tickets)
+  await insertTickets(tickets)
 }
 
 main()
