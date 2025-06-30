@@ -188,7 +188,7 @@ export default function ({ html, state }) {
                 </div>
                 <h2>Treats Galore</h2>
                 <p>
-                Your full conference ticket includes access to multiple social events, yummy snacks, unlimited coffee and and the best conference swag around! 
+                Your full conference ticket includes access to multiple social events, yummy snacks, unlimited coffee and the best conference swag around! 
                 </p>
               </div>
               <div class="feature">
