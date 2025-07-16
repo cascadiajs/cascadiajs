@@ -100,9 +100,13 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 
 ### Sat, Sept 20
 
-#### Seattle AI Hackathon
+#### Cascadia AI Hack Day
 
-Don't want to the good times to end? We don't want you to leave either, so we're planning a hackathon. More information coming soon.
+Join your fellow AI devs for an epic hackday where we'll be diving into what developers can build using AI, Agents and MCP! ​​This is a hackathon for devs, by devs. You don't have to have experience building with AI, but you should be comfortable building software and apps.
+
+<a href="https://lu.ma/event/evt-yYQE7X8dyXz6mjz" class="luma-checkout--button" data-luma-action="checkout" data-luma-event-id="evt-yYQE7X8dyXz6mjz">Register for Event</a>
+
+<script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
 
 #### Outdoor Activities
 
