@@ -14,10 +14,12 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
     <tbody>
     <tr class="passed"><td>Blind Bird</td><td>Jan 1 - Feb 21</td><td>$499</td></tr>
     <tr class="passed"><td>Early Bird</td><td>Feb 22 - May 11</td><td>$599</td></tr>
-    <tr class="active-row"><td>Regular Bird</td><td>May 12 - Aug 17</td><td>$699</td></tr>
-    <tr><td>Full Price</td><td>Aug 18 - Sept 18</td><td>$799</td></tr>
+    <tr class="active-row"><td>Regular Bird</td><td>May 12 - Aug 1</td><td>$699</td></tr>
+    <tr><td>Full Price</td><td>Aug 1 - Sept 18</td><td>$799</td></tr>
     </tbody>
 </table>
+
+<div class="highlight warning">Note: Regular Bird is your LAST CHANCE to guarantee you get a hoodie in your size. All orders after August 1st are best effort.</div>
 
 ## Indie Dev Discount
 
