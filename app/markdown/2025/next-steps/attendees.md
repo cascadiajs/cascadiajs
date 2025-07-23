@@ -7,6 +7,7 @@ excerpt: Information for attendees of CascadiaJS 2025
 <h2>On This Page</h2>
     <ul>
         <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
+        <li><a href="#hack-day">Register for the Cascadia AI Hack Day</a></li>
         <li><a href="#cascadia-connect">Make a New Friend</a></li>
         <li><a href="#travel">Book Travel & Lodging</a></li>
         <li><a href="#childcare">Reserve Childcare</a></li>
@@ -53,6 +54,15 @@ That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because lik
 Prior to the conference, we are teaming up with Eve Porcello (Moon Highway) to provide 3 days of training workshops. You need to purchase these tickets separately.
 
 <div class="cta secondary"><a href="/2025/trainings">Training Workshops Guide</a></div>
+
+<h2 id="hack-day">Register for the Cascadia AI Hack Day</h2>
+
+We're putting on our first post-conference hackathon! Join your fellow devs for an epic hack day where we'll be diving into what developers can build using AI, Agents and MCP!
+
+It's completely FREE and you don't have to have experience building with AI, but you should be comfortable building software and apps.
+
+<div class="cta secondary"><a target="_blank" href="https://lu.ma/yu2ccnvr">Cascadia AI Hack Day</a></div>
+
 
 <h2 id="cascadia-connect">Make a New Friend!</h2>
 
