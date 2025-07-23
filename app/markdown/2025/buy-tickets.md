@@ -54,7 +54,7 @@ We know it's not always easy to get your manager or company to send you to a tec
     <tito-widget event="event-loop/cascadiajs-2025"></tito-widget>
 </div>
 
-<iframe
+<!--iframe
   src="https://lu.ma/embed/event/evt-YA27EpJuKXHwUdH/simple"
   width="100%"
   height="800"
@@ -63,6 +63,6 @@ We know it's not always easy to get your manager or company to send you to a tec
   allowfullscreen=""
   aria-hidden="false"
   tabindex="0"
-></iframe>
+></iframe-->
 
 <script async src="https://js.tito.io/v2" async>

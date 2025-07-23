@@ -2,6 +2,8 @@
 title: YVR Edition
 excerpt: Join us for a satellite event in Vancouver, BC!
 ---
+<div class="highlight warning">We're sorry, but this event has been CANCELLED. Please contact the organizers in Vancouver, BC for a refund if you purchased tickets.</div>
+
 Hello Canada! 🇨🇦
 
 In order to accommodate folks who can’t make it down to Seattle this year, we have great news! CascadiaJS has partnered with VanJS to provide a local satellite event in downtown Vancouver. We’ll be using the amazing new Tech Collider space at BCIT’s downtown campus, so you’ll get all the amazing CascadiaJS talks streamed in live on a massive wall-sized screen, CascadiaJS swag with a made-in-Canada twist, all just a Skytrain or Seabus ride away.
@@ -55,13 +57,3 @@ For group/team purchases, please email us at info@cascadiajs.com. We can separat
 
 We know it's not always easy to get your manager or company to send you to a tech conference, so we've put together [some resources](/2025/boss-letter) to help you make the case!
 
-<iframe
-  src="https://lu.ma/embed/event/evt-YA27EpJuKXHwUdH/simple"
-  width="100%"
-  height="800"
-  frameborder="0"
-  style="border: 1px solid #bfcbda88; border-radius: 4px;"
-  allowfullscreen=""
-  aria-hidden="false"
-  tabindex="0"
-></iframe>

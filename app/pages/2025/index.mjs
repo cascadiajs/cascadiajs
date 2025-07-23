@@ -116,11 +116,11 @@ export default function ({ html, state }) {
                   <div class="label-value">Town Hall<br/>Seattle, WA 🇺🇸</div>
                   <div class="cta primary"><a href="/2025/tickets">Tickets On Sale!</a></div>
                 </div>
-                <div style="">
+                <!--div style="">
                   <div class="label-name">YVR Edition</div>
                   <div class="label-value">BCIT<br/>Vancouver, BC 🇨🇦</div>
                   <div class="cta secondary"><a href="/2025/yvr">Learn More</a></div>
-                </div>
+                </div-->
               </div>
             </article>
             <article>
