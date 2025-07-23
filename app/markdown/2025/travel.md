@@ -54,8 +54,7 @@ A stylish hotel with recently renovated rooms in downtown Seattle, very close to
 * 3 min walk to Symphony Station (Link light rail)
 * Please book through the link below. The $29 per night guest amenity fee will be waived upon check-in. If you would like to reserve for dates that are outside of the booking link window, please book what is available and then email allyssia.avitia@monaco-seattle.com to extend your already existing reservation. She will do so if the rooms are available.
 
-<div class="cta secondary"><a href="https://www.kimptonhotels.com/redirect?path=asearch&brandCode=KI&localeCode=en&regionCode=1&hotelCode=SEASM&checkInDate=17&checkInMonthYear=082025&checkOutDate=20&checkOutMonthYear=082025&rateCode=6CBARC&_PMID=99801505&GPC=JS5&cn=no&viewfullsite=true">BOOK</a></div>
-
+<div class="cta secondary"><a href="https://www.ihg.com/hotels/us/en/find-hotels/select-roomrate?qDest=1101%20Fourth%20Avenue,%20Seattle,%20WA,%20US&qPt=CASH&qCiD=17&qCoD=20&qCiMy=082025&qCoMy=082025&qAdlt=1&qChld=0&qRms=1&qIta=99801505&qRtP=6CBARC&qAAR=6CBARC&qGrpCd=JS5&qSlH=seasm&srb_u=1&qSrt=sAV&qBrs=6c.hi.ex.sb.ul.ic.cp.cw.in.vn.cv.rs.ki.kd.ma.sp.va.sp.re.vx.nd.sx.we.lx.rn.sn.sn.sn.sn.sn.nu.ge&qWch=0&qSmP=0&qRad=30&qRdU=mi&setPMCookies=false&qpMbw=0&qErm=false&qpMn=0&qRmFltr=">BOOK</a></div>
 
 
 ### Hotels Near Link Light Rail Stations
