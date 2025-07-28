@@ -21,13 +21,17 @@ Below is a checklist of items to take care of before the conference. Please don'
 
 Make sure to register for your Speaker Ticket, the link should have been provided in an email. 
 
-PLEASE make sure you're registered by August 1st, or we won't be able to order you your hoodie!
+PLEASE make sure you're registered by <span class="highlight warning">August 1st</span>, or we won't be able to order you your hoodie!
 
 ### Travel
 
 Check out our [Travel Guide](/2025/travel) for information on getting to Seattle and where to stay while you're here.
 
 As you plan your travel, please try to arrive in Seattle no later than 2pm on September 17. We are hosting our Welcome Reception at the conference venue starting at 5pm. It's not mandatory that you attend, but it's nice. 
+
+### Lodging
+
+The Hotel Monaco is the official speaker hotel for CascadiaJS 2025.
 
 ### Corporate Sponsorship
 
