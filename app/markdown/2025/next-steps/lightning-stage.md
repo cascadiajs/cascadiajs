@@ -1,6 +1,6 @@
 ---
-title: Speaker Handbook
-excerpt: Information for speakers at CascadiaJS 2025
+title: Lightning Speaker Handbook
+excerpt: Information for lightning stage speakers at CascadiaJS 2025
 ---
 <div id="toc">
 <h2>On This Page</h2>
@@ -34,13 +34,7 @@ Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter
 
 Check out our [Travel Guide](/2025/travel) for information on getting to Seattle and where to stay while you're here.
 
-We are budgeting $500 USD to cover airfare ($1000 is you are outside of the US), so please try to stay in this range. Please book your flights ASAP and email carrie@cascadiajs.com your itinerary and let her know your PayPal information for reimbursement.
-
 As you plan your travel, please try to arrive in Seattle no later than 2pm on September 17. We are hosting our Welcome Reception at the conference venue starting at 5pm. It's not mandatory that you attend, but it's nice. 
-
-### Lodging
-
-We will cover 3 nights of lodging at the Hotel Monaco for the nights of September 17 - 19. If you'd like to arrive earlier or depart later, that's totally OK, you'll just need to cover those extra nights. For assistance, contact katelynne.martuscelli@monaco-seattle.com to book those extra nights.
 
 ### Corporate Sponsorship
 
@@ -53,8 +47,6 @@ Thanks you to INFINITE RED for helping us out here!
 ### Talk Length
 
 If you are giving a Lightning Stage Talk, you will have 10 minutes max. No exceptions.
-
-If you are giving a Main Stage Talk, you will have 25 minutes max. No exceptions.
 
 A few comments about this:
 
@@ -74,7 +66,7 @@ Make sure, however, to have stuff BACKED UP before you leave for the conference.
 
 ### When your talk is scheduled
 
-The official schedule is at: https://cascadiaJs.com/2025/schedule. Your green room check-in time is 20 minutes before that, but you're welcome to arrive earlier.
+The official schedule is at: https://cascadiajs.com/2025/schedule. Your green room check-in time is 20 minutes before that, but you're welcome to arrive earlier.
 
 ### Tech Specs
 
@@ -92,17 +84,9 @@ Internet: We'll have a hardwired connection at the podium. Note, internet connec
 
 We will schedule tech checks with you on-site prior to your talk. Please keep your eyes peeled for Google Calendar invites here.
 
-### Emcee
-
-Jason Lengstorf is your emcee. He'll connect with you separately to get some info for your intro as well as any other info he needs to help your talk be successful.
-
 ### Accessibility and Accomodations
 
 The podium and stage should be accessible for a variety of physical needs. But just to be sure, if you need specific physical accommodations for stage access or equipment access, please make sure we know.
-
-### Audience Interaction
-
-If you plan to interact with the audience--taking questions, asking questions, taking suggestions--remember that the audience members probably won't get picked up by a microphone. Practice repeating what you'd expect an audience member to say to you so both the in-person and online audiences are sure to know what was said.
 
 ### Sharing Slides
 
