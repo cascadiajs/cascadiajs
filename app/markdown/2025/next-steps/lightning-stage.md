@@ -13,7 +13,7 @@ excerpt: Information for lightning stage speakers at CascadiaJS 2025
 
 <h2 id="next-steps">Next Steps</h2>
 
-Thanks for joining us to speak at CascadiaJS 2025! <i class="fas fa-heart"></i>
+Thanks for joining us to speak at CascadiaJS 2025! ❤️
 
 Below is a checklist of items to take care of before the conference. Please don't hesitate to reach out if you need help with anything!
 
@@ -22,13 +22,6 @@ Below is a checklist of items to take care of before the conference. Please don'
 Make sure to register for your Speaker Ticket, the link should have been provided in an email. 
 
 PLEASE make sure you're registered by August 1st, or we won't be able to order you your hoodie!
-
-### Join the Discord
-
-Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter Rabasa so that he can flag you with the "speaker" role. 
-
-* This will give you access to the "Speaker Lounge" in Discord. 
-* Discord is also where we will ask our attendees to ask question during and following your talk.
 
 ### Travel
 
@@ -40,7 +33,14 @@ As you plan your travel, please try to arrive in Seattle no later than 2pm on Se
 
 If your employer is covering travel and lodging in exchange for a Community Sponsorship of the conference, please let us know. It takes a village to put on CascadiaJS, and everything helps.
 
-Thanks you to INFINITE RED for helping us out here!
+Thank you to INFINITE RED for helping us out here!
+
+### Join the Discord
+
+Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter Rabasa so that he can flag you with the "speaker" role. 
+
+* This will give you access to the "Speaker Lounge" in Discord. 
+* Discord is also where we will ask our attendees to ask question during and following your talk.
 
 <h2 id="preparing-for-the-conference">Preparing for the Conference</h2>
 

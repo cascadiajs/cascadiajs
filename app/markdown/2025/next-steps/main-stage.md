@@ -23,18 +23,11 @@ Make sure to register for your Speaker Ticket, the link should have been provide
 
 PLEASE make sure you're registered by August 1st, or we won't be able to order you your hoodie!
 
-### Join the Discord
-
-Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter Rabasa so that he can flag you with the "speaker" role. 
-
-* This will give you access to the "Speaker Lounge" in Discord. 
-* Discord is also where we will ask our attendees to ask question during and following your talk.
-
 ### Travel
 
 Check out our [Travel Guide](/2025/travel) for information on getting to Seattle and where to stay while you're here.
 
-We are budgeting $500 USD to cover airfare ($1000 is you are outside of the US), so please try to stay in this range. Please book your flights ASAP and email carrie@cascadiajs.com your itinerary and let her know your PayPal information for reimbursement.
+We are budgeting $500 USD to cover airfare ($1000 if you are outside of the US), so please try to stay in this range. Please book your flights ASAP and email carrie@cascadiajs.com your itinerary and let her know your PayPal information for reimbursement.
 
 As you plan your travel, please try to arrive in Seattle no later than 2pm on September 17. We are hosting our Welcome Reception at the conference venue starting at 5pm. It's not mandatory that you attend, but it's nice. 
 
@@ -46,7 +39,14 @@ We will cover 3 nights of lodging at the Hotel Monaco for the nights of Septembe
 
 If your employer is covering travel and lodging in exchange for a Community Sponsorship of the conference, please let us know. It takes a village to put on CascadiaJS, and everything helps.
 
-Thanks you to INFINITE RED for helping us out here!
+Thank you to INFINITE RED for helping us out here!
+
+### Join the Discord
+
+Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter Rabasa so that he can flag you with the "speaker" role. 
+
+* This will give you access to the "Speaker Lounge" in Discord. 
+* Discord is also where we will ask our attendees to ask question during and following your talk.
 
 <h2 id="preparing-for-the-conference">Preparing for the Conference</h2>
 
