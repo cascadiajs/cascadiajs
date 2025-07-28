@@ -21,17 +21,23 @@ Below is a checklist of items to take care of before the conference. Please don'
 
 Make sure to register for your Speaker Ticket, the link should have been provided in an email. 
 
-PLEASE make sure you're registered by August 1st, or we won't be able to order you your hoodie!
+PLEASE make sure you're registered by <span class="highlight warning">August 1st</span>, or we won't be able to order you your hoodie!
 
 ### Travel
 
 Check out our [Travel Guide](/2025/travel) for information on getting to Seattle and where to stay while you're here.
 
-We are budgeting $500 USD to cover airfare ($1000 if you are outside of the US), so please try to stay in this range. Please book your flights ASAP and email carrie@cascadiajs.com your itinerary and let her know your PayPal information for reimbursement.
-
 As you plan your travel, please try to arrive in Seattle no later than 2pm on September 17. We are hosting our Welcome Reception at the conference venue starting at 5pm. It's not mandatory that you attend, but it's nice. 
 
+For speakers whose travel is not being covered by their company:
+
+We are budgeting $500 USD to cover airfare ($1000 if you are outside of the US), so please try to stay in this range. Please book your flights ASAP and email carrie@cascadiajs.com your itinerary and let her know your PayPal information for reimbursement.
+
 ### Lodging
+
+The Hotel Monaco is the official speaker hotel for CascadiaJS 2025.
+
+For speakers whose lodging is not being covered by their company:
 
 We will cover 3 nights of lodging at the Hotel Monaco for the nights of September 17 - 19. If you'd like to arrive earlier or depart later, that's totally OK, you'll just need to cover those extra nights. For assistance, contact katelynne.martuscelli@monaco-seattle.com to book those extra nights.
 
