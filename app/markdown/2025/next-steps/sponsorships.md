@@ -86,7 +86,7 @@ Pick up your badge at the Welcome Reception on September 17th, or on the morning
 
 ### Welcome Reception & Pre-Registration
 Wednesday, September 17th<br />
-Tentatively 7:00pm - 9:00pm<br />
+Tentatively 6:00pm - 8:30pm<br />
 Town Hall (Forum level)
 
 The Welcome Reception is an opportunity for folks to pre-register, get their badge and conference hoodie, and hang out with fellow attendees! We encourage sponsors to attend, grab their badge, and have fun. 
