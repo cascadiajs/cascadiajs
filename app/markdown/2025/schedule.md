@@ -59,42 +59,52 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 
 <h2 id="speakers">Speakers & Topics</h2>
 
-<ul>
-  <li><a href="/2025/talks/oops-css-got-away-from-me-send-halp">Adam Argyle</a> – Oops, CSS Got Away From Me... Send Halp!</li>
-  <li><a href="/2025/talks/lies-i-was-told-about-collaborative-editing">Alex Clemmer</a> – Lies I Was Told About Collaborative Editing</li>
- <!-- <li><a href="/2025/talks/a-identity-crisis-can-i-be-proud-of-this">Allan Deutsch</a> – [Talk Title TBD]</li>-->
-  <li><a href="/2025/talks/unlocking-user-insights-with-llms-to-design-smarter-ui-and-flows">Amber Hoak</a> – Unlocking User Insights With LLMs to Design Smarter UI and Flows</li>
-  <li><a href="/2025/talks/javascript-the-origin-story">Annie Sexton</a> – JavaScript: The Origin Story</li>
-  <li><a href="/2025/talks/ai-powered-magic-live-on-stage">Anthony Dellavecchia</a> – AI-Powered Magic, Live on Stage</li>
-  <li><a href="/2025/talks/third-party-scripts-surviving-the-wild-west-of-the-web">Anton Zalaldinov</a> – Third-Party Scripts, Surviving the Wild West of the Web</li>
-  <li><a href="/2025/talks/coding-for-the-senses">Bree Hall</a> – Coding for the Senses</li>
-  <li><a href="/2025/talks/from-rewrites-to-ai-agents-for-app-modernization">Brittany Ellich</a> – From Rewrites to AI Agents for App Modernization</li>
-  <li><a href="/2025/talks/ai-and-accessibility-we-got-a-lot-to-talk-about">Cat Johnson</a> – AI and Accessibility: We Got a Lot to Talk About</li>
-  <li><a href="/2025/talks/motion-control-with-multimodal-ai">Charlie Gerard</a> – Motion Control With Multimodal AI</li>
-  <li><a href="/2025/talks/atproto-can-be-as-simple-as-a-websocket">Chris Griffing</a> – ATProto Can Be as Simple as a WebSocket</li>
-  <li><a href="/2025/talks/ai-powered-gamification-for-the-web">Courtney Yatteau</a> – AI-Powered Gamification for the Web</li>
-  <!--<li><a href="/2025/talks/a-identity-crisis-can-i-be-proud-of-this">Craig Dennis</a> – AIdentity Crisis: Can I Be Proud of This?</li>-->
-  <li><a href="/2025/talks/lets-destroy-the-video-player">Dave Kiss</a> – Let's Destroy the Video Player</li>
-  <li><a href="/2025/talks/when-vibe-coding-isnt-good-enough">Erik Hanchett</a> – When Vibe Coding Isn’t Good Enough</li>
-  <li><a href="/2025/talks/think-fast-ondevice-vector-features">Gant Laborde</a> – Think Fast: OnDevice Vector Features</li>
-  <!--<li><a href="/2025/talks/my-journey-as-a-solo-ai-entrepreneur">Harshitha Amit</a> – My Journey as a Solo AI Entrepreneur</li>-->
-  <li><a href="/2025/talks/becoming-a-code-review-champ">Isabela McLenachen</a> – Becoming a Code Review Champ</li>
-  <li><a href="/2025/talks/view-source-for-ai-gpt-in-vanilla-javascript">Ishan Anand</a> – View Source for AI: GPT in Vanilla JavaScript</li>
-  <li><a href="/2025/talks/tanstack-is-your-new-favorite-framework">Jack Herrington</a> – Is The Model Context Protocol (MCP) Web 4.0?</li>
-  <li><a href="/2025/talks/theres-no-such-thing-as-web-components">Jeremy Elbourn</a> – There's No Such Thing As Web Components</li>
-  <li><a href="/2025/talks/observability-now-building-a-case-for-hybrid-instrumentation">Justin Castilla</a> – Observability Now! Building a Case for Hybrid Instrumentation</li>
-  <li><a href="/2025/talks/whats-in-your-head">Justin Rastelli</a> – What's in Your &lt;head&gt;</li>
-  <li><a href="/2025/talks/pushing-the-limits-of-big-data-in-the-browser">Kenny Daniel</a> – Pushing the Limits of Big Data in the Browser</li>
-  <li><a href="/2025/talks/the-new-user-interaction-model">Kent C. Dodds</a> – The New User Interaction Model</li>
-  <li><a href="/2025/talks/ai-that-gets-the-picture-building-video-aware-assistants">Kevin Dela Rosa</a> – AI That Gets the Picture: Building Video-Aware Assistants</li>
-  <!--<li><a href="/2025/talks/piloting-ai-coding-agents">Kevin Whinnery</a> – Piloting AI Coding Agents</li>-->
-  <li><a href="/2025/talks/escaping-reactivity-hell-why-state-feels-hard-and-what-to-do-about-it">Kristen Hewell Garrett</a> – Escaping Reactivity Hell: Why State Feels Hard (and What to Do About It)</li>
-  <li><a href="/2025/talks/the-death-of-the-browser">Rachel Lee Nabors</a> – The Death of the Browser</li>
-  <li><a href="/2025/talks/a-world-without-builds">Ryan Roemer</a> – A World Without Builds</li>
-  <li><a href="/2025/talks/seeing-beyond-the-framework-illusion">Sean C. Davis</a> – Seeing Beyond the Framework Illusion</li>
-  <li><a href="/2025/talks/react-and-nextjs-in-2025">Shruti Kapoor</a> – React & Next.js in 2025- Modern Best Practices for Faster, Smarter Apps</li>
-  <!--<li><a href="/2025/talks/how-to-win-developers-and-influence-adoption">Will Klein</a> – How to Win Developers and Influence Adoption</li>-->
-</ul>
+
+### Keynote Speakers
+
+- Jason Myers - Secret Talk
+- Evan Boyle - Secret Talk
+- Phil Nash - Secret Talk
+- [Kent C. Dodds - The New User Interaction Model](/2025/talks/the-new-user-interaction-model)
+- [Craig Dennis - AIdentity Crisis: Can I be proud of this?](/2025/talks/aidentity-crisis-can-i-be-proud-of-this)
+- [Rachel Lee Nabors – The Death of the Browser](/2025/talks/the-death-of-the-browser)
+
+### Main Stage Speakers
+
+- [Adam Argyle – Oops, CSS Got Away From Me... Send Halp!](/2025/talks/oops-css-got-away-from-me-send-halp)
+- [Alex Clemmer – Lies I Was Told About Collaborative Editing](/2025/talks/lies-i-was-told-about-collaborative-editing)
+- [Annie Sexton – JavaScript: The Origin Story](/2025/talks/javascript-the-origin-story)
+- [Bree Hall – Coding for the Senses](/2025/talks/coding-for-the-senses)
+- [Charlie Gerard – Motion Control With Multimodal AI](/2025/talks/motion-control-with-multimodal-ai)
+- [Gant Laborde – Think Fast: OnDevice Vector Features](/2025/talks/think-fast-ondevice-vector-features)
+- [Ishan Anand – View Source for AI: GPT in Vanilla JavaScript](/2025/talks/view-source-for-ai-gpt-in-vanilla-javascript)
+- [Jack Herrington – Is The Model Context Protocol (MCP) Web 4.0?](/2025/talks/tanstack-is-your-new-favorite-framework)
+- [Kenny Daniel – Pushing the Limits of Big Data in the Browser](/2025/talks/pushing-the-limits-of-big-data-in-the-browser)
+- [Kevin Whinnery - Piloting Coding Agents](/2025/talks/piloting-ai-coding-agents)
+- [Kristen Hewell Garrett – Escaping Reactivity Hell: Why State Feels Hard (and What to Do About It)](/2025/talks/escaping-reactivity-hell-why-state-feels-hard-and-what-to-do-about-it)
+- [Sean C. Davis – Seeing Beyond the Framework Illusion](/2025/talks/seeing-beyond-the-framework-illusion)
+- Sid Vishnoi - Secret Talk
+- [Shruti Kapoor – React & Next.js in 2025- Modern Best Practices for Faster, Smarter Apps](/2025/talks/react-and-nextjs-in-2025)
+
+### Lightning Stage Speakers
+
+- [Amber Hoak – Unlocking User Insights With LLMs to Design Smarter UI and Flows](/2025/talks/unlocking-user-insights-with-llms-to-design-smarter-ui-and-flows)
+- [Anthony Dellavecchia – AI-Powered Magic, Live on Stage](/2025/talks/ai-powered-magic-live-on-stage)
+- [Anton Zalaldinov – Third-Party Scripts, Surviving the Wild West of the Web](/2025/talks/third-party-scripts-surviving-the-wild-west-of-the-web)
+- [Brittany Ellich – From Rewrites to AI Agents for App Modernization](/2025/talks/from-rewrites-to-ai-agents-for-app-modernization)
+- [Cat Johnson – AI and Accessibility: We Got a Lot to Talk About](/2025/talks/ai-and-accessibility-we-got-a-lot-to-talk-about)
+- [Chris Griffing – ATProto Can Be as Simple as a WebSocket](/2025/talks/atproto-can-be-as-simple-as-a-websocket)
+- [Courtney Yatteau – AI-Powered Gamification for the Web](/2025/talks/ai-powered-gamification-for-the-web)
+- [Dave Kiss – Let's Destroy the Video Player](/2025/talks/lets-destroy-the-video-player)
+- [Erik Hanchett – When Vibe Coding Isn’t Good Enough](/2025/talks/when-vibe-coding-isnt-good-enough)
+- [Isabela McLenachen – Becoming a Code Review Champ](/2025/talks/becoming-a-code-review-champ)
+- [Jeremy Elbourn – There's No Such Thing As Web Components](/2025/talks/theres-no-such-thing-as-web-components)
+- [Justin Castilla – Observability Now! Building a Case for Hybrid Instrumentation](/2025/talks/observability-now-building-a-case-for-hybrid-instrumentation)
+- [Justin Rastelli – What's in Your <head>](/2025/talks/whats-in-your-head)
+- [Kevin Dela Rosa – AI That Gets the Picture: Building Video-Aware Assistants](/2025/talks/ai-that-gets-the-picture-building-video-aware-assistants)
+- [Ryan Roemer – A World Without Builds](/2025/talks/a-world-without-builds)
+
+
 
 <h2 id="postconf">Post-Conference</h2>
 
