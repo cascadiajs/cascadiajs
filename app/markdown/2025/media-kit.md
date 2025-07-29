@@ -1,6 +1,6 @@
 ---
 title: Media Kit
-excerpt: Marketing copy and visual assets for CascadiaJS
+excerpt: Marketing copy and visual assets for CascadiaJS 2025
 ---
 
 <div id="toc">
@@ -15,18 +15,28 @@ excerpt: Marketing copy and visual assets for CascadiaJS
 
 <h2 id="copy">Marketing Copy</h2>
 
-<p>CascadiaJS is an annual reunion of web developers in the Pacific Northwest and beyond, where friends new and old meet to celebrate our unique community, share knowledge and explore ideas on the cutting edge of the web, JavaScript and AI. </p>
+### Headline
 
-<p>We are a conference for devs by devs. You’ll hear technical talks from top engineers, get connected to industry-leading companies and discuss what you’ve learned during our hallway track with 500+ other attendees.</p>
+A Web + AI conference for the Pacific Northwest
 
-<p>This is an event designed to help you level up your skills, build your network and have fun for a few days in the beautiful PNW. </p>
+### Subtitle
 
-<p>This year's CascadiaJS will be in Seattle on Sept 18-19 and will feature:</p>
+CascadiaJS is a community-driven conference for developers in the PNW and beyond. You will hear from 40+ speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
 
-* 30+ amazing speakers 
-* Leading web + AI companies
-* Excellent networking and social events
-* Meals, unlimited coffee, and the best conference swag around
+### Longer Copy
+
+CascadiaJS is an annual reunion of web developers in the Pacific Northwest and beyond, where friends new and old meet to celebrate our unique community, share knowledge and explore ideas on the cutting edge of the web, JavaScript and AI.
+
+We are a conference for devs by devs. You'll hear technical talks from top engineers, get connected to industry-leading companies and discuss what you've learned during our hallway track with 500+ other attendees.
+
+This is an event designed to help you level up your skills, build your network and have fun for a few days in the beautiful PNW.
+
+### Features
+
+* Amazing speakers - covering the latest in web and AI.
+* The friendliest hallway track around - connect and grow your network.
+* Top web + AI companies - meet folks building tools in the web and AI space.
+* Treats galore - social events, snacks, unlimited coffee and the best conference swag!
 
 <h2 id="social">Social Media</h2>
 
