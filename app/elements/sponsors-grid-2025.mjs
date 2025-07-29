@@ -10,6 +10,15 @@ const sponsors = [
     url: 'https://www.gensx.com/',
     description: 'GenSX is a simple typescript framework for building agents and workflows with reusable React-like components.\n\nGenSX takes a lot of inspiration from React, but the programming model is very different - it’s a Node.js framework designed for data flow.\n\nBut if you know how to write a react component, then building an agent will feel easy and familiar.'
   },
+  { 
+    id: 'webai',
+    tier: 'platinum',
+    logo: 'google-webai.svg',
+    logoSquare: 'google-webai.png',
+    name: '#WebAI',
+    url: 'https://www.linkedin.com/in/webai/',
+    description: '# Web AI\n## What is Web AI?\nWeb AI is the art of running machine learning models entirely client side within a web browser via JavaScript. From Agents powered by generative AI to traditional ML models for things like object detection, pose estimation, or segmentation - it\'s likely you can run many of the popular models you already use in this form. \n## Benefits of Web AI\nBut why use Web AI? By running models on the client side it gives you total privacy, zero inference costs, and low latency results - great for real time applications. We are already seeing particular interest from folk working in healthcare, finance, and legal industries to name a few. Join the wave of >1 billion yearly downloads of Web AI models and libraries and see how you can level up your company\'s web applications to gain client side superpowers for your customers.\n## Tell me more\nCome along to our keynote talk at Cascadia.js 2025 to hear the latest updates and then head on over to the following links to learn more:\n* [Coffee break sized videos on YouTube](https://goo.gle/WebAIVideos)\n* [Web AI Agents](https://www.youtube.com/watch?v=IC256KyITLw)\n* [Get inspired by the wider community](http://goo.gle/made-with-tfjs)\n* [Free zero to hero course](http://goo.gle/Learn-WebAI)\n* [Web AI Discord server](https://discord.gg/C2kjJn2uzw)\n### Connect with humans\nReach out to [Jason Mayes (Web AI Lead at Google)](https://www.linkedin.com/in/webai/) if any specific questions.'
+  },
   {
     id: 'cloudflare',
     tier: 'gold',
@@ -154,13 +163,31 @@ const sponsors = [
     description: 'NewTech Northwest is a community of tech enthusiasts in the Pacific Northwest. We meet monthly to share knowledge and learn from each other.'   
   },
   {
-    id: 'infinite-read',
+    id: 'infinite-red',
     tier: 'community',
     logo: 'infinitered.png',
     logoSquare: 'infinitered.png',
     name: 'Infinite Red',
     url: 'https://infinite.red',
     description: 'Infinite Red is a mobile app development company that specializes in React Native. We build beautiful, high-quality apps for iOS and Android.'   
+  },
+  {
+    id: 'github',
+    tier: 'community',
+    logo: 'github.png',
+    logoSquare: 'github.svg',
+    name: 'Github',
+    url: 'https://github.com',
+    description: ''   
+  },
+  {
+    id: 'mux',
+    tier: 'community',
+    logo: 'mux.svg',
+    logoSquare: 'mux.png',
+    name: 'Mux',
+    url: 'https://mux.com',
+    description: ''   
   }
 ]
 

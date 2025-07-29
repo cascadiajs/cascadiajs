@@ -45,14 +45,14 @@ We will cover 3 nights of lodging at the Hotel Monaco for the nights of Septembe
 
 If your employer is covering travel and lodging in exchange for a Community Sponsorship of the conference, please let us know. It takes a village to put on CascadiaJS, and everything helps.
 
-Thank you to INFINITE RED for helping us out here!
+Thank you to Infinite Red, Github and Mux for helping us out here!
 
 ### Join the Discord
 
 Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter Rabasa so that he can flag you with the "speaker" role. 
 
 * This will give you access to the "Speaker Lounge" in Discord. 
-* Discord is also where we will ask our attendees to ask question during and following your talk.
+* Discord is also where we will ask our attendees to ask questions during and following your talk.
 
 <h2 id="preparing-for-the-conference">Preparing for the Conference</h2>
 

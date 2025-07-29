@@ -29,6 +29,8 @@ Check out our [Travel Guide](/2025/travel) for information on getting to Seattle
 
 As you plan your travel, please try to arrive in Seattle no later than 2pm on September 17. We are hosting our Welcome Reception at the conference venue starting at 5pm. It's not mandatory that you attend, but it's nice. 
 
+Our Speaker Dinner is currently planned for September 18 at 7pm. You'll receive a calendar invite with more information on this once the details are finalized.
+
 ### Lodging
 
 The Hotel Monaco is the official speaker hotel for CascadiaJS 2025.
@@ -37,14 +39,14 @@ The Hotel Monaco is the official speaker hotel for CascadiaJS 2025.
 
 If your employer is covering travel and lodging in exchange for a Community Sponsorship of the conference, please let us know. It takes a village to put on CascadiaJS, and everything helps.
 
-Thank you to INFINITE RED for helping us out here!
+Thank you to Infinite Red, Github and Mux for helping us out here!
 
 ### Join the Discord
 
 Please [join our Discord](https://discord.gg/kkYR86GM29) and send a DM to Carter Rabasa so that he can flag you with the "speaker" role. 
 
 * This will give you access to the "Speaker Lounge" in Discord. 
-* Discord is also where we will ask our attendees to ask question during and following your talk.
+* Discord is also where we will ask our attendees to ask questions during and following your talk.
 
 <h2 id="preparing-for-the-conference">Preparing for the Conference</h2>
 
