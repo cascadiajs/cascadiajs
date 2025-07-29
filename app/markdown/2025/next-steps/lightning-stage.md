@@ -29,8 +29,6 @@ Check out our [Travel Guide](/2025/travel) for information on getting to Seattle
 
 As you plan your travel, please try to arrive in Seattle no later than 2pm on September 17. We are hosting our Welcome Reception at the conference venue starting at 5pm. It's not mandatory that you attend, but it's nice. 
 
-Our Speaker Dinner is currently planned for September 18 at 7pm. You'll receive a calendar invite with more information on this once the details are finalized.
-
 ### Lodging
 
 The Hotel Monaco is the official speaker hotel for CascadiaJS 2025. The deadline to book at our discounted rate is August 29th. More info in the [Travel Guide](/2025/travel).
