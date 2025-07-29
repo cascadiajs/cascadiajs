@@ -31,27 +31,24 @@ There is no onsite parking, but there are several parking garages nearby. Visit 
 
 ### Venue Access & Load-in
 
-Venue access and load-in times will be provided soon.
-
-<!--
 **Thursday, September 18 (Day One)**<br />
 Sponsor load-in and set up: 6:30am - 8:00am<br />
 Doors open to attendees: 8:00am<br />
-Day end: 10:00pm
+Day end: 5:45pm
 
 **Friday, September 19 (Day Two)**<br />
 Sponsor load-in and set up: 7:00am - 8:00am<br />
 Doors open to attendees: 8:00am<br />
-Day end: 11:00pm
+Day end: 10:30pm
 
 All conference/sponsor items must be removed from Town Hall by 11:00pm.
--->
+
 
 ### Shipping
 Items can be shipped directly to Town Hall. Storage space is limited at the venue, so if you have large items or more than a few boxes to send, please contact us first. 
 
 **Shipping window**<br />
-Packages can be delivered on the following weekdays: 9/10-12 and 9/15-19. Town Hall doesn't accept packages on weekends as the office is closed.
+Packages can be delivered on the following weekdays: 9/15-19. Town Hall doesn't accept packages on weekends as the office is closed.
 
 **Shipping address**<br />
 CascadiaJS<br />
