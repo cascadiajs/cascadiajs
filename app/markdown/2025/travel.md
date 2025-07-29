@@ -8,9 +8,28 @@ excerpt: How to get to Cascadia and where to stay while you're here.
 
 There are lots of ways to get to Seattle, WA, let's review.
 
-### Take the Hacker Train
+### Take the Hacker Train (or Bus)
 
-Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouver, BC (or any Amtrak spot in between) there is **no better way** to get to CascadiaJS than to join your fellow devs on the Hacker Train. Please complete the [Hacker Train Survey](https://airtable.com/app4aehCXEydAuxKX/pagVs4dpxC3tosLYH/form) if you're interested and we'll follow up with instructions for how to secure your spot.
+Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouver, BC (or any Amtrak spot in between) there is **no better way** to get to CascadiaJS than to join your fellow devs on the Hacker Train (or Bus). Here are the options we recommend:
+
+
+#### Coming from Portland, OR
+
+* Depart from Portland Union Station
+* Sept 17 at 2:10pm 
+* Amtrak Cascades 518 Train
+* Arriving in Seattle King St Station at 5:37pm
+
+#### Coming from Vancouver, BC
+
+* Depart from Vancouver Pacific Central Station
+* Sept 17 at 11:30am
+* 8909 Connecting Bus
+* Arriving in Seattle King St Station at 3:30pm.
+
+After you purchase your tickets, please [RSVP here](https://airtable.com/app4aehCXEydAuxKX/shrGMtQacna7N6YLw) so we know who's coming and can get your all connected!
+
+<div class="cta secondary"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train or Bus Ticket</a></div>
 
 ### Fly in to Seatac
 
