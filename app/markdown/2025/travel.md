@@ -4,7 +4,15 @@ image: /_public/images/2024/travel/kimpton-hotel-monaco.jpg
 excerpt: How to get to Cascadia and where to stay while you're here.
 ---
 
-## Getting to CascadiaJS in Seattle, WA
+<div id="toc">
+<h2>On This Page</h2>
+    <ul>
+        <li><a href="#transportation">Getting to CascadiaJS</a></li>
+        <li><a href="#lodging">Lodging</a></li>
+    </ul>
+</div>
+
+<h2 id="transportation">Getting to CascadiaJS in Seattle, WA</h2>
 
 There are lots of ways to get to Seattle, WA, let's review.
 
@@ -27,7 +35,7 @@ Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouve
 * 8909 Connecting Bus
 * Arriving in Seattle King St Station at 3:30pm.
 
-After you purchase your tickets, please [RSVP here](https://airtable.com/app4aehCXEydAuxKX/shrGMtQacna7N6YLw) so we know who's coming and can get your all connected!
+After you purchase your tickets, please [RSVP here](https://airtable.com/app4aehCXEydAuxKX/shrGMtQacna7N6YLw) so we know who's coming and can get you all connected!
 
 <div class="cta secondary"><a target="_blank" href="https://www.amtrak.com/home.html">Buy Train or Bus Ticket</a></div>
 
@@ -43,7 +51,7 @@ Another nearby airport is [Paine Field (PAE)](https://www.painefield.com/).
 
 Options for getting to Seattle from Paine Field include [rental cars, taxis, rideshare, and shuttles](https://flypainefield.com/about/location).
 
-## Lodging in Seattle, WA
+<h2 id="lodging">Lodging in Seattle, WA</h2>
 
 We've partnered with two hotels to secure discounts for your stay in Seattle during CascadiaJS 2025. Please read the description below and make note of the deadlines for booking with the discount.
 
