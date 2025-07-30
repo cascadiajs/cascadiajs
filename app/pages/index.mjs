@@ -71,7 +71,6 @@ export default function ({ html /*state*/ }) {
       </div>
       </div>
     </section>
-    <script async data-uid="43d1c2c054" src="https://cascadiajs.kit.com/43d1c2c054/index.js"></script>
     </main-layout>
   `;
 }
