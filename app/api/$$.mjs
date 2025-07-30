@@ -15,27 +15,37 @@ export async function get({ path, query}) {
 
   // pull out any front-matter key/values
   let { attributes, body } = fm(docMarkdown)
-  let { title, image, excerpt } = attributes
+  let { title, image, excerpt, redirect } = attributes
 
-  const { social } = query
-  // set social sharing info
-  const sharing = {
-    social,
-    title,
-    image: image || '/_public/images/past/cjs19-family-photo.jpg',
-    description: excerpt,
-    sharingTitle: 'CascadiaJS | ' + title,
-    sharingImage: (path.indexOf('2025') > 0 ? '/_public/images/2025/social-sharing-general.png' : '/_public/images/sharing' + path + '.png'),
-    sharingDescription: excerpt
+  if (redirect) {
+    return {
+      statusCode: 301,
+      headers: {
+        location: redirect
+      }
+    };
   }
-
-  return {
-    json: {
-      path,
+  else {
+    const { social } = query
+    // set social sharing info
+    const sharing = {
+      social,
       title,
-      attributes,
-      body,
-      sharing
-    },
-  };
+      image: image || '/_public/images/past/cjs19-family-photo.jpg',
+      description: excerpt,
+      sharingTitle: 'CascadiaJS | ' + title,
+      sharingImage: (path.indexOf('2025') > 0 ? '/_public/images/2025/social-sharing-general.png' : '/_public/images/sharing' + path + '.png'),
+      sharingDescription: excerpt
+    }
+
+    return {
+      json: {
+        path,
+        title,
+        attributes,
+        body,
+        sharing
+      },
+    }
+  }
 }

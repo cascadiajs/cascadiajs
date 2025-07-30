@@ -54,7 +54,7 @@ export default function ({ html /*state*/ }) {
         <div class="cta primary"><a href="/2025">CascadiaJS: Sept 18-19, 2025</a></div>
       </article>
       <article>
-        <img src="/_public/images/2024/main-page-illo-2024.png" alt="hero image of 2024 event"/>
+        <img src="/_public/images/2025/hero-camper.png" alt="Sasquatch driving a camper van"/>
       </article>
     </section>
     <section id="trailer" class="landing">
