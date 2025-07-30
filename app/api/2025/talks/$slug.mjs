@@ -21,7 +21,8 @@ export async function get({pathParameters, query, path}) {
     image: '/_public/images/speakers/' + talk.speaker.image,
     description: talk.title,
     sharingTitle: 'CascadiaJS 2025 | Speakers | ' + talk.speaker.name,
-    sharingImage: '/_public/images/sharing' + path + '.png',
+    //sharingImage: '/_public/images/sharing' + path + '.png',
+    sharingImage: `/_public/images/2025/social/social-speaker-${talk.speaker.slug}.png`,
     sharingDescription: talk.short || talk.description
   }
   return {
