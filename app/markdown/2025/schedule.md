@@ -62,7 +62,7 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 
 ### Keynote Speakers
 
-- Jason Myers - Secret Talk
+- Jason Mayes - Secret Talk
 - Evan Boyle - Secret Talk
 - Phil Nash - Secret Talk
 - [Kent C. Dodds - The New User Interaction Model](/2025/talks/the-new-user-interaction-model)
