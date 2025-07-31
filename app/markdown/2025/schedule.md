@@ -78,7 +78,7 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 - [Charlie Gerard – Motion Control With Multimodal AI](/2025/talks/motion-control-with-multimodal-ai)
 - [Gant Laborde – Think Fast: OnDevice Vector Features](/2025/talks/think-fast-ondevice-vector-features)
 - [Ishan Anand – View Source for AI: GPT in Vanilla JavaScript](/2025/talks/view-source-for-ai-gpt-in-vanilla-javascript)
-- [Jack Herrington – Is The Model Context Protocol (MCP) Web 4.0?](/2025/talks/tanstack-is-your-new-favorite-framework)
+- [Jack Herrington – TanStack Is Your New Favorite Framework](/2025/talks/tanstack-is-your-new-favorite-framework)
 - [Kenny Daniel – Pushing the Limits of Big Data in the Browser](/2025/talks/pushing-the-limits-of-big-data-in-the-browser)
 - [Kevin Whinnery - Piloting Coding Agents](/2025/talks/piloting-ai-coding-agents)
 - [Kristen Hewell Garrett – Escaping Reactivity Hell: Why State Feels Hard (and What to Do About It)](/2025/talks/escaping-reactivity-hell-why-state-feels-hard-and-what-to-do-about-it)
