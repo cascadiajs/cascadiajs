@@ -534,5 +534,20 @@
         { "type": "x", "url": "https://x.com/craigsdennis" }
       ]
     }
+  },
+  {
+    "title": "Client side Web AI Agents: Smarter user experiences for an agentic internet",
+    "slug": "client-side-web-ai-agents-smarter-user-experiences-for-an-agentic-internet",
+    "abstract": "Learn how to create and run client side AI agents in JS, powered by smaller LLMs, to perform useful work faster on existing websites using Web AI. Get a glimpse of the future - an agentic internet.",
+    "speaker": {
+      "name": "Jason Mayes",
+      "slug": "jason-mayes",
+      "image": "/_public/images/2025/speakers/jason-mayes.png",
+      "company": "Google",
+      "location": "San Francisco, CA, USA",
+      "links": [
+        { "type": "linked", "url": "https://www.linkedin.com/in/webai" }
+      ]
+    }
   }
 ]

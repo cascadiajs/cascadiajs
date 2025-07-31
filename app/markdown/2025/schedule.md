@@ -62,12 +62,12 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 
 ### Keynote Speakers
 
-- Jason Mayes - Secret Talk
-- Evan Boyle - Secret Talk
+- [Jason Mayes](https://www.linkedin.com/in/webai) (Google) - [Client side Web AI Agents: Smarter user experiences for an agentic internet](/2025/talks/client-side-web-ai-agents-smarter-user-experiences-for-an-agentic-internet)
+- Evan Boyle (GenSX) - Secret Talk
 - Phil Nash - Secret Talk
-- [Kent C. Dodds - The New User Interaction Model](/2025/talks/the-new-user-interaction-model)
-- [Craig Dennis - AIdentity Crisis: Can I be proud of this?](/2025/talks/aidentity-crisis-can-i-be-proud-of-this)
-- [Rachel Lee Nabors – The Death of the Browser](/2025/talks/the-death-of-the-browser)
+- Kent C. Dodds - [The New User Interaction Model](/2025/talks/the-new-user-interaction-model)
+- Craig Dennis (Cloudflare) - [AIdentity Crisis: Can I be proud of this?](/2025/talks/aidentity-crisis-can-i-be-proud-of-this)
+- Rachel Lee Nabors – [The Death of the Browser](/2025/talks/the-death-of-the-browser)
 
 ### Main Stage Speakers
 
