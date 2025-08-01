@@ -12,9 +12,9 @@ CascadiaJS exists to educate and grow the JavaScript community in the Pacific No
 The Opportunity Scholarship Program is open to anyone who:
 
 ```
-1. Lives in the Pacific Northwest
+1. Lives in the Pacific Northwest, and
 
-2. Is able to attend both days of the conference (September 18 and 19)
+2. Is able to attend both days of the conference (September 18 and 19), and
 
 3. Meets -one- of the following:
 
@@ -31,7 +31,9 @@ The Opportunity Scholarship Program is open to anyone who:
 
 <i class="fas fa-heart"></i> If you cannot afford this ticket, you can request Financial Aid
 
-<div class="cta"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/shr1WwspS373YsKRY">Apply for a Scholarship</a></div>
+**Applications are closed. Thank you to all who applied!** 
+
+<!--<div class="cta"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/shr1WwspS373YsKRY">Apply for a Scholarship</a></div>-->
 
 ## Please help us spread the word!
 
