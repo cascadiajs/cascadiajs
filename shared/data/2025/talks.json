@@ -549,5 +549,50 @@
         { "type": "linked", "url": "https://www.linkedin.com/in/webai" }
       ]
     }
+  },
+  {
+    "title": "A built-in browser-based babelfish",
+    "slug": "a-built-in-browser-based-babelfish",
+    "abstract": "AI is thriving on the server side, but the web is catching up! Let's explore how to build browser AI apps, like an offline speech-to-speech translator, leveraging current and future Web APIs.",
+    "speaker": {
+      "name": "Phil Nash",
+      "slug": "phil-nash",
+      "image": "/_public/images/2025/speakers/phil-nash.png",
+      "company": "IBM",
+      "location": "Melbourne, Australia",
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/philna.sh" }
+      ]
+    }
+  },
+  {
+    "title": "Docs for Bots",
+    "slug": "docs-for-bots",
+    "abstract": "Come along as I reverse-engineer how ChatGPT, Copilot, and other bots read our docs. We'll sketch out JS-powered tests, try out prompt ideas, and see what it takes to serve the best experience for each user-agent.",
+    "speaker": {
+      "name": "Quinn Blenkinsop",
+      "slug": "quinn-blenkinsop",
+      "image": "/_public/images/2025/speakers/quinn-blenkinsop.png",
+      "company": "Arcjet",
+      "location": "Vancouver, BC, Canada",
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/quinnb.dev" }
+      ]
+    }
+  },
+  {
+    "title": "Runtime Error: Writing JS Libraries in the Age of Fragmentation",
+    "slug": "runtime-error-writing-js-libraries-in-the-age-of-fragmentation",
+    "abstract": "Building for the web used to mean fighting browser quirks. Now, it's runtime quirks. Node.js, Deno, Bun, Cloudflare Workers, Edge runtimes, React Native, they all run JavaScript, sort of. Each comes with its own gotchas.\n\nThrow in ESM vs CJS, native TypeScript vs compiled JS, export maps, bundlers, and half-supported compatibility layers, and you’ve got a new kind of chaos.\n\nIn this talk, I’ll share the challenges we faced building the OpenAI Agents SDK and how we navigated the messy modern JS landscape.",
+    "speaker": {
+      "name": "Dominik Kundel",
+      "slug": "dominik-kundel",
+      "image": "/_public/images/2025/speakers/dominik-kundel.png",
+      "company": "OpenAI",
+      "location": "San Francisco, CA, USA",
+      "links": [
+        { "type": "twitter", "url": "https://twitter.com/dkundel" }
+      ]
+    }
   }
 ]

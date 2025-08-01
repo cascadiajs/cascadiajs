@@ -64,7 +64,7 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 
 - [Jason Mayes](https://www.linkedin.com/in/webai) (Google) - [Client side Web AI Agents: Smarter user experiences for an agentic internet](/2025/talks/client-side-web-ai-agents-smarter-user-experiences-for-an-agentic-internet)
 - Evan Boyle (GenSX) - Secret Talk
-- Phil Nash - Secret Talk
+- Phil Nash - [A built-in browser-based babelfish](/2025/talks/a-built-in-browser-based-babelfish)
 - Kent C. Dodds - [The New User Interaction Model](/2025/talks/the-new-user-interaction-model)
 - Craig Dennis (Cloudflare) - [AIdentity Crisis: Can I be proud of this?](/2025/talks/aidentity-crisis-can-i-be-proud-of-this)
 - Rachel Lee Nabors – [The Death of the Browser](/2025/talks/the-death-of-the-browser)
@@ -96,12 +96,14 @@ We'll have another full day of talks, followed by dinner and a Closing Party you
 - [Chris Griffing – ATProto Can Be as Simple as a WebSocket](/2025/talks/atproto-can-be-as-simple-as-a-websocket)
 - [Courtney Yatteau – AI-Powered Gamification for the Web](/2025/talks/ai-powered-gamification-for-the-web)
 - [Dave Kiss – Let's Destroy the Video Player](/2025/talks/lets-destroy-the-video-player)
+- Dominik Kundel (OpenAI) - [Runtime Error: Writing JS Libraries in the Age of Fragmentation](/2025/talks/runtime-error-writing-js-libraries-in-the-age-of-fragmentation)
 - [Erik Hanchett – When Vibe Coding Isn’t Good Enough](/2025/talks/when-vibe-coding-isnt-good-enough)
 - [Isabela McLenachen – Becoming a Code Review Champ](/2025/talks/becoming-a-code-review-champ)
 - [Jeremy Elbourn – There's No Such Thing As Web Components](/2025/talks/theres-no-such-thing-as-web-components)
 - [Justin Castilla – Observability Now! Building a Case for Hybrid Instrumentation](/2025/talks/observability-now-building-a-case-for-hybrid-instrumentation)
 - [Justin Rastelli – What's in Your <head>](/2025/talks/whats-in-your-head)
 - [Kevin Dela Rosa – AI That Gets the Picture: Building Video-Aware Assistants](/2025/talks/ai-that-gets-the-picture-building-video-aware-assistants)
+- Quinn Blenkinsop (Arcjet) - [Docs for Bots](/2025/talks/docs-for-bots)
 - [Ryan Roemer – A World Without Builds](/2025/talks/a-world-without-builds)
 
 
