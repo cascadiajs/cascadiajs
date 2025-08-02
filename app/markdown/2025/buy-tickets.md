@@ -5,7 +5,7 @@ excerpt: Supplies are limited, don't miss out!
 ---
 ## Ticket Release Schedule
 
-Tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
+Our tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
 
 <table class="styled-table">
     <thead>
@@ -19,22 +19,41 @@ Tickets are released in batches. Each batch is limited in quantity, so please ma
     </tbody>
 </table>
 
+## Included in Your Ticket
+
+Here is what is included in our Blind/Early/Regular/Late Bird tickets:
+
+🎁 Conference hoodie + swag
+
+🤝 Welcome Reception (Sept 17)
+
+🎙️ Talk tracks (Sept 18-19)
+
+🌮 Breakfast and lunch (Sept 18-19)
+
+🎉 Dinner, Drinks and Closing Party (Sept 19)
+
+🌲 Activity track (Sept 20)
+
 <div class="highlight warning">Note: Regular Bird is your LAST CHANCE to guarantee you get a hoodie in your size. All orders after August 1st are best effort.</div>
 
 ## Indie Dev Discount
 
-You can qualify for a $200-off Indie Dev discount if you are between jobs, self-employed or work for a educational institution, non-profit organization or company with fewer than 10 employees.
+You can qualify for a $200-off Indie Dev discount if you meet one of the following requirements:
 
-<!--table class="styled-table">
+* between jobs
+* self-employed
+* work for a educational institution
+* work for a non-profit organization or company with fewer than 10 employees
+
+## Other Ticket Types
+
+<table class="styled-table">
     <tbody>
-    <tr><td>Indie Dev</span></td><td>Between jobs, self-employed or works for a educational institution, non-profit organization or company with fewer than 10 employees.</td></tr>
     <tr><td>Student</span></td><td>Designed for students who are not working in tech full-time.</td></tr>
-    <tr><td>No Frills</span></td><td>Does not come with any swag, meals or drink tickets (no frills!), but you'll have access to all the talks, all the workshops and both evening social events.</td></tr>
-    <tr><td>Significant Other</span></td><td>Designed for significant others who want to participate in the social parts of the conference.</td></tr>
-    <tr><td>Kid</span></td><td>Designed for kids under 18 who will be accompanying a parent to the conference.</td></tr>
-
+    <tr><td>No Frills</span></td><td>Does not come with any swag, meals or drink tickets (no frills!), but you'll have access to all the talks, the party and the activity track.</td></tr>
 </tbody>
-</table-->
+</table>
 
 ## Bring a Friend, Save $50
 
