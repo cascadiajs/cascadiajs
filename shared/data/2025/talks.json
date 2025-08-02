@@ -594,5 +594,54 @@
         { "type": "twitter", "url": "https://twitter.com/dkundel" }
       ]
     }
+  },
+  {
+    "title": "How to Win Developers and Influence Adoption",
+    "slug": "how-to-win-developers-and-influence-adoption",
+    "abstract": "You shipped a great release, but do they know why it matters? Learn how to spark interest from devs and decision-makers, make adoption a no-brainer, and build buzz the right way—by being authentic and purposeful.",
+    "speaker": {
+      "name": "Will Klein",
+      "slug": "will-klein",
+      "image": "/_public/images/2025/speakers/will-klein.png",
+      "company": "North",
+      "location": "Longmont, Colorado, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/willklein_" },
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/willklein/"},
+        { "type": "bluesky", "url": "https://bsky.app/profile/willkle.in"}
+      ]
+    }
+  },
+  {
+    "title": "No one knows how good their LLM is and that's a problem",
+    "slug": "no-one-knows-how-good-their-llm-is-and-thats-a-problem",
+    "abstract": "When everyone is building AI Apps, they're all great in theory! But how do we make sure that they’re actually good in production.  ",
+    "speaker": {
+      "name": "Erin Mikail Staples",
+      "slug": "erin-mikail-staples",
+      "image": "/_public/images/2025/speakers/erin-staples.png",
+      "company": "Galileo",
+      "location": "Brooklyn, NY USA",
+      "links": [
+        { "type": "twitter", "url": "https://twitter.com/erinmikail" },
+        { "type": "linkedin", "url": "https://linkedin.com/in/erinmikail" }
+      ]
+    }
+  },
+  {
+    "title": "Less but better frontend code",
+    "slug": "less-but-better-frontend-code",
+    "abstract": "Language standards and browser support have been undergoing rapid improvements. This talk is a guided tour of some classic problems and the concise modern solutions that are now possible.",
+    "speaker": {
+      "name": "Allan Deutsch",
+      "slug": "allan-deutsch",
+      "pronouns": "he/him/his",
+      "image": "/_public/images/2025/speakers/allan-deutsch.png",
+      "company": "Galileo",
+      "location": "Brooklyn, NY USA",
+      "links": [
+        { "type": "github", "url": "https://github.com/masstronaut" }
+      ]
+    }
   }
 ]
