@@ -298,7 +298,7 @@
     }
   },
   {
-    "title": "Let's destroy the video player ",
+    "title": "Let's destroy the video player",
     "slug": "lets-destroy-the-video-player",
     "abstract": "Every video player looks the same until you rebuild one with Three.js, simulated physics, and some 90s arcade chaos.",
     "speaker": {
@@ -641,6 +641,22 @@
       "location": "Brooklyn, NY USA",
       "links": [
         { "type": "github", "url": "https://github.com/masstronaut" }
+      ]
+    }
+  },
+  {
+    "title": "Spinning up Go and TypeScript projects quickly with Go-Blueprint",
+    "slug": "spinning-up-go-and-typescript-projects-quickly-with-go-blueprint",
+    "abstract": "Go-blueprint is a powerful CLI tool that helps users spin up Go backend projects. Recently we added frontend support with popular libraries. The CLI tool now has 8k stars and growing!",
+    "speaker": {
+      "name": "Melkeydev",
+      "slug": "melkeydev",
+      "pronouns": "he/him/his",
+      "image": "/_public/images/2025/speakers/melkeydev.png",
+      "company": "Freelance",
+      "location": "Seattle, WA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/MelkeyDev" }
       ]
     }
   }
