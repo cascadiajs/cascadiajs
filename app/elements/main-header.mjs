@@ -80,7 +80,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert">Bring a friend and save $50 on each ticket after the first one! <a href="/2025/tickets">Get Tickets</a></section>
+      <section class="alert">No Frills tickets on sale for as low as $149! <a href="/2025/tickets">Get Tickets</a></section>
       ${path && (path.startsWith("/2024") || path.startsWith("/2025"))
     ? html`<nav class="back">
               <div class="wide">

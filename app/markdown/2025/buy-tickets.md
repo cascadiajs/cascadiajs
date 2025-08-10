@@ -16,6 +16,7 @@ Our tickets are released in batches. Each batch is limited in quantity, so pleas
     <tr class="passed"><td>Early Bird</td><td>Feb 22 - May 11</td><td>$599</td></tr>
     <tr class="passed"><td>Regular Bird</td><td>May 12 - Aug 1</td><td>$699</td></tr>
     <tr class="active-row"><td>Full Price</td><td>Aug 1 - Sept 18</td><td>$799</td></tr>
+    <tr class="active-row"><td>No Frills</td><td>Aug 1 - Sept 18</td><td>$299</td></tr>
     </tbody>
 </table>
 
@@ -37,6 +38,10 @@ Here is what is included in our Blind/Early/Regular/Late Bird tickets:
 
 <div class="highlight warning">Note: Regular Bird is your LAST CHANCE to guarantee you get a hoodie in your size. All orders after August 1st are best effort.</div>
 
+## No Frills Tickets
+
+Does not come with any swag, meals or drink tickets (no frills!), but you'll have access to all the talks, the party and the activity track.
+
 ## Indie Dev Discount
 
 You can qualify for a $200-off Indie Dev discount if you meet one of the following requirements:
@@ -45,15 +50,6 @@ You can qualify for a $200-off Indie Dev discount if you meet one of the followi
 * self-employed
 * work for a educational institution
 * work for a non-profit organization or company with fewer than 10 employees
-
-## Other Ticket Types
-
-<table class="styled-table">
-    <tbody>
-    <tr><td>Student</span></td><td>Designed for students who are not working in tech full-time.</td></tr>
-    <tr><td>No Frills</span></td><td>Does not come with any swag, meals or drink tickets (no frills!), but you'll have access to all the talks, the party and the activity track.</td></tr>
-</tbody>
-</table>
 
 ## Bring a Friend, Save $50
 
