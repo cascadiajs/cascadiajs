@@ -120,6 +120,6 @@ Join your fellow AI devs for an epic hackday where we'll be diving into what dev
 
 <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
 
-#### Outdoor Activities
+#### Pickleball
 
-Get out and about in Seattle with some fellow attendees! Whether you're into running a 5k, playing pickleball, or a chill hike, we'll have an activity for you. More information coming soon.
+Want to spend some time outside dinking with your conference buddies? We've reserved some courts and will have paddles/balls for you to use. No experience necessary! More information coming soon.
