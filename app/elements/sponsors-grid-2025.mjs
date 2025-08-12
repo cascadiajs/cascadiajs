@@ -188,6 +188,15 @@ const sponsors = [
     name: 'Mux',
     url: 'https://mux.com',
     description: ''   
+  },
+  {
+    id: 'langflow',
+    tier: 'gold',
+    logo: 'langflow.png',
+    logoSquare: 'langflow.png',
+    name: 'Langflow',
+    url: 'https://langflow.org',
+    description: ''   
   }
 ]
 
@@ -251,19 +260,19 @@ export default function Sponsors({ html }) {
             }
         
             .platinum div {
-                height: 160px;
+                height: 142px;
             }
             
             .gold div {
-                height: 120px;
+                height: 110px;
             }
             
             .silver div {
-                height: 90px;
+                height: 84px;
             }
             
             .bronze div {
-                height: 70px;
+                height: 65px;
             }
         
             .community div {
