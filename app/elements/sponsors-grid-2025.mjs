@@ -197,6 +197,15 @@ const sponsors = [
     name: 'Langflow',
     url: 'https://langflow.org',
     description: ''   
+  },
+  {
+    id: 'geekwire',
+    tier: 'media',
+    logo: 'geekwire.png',
+    logoSquare: 'geekwire.png',
+    name: 'GeekWire',
+    url: 'https://www.geekwire.com',
+    description: ''   
   }
 ]
 
@@ -278,14 +287,18 @@ export default function Sponsors({ html }) {
             .community div {
                 height: 50px;
             }
-        
+
+            .media div {
+                height: 50px;
+            }
+
             .sponsored div {
                 height: 30px;
             }
         }
         </style>
         <div class="sponsors-grid">
-        ${ ['platinum', 'gold', 'silver', 'bronze', 'community'].map(tier => /*html*/`
+        ${ ['platinum', 'gold', 'silver', 'bronze', 'community', 'media'].map(tier => /*html*/`
             ${ sponsors.filter(s => s.tier === tier).length > 0 ? /*html*/`
                 <div class="tier-wrap"><div class="tier-inner"><div class="tier-label">${ tier }</div></div></div>
                 <div class="${ tier } tier">
