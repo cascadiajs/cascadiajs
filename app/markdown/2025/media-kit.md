@@ -17,11 +17,11 @@ excerpt: Marketing copy and visual assets for CascadiaJS 2025
 
 ### Headline
 
-A Web + AI conference for the Pacific Northwest
+A Web + AI developer conference for the Pacific Northwest
 
 ### Subtitle
 
-CascadiaJS is a community-driven conference for developers in the PNW and beyond. You will hear from 40+ speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
+CascadiaJS is a web + AI conference for developers in the PNW and beyond. You will hear from 40+ speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
 
 ### Longer Copy
 
