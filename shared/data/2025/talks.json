@@ -505,7 +505,7 @@
   },
   {
     "title": "GPT-5 for Developers",
-    "slug": "piloting-ai-coding-agents",
+    "slug": "gpt-5-for-developers",
     "abstract": "In this talk, we'll explore the capabilities of the recently released GPT-5 model family from OpenAI. Learn about new function calling techniques, prompting best practices, and more to get the most out of this model.",
     "speaker": {
       "name": "Kevin Whinnery",
