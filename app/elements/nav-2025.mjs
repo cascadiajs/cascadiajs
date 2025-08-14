@@ -51,7 +51,7 @@ export default function MainHeader({ html }) {
         <div class="spacer"><a href="/2025/attend">Attending</a></div>
         <!--div class="spacer"><a href="/2025/cfp">CFP</a></div-->
         <div class="spacer"><a href="/2025/trainings">Training</a></div>
-        <div class="spacer"><a href="/2025/scholarships">Scholarships</a></div>
+        <!--div class="spacer"><a href="/2025/scholarships">Scholarships</a></div-->
         <div class="spacer"><a class="buy" href="/2025/tickets">Tickets</a></div>
       </div>
     </nav>

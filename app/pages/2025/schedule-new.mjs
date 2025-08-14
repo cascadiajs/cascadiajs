@@ -4,8 +4,9 @@ function renderSpeaker(time, talk) {
     <div class="show-item">
         <div class="when">${ time }</div>
         <div class="what">
+            ${ talk && talk.type === 'keynote' ? /*html*/`<div class="keynote-badge">Keynote</div>` : ""}
             <div class="title">
-                ${ talk ? `<a href="/2024/talks/${ talk.slug }">${ talk.title }</a>` : `TBD` }
+                ${ talk ? `<a href="/2025/talks/${ talk.slug }">${ talk.title }</a>` : `TBD` }
             </div>
             <div class="speaker">${ talk ? talk.speaker.name : "" }</div>
         </div>
@@ -20,17 +21,17 @@ function hallwayTrack({ticket = undefined}) {
     <div class="show-item">       
         <div class="what">
             <div class="title">Connect with Experts</div><br/>
-            <p>Connect with folks at some of the top software companies in our industry.</p>
-            <div class="sponsors">
-                <div><a href="/2024/sponsors/datastax"><img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"/></a></div>
-                <div><a href="/2024/sponsors/codingscape"><img src="/_public/images/sponsors/codingscape.svg" alt="Codingscape logo"/></a></div>
-                <div><a href="/2024/sponsors/stytch"><img src="/_public/images/sponsors/stytch.svg" alt="Stytch logo"/></a></div>
-                <div><a href="/2024/sponsors/temporal"><img src="/_public/images/sponsors/temporal.svg" alt="Temporal logo"/></a></div>
-                <div><a href="/2024/sponsors/infobip"><img src="/_public/images/sponsors/infobip.svg" alt="Infobip logo"/></a></div>
-            </div>
+            <p>Connect with folks at the top web + AI companies</p>
+            <!--div class="sponsors">
+                <div><a href="/2025/sponsors/datastax"><img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"/></a></div>
+                <div><a href="/2025/sponsors/codingscape"><img src="/_public/images/sponsors/codingscape.svg" alt="Codingscape logo"/></a></div>
+                <div><a href="/2025/sponsors/stytch"><img src="/_public/images/sponsors/stytch.svg" alt="Stytch logo"/></a></div>
+                <div><a href="/2025/sponsors/temporal"><img src="/_public/images/sponsors/temporal.svg" alt="Temporal logo"/></a></div>
+                <div><a href="/2025/sponsors/infobip"><img src="/_public/images/sponsors/infobip.svg" alt="Infobip logo"/></a></div>
+            </div-->
         </div>
     </div>
-    <div class="location">Virtual</div>
+    <!--div class="location">Virtual</div>
     <div class="show-item">
         <div class="what">
             <div class="title">Video Selfie Booth</div>
@@ -44,7 +45,7 @@ function hallwayTrack({ticket = undefined}) {
             <p>Come hang out with us on the official CascadiaJS Discord server! Introduce yourself, ask speakers questions and hopefully make some friends!</p>
             <div class="cta secondary"><a target="_discord" href="https://discord.gg/kkYR86GM29">Open Discord</a></div>
         </div>
-    </div>
+    </div-->
 </div>
     `
 }
@@ -54,40 +55,23 @@ function Sept15() {
     <div id="day-zero" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            Pre-Conf<br/>June 18
+            Pre-Conf<br/>Sept 15
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Silicon Valley Bank</div>
+        <div class="location">Location TBD</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">9am - noon</div>
+                    <div class="when">9am - 4pm</div>
                     <div class="what">
-                        <div class="title"><a href="/2024/trainings/intro-data-structures">Intro to Data Structures in JavaScript</a></div>
-                        <p>Intimidated by data structures and algorithms? Fearing the traditional whiteboard interview? Has your educational journey not yet presented you with a proper introduction to the classic data structures of computer science and Big-O notation? Let's take some time to tackle these topics and level up your CS skillset!</p>
+                        <div class="title"><a href="/2025/trainings/typescript-and-deno-foundations">TypeScript & Deno Foundations</a></div>
+                        <p>Ready to level up your JavaScript skills? Let's dive into TypeScript and Deno to build more reliable applications. We'll start with TypeScript basics and work our way up to building full applications with Deno.</p>
                     </div>
                 </div>
                 <div class="show-item">       
-                <div class="when">1pm - 4pm</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/trainings/advanced-data-structures">Advanced Data Structures in JavaScripts</a></div>
-                        <p>In the Intro to Data Structures session, we started from scratch and learned how to build Linked Lists, Stacks and Queues using pure JavaScript. Now we're going to spend the afternoon building up from there to master Binary Trees and k-ary Trees, and Hash Tables. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="location">AWS Skills Center</div>
-            <div class="day-content">
-                <div class="show-item">       
-                <div class="when">5pm - 7pm</div>
-                    <div class="what">
-                        <div class="title"><a target="_blank" href="https://www.meetup.com/seattlejs/events/299899759/">SeattleJS Code Katas</a></div>
-                        <p>Code Katas are a fun way to do coding exercises, in any language you want. It's a good practice to keep increasing your skills as a coder. You can practice the same kata over and over to continue improving, get feedback from others, and move on to more difficult problems to solve.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -99,38 +83,20 @@ function Sept16() {
     <div id="day-zero" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            Pre-Conf<br/>June 18
+            Pre-Conf<br/>Sept 16
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Silicon Valley Bank</div>
+        <div class="location">Location TBD</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">9am - noon</div>
+                    <div class="when">9am - 4pm</div>
                     <div class="what">
-                        <div class="title"><a href="/2024/trainings/intro-data-structures">Intro to Data Structures in JavaScript</a></div>
-                        <p>Intimidated by data structures and algorithms? Fearing the traditional whiteboard interview? Has your educational journey not yet presented you with a proper introduction to the classic data structures of computer science and Big-O notation? Let's take some time to tackle these topics and level up your CS skillset!</p>
-                    </div>
-                </div>
-                <div class="show-item">       
-                <div class="when">1pm - 4pm</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/trainings/advanced-data-structures">Advanced Data Structures in JavaScripts</a></div>
-                        <p>In the Intro to Data Structures session, we started from scratch and learned how to build Linked Lists, Stacks and Queues using pure JavaScript. Now we're going to spend the afternoon building up from there to master Binary Trees and k-ary Trees, and Hash Tables. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="location">AWS Skills Center</div>
-            <div class="day-content">
-                <div class="show-item">       
-                <div class="when">5pm - 7pm</div>
-                    <div class="what">
-                        <div class="title"><a target="_blank" href="https://www.meetup.com/seattlejs/events/299899759/">SeattleJS Code Katas</a></div>
-                        <p>Code Katas are a fun way to do coding exercises, in any language you want. It's a good practice to keep increasing your skills as a coder. You can practice the same kata over and over to continue improving, get feedback from others, and move on to more difficult problems to solve.</p>
+                        <div class="title"><a href="/2025/trainings/developer-productivity-with-ai">Developer Productivity with AI</a></div>
+                        <p>AI is changing how we write code, and you're about to become fluent in these new tools. We'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks.</p>
                     </div>
                 </div>
             </div>
@@ -144,7 +110,7 @@ function Sept17() {
     <div id="day-zero" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            June 19
+            Sept 17
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
@@ -162,21 +128,14 @@ function Sept17() {
                 </div>
             </div>
         </div>
-        <div class="location">AWS Skills Center</div>
+        <div class="location">Location TBD</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">9am - noon</div>
+                    <div class="when">9am - 4pm</div>
                     <div class="what">
-                        <div class="title"><a href="/2024/trainings/intro-react-server-components">Intro to React Server Components</a></div>
-                        <p>In this morning workshop, we'll build and iterate on an app that takes advantage of the server components architecture to build a high-performance application. Along the way, we'll get comfortable with best practices in React routing, caching, and data loading.</p>
-                    </div>
-                </div>
-                <div class="show-item">       
-                <div class="when">1pm - 4pm</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/trainings/ai-for-react-developers">AI for React Developers</a></div>
-                        <p>Knowledge of AI tooling is critical for future proofing the careers of React developers, and the Vercel suite of AI tools is an approachable on-ramp. In this course, we'll take a closer look at the Vercel AI SDK and how this can help React developers build streaming interfaces with JavaScript and Next.js. We'll also incorporate additional 3rd party APIs to build and deploy a music visualization app.</p>
+                        <div class="title"><a href="/2025/trainings/modern-react-and-data-management">Modern React & Data Management</a></div>
+                        <p>Let's explore what makes modern React applications truly powerful. We'll combine Server Components with robust data management patterns to build fast, scalable apps that your users will love.</p>
                     </div>
                 </div>
             </div>
@@ -193,11 +152,11 @@ function Sept17() {
                 </div>
             </div>
         </div>
-        <div class="location">Stoup Brewing (Capitol Hill)</div>
+        <div class="location">Town Hall Seattle</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">7pm - 9pm</div>
+                    <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
                         <div class="title">Welcome Reception &amp; Pre-Registration</div>
                         <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and hang out with fellow attendees.</p>
@@ -218,13 +177,13 @@ function Sept18({ talks, ticket = undefined }) {
             Conference
             </h2>
         </div>
-        <div class="location">Map of Main Floor</div>
+        <!--div class="location">Map of Main Floor</div>
         <div class="day-content">
             <img src="/_public/images/2024/venue-layout.png" alt="venue map"/>
-        </div>
+        </div-->
         <div class="day-header">
             <h2 class="day-date">
-            Day One<br/>June 20
+            Day One<br/>Sept 18
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
@@ -245,8 +204,8 @@ function Sept18({ talks, ticket = undefined }) {
                     <div class="when">09:00</div>
                     <div class="what"><div class="title">Opening Remarks</div></div>
                 </div>
-                ${ renderSpeaker("09:30", talks.find(t => t.speaker.slug === 'rachel-lee-nabors'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'tyler-sticka'))}
+                ${ renderSpeaker("09:30", talks.find(t => t.speaker.slug === 'jason-mayes'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kent-c-dodds'))}
                 <div class="show-item">       
                     <div class="when">10:30</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
@@ -287,8 +246,8 @@ function Sept18({ talks, ticket = undefined }) {
 
             ${ hallwayTrack({ticket})}
 
-            <div class="workshop track">
-                <h3>Workshop Track</h3>
+            <div class="lightning track">
+                <h3>Lightning Track</h3>
                 <div class="location">Reading Room</div>
                 <div class="show-item">       
                     <div class="when">10:30</div>
@@ -315,7 +274,7 @@ function Sept19({ talks, ticket = undefined }) {
     <div id="day-two" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            Day Two<br/>June 21
+            Day Two<br/>Sept 19
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
@@ -387,8 +346,8 @@ function Sept19({ talks, ticket = undefined }) {
 
             ${ hallwayTrack({ticket})}
 
-            <div class="workshop track">
-                <h3>Workshop Track</h3>
+            <div class="lightning track">
+                <h3>Lightning Track</h3>
                 <div class="location">Reading Room</div>
                 <div class="show-item">       
                     <div class="when">10:30</div>
@@ -424,32 +383,18 @@ function Sept20() {
         </div>
         <div class="day-content">
             <div class="show track">   
-                <div class="location">Greenlake</div>
-                <div class="show-item"> 
-                    <div class="when">9am - 11am</div>
-                    <div class="what">
-                        <div class="title"><a href="https://lu.ma/65nqcezz" target="_blank">5K Greenlake fun run & coffee</a> led by Henri Helvetica</div>
-                    </div>
-                </div>
-                <div class="location">Magnuson Park</div>
-                <div class="show-item"> 
-                    <div class="when">9am - 11am</div>
-                    <div class="what">
-                        <div class="title"><a href="https://lu.ma/uy7jhx9r" target="_blank">Dog romp at the off-leash dog park</a> led by Carter Rabasa sponsored by <img src="/_public/images/sponsors/hookdeck.svg" alt="Hookdeck logo"></div>
-                    </div>
-                </div>
-                <div class="location">Seattle Center</div>
+                <div class="location">Location TBD</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
                     <div class="what">
-                        <div class="title"><a href="https://lu.ma/avh75hdw" target="_blank">Visit to the Space Needle</a> led by Tejas Kumar sponsored by <img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"></div>
+                        <div class="title">Pickle Ball <i class="fa-solid fa-pickleball"></i></a> led by Lantz Warrick</div>
                     </div>
                 </div>
-                <div class="location">Miller Park</div>
+                <div class="location">Thinkspace Seattle</div>
                 <div class="show-item"> 
-                    <div class="when">10am - noon</div>
+                    <div class="when">9am - 11pm</div>
                     <div class="what">
-                        <div class="title"><a href="https://lu.ma/84v4ndmr" target="_blank">Pickle Ball <i class="fa-solid fa-pickleball"></i></a> led by Lantz Warrick</div>
+                        <div class="title"><a href="https://lu.ma/yu2ccnvr" target="_blank">Cascadia AI Hack Day</a></div>
                     </div>
                 </div>
             </div>
@@ -531,7 +476,7 @@ export default function ({ html, state }) {
             color: #FFF5CC;
         }
         
-        .workshop.track h3 {
+        .lightning.track h3 {
             background: #17c37b;
         }
         
@@ -553,7 +498,7 @@ export default function ({ html, state }) {
             background:rgba(17, 35, 120, 0.3)
         }
         
-        .workshop .location {
+        .lightning .location {
             background:rgba(206, 232, 215, 0.3);
         }
         
@@ -665,6 +610,17 @@ export default function ({ html, state }) {
         #conf-schedule img.sponsor, .hallway-sponsors img {
             height: 30px;
         }
+
+        .keynote-badge {
+            display: inline-block;
+            background-color: #17c37b;
+            color: #112378;
+            font-size: 14px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
         
         @media only screen and (min-width: 768px) {
             .day-content {
@@ -675,7 +631,7 @@ export default function ({ html, state }) {
                 flex: 33%;
             }     
             
-            .hallway.track, .workshop.track {
+            .hallway.track, .lightning.track {
                 border-left: 3px solid #112378;
             }
         }

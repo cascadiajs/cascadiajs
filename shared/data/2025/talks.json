@@ -18,6 +18,7 @@
     "slug": "the-new-user-interaction-model",
     "title": "The New User Interaction Model",
     "abstract": "For decades, users have interacted with our applications using links and forms, but that's not enough for users anymore. They want to use natural language. Let's talk about how that changes what we build.",
+    "type": "keynote",
     "speaker": {
       "name": "Kent C. Dodds",
       "slug": "kent-c-dodds",
@@ -503,9 +504,9 @@
     }
   },
   {
-    "title": "Piloting AI coding agents",
+    "title": "GPT-5 for Developers",
     "slug": "piloting-ai-coding-agents",
-    "abstract": "AI coding agents can make you 10x more productive than you were before. But it can also be 10x easier to paint yourself into a corner. In this talk, we'll explore techniques for piloting AI coding agents effectively, so you can spend your brain power solving problems that matter.",
+    "abstract": "In this talk, we'll explore the capabilities of the recently released GPT-5 model family from OpenAI. Learn about new function calling techniques, prompting best practices, and more to get the most out of this model.",
     "speaker": {
       "name": "Kevin Whinnery",
       "slug": "kevin-whinnery",
@@ -539,6 +540,7 @@
     "title": "Client side Web AI Agents: Smarter user experiences for an agentic internet",
     "slug": "client-side-web-ai-agents-smarter-user-experiences-for-an-agentic-internet",
     "abstract": "Learn how to create and run client side AI agents in JS, powered by smaller LLMs, to perform useful work faster on existing websites using Web AI. Get a glimpse of the future - an agentic internet.",
+    "type": "keynote",
     "speaker": {
       "name": "Jason Mayes",
       "slug": "jason-mayes",
