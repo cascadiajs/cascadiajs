@@ -36,7 +36,7 @@ You're welcome to drop off and pick up your child at any time during the shifts 
 
 <h2 id="location">Location</h2>
 
-The childcare room will be located in Town Hall. We'll announce the exact location closer to the event. 
+The childcare room will be located in Town Hall in the Reading Room. 
 
 <h2 id="bring">What to Bring</h2>
 
@@ -53,7 +53,7 @@ For babies and toddlers:
 
 <h2 id="meals">Snacks & Meals</h2>
 
-Please indicate on the sign-up form if you're interested in buying a meal ticket for your child, or if you plan to bring their meals. Our menus aren't finalized yet, but a meal ticket would provide a light breakfast (e.g. pastries, yogurt) and lunch (e.g. a deli sandwhich, chips and dessert) both days, and dinner (a buffet) on day 2.  
+Please indicate on the sign-up form if you're interested in buying a meal ticket for your child, or if you plan to bring their meals. Our menus aren't finalized yet, but a meal ticket would provide a light breakfast (e.g. pastries, yogurt) and lunch buffet both days, and dinner (a buffet) on day 2.  
 
 We ask that you pick up your child during lunch and dinner so that you can provide their meals and allow our caregivers a break. 
 
