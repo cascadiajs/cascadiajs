@@ -159,7 +159,17 @@ div.highlight {
 }
 
 .highlight.info {
+    padding-left: 16px;
     background-color: #cfd3e4;
+}
+
+.highlight.info::before {
+    content: "\f0eb";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #112378;
+    left:-8px;
+    position: relative;
 }
 
 .highlight.warning {
@@ -289,6 +299,18 @@ div.icon {
 }
 
 /* end CTA */
+
+.sharing {
+    font-family: monospace;
+    font-size: 80%;
+    background: white;
+    padding: 8px;
+}
+
+pre.sharing {
+    white-space: pre-wrap;
+}
+
 
 @media only screen and (min-width: 768px) {
     .wide {

@@ -1,6 +1,5 @@
 ---
 title: Call for Presenters
-image: /_public/images/past/cjs19-speaker-aaron.jpg
 excerpt: Every developer has a story, what's yours?
 ---
 

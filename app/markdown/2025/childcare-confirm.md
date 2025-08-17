@@ -1,6 +1,5 @@
 ---
 title: Childcare
-image: /_public/images/past/cjs19-family-photo.jpg
 excerpt: We are offering free child care so you can get away and enjoy the conference!
 ---
 

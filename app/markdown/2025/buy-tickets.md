@@ -1,6 +1,5 @@
 ---
 title: Tickets to CascadiaJS 2025
-image: /_public/images/past/cjs22-happyhour.jpg
 excerpt: Supplies are limited, don't miss out!
 ---
 ## Ticket Release Schedule

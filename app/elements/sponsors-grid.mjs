@@ -28,7 +28,7 @@ export default function Sponsors({ html }) {
         }
         </style>
         <div class="sponsors-grid">
-        ${ sponsors["2024"].concat(sponsors["2025"]).sort((a, b) => a.name.localeCompare(b.name)).map(s => /*html*/`
+        ${ sponsors["previous"].concat(sponsors["2025"]).sort((a, b) => a.name.localeCompare(b.name)).map(s => /*html*/`
             <div><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></div>
         `).join('') }
         </div>`

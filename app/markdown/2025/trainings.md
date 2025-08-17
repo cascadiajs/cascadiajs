@@ -1,6 +1,5 @@
 ---
 title: Training Workshops
-image: /_public/images/past/cjs16-workshop.jpg
 excerpt: Hands-on trainings from professionals in JS & AI development!
 ---
 We are thrilled to offer pre-conference hands-on trainings from Eve Porcello on JS & AI development!

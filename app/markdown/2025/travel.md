@@ -1,6 +1,5 @@
 ---
 title: Travel Info
-image: /_public/images/2024/travel/kimpton-hotel-monaco.jpg
 excerpt: How to get to Cascadia and where to stay while you're here.
 ---
 

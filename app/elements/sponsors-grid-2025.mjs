@@ -97,8 +97,8 @@ export default function Sponsors({ html }) {
                 <div class="${ tier } tier">
                 ${ sponsors2025.filter(s => s.tier === tier).map(s => /*html*/`
                     ${ ['platinum', 'gold', 'silver'].includes(s.tier) 
-    ? `<div><a target="_new" href="${ s.url }"><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>`
-    : `<div><a target="_new" href="${ s.url }"><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>`  
+    ? `<div><a href="/2025/sponsors/${ s.id }"><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></a></div>`
+    : `<div><img src="/_public/images/sponsors/${ s.logo }" alt="${ s.name } logo"/></div>`  
 }
                 `).join('') }
                 </div>

@@ -1,6 +1,7 @@
 [{
     "slug": "react-and-nextjs-in-2025",
     "title": "React & Next.js in 2025",
+    "type": "keynote",
     "abstract": "Explore practical best practices for building fast, maintainable, accessible web apps in 2025. From state management myths to hybrid rendering, code splitting, caching, server actions, and accessibility.",
     "speaker": {
       "name": "Shruti Kapoor",
@@ -34,6 +35,7 @@
   {
     "slug": "tanstack-is-your-new-favorite-framework",
     "title": "TanStack Is Your New Favorite Framework",
+    "type": "keynote",
     "abstract": "You might know TanStack from the awesome React-Query framework that is used in 25% of all React apps. Well TanStack is a lot more than that. TanStack Start is a cutting edge React framework that competes with NextJS and might end up being your new favorite framework. Let's have a look and get you Started today.",
     "speaker": {
       "name": "Jack Herrington",
@@ -50,6 +52,7 @@
   {
     "title": "The Death of the Browser",
     "slug": "the-death-of-the-browser",
+    "type": "keynote",
     "abstract": "What is the Web without a browser? Through Chrome, Google has been supporting and stewarding the growth of the web as an ads-supported economy. Now, AI Agents and MCP threaten to change everything. Some might say the Web is about to die, but maybe it is about to be reborn like a phoenix. ",
     "speaker": {
       "name": "Rachel Lee Nabors",
@@ -66,6 +69,7 @@
   {
     "title": "Oops, CSS got away from me... send halp!",
     "slug": "oops-css-got-away-from-me-send-halp",
+    "type": "keynote",
     "abstract": "A fast paced, animated, and jam packed tik-talk on CSS features from the past ~5 years. CSS has moved so fast, don't feel bad you aren't all caught up, no one is. This talk will teach you as many things as possible while providing good examples of practical use cases. Syntax, typography, color, architecture, and more.",
     "speaker": {
       "name": "Adam Argyle",
@@ -106,7 +110,7 @@
       "slug": "sean-c-davis",
       "image": "/_public/images/2025/speakers/sean-davis.png",
       "company": "Netlify",
-      "location": "Cincinnati, Ohio, US",
+      "location": "Cincinnati, Ohio, USA",
       "links": [
         {
           "type": "bluesky",
@@ -555,6 +559,7 @@
   {
     "title": "A built-in browser-based babelfish",
     "slug": "a-built-in-browser-based-babelfish",
+    "type": "keynote",
     "abstract": "AI is thriving on the server side, but the web is catching up! Let's explore how to build browser AI apps, like an offline speech-to-speech translator, leveraging current and future Web APIs.",
     "speaker": {
       "name": "Phil Nash",
@@ -659,6 +664,68 @@
       "location": "Seattle, WA, USA",
       "links": [
         { "type": "x", "url": "https://x.com/MelkeyDev" }
+      ]
+    }
+  },
+  {
+    "title": "Secret Keynote",
+    "slug": "secret-keynote",
+    "type": "keynote",
+    "abstract": "",
+    "speaker": {
+      "name": "Evan Boyle",
+      "slug": "evan-boyle",
+      "image": "/_public/images/2025/speakers/evan-boyle.png",
+      "company": "GenSX",
+      "location": "Seattle, WA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/_Evan_Boyle" }
+      ]
+    }
+  },
+  {
+    "title": "Secret Talk",
+    "slug": "secret-talk",
+    "abstract": "",
+    "speaker": {
+      "name": "Jarod Reyes",
+      "slug": "jarod-reyes",
+      "image": "/_public/images/2025/speakers/jarod-reyes.png",
+      "company": "SignalFire",
+      "location": "San Diego, CA, USA",
+      "links": [
+        { "type": "x", "url": "https://x.com/jreyesdev" }
+      ]
+    }
+  },
+  {
+    "title": "Using Storybook for Production-Quality AI Coding",
+    "slug": "using-storybook-for-production-quality-ai-coding",
+    "abstract": "Vibe coding is fun, but quickly falls apart as your project grows. This talk, based on my popular YouTube video, shows how to leverage the UI tool Storybook to build a full production-ready front end for a real-world project.",
+    "speaker": {
+      "name": "Kevin Leneway",
+      "slug": "kevin-leneway",
+      "pronouns": "he/him/his",
+      "image": "/_public/images/2025/speakers/kevin-leneway.png",
+      "company": "Pioneer Square Labs",
+      "location": "Seattle, WA, USA",
+      "links": [
+        { "type": "github", "url": "https://github.com/kleneway" }
+      ]
+    }
+  },
+  {
+    "title": "Building Exclusive Web Experiences with the Web Monetization API",
+    "slug": "building-exclusive-web-experiences-with-the-web-monetization-api",
+    "abstract": "Want to hide easter eggs, bonus content, or cozy perks behind a tiny stream of micropayments? Web Monetization API makes it easy, because your best work deserves better than banner ads.",
+    "speaker": {
+      "name": "Sid Vishnoi",
+      "slug": "sid-vishnoi",
+      "image": "/_public/images/2025/speakers/sid-vishnoi.png",
+      "company": "Interledger Foundation",
+      "location": "New Delhi, India",
+      "links": [
+        { "type": "github", "url": "https://github.com/sidvishnoi/" }
       ]
     }
   }

@@ -1,5 +1,5 @@
 const sponsors = {
-    "2024": [
+    "previous": [
         {
             id: 'temporal',
             logo: 'temporal.svg',
@@ -73,12 +73,6 @@ const sponsors = {
             url: 'https://google.com'
         },
         {
-            id: 'mux',
-            logo: 'mux.png',
-            name: 'Mux',
-            url: 'https://mux.com'
-        },
-        {
             id: 'cloudinary',
             logo: 'cloudinary.png',
             name: 'Cloudinary',
@@ -125,12 +119,6 @@ const sponsors = {
             logo: 'dolby.svg',
             name: 'Dolby.io',
             url: 'https://dolby.io/'
-        },
-        {
-            id: 'elastic',
-            logo: 'elastic.svg',
-            name: 'Elastic',
-            url: 'https://www.elastic.co/'
         },
         {
             id: 'hasura',

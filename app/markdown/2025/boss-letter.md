@@ -1,6 +1,5 @@
 ---
 title: Convincing Your Manager
-image: /_public/images/2024/boss-meme.jpg
 excerpt: How to sell your manager on the value of attending CascadiaJS 2025
 ---
 ![office space boss meme](/_public/images/2024/boss-meme.jpg)

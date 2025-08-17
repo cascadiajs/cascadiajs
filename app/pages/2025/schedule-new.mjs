@@ -22,13 +22,15 @@ function hallwayTrack({ticket = undefined}) {
         <div class="what">
             <div class="title">Connect with Experts</div><br/>
             <p>Connect with folks at the top web + AI companies</p>
-            <!--div class="sponsors">
-                <div><a href="/2025/sponsors/datastax"><img src="/_public/images/sponsors/datastax.svg" alt="DataStax logo"/></a></div>
-                <div><a href="/2025/sponsors/codingscape"><img src="/_public/images/sponsors/codingscape.svg" alt="Codingscape logo"/></a></div>
-                <div><a href="/2025/sponsors/stytch"><img src="/_public/images/sponsors/stytch.svg" alt="Stytch logo"/></a></div>
-                <div><a href="/2025/sponsors/temporal"><img src="/_public/images/sponsors/temporal.svg" alt="Temporal logo"/></a></div>
-                <div><a href="/2025/sponsors/infobip"><img src="/_public/images/sponsors/infobip.svg" alt="Infobip logo"/></a></div>
-            </div-->
+            <div class="sponsors">
+                <div><a href="/2025/sponsors/gensx"><img src="/_public/images/sponsors/gensx.png" alt="GensX logo"/></a></div>
+                <div><a href="/2025/sponsors/langflow"><img src="/_public/images/sponsors/langflow.png" alt="Langflow logo"/></a></div>
+                <div><a href="/2025/sponsors/elastic"><img src="/_public/images/sponsors/elastic.png" alt="Elastic logo"/></a></div>
+                <div><a href="/2025/sponsors/cloudflare"><img src="/_public/images/sponsors/cloudflare.png" alt="Cloudflare logo"/></a></div>
+                <div><a href="/2025/sponsors/arcjet"><img src="/_public/images/sponsors/arcjet.png" alt="ArcJet logo"/></a></div>
+                <div><a href="/2025/sponsors/atono"><img src="/_public/images/sponsors/atono.png" alt="Atono logo"/></a></div>
+                <div><a href="/2025/sponsors/ilf"><img src="/_public/images/sponsors/ilf.png" alt="ILF logo"/></a></div>
+            </div>
         </div>
     </div>
     <!--div class="location">Virtual</div>
@@ -116,18 +118,6 @@ function Sept17() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Union Station</div>
-        <div class="day-content">
-            <div class="show track">   
-                <div class="show-item">       
-                    <div class="when">10:10am</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/hacker-train">Portland Hacker Train departs</a></div>
-                        <p>Meet up with your fellow hackers for a ride up to Seattle!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="location">Location TBD</div>
         <div class="day-content">
             <div class="show track">   
@@ -144,10 +134,22 @@ function Sept17() {
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">4:15pm</div>
+                    <div class="when">11:30am</div>
                     <div class="what">
-                        <div class="title"><a href="/2024/hacker-train">Vancouver Hacker Train departs</a></div>
+                        <div class="title"><a href="/2025/travel">Vancouver Hacker Train departs</a></div>
                         <p>Meet up with your fellow hackers for a ride down to Seattle!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="location">Union Station</div>
+        <div class="day-content">
+            <div class="show track">   
+                <div class="show-item">       
+                    <div class="when">2:10pm</div>
+                    <div class="what">
+                        <div class="title"><a href="/2025/travel">Portland Hacker Train departs</a></div>
+                        <p>Meet up with your fellow hackers for a ride up to Seattle!</p>
                     </div>
                 </div>
             </div>
@@ -158,7 +160,7 @@ function Sept17() {
                 <div class="show-item">       
                     <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
-                        <div class="title">Welcome Reception &amp; Pre-Registration</div>
+                        <div class="title"><a target="_blank" href="https://lu.ma/l3fp4o3x">Welcome Reception &amp; Pre-Registration</a></div>
                         <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and hang out with fellow attendees.</p>
                     </div>
                 </div>
@@ -198,49 +200,50 @@ function Sept18({ talks, ticket = undefined }) {
         </div>
         <div class="day-content">
             <div class="main track">   
-                <h3>Talk Track</h3>
+                <h3>Main Track</h3>
                 <div class="location">Great Hall</div>
                 <div class="show-item">       
                     <div class="when">09:00</div>
                     <div class="what"><div class="title">Opening Remarks</div></div>
                 </div>
-                ${ renderSpeaker("09:30", talks.find(t => t.speaker.slug === 'jason-mayes'))}
+                ${ renderSpeaker("09:20", talks.find(t => t.speaker.slug === 'jason-mayes'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kent-c-dodds'))}
                 <div class="show-item">       
                     <div class="when">10:30</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("11:15", talks.find(t => t.speaker.slug === 'logan-gore'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'aiden-bai'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'john-pham'))}
+                ${ renderSpeaker("11:00", talks.find(t => t.speaker.slug === 'annie-sexton'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'bree-hall'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'sean-c-davis'))}
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
-                    <div class="when">12:15</div>
-                    <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2024/meals">Lunch</a></div></div>
+                    <div class="when">12:30</div>
+                    <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2025/meals">Lunch</a></div></div>
                 </div>
                 <div class="location">Great Hall</div>
-                ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'herve-aniglo'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'brian-leroux'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'aaron-gustafson'))}
+                ${ renderSpeaker("13:40", talks.find(t => t.speaker.slug === 'gant-laborde'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'ishan-anand'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-whinnery'))}
                 <div class="show-item">       
-                    <div class="when">15:30</div>
+                    <div class="when">15:15</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("16:30", talks.find(t => t.speaker.slug === 'jacob-lee'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'tejas-kumar'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'josh-goldberg'))}
                 <div class="show-item">       
-                    <div class="when">18:00</div>
+                    <div class="when">16:00</div>
+                    <div class="what">
+                        <div class="title">Show: Developer Squares</div>
+                        <div class="speaker">Hosted by Jason Lengstorf and Will Johnson</div>
+                    </div>
+                </div>
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'shruti-kapoor'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jack-herrington'))}
+                <div class="show-item">       
+                    <div class="when">17:30</div>
                     <div class="what"><div class="title">Closing Day One</div></div>
                 </div>
-                <div class="location">Main Lobby</div>
                 <div class="show-item">       
-                    <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> <a href="/2024/meals">Dinner</a> and Opening Party by <img src="/_public/images/sponsors/infobip.svg"/></div></div>
-                </div>
-                <div class="show-item">       
-                    <div class="when">22:00</div>
-                    <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Day One Close</div></div>
+                    <div class="when">18:00</div>
+                    <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Doors Close</div></div>
                 </div>
             </div>
 
@@ -248,23 +251,34 @@ function Sept18({ talks, ticket = undefined }) {
 
             <div class="lightning track">
                 <h3>Lightning Track</h3>
-                <div class="location">Reading Room</div>
+                <div class="location">Forum</div>
+                ${ renderSpeaker("11:00", talks.find(t => t.speaker.slug === 'quinn-blenkinsop'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'erin-mikail-staples'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-leneway'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'cat-johnson'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jarod-reyes'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'courtney-yatteau'))}
+                ${ renderSpeaker("13:40", talks.find(t => t.speaker.slug === 'anton-zalaldinov'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dave-kiss'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dominik-kundel'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jeremy-elbourn'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'justin-castilla'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'allan-deutsch'))}
+            </div>
+        </div>
+        <div class="location">Just the Tap</div>
+        <div class="day-content">
+            <div class="show track">   
                 <div class="show-item">       
-                    <div class="when">10:30</div>
+                    <div class="when">18:30</div>
                     <div class="what">
-                        <div class="title"><a href="/2024/workshops/w3c-verifiable-credentials">Can You Buy Booze with a JSON Web Token?</a></div>
-                        <div class="speaker">The answer is: yes, you can buy booze with a JSON web token! Join this hands-on workshop to learn how mobile driver's license apps leverage a special JSON Web Token and W3C standard called Verifiable Credentials to digitally prove to both the vendor and the delivery company that a buyer is of legal drinking age.</div>
-                    </div>
-                </div>
-                <div class="show-item">       
-                    <div class="when">14:00</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/workshops/debugging-web-apps">From “its broken” to “fix is out”</a></div>
-                        <div class="speaker">"Something is broken": are hopefully words you never have to hear from your users. Even worse is when you don’t know how to fix that “something”. Join this workshop to learn how to make sure users are heard, alerts are alerting, and priorities are prioritized. Spend your dev cycles more on new features and less on digging through logs, trying to figure out how to repro an issue, or guessing what part of your codebase is the culprit.</div>
+                        <div class="title">Unofficial SeattleJS After Party</div>
+                        <p>Have fun with SeattleJS after Day One!</p>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 `
 }
@@ -289,37 +303,43 @@ function Sept19({ talks, ticket = undefined }) {
         </div>
         <div class="day-content">
             <div class="main track">   
-                <h3>Talk Track</h3>
+                <h3>Main Track</h3>
                 <div class="location">Great Hall</div>
                 <div class="show-item">       
                     <div class="when">09:00</div>
                     <div class="what"><div class="title">Opening Remarks</div></div>
                 </div>
-                ${ renderSpeaker("09:30", talks.find(t => t.speaker.slug === 'dominic-farolino'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'geoff-rich'))}
+                ${ renderSpeaker("09:20", talks.find(t => t.speaker.slug === 'evan-boyle'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'phil-nash'))}
                 <div class="show-item">       
                     <div class="when">10:30</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("11:15", talks.find(t => t.speaker.slug === 'kristen-thayer'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'molly-jean-bennett'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jerome-woody'))}
+                ${ renderSpeaker("11:00", talks.find(t => t.speaker.slug === 'charlie-gerard'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kenny-daniel'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'craig-dennis'))}
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:15</div>
                     <div class="what"><div class="title"><i class="fas fa-taco"></i> Lunch</div></div>
                 </div>
                 <div class="location">Great Hall</div>
-                ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'henri-helvetica'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'shruti-kapoor'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'rizel-scarlett'))}
+                ${ renderSpeaker("14:00", talks.find(t => t.speaker.slug === 'alex-clemmer'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kristen-hewell-garrett'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'sid-vishnoi'))}
                 <div class="show-item">       
                     <div class="when">15:30</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("16:30", talks.find(t => t.speaker.slug === 'tracy-lee'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jason-lengstorf'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'swyx'))}
+                <div class="show-item">       
+                    <div class="when">16:00</div>
+                    <div class="what">
+                        <div class="title">Show: Standup Comedy</div>
+                        <div class="speaker">Hosted by Erin Mikail Staples</div>
+                    </div>
+                </div>
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'adam-argyle'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'rachel-lee-nabors'))}
                 <div class="show-item">       
                     <div class="when">18:00</div>
                     <div class="what"><div class="title">Closing Day Two</div></div>
@@ -327,11 +347,11 @@ function Sept19({ talks, ticket = undefined }) {
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> <a href="/2024/meals">Dinner</a> and Closing Party by <img src="/_public/images/sponsors/datastax.svg"/></div></div>
+                    <div class="what"><div class="title"><i class="fas fa-utensils"></i> <a href="/2024/meals">Dinner</a></div></div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-rocket"></i> <a href="/2024/startup-fair">Startup Fair</a></div></div>
+                    <div class="when">19:30</div>
+                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> Closing Party by <img src="/_public/images/sponsors/cloudflare.png"/></div></div>
                 </div>
                 <div class="show-item">       
                     <div class="when">19:30</div>
@@ -348,22 +368,18 @@ function Sept19({ talks, ticket = undefined }) {
 
             <div class="lightning track">
                 <h3>Lightning Track</h3>
-                <div class="location">Reading Room</div>
-                <div class="show-item">       
-                    <div class="when">10:30</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/workshops/building-ai-apps">Building a GenAI enabled web experience</a></div>
-                        <div class="speaker">AI is slowly eating the world. In this hands-on workshop, we will explore vector databases, embeddings, RAG, and more to understand how we can practically use GenAI in the workplace.</div>
-                    </div>
-                </div>
-                <div class="show-item">       
-                    <div class="when">14:00</div>
-                    <div class="what">
-                        <div class="title"><a href="/2024/workshops/adding-auth-to-apps">Building a better auth experience for your apps</a></div>
-                        <div class="speaker">Scaling authentication systems is a complex and critical task for any application, especially as customer requirements evolve. This workshop will introduce developers to Stytch, a powerful developer platform designed to scale and future-proof your authentication system.</div>
-                    </div>
-                </div>
-            </div>
+                <div class="location">Forum</div>
+                ${ renderSpeaker("11:00", talks.find(t => t.speaker.slug === 'erik-hanchett'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'will-klein'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'chris-griffing'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'ryan-roemer'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'justin-rastelli'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'melkeydev'))}
+                ${ renderSpeaker("13:40", talks.find(t => t.speaker.slug === 'brittany-ellich'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'anthony-dellavecchia'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'amber-hoak'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-dela-rosa'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'isabela-mclenachen'))}
         </div>
     </div>
 
@@ -394,7 +410,7 @@ function Sept20() {
                 <div class="show-item"> 
                     <div class="when">9am - 11pm</div>
                     <div class="what">
-                        <div class="title"><a href="https://lu.ma/yu2ccnvr" target="_blank">Cascadia AI Hack Day</a></div>
+                        <div class="title"><a href="https://lu.ma/yu2ccnvr" target="_blank">Cascadia AI Hackathon</a></div>
                     </div>
                 </div>
             </div>
@@ -530,8 +546,7 @@ export default function ({ html, state }) {
         
         .hallway .sponsors>div {
             text-align: center;
-            height: 30px;
-            margin: 24px;
+            margin-bottom: 64px;
         }
         
         .day-header {
