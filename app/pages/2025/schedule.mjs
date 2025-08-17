@@ -391,7 +391,7 @@ function Sept20() {
     <div id="day-training" class="day">
         <div class="day-header">
             <h2 class="day-date">
-            Post-Conf<br/>Activity Day<br/>June 22
+            Post-Conf<br/>Activity Day<br/>Sept 20
             </h2>
             <aside class="day-timezone">
             All times in PDT (UTC-7)
