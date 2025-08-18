@@ -1,10 +1,10 @@
 export default function ({ html, state }) {
-  const { REDIRECT_URL } = state.store 
+  const { REDIRECT_URL, ticketId } = state.store 
   const { STYTCH_PUBLIC_TOKEN } = process.env
   return html`
     <main-layout>
         <simple-page title="Log In" width="narrow">
-            <div class="highlight info">Note: you must <a href="/signup">sign-up</a> using your CascadiaJS ticket information before you can log-in.</div>
+            ${ ticketId ? "" : html`<div class="highlight info">Note: you must <a href="/signup">sign-up</a> using your CascadiaJS ticket information before you can log-in.</div>`}
             <div id="stytch-sdk"></div>
         </simple-page>
         <script type="module" src="https://www.unpkg.com/@stytch/vanilla-js@2.0/dist/index.esm.js"></script>
