@@ -9,6 +9,7 @@ cloudinary.v2.config({
 });
 
 const createImageUrl = ({ profileImage, fullName, ticketType, ticketNumber }) => {
+    //console.log(profileImage)
     let imageUrl = cloudinary.v2.url("cascadiajs-ticket-2025", {
         transformation: [
             { width: 1200, crop: "scale" },
@@ -61,7 +62,9 @@ export async function get({ query, pathParameters }) {
             const ticketType = ticket.release_title
             const ticketNumber = "#" + ticket.number.toString().padStart(4, '0')
             const user = await findUser({ _id: ticket.user_id })
-            const profileImage = user.profile_photo
+            //console.log(user)
+            //const profileImage = user.profile_photo
+            const profileImage = `https://cascadiajs.com/user_image_redirect?user_id=${user._id}`
             if (image) {
                 // pass profile_image, full_name, ticket_type and ticket_number
                 const location = createImageUrl({ profileImage, fullName, ticketType, ticketNumber })
