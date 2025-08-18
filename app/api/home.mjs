@@ -1,5 +1,5 @@
-import { findTicket } from '../../shared/data/tito.mjs'
-import { findEvent } from '../../shared/data/events.mjs'
+//import { findTicket } from '../../shared/data/tito.mjs'
+//import { findEvent } from '../../shared/data/events.mjs'
 
 async function checkAuth({ session }) {
   //console.log(session)
@@ -10,9 +10,9 @@ async function checkAuth({ session }) {
 export const get = [ checkAuth, getHome ]
 
 export async function getHome({ session }) {
-  const { userId, userName, ticketId } = session
-  const ticket = await findTicket({ _id: ticketId })
-  const releaseId = ticket.release_id
+  const { /*userId, userName,*/ ticketId } = session
+  //const ticket = await findTicket({ _id: ticketId })
+  //const releaseId = ticket.release_id
   /*const event = await findEvent({ name: 'CascadiaJS 2024' })
   const playbackId = event.playbackId
   return {
