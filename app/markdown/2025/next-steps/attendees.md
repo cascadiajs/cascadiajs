@@ -26,31 +26,6 @@ This will create your official CascadiaJS account and give you access to RSVP li
 
 <h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
 
-Prior to the conference, we are teaming up with Brook Riggio (Code Fellows) and Eve Porcello (Moon Highway) to organize 2 days of training workshops prior to CascadiaJS 2024. Each training workshop is a half-day (morning or afternoon) and you need to purchase those tickets separately.
-
-<div class="cta secondary"><a href="/2024/trainings">Training Workshops Guide</a></div>
-
-<h2 id="get-ready-for-the-conference">Get Ready for the Conference</h2>
-
-Now that you've registered for the conference, here is a guide to help you get ready:
-
-<div class="cta secondary"><a href="/2024/attend">Attending CascadiaJS Guide</a></div>
-
-Please don't hesistate to ping us on Discord or email us at info@cascadiajs.com if you have any questions!
-
-<h2 id="spread-the-word">Spread the Word</h2>
-
-We're running a contest to see who can rally the most people to join them at the conference! All you need to do is:
-
-- Email info@cascadiajs.com and tell us you're in 👍
-- We'll send you a customized referral code that will give your friends & colleagues 35% off tickets
-- The top five referrers will be invited to the Friends of Cascadia pre-party at Stoup Brewing on June 19
-
-That's it! Thanks for helping us make CascadiaJS 2024 unforgettable, because like most good things in life, the more the merrier! 🥳
--->
-
-<h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
-
 Prior to the conference, we are teaming up with Eve Porcello (Moon Highway) to provide 3 days of training workshops. You need to purchase these tickets separately.
 
 <div class="cta secondary"><a href="/2025/trainings">Training Workshops Guide</a></div>
@@ -62,7 +37,6 @@ We're putting on our first post-conference hackathon! Join your fellow devs for 
 It's completely FREE and you don't have to have experience building with AI, but you should be comfortable building software and apps.
 
 <div class="cta secondary"><a target="_blank" href="https://lu.ma/yu2ccnvr">Cascadia AI Hack Day</a></div>
-
 
 <h2 id="cascadia-connect">Make a New Friend!</h2>
 
