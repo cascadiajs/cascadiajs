@@ -45,7 +45,7 @@ const createImageUrl = ({ profileImage, fullName, ticketType, ticketNumber }) =>
     return imageUrl;
 };
 
-export async function get({ query, pathParameters }) {
+export async function get({ query, pathParameters, path }) {
     const { image } = query
     const { id: ticketId } = pathParameters
     if (!ticketId) {
@@ -75,15 +75,16 @@ export async function get({ query, pathParameters }) {
             else {
                 const sharing = {
                     sharingTitle: `Join ${fullName} at CascadiaJS 2025!`,
-                    sharingImage: `/ticket/${ ticketId }?image=true`,
+                    sharingImage: `/2025/ticket/${ ticketId }?image=true`,
                     sharingDescription: 'Don\'t miss CascadiaJS 2025, Sept 18 - 19 in Seattle, WA!',
-                    sharingPath: '/ticket/' + ticketId
+                    sharingPath: '/2025/ticket/' + ticketId
                 }
                 return {
                     json: {
                         fullName,
                         ticketId,
-                        sharing
+                        sharing,
+                        path
                     }
                 }
             }
