@@ -6,6 +6,7 @@ excerpt: Information for attendees of CascadiaJS 2025
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
+        <li><a href="#complete-registration">Complete Registration</a></li>
         <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
         <li><a href="#hack-day">Register for the Cascadia AI Hack Day</a></li>
         <li><a href="#cascadia-connect">Make a New Friend</a></li>
@@ -15,14 +16,13 @@ excerpt: Information for attendees of CascadiaJS 2025
     </ul>
 </div>
 
-<!--
 <h2 id="complete-registration">Complete Registration</h2>
 
 Use the button below to complete the registration process. You'll need the ticket reference that is attached to the email that you get from Tito when you registered. It is a 4 letter code followed by a number, like <code>ABCD-3</code>.
 
-This will create your official CascadiaJS account and give you access to RSVP links for the Workshop Track, the post-conference Activity Day and more!
+This will create your official CascadiaJS account and give you access to RSVP links for the post-conference Activity Day and more!
 
-<div class="cta primary"><a href="/signup">Complete Registration</a></div>
+<div class="cta primary"><a href="/2025/signup">Complete Registration</a></div>
 
 <h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
 
