@@ -9,7 +9,7 @@ export default function ({ html, state }) {
     <main-layout>
         <simple-page title="Sign Up" width="narrow">
         ${ error ? html`<p><span class="highlight error">${ MESSAGES[error] }</span></p>` : "" }
-        <p>Please enter the CascadiaJS ticket reference you received when you registered for the conference.</p>
+        <p>Please enter the CascadiaJS ticket reference you received when you registered for the 2025 conference.</p>
         <form action="/signup" method="POST">
             <input type="text" name="ticketRef" placeholder="ABCD-1" required>
             <button>Submit</button>
