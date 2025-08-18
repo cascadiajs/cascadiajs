@@ -227,7 +227,7 @@ export default function ({ html, state }) {
             <div id="attendee-list">
             ${ attendees.sort(() => Math.random() - 0.5).map(t => /*html*/`<img src="${ t.profile_photo }" alt="avatar image" referrerpolicy="no-referrer"/>`).join("")}
             </div>
-          </section
+          </section>
         </div>
       </main-layout>`;
   }

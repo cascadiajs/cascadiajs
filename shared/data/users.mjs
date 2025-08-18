@@ -15,6 +15,7 @@ async function upsertUser({ _id, name, email, profile_photo, oauth_provider, oau
 async function findUsers({ query, limit = 100 }) {
     const db = getConnection()
     const collection = await db.collection(COLLECTION)
+    //console.log(limit)
     return await collection.find(query, { limit }).toArray()
 }
 

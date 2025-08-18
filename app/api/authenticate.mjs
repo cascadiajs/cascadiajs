@@ -22,7 +22,7 @@ export async function get({ query, session }) {
     const email_verified = oauth.user.emails[0].verified
     const profile_photo = oauth.user.providers[0].profile_picture_url
     const oauth_provider = oauth.provider_type
-    await upsertUser({ _id, name, email, email_verified, profile_photo, oauth_provider, oauth_payload: oauth })
+    await upsertUser({ _id, name, email, email_verified, attending: '2025', profile_photo, oauth_provider, oauth_payload: oauth })
     // update the ticket record to point to this user
     await upsertTicket({ _id: session.ticketId, user_id: _id })
     return {

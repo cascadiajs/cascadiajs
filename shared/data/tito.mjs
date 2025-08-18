@@ -11,7 +11,6 @@ async function findTickets({ query, limit = 100 } = {}) {
 
 async function findTicket(query) {
   const db = getConnection()
-  query._type = "ticket"
   const collection = await db.collection(COLLECTION)
   //console.log(query)
   return await collection.findOne(query)

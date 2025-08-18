@@ -1,18 +1,11 @@
-//import { findEvent } from "../../../shared/data/events.mjs"
-//import { findTalks } from "../../../shared/data/talks.mjs"
-//import { findUsers } from "../../../shared/data/users.mjs"
-//import attendees from "../../../shared/data/users.json" assert { type: "json" };
+import { findUsers } from "../../../shared/data/users.mjs"
 import organizers from "../../../shared/data/organizers.json" assert { type: "json" }
 import talks from "../../../shared/data/2025/talks.json" assert { type: "json" }
 
 export async function get({ path, query }) {
-  // find the id for CascadiaJS 2024
-  //const event = await findEvent({ slug: 'cascadiajs-2024' })
-  //console.log(event)
-  // find all talks for CascadiaJS 2024
-  //const talks = await findTalks({ query: { event_id: event._id }, inflate: true})
-  // find all the attendees for CascadiaJS 2024
-  //const attendees = await findUsers({ query: {}, limit: 1000 })
+  // find all the attendees for CascadiaJS 2025
+  const attendees = await findUsers({ query: {$and: [ { attending: '2025' } ] }, limit: 1000 })
+  //console.log(attendees.length)
 
   const { social } = query
   // set social sharing info
@@ -31,7 +24,7 @@ export async function get({ path, query }) {
       path,
       talks,
       sharing,
-      //attendees,
+      attendees,
       organizers: organizers["2025"],
       year: 2025,
     },
