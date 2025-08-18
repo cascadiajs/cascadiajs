@@ -67,7 +67,7 @@
     }
   },
   {
-    "title": "Oops, CSS got away from me... send halp!",
+    "title": "Oops, CSS Got Away From Me… Send Halp!",
     "slug": "oops-css-got-away-from-me-send-halp",
     "type": "keynote",
     "abstract": "A fast paced, animated, and jam packed tik-talk on CSS features from the past ~5 years. CSS has moved so fast, don't feel bad you aren't all caught up, no one is. This talk will teach you as many things as possible while providing good examples of practical use cases. Syntax, typography, color, architecture, and more.",
@@ -84,7 +84,7 @@
     }
   },
   {
-    "title": "Motion control with multimodal AI",
+    "title": "Motion Control With Multimodal AI",
     "slug": "motion-control-with-multimodal-ai",
     "abstract": "What if you could use multimodal LLMs to interact with websites or IoT devices using motion control? As advancements in multimodal AI offer new opportunities to push the boundaries of what can be done with this technology, I started wondering how it could be leveraged from the perspective of human-computer interaction. In this talk, I will take you through my research experimenting with building motion-controlled prototypes using LLMs in JavaScript.",
     "speaker": {
@@ -303,7 +303,7 @@
     }
   },
   {
-    "title": "Let's destroy the video player",
+    "title": "Let's Destroy the Video Player",
     "slug": "lets-destroy-the-video-player",
     "abstract": "Every video player looks the same until you rebuild one with Three.js, simulated physics, and some 90s arcade chaos.",
     "speaker": {
@@ -349,7 +349,7 @@
     }
   },
   {
-    "title": "Becoming a code review champ",
+    "title": "Becoming a Code Review Champ",
     "slug": "becoming-a-code-review-champ",
     "abstract": "Reviewing code is every engineer's responsibility! Learn some strategies to become a code review champ for your team, while fostering a culture of mentorship and learning.",
     "speaker": {
@@ -384,7 +384,7 @@
     }
   },
   {
-    "title": "There's no such thing as web components",
+    "title": "There's No Such Thing As Web Components",
     "slug": "theres-no-such-thing-as-web-components",
     "abstract": "How do web components work? Are they fast? When does it make sense to use them? The answer is is more nuanced than you might think because, as it turns out, there's no such thing as web components. ",
     "speaker": {
@@ -403,7 +403,7 @@
     }
   },
   {
-    "title": "Observability Now! Building a case for hybrid instrumentation",
+    "title": "Observability Now! Building a Case for Hybrid Instrumentation",
     "slug": "observability-now-building-a-case-for-hybrid-instrumentation",
     "abstract": "Observability isn't one-size-fits-all. This talk shows how combining OpenTelemetry's automatic and manual instrumentation gives you fast setup and deep insight. Learn to filter noise, add custom spans, and turn raw telemetry into real understanding. All with open source tech!",
     "speaker": {
@@ -422,7 +422,7 @@
     }
   },
   {
-    "title": "What's in your &lt; head &gt;",
+    "title": "What's in Your &lt; head &gt;",
     "slug": "whats-in-your-head",
     "abstract": "A quick refresher on the &lt;head&gt; element: dive into metadata, script, and style tags, and learn to craft platform-specific link previews to control how your site appears across the web.",
     "speaker": {
@@ -525,7 +525,7 @@
 
   },
   {
-    "title": "AIdentity Crisis: Can I be proud of this?",
+    "title": "AIdentity Crisis: Can I be Proud of This?",
     "slug": "aidentity-crisis-can-i-be-proud-of-this",
     "abstract": "I'm proud of my kids. I didn't do the work—they did. I just prompted them. Same with AI. When it makes something bonkers, I still feel proud. Should I? I do. It's weird. Let’s get used to it. Let’s chat.",
     "speaker": {
@@ -541,7 +541,7 @@
     }
   },
   {
-    "title": "Client side Web AI Agents: Smarter user experiences for an agentic internet",
+    "title": "Client Side Web AI Agents: Smarter User Experiences for an Agentic Internet",
     "slug": "client-side-web-ai-agents-smarter-user-experiences-for-an-agentic-internet",
     "abstract": "Learn how to create and run client side AI agents in JS, powered by smaller LLMs, to perform useful work faster on existing websites using Web AI. Get a glimpse of the future - an agentic internet.",
     "type": "keynote",
@@ -557,7 +557,7 @@
     }
   },
   {
-    "title": "A built-in browser-based babelfish",
+    "title": "A Built-in Browser-based Babelfish",
     "slug": "a-built-in-browser-based-babelfish",
     "type": "keynote",
     "abstract": "AI is thriving on the server side, but the web is catching up! Let's explore how to build browser AI apps, like an offline speech-to-speech translator, leveraging current and future Web APIs.",
@@ -620,7 +620,7 @@
     }
   },
   {
-    "title": "No one knows how good their LLM is and that's a problem",
+    "title": "No One Knows How Good Their LLM Is and That’s a Problem",
     "slug": "no-one-knows-how-good-their-llm-is-and-thats-a-problem",
     "abstract": "When everyone is building AI Apps, they're all great in theory! But how do we make sure that they’re actually good in production.  ",
     "speaker": {
@@ -636,7 +636,7 @@
     }
   },
   {
-    "title": "Less but better frontend code",
+    "title": "Less But Better Frontend Code",
     "slug": "less-but-better-frontend-code",
     "abstract": "Language standards and browser support have been undergoing rapid improvements. This talk is a guided tour of some classic problems and the concise modern solutions that are now possible.",
     "speaker": {
@@ -652,7 +652,7 @@
     }
   },
   {
-    "title": "Spinning up Go and TypeScript projects quickly with Go-Blueprint",
+    "title": "Spinning Up Go and TypeScript projects quickly With Go-Blueprint",
     "slug": "spinning-up-go-and-typescript-projects-quickly-with-go-blueprint",
     "abstract": "Go-blueprint is a powerful CLI tool that helps users spin up Go backend projects. Recently we added frontend support with popular libraries. The CLI tool now has 8k stars and growing!",
     "speaker": {
@@ -715,7 +715,7 @@
     }
   },
   {
-    "title": "Building Exclusive Web Experiences with the Web Monetization API",
+    "title": "Building Exclusive Web Experiences With the Web Monetization API",
     "slug": "building-exclusive-web-experiences-with-the-web-monetization-api",
     "abstract": "Want to hide easter eggs, bonus content, or cozy perks behind a tiny stream of micropayments? Web Monetization API makes it easy, because your best work deserves better than banner ads.",
     "speaker": {
