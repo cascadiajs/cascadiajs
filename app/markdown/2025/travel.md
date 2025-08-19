@@ -6,10 +6,25 @@ excerpt: How to get to Cascadia and where to stay while you're here.
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
+        <li><a href="#to-usa">Traveling to the USA</a></li>
         <li><a href="#transportation">Getting to CascadiaJS</a></li>
         <li><a href="#lodging">Lodging</a></li>
     </ul>
 </div>
+
+<h2 id="to-usa">Traveling to the USA</h2>
+
+Traveling to the United States isn't as easy as it used to be, and that's unfortunate. Here are some guides on how to get here and get home safely.
+
+🇨🇦 [Travel from Canada to the United States](https://travel.gc.ca/destinations/united-states) 
+
+🇺🇸 [Entering the U.S. from Canada, Mexico, the Caribbean, and Bermuda](https://www.usa.gov/from-canada-mexico-caribbean)
+
+In our experience, the most important advice we give people is to be clear they:
+
+* Are traveling for an educational conference
+* Have proof of lodging
+* Have a defined return date
 
 <h2 id="transportation">Getting to CascadiaJS in Seattle, WA</h2>
 
