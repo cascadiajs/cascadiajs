@@ -231,7 +231,7 @@ function Sept18({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">16:00</div>
                     <div class="what">
-                        <div class="title">Show: Developer Squares</div>
+                        <div><a href="/2025/dev-squares"><img src="/_public/images/2025/developer-squares-codetv.jpg" alt="DevSquares" /></a></div>
                         <div class="speaker">Hosted by Jason Lengstorf and Will Johnson</div>
                     </div>
                 </div>
