@@ -8,6 +8,7 @@ excerpt: Information for attendees of CascadiaJS 2025
     <ul>
         <li><a href="#complete-registration">Complete Registration</a></li>
         <li><a href="#refer-a-friend">Refer a Friend</a></li>
+        <li><a href="#welcome-reception">RSVP for the Welcome Reception</a></li>
         <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
         <li><a href="#hack-day">Register for the Cascadia AI Hackathon</a></li>
         <li><a href="#cascadia-connect">Make a New Friend</a></li>
@@ -37,6 +38,14 @@ Here's what folks can win:
 
 * Each referral will win a $25 gift certificate
 * Top-3 referrers will be invited to our Friends of Cascadia dinner on Sept 18
+
+<h2 id="welcome-reception">RSVP for the Welcome Reception</h2>
+
+If you're planning on joining us on Sept 17 for our Welcome Reception, please RSVP so we can plan appropriately. You'll have a change to pre-checkin to the conference, pick-up your swag and get to know your fellow attendees. We'll have drinks and music, it's the perfect way to kick-off CascadiaJS!
+
+Also, feel free to bring friends! They can purchase drinks from our bar and we'll be raffling off some free passes to the conference.
+
+<div class="cta secondary"><a target="_blank" href="https://lu.ma/l3fp4o3x">Welcome Reception</a></div>
 
 <h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
 
