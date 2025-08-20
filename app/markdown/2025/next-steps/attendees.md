@@ -7,8 +7,9 @@ excerpt: Information for attendees of CascadiaJS 2025
 <h2>On This Page</h2>
     <ul>
         <li><a href="#complete-registration">Complete Registration</a></li>
+        <li><a href="#refer-a-friend">Refer a Friend</a></li>
         <li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>
-        <li><a href="#hack-day">Register for the Cascadia AI Hack Day</a></li>
+        <li><a href="#hack-day">Register for the Cascadia AI Hackathon</a></li>
         <li><a href="#cascadia-connect">Make a New Friend</a></li>
         <li><a href="#travel">Book Travel & Lodging</a></li>
         <li><a href="#childcare">Reserve Childcare</a></li>
@@ -24,13 +25,26 @@ This will create your official CascadiaJS account and give you access to RSVP li
 
 <div class="cta primary"><a href="/2025/signup">Complete Registration</a></div>
 
+<h2 id="refer-a-friend">Refer a Friend</h2>
+
+We would love your help in spreading the word about CascadiaJS with your friends and collegues, so we're running a fun referral contest to reward members of our community. Here's how it works:
+
+* When somesone registers for a ticket to CascadiaJS, they can optionally enter the name of the person who referred them.
+* We will keep track of all referrals leading up to Sept 17.
+* At the Welcome Reception, we'll announce the winners of the contest!
+
+Here's what folks can win:
+
+* Each referral will win a $25 gift certificate
+* Top-3 referrers will be invited to our Friends of Cascadia dinner on Sept 18
+
 <h2 id="pre-conf-trainings">Check out the Pre-Conf Trainings</h2>
 
 Prior to the conference, we are teaming up with Eve Porcello (Moon Highway) to provide 3 days of training workshops. You need to purchase these tickets separately.
 
 <div class="cta secondary"><a href="/2025/trainings">Training Workshops Guide</a></div>
 
-<h2 id="hack-day">Register for the Cascadia AI Hack Day</h2>
+<h2 id="hack-day">Register for the Cascadia AI Hackathon</h2>
 
 We're putting on our first post-conference hackathon! Join your fellow devs for an epic hack day where we'll be diving into what developers can build using AI, Agents and MCP!
 
