@@ -52,12 +52,43 @@ export default function ({ html, state }) {
           padding: 64px 64px;
         }
 
-        #pitch p, #coming-soon {
+        #pitch p, .prompt {
           color: #112378;
           font-size: 24px;
           line-height: 1.5em;
           font-family: freight-macro-pro;
           font-weight: 400;
+        }
+
+        .attendee {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+        }
+
+        .attendee .attendee-name {
+          visibility: hidden;
+          background-color: rgb(23, 195, 123);
+          color: white;
+          text-align: center;
+          padding: 5px 8px;
+          border-radius: 4px;
+
+          /* Position the tooltip */
+          position: absolute;
+          bottom: 50%; 
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+
+          /* Smooth fade */
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        .attendee:hover .attendee-name {
+          visibility: visible;
+          opacity: 1;
         }
 
         @media only screen and (min-width: 768px) {
@@ -136,9 +167,6 @@ export default function ({ html, state }) {
           <section id="speakers" class="landing">
             <h1>Speakers</h1>
             <talks-grid></talks-grid>
-            <div id="coming-soon">
-              More speakers <strong>coming soon</strong>!
-            </div>
           </section>
 
           <section id="features" class="landing">
@@ -263,8 +291,14 @@ export default function ({ html, state }) {
           <section id="directory" class="landing">
             <h1>Conference Directory</h1>
             <div id="attendee-list">
-            ${ attendees.sort(() => Math.random() - 0.5).map(t => /*html*/`<img src="${ t.profile_photo }" alt="profile for ${t.name?.first_name} ${t.name?.middle_name} ${t.name?.last_name}" title="${t.name?.first_name} ${t.name?.middle_name} ${t.name?.last_name}" referrerpolicy="no-referrer"/>`).join("")}
+            ${ attendees.sort(() => Math.random() - 0.5).map(t => /*html*/`
+              <div class="attendee">
+                <img src="${ t.profile_photo }" alt="profile for ${t.name?.first_name} ${t.name?.middle_name} ${t.name?.last_name}" referrerpolicy="no-referrer"/>
+                <div class="attendee-name">${t.name?.first_name} ${t.name?.middle_name} ${t.name?.last_name}</div>
+              </div>
+            `).join("")}
             </div>
+            <div class="prompt">Don't see yourself here? Just <a href="/2025/signup">attach</a> your ticket 🎟️</div>
           </section>
         </div>
       </main-layout>`;
