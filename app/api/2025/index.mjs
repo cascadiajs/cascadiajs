@@ -5,7 +5,7 @@ import talks from "../../../shared/data/2025/talks.json" assert { type: "json" }
 export async function get({ path, query }) {
   // find all the attendees for CascadiaJS 2025
   const attendees = await findUsers({ query: {$and: [ { attending: '2025' } ] }, limit: 1000 })
-  //console.log(attendees.length)
+  //console.log(attendees[0])
 
   const { social } = query
   // set social sharing info

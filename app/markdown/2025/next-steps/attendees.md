@@ -28,7 +28,7 @@ This will create your official CascadiaJS account and give you access to RSVP li
 
 <h2 id="refer-a-friend">Refer a Friend</h2>
 
-We would love your help in spreading the word about CascadiaJS with your friends and collegues, so we're running a fun referral contest to reward members of our community. Here's how it works:
+We would love your help in spreading the word about CascadiaJS with your friends and colleagues, so we're running a fun referral contest to reward members of our community. Here's how it works:
 
 * When somesone registers for a ticket to CascadiaJS, they can optionally enter the name of the person who referred them.
 * We will keep track of all referrals leading up to Sept 17.
