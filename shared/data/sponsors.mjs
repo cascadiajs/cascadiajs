@@ -423,6 +423,15 @@ const sponsors = {
             name: 'GeekWire',
             url: 'https://www.geekwire.com',
             description: ''
+        },
+        {
+            id: 'onebrief',
+            tier: 'gold',
+            logo: 'onebrief.png',
+            logoSquare: 'onebrief.png',
+            name: 'OneBrief',
+            url: 'https://www.onebrief.com',
+            description: 'Onebrief\'s AI-enabled platform is designed to optimize your processes and accelerate decision making.'
         }
     ]
 }
