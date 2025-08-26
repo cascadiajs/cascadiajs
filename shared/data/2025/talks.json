@@ -684,9 +684,9 @@
     }
   },
   {
-    "title": "Secret Talk",
-    "slug": "secret-talk",
-    "abstract": "",
+    "title": "Inside engineering at Anthropic, Meta and NVIDIA",
+    "slug": "inside-engineering-anthropic-meta-nvidia",
+    "abstract": "Jarod is a JS developer turned storyteller. Ex Twilio, Auth0, PlanetScale. Now building developer community at the world’s first AI VC using data/ML to unlock engineering insights in this new dawn.",
     "speaker": {
       "name": "Jarod Reyes",
       "slug": "jarod-reyes",
