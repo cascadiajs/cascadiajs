@@ -23,13 +23,14 @@ function hallwayTrack({ticket = undefined}) {
             <div class="title">Connect with Experts</div><br/>
             <p>Connect with folks at the top web + AI companies</p>
             <div class="sponsors">
-                <div><a href="/2025/sponsors/gensx"><img src="/_public/images/sponsors/gensx.png" alt="GensX logo"/></a></div>
                 <div><a href="/2025/sponsors/langflow"><img src="/_public/images/sponsors/langflow.png" alt="Langflow logo"/></a></div>
                 <div><a href="/2025/sponsors/elastic"><img src="/_public/images/sponsors/elastic.png" alt="Elastic logo"/></a></div>
                 <div><a href="/2025/sponsors/cloudflare"><img src="/_public/images/sponsors/cloudflare.png" alt="Cloudflare logo"/></a></div>
                 <div><a href="/2025/sponsors/arcjet"><img src="/_public/images/sponsors/arcjet.png" alt="ArcJet logo"/></a></div>
                 <div><a href="/2025/sponsors/atono"><img src="/_public/images/sponsors/atono.png" alt="Atono logo"/></a></div>
                 <div><a href="/2025/sponsors/ilf"><img src="/_public/images/sponsors/ilf.png" alt="ILF logo"/></a></div>
+                <div><a href="/2025/sponsors/moment"><img src="/_public/images/sponsors/moment.svg" alt="Moment logo"/></a></div>
+                <div><a href="/2025/sponsors/reboot"><img src="/_public/images/sponsors/reboot.png" alt="Reboot logo"/></a></div>
             </div>
         </div>
     </div>
@@ -309,7 +310,7 @@ function Sept19({ talks, ticket = undefined }) {
                     <div class="when">09:00</div>
                     <div class="what"><div class="title">Opening Remarks</div></div>
                 </div>
-                ${ renderSpeaker("09:20", talks.find(t => t.speaker.slug === 'evan-boyle'))}
+                ${ renderSpeaker("09:20", talks.find(t => t.speaker.slug === 'craig-dennis'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'phil-nash'))}
                 <div class="show-item">       
                     <div class="when">10:30</div>
@@ -317,7 +318,7 @@ function Sept19({ talks, ticket = undefined }) {
                 </div>
                 ${ renderSpeaker("11:00", talks.find(t => t.speaker.slug === 'charlie-gerard'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kenny-daniel'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'craig-dennis'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'TBD'))}
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:15</div>

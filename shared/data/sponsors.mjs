@@ -219,15 +219,6 @@ const sponsors = {
     ],
     "2025": [
         {
-            id: 'gensx',
-            tier: 'platinum',
-            logo: 'gensx.png',
-            logoSquare: 'gensx.png',
-            name: 'GenSX',
-            url: 'https://www.gensx.com/',
-            description: 'GenSX is a simple typescript framework for building agents and workflows with reusable React-like components.\n\nGenSX takes a lot of inspiration from React, but the programming model is very different - it’s a Node.js framework designed for data flow.\n\nBut if you know how to write a react component, then building an agent will feel easy and familiar.'
-        },
-        {
             id: 'webai',
             tier: 'platinum',
             logo: 'google-webai.svg',
@@ -432,6 +423,24 @@ const sponsors = {
             name: 'OneBrief',
             url: 'https://www.onebrief.com',
             description: 'Onebrief\'s AI-enabled platform is designed to optimize your processes and accelerate decision making.'
+        },
+        {
+            id: 'moment',
+            tier: 'gold',
+            logo: 'moment.svg',
+            logoSquare: 'moment.png',
+            name: 'Moment',
+            url: 'https://moment.dev',
+            description: 'Docs, reimagined for developers. Fast. Collaborative. Programmable. A truly-offline offline mode. Moment is a powerful, modern docs platform based entirely on Markdown files that stored locally in git repositories, on your device.'
+        },
+        {
+            id: 'reboot',
+            tier: 'gold',
+            logo: 'reboot.png',
+            logoSquare: 'reboot.png',
+            name: 'Reboot.dev',
+            url: 'https://www.reboot.dev',
+            description: 'Your agents need a Reboot. Reboot brings time-tested software architecture principles to durable fullstack AI applications, making your agents reliable and maintainable.'
         }
     ]
 }

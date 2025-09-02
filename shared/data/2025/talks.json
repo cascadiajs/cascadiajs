@@ -528,6 +528,7 @@
     "title": "AIdentity Crisis: Can I be Proud of This?",
     "slug": "aidentity-crisis-can-i-be-proud-of-this",
     "abstract": "I'm proud of my kids. I didn't do the work—they did. I just prompted them. Same with AI. When it makes something bonkers, I still feel proud. Should I? I do. It's weird. Let’s get used to it. Let’s chat.",
+    "type": "keynote",
     "speaker": {
       "name": "Craig Dennis",
       "slug": "craig-dennis",
@@ -664,22 +665,6 @@
       "location": "Seattle, WA, USA",
       "links": [
         { "type": "x", "url": "https://x.com/MelkeyDev" }
-      ]
-    }
-  },
-  {
-    "title": "Secret Keynote",
-    "slug": "secret-keynote",
-    "type": "keynote",
-    "abstract": "",
-    "speaker": {
-      "name": "Evan Boyle",
-      "slug": "evan-boyle",
-      "image": "/_public/images/2025/speakers/evan-boyle.png",
-      "company": "GenSX",
-      "location": "Seattle, WA, USA",
-      "links": [
-        { "type": "x", "url": "https://x.com/_Evan_Boyle" }
       ]
     }
   },
