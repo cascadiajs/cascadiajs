@@ -219,7 +219,7 @@ function Sept18({ talks, ticket = undefined }) {
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">12:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2025/meals">Lunch</a></div></div>
+                    <div class="what"><div class="title"><i class="fas fa-taco"></i> Lunch</div></div>
                 </div>
                 <div class="location">Great Hall</div>
                 ${ renderSpeaker("13:40", talks.find(t => t.speaker.slug === 'gant-laborde'))}
@@ -348,7 +348,7 @@ function Sept19({ talks, ticket = undefined }) {
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
                     <div class="when">18:30</div>
-                    <div class="what"><div class="title"><i class="fas fa-utensils"></i> <a href="/2024/meals">Dinner</a></div></div>
+                    <div class="what"><div class="title"><i class="fas fa-utensils"></i> Dinner</div></div>
                 </div>
                 <div class="show-item">       
                     <div class="when">19:30</div>
@@ -400,11 +400,11 @@ function Sept20() {
         </div>
         <div class="day-content">
             <div class="show track">   
-                <div class="location">Location TBD</div>
+                <div class="location">Miller Park Tennis & Pickleball Courts</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
                     <div class="what">
-                        <div class="title">Pickle Ball <i class="fa-solid fa-pickleball"></i></a> led by Lantz Warrick</div>
+                        <div class="title"><a href="https://luma.com/bxkvqs60" target="_blank">Pickle Ball</a> <i class="fa-solid fa-pickleball"></i></a> led by Lantz Warrick</div>
                     </div>
                 </div>
                 <div class="location">Thinkspace Seattle</div>
