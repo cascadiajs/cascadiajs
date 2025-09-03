@@ -19,10 +19,10 @@ We're using an app called Orca Scan for lead capture at this year's event. Atten
 
 Here are just a few steps to get set up:
 
-1. Accept the email invitation from hello@orcascan.com.
+1. Accept the email invitation from hello@orcascan.com. You'll be prompted to create an account.
 2. Download the [Orca Scan Mobile App](https://orcascan.com/mobile) to your iPhone or Android device.
 3. Log into the app using the same username and password you created when you accepted the email invitation.
-3. Test your set up!
+4. Done! Now test Orca Scan using the steps below. 
 
 <h2 id="test">Test Orca Scan</h2>
 
@@ -48,7 +48,7 @@ To export your data, select the Export button. You can do this on your mobile de
 
 <h2 id="help">Help</h2>
 
-Having trouble using the app? Contact carrie@casadiajs.com. 
+Having trouble using the app? Contact carrie@cascadiajs.com. 
 
 
 
