@@ -75,7 +75,7 @@ Recommended booth times are 8:00am - 6:00pm on September 18th and 19th.
 
 ### Lead Capture
 
-Information about lead capture will be provided closer to the event.
+We're using an app called Orca Scan for lead capture at this year's event. [Read these instructions](/2025/next-steps/sponsor-leadcapture) on how to install and use the app.
 
 <h2 id="registration">Registration</h2>
 
