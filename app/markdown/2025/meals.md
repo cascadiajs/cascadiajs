@@ -4,6 +4,8 @@ image: /_public/images/past/cjs19-family-photo.jpg
 excerpt: Menus and dietary info
 ---
 
+Food is available to attendees who purchased a Blind Bird, Early Bird, Regular Bird, or Late Bird ticket, and for scholarship recipients. Coffee, tea and water stations are for everyone. 
+
 [d] = contains dairy, [e] = contains egg, [g] = contains gluten, [gf] = gluten free, [n] = contains nuts, [p] = contains pork, [s] = contains seafood, [v] = vegan
 
 ## Sept 18
