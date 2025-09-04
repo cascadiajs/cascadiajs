@@ -255,10 +255,10 @@ function Sept18({ talks, ticket = undefined }) {
                 <div class="location">Forum</div>
                 ${ renderSpeaker("11:00", talks.find(t => t.speaker.slug === 'quinn-blenkinsop'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'erin-mikail-staples'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-leneway'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'cat-johnson'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jarod-reyes'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'courtney-yatteau'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-leneway'))}
                 ${ renderSpeaker("13:40", talks.find(t => t.speaker.slug === 'anton-zalaldinov'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dave-kiss'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dominik-kundel'))}
