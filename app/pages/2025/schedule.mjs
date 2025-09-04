@@ -273,7 +273,7 @@ function Sept18({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">18:30</div>
                     <div class="what">
-                        <div class="title">Unofficial SeattleJS After Party</div>
+                        <div class="title"><a href="https://luma.com/cascadiajs-day-one-afterparty" target="_blank">SeattleJS Day One After Party</a></div>
                         <p>Have fun with SeattleJS after Day One!</p>
                     </div>
                 </div>
