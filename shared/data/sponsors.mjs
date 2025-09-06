@@ -441,6 +441,15 @@ const sponsors = {
             name: 'Reboot.dev',
             url: 'https://www.reboot.dev',
             description: 'Your agents need a Reboot. Reboot brings time-tested software architecture principles to durable fullstack AI applications, making your agents reliable and maintainable.'
+        },
+        {
+            id: 'copilotkit',
+            tier: 'gold',
+            logo: 'copilotkit.svg',
+            logoSquare: 'copilotkit.svg',
+            name: 'CopilotKit',
+            url: 'https://www.copilotkit.ai',
+            description: 'CopilotKit is the Agentic Application Framework: the easiest way to build AI copilots into your app, with support to connect any LLM or build with any agent framework via the AG-UI protocol.'
         }
     ]
 }
