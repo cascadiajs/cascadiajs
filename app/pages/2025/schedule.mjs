@@ -64,7 +64,7 @@ function Sept15() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Location TBD</div>
+        <div class="location">Thinkspace</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
@@ -92,7 +92,7 @@ function Sept16() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Location TBD</div>
+        <div class="location">Thinkspace</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
@@ -119,7 +119,7 @@ function Sept17() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Location TBD</div>
+        <div class="location">Thinkspace</div>
         <div class="day-content">
             <div class="show track">   
                 <div class="show-item">       
@@ -192,7 +192,7 @@ function Sept18({ talks, ticket = undefined }) {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Town Hall</div>
+        <div class="location">Town Hall Seattle</div>
         <div class="day-content">
             <div class="show-item">       
                 <div class="when">08:00</div>
@@ -295,7 +295,7 @@ function Sept19({ talks, ticket = undefined }) {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">Town Hall</div>
+        <div class="location">Town Hall Seattle</div>
         <div class="day-content">
             <div class="show-item">       
                 <div class="when">08:00</div>

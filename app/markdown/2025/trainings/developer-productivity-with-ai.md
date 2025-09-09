@@ -9,7 +9,7 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
-**Location:** Seattle, WA (exact location TBD)
+**Location:** Thinkspace, 1700 Westlake Ave N #200, Seattle, WA 98109
 
 
 AI is changing how we write code, and you're about to become fluent in these new tools. We'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks.

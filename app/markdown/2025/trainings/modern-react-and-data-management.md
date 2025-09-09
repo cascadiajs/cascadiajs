@@ -9,7 +9,7 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
-**Location:** Seattle, WA (exact location TBD)
+**Location:** Thinkspace, 1700 Westlake Ave N #200, Seattle, WA 98109
 
 Let's explore what makes modern React applications truly powerful. We'll combine Server Components with robust data management patterns to build fast, scalable apps that your users will love.
 
