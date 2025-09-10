@@ -112,7 +112,7 @@
       "name": "Jason Lengstorf",
       "image": "jason-lengstorf.jpg",
       "location": "Portland, OR",
-      "role": "Emcee"
+      "role": "Main Stage Emcee"
     },
     {
       "id": "",
@@ -120,13 +120,6 @@
       "image": "allan-deutsch.jpg",
       "location": "Seattle, WA",
       "role": "Seattle Lead"
-    },
-    {
-      "id": "",
-      "name": "Bibiana Souza",
-      "image": "bibiana-marocco-de-souza.jpg",
-      "location": "Vancouver, BC",
-      "role": "Vancouver Lead"
     },
     {
       "id": "",
@@ -154,14 +147,56 @@
       "name": "Andre Wiggins",
       "image": "andre-wiggins.jpg",
       "location": "Seattle, WA",
-      "role": "Talk Review"
+      "role": "Speaker Wrangler"
     },
     {
       "id": "",
       "name": "Jim Liu",
       "image": "jim-liu.jpg",
       "location": "Seattle, WA",
-      "role": "Talk Review"
+      "role": "Party Planner"
+    },
+    {
+      "id": "",
+      "name": "Will Johnson",
+      "image": "will-johnson.jpg",
+      "location": "Kansas City, MO",
+      "role": "Lightning Emcee"
+    },
+    {
+      "id": "",
+      "name": "Justin Lee",
+      "image": "justin-oliver-lee.jpg",
+      "location": "Seattle, WA",
+      "role": "Lightning Emcee"
+    },
+    {
+      "id": "",
+      "name": "Caidan Williams",
+      "image": "caidan-williams.jpg",
+      "location": "Seattle, WA",
+      "role": "Volunteer"
+    },
+    {
+      "id": "",
+      "name": "Katie Guite",
+      "image": "katie-guite.jpg",
+      "location": "Seattle, WA",
+      "role": "Volunteer"
+    },
+    {
+      "id": "",
+      "name": "Megan Speir",
+      "image": "megan-speir.jpg",
+      "location": "Seattle, WA",
+      "role": "Volunteer"
+    },
+    {
+      "id": "",
+      "name": "Ryan Soeder",
+      "image": "ryan-soeder.jpg",
+      "location": "Seattle, WA",
+      "role": "Volunteer"
     }
   ]
 }
