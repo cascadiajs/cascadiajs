@@ -700,17 +700,49 @@
     }
   },
   {
-    "title": "Building Exclusive Web Experiences With the Web Monetization API",
-    "slug": "building-exclusive-web-experiences-with-the-web-monetization-api",
-    "abstract": "Want to hide easter eggs, bonus content, or cozy perks behind a tiny stream of micropayments? Web Monetization API makes it easy, because your best work deserves better than banner ads.",
+    "title": "Building the Web Monetization Standard",
+    "slug": "building-the-web-monetization-standard",
+    "abstract": "Let's unroll Web Monetization’s path to standardization: architecture, protocol shifts, and integration challenges shaping the open web with a bit of finance spice.",
     "speaker": {
-      "name": "Sid Vishnoi",
-      "slug": "sid-vishnoi",
-      "image": "/_public/images/2025/speakers/sid-vishnoi.png",
+      "name": "Ioana Chiorean",
+      "slug": "ioana-chiorean",
+      "image": "/_public/images/2025/speakers/ioana-chiorean.png",
       "company": "Interledger Foundation",
-      "location": "New Delhi, India",
+      "location": "Berlin, Germany",
       "links": [
-        { "type": "github", "url": "https://github.com/sidvishnoi/" }
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/ioanachiorean/" },
+        { "type": "bluesky", "url": "https://bsky.app/profile/ioanacis.bsky.social" }
+      ]
+    }
+  },
+  {
+    "title": "How the AG-UI Protocol Is Redefining AI-Driven User Experience",
+    "slug": "how-the-ag-ui-protocol-is-redefining-ai-driven-user-experience",
+    "abstract": "AI agents are reshaping how users interact with software. This talk explores Agentic UX through AG-UI, an open protocol that standardizes agent-to-user interactions, enabling intuitive, real-time, and collaborative AI experiences.",
+    "speaker": {
+      "name": "Atai Barkai",
+      "slug": "atai-barkai",
+      "image": "/_public/images/2025/speakers/atai-barkai.png",
+      "company": "CopilotKit",
+      "location": "Seattle, WA, USA",
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/atai-barkai/" },
+        { "type": "x", "url": "https://x.com/ataiiam" }
+      ]
+    }
+  },
+  {
+    "title": "Scaling Collaboration in the Most Challenging Environments",
+    "slug": "scaling-collaboration-in-the-most-challenging-environments",
+    "abstract": "What does real-time collaboration look like in one of the world's most constrained, high-stakes environments: the US military? Spoiler: it's not all compliance checklists and Hollywood-style bureaucracy.\n\nThe real hurdles are deeply technical, shaped by wildly diverse hardware and unpredictable conditions. Collaboration gets tricky when a submarine disappears underwater, or when your production server is less powerful than your kid's Fortnite rig. And yet the software still has to be alive, ready, and performant — especially when it matters most.\n\nIn this talk, Andy Luly, VP of Engineering at Onebrief, pulls back the curtain on what it's like to bring startup velocity and next-gen engineering into defense. You'll hear how the team scaled by more than 60x in record time, enabled real-time collaboration across secure and fragmented networks, and solved problems faster than legacy systems ever could — all while keeping users in the loop when it counts.",
+    "speaker": {
+      "name": "Andy Luly",
+      "slug": "andy-luly",
+      "image": "/_public/images/2025/speakers/andy-luly.png",
+      "company": "Onebrief",
+      "location": "Seattle, WA, USA",
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/andrewluly/" }
       ]
     }
   }
