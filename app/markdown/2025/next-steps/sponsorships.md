@@ -23,7 +23,7 @@ excerpt: Information for sponsors of CascadiaJS 2025
 1119 8th Ave<br />
 Seattle, WA 98101
 
-Use the main entrance on 8th Ave.
+Use the West Entrance, accessible via a one-way driveway/alley off of Seneca street.
 
 ### Parking
 
@@ -31,17 +31,20 @@ There is no onsite parking, but there are several parking garages nearby. Visit 
 
 ### Venue Access & Load-in
 
+**Wednesday, September 17**<br />
+Sponsor load-in and set up: 4:30pm - 9:00pm<br />
+
 **Thursday, September 18 (Day One)**<br />
 Sponsor load-in and set up: 6:30am - 8:00am<br />
 Doors open to attendees: 8:00am<br />
-Day end: 5:45pm
+Day end: 5:30pm
 
 **Friday, September 19 (Day Two)**<br />
 Sponsor load-in and set up: 7:00am - 8:00am<br />
 Doors open to attendees: 8:00am<br />
 Day end: 10:30pm
 
-All conference/sponsor items must be removed from Town Hall by 11:00pm.
+All conference/sponsor items must be removed from Town Hall by 11:00pm on Sept 19.
 
 
 ### Shipping
@@ -83,7 +86,7 @@ Pick up your badge at the Welcome Reception on September 17th, or on the morning
 
 ### Welcome Reception & Pre-Registration
 Wednesday, September 17th<br />
-Tentatively 6:00pm - 8:30pm<br />
+5:30pm - 8:30pm<br />
 Town Hall (Forum level)
 
 The Welcome Reception is an opportunity for folks to pre-register, get their badge and conference hoodie, and hang out with fellow attendees! We encourage sponsors to attend, grab their badge, and have fun. 
@@ -112,7 +115,7 @@ Diamond, Platinum and Gold sponsors can provide a video clip (no longer than 2 m
 
 <h2 id="discord">Discord</h2>
 
-[Join our Discord](https://discord.gg/kkYR86GM29) to engage with attendees who are watching the live stream. Hiring? Post jobs in the #jobs channel!
+[Join our Discord](https://discord.gg/kkYR86GM29) to engage with attendees. Hiring? Post jobs in the #jobs channel!
 
 <h2 id="rentals">Rentals</h2>
 
