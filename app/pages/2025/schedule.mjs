@@ -20,6 +20,8 @@ function hallwayTrack({ticket = undefined}) {
     <div class="location">Main Lobby</div>
     <div class="show-item">       
         <div class="what">
+            <div class="title">Build your Network</div><br/>
+            <p>New this year is <a href="/2025/connect">Cascadia Connect</a>, a set of low-pressure ways to meet cool humans at CascadiaJS. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.</p>
             <div class="title">Connect with Experts</div><br/>
             <p>Connect with folks at the top web + AI companies</p>
             <div class="sponsors">

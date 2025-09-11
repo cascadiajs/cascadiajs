@@ -1,5 +1,6 @@
-# CascadiaJS Connect
-
+---
+title: Cascadia Connect
+---
 Low-pressure ways to meet cool humans at CascadiaJS
 
 Whether you're a networking pro or prefer to keep things casual, CascadiaJS Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.

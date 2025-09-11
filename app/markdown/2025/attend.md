@@ -11,6 +11,7 @@ excerpt: Lodging, Travel, Guest Passes and more!
         <li><a href="#travel">Travel & Lodging</a></li>
         <li><a href="#meals">Meals</a></li>
         <li><a href="#childcare">Childcare</a></li>
+        <li><a href="#connect">Connect</a></li>
     </ul>
 </div>
 
@@ -45,28 +46,14 @@ If you are coming from Portland, OR or Vancouver, BC you should definitely check
 
 <h2 id="meals">Meals</h2>
 
-We'll publish menus as the event gets closer. 
+If you purchased a ticket that includes catering, please review our [plan for meals](/2025/meals) so you can plan accordingly.
 
 <h2 id="childcare">Childcare</h2>
 
 Thanks to our wonderful sponsor Mastra, we are offering FREE, professional, on-site child care for kids 10 and under. Spots are limited. <a href="/2025/childcare">Learn more and sign up.</a>
 
-<!--
-If you purchased a ticket that includes meals, please review [our menus](/2024/meals) for June 20 and June 21. We have done our best to accommodate folks with dietary restrictions, but if you have special needs that are not covered here please make sure you plan appropriately.
--->
+<h2 id="connect">Connect</h2>
 
-<!--
-## Seattle Guide
+CascadiaJS Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.
 
-<div class="cta secondary"><a href="/2024/seattle-guide">Seattle Guide</a></div>
--->
-
-<!--
-## Bringing Guests
-
-Guests, including family, friends and significant others, are welcome! 
-
-If you would like your guest to join you in Town Hall and for other activities, they will need a Significant Other ticket. A Significant Other ticket includes entry to Town Hall and light breakfast, lunch and dinner on June 20-21. It also includes access to the Welcome Reception and the post-conference Activity Day. Children 5 and under will not need a pass. 
-
-<div class="cta secondary"><a href="/2024/tickets">Buy Significant Other Ticket</a></div>
--->
+<div class="cta secondary"><a href="/2025/connect">Cascadia Connect</a></div>
