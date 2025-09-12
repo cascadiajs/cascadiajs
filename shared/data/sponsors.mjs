@@ -450,7 +450,15 @@ const sponsors = {
             name: 'CopilotKit',
             url: 'https://www.copilotkit.ai',
             description: 'CopilotKit is the Agentic Application Framework: the easiest way to build AI copilots into your app, with support to connect any LLM or build with any agent framework via the AG-UI protocol.'
-        }
+        },
+        {
+            id: 'render',
+            tier: 'bronze',
+            logo: 'render.svg',
+            logoSquare: 'render.svg',
+            name: 'Render',
+            url: 'https://www.rendertl.com'        }
+
     ]
 }
 
