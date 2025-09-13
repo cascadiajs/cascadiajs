@@ -65,7 +65,7 @@ It's completely FREE and you don't have to have experience building with AI, but
 
 Meeting new people at a conference can be tough. We want to make it easier. We launched Cascadia Connect to help connect you with another attendee during the conference — maybe at the Welcome Reception (Sept 17), over coffee, or just to swap notes between talks. Think of it as a low-pressure way to meet one cool new person. You don’t have to be a first-time attendee to join in — everyone’s welcome!
 
-<div class="cta secondary"><a target="_blank" href="https://airtable.com/app4aehCXEydAuxKX/pag7dXPfJZEMPcHid/form">Sign Up</a></div>
+<div class="cta secondary"><a target="_blank" href="/2025/connect">Learn More</a></div>
 
 <h2 id="travel">Book Travel & Lodging</h2>
 
