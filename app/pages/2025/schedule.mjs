@@ -163,7 +163,7 @@ function Sept17() {
                 <div class="show-item">       
                     <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
-                        <div class="title"><a target="_blank" href="https://lu.ma/l3fp4o3x">Welcome Reception &amp; Pre-Registration</a></div>
+                        <div class="title"><a target="_blank" href="https://lu.ma/l3fp4o3x">Welcome Reception &amp; Pre-Registration</a> by <img src="/_public/images/sponsors/signalfire.png"/></div>
                         <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and hang out with fellow attendees.</p>
                     </div>
                 </div>
@@ -404,6 +404,13 @@ function Sept20() {
         </div>
         <div class="day-content">
             <div class="show track">   
+                <div class="location">Greenlake</div>
+                <div class="show-item"> 
+                    <div class="when">9am - 11am</div>
+                    <div class="what">
+                        <div class="title"><a href="https://luma.com/e25cosz5" target="_blank">Fun Run 5k</a> <i class="fa-solid fa-person-running"></i></a> led by James Bronder</div>
+                    </div>
+                </div>
                 <div class="location">Miller Park Tennis & Pickleball Courts</div>
                 <div class="show-item"> 
                     <div class="when">10am - noon</div>
@@ -413,7 +420,7 @@ function Sept20() {
                 </div>
                 <div class="location">Thinkspace Seattle</div>
                 <div class="show-item"> 
-                    <div class="when">9am - 11pm</div>
+                    <div class="when">9am</div>
                     <div class="what">
                         <div class="title"><a href="https://lu.ma/yu2ccnvr" target="_blank">Cascadia AI Hackathon</a></div>
                     </div>
