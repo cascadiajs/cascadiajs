@@ -17,7 +17,7 @@ export async function get({ path, query }) {
     image: '/_public/images/past/cjs19-family-photo.jpg',
     description: 'Coming up on Sept 18 - 19 in Seattle, WA!',
     sharingTitle: 'CascadiaJS 2025 | Sept 18 - 19 | Seattle, WA',
-    sharingImage: '/_public/images/sharing' + path + '.png',
+    sharingImage: '/_public/images/2025/social-sharing-general.png',
     sharingDescription: 'CascadiaJS 2025 is coming up Sept 18 - 19 in Seattle, WA!'
   }
 
