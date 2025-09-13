@@ -260,7 +260,7 @@ function Sept18({ talks, ticket = undefined }) {
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'cat-johnson'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jarod-reyes'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'courtney-yatteau'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-leneway'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'melkeydev'))}
                 ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === 'anton-zalaldinov'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dave-kiss'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dominik-kundel'))}
@@ -378,7 +378,7 @@ function Sept19({ talks, ticket = undefined }) {
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'chris-griffing'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'ryan-roemer'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'justin-rastelli'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'melkeydev'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kevin-leneway'))}
                 ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === 'brittany-ellich'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'anthony-dellavecchia'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'amber-hoak'))}
