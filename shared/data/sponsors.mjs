@@ -457,7 +457,15 @@ const sponsors = {
             logo: 'render.svg',
             logoSquare: 'render.svg',
             name: 'Render',
-            url: 'https://www.rendertl.com'        }
+            url: 'https://www.rendertl.com'       
+        },
+        {
+            id: 'netlify',
+            tier: 'community',
+            logo: 'netlify.svg',
+            name: 'Netlify',
+            url: 'https://www.netlify.com'
+        }
 
     ]
 }

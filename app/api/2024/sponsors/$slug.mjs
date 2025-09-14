@@ -4,7 +4,7 @@ export async function get({pathParameters, query, path}) {
   const { slug } = pathParameters
   const { social } = query
 
-  const sponsor = sponsors['2024'].find(s => s.id === slug)
+  const sponsor = sponsors['previous'].find(s => s.id === slug)
   // set social sharing info
   const sharing = {
     social,
