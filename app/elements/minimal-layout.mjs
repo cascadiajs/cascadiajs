@@ -1,6 +1,4 @@
-export default function MainLayout({ html, state }) {
-  const { store = {} } = state;
-  const { path = "" } = store;
+export default function MainLayout({ html }) {
   return html`
     <style>
       #root {
