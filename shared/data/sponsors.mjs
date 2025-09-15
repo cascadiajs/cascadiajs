@@ -454,8 +454,8 @@ const sponsors = {
         {
             id: 'render',
             tier: 'bronze',
-            logo: 'render.svg',
-            logoSquare: 'render.svg',
+            logo: 'render.png',
+            logoSquare: 'render.png',
             name: 'Render',
             url: 'https://www.rendertl.com'       
         },

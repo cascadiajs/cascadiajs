@@ -81,14 +81,15 @@ export default function MainHeader({ html, state }) {
     </style>
     <header>
       <section class="alert">No Frills tickets on sale for as low as $249! <a href="/2025/tickets">Get Tickets</a></section>
-      ${path && (path.startsWith("/2024") || path.startsWith("/2025"))
+      ${path && (path.startsWith("/20"))
     ? html`<nav class="back">
               <div class="wide">
                 <div><a href="/">← Back to Homepage</a></div>
               </div>
             </nav>
             ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
-            ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}`
+            ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}
+            ${path.startsWith("/2026") ? html`<nav-2026></nav-2026>` : ""}`
     : html` <nav class="primary">
             <div class="wide">
               <div id="logo">

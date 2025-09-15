@@ -150,8 +150,10 @@ span.highlight {
 }
 
 div.highlight {
-    padding: 8px;
+    padding: 16px;
     margin: 8px 0;
+    text-align: center;
+    color: #112378;
 }
 
 .highlight.success {
