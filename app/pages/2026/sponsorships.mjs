@@ -58,6 +58,7 @@ export default function ({ html }) {
       <article>
         <h1>A Web + AI conference for the Pacific Northwest</h1>
         <p>Since 2012, we've been bringing together hundreds of developers to help them level up their skills, grow their network and have fun. We're excited to present our 12th annual conference, which will be held at Town Hall, a vibrant gathering place in the heart of Seattle, WA.</p>
+        <p>Please email us at info@cascadiajs.com with any questions about sponsoring.</p>
         <h3>June 25-26, 2026<br/>Town Hall<br/>Seattle, WA</h3>
       </article>
       <div class="divider">

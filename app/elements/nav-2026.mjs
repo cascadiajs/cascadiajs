@@ -35,11 +35,11 @@ export default function MainHeader({ html }) {
     <nav class="secondary">
       <div class="wide">
         <div class="logo">
-          <a href="/2025"
+          <a href="/2026"
             ><img
               height="64"
               src="/_public/images/logo-wordmark-horizontal.svg"
-              alt="CascadiaJS 2025 logo"
+              alt="CascadiaJS logo"
           /></a>
         </div>
         <div class="push"><a href="/2026/cfp">CFP</a></div>

@@ -1,4 +1,4 @@
-export async function get({ query}) {
+export async function get({ query, path}) {
   const { social } = query
   const sharing = {
     social,
@@ -12,8 +12,8 @@ export async function get({ query}) {
 
   return {
     json: {
-      /*path,
-      talks,*/
+      path,
+      /*talks,*/
       sharing,
       /*attendees,
       organizers: organizers["2025"],*/
