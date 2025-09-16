@@ -19,6 +19,7 @@ title: Cascadia AI Hackathon
 
 * ​$100 in credits to co-work at Thinkspace
 * $100 in Neon credits
+* $20 in Twilio credits
 * ​$25 in OpenAI credits
 
 ## ​​Agenda
@@ -61,8 +62,10 @@ We will have TONS of prizes for the folks hacking, including:
 * ​1st place = $1,000
 * 2nd place = $500
 * 3rd place = $250
-* Best use of Open AI = $500 in OpenAI credits
-* Fun raffles and prizes for best use of our sponsors tools
+* Best use of:
+    * Open AI = $500 in OpenAI credits
+    * Twilio = $200 Amazon gift card
+* Raffle prizes from Torc.dev
 
 ## Rules
 
@@ -102,6 +105,14 @@ Langflow is a powerful tool for building and deploying AI-powered agents and wor
 - [Simple Agents in Langflow](https://docs.langflow.org/starter-projects-simple-agent)
 - [How to Create Your First AI Agent](https://www.datastax.com/blog/create-your-first-ai-agent)
 - [Twilio Voice and Langflow example](https://github.com/langflow-ai/langflow-twilio-voice)
+
+### Twilio
+
+Twilio is a customer engagement platform used by over 335,000 global enterprises and digital disruptors plus more than 10 million developers worldwide to build unique, personalized experiences for their customers.
+
+ConversationRelay Docs:
+
+https://www.twilio.com/docs/voice/conversationrelay 
 
 ### AG2
 
