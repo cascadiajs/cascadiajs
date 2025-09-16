@@ -46,6 +46,14 @@ title: Cascadia AI Hackathon
 * 3pm - prizes awarded
 * 4pm - doors close
 
+## Judges
+
+![judges](https://images.lumacdn.com/editor-images/ku/9cafdb66-e492-4c00-8a9a-2a295ecc2d85.png)
+
+## Sponsors
+
+![sponsors](https://images.lumacdn.com/editor-images/xh/5da6f0e2-7b9b-495b-afdb-9ac02483b0fe.png)
+
 ## ​​Prizes
 ​
 We will have TONS of prizes for the folks hacking, including:
