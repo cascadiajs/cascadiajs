@@ -83,6 +83,24 @@ The deadline to submit is **Sunday, 1pm SHARP**!
 
 Link TBD
 
+## Technical Resources
+
+### Langflow
+
+Langflow is a powerful tool for building and deploying AI-powered agents and workflows. It provides developers with both a visual authoring experience and built-in API and MCP servers that turn every workflow into a tool that can be integrated into applications built on any framework or stack. Langflow comes with batteries included and supports all major LLMs, vector databases and a growing library of AI tools.
+
+- Download the [Desktop App](https://www.langflow.org/desktop) or [pip install](https://docs.langflow.org/get-started-installation)
+- [Quickstart on Langflow](https://docs.langflow.org/get-started-quickstart)
+- [Simple Agents in Langflow](https://docs.langflow.org/starter-projects-simple-agent)
+- [How to Create Your First AI Agent](https://www.datastax.com/blog/create-your-first-ai-agent)
+- [Twilio Voice and Langflow example](https://github.com/langflow-ai/langflow-twilio-voice)
+
+### AG2
+
+AG2 (formerly AutoGen) is an open-source framework for building AI agents and facilitating cooperation among multiple agents to solve complex tasks. It solves the problem of LLM attention to rich context by creating AI workflows where multiple specialized agents focus on a subset of the problem. Think of it as enabling you to build a team of AI agents that can work together to plan, solve problems, and criticize the solution collaboratively.
+
+Follow instructions at https://github.com/ag2ai/ag2. We will also grant hackathon participants access to a new portal (link TBD) which enables them to explore jobs for agents, build agents, submit job results, and in the future receive payments.
+
 ## ​​FAQ
 ​​
 Q: Can I join solo or do I need a team?
