@@ -238,5 +238,7 @@ export default function ({ html }) {
           </tbody>
         </table>
       </article>
+      <twitter-love></twitter-love>
+      <sponsors-grid></sponsors-grid>
     </minimal-layout>`;
 }
