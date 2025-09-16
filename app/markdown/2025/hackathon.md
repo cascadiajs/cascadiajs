@@ -36,7 +36,7 @@ title: Cascadia AI Hackathon
     * ag2 (2:30pm)
     * Neon (3pm)
 * 6pm - dinner & drinks provided by AG2 + PSL
-* 10pm - doors close
+* 9pm - doors close
 
 ​🗓️ Sept 21
 
@@ -63,9 +63,16 @@ We will have TONS of prizes for the folks hacking, including:
 * 2nd place = $500
 * 3rd place = $250
 * Best use of:
+    * Langflow = [Divoom Ditoo-Pro Retro Pixel Art portable speakers](https://divoom.com/products/divoom-pro?variant=32038376374390)
     * Open AI = $500 in OpenAI credits
     * Twilio = $200 Amazon gift card
-* Raffle prizes from Torc.dev
+* $250 amazon gift card Raffle by Torc.dev
+
+## Looking for a Job?
+
+Come check out the community at [torc.community](https://torc.community)!
+
+We'd love for you to join us and see what we're all about. We'll be at the Hackathon all weekend!
 
 ## Rules
 
