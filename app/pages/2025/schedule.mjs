@@ -182,10 +182,12 @@ function Sept18({ talks, ticket = undefined }) {
             Conference
             </h2>
         </div>
-        <!--div class="location">Map of Main Floor</div>
+        <div class="location">Maps</div>
         <div class="day-content">
-            <img src="/_public/images/2024/venue-layout.png" alt="venue map"/>
-        </div-->
+            <p><a target="_new" href="/_public/images/2025/th-forum.png"><img src="/_public/images/2025/th-forum.png" alt="venue map"/></a></p>
+            <p><a target="_new" href="/_public/images/2025/th-lobby.png"><img src="/_public/images/2025/th-lobby.png" alt="venue map"/></a></p>
+            <p><a target="_new" href="/_public/images/2025/th-great-hall.png"><img src="/_public/images/2025/th-great-hall.png" alt="venue map"/></a></p>
+        </div>
         <div class="day-header">
             <h2 class="day-date">
             Day One<br/>Sept 18
