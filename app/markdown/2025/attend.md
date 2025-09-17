@@ -6,6 +6,7 @@ excerpt: Lodging, Travel, Guest Passes and more!
 <div id="toc">
 <h2>On This Page</h2>
     <ul>
+        <li><a href="#coc">Code of Conduct</a></li>
         <li><a href="#prepare">Preparing for the Conference</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#travel">Travel & Lodging</a></li>
@@ -14,6 +15,10 @@ excerpt: Lodging, Travel, Guest Passes and more!
         <li><a href="#connect">Connect</a></li>
     </ul>
 </div>
+
+<h2 id="coc">Code of Conduct</h2>
+
+All attendees (including speakers, sponsors and staff) agree to abide by our [Code of Conduct](/code-of-conduct). Please make sure to review this before you arrive, and please understand that we take it very seriously. Anyone who violates our conduct policies will be asked to leave the venue. 
 
 <h2 id="prepare">Preparing for the Conference</h2>
 
@@ -32,7 +37,7 @@ Town Hall Seattle<br />
 1119 8th Ave<br />
 Seattle, WA 98101
 
-Please enter through the 8th Avenue entrance. The doors are accessible via a ramp and lead, at-grade, into the Main Lobby level. The lobby has an at-grade elevator serving the Great Hall, where all talks will take place.
+Please enter through the West Entrance, which is located off of Seneca street. 
 
 Visit the Town Hall website for information on <a href="https://townhallseattle.org/locations-and-entrances/">location and entrances</a>, <a href="https://townhallseattle.org/public-transit/">public transit</a>, <a href="https://townhallseattle.org/parking/">parking</a> (including bike parking!) and <a href="https://townhallseattle.org/accessibility/">accessibility</a>.  
 

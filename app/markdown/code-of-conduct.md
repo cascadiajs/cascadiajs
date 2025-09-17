@@ -4,7 +4,7 @@ image: /_public/images/past/cjs18-pronoun-stickers.jpg
 excerpt: CascadiaJS is a safe and inclusive event for everyone
 ---
 
-![pronoun stickers](https://begin-static-p6uw2-production.s3.us-west-2.amazonaws.com/forest-1dg/images/2018-pronoun-stickers.jpg)
+![pronoun stickers](/_public/images/past/cjs18-pronoun-stickers.jpg)
 
 CascadiaJS is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity, gender expression, sexual orientation, disability, physical appearance, body size, race, ability, ethnicity, socioeconomic status, or religion (or lack thereof). CascadiaJS does not tolerate harassment of conference participants or staff at any time nor in any form.
 
