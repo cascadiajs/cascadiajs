@@ -355,7 +355,7 @@ function Sept19({ talks, ticket = undefined }) {
                 </div>
                 <div class="show-item">       
                     <div class="when">7:00pm</div>
-                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> Closing Party by <img src="/_public/images/sponsors/cloudflare.png"/></div></div>
+                    <div class="what"><div class="title"><i class="fas fa-party-horn"></i> <a href="/2025/closing-party">Closing Party</a> by <img src="/_public/images/sponsors/cloudflare.png"/></div></div>
                 </div>
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
