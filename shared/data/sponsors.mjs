@@ -238,7 +238,7 @@ const sponsors = {
         },
         {
             id: 'elastic',
-            tier: 'gold',
+            tier: 'silver',
             logo: 'elastic.svg',
             logoSquare: 'elastic.svg',
             name: 'Elastic',
