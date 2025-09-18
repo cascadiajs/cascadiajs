@@ -157,6 +157,13 @@ export default function MainFooter({ html }) {
         crossorigin="anonymous"
         async
       ></script>
+      <script
+        src="https://chatflow-bijt.vercel.app/chatflow.js"
+        data-header-text="CascadiaJS 2025"
+        data-color-primary="#17c37b"
+        data-color-secondary="#6c757d"
+        data-color-highlight="#ffd007"
+        ></script>
     </section>
   `;
 }

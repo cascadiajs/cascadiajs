@@ -359,7 +359,7 @@ function Sept19({ talks, ticket = undefined }) {
                 </div>
                 <div class="location">Main Lobby</div>
                 <div class="show-item">       
-                    <div class="when">7:30pm</div>
+                    <div class="when">7:00pm</div>
                     <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> Karaoke</div></div>
                 </div>
                 <div class="show-item">       
