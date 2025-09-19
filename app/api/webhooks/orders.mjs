@@ -70,8 +70,8 @@ async function ticketCompletedOrUpdated(req) {
   await upsertTicket({ _id, full_name, email })
   // subscribe this user to Kit.com
   await addSubscriber({ email_address: email })
-  // attach the "attending-cascadiajs2025" tag to the user
-  await tagSubscriber({ email_address: email, tag_id: 8070622 })
+  // attach the "attending-cascadiajs2026" tag to the user
+  await tagSubscriber({ email_address: email, tag_id: 10851855 })
   return {
     statusCode: 200,
     json: { success: true }
