@@ -31,10 +31,9 @@ title: Cascadia AI Hackathon
 * ​noon - lunch provided by Torc.dev
 * 1pm - Technical workshops
     * Langflow (1pm)
-    * OpenAI (1:30pm)
-    * Twilio (2pm)
-    * ag2 (2:30pm)
-    * Neon (3pm)
+    * Twilio (1:30pm)
+    * ag2 (2pm)
+    * OpenAI (2:30pm)
 * 6pm - dinner & drinks provided by AG2 + PSL
 * 9pm - doors close
 

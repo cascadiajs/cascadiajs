@@ -80,7 +80,7 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert">We're SOLD OUT! See you all soon!</section>
+      <section class="alert">We're SOLD OUT for 2025!</section>
       ${path && (path.startsWith("/20"))
     ? html`<nav class="back">
               <div class="wide">
