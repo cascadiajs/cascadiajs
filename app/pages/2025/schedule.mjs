@@ -338,8 +338,8 @@ function Sept19({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">4:00pm</div>
                     <div class="what">
-                        <div class="title">Show: Standup Comedy</div>
-                        <div class="speaker">Hosted by Erin Mikail Staples</div>
+                        <div><img src="/_public/images/2025/erin-comedy.jpg" alt="Ctrl Alt Delight" /></div>
+                        <div class="speaker">Ctrl Alt Delight by Erin Mikail Staples</div>
                     </div>
                 </div>
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'adam-argyle'))}
