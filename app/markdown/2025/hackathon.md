@@ -99,7 +99,7 @@ We'd love for you to join us and see what we're all about. We'll be at the Hacka
 
 The deadline to submit is **Sunday, 1pm SHARP**!
 
-Link TBD
+https://forms.gle/kc36j7moFsfQrQRq9 
 
 ## Technical Resources
 
