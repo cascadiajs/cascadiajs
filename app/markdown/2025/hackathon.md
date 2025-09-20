@@ -26,21 +26,21 @@ title: Cascadia AI Hackathon
 ​​
 🗓️ Sept 20
 
-* ​​9am - doors open / bagels & coffee provided by Neon
+* ​​9am - doors open / bagels & coffee provided by **Neon**
 * 10am - kick-off
-* ​noon - lunch provided by Torc.dev
+* ​noon - lunch provided by **Torc.dev**
 * 1pm - Technical workshops
     * Langflow (1pm)
     * Twilio (1:30pm)
     * ag2 (2pm)
-    * OpenAI (2:30pm)
-* 6pm - dinner & drinks provided by AG2 + PSL
+    * Torc.dev Resume Review (2:30pm)
+* 6pm - dinner & drinks provided by **AG2** + **PSL**
 * 9pm - doors close
 
 ​🗓️ Sept 21
 
-* ​9am - doors open / bagels & coffee provided by Twilio
-* noon - lunch
+* ​9am - doors open / bagels & coffee provided by **Twilio**
+* noon - lunch provided by **OpenAI**
 * ​1pm - hacks submission deadline
 * 1:30pm - presentations
 * 3pm - prizes awarded
