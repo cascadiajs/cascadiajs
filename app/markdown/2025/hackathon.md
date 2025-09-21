@@ -99,7 +99,7 @@ We'd love for you to join us and see what we're all about. We'll be at the Hacka
 
 The deadline to submit is **Sunday, 1pm SHARP**!
 
-https://forms.gle/kc36j7moFsfQrQRq9 
+There is a QR code you need to scan to submit your hack. Please make sure you're ON SITE (Thinkspace) to scan this code.
 
 ## Technical Resources
 
