@@ -1,13 +1,12 @@
 export default function ({ html }) {
   return html`
     <style>
+      article {
+        padding: 8px;
+      }
+      
       b {
         font-weight: 700;
-      }
-
-      article {
-        padding: 24px 128px;
-        margin: 0 auto;
       }
 
       .divider {
@@ -51,6 +50,13 @@ export default function ({ html }) {
 
       .packages tbody {
         background-color: #fff;
+      }
+
+      @media only screen and (min-width: 768px) {
+        article {
+          padding: 24px 128px;
+          margin: 0 auto;
+        }
       }
 
     </style>

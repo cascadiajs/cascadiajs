@@ -47,8 +47,6 @@ export default function MainLayout({ html, state }) {
           grid-template-rows: auto 1fr auto;
         }
 
-
-
         #testimonials div {
           display: flex;
           justify-content: center;
@@ -69,7 +67,7 @@ export default function MainLayout({ html, state }) {
         ${ path.startsWith("/2024") ? html`<h1>Our Sponsors</h1><sponsors-grid-2024></sponsors-grid-2024>` 
     : path.startsWith("/2025") ? html`<h1>Our Sponsors</h1><sponsors-grid-2025></sponsors-grid-2025>`
       : html`<h1>Past Sponsors</h1><sponsors-grid></sponsors-grid>`}
-          <div class="cta"><a target="_blank" href="/_public/files/cjs25-sponsor-brochure.pdf">Sponsor Our Event</a></div>
+          <div class="cta"><a href="/2026/sponsor">Sponsor Our Event</a></div>
         </section>
         <twitter-love></twitter-love>
       </main>
