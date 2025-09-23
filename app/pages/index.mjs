@@ -49,9 +49,9 @@ export default function ({ html /*state*/ }) {
         <h2>We're a community for web + AI developers in the Pacific Northwest.</h2>
         <br/>
         <p>
-          We create events that will help you level up, grow your network, find a job and have fun! In 2025 we'll be back in Seattle for 4 days of talks, workshops and karaoke.
+          We create events that will help you level up, grow your network, find a job and have fun! In 2026 we'll be back in Seattle for 2+ days of talks, workshops and karaoke.
         </p>
-        <div class="cta primary"><a href="/2025">CascadiaJS: Sept 18-19, 2025</a></div>
+        <div class="cta primary"><a href="/2026">CascadiaJS: June 2026</a></div>
       </article>
       <article>
         <img src="/_public/images/2025/hero-camper.png" alt="Sasquatch driving a camper van"/>

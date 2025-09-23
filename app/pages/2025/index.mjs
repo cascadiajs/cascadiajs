@@ -146,7 +146,7 @@ export default function ({ html, state }) {
                 <div id="main-event">
                   <div class="label-name">Main Event</div>
                   <div class="label-value">Town Hall<br/>Seattle, WA</div>
-                  <div class="cta primary"><a href="/2025/tickets">Tickets On Sale!</a></div>
+                  <div class="cta nope">SOLD OUT</div>
                 </div>
                 <!--div style="">
                   <div class="label-name">YVR Edition</div>
