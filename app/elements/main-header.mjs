@@ -100,7 +100,7 @@ export default function MainHeader({ html, state }) {
                   />
                 </a>
               </div>
-              <div class="push"><a href="/2025">CascadiaJS 2025</a></div>
+              <div class="push"><a href="/2026">CascadiaJS 2026</a></div>
               <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
               <div class="spacer"><a href="/code-of-conduct">Code of Conduct</a></div>
             </div>
