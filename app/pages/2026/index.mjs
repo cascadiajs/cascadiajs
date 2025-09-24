@@ -139,7 +139,7 @@ export default function ({ html, state }) {
                 CascadiaJS is a community-driven conference for developers in the PNW and beyond. You will hear from 40+ speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
               </p>
               <div class="label-name">Date</div>
-              <div class="label-value">June 25-26, 2026</div>
+              <div class="label-value">June 1-2, 2026</div>
               <br/>
               <div id="venues">
                 <div id="main-event">

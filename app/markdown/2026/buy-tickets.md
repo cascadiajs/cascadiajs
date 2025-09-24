@@ -25,9 +25,9 @@ Here are some extras included in our Premium Tickets:
 
 🎁 Conference hoodie + swag
 
-🌮 Breakfast and lunch (June 25 + 26)
+🌮 Breakfast and lunch (June 1 + 2)
 
-🎉 Dinner and Drinks at the Closing Party (June 26)
+🎉 Dinner and Drinks (TBD)
 
 ⚡️ Priority access and extra surprises!
 
