@@ -1,6 +1,8 @@
 export default function ({ html }) {
   return html`
     <style>
+
+
       article {
         padding: 8px;
       }
@@ -64,7 +66,7 @@ export default function ({ html }) {
       <article>
         <h1>A Web + AI conference for the Pacific Northwest</h1>
         <p>Since 2012, we've been bringing together hundreds of developers to help them level up their skills, grow their network and have fun. We're excited to present our 12th annual conference, which will be held at Town Hall, a vibrant gathering place in the heart of Seattle, WA.</p>
-        <p>Please email us at info@cascadiajs.com with any questions about sponsoring.</p>
+        <p>Please email us at info@cascadiajs.com or <a target="_blank" href="https://calendly.com/carrie-cascadiajs/30min">book a time</a> to chat with us about sponsoring.</p>
         <h3>June 1-2, 2026<br/>Town Hall<br/>Seattle, WA</h3>
       </article>
       <div class="divider">
@@ -78,7 +80,7 @@ export default function ({ html }) {
         <p><i class="fa-solid fa-stars"></i> 2025 sponsors included: <b>Google</b>, <b>IBM</b>, <b>Elastic</b>, <b>Cloudflare</b> and others.</p>
       </article>
       <div class="divider">
-        <img src="/_public/images/past/cjs24-family.jpg"/>
+        <img src="/_public/images/past/cjs25-family.jpg"/>
       </div>
       <article>
         <h2>Sponsorship Packages</h2>
@@ -101,25 +103,25 @@ export default function ({ html }) {
               <td><b>Venue</b></td>
               <td><b>Superbooth</b></td>
               <td><b>Booth</b></td>
-              <td>Choose one:<br/><b>Welcome Reception</b><br/><b>Closing Party</b><br/><b>Lanyards</b><br/><b>Videos</b></td>
-              <td>Choose one:<br/><b>Karaoke</b><br/><b>Coffee</b><br/><b>Tote Bags</b><br/><b>Child Care</b><br/><b>Photo Booth</b><br/><b>ASL</b></td>
+              <td>Choose one:<br/><b>Opening Mixer</b><br/><b>Lanyards</b><br/><b>Videos</b></td>
+              <td>Choose one:<br/><b>Welcome Reception</b><br/><b>Karaoke</b><br/><b>Coffee</b><br/><b>Tote Bags</b><br/><b>Child Care</b><br/><b>Photo Booth</b><br/><b>ASL</b></td>
               <td><b>Scholarships</b></td>
             </tr>
             <tr>
               <td><b>Quantity</b></td>
               <td>1</td>
               <td>1</td>
-              <td>4</td>
               <td>8</td>
-              <td>5</td>
+              <td>3</td>
+              <td>7</td>
               <td>Unlimited</td>
             </tr>
             <tr>
               <td><b>Price</b></td>
-              <td>$40k</td>
-              <td>$30k</td>
-              <td>$20k</td>
-              <td>$8k</td>
+              <td><span style="text-decoration: line-through;">$40k</span> <b>$32k</b></td>
+              <td><span style="text-decoration: line-through;">$30k</span> <b>$24k</b></td>
+              <td><span style="text-decoration: line-through;">$20k</span> <b>$16k</b></td>
+              <td><span style="text-decoration: line-through;">$8k</span> <b>$6400</b></td>
               <td>$5k</td>
               <td>$2500</td>
             <tr>
@@ -189,7 +191,7 @@ export default function ({ html }) {
               <td colSpan="3">&nbsp;</td>
             </tr>
             <tr>
-              <td><b>Lead capture</b> provided for each member of your team</td>
+              <td><b>Lead capture</b> provided for 2 members of your team</td>
               <td><i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
@@ -203,7 +205,7 @@ export default function ({ html }) {
               <td colSpan="3">&nbsp;</td>
             </tr>
             <tr>
-              <td><b>Swag item included</b> in tote bag forall attendees</td>
+              <td><b>Swag item included</b> in tote bag for all attendees</td>
               <td><i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
@@ -219,8 +221,7 @@ export default function ({ html }) {
             </tr>
             <tr>
               <td><b>Grouped social media</b> posts leading up to and during the event</td>
-              <td colspan="2">&nbsp;</td>
-              <td><i class="fa-solid fa-check"></i></td>
+              <td colspan="3">&nbsp;</td>
               <td><i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
