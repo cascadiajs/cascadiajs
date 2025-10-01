@@ -67,7 +67,7 @@ export default function TalkItem({ html, state }) {
         }
         </style>
         <div class="talk-item">
-        ${ slug ? ` <a href="${ year }/talks/${ slug }">${ talkItem(attrs) }` : talkItem(attrs) }   
+        ${ slug ? ` <a href="/${ year }/talks/${ slug }">${ talkItem(attrs) }` : talkItem(attrs) }   
         </div>   
     `
 }
