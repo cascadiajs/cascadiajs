@@ -11,7 +11,7 @@
       "location": "Seattle, WA, USA",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/shrutikapoor08/" },
-        { "type": "x", "url": "https://x.com/shrutikapoor08" }
+        { "type": "x-twitter", "url": "https://x.com/shrutikapoor08" }
       ]
     }
   },
@@ -28,7 +28,7 @@
       "location": "Salt Lake City, UT, USA",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/kentcdodds" },
-        { "type": "x", "url": "https://x.com/kentcdodds" }
+        { "type": "x-twitter", "url": "https://x.com/kentcdodds" }
       ]
     }
   },
@@ -37,6 +37,8 @@
     "title": "TanStack Is Your New Favorite Framework",
     "type": "keynote",
     "abstract": "You might know TanStack from the awesome React-Query framework that is used in 25% of all React apps. Well TanStack is a lot more than that. TanStack Start is a cutting edge React framework that competes with NextJS and might end up being your new favorite framework. Let's have a look and get you Started today.",
+    "thumbnail": "/_public/images/2025/talks/tanstack.png",
+    "yt": "uy2WSS1MjGM",
     "speaker": {
       "name": "Jack Herrington",
       "slug": "jack-herrington",
@@ -45,7 +47,7 @@
       "location": "Portland, OR, USA",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/jherr/" },
-        { "type": "x", "url": "https://x.com/jherr" }
+        { "type": "x-twitter", "url": "https://x.com/jherr" }
       ]
     }
   },
@@ -62,7 +64,7 @@
       "location": "London, United Kingdom",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/rachelnabors/" },
-        { "type": "x", "url": "https://x.com/rachelnabors" }
+        { "type": "x-twitter", "url": "https://x.com/rachelnabors" }
       ]
     }
   },
@@ -79,7 +81,7 @@
       "location": "Seattle, WA, USA",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/adamargyle/" },
-        { "type": "x", "url": "https://x.com/argyleink" }
+        { "type": "x-twitter", "url": "https://x.com/argyleink" }
       ]
     }
   },
@@ -95,7 +97,7 @@
       "location": "Oakland, CA, USA",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/charliegerard/" },
-        { "type": "x", "url": "https://x.com/devdevcharlie" },
+        { "type": "x-twitter", "url": "https://x.com/devdevcharlie" },
         { "type": "bluesky", "url": "https://bsky.app/profile/devdevcharlie.com" },
         { "type": "github", "url": "https://github.com/charliegerard" }
       ]
@@ -130,7 +132,7 @@
       "company": "Moment",
       "location": "Seattle, WA, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/hausdorff_space" }
+        { "type": "x-twitter", "url": "https://x.com/hausdorff_space" }
       ]
     }
   },
@@ -145,7 +147,7 @@
       "company": "Microsoft Research",
       "location": "Seattle, WA, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/amber_hoak" }
+        { "type": "x-twitter", "url": "https://x.com/amber_hoak" }
       ]
     }
   },
@@ -297,7 +299,7 @@
       "pronouns": "she/her/hers",
       "location": "Alexandria, Virginia, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/c_yatteau" },
+        { "type": "x-twitter", "url": "https://x.com/c_yatteau" },
         { "type": "github", "url": "https://www.linkedin.com/in/courtneyyatteau/" }
       ]
     }
@@ -360,7 +362,7 @@
       "pronouns": "she/her",
       "location": "Seattle, WA, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/isabelacmor" }
+        { "type": "x-twitter", "url": "https://x.com/isabelacmor" }
       ]
     }
   },
@@ -468,7 +470,7 @@
       "pronouns": "he/him/his",
       "location": "Seattle, WA, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/kdrwins" }
+        { "type": "x-twitter", "url": "https://x.com/kdrwins" }
       ]
     }
   },
@@ -519,7 +521,7 @@
       "pronouns": "he/him",
       "location": "Minneapolis, MN, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/kevinwhinnery" }
+        { "type": "x-twitter", "url": "https://x.com/kevinwhinnery" }
       ]
     }
 
@@ -537,7 +539,7 @@
       "pronouns": "he/him/his",
       "location": "Portland, OR, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/craigsdennis" }
+        { "type": "x-twitter", "url": "https://x.com/craigsdennis" }
       ]
     }
   },
@@ -614,7 +616,7 @@
       "company": "North",
       "location": "Longmont, Colorado, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/willklein_" },
+        { "type": "x-twitter", "url": "https://x.com/willklein_" },
         { "type": "linkedin", "url": "https://www.linkedin.com/in/willklein/"},
         { "type": "bluesky", "url": "https://bsky.app/profile/willkle.in"}
       ]
@@ -664,7 +666,7 @@
       "company": "Freelance",
       "location": "Seattle, WA, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/MelkeyDev" }
+        { "type": "x-twitter", "url": "https://x.com/MelkeyDev" }
       ]
     }
   },
@@ -679,7 +681,7 @@
       "company": "SignalFire",
       "location": "San Diego, CA, USA",
       "links": [
-        { "type": "x", "url": "https://x.com/jreyesdev" }
+        { "type": "x-twitter", "url": "https://x.com/jreyesdev" }
       ]
     }
   },
@@ -727,7 +729,7 @@
       "location": "Seattle, WA, USA",
       "links": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/atai-barkai/" },
-        { "type": "x", "url": "https://x.com/ataiiam" }
+        { "type": "x-twitter", "url": "https://x.com/ataiiam" }
       ]
     }
   },

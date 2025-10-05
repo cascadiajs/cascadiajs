@@ -59,7 +59,7 @@ export async function get({pathParameters, query, path}) {
     sharingTitle: 'CascadiaJS 2025 | Speakers | ' + talk.speaker.name,
     //sharingImage: '/_public/images/sharing' + path + '.png',
     //sharingImage: `/_public/images/2025/social/social-speaker-${talk.speaker.slug}.png`,
-    sharingImage: `/2025/talks/${talk.slug}?image`,
+    sharingImage: talk.thumbnail || `/2025/talks/${talk.slug}?image`,
     sharingDescription: talk.short || talk.description
   }
   return {
