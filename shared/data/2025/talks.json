@@ -20,6 +20,8 @@
     "title": "The New User Interaction Model",
     "abstract": "For decades, users have interacted with our applications using links and forms, but that's not enough for users anymore. They want to use natural language. Let's talk about how that changes what we build.",
     "type": "keynote",
+    "thumbnail": "/_public/images/2025/talks/mcp.png",
+    "yt": "bcaurwoNHis",
     "speaker": {
       "name": "Kent C. Dodds",
       "slug": "kent-c-dodds",
