@@ -40,12 +40,6 @@ export default function ({ html, state }) {
             justify-content: center;
         }
 
-        #attendee-list img {
-            display: block;
-            margin: 8px;
-            height: 100px;
-        }
-
         #pitch {
           background: #ccf1db;
           text-align: center;
@@ -61,6 +55,8 @@ export default function ({ html, state }) {
         }
 
         .attendee {
+          margin: 8px;
+          height: 100px;
           position: relative;
           display: inline-block;
           cursor: pointer;

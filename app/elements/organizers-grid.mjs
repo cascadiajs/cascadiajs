@@ -5,9 +5,7 @@ export default function Organizers({ html, state }) {
         <style>
         .organizers-list {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
+            overflow-x: auto;
         }
         .organizer {
             width: 250px;
@@ -15,6 +13,13 @@ export default function Organizers({ html, state }) {
             flex-direction: column;
             margin-right: 8px;
             margin-bottom: 16px;
+        }
+        @media (min-width: 1200px) {
+            .organizers-list {
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;   
+            }
         }
         </style>
         <div class="organizers-list">

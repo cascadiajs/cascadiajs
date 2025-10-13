@@ -4,9 +4,7 @@ export default function Talks({ html, state }) {
         <style>
         .talks-list {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
+            overflow-x: auto;
         }
         talks-item {
             width: 250px;
@@ -14,6 +12,13 @@ export default function Talks({ html, state }) {
             flex-direction: column;
             margin-right: 8px;
             margin-bottom: 16px;
+        }
+        @media (min-width: 1200px) {
+            .talks-list {
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;   
+            }
         }
         </style>
         <div class="talks-list">
