@@ -1,7 +1,7 @@
 ---
 title: Cascadia Connect
 ---
-Low-pressure ways to meet cool humans at CascadiaJS
+Low-pressure ways to meet cool humans at CascadiaJS.
 
 Whether you're a networking pro or prefer to keep things casual, CascadiaJS Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.
 
@@ -43,7 +43,9 @@ Add a conversation starter to your badge! Pick up stickers with prompts like "Ta
 
 Whether you're coming to your first tech conference, flying solo, or just want to meet someone new, this light-touch pairing system helps you connect with another attendee based on shared vibes. No awkward icebreakers required.
 
-[Sign up by Tuesday, May 26](https://airtable.com/app2IZDYtOGyzBQLZ/pag7dXPfJZEMPcHid/form). If you're matched, we'll share your name and email with your match so you can connect before the conference — maybe at the Welcome Reception, over coffee, or just to swap notes between talks.
+If you're matched, we'll share your name and email with your match so you can connect before the conference — maybe at the Welcome Reception, over coffee, or just to swap notes between talks.
+
+<div class="cta secondary"><a href="https://airtable.com/app2IZDYtOGyzBQLZ/pag7dXPfJZEMPcHid/form">SIGN UP BY MAY 26</a></div>
 
 ## Low-Key Games 🎲
 
