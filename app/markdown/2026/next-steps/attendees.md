@@ -8,9 +8,9 @@ excerpt: Information for attendees of CascadiaJS 2026
     <ul>
         <!--<li><a href="#complete-registration">Complete Registration</a></li>-->
         <!--<li><a href="#pre-conf-trainings">Check out the Pre-Conf Trainings</a></li>-->
+        <li><a href="#travel">Book Travel & Lodging</a></li>
         <li><a href="#cascadia-connect">Make a New Friend</a></li>
-        <!--<li><a href="#travel">Book Travel & Lodging</a></li>-->
-        <li><a href="#connect-with-our-community">Connect with Our Community</a></li>
+        <li><a href="#connect-with-our-community">Connect With Our Community</a></li>
     </ul>
 </div>
 
@@ -33,21 +33,20 @@ Prior to the conference, we are teaming up with Eve Porcello (Moon Highway) to p
 
 -->
 
+<h2 id="travel">Book Travel & Lodging</h2>
+
+Traveling to Seattle and need to a place to stay while you're in town? Look no further than our Travel Guide for the scoop on hotel discounts and the best way to get to Seattle.
+
+<div class="cta secondary"><a href="/2026/travel">Travel Guide</a></div>
+
 <h2 id="cascadia-connect">Make a New Friend!</h2>
 
 Meeting new people at a conference can be tough. We want to make it easier. We launched Cascadia Connect - Pair Programming IRL to help connect you with another attendee during the conference — maybe at the Welcome Reception, over coffee, or just to swap notes between talks. Think of it as a low-pressure way to meet one cool new person. You don’t have to be a first-time attendee to join in — everyone’s welcome!
 
 <div class="cta secondary"><a href="https://airtable.com/app2IZDYtOGyzBQLZ/pag7dXPfJZEMPcHid/form">Sign up</a></div>
 
-<!--
-<h2 id="travel">Book Travel & Lodging</h2>
 
-Traveling to Seattle and need to a place to stay while you're in town? Look no further than our Travel Guide for the scoop on hotel discounts and the best way to get to Seattle (hint: it's the Hacker Train).
-
-<div class="cta secondary"><a href="/2025/travel">Travel Guide</a></div>
--->
-
-<h2 id="connect-with-our-community">Connect with our Community</h2>
+<h2 id="connect-with-our-community">Connect With Our Community</h2>
 
 You don't have to wait until the conference to start enjoying CascadiaJS! Here are some ways you can connect with our community right now:
 
