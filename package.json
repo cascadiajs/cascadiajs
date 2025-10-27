@@ -1,6 +1,6 @@
 {
   "name": "cascadiajs-website",
-  "version": "6.0.9",
+  "version": "6.0.11",
   "scripts": {
     "enhance": "enhance",
     "lint": "eslint ./app/**/*.mjs --fix",
@@ -8,7 +8,7 @@
     "test": "npm run lint && echo add tests"
   },
   "dependencies": {
-    "@datastax/astra-db-ts": "^2.0.2",
+    "@datastax/astra-db-ts": "^2.1.2",
     "@enhance/arc-plugin-enhance": "^11.0.4",
     "@enhance/styles-cribsheet": "^0.0.11",
     "cloudinary": "^2.7.0",

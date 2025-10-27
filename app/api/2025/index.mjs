@@ -1,10 +1,12 @@
-import { findUsers } from "../../../shared/data/users.mjs"
+//import { findUsers } from "../../../shared/data/users.mjs"
+import attendees from "../../../shared/data/users-2025.json" assert { type: "json" }
 import organizers from "../../../shared/data/organizers.json" assert { type: "json" }
 import talks from "../../../shared/data/2025/talks.json" assert { type: "json" }
 
 export async function get({ path, query }) {
   // find all the attendees for CascadiaJS 2025
-  const attendees = await findUsers({ query: {$and: [ { attending: '2025' } ] }, limit: 1000 })
+  //const attendees = await findUsers({ query: {$and: [ { attending: '2025' } ] }, limit: 1000 })
+  //const attendees = []
   //console.log(attendees[0])
 
   const { social } = query
