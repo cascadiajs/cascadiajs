@@ -15,7 +15,7 @@ Our Premium tickets are released in batches. Each batch is limited in quantity, 
     </thead>
     <tbody>
     <tr class="active-row"><td>Blind Bird</td><td>Sep 19, 2025</td><td>$499</td></tr>
-    <tr><td>Early Bird</td><td>Nov 2, 2025</td><td>$599</td></tr>
+    <tr><td>Early Bird</td><td>Nov 17, 2025</td><td>$599</td></tr>
     <tr><td>Regular Bird</td><td>Feb 15, 2026</td><td>$699</td></tr>
     <tr><td>Full Price</td><td>May 10, 2026</td><td>$799</td></tr>
     </tbody>
