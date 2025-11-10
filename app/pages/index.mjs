@@ -58,17 +58,17 @@ export default function ({ html /*state*/ }) {
       </article>
     </section>
     <section id="trailer" class="landing">
-    <h1>Check-out our 2025 Trailer!</h1>
+    <h1>Check-out our 2025 Recap!</h1>
     <div id="trailer-container">
-    <div id="trailer-video" style="position: relative; padding-top: 56.25%;">
+    <div style="position: relative; padding-top: 56.25%;">
       <iframe
-        src="https://customer-err733fa36e0jnfx.cloudflarestream.com/15e2f1c4f2fee3d4daecc7caa5cd468b/iframe?loop=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2F15e2f1c4f2fee3d4daecc7caa5cd468b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+        src="https://customer-err733fa36e0jnfx.cloudflarestream.com/a439eea2d251499f21c9388ebc2d5370/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2Fa439eea2d251499f21c9388ebc2d5370%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
         loading="lazy"
         style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
         allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
         allowfullscreen="true"
       ></iframe>
-      </div>
+    </div>
       </div>
     </section>
     </main-layout>
