@@ -58,7 +58,7 @@ export default function Head(state) {
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@cascadiajs">
       <meta name="twitter:title" content="${ title }">
-      <!--script async data-uid="a08a548134" src="https://cascadiajs.kit.com/a08a548134/index.js"></script>
+      <!--script async data-uid="a08a548134" src="https://cascadiajs.kit.com/a08a548134/index.js"></script-->
     </head>
 `;
 }
