@@ -168,32 +168,6 @@ export default function Testimonials({ html }) {
                 >
               </blockquote>
             </div>
-            <div>
-              <blockquote class="twitter-tweet">
-                <p lang="en" dir="ltr">
-                  Huge shoutout to the
-                  <a href="https://twitter.com/CascadiaJS?ref_src=twsrc%5Etfw"
-                    >@CascadiaJS</a
-                  >
-                  organizers for a truly unique experience that went above and
-                  beyond anything I could have imagined. You could really feel
-                  their passion for the community and the time, attention, and
-                  care they put into every single aspect. THANK YOU!! ❤️🌲
-                  <a
-                    href="https://twitter.com/hashtag/cjs20?src=hash&amp;ref_src=twsrc%5Etfw"
-                    >#cjs20</a
-                  >
-                  <a href="https://t.co/5NH2FVfMA2"
-                    >pic.twitter.com/5NH2FVfMA2</a
-                  >
-                </p>
-                &mdash; Rachael Thomas (@rachael_codes)
-                <a
-                  href="https://twitter.com/rachael_codes/status/1301317932840972289?ref_src=twsrc%5Etfw"
-                  >September 3, 2020</a
-                >
-              </blockquote>
-            </div>
             
             <div>
               <blockquote class="twitter-tweet">
