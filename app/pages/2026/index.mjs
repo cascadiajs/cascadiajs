@@ -149,7 +149,7 @@ export default function ({ html, state }) {
               </div>
             </article>
             <article>
-              <img src="/_public/images/2025/hero-camper.png" alt="Sasquatch driving a camper van"/>
+              <img src="/_public/images/2026/hero-mushroom.png" alt="Sasquatch foraging for mushrooms in a forest"/>
             </article>
           </section>
           <section id="pitch">
