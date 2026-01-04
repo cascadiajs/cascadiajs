@@ -102,8 +102,8 @@ export default function ({ html }) {
               <td><b>Options</b></td>
               <td><b>Venue</b></td>
               <td><b>Superbooth</b></td>
-              <td><b>Booth</b></td>
-              <td>Choose one:<br/><b>Opening Mixer</b><br/><b>Lanyards</b><br/><b>Videos</b></td>
+              <td>Choose one:<br/><b>Booth</b><br/><b>Lightning Talk</b></td>
+              <td>Choose one:<br/><b>Opening Mixer</b><br/><b>Workshop</b><br/><b>Lanyards</b><br/><b>Videos</b></td>
               <td>Choose one:<br/><b>Welcome Reception</b><br/><b>Karaoke</b><br/><b>Coffee</b><br/><b>Tote Bags</b><br/><b>Child Care</b><br/><b>Photo Booth</b><br/><b>ASL</b></td>
               <td><b>Scholarships</b></td>
             </tr>
