@@ -102,7 +102,7 @@ export default function ({ html }) {
               <td><b>Options</b></td>
               <td><b>Venue</b></td>
               <td><b>Superbooth</b></td>
-              <td>Choose one:<br/><b>Booth</b><br/><b>Lightning Talk</b></td>
+              <td>Choose one:<br/><b>Booth</b>(8)<br/><b>Lightning Talk</b>(5)</td>
               <td>Choose one:<br/><b>Opening Mixer</b><br/><b>Workshop</b><br/><b>Lanyards</b><br/><b>Videos</b></td>
               <td>Choose one:<br/><b>Welcome Reception</b><br/><b>Karaoke</b><br/><b>Coffee</b><br/><b>Tote Bags</b><br/><b>Child Care</b><br/><b>Photo Booth</b><br/><b>ASL</b></td>
               <td><b>Scholarships</b></td>
@@ -111,7 +111,7 @@ export default function ({ html }) {
               <td><b>Quantity</b></td>
               <td>1</td>
               <td>1</td>
-              <td>8</td>
+              <td>13</td>
               <td>3</td>
               <td>7</td>
               <td>Unlimited</td>
@@ -166,7 +166,7 @@ export default function ({ html }) {
               <td colSpan="4">&nbsp;</td>
             </tr>
             <tr>
-              <td><b>6-foot booth</b></td>
+              <td><b>6-foot booth</b> with monitor</td>
               <td colspan="2">&nbsp;</td>
               <td><i class="fa-solid fa-check"></i></td>
               <td colSpan="3">&nbsp;</td>
