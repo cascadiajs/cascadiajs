@@ -10,3 +10,4 @@ enhance/styles-cribsheet
 
 @aws
 region us-west-2
+runtime nodejs24.x
