@@ -84,7 +84,7 @@ export default function ({ html }) {
       </div>
       <article>
         <h2>Sponsorship Packages</h2>
-        <p><span class="highlight warning">Sponsorships are <b>20% off</b> until Dec 31, 2025!</span></p>
+        <p><span class="highlight warning">Sponsorships are <b>20% off</b> until Feb 14, 2026!</span></p>
         <table class="packages">
           <thead>
             <tr>
