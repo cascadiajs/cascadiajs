@@ -11,7 +11,7 @@ excerpt: Every developer has a story, what's yours?
 
 <i class="fas fa-clock"></i> Conference talks come in two flavors: Main Stage (25 min) or Lightning Stage (10 min)
 
-<i class="fas fa-calendar-alt"></i> CFP closes on <span class="highlight warning">Jan 4, 2026</span>
+<i class="fas fa-calendar-alt"></i> CFP closes on <span class="strike">Jan 4</span> <span class="highlight warning"> Jan 18, 2026</span>
 
 <i class="fas fa-hand-heart"></i> We provide support and mentorship for new speakers.
 
@@ -19,21 +19,21 @@ excerpt: Every developer has a story, what's yours?
 
 We are a web + AI conference and are looking for talks that explore the cutting edge of how web developers build modern applications and experiences. We invite presentations on anything in the web + AI space that you feel passionate about, here are some topics we think are exciting:
 
-* Computing and inference on the edge
-* WebAssembly and LLMs on device
-* Modern frontend tooling: Vite, Turbopack, Bun
-* TypeScript and agentic frameworks
-* Real-time web with WebSockets and WebRTC
-* Web performance optimization and Core Web Vitals
-* Security, authentication, and modern OAuth flows
-* AI agents running in the browser
-* Evaluating and debugging LLM-based systems
-* Real-time streaming AI responses for UX
-* Securing web apps against prompt injection
-* OAuth and identity for autonomous agents
-* Generative design systems for frontend developers
-* Multimodal AI: text, vision, and audio
-* AI-native web standards and emerging technologies
+- Computing and inference on the edge
+- WebAssembly and LLMs on device
+- Modern frontend tooling: Vite, Turbopack, Bun
+- TypeScript and agentic frameworks
+- Real-time web with WebSockets and WebRTC
+- Web performance optimization and Core Web Vitals
+- Security, authentication, and modern OAuth flows
+- AI agents running in the browser
+- Evaluating and debugging LLM-based systems
+- Real-time streaming AI responses for UX
+- Securing web apps against prompt injection
+- OAuth and identity for autonomous agents
+- Generative design systems for frontend developers
+- Multimodal AI: text, vision, and audio
+- AI-native web standards and emerging technologies
 
 Presentations do not need to fall into the categories above to be accepted and applicants are welcome to submit more than one idea.
 
@@ -50,7 +50,7 @@ Presentations do not need to fall into the categories above to be accepted and a
 - Replicate "getting started" information
 - Focus on negatives (All the things I hate about Z)
 
-If you're uncertain if your presentation qualifies for the conference, submit anyway! 
+If you're uncertain if your presentation qualifies for the conference, submit anyway!
 
 ## Speaker Perks
 
@@ -86,9 +86,9 @@ If you are a new speaker, once your talk has been accepted we will commit to wor
 
 ## The selection process
 
-- Jan 4 - The CFP closes
-- Jan 11 - Review complete
-- Jan 18 - Final decisions made, emails sent out
+- Jan 18 - The CFP closes
+- Jan 25 - Review complete
+- Jan 28 - Final decisions made, emails sent out
 
 <div class="cta"><a target="_blank" href="https://airtable.com/appd30yx2lDlo5LfR/pagPHvQ3XtLImiknR/form">Submit Proposal</a></div>
 

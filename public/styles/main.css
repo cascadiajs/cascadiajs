@@ -63,6 +63,10 @@ strong {
     font-weight: 700;
 }
 
+span.strike {
+    text-decoration: line-through;
+}
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
