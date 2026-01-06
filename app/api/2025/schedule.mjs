@@ -1,6 +1,6 @@
 //import { findEvent } from "../../../shared/data/events.mjs"
 //import { findTalks } from "../../../shared/data/talks.mjs"
-import talks from "../../../shared/data/2025/talks.json" assert { type: "json" }
+import talks from "../../../shared/data/2025/talks.json" with { type: "json" }
 
 export async function get({ path, query }) {
   // find the id for CascadiaJS 2024

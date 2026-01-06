@@ -1,6 +1,6 @@
 //import { findEvent } from "../../../../shared/data/events.mjs"
 //import { findTalk } from "../../../../shared/data/talks.mjs"
-import talks from "../../../../shared/data/2025/talks.json" assert { type: "json" }
+import talks from "../../../../shared/data/2025/talks.json" with { type: "json" }
 import cloudinary from 'cloudinary'
 
 // Return "https" URLs by setting secure: true
