@@ -76,7 +76,7 @@ export default function ({ html }) {
         <h2>Event at a Glance</h2>
         <p><i class="fa-solid fa-stars"></i> Two-day developer conference <b>focused on web and AI technologies</b>.</p>
         <p><i class="fa-solid fa-stars"></i> <b>~600 attendees</b>, across a range of experience levels.</p>
-        <p><i class="fa-solid fa-stars"></i> 40 talks from <b>industry experts</b> across 2 tracks.</p>
+        <p><i class="fa-solid fa-stars"></i> 30 talks from <b>industry experts</b> across 2 tracks.</p>
         <p><i class="fa-solid fa-stars"></i> 2025 sponsors included: <b>Google</b>, <b>IBM</b>, <b>Elastic</b>, <b>Cloudflare</b> and others.</p>
       </article>
       <div class="divider">
@@ -102,7 +102,7 @@ export default function ({ html }) {
               <td><b>Options</b></td>
               <td><b>Venue</b></td>
               <td><b>Superbooth</b></td>
-              <td>Choose one:<br/><b>Booth</b>(8)<br/><b>Lightning Talk</b>(5)</td>
+              <td>Choose one:<br/><b>Booth</b> (8)<br/><b>Lightning Talk</b> (5)</td>
               <td>Choose one:<br/><b>Opening Mixer</b><br/><b>Workshop</b><br/><b>Lanyards</b><br/><b>Videos</b></td>
               <td>Choose one:<br/><b>Welcome Reception</b><br/><b>Karaoke</b><br/><b>Coffee</b><br/><b>Tote Bags</b><br/><b>Child Care</b><br/><b>Photo Booth</b><br/><b>ASL</b></td>
               <td><b>Scholarships</b></td>
