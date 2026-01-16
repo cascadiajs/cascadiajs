@@ -30,7 +30,7 @@ The Opportunity Scholarship Program is open to anyone who:
 
 <i class="fas fa-heart"></i> If you cannot afford this ticket, you can request Financial Aid 
 
-<div class="cta"><a target="_blank" href="[https://airtable.com/app4aehCXEydAuxKX/shr1WwspS373YsKRY](https://airtable.com/app2IZDYtOGyzBQLZ/shr35XuQs0LcZu7U2)">Apply for a Scholarship</a></div>
+<div class="cta"><a target="_blank" href="https://airtable.com/app2IZDYtOGyzBQLZ/shr35XuQs0LcZu7U2">Apply for a Scholarship</a></div>
 
 ## Please help us spread the word!
 
