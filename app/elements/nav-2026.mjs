@@ -44,6 +44,7 @@ export default function MainHeader({ html }) {
         </div>
         <div class="push"><a href="/2026/attend">Attend</a></div>
         <div class="spacer"><a href="/2026/cfp">CFP</a></div>
+        <div class="spacer"><a href="/2026/scholarships">Scholarships</a></div>
         <div class="spacer"><a href="/2026/sponsor">Sponsor</a></div>
         <div class="spacer"><a class="buy" href="/2026/tickets">Tickets</a></div>
       </div>
