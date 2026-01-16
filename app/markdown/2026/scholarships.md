@@ -43,4 +43,4 @@ If you would like to make an individual donation, you've got 2 options:
 * Make a donation of any amount
 * Purchase a ticket and add-on a donation of any amount
 
-<div class="cta secondary"><a href="/2025/tickets">Tickets Page</a></div>
+<div class="cta secondary"><a href="/2026/tickets">Tickets Page</a></div>
