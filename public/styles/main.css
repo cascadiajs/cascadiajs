@@ -139,6 +139,13 @@ a[target="_blank"]:after {
     content: "\f35d";
 }
 
+/* start link style for kit form custom content */
+.seva-custom-content a, .seva-custom-content a:visited {
+    color: #0033FF;
+  	text-decoration: underline;
+}
+/* end link style for kit form custom content */
+
 i.fas {
     width: 30px;
 }
