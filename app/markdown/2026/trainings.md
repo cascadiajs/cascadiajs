@@ -10,9 +10,9 @@ Note: these Training Workshops require the purchase of a separate ticket and ARE
 
 <table class="styled-table">
     <tbody>
-    <tr><td><a href="/2025/trainings/coding-with-claude">Coding with Claude</a></td><td>Eve Porcello</td><td>June 3, 9am - 4pm</td></tr>
-    <tr><td><a href="/2025/trainings/ai-for-typescript-developers">AI for TypeScript Developers</a></td><td>Eve Porcello</td><td>June 4, 9am - 4pm</td></tr>
-    <tr><td><a href="/2025/trainings/building-ai-agents">Building AI Agents</a></td><td>Eve Porcello</td><td>June 5, 9am - 4pm</td></tr>
+    <tr><td><a href="/2026/trainings/coding-with-claude">Coding with Claude</a></td><td>Eve Porcello</td><td>June 3, 9am - 4pm</td></tr>
+    <tr><td><a href="/2026/trainings/ai-for-typescript-developers">AI for TypeScript Developers</a></td><td>Eve Porcello</td><td>June 4, 9am - 4pm</td></tr>
+    <tr><td><a href="/2026/trainings/building-ai-agents">Building AI Agents</a></td><td>Eve Porcello</td><td>June 5, 9am - 4pm</td></tr>
     </tbody>
 </table>
 
