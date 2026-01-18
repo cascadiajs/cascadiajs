@@ -66,7 +66,7 @@ Diamond and Platinum booths consist of 2 6-foot tables, four chairs, a 32" monit
 
 Gold booths consist of a single 6-foot table, two chairs, a 32" monitor, and have access to a power outlet.
 
-Additional external monitors can be rented (see below).
+Additional external monitors can be rented (<a href="#rentals">see below</a>).
 
 Sponsors need to provide their own branded linens for tables.
 
@@ -79,7 +79,7 @@ Recommended booth times are 8:00am - 6:00pm on June 1 and 8:00am - 3pm on June 2
 
 ### Lead Capture
 
-We're using an app called Orca Scan for lead capture at this year's event. We'll provide more information on how to download and use the app later. 
+We're using an app that you can download to your iOS or Android phone for lead capture at this year's event. We'll provide more information on how to download and use the app closer to the event. 
 
 <!--[Read these instructions](/2025/next-steps/sponsor-leadcapture) on how to install and use the app.-->
 
@@ -100,15 +100,15 @@ We've secured discounts with 2 hotels near the venue: [https://cascadiajs.com/20
 
 <h2 id="raffle">Raffle</h2>
 
-To encourage attendee engagement at sponsor booths we're running a scavenger hunt/raffle. Attendees will need to visit all of the participating sponsor booths and do a few extra things to qualify to win a prize. In order to participate, sponsors need to provide a prize. We recommend prizes in the $100-300 range. Some recent examples are Apple Airpod Pros, a [Lego set](https://www.lego.com/en-us/product/dune-atreides-royal-ornithopter-10327?gclid=Cj0KCQjwsPCyBhD4ARIsAPaaRf0GEwUAbr5nlu8_h8_QYmg93oG0U9kGH-Kp1GGNOPk6RdiaK058rDMaAiyWEALw_wcB&ef_id=Cj0KCQjwsPCyBhD4ARIsAPaaRf0GEwUAbr5nlu8_h8_QYmg93oG0U9kGH-Kp1GGNOPk6RdiaK058rDMaAiyWEALw_wcB%3AG%3As&s_kwcid=AL%21790%213%21695971563321%21%21%21g%21%21%2121172147888%21158672194057&cmp=KAC-INI-GOOGUS-GO-US_GL-EN-BR-PS-CONSIDER-ESCAPE-ICONS-SHOP-GP-DSA-RN-CIDNA00000-ICONS_DSA&gad_source=1), and [Looking Glass Go](https://checkout.lookingglassfactory.com/products/looking-glass-go).
+To encourage attendee engagement at sponsor booths we're running a scavenger hunt/raffle. Attendees will need to visit all of the participating sponsor booths and do a few extra things to qualify to win a prize. In order to participate, sponsors need to provide a prize (typically in the $100-300 range). Some recent examples are Apple Airpod Pros, a [Lego set](https://www.lego.com/en-us/product/dune-atreides-royal-ornithopter-10327?gclid=Cj0KCQjwsPCyBhD4ARIsAPaaRf0GEwUAbr5nlu8_h8_QYmg93oG0U9kGH-Kp1GGNOPk6RdiaK058rDMaAiyWEALw_wcB&ef_id=Cj0KCQjwsPCyBhD4ARIsAPaaRf0GEwUAbr5nlu8_h8_QYmg93oG0U9kGH-Kp1GGNOPk6RdiaK058rDMaAiyWEALw_wcB%3AG%3As&s_kwcid=AL%21790%213%21695971563321%21%21%21g%21%21%2121172147888%21158672194057&cmp=KAC-INI-GOOGUS-GO-US_GL-EN-BR-PS-CONSIDER-ESCAPE-ICONS-SHOP-GP-DSA-RN-CIDNA00000-ICONS_DSA&gad_source=1), and [Looking Glass Go](https://checkout.lookingglassfactory.com/products/looking-glass-go).
 
-If you're participating in the raffle, please plan on presenting your prize to the winner on stage at the closing on Day 2.
+If you're participating in the raffle, please plan on presenting your prize to the winner on stage at the closing of Day 2.
 
-We'll share contact info for every attendee who participates in the raffle following the event.
+We'll share contact info for every attendee who participates in the raffle with sponsors following the event.
 
 <h2 id="swag">Swag</h2>
 
-Diamond, Platinum, Gold and Silver sponsors can show off their brand by including 1 small swag item or stickers that we'll place in bags and give to attendees. This is optional. The items need to be provided to CascadiaJS organizers (at the registration table) by 7:00 am on June 1st so we can bag them up before attendees arrive. 
+Diamond, Platinum, Gold and Silver sponsors can show off their brand by including 1 small swag item that we'll place in bags and give to attendees. This is optional. The items need to be provided to CascadiaJS organizers (at the registration table) by 7:00 am on June 1st so we can bag them up before attendees arrive. 
 
 <h2 id="video">Video Clips</h2>
 
