@@ -60,13 +60,14 @@ If we accept your proposal to speak, you'll receive:
 
 <i class="fas fa-car"></i> Parking or ride share reimbursement
 
+<i class="fas fa-fork-knife"></i> Invite to Friends of Cascadia dinner
+
 For Main Stage speakers, we cover:
 
 <i class="fas fa-plane"></i> Transportation to Seattle (up to $500 for domestic flights, up to $1,000 for international flights)
 
 <i class="fas fa-hotel"></i> Lodging for 3 nights
 
-<i class="fas fa-fork-knife"></i> Invite to Friends of Cascadia dinner
 
 ## How to Submit
 
