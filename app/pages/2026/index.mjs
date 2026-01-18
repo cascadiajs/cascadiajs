@@ -136,7 +136,7 @@ export default function ({ html, state }) {
             <article>
               <h2>A Web + AI conference for the Pacific Northwest</h2>
                <p>
-                CascadiaJS is a community-driven conference for developers in the PNW and beyond. You will hear from 20+ speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
+                CascadiaJS is a community-driven conference for developers in the PNW and beyond. You will hear from amazing speakers, connect with 500+ fellow devs, and explore the latest in web and AI technologies with some of the top companies in the industry.
               </p>
               <div class="label-name">Date</div>
               <div class="label-value">June 1-2, 2026</div>
@@ -179,7 +179,7 @@ export default function ({ html, state }) {
                     alt="illustration of a microphone"
                   />
                 </div>
-                <h2>20+ Awesome Speakers</h2>
+                <h2>Awesome Speakers</h2>
                 <p>
                   You’ll hear from a diverse lineup of speakers covering everything from the latest in web and JavaScript to the interaction of web technologies and AI.
                 </p>
