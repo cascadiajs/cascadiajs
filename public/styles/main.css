@@ -140,6 +140,12 @@ a[target="_blank"]:after {
 }
 
 /* start link style for kit form custom content */
+.seva-custom-content {
+    color: #020800;
+	mix-blend-mode: normal;
+	font-size: 18px;
+}
+
 .seva-custom-content a, .seva-custom-content a:visited {
     color: #0033FF;
   	text-decoration: underline;
