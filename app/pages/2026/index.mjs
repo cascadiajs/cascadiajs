@@ -179,7 +179,7 @@ export default function ({ html, state }) {
                     alt="illustration of a microphone"
                   />
                 </div>
-                <h2>40+ Awesome Speakers</h2>
+                <h2>20+ Awesome Speakers</h2>
                 <p>
                   You’ll hear from a diverse lineup of speakers covering everything from the latest in web and JavaScript to the interaction of web technologies and AI.
                 </p>
