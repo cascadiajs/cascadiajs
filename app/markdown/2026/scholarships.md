@@ -28,7 +28,9 @@ The Opportunity Scholarship Program is open to anyone who:
 
 <i class="fas fa-ticket-alt"></i> You will be offered a Scholarship Ticket at a discounted rate
 
-<i class="fas fa-heart"></i> If you cannot afford this ticket, you can request Financial Aid 
+<i class="fas fa-heart"></i> If you cannot afford this ticket, you can request financial aid. Applicants that are selected for financial aid will be offered a fully loaded ticket for $15. 
+
+Why $15? A small fee helps reduce no-shows and ensures scholarship tickets go to attendees who are able to participate, allowing us to offer more scholarships to the community. If cost is a barrier, please reach out.
 
 <div class="cta"><a target="_blank" href="https://airtable.com/app2IZDYtOGyzBQLZ/shr35XuQs0LcZu7U2">Apply for a Scholarship</a></div>
 
