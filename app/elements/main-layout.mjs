@@ -64,9 +64,17 @@ export default function MainLayout({ html, state }) {
       <main id="content">
         <slot></slot>
         <section id="sponsors" class="landing">
-        ${ path.startsWith("/2024") ? html`<h1>Our Sponsors</h1><sponsors-grid-2024></sponsors-grid-2024>` 
-    : path.startsWith("/2025") ? html`<h1>Our Sponsors</h1><sponsors-grid-2025></sponsors-grid-2025>`
-      : html`<h1>Past Sponsors</h1><sponsors-grid></sponsors-grid>`}
+          ${path.startsWith("/2024")
+            ? html`<h1>Our Sponsors</h1>
+                <sponsors-grid-2024></sponsors-grid-2024>`
+            : path.startsWith("/2025")
+            ? html`<h1>Our Sponsors</h1>
+                <sponsors-grid-2025></sponsors-grid-2025>`
+            : path.startsWith("/2026")
+            ? html`<h1>Our Sponsors</h1>
+                <sponsors-grid-2026></sponsors-grid-2026>`
+            : html`<h1>Past Sponsors</h1>
+                <sponsors-grid></sponsors-grid>`}
           <div class="cta"><a href="/2026/sponsor">Sponsor Our Event</a></div>
         </section>
         <twitter-love></twitter-love>
