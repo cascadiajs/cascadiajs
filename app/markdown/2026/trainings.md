@@ -2,7 +2,7 @@
 title: Training Workshops
 excerpt: Hands-on trainings from professionals in JS & AI development!
 ---
-We are thrilled to offer pre-conference hands-on trainings from Eve Porcello on JS & AI development!
+We are thrilled to offer post-conference hands-on trainings from Eve Porcello on JS & AI development!
 
 Note: these Training Workshops require the purchase of a separate ticket and ARE NOT included with a Conference ticket.
 
