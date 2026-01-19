@@ -16,7 +16,7 @@ export default function ({ html }) {
         width: 33%;
       }
 
-      .hero, .details {
+      .hero, .details, .packages {
         background-color: #ccf1db;
         padding:16px 0 16px 0;
 
@@ -44,8 +44,9 @@ export default function ({ html }) {
         text-align: center;
       }
 
-      .packages {
-        
+      #packages-table {
+        max-width: 1200px;
+        margin: 0 auto;   
       }
 
       .packages table {
@@ -100,6 +101,10 @@ export default function ({ html }) {
         margin-right: 16px;
       }
 
+     .container .right {
+        width: 50%;
+      }
+
       @media only screen and (min-width: 768px) {
         article {
           padding: 24px 128px;
@@ -115,12 +120,11 @@ export default function ({ html }) {
       </nav>
       <section class="hero">
         <div class="logo">
-          <a href="/2026"
-            ><img
-              height="64"
-              src="/_public/images/logo-wordmark-horizontal.svg"
+          <img
+              height="100"
+              src="/_public/images/icon-dark-blue.png"
               alt="CascadiaJS logo"
-          /></a>
+          />
         </div>
         <h1>CascadiaJS 2026 Sponsorship Brochure</h1>
         <h2>A Web + AI conference for the Pacific Northwest</h2>
@@ -132,13 +136,13 @@ export default function ({ html }) {
               WA.
         </article>
         <article class="center">
-          <div class="cta"><a href="">Learn more 👇</a></div>
+          <div class="cta"><a href="#event-at-a-glance">Learn more 👇</a></div>
         </article>
 
         <article class="center">
           <img src="/_public/images/2026/sponsor-brochure/hero.jpg">
         </article>
-          <article class="narrow">
+          <article id="event-at-a-glance" class="narrow center">
             <h2>Event at a Glance</h2>
             <p>
               <i class="fa-solid fa-stars"></i> Two-day developer conference
@@ -168,7 +172,7 @@ export default function ({ html }) {
           </div>
         </section>
         <section class="packages">
-        <table>
+        <table id="packages-table">
           <thead>
             <tr>
               <th>&nbsp;</th>
@@ -186,11 +190,11 @@ export default function ({ html }) {
               <td><b>Venue</b></td>
               <td><b>Superbooth</b></td>
               <td>
-                Choose one:<br /><b>Booth</b> (8)<br /><b>Lightning Talk</b> (5)
+                Choose one:<br /><b>Booth</b> (12)<br /><b>Lightning Talk</b> (3)
               </td>
               <td>
                 Choose one:<br /><b>Opening Mixer</b><br /><b>Workshop</b
-                ><br /><b>Lanyards</b><br /><b>Videos</b>
+                > (3)<br /><b>Lanyards</b><br /><b>Videos</b>
               </td>
               <td>
                 Choose one:<br /><b>Welcome Reception</b><br /><b>Karaoke</b
@@ -203,8 +207,8 @@ export default function ({ html }) {
               <td><b>Quantity</b></td>
               <td>1</td>
               <td>1</td>
-              <td>13</td>
-              <td>3</td>
+              <td><span class="strike">15</span> 11</td>
+              <td>6</td>
               <td>7</td>
               <td>Unlimited</td>
             </tr>
@@ -386,15 +390,15 @@ export default function ({ html }) {
                 <p>You’ll have an extra-large booth in our Expo Hall in the most premium and visible location, the option to participate in a raffle to encourage attendees to visit your booth, and access to a lead capture app for everyone on your team.</p>
                 <h2>Price</h2>
                 <p><b>👉 20% off for a limited time. Save $1600!</b></p>
+                <div class="cta secondary"><a href="#book-call">Interested? Let's Talk!</a></div>
             </div>
             <div class="right">
-                <p>image</p>
+                <p><img src="/_public/images/2026/sponsor-brochure/diamond.jpg"/></p>
             </div>
           </div>
-          <div class="cta secondary"><a href="#book-call">Interested? Let's Talk!</a></div>
           <h1 id="book-call">Let's Talk!</h1>
-          <p>Book a time to talk to us about your sponsorship goals, or reach out to us directly on email at info@cascadiajs.com.</p>
-          <div class="cta secondary"><a href="https://calendly.com/carrie-cascadiajs/30min">Book a time to talk</a></div>
+          <p>Book a time to talk to us about your sponsorship goals, or reach out to us directly on email at elise@cascadiajs.com.</p>
+          <div class="cta secondary"><a href="https://calendly.com/elise-worthy">Book a time to talk</a></div>
         </section>
       <twitter-love></twitter-love>
       <sponsors-grid></sponsors-grid>
