@@ -88,6 +88,10 @@ export default function ({ html }) {
         .packages tbody {
           background-color: #fff;
         }
+
+        h2 {
+            margin-bottom: 16px;
+        }
   
         .details h2 {
           margin:0;
