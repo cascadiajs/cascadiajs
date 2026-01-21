@@ -90,7 +90,7 @@ export default function ({ html }) {
         }
 
         h2 {
-            margin-bottom: 16px;
+            margin-top: 8px;
         }
   
         .details h2 {
