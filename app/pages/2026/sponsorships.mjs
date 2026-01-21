@@ -50,6 +50,7 @@ export default function ({ html }) {
         }
   
         .packages table {
+          table-layout: fixed;
           border-collapse: collapse;
           width: 100%;
         }
@@ -167,8 +168,8 @@ export default function ({ html }) {
             </article>
           -->
 
-            <h2>What It Is</h2>
             <article class="narrow" id="event-at-a-glance">
+            <h2>What It Is</h2>
             <p><strong>CascadiaJS 2026</strong> is a two-day, <em>highly technical conference</em> for web developers and engineers working with JavaScript, modern frontend frameworks, and AI-powered workflows. Held June 1–2 in Seattle, WA at Town Hall, CascadiaJS brings together <strong>600+ developers</strong>, many of whom influence tooling, platform, and product decisions at their companies.</p> 
 
             <p>You’ll see <strong>20 expert talks</strong> across two deep-dive tracks covering web, JavaScript, and AI topics, plus structured, low-pressure networking opportunities that help companies build relationships with engineers in a technically focused, community-centric setting.</p> 
@@ -272,7 +273,7 @@ export default function ({ html }) {
                 <td><b>Quantity</b></td>
                 <td>1</td>
                 <td>1</td>
-                <td><span class="strike">15</span> 11</td>
+                <td><span class="strike">15</span> 11 left</td>
                 <td>6</td>
                 <td>7</td>
                 <td>Unlimited</td>
