@@ -15,25 +15,19 @@ excerpt: Every developer has a story, what's yours?
 
 <i class="fas fa-hand-heart"></i> We provide support and mentorship for new speakers.
 
-## Submission Guidance
+## Topics We're Looking For
 
 We are a web + AI conference and are looking for talks that explore the cutting edge of how web developers build modern applications and experiences. We invite presentations on anything in the web + AI space that you feel passionate about, here are some topics we think are exciting:
 
-- Computing and inference on the edge
-- WebAssembly and LLMs on device
-- Modern frontend tooling: Vite, Turbopack, Bun
-- TypeScript and agentic frameworks
-- Real-time web with WebSockets and WebRTC
-- Web performance optimization and Core Web Vitals
-- Security, authentication, and modern OAuth flows
-- AI agents running in the browser
-- Evaluating and debugging LLM-based systems
-- Real-time streaming AI responses for UX
-- Securing web apps against prompt injection
-- OAuth and identity for autonomous agents
-- Generative design systems for frontend developers
-- Multimodal AI: text, vision, and audio
-- AI-native web standards and emerging technologies
+<table class="styled-table">
+  <tr><td>Computing and inference on the edge</td><td>WebAssembly and LLMs on device</td></tr>
+  <tr><td>Modern frontend tooling: Vite, Turbopack, Bun</td><td>TypeScript and agentic frameworks</td></tr>
+  <tr><td>Real-time web with WebSockets and WebRTC</td><td>Web performance optimization and Core Web Vitals</td></tr>
+  <tr><td>Security, authentication, and modern OAuth flows</td><td>AI agents running in the browser</td></tr>
+  <tr><td>Evaluating and debugging LLM-based systems</td><td>Real-time streaming AI responses for UX</td></tr>
+  <tr><td>Securing web apps against prompt injection</td><td>OAuth and identity for autonomous agents</td></tr>
+  <tr><td>Generative design systems for frontend developers</td><td>AI-native web standards and emerging technologies</td></tr>
+</table>
 
 Presentations do not need to fall into the categories above to be accepted and applicants are welcome to submit more than one idea.
 
@@ -52,6 +46,22 @@ Presentations do not need to fall into the categories above to be accepted and a
 
 If you're uncertain if your presentation qualifies for the conference, submit anyway!
 
+## How to Submit a Proposal
+
+First, make sure you're available to speak at the conference. It will be held on **June 1 - 2, 2026**.
+
+Talk submissions are done as **2 minute videos**. Your goal here is not to produce a perfectly executed mini-talk, it is to describe your talk idea informally. What's the topic? How do you want to approach it? Why is it interesting? We **strongly** encourage you to include the following elements:
+
+- Introduce yourself - name, company, role
+- Tell us what your talk is about - be concise, big picture
+- Explain why it's exciting - and include details (technologies, techniques, etc)
+
+We won't make the videos public, so no need to worry about random Internet people seeing them. But we feel this is a good opportunity to start building a comfort level with talking about your idea in front of an audience.
+
+Once you’ve recorded your 2-minute video, just upload it to a public but obfuscated place. Some suggestions: Youtube (mark as unlisted), Dropbox, S3, your own web host.
+
+<div class="highlight warning">Please double-check your URL in Incoginto mode, any video we can't reach will not be considered!</div>
+
 ## Speaker Perks
 
 If we accept your proposal to speak, you'll receive:
@@ -68,17 +78,6 @@ For Main Stage speakers, we cover:
 
 <i class="fas fa-hotel"></i> Lodging for 3 nights
 
-
-## How to Submit
-
-First, make sure you're available to speak at the conference. It will be held on **June 1 - 2, 2026**.
-
-Talk submissions are done as **2 minute videos**. Your goal here is not to produce a perfectly executed mini-talk, it is to describe your talk idea informally. What's the topic? How do you want to approach it? Why is it interesting?
-
-We won't make the videos public, so no need to worry about random Internet people seeing them. But we feel this is a good opportunity to start building a comfort level with talking about your idea in front of an audience.
-
-Once you’ve recorded your 2-minute video, just upload it to a public but obfuscated place. Some suggestions: Youtube (mark as unlisted), Dropbox, S3, your own web host.
-
 ## We’re here to help!
 
 There are a million reasons why you might not think you’re qualified or capable of giving a talk, let alone at CascadiaJS. We are here to prove you wrong. If all you have is a gut feeling that you have something important to share with people, we are here to help you hone your idea and craft a great submission. We are happy to connect you with experienced speakers to help prepare your submission. Just [join our Discord](https://discord.gg/kkYR86GM29) and head over to the #cfp channel.
@@ -91,7 +90,7 @@ If you are a new speaker, once your talk has been accepted we will commit to wor
 - Jan 25 - Review complete
 - Jan 28 - Final decisions made, emails sent out
 
-<div class="cta"><a target="_blank" href="https://airtable.com/appd30yx2lDlo5LfR/pagPHvQ3XtLImiknR/form">Submit Proposal</a></div>
+<div class="cta nope">Submissions Closed</div>
 
 ## Past Talks
 
