@@ -1,0 +1,167 @@
+[{
+    
+    "title": "Keynote",
+    "type": "keynote",
+    "speaker": {
+      "name": "Matt Biilmann",
+      "slug": "matt-biilmann",
+      "image": "/_public/images/2026/speakers/matt-biilmann.jpg",
+      "company": "Netlify",
+      "location": "San Francisco, CA USA",
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805" },
+        { "type": "x-twitter", "url": "https://x.com/biilmann" }
+      ]
+    }
+  },
+  { 
+    "title": "Keynote",
+    "type": "keynote",
+    "speaker": {
+      "name": "Theo",
+      "slug": "theo",
+      "image": "/_public/images/2026/speakers/theo.jpg",
+      "company": "T3 Chat",
+      "location": "San Francisco, CA USA",
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/t3gg/" },
+        { "type": "x-twitter", "url": "https://x.com/theo" }
+      ]
+    }
+  },
+  { 
+    "title": "Keynote",
+    "type": "keynote",
+    "speaker": {
+      "name": "Francesco Cuilla",
+      "slug": "francesco-cuilla",
+      "image": "/_public/images/2026/speakers/francesco.jpg",
+      "company": "Zerops",
+      "location": "Rome, Italy",
+      "links": [
+        { "type": "linkedin", "url": "hhttps://www.linkedin.com/in/francesco-ciulla-roma/" },
+        { "type": "x-twitter", "url": "https://x.com/FrancescoCiull4" }
+      ]
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+    }
+  },
+  {
+    "type": "main",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+    }
+  }
+]
