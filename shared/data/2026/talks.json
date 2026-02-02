@@ -44,10 +44,20 @@
       ]
     }
   },
-  {
+  { 
+    "title": "AI Agent Swarms are Amazing",
     "type": "main",
+    "slug": "ai-agent-swarms-are-amazing",
+    "abstract": "Agent swarming is a fascinating pattern to massively parallelize work with AI Agents. Instead of a single agent churning through a todo list, you have a coordinator agent that delegates work to a horde of worker agents to break down a todo list in record time. We will dig into agent memory, optimization, and coordination. ",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+      "name": "Joel Hooks",
+      "slug": "joel-hooks",
+      "image": "/_public/images/2026/speakers/joel-hooks.jpg",
+      "company": "Badass Courses",
+      "location": "Portland, OR USA",
+      "links": [
+        { "type": "x-twitter", "url": "https://x.com/joelhooks" }
+      ]
     }
   },
   {

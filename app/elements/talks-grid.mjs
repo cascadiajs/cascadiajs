@@ -1,7 +1,7 @@
 export default function Talks({ html, state }) {
   const { talks } = state.store;
   const { type } = state.attrs;
-  const types = type.split(",");
+  const types = type ? type.split(",") : undefined;
   return html` <style>
       .talks-list {
         display: flex;
@@ -28,7 +28,7 @@ export default function Talks({ html, state }) {
         .filter((t) => {
           return types ? types.includes(t.type) : true;
         })
-        .sort(() => Math.random() - 0.5)
+        /*.sort(() => Math.random() - 0.5)*/
         .map(
           (t) => /*html*/ `
             <talks-item
@@ -46,7 +46,7 @@ export default function Talks({ html, state }) {
         .filter((t) => {
           return types ? types.includes(t.type) : true;
         })
-        .sort(() => Math.random() - 0.5)
+        /*.sort(() => Math.random() - 0.5)*/
         .map(
           (t) => /*html*/ `
             <talks-item
