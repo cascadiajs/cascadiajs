@@ -422,25 +422,25 @@ export default function ({ html }) {
           <h3>Karaoke on June 2 (1 Available)</h3>
           <p>Brand recognition at a fun, informal evening karaoke event popular with attendees. This add-on creates a memorable association between your brand and one of the conference’s most talked-about social experiences.</p>
 
-          <h3>Coffee</h3>
+          <h3>Coffee (1 Available)</h3>
           <p>Branding at conference coffee stations throughout the day. Coffee sponsorships provide high-frequency visibility and consistent foot traffic, making them one of the most effective brand placements at the event.</p>
 
-          <h3>Lanyards</h3>
+          <h3>Lanyards (1 Available)</h3>
           <p>Logo placement on official attendee lanyards worn throughout the conference. This offers constant visibility during sessions, networking, and social events.</p>
 
-          <h3>Tote Bags</h3>
+          <h3>Tote Bags (1 Available)</h3>
           <p>Logo placement on the official CascadiaJS tote bags given to attendees. Tote bags extend brand visibility beyond the event as attendees continue using them after the conference.</p>
 
-          <h3>Videos</h3>
+          <h3>Videos (1 Available)</h3>
           <p>Brand recognition in conference video recordings or video content distributed after the event. This option extends your reach beyond in-person attendees to the broader online audience.</p>
 
           <h3>Photo Booth (1 Available)</h3>
           <p>A branded photo booth experience for attendees, with photos available for sharing or download. This add-on encourages engagement and creates shareable moments associated with your brand.</p>
 
-          <h3>Child Care</h3>
+          <h3>Child Care (1 Available)</h3>
           <p>Recognition as the sponsor supporting on-site child care for attendees. This option demonstrates a commitment to accessibility and helps make the conference more inclusive for parents and caregivers.</p>
 
-          <h3>ASL Interpretation</h3>
+          <h3>ASL Interpretation (1 Available)</h3>
           <p>Recognition as the sponsor enabling ASL interpretation during conference sessions. This add-on directly supports accessibility and ensures more attendees can fully participate in the event.</p>
           
           <h3>Scholarships</h3>
