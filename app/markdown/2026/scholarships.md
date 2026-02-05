@@ -22,6 +22,11 @@ The Opportunity Scholarship Program is open to anyone who:
     b. Has financial constraints that make purchasing a ticket a blocker
 ```
 
+Thanks to a generous donation from [Greg Bulmash](https://bulmash.com/), we also have some scholarships available for people who are recently unemployed due to layoffs/downsizing. From Greg:
+
+"Getting laid off is depressing, isolating, and financially difficult. CascadiaJS has long been a source of inspiration and community for me. This grant is intended to buy tickets for developers who are currently unemployed due to a layoff / downsizing within the last couple of years. The intent is to give you a distraction from worrying, build your confidence and your community, and send you home with new knowledge and a bunch of new friends and acquaintances."
+
+
 ## How it works
 
 <i class="fas fa-pen-field"></i> Apply for a Scholarship by <span class="highlight warning">April 14</span>
