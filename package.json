@@ -1,6 +1,6 @@
 {
   "name": "cascadiajs-website",
-  "version": "6.0.40",
+  "version": "6.0.41",
   "scripts": {
     "enhance": "enhance",
     "lint": "eslint ./app/**/*.mjs --fix",
