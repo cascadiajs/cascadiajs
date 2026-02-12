@@ -17,6 +17,7 @@ excerpt: Lodging, Travel, Guest Passes and more!
         <li><a href="#connect">Connect</a></li>
     </ul>
 </div>
+<!-- making a change that has no effect -->
 
 <h2 id="coc">Code of Conduct</h2>
 
