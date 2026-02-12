@@ -410,13 +410,13 @@ export default function ({ html }) {
           <h2 class="center">Sponsorship Add-Ons</h2>
           <p>In addition to our standard sponsorship tiers, CascadiaJS offers a set of optional add-ons that allow sponsors to increase visibility, create deeper engagement, or support specific community initiatives. Add-ons can be paired with any sponsorship level and are available on a first-come basis.</p>
 
-          <h3>Workshop (<span class="strike">4</span> 3 left!)</h3>
+          <h3>Workshop (2 left!)</h3>
           <p>A dedicated, hands-on workshop session where sponsors can teach a topic relevant to the CascadiaJS audience. Workshops offer deep engagement and are well suited for developer tools, platforms, and technical training.</p>
 
           <h3>Welcome Reception on May 31 (1 Available)</h3>
           <p>Branding and recognition at the social event that kicks off the conference. This option associates your brand with one of the highest-energy, most well-attended moments of the event.</p>
 
-          <h3>Networking Mixer on June 1 (<span class="strike">6</span> 4 left!)</h3>
+          <h3>Networking Mixer on June 1 (4 left!)</h3>
           <p>Connect and have high quality conversations with some of the best talent in the Pacific Northwest. The mixer will take place right after the Day One talks conclude.</p>
 
           <h3>Karaoke on June 2 (1 Available)</h3>
