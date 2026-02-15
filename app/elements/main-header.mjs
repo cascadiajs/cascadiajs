@@ -1,6 +1,6 @@
 export default function MainHeader({ html, state }) {
   const { store = {} } = state;
-  const { path = "" } = store
+  const { path = "" } = store;
   //console.log(path)
   return html`
     <style>
@@ -80,9 +80,11 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <section class="alert">Early Bird tickets are <a href="/2026/tickets">ON SALE</a> for 2026!</section>
-      ${path && (path.startsWith("/20"))
-    ? html`<nav class="back">
+      <!--section class="alert">
+        Early Bird tickets are <a href="/2026/tickets">ON SALE</a> for 2026!
+      </section-->
+      ${path && path.startsWith("/20")
+        ? html`<nav class="back">
               <div class="wide">
                 <div><a href="/">← Back to Homepage</a></div>
               </div>
@@ -90,7 +92,7 @@ export default function MainHeader({ html, state }) {
             ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
             ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}
             ${path.startsWith("/2026") ? html`<nav-2026></nav-2026>` : ""}`
-    : html` <nav class="primary">
+        : html` <nav class="primary">
             <div class="wide">
               <div id="logo">
                 <a href="/">
@@ -102,7 +104,9 @@ export default function MainHeader({ html, state }) {
               </div>
               <div class="push"><a href="/2026">CascadiaJS 2026</a></div>
               <div class="spacer"><a href="/mailing-list">Newsletter</a></div>
-              <div class="spacer"><a href="/code-of-conduct">Code of Conduct</a></div>
+              <div class="spacer">
+                <a href="/code-of-conduct">Code of Conduct</a>
+              </div>
             </div>
           </nav>`}
     </header>
