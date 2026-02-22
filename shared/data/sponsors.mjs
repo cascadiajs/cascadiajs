@@ -481,8 +481,8 @@ const sponsors = {
     {
       id: "render",
       tier: "bronze",
-      logo: "render.png",
-      logoSquare: "render.png",
+      logo: "render-atl.png",
+      logoSquare: "render-atl.png",
       name: "Render",
       url: "https://www.rendertl.com",
     },
@@ -515,6 +515,27 @@ const sponsors = {
       logo: "expo.svg",
       name: "Expo",
       url: "https://www.expo.dev",
+    },
+    {
+      id: "render",
+      tier: "gold",
+      logo: "render.svg",
+      name: "Render",
+      url: "https://www.render.com",
+    },
+    {
+      id: "onebrief",
+      tier: "gold",
+      logo: "onebrief.svg",
+      name: "OneBrief",
+      url: "https://www.onebrief.com",
+    },
+    {
+      id: "grow-therapy",
+      tier: "silver",
+      logo: "grow-therapy.svg",
+      name: "Grow Therapy",
+      url: "https://www.growtherapy.com",
     },
   ],
 };

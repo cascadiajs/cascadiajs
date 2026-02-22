@@ -44,6 +44,12 @@
       ]
     }
   },
+  {
+    "type": "keynote",
+    "speaker": {
+      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+    }
+  },
   { 
     "title": "AI Agent Swarms are Amazing",
     "type": "main",
@@ -60,40 +66,102 @@
       ]
     }
   },
-  {
+  { 
+    "title": "The Last Website You'll Ever Visit",
     "type": "main",
+    "slug": "the-last-website-youll-ever-visit",
+    "abstract": "When was the last time you visited Stack Overflow?\n\nIf you are like most developers, you are asking an AI agent first. This marks a fundamental shift. We are moving from a navigation based web, where you go to a site, to an intent based web, where the result comes to you.\n\nFor years, we tried to keep users inside our apps by stuffing chatbots into the corners of our pages. You know the one. “A girl in your area wants to chat with you” about cloud infrastructure, of course. These bots were meant to automate support and keep users on our URLs.\n\nBut users have moved on. They are staying inside AI agents to get things done. If the user will not go to your URL, your app has to go to them.\n\nJoin Rizel to learn about MCP-UI and MCP Apps, an open standard that allows developers to render fully interactive, bidirectional interfaces directly inside agents like goose. You will learn why the URL is becoming a tool call and how your frontend skills position you to build the mini apps that will define the agentic era.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+      "name": "Rizel Scarlett",
+      "slug": "rizel-scarlett",
+      "image": "/_public/images/2026/speakers/rizel-scarlett.jpg",
+      "company": "Block",
+      "location": "Boston, MA USA",
+      "links": [
+        { "type": "linkedin", "url": "http://linkedin.com/in/rizel-bobb-semple" },
+        { "type": "x-twitter", "url": "http://x.com/blackgirlbytes" },
+        { "type": "bluesky", "url": "https://bsky.app/profile/blackgirlbytes.bsky.social" }
+      ]
     }
-  },
-  {
+  },  
+  { 
+    "title": "Teaching LLMs New Tricks",
     "type": "main",
+    "slug": "teaching-llms-new-tricks",
+    "abstract": "AI bias for dominant patterns means training data = market share. That’s innovation friction! The right syntax, wrong semantics, e.g. any innovation with JSX looks like React. Explore specific strategies that work, co-developed with AI, and tested in real world projects.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+      "name": "Marty Nelson",
+      "slug": "marty-nelson",
+      "image": "/_public/images/2026/speakers/marty-nelson.jpg",
+      "company": "Works Real Estate",
+      "location": "Portland, OR USA",
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/martypdx/," },
+        { "type": "github", "url": "https://github.com/martypdx" }      ]
     }
-  },
-  {
+  },  
+  { 
+    "title": "Building Apps with ATProto",
     "type": "main",
+    "slug": "building-apps-with-atproto",
+    "abstract": "What if you owned your social media data and could move freely between apps? ATProto makes this possible. I'll teach the fundamentals—DIDs, data repos, why they're important, and how to build your first decentralized social platform.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+      "name": "Brittany Ellich",
+      "slug": "brittany-ellich",
+      "image": "/_public/images/2026/speakers/brittany-ellich.jpg",
+      "company": "GitHub",
+      "location": "Portland, OR USA",
+      "links": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/brittanyellich.com" }
+      ]
     }
-  },
-  {
+  },  
+  { 
+    "title": "Choosing the Wrong Abstraction (and What It Cost Us)",
     "type": "main",
+    "slug": "choosing-the-wrong-abstraction-and-what-it-cost-us",
+    "abstract": "We chose the wrong abstractions and had to throw out our most important component. Oops. This talk unpacks how a well-meaning API collapsed under real-world use, and why composable APIs scale better than configuration-heavy ones, across UI and deeper systems.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+      "name": "Darius Cepulis",
+      "slug": "darius-cepulis",
+      "image": "/_public/images/2026/speakers/darius-cepulis.jpg",
+      "company": "Mux",
+      "location": "Oak Park, IL USA",
+      "url": "https://darius.cool" 
     }
-  },
-  {
+  },  
+  { 
+    "title": "Keep the Main Thread Free with Web Workers",
     "type": "main",
+    "slug": "keep-the-main-thread-free-with-web-workers",
+    "abstract": "When heavy compute runs on the main thread, the UI stutters. I’ll show how to spot main-thread blocking, then move filtering/aggregation work into Web Workers with a clean message protocol, debouncing, progress updates, and cancellation so the UI stays smooth.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+      "name": "Courtney Yatteau",
+      "slug": "courtney-yatteau",
+      "image": "/_public/images/2026/speakers/courtney-yatteau.jpg",
+      "company": "esri",
+      "location": "Alexandria, VA USA",
+      "links": [
+        { "type": "x-twitter", "url": "https://x.com/c_yatteau" },
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/courtneyyatteau/" },
+        { "type": "bluesky", "url": "https://bsky.app/profile/cyatteau.bsky.social" }
+      ]
     }
-  },
-  {
+  },    
+  { 
+    "title": "Accelerating Musical Live Coding with On-Device AI",
     "type": "main",
+    "slug": "accelerating-musical-live-coding-with-on-device-ai",
+    "abstract": "Let's explore a human-centric approach to live coding music. By fusing Strudel REPL with on-device AI via WebGPU and Wasm, we create an \"intelligent scaffolder\" that handles boilerplate syntax locally, keeping the performer in their flow state without losing agency.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+      "name": "Alex Hinson",
+      "slug": "alex-hinson",
+      "image": "/_public/images/2026/speakers/alex-hinson.jpg",
+      "company": "Fleetio",
+      "location": "Chattanooga, TN USA",
+      "links": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/alex-hinson-015423129" }
+      ]
     }
   },
   {
