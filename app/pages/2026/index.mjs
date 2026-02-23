@@ -151,7 +151,7 @@ export default function ({ html, state }) {
                 <div id="main-event">
                   <div class="label-value">Town Hall<br />Seattle, WA</div>
                   <div class="cta primary">
-                    <a href="/2026/tickets">Early Bird Tickets On Sale!</a>
+                    <a href="/2026/tickets">Tickets On Sale!</a>
                   </div>
                 </div>
               </div>
