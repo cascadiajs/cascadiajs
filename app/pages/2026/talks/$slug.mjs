@@ -57,6 +57,7 @@ export default function ({ html, state }) {
           location="${speaker.location}"
           company="${speaker.company}"
           ${speaker.links ? `links=${JSON.stringify(speaker.links)}` : ""}
+          ${speaker.social ? `social=${JSON.stringify(speaker.social)}` : ""}
           x="${speaker.x}"
           linkedin="${speaker.linkedin}"
           url="${speaker.url}"

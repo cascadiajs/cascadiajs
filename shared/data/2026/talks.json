@@ -8,7 +8,7 @@
       "image": "/_public/images/2026/speakers/matt-biilmann.jpg",
       "company": "Netlify",
       "location": "San Francisco, CA USA",
-      "links": [
+      "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805" },
         { "type": "x-twitter", "url": "https://x.com/biilmann" }
       ]
@@ -23,7 +23,7 @@
       "image": "/_public/images/2026/speakers/theo.jpg",
       "company": "T3 Chat",
       "location": "San Francisco, CA USA",
-      "links": [
+      "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/t3gg/" },
         { "type": "x-twitter", "url": "https://x.com/theo" }
       ]
@@ -38,7 +38,7 @@
       "image": "/_public/images/2026/speakers/francesco.jpg",
       "company": "Zerops",
       "location": "Rome, Italy",
-      "links": [
+      "social": [
         { "type": "linkedin", "url": "hhttps://www.linkedin.com/in/francesco-ciulla-roma/" },
         { "type": "x-twitter", "url": "https://x.com/FrancescoCiull4" }
       ]
@@ -61,7 +61,7 @@
       "image": "/_public/images/2026/speakers/joel-hooks.jpg",
       "company": "Badass Courses",
       "location": "Portland, OR USA",
-      "links": [
+      "social": [
         { "type": "x-twitter", "url": "https://x.com/joelhooks" }
       ]
     }
@@ -77,7 +77,7 @@
       "image": "/_public/images/2026/speakers/rizel-scarlett.jpg",
       "company": "Block",
       "location": "Boston, MA USA",
-      "links": [
+      "social": [
         { "type": "linkedin", "url": "http://linkedin.com/in/rizel-bobb-semple" },
         { "type": "x-twitter", "url": "http://x.com/blackgirlbytes" },
         { "type": "bluesky", "url": "https://bsky.app/profile/blackgirlbytes.bsky.social" }
@@ -95,7 +95,7 @@
       "image": "/_public/images/2026/speakers/marty-nelson.jpg",
       "company": "Works Real Estate",
       "location": "Portland, OR USA",
-      "links": [
+      "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/martypdx/," },
         { "type": "github", "url": "https://github.com/martypdx" }      ]
     }
@@ -111,7 +111,7 @@
       "image": "/_public/images/2026/speakers/brittany-ellich.jpg",
       "company": "GitHub",
       "location": "Portland, OR USA",
-      "links": [
+      "social": [
         { "type": "bluesky", "url": "https://bsky.app/profile/brittanyellich.com" }
       ]
     }
@@ -141,7 +141,7 @@
       "image": "/_public/images/2026/speakers/courtney-yatteau.jpg",
       "company": "esri",
       "location": "Alexandria, VA USA",
-      "links": [
+      "social": [
         { "type": "x-twitter", "url": "https://x.com/c_yatteau" },
         { "type": "linkedin", "url": "https://www.linkedin.com/in/courtneyyatteau/" },
         { "type": "bluesky", "url": "https://bsky.app/profile/cyatteau.bsky.social" }
@@ -159,39 +159,92 @@
       "image": "/_public/images/2026/speakers/alex-hinson.jpg",
       "company": "Fleetio",
       "location": "Chattanooga, TN USA",
-      "links": [
+      "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/alex-hinson-015423129" }
       ]
     }
-  },
-  {
+  },    
+  { 
+    "title": "Choosing TypeScript Matters More Than Ever",
     "type": "main",
+    "slug": "choosing-typescript-matters-more-than-ever",
+    "abstract": "If \"English is the new programming language\" and \"an agent's output is just machine code,\" should you still care about picking TypeScript? Yes, you absolutely should! Let's dig into the reasons why.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+      "name": "Filip Sodić",
+      "slug": "filip-sodic",
+      "image": "/_public/images/2026/speakers/filip-sodic.jpg",
+      "company": "Wasp",
+      "location": "Zagreb, Croatia",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/filipsodic/" },
+        { "type": "x-twitter", "url": "https://x.com/filipsodic" }
+      ]
     }
   },
-  {
-    "type": "main",
+  { 
+    "title": "Beowulf Stroganoff: Building Economically Useless Chatbots",
+    "type": "lightning",
+    "slug": "beowulf-stroganoff-building-economically-useless-chatbots",
+    "abstract": "OpenAI says that AGI will perform “most economically valuable work,” but aren't the best things in life economically useless? I’ll explore what we can learn, both technically and artistically, from fine-tuning models with public domain texts like Beowulf and old cookbooks.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+      "name": "Molly Jean Bennett",
+      "slug": "molly-jean-bennett",
+      "image": "/_public/images/2026/speakers/molly-jean-bennett.jpg",
+      "company": "Grow Therapy",
+      "location": "Portland, OR, USA",
+      "social": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/mollyjeanbennett.bsky.social" }
+      ]
     }
   },
-  {
+  { 
+    "title": "Practical Refactors with Modern CSS Colors",
     "type": "main",
+    "slug": "practical-refactors-with-modern-css-colors",
+    "abstract": "Practical refactors with modern CSS colors: a hands-on talk on simplifying color tokens, dark mode, and theming using modern CSS. Fewer variables, less duplication, clearer intent—using light-dark(), relative colors, and more.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+      "name": "James Steinbach",
+      "slug": "james-steinbach",
+      "image": "/_public/images/2026/speakers/james-steinbach.jpg",
+      "company": "StrongDM",
+      "location": "Denver, CO, USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/jdsteinbach/" },
+        { "type": "bluesky", "url": "https://bsky.app/profile/jdsteinbach.com" }
+      ]
     }
   },
-  {
-    "type": "main",
+  { 
+    "title": "AI helped me learn: Vue through the lens of a React Developer",
+    "type": "lightning",
+    "slug": "ai-helped-me-learn-vue-through-the-lens-of-a-react-developer",
+    "abstract": "AI, React, Vue - what do all of these things have in common? They are tools meant to enhance the development experience - we must remember that. Join me in going over best practices on using AI to LEARN and not to do you your job for you “poorly I might add”. I’ll take you through the steps of how I used AI as a React developer to learn Vue - did I actually learn? Join this talk to find out!",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+      "name": "Daniel Mendoza",
+      "slug": "daniel-mendoza",
+      "image": "/_public/images/2026/speakers/daniel-mendoza.jpg",
+      "company": "Storyblok",
+      "location": "Chicago, IL, USA",
+      "url": "https://danieljmendoza.com/",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/daniel-mendoza-503396152/" }
+      ]
     }
   },
-  {
+  { 
+    "title": "Shared Components Beyond the Design System",
     "type": "main",
+    "slug": "shared-components-beyond-the-design-system",
+    "abstract": "Lots of companies have design system component libraries these days, but those aren't the only shared components around. This talk will center around higher-level shared components for those more complex common UI elements, including how to architect them for reusability, how to ensure they're flexible enough for novel use, and how to govern contributions.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+      "name": "Jonathan Keslin",
+      "slug": "jonathan-keslin",
+      "image": "/_public/images/2026/speakers/jonathan-keslin.jpg",
+      "company": "Atlassian",
+      "location": "Kirkland, WA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/decompiled/" }
+      ]
     }
   },
   {
