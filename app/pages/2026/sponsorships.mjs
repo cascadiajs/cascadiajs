@@ -27,7 +27,7 @@ export default function ({ html }) {
       }
 
       .narrow {
-        width: 50%;
+        width: 90%;
         margin: 0 auto;
       }
 
@@ -45,14 +45,21 @@ export default function ({ html }) {
       }
 
       #packages-table {
+        min-width: 800px;
         max-width: 1200px;
-        margin: 0 auto;   
+        margin: 0 auto;  
+       
+      }
+
+      .packages {
+         overflow-x: auto; 
       }
 
       .packages table {
         table-layout: fixed;
         border-collapse: collapse;
         width: 100%;
+        
       }
 
       .packages td,
@@ -110,6 +117,11 @@ export default function ({ html }) {
       @media only screen and (min-width: 768px) {
         article {
           padding: 24px 128px;
+          margin: 0 auto;
+        }
+
+        .narrow {
+          width: 50%;
           margin: 0 auto;
         }
       }
@@ -289,7 +301,7 @@ export default function ({ html }) {
             </tr>
             <tr>
               <td><b>Main Stage Speaker Slot</b></td>
-              <td><i class="fa-solid fa-check"></i></td>
+              <td>Keynote <i class="fa-solid fa-check"></i></td>
               <td><i class="fa-solid fa-check"></i></td>
               <td colspan="4">&nbsp;</td>
             </tr>
