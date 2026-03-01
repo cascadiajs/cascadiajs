@@ -8,7 +8,7 @@ export async function get({ query, path }) {
     image: "/_public/images/past/cjs19-family-photo.jpg",
     description: "Coming up on June 1 - 2, 2026 in Seattle, WA!",
     sharingTitle: "CascadiaJS 2026 | June 1 - 2 | Seattle, WA",
-    sharingImage: "/_public/images/2026/social-sharing-general.png",
+    sharingImage: "/_public/images/2026/social/social-sharing-general.png",
     sharingDescription:
       "CascadiaJS 2026 is coming up June 1 - 2 in Seattle, WA!",
   };
