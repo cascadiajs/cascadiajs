@@ -45,7 +45,7 @@ Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or Vancouve
 #### Coming from Vancouver, BC
 
 * Depart from Vancouver Pacific Central Station
-* Sept 17 at 11:30am
+* May 31 at 11:30am
 * 8909 Connecting Bus
 * Arriving in Seattle King St Station at 3:30pm.
 
