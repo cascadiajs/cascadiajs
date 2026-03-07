@@ -7,62 +7,71 @@ excerpt: Everything from training to talks to tons of fun!
 <h2>On This Page</h2>
     <ul>
         <li><a href="#preconf">Pre-Conference</a></li>
-        <li><a href="#cascadiajs">CascadiaJS 2025</a></li>
+        <li><a href="#cascadiajs">CascadiaJS 2026</a></li>
         <li><a href="#postconf">Post-Conference Training</a></li>
     </ul>
 </div>
 
-The CascadiaJS conference takes place June 1 - 2, 2026 at Town Hall Seattle. But there will be almost an entire week of of activities surrounding the conference, and we'll add more events as they come on! As we get closer to the conference we'll share a detailed schedule.
+The CascadiaJS conference takes place June 1 - 2, 2026 at Town Hall Seattle. But there will be over a week of of activities surrounding the conference, and we'll add more events as they come on! As we get closer to the conference we'll share a detailed schedule.
 
-<h2 id="preconf">Pre-Conference (May 28 - 30)</h2>
+<h2 id="preconf">Pre-Conference (May 29 - 31)</h2>
 
-### Friday, May 28
+### Friday, May 29
 
 #### Cascadia AI Hackathon
 
-We're hosting an AI hackathon leading up to CascadiaJS 2026! 
+We're hosting an AI hackathon leading up to CascadiaJS 2026! Stay tuned for more details, but it will kick-off Friday evening and conclude Saturday afternoon, with the winning team being invited to demo what they built at CascadiaJS 2026!
 
-
-### Sunday, May 30
-
-#### Activities
-
-We'll have some fun activities planned during the day, stay tuned!
+### Sunday, May 31
 
 #### Welcome Reception
 
 We're holding a Welcome Reception at Town Hall from 5pm - 8pm so you can get your badge, pick up swag and meet fellow attendees.
 
-<h2 id="cascadiajs">CascadiaJS 2025 (June 1 - 2)</h2>
+<h2 id="cascadiajs">CascadiaJS 2026 (June 1 - 2)</h2>
 
 ### Monday, June 1
 
-#### Day One Talk
+#### Day One Talks & Workshops
 
-The doors will open at 8:00am for registration and a full day of talks. Drop your kids off at the free childcare, grab a coffee and get ready for powerful talks packed with insights, stories, and real-world advice to fuel your work and leave you inspired. A light breakfast, lunch, and coffee will be provided.
+The doors will open at 8:00am for registration and a full day of talks and workshops. Grab a coffee and get ready for talks packed with insights, stories, and real-world advice to fuel your work and leave you inspired. Premium ticket holders will recieve a light breakfast, lunch and dinner.
+
+#### Networking Mixer
+
+Connect and have high quality conversations with your fellow attendees and companies that are hiring. The mixer will take place right after the Day One talks conclude.
 
 ### Tuesday, June 2
 
-#### Day Two Talks
+#### Day Two Talks & Workshops
 
-We'll have another full day of talks.
+Another full day of talks and workshops.
 
-#### Closing Party
+#### Closing Karoke Party
 
-, followed by dinner and a Closing Party you don't want to miss. Unwind with food, drinks, and great company. You’re not just attending a conference—you’re joining a community.
+We will wrap-up CascadiaJS with an epic karaoke party at Rockbox Seattle. We are **buying out** the venue and there are 12 different rooms that we can use. Premium ticket holders will be able to skip the line will be able to bring a plus-one! 🎤🎉
 
 <h2 id="postconf">Post-Conference</h2>
 
-### Sat, Sept 20
+### Wednesday, June 3
 
-#### Cascadia AI Hack Day
+#### Training - Coding with Claude
 
-Join your fellow AI devs for an epic hackday where we'll be diving into what developers can build using AI, Agents and MCP! ​​This is a hackathon for devs, by devs. You don't have to have experience building with AI, but you should be comfortable building software and apps.
+AI is changing how we write code, and you're about to become fluent in these new tools. We'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks. Let’s explore everything from AI-assisted coding in your editor to autonomous development with Claude Code.
 
-<a href="https://lu.ma/event/evt-yYQE7X8dyXz6mjz" class="luma-checkout--button" data-luma-action="checkout" data-luma-event-id="evt-yYQE7X8dyXz6mjz">Register for Event</a>
+[[Learn More]](/2026/trainings/coding-with-claude)
 
-<script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
+### Thursday, June 4
 
-#### Pickleball
+#### Training - AI for TypeScript Developers
 
-Want to spend some time outside dinking with your conference buddies? We've reserved some courts and will have paddles/balls for you to use. No experience necessary! More information coming soon.
+Ready to build AI-powered applications? Let's dive into the Vercel AI SDK and modern AI patterns to create intelligent features your users will love. We'll start with the fundamentals and work our way up to building production-ready AI applications.
+
+[[Learn More]](/2026/trainings/ai-for-typescript-developers)
+
+### Friday, June 5
+
+#### Training - Building AI Agents
+
+Explore everything from basic tool calling to sophisticated multi-step agents that can reason and act autonomously.
+
+[[Learn More]](/2026/trainings/building-ai-agents)

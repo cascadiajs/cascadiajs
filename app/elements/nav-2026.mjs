@@ -42,8 +42,8 @@ export default function MainHeader({ html }) {
               alt="CascadiaJS logo"
           /></a>
         </div>
-        <div class="push"><a href="/2026/attend">Attend</a></div>
-        <!--div class="spacer"><a href="/2026/cfp">CFP</a></div-->
+        <div class="push"><a href="/2026/schedule">Schedule</a></div>
+        <div class="spacer"><a href="/2026/attend">Attend</a></div>
         <div class="spacer"><a href="/2026/scholarships">Scholarships</a></div>
         <div class="spacer"><a href="/2026/sponsor">Sponsor</a></div>
         <div class="spacer"><a href="/2026/trainings">Trainings</a></div>
