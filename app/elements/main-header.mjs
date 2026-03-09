@@ -46,7 +46,7 @@ export default function MainHeader({ html, state }) {
         background-color: #ffd007;
         padding: 8px;
         font-family: "mono45-headline", monospace;
-        font-weight: 500;
+        font-weight: 200;
         color: #112378;
         text-align: center;
         font-size: 20px;
@@ -55,15 +55,10 @@ export default function MainHeader({ html, state }) {
       header > section.alert a,
       header > section.alert a:visited {
         color: #112378;
+        text-decoration: none;
       }
 
       @media only screen and (min-width: 768px) {
-        header {
-          z-index: 100;
-          position: sticky;
-          top: 0;
-        }
-
         nav > div {
           display: flex;
           align-items: center;
@@ -80,18 +75,15 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <!--section class="alert">
-        Early Bird tickets are <a href="/2026/tickets">ON SALE</a> for 2026!
-      </section-->
+      <section class="alert">
+        General Admission tickets are $299!
+        <a href="/2026/tickets"
+          >Grab yours now <i class="fa-solid fa-hand-point-right"></i
+        ></a>
+      </section>
       ${path && path.startsWith("/20")
-        ? html`<nav class="back">
-              <div class="wide">
-                <div><a href="/">← Back to Homepage</a></div>
-              </div>
-            </nav>
-            ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
-            ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}
-            ${path.startsWith("/2026") ? html`<nav-2026></nav-2026>` : ""}`
+        ? html` ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
+          ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}`
         : html` <nav class="primary">
             <div class="wide">
               <div id="logo">

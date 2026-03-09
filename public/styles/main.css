@@ -331,6 +331,15 @@ pre.sharing {
     white-space: pre-wrap;
 }
 
+.video-container {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
 
 @media only screen and (min-width: 768px) {
     .wide {

@@ -9,7 +9,7 @@ export default function ({ html, state }) {
       description="${description}"
     ></social-sharing>`;
   } else {
-    return html` <style>
+    return html`<style>
         #landing article h2 {
           margin-bottom: 16px;
         }
@@ -18,20 +18,51 @@ export default function ({ html, state }) {
           text-align: left;
         }
 
-        #hero .label-name {
-          font-family: mono45-headline;
-          font-size: 18px;
-          text-decoration: underline;
-          color: #112378;
-          margin: 0;
+        #nav {
+          position: sticky;
+          top: 0;
+          z-index: 1000;
         }
 
-        #hero .label-value {
-          font-family: freight-macro-pro;
-          font-size: 24px;
+        nav {
+          background-color: #17c37b;
+          padding: 10px;
+          font-family: "mono45-headline", monospace;
+          font-size: 21px;
+          font-weight: 500;
+        }
+
+        nav > div {
+          display: flex;
+          align-items: center;
+          margin: 0 auto;
+          justify-content: center;
+        }
+
+        #nav-logo {
+          padding-top: 2px;
+        }
+
+        nav > div > div {
+          margin-right: 40px;
+        }
+
+        nav a,
+        nav a:visited {
           color: #112378;
-          font-weight: 400;
-          line-height: 1.3em;
+          text-decoration: none;
+        }
+
+        nav a:hover {
+          text-decoration: underline;
+        }
+
+        #features {
+          background-color: #ccf1db;
+        }
+
+        .feature-container div {
+          padding: 16px 16px 0 16px;
         }
 
         #attendee-list {
@@ -93,39 +124,137 @@ export default function ({ html, state }) {
           opacity: 1;
         }
 
+        #hero-container {
+          position: relative;
+        }
+
+        .video-container::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.4);
+        }
+
+        .video-overlay {
+          position: absolute;
+          top: 3vw;
+          left: 3vw;
+          color: white;
+        }
+
+        .video-overlay div img {
+          width: 20%;
+        }
+
+        .video-overlay h2 {
+          color: #fff;
+          font-family: freight-macro-pro;
+          width: 50%;
+          font-size: clamp(16px, 5vw, 60px);
+          margin: 0;
+        }
+
+        .video-overlay p {
+          color: #fff;
+          width: 50%;
+          font-size: clamp(8px, 2vw, 24px);
+        }
+
+        .video-overlay .date-location {
+          font-family: freight-macro-pro;
+          width: 50%;
+          font-size: clamp(10px, 3vw, 32px);
+        }
+
+        .video-overlay .reserve-your-spot {
+          display: none;
+        }
+
+        #pricing {
+          display: flex;
+          width: 80%;
+          margin: 16px auto;
+          justify-content: center;
+          color: #112378;
+        }
+
+        #pricing .ticket {
+          border: 2px solid #112378;
+          width: 200px;
+          padding: 8px;
+          margin: 8px;
+        }
+
+        #pricing .ticket .name {
+          font-family: freight-macro-pro;
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        #pricing .ticket .sub {
+          margin: 4px 0;
+          display: flex;
+        }
+
+        #pricing .ticket .sub .label {
+          font-style: italic;
+          font-size: 16px;
+        }
+
+        #pricing .ticket .sub .divider {
+          flex: 1;
+          border-bottom: 2px solid #112378;
+        }
+
+        #pricing .ticket .price {
+          font-size: 48px;
+          font-weight: 600;
+          font-family: freight-sans-pro, sans-serif;
+          margin: 16px 0;
+        }
+
+        #pricing .ticket .until {
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        #pricing .ticket .description {
+          margin-top: 16px;
+          font-size: 12px;
+        }
+
+        #pricing .ticket .description ul {
+          padding-left: 16px;
+          margin-top: 0;
+        }
+
         @media only screen and (min-width: 768px) {
-          #hero {
+          a.logo {
+            margin-bottom: 0;
+          }
+
+          .video-overlay .reserve-your-spot {
+            display: block;
+            width: 100%;
+            text-align: center;
+          }
+
+          .video-overlay .reserve-your-spot a,
+          .video-overlay .reserve-your-spot a:visited {
+            text-decoration: none;
+          }
+
+          .feature-container {
+            width: 100%;
             display: flex;
-            max-width: 1000px;
-            margin: 0 auto;
           }
 
-          #hero article {
-            flex: 1;
+          .feature-container div:first-child {
+            padding: 16px 0 0 16px;
           }
 
-          #hero article:first-child {
-            margin-right: 16px;
-          }
-
-          #venues {
-            display: flex;
-            align-items: center;
-          }
-
-          #venues #main-event {
-            margin-right: 32px;
-          }
-
-          #features-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 32px;
-          }
-
-          .feature img {
-            max-width: 250px;
+          .feature-container div:nth-child(2) {
+            padding: 16px 16px 0 16px;
           }
 
           #pitch {
@@ -133,35 +262,92 @@ export default function ({ html, state }) {
           }
         }
       </style>
-      <main-layout>
+      <layout-2026>
         <div id="landing">
-          <section id="hero" class="landing">
-            <article>
-              <h2>A Web + AI conference for the Pacific Northwest</h2>
-              <p>
-                CascadiaJS is a community-driven conference for developers in
-                the PNW and beyond. You will hear from amazing speakers, connect
-                with 500+ fellow devs, and explore the latest in web and AI
-                technologies with some of the top companies in the industry.
-              </p>
-              <div class="label-name">Date</div>
-              <div class="label-value">June 1-2, 2026</div>
-              <br />
-              <div id="venues">
-                <div id="main-event">
-                  <div class="label-value">Town Hall<br />Seattle, WA</div>
-                  <div class="cta primary">
-                    <a href="/2026/tickets">Tickets On Sale!</a>
-                  </div>
+          <section id="hero">
+            <div id="hero-container">
+              <div class="video-container">
+                <iframe
+                  src="https://customer-err733fa36e0jnfx.cloudflarestream.com/a439eea2d251499f21c9388ebc2d5370/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2Fa439eea2d251499f21c9388ebc2d5370%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+                  loading="lazy"
+                  style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowfullscreen="true"
+                ></iframe>
+              </div>
+              <div class="video-overlay">
+                <div>
+                  <img
+                    src="/_public/images/2026/lockup-horizontal-webai-white.png"
+                    alt="CascadiaJS 2026 Web + AI conference"
+                  />
+                </div>
+                <h2>A Web + AI conference for the Pacific Northwest</h2>
+                <p>
+                  CascadiaJS is a community-driven conference for developers in
+                  the PNW and beyond. You will hear from amazing speakers,
+                  connect with 500+ fellow devs, and explore the latest in web
+                  and AI technologies with some of the top companies in the
+                  industry.
+                </p>
+                <p class="date-location">
+                  June 1-2, 2026<br />Seattle, WA, USA
+                </p>
+                <div class="reserve-your-spot">
+                  <a class="buy" href="/2026/tickets"
+                    >Reserve Your Spot <i class="fa-solid fa-tree"></i
+                  ></a>
                 </div>
               </div>
-            </article>
-            <article>
-              <img
-                src="/_public/images/2026/hero-mushroom.png"
-                alt="Sasquatch foraging for mushrooms in a forest"
-              />
-            </article>
+            </div>
+          </section>
+          <section id="nav">
+            <nav>
+              <div>
+                <div id="nav-logo">
+                  <a href="/2026"
+                    ><img
+                      height="64"
+                      src="/_public/images/logo-wordmark-horizontal.svg"
+                      alt="CascadiaJS logo"
+                  /></a>
+                </div>
+                <div><a href="#pricing">Pricing</a></div>
+                <div><a href="#speakers">Speakers</a></div>
+                <div><a href="/2026/trainings">Training</a></div>
+                <div><a class="buy" href="/2026/tickets">Tickets</a></div>
+              </div>
+            </nav>
+          </section>
+          <section id="features">
+            <div class="feature-container">
+              <div>
+                <img
+                  src="/_public/images/2026/feature-01.png"
+                  alt="Feature: Amazing Speakers"
+                />
+              </div>
+              <div>
+                <img
+                  src="/_public/images/2026/feature-02.png"
+                  alt="Feature: Cutting-Edge Content"
+                />
+              </div>
+            </div>
+            <div class="feature-container">
+              <div>
+                <img
+                  src="/_public/images/2026/feature-03.png"
+                  alt="Feature: Incredible Community"
+                />
+              </div>
+              <div>
+                <img
+                  src="/_public/images/2026/feature-04.png"
+                  alt="Feature: Beautiful Venue"
+                />
+              </div>
+            </div>
           </section>
           <section id="pitch">
             <p>
@@ -187,145 +373,99 @@ export default function ({ html, state }) {
               <strong>beautiful PNW</strong>.
             </p>
           </section>
+          <section id="pricing">
+            <div class="ticket">
+              <div class="name">Conference Premium</div>
+              <div class="sub">
+                &nbsp;
+                <div class="divider"></div>
+              </div>
+              <div class="price">$699</div>
+              <div class="until">Until May 10, 2026</div>
+              <div class="description">
+                <strong>Includes:</strong>
+                <ul>
+                  <li>Access to all talks</li>
+                  <li>Access to all workshops</li>
+                  <li>Conference hoodie *</li>
+                  <li>Meals Pass</li>
+                  <li>Priority access to all networking events &amp;parties</li>
+                  <li>+1 for the Closing Party</li>
+                </ul>
+                <p>* If registered by April 20, 2026</p>
+              </div>
+            </div>
+            <div class="ticket">
+              <div class="name">Conference Premium</div>
+              <div class="sub">
+                <div class="label">Indie Discount</div>
+                <div class="divider"></div>
+              </div>
+              <div class="price">$499</div>
+              <div class="until">Until May 10, 2026</div>
+              <div class="description">
+                <strong>Includes:</strong>
+                <ul>
+                  <li>Access to all talks</li>
+                  <li>Access to all workshops</li>
+                  <li>Conference hoodie *</li>
+                  <li>Meals Pass</li>
+                  <li>
+                    Priority access to all networking events &amp; parties
+                  </li>
+                  <li>+1 for the Closing Party</li>
+                </ul>
+                <p>
+                  Must be between jobs, self-employed, work for a educational
+                  institution , work for a non-profit organization or company
+                  with fewer than 10 employees
+                </p>
+              </div>
+            </div>
+            <div class="ticket">
+              <div class="name">General Admission</div>
+              <div class="sub">
+                &nbsp;
+                <div class="divider"></div>
+              </div>
+              <div class="price">$299</div>
+              <div class="until">&nbsp;</div>
+              <div class="description">
+                <strong>Includes:</strong>
+                <ul>
+                  <li>Access to all talks</li>
+                  <li>Access to all workshops</li>
+                  <li>Access to all networking events &amp; parties</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ticket">
+              <div class="name">Student</div>
+              <div class="sub">
+                &nbsp;
+                <div class="divider"></div>
+              </div>
+              <div class="price">$99</div>
+              <div class="until">&nbsp;</div>
+              <div class="description">
+                <strong>Includes:</strong>
+                <ul>
+                  <li>Access to all talks</li>
+                  <li>Access to all workshops</li>
+                  <li>Access to all networking events &amp; parties</li>
+                </ul>
+                <p>Must be a student who is not working in tech full-time.</p>
+                <p>Must be 21 to attend Closing Party.</p>
+              </div>
+            </div>
+          </section>
           <section id="speakers" class="landing">
             <h1>Keynotes</h1>
             <talks-grid type="keynote"></talks-grid>
             <h1>Speakers</h1>
             <talks-grid type="main,lightning"></talks-grid>
           </section>
-          <section id="features" class="landing">
-            <h1>Features</h1>
-            <div id="features-container">
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/venue.gif"
-                    alt="illustration of Town Hall"
-                  />
-                </div>
-                <h2>Town Hall</h2>
-                <p>
-                  Our venue is a beautiful historic building located within
-                  walking distance of downtown, Capitol Hill, and several light
-                  rail stops.
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/talks.gif"
-                    alt="illustration of a microphone"
-                  />
-                </div>
-                <h2>Awesome Speakers</h2>
-                <p>
-                  You’ll hear from a diverse lineup of speakers covering
-                  everything from the latest in web and JavaScript to the
-                  interaction of web technologies and AI.
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/community.gif"
-                    alt="illustration of friends hanging out"
-                  />
-                </div>
-                <h2>Hallway Track</h2>
-                <p>
-                  Take advantage of breaks, meals, evening events and organized
-                  ice breakers to meet people, connect and grow your network!
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/allinclusive.gif"
-                    alt="illustration of a meal"
-                  />
-                </div>
-                <h2>Treats Galore</h2>
-                <p>
-                  Your full conference ticket includes access to multiple social
-                  events, yummy snacks, unlimited coffee and the best conference
-                  swag around!
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/a11y.gif"
-                    alt="illustration of a welcome mat"
-                  />
-                </div>
-                <h2>Accessibility</h2>
-                <p>
-                  From our Scholarship Program to hosting CascadiaJS in an
-                  accessible venue, our goal is to make this event available to
-                  as many people as possible and build an inclusive community
-                  for web developers.
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/companies.gif"
-                    alt="illustration of a welcome mat"
-                  />
-                </div>
-                <h2>Top Web + AI Companies</h2>
-                <p>
-                  Our Expo Hall will be filled with many of the top companies
-                  building tools in the web and AI space. Stay tuned for more
-                  updates on who will be exhibiting this year!
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/hackertrain.gif"
-                    alt="illustration of a laptop with stickers"
-                  />
-                </div>
-                <h2>Hacker Train</h2>
-                <p>
-                  If you live in Portland, OR or Vancouver, BC there is no
-                  better way to get to CascadiaJS than to join your fellow devs
-                  on the Hacker Train. Ditch the car, make some friends and fork
-                  repos on the train Wi-Fi as you head to Seattle.
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/karaoke.gif"
-                    alt="illustration of inside the train"
-                  />
-                </div>
-                <h2>Karaoke</h2>
-                <p>
-                  We’re continuing our annual tradition of closing out the
-                  conference with an epic night of karaoke, and we’ve hired one
-                  of the PNW’s best karaoke DJs to help us do it. Don’t miss it!
-                </p>
-              </div>
-              <div class="feature">
-                <div>
-                  <img
-                    src="/_public/images/2025/features/activities.gif"
-                    alt="illustration of a karaoke screen"
-                  />
-                </div>
-                <h2>Outdoor Activities</h2>
-                <p>
-                  On the Saturday after the conference, we're going to organize
-                  some activities so that folks can explore the Seattle area,
-                  get some fresh air and have some fun!
-                </p>
-              </div>
-            </div>
-          </section>
         </div>
-      </main-layout>`;
+      </layout-2026>`;
   }
 }
