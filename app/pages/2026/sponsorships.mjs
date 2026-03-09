@@ -245,9 +245,11 @@ export default function ({ html }) {
           <p><em>Not sure where to begin?</em> Most sponsors start at the Gold level and tailor their package as needed.</p>
               
           </article>
-          <article class="center">
-          <span class="highlight warning">Sponsorships are <b>20% off</b> until Feb 14, 2026!</span>
-          </article>
+          <!--
+            <article class="center">
+              <span class="highlight warning">Sponsorships are <b>20% off</b> until Feb 14, 2026!</span>
+            </article>
+          -->
           </div>
         </section>
         <section class="packages">
