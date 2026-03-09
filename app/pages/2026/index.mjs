@@ -18,12 +18,6 @@ export default function ({ html, state }) {
           text-align: left;
         }
 
-        #nav {
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-        }
-
         nav {
           background-color: #17c37b;
           padding: 10px;
@@ -32,19 +26,8 @@ export default function ({ html, state }) {
           font-weight: 500;
         }
 
-        nav > div {
-          display: flex;
-          align-items: center;
-          margin: 0 auto;
-          justify-content: center;
-        }
-
-        #nav-logo {
-          padding-top: 2px;
-        }
-
         nav > div > div {
-          margin-right: 40px;
+          margin-bottom: 8px;
         }
 
         nav a,
@@ -63,6 +46,11 @@ export default function ({ html, state }) {
 
         .feature-container div {
           padding: 16px 16px 0 16px;
+        }
+
+        #ticket-container {
+          text-align: left;
+          color: #112378;
         }
 
         #attendee-list {
@@ -171,34 +159,34 @@ export default function ({ html, state }) {
         }
 
         #pricing {
-          display: flex;
-          width: 80%;
-          margin: 16px auto;
-          justify-content: center;
           color: #112378;
         }
 
         #pricing .ticket {
           border: 2px solid #112378;
-          width: 200px;
-          padding: 8px;
+          width: 300px;
+          min-width: 300px;
+          padding: 22px 12px;
           margin: 8px;
         }
 
         #pricing .ticket .name {
           font-family: freight-macro-pro;
           font-weight: 600;
-          font-size: 20px;
+          font-size: 30px;
         }
 
         #pricing .ticket .sub {
-          margin: 4px 0;
+          margin: 8px 0;
           display: flex;
         }
 
         #pricing .ticket .sub .label {
+          font-family: freight-macro-pro;
+          font-weight: 100;
           font-style: italic;
-          font-size: 16px;
+          font-size: 24px;
+          margin-right: 8px;
         }
 
         #pricing .ticket .sub .divider {
@@ -207,20 +195,20 @@ export default function ({ html, state }) {
         }
 
         #pricing .ticket .price {
-          font-size: 48px;
-          font-weight: 600;
+          font-size: 64px;
+          font-weight: 500;
           font-family: freight-sans-pro, sans-serif;
-          margin: 16px 0;
+          margin: 32px 0;
         }
 
         #pricing .ticket .until {
-          font-size: 12px;
+          font-size: 18px;
           font-weight: 600;
         }
 
         #pricing .ticket .description {
           margin-top: 16px;
-          font-size: 12px;
+          font-size: 18px;
         }
 
         #pricing .ticket .description ul {
@@ -229,6 +217,27 @@ export default function ({ html, state }) {
         }
 
         @media only screen and (min-width: 768px) {
+          #nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+          }
+
+          nav > div {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            justify-content: center;
+          }
+
+          #nav-logo {
+            padding-top: 2px;
+          }
+
+          nav > div > div {
+            margin-right: 40px;
+          }
+
           a.logo {
             margin-bottom: 0;
           }
@@ -255,6 +264,12 @@ export default function ({ html, state }) {
 
           .feature-container div:nth-child(2) {
             padding: 16px 16px 0 16px;
+          }
+
+          #ticket-container {
+            display: flex;
+            margin: 16px auto;
+            justify-content: center;
           }
 
           #pitch {
@@ -308,7 +323,7 @@ export default function ({ html, state }) {
                   <a href="/2026"
                     ><img
                       height="64"
-                      src="/_public/images/logo-wordmark-horizontal.svg"
+                      src="/_public/images/icon-dark-blue.png"
                       alt="CascadiaJS logo"
                   /></a>
                 </div>
@@ -373,89 +388,94 @@ export default function ({ html, state }) {
               <strong>beautiful PNW</strong>.
             </p>
           </section>
-          <section id="pricing">
-            <div class="ticket">
-              <div class="name">Conference Premium</div>
-              <div class="sub">
-                &nbsp;
-                <div class="divider"></div>
+          <section id="pricing" class="landing">
+            <h1>Pricing</h1>
+            <div id="ticket-container">
+              <div class="ticket">
+                <div class="name">Conference Premium</div>
+                <div class="sub">
+                  &nbsp;
+                  <div class="divider"></div>
+                </div>
+                <div class="price">$699</div>
+                <div class="until">Until May 10, 2026</div>
+                <div class="description">
+                  <strong>Includes:</strong>
+                  <ul>
+                    <li>Access to all talks</li>
+                    <li>Access to all workshops</li>
+                    <li>Conference hoodie *</li>
+                    <li>Meals Pass</li>
+                    <li>
+                      Priority access to all networking events &amp;parties
+                    </li>
+                    <li>+1 for the Closing Party</li>
+                  </ul>
+                  <p>* If registered by April 20, 2026</p>
+                </div>
               </div>
-              <div class="price">$699</div>
-              <div class="until">Until May 10, 2026</div>
-              <div class="description">
-                <strong>Includes:</strong>
-                <ul>
-                  <li>Access to all talks</li>
-                  <li>Access to all workshops</li>
-                  <li>Conference hoodie *</li>
-                  <li>Meals Pass</li>
-                  <li>Priority access to all networking events &amp;parties</li>
-                  <li>+1 for the Closing Party</li>
-                </ul>
-                <p>* If registered by April 20, 2026</p>
+              <div class="ticket">
+                <div class="name">Conference Premium</div>
+                <div class="sub">
+                  <div class="label">Indie Discount</div>
+                  <div class="divider"></div>
+                </div>
+                <div class="price">$499</div>
+                <div class="until">Until May 10, 2026</div>
+                <div class="description">
+                  <strong>Includes:</strong>
+                  <ul>
+                    <li>Access to all talks</li>
+                    <li>Access to all workshops</li>
+                    <li>Conference hoodie *</li>
+                    <li>Meals Pass</li>
+                    <li>
+                      Priority access to all networking events &amp; parties
+                    </li>
+                    <li>+1 for the Closing Party</li>
+                  </ul>
+                  <p>
+                    Must be between jobs, self-employed, work for a educational
+                    institution , work for a non-profit organization or company
+                    with fewer than 10 employees
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="ticket">
-              <div class="name">Conference Premium</div>
-              <div class="sub">
-                <div class="label">Indie Discount</div>
-                <div class="divider"></div>
+              <div class="ticket">
+                <div class="name">General Admission</div>
+                <div class="sub">
+                  &nbsp;
+                  <div class="divider"></div>
+                </div>
+                <div class="price">$299</div>
+                <div class="until">&nbsp;</div>
+                <div class="description">
+                  <strong>Includes:</strong>
+                  <ul>
+                    <li>Access to all talks</li>
+                    <li>Access to all workshops</li>
+                    <li>Access to all networking events &amp; parties</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price">$499</div>
-              <div class="until">Until May 10, 2026</div>
-              <div class="description">
-                <strong>Includes:</strong>
-                <ul>
-                  <li>Access to all talks</li>
-                  <li>Access to all workshops</li>
-                  <li>Conference hoodie *</li>
-                  <li>Meals Pass</li>
-                  <li>
-                    Priority access to all networking events &amp; parties
-                  </li>
-                  <li>+1 for the Closing Party</li>
-                </ul>
-                <p>
-                  Must be between jobs, self-employed, work for a educational
-                  institution , work for a non-profit organization or company
-                  with fewer than 10 employees
-                </p>
-              </div>
-            </div>
-            <div class="ticket">
-              <div class="name">General Admission</div>
-              <div class="sub">
-                &nbsp;
-                <div class="divider"></div>
-              </div>
-              <div class="price">$299</div>
-              <div class="until">&nbsp;</div>
-              <div class="description">
-                <strong>Includes:</strong>
-                <ul>
-                  <li>Access to all talks</li>
-                  <li>Access to all workshops</li>
-                  <li>Access to all networking events &amp; parties</li>
-                </ul>
-              </div>
-            </div>
-            <div class="ticket">
-              <div class="name">Student</div>
-              <div class="sub">
-                &nbsp;
-                <div class="divider"></div>
-              </div>
-              <div class="price">$99</div>
-              <div class="until">&nbsp;</div>
-              <div class="description">
-                <strong>Includes:</strong>
-                <ul>
-                  <li>Access to all talks</li>
-                  <li>Access to all workshops</li>
-                  <li>Access to all networking events &amp; parties</li>
-                </ul>
-                <p>Must be a student who is not working in tech full-time.</p>
-                <p>Must be 21 to attend Closing Party.</p>
+              <div class="ticket">
+                <div class="name">Student</div>
+                <div class="sub">
+                  &nbsp;
+                  <div class="divider"></div>
+                </div>
+                <div class="price">$99</div>
+                <div class="until">&nbsp;</div>
+                <div class="description">
+                  <strong>Includes:</strong>
+                  <ul>
+                    <li>Access to all talks</li>
+                    <li>Access to all workshops</li>
+                    <li>Access to all networking events &amp; parties</li>
+                  </ul>
+                  <p>Must be a student who is not working in tech full-time.</p>
+                  <p>Must be 21 to attend Closing Party.</p>
+                </div>
               </div>
             </div>
           </section>

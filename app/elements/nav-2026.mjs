@@ -11,7 +11,7 @@ export default function MainHeader({ html }) {
 
       nav.secondary {
         padding: 10px;
-        background-color: #ccf1db;
+        background-color: #17c37b;
         font-family: "mono45-headline", monospace;
         font-size: 21px;
         font-weight: 500;

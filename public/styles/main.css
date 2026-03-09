@@ -259,6 +259,10 @@ span.cta {
     border: 4px solid #666;
 }
 
+a.buy {
+    font-family: mono45-headline, sans-serif;
+}
+
 a.buy, a.buy:visited {
     display: inline-block;
     margin: 16px 0;

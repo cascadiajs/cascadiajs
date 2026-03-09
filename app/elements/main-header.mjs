@@ -83,7 +83,8 @@ export default function MainHeader({ html, state }) {
       </section>
       ${path && path.startsWith("/20")
         ? html` ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
-          ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}`
+          ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}
+          ${path.startsWith("/2026/") ? html`<nav-2026></nav-2026>` : ""}`
         : html` <nav class="primary">
             <div class="wide">
               <div id="logo">
