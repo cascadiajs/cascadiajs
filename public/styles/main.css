@@ -261,6 +261,8 @@ span.cta {
 
 a.buy {
     font-family: mono45-headline, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 a.buy, a.buy:visited {
