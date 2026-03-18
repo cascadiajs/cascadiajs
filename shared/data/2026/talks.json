@@ -265,22 +265,54 @@
       ]
     }
   },
-  {
-    "type": "main",
+  { 
+    "title": "The Schematic to Community as told by Rick Astley",
+    "type": "lightning",
+    "slug": "the-schematic-to-community-as-told-by-rick-astley",
+    "abstract": "You think \"Rickrolling\" is just a prank? Think again buddy. the lyrics to \"Never Gonna Give You Up\" are actually a masterclass in community retention. We're breaking down the \"Six Pillars of Astley\" to help you build a community that is together forever (see what I did there) Expect deep insights, personal anecdotes, and—yes—you'll probably get trolled.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
+      "name": "Jason Torres",
+      "slug": "jason-torres",
+      "image": "/_public/images/2026/speakers/jason-torres.jpg",
+      "company": "Jetbrains",
+      "location": "Rochester, NY USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/thejasontorres/" }
+      ]
     }
   },
-  {
-    "type": "main",
+  { 
+    "title": "The Request Tax: Re-evaluating 20+ Years of Web Performance Dogma",
+    "type": "lightning",
+    "slug": "the-request-tax-re-evaluating-20-years-of-web-performance-dogma",
+    "abstract": "For 20 years, we've been told to \"Minimize HTTP Requests.\" But is that still true? I'm investigating how HTTP/3 and QUIC change the \"Request Tax\" and why I'm seeing patterns where granular fetches beat monolithic queries. Let’s look at the data and re-evaluate the rules.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
+      "name": "Alex Moon",
+      "slug": "alex-moon",
+      "image": "/_public/images/2026/speakers/alex-moon.jpg",
+      "company": "WP Engine",
+      "location": "Bellingham, WA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://linkedin.com/in/aj-moon/" },
+        { "type": "github", "url": "https://github.com/moonmeister"},
+        { "type": "x-twitter", "url": "https://twitter.com/moon_meister" }
+      ]
     }
   },
-  {
-    "type": "main",
+  { 
+    "title": "How to successfully build a junior dev team",
+    "type": "lightning",
+    "slug": "how-to-successfully-build-a-junior-dev-team",
+    "abstract": "Growing a dev team while preserving your culture and mentoring junior devs sounds difficult, maybe impossible. Especially in this era of AI, how do you successfully build a home-grown team of young talent? I'll explore the success we've had with exactly that at Atomic Object, and practices you can implement today in your own companies to do the same.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-01.png"
+      "name": "Dylan Goings",
+      "slug": "dylan-goings",
+      "image": "/_public/images/2026/speakers/dylan-goings.jpg",
+      "company": "Atomic Object",
+      "location": "Ann Arbor, MI USA",
+      "social": [
+        { "type": "linkedin", "url": "linkedin.com/in/dgoings" }
+      ]
     }
   },
   {
