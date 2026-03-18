@@ -394,22 +394,10 @@ export default function ({ html }) {
             </tr>
             <tr>
               <td><b>Price</b></td>
-              <td>
-                <span style="text-decoration: line-through;">$40k</span>
-                <b>$32k</b>
-              </td>
-              <td>
-                <span style="text-decoration: line-through;">$30k</span>
-                <b>$24k</b>
-              </td>
-              <td>
-                <span style="text-decoration: line-through;">$20k</span>
-                <b>$16k</b>
-              </td>
-              <td>
-                <span style="text-decoration: line-through;">$8k</span>
-                <b>$6400</b>
-              </td>
+              <td>$40k</td>
+              <td>$30k</td>
+              <td>$20k</td>
+              <td>$8k</td>
               <td>$5k</td>
               <td>$2500</td>
             </tr>
