@@ -10,8 +10,9 @@ export default function ({ html, state }) {
     ></social-sharing>`;
   } else {
     return html`<style>
-        #landing article h2 {
-          margin-bottom: 16px;
+        #landing h2 {
+            margin-top: 48px;
+            margin-bottom: 48px;
         }
 
         #hero {
@@ -152,6 +153,7 @@ export default function ({ html, state }) {
           font-family: freight-macro-pro;
           width: 50%;
           font-size: clamp(10px, 3vw, 32px);
+          line-height: 1;
         }
 
         .video-overlay .reserve-your-spot {
