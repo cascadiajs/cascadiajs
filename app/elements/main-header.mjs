@@ -78,7 +78,7 @@ export default function MainHeader({ html, state }) {
       <section class="alert">
         General Admission tickets are $299!
         <a href="/2026/tickets"
-          ><span class="underline">Grab yours now</span> <i class="fa-solid fa-hand-point-right"></i
+          ><span style="text-decoration: underline;">Grab yours now</span> <i class="fa-solid fa-hand-point-right"></i
         ></a>
       </section>
       ${path && path.startsWith("/20")
