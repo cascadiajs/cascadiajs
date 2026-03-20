@@ -11,8 +11,8 @@ export default function ({ html, state }) {
   } else {
     return html`<style>
         #landing h2 {
-            margin-top: 48px;
-            margin-bottom: 48px;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         #hero {
@@ -153,7 +153,7 @@ export default function ({ html, state }) {
           font-family: freight-macro-pro;
           width: 50%;
           font-size: clamp(10px, 3vw, 32px);
-          line-height: 1;
+          line-height: 1.125;
         }
 
         .video-overlay .reserve-your-spot {
