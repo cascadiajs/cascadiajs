@@ -287,7 +287,7 @@ export default function ({ html }) {
             <tr>
               <td><b>Quantity</b></td>
               <td>1</td>
-              <td><span class="strike">1<span> Sold out!</td>
+              <td><span class="strike">1</span> Sold out!</td>
               <td><span class="strike">12</span> 5 left</td>
               <td>Multiple</td>
               <td>Multiple</td>
@@ -412,7 +412,7 @@ export default function ({ html }) {
           <h2 class="center">Sponsorship Add-Ons</h2>
           <p>In addition to our standard sponsorship tiers, CascadiaJS offers a set of optional add-ons that allow sponsors to increase visibility, create deeper engagement, or support specific community initiatives. Add-ons can be paired with any sponsorship level and are available on a first-come basis.</p>
 
-          <h3>Workshop (1 left!)</h3>
+          <h3>Workshop <span class="strike">(1 left!)</span> Sold out!</h3>
           <p>A dedicated, hands-on workshop session where sponsors can teach a topic relevant to the CascadiaJS audience. Workshops offer deep engagement and are well suited for developer tools, platforms, and technical training.</p>
 
           <h3>Welcome Reception on May 31 <span class="strike">(1 Available)</span> Sold out!</h3>
