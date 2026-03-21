@@ -287,7 +287,7 @@ export default function ({ html }) {
             <tr>
               <td><b>Quantity</b></td>
               <td>1</td>
-              <td>1</td>
+              <td><span class="strike">1<span> Sold out!</td>
               <td><span class="strike">12</span> 5 left</td>
               <td>Multiple</td>
               <td>Multiple</td>
@@ -415,10 +415,10 @@ export default function ({ html }) {
           <h3>Workshop (1 left!)</h3>
           <p>A dedicated, hands-on workshop session where sponsors can teach a topic relevant to the CascadiaJS audience. Workshops offer deep engagement and are well suited for developer tools, platforms, and technical training.</p>
 
-          <h3>Welcome Reception on May 31 (1 Available)</h3>
+          <h3>Welcome Reception on May 31 <span class="strike">(1 Available)</span> Sold out!</h3>
           <p>Branding and recognition at the social event that kicks off the conference. This option associates your brand with one of the highest-energy, most well-attended moments of the event.</p>
 
-          <h3>Networking Mixer on June 1 (4 left!)</h3>
+          <h3>Networking Mixer on June 1 (3 left!)</h3>
           <p>Connect and have high quality conversations with some of the best talent in the Pacific Northwest. The mixer will take place right after the Day One talks conclude.</p>
 
           <h3>Karaoke on June 2 (1 Available)</h3>
