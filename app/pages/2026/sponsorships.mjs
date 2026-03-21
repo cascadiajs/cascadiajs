@@ -287,7 +287,7 @@ export default function ({ html }) {
             <tr>
               <td><b>Quantity</b></td>
               <td>1</td>
-              <td><span class="strike">1</span> Sold out!</td>
+              <td>Sold out!</td>
               <td><span class="strike">12</span> 5 left</td>
               <td>Multiple</td>
               <td>Multiple</td>
