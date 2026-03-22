@@ -11,34 +11,12 @@ export default function ({ html, state }) {
   } else {
     return html`<style>
         #landing h2 {
-            margin-top: 40px;
-            margin-bottom: 40px;
+          margin-top: 40px;
+          margin-bottom: 40px;
         }
 
         #hero {
           text-align: left;
-        }
-
-        nav {
-          background-color: #17c37b;
-          padding: 10px;
-          font-family: "mono45-headline", monospace;
-          font-size: 21px;
-          font-weight: 500;
-        }
-
-        nav > div > div {
-          margin-bottom: 8px;
-        }
-
-        nav a,
-        nav a:visited {
-          color: #112378;
-          text-decoration: none;
-        }
-
-        nav a:hover {
-          text-decoration: underline;
         }
 
         #features {
@@ -115,9 +93,22 @@ export default function ({ html, state }) {
 
         #hero-container {
           position: relative;
+          min-height: 100svh;
         }
 
-        .video-container::after {
+        .hero-video {
+          overflow: hidden;
+        }
+
+        .hero-video video {
+          width: 100%;
+          height: 100svh; /* svh = small viewport height, accounts for mobile browser chrome */
+          object-fit: cover; /* crops to fill, preserves aspect ratio */
+          object-position: center; /* control crop anchor point */
+          transform: scale(1.2); /* scale until bars are hidden */
+        }
+
+        .hero-video::after {
           content: "";
           position: absolute;
           inset: 0;
@@ -138,26 +129,20 @@ export default function ({ html, state }) {
         .video-overlay h2 {
           color: #fff;
           font-family: freight-macro-pro;
-          width: 50%;
-          font-size: clamp(16px, 5vw, 60px);
+          font-size: clamp(16px, 10vw, 60px);
           margin: 0;
         }
 
         .video-overlay p {
           color: #fff;
-          width: 50%;
-          font-size: clamp(8px, 2vw, 24px);
+          font-size: clamp(8px, 8vw, 24px);
         }
 
         .video-overlay .date-location {
           font-family: freight-macro-pro;
           width: 50%;
-          font-size: clamp(10px, 3vw, 32px);
+          font-size: clamp(10px, 5vw, 32px);
           line-height: 1.125;
-        }
-
-        .video-overlay .reserve-your-spot {
-          display: none;
         }
 
         #pricing {
@@ -225,23 +210,8 @@ export default function ({ html, state }) {
             z-index: 1000;
           }
 
-          nav > div {
-            display: flex;
-            align-items: center;
-            margin: 0 auto;
-            justify-content: center;
-          }
-
-          #nav-logo {
-            padding-top: 2px;
-          }
-
-          nav > div > div {
-            margin-right: 40px;
-          }
-
-          a.logo {
-            margin-bottom: 0;
+          .video-overlay p {
+            width: 50%;
           }
 
           .video-overlay .reserve-your-spot {
@@ -283,14 +253,23 @@ export default function ({ html, state }) {
         <div id="landing">
           <section id="hero">
             <div id="hero-container">
-              <div class="video-container">
-                <iframe
+              <div class="hero-video">
+                <!--iframe
                   src="https://customer-err733fa36e0jnfx.cloudflarestream.com/a439eea2d251499f21c9388ebc2d5370/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2Fa439eea2d251499f21c9388ebc2d5370%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
                   loading="lazy"
                   style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
                   allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                   allowfullscreen="true"
-                ></iframe>
+                ></iframe-->
+                <video
+                  preload="auto"
+                  muted=""
+                  autoplay=""
+                  loop=""
+                  playsinline=""
+                >
+                  <source src="_public/sizzle.mp4" type="video/mp4" />
+                </video>
               </div>
               <div class="video-overlay">
                 <div>
@@ -318,24 +297,11 @@ export default function ({ html, state }) {
               </div>
             </div>
           </section>
+
           <section id="nav">
-            <nav>
-              <div>
-                <div id="nav-logo">
-                  <a href="/2026"
-                    ><img
-                      height="64"
-                      src="/_public/images/icon-dark-blue.png"
-                      alt="CascadiaJS logo"
-                  /></a>
-                </div>
-                <div><a href="#pricing">Pricing</a></div>
-                <div><a href="#speakers">Speakers</a></div>
-                <div><a href="/2026/trainings">Training</a></div>
-                <div><a class="buy" href="/2026/tickets">Tickets</a></div>
-              </div>
-            </nav>
+            <nav-2026></nav-2026>
           </section>
+
           <section id="features">
             <div class="feature-container">
               <div>
