@@ -103,17 +103,17 @@ export default function Sponsors({ html }) {
                     (s) => /*html*/ `
                     ${
                       ["platinum", "gold", "silver"].includes(s.tier)
-                        ? `<div><a href="${s.url}"><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></a></div>`
+                        ? `<div><a target="_new" href="${s.url}"><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></a></div>`
                         : `<div><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></div>`
                     }
-                `
+                `,
                   )
                   .join("")}
                 </div>
             `
                 : ""
             }        
-        `
+        `,
         )
         .join("")}
     </div>`;

@@ -586,6 +586,20 @@ const sponsors = {
       name: "AI Portland",
       url: "https://www.meetup.com/ai-portland/",
     },
+    {
+      id: "pulumi",
+      tier: "platinum",
+      logo: "pulumi.svg",
+      name: "Pulumi",
+      url: "https://www.pulumi.com",
+    },
+    {
+      id: "chain-react",
+      tier: "silver",
+      logo: "chain-react.svg",
+      name: "Chain React",
+      url: "https://ti.to/chainreact/chainreact2026/discount/CASCADIA26",
+    },
   ],
 };
 

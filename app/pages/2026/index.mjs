@@ -123,25 +123,25 @@ export default function ({ html, state }) {
         }
 
         .video-overlay div img {
-          width: 20%;
+          width: 300px;
         }
 
         .video-overlay h2 {
           color: #fff;
           font-family: freight-macro-pro;
-          font-size: clamp(16px, 10vw, 60px);
+          font-size: clamp(16px, 8vw, 60px);
           margin: 0;
         }
 
         .video-overlay p {
           color: #fff;
-          font-size: clamp(8px, 8vw, 24px);
+          font-size: clamp(18px, 2vw, 24px);
         }
 
         .video-overlay .date-location {
           font-family: freight-macro-pro;
           width: 50%;
-          font-size: clamp(10px, 5vw, 32px);
+          font-size: clamp(18px, 2vw, 24px);
           line-height: 1.125;
         }
 
