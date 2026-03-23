@@ -53,7 +53,7 @@ Why $15? A small fee helps reduce no-shows and ensures scholarship tickets go to
 Our Scholarship Program only exists because of the support and generosity of our community. Here's how you can help:
 
 * Make a donation. Any amount helps!
-* Spread the word by sharing this application with relevant people or organiations. 
+* Spread the word by sharing this application with relevant people and organizations. 
 
 Thanks to a generous donation from [Greg Bulmash](https://bulmash.com/) this year, we have some scholarships available for people who are recently unemployed due to layoffs/downsizing. From Greg:
 
