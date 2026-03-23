@@ -55,9 +55,11 @@ Our Scholarship Program only exists because of the support and generosity of our
 * Make a donation. Any amount helps!
 * Spread the word by sharing this application with relevant people or organiations. 
 
-<p>Thanks to a generous donation from [Greg Bulmash](https://bulmash.com/) this year, we have some scholarships available for people who are recently unemployed due to layoffs/downsizing. From Greg:</p>
+Thanks to a generous donation from [Greg Bulmash](https://bulmash.com/) this year, we have some scholarships available for people who are recently unemployed due to layoffs/downsizing. From Greg:
 
-<p>"Getting laid off is depressing, isolating, and financially difficult. CascadiaJS has long been a source of inspiration and community for me. This grant is intended to buy tickets for developers who are currently unemployed due to a layoff / downsizing within the last couple of years. The intent is to give you a distraction from worrying, build your confidence and your community, and send you home with new knowledge and a bunch of new friends and acquaintances."</p>
+"Getting laid off is depressing, isolating, and financially difficult. CascadiaJS has long been a source of inspiration and community for me. This grant is intended to buy tickets for developers who are currently unemployed due to a layoff / downsizing within the last couple of years. The intent is to give you a distraction from worrying, build your confidence and your community, and send you home with new knowledge and a bunch of new friends and acquaintances."
+
+<script src="https://js.tito.io/v2" async></script>
 
 <tito-widget event="event-loop/cascadiajs-2026" releases="scholarship-donation"></tito-widget>
 
