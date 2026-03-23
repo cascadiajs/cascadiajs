@@ -102,7 +102,10 @@ export default function ({ html, state }) {
 
         .hero-video video {
           width: 100%;
-          height: 100svh; /* svh = small viewport height, accounts for mobile browser chrome */
+          height: max(
+            100svh,
+            600px
+          ); /* svh = small viewport height, accounts for mobile browser chrome */
           object-fit: cover; /* crops to fill, preserves aspect ratio */
           object-position: center; /* control crop anchor point */
           transform: scale(1.2); /* scale until bars are hidden */
