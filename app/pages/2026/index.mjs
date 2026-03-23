@@ -374,7 +374,7 @@ export default function ({ html, state }) {
                   <strong>Includes:</strong>
                   <ul>
                     <li>Access to all talks</li>
-                    <li>Access to all workshops</li>
+                    <li>Priority access to free workshops</li>
                     <li>Conference hoodie *</li>
                     <li>Meals Pass</li>
                     <li>
@@ -397,7 +397,7 @@ export default function ({ html, state }) {
                   <strong>Includes:</strong>
                   <ul>
                     <li>Access to all talks</li>
-                    <li>Access to all workshops</li>
+                    <li>Priority access to free workshops</li>
                     <li>Conference hoodie *</li>
                     <li>Meals Pass</li>
                     <li>
@@ -424,7 +424,7 @@ export default function ({ html, state }) {
                   <strong>Includes:</strong>
                   <ul>
                     <li>Access to all talks</li>
-                    <li>Access to all workshops</li>
+                    <li>Access to free workshops</li>
                     <li>Access to all networking events &amp; parties</li>
                   </ul>
                 </div>
@@ -441,7 +441,7 @@ export default function ({ html, state }) {
                   <strong>Includes:</strong>
                   <ul>
                     <li>Access to all talks</li>
-                    <li>Access to all workshops</li>
+                    <li>Access to free workshops</li>
                     <li>Access to all networking events &amp; parties</li>
                   </ul>
                   <p>Must be a student who is not working in tech full-time.</p>
