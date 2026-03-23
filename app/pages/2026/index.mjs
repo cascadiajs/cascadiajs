@@ -378,7 +378,7 @@ export default function ({ html, state }) {
                     <li>Conference hoodie *</li>
                     <li>Meals Pass</li>
                     <li>
-                      Priority access to all networking events &amp;parties
+                      Priority access to all networking events &amp; parties
                     </li>
                     <li>+1 for the Closing Party</li>
                   </ul>
