@@ -32,7 +32,7 @@ The Opportunity Scholarship Program is open to anyone who:
 
     b. Has financial constraints that make purchasing a ticket a blocker
 
-    c. Is currently unemployed due to a recent layoff or downsizing*
+    c. Is currently unemployed due to a recent layoff or downsizing
 ```
 
 <h2 id="howitworks">How it works</h2>
