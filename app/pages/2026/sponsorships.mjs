@@ -427,7 +427,7 @@ export default function ({ html }) {
           <h3>Coffee (1 Available)</h3>
           <p>Branding at conference coffee stations throughout the day. Coffee sponsorships provide high-frequency visibility and consistent foot traffic, making them one of the most effective brand placements at the event.</p>
 
-          <h3>Lanyards (1 Available)</h3>
+          <h3>Lanyards <span class="strike">(1 Available)</span> Sold out!</h3>
           <p>Logo placement on official attendee lanyards worn throughout the conference. This offers constant visibility during sessions, networking, and social events.</p>
 
           <h3>Tote Bags (1 Available)</h3>
