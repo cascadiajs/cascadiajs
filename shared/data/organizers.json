@@ -205,5 +205,42 @@
       "location": "Seattle, WA",
       "role": "Volunteer"
     }
+  ],
+    "2026": [
+    {
+      "id": "",
+      "name": "Carter Rabasa",
+      "image": "carter-rabasa.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Lead Organizer"
+    },
+    {
+      "id": "",
+      "name": "Carrie Rabasa",
+      "image": "carrie-rabasa.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Co-Organizer"
+    },
+    {
+      "id": "",
+      "name": "Elise Worthy",
+      "image": "elise-worthy.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Sponsorships"
+    },
+    {
+      "id": "",
+      "name": "Adam Argyle",
+      "image": "adam-argyle.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Co-Emcee"
+    },
+    {
+      "id": "",
+      "name": "Robbie Wagner",
+      "image": "robbie-wagner.jpg",
+      "location": "Virginia, USA",
+      "role": "Co-Organizer"
+    }
   ]
 }

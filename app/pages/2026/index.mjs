@@ -455,6 +455,8 @@ export default function ({ html, state }) {
             <talks-grid type="keynote"></talks-grid>
             <h1>Speakers</h1>
             <talks-grid type="main,lightning"></talks-grid>
+            <h1>Organizers</h1>
+            <organizers-grid></organizers-grid>
           </section>
         </div>
       </layout-2026>`;

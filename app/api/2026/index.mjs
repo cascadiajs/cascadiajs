@@ -1,4 +1,5 @@
 import talks from "../../../shared/data/2026/talks.json" with { type: "json" };
+import organizers from "../../../shared/data/organizers.json" with { type: "json" };
 
 export async function get({ query, path }) {
   const { social } = query;
@@ -18,9 +19,8 @@ export async function get({ query, path }) {
       path,
       talks,
       sharing,
-      /*attendees,
-      organizers: organizers["2025"],*/
-      year: 2026,
+      /*attendees,*/
+      organizers: organizers["2026"],
     },
   };
 }
