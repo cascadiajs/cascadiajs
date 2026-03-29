@@ -600,6 +600,34 @@ const sponsors = {
       name: "Chain React",
       url: "https://ti.to/chainreact/chainreact2026/discount/CASCADIA26",
     },
+    {
+      id: "uber",
+      tier: "bronze",
+      logo: "uber.svg",
+      name: "Uber",
+      url: "https://www.uber.com",
+    },
+    {
+      id: "vanjs",
+      tier: "community",
+      logo: "vanjs.svg",
+      name: "VanJS",
+      url: "https://www.luma.com/vanjs",
+    },
+    {
+      id: "copilotkit",
+      tier: "gold",
+      logo: "copilotkit.svg",
+      name: "CopilotKit",
+      url: "https://www.copilotkit.ai",
+    },
+    {
+      id: "warp",
+      tier: "bronze",
+      logo: "warp.svg",
+      name: "Warp",
+      url: "https://www.warp.dev",
+    },
   ],
 };
 
