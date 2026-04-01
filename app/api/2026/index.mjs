@@ -21,6 +21,7 @@ export async function get({ query, path }) {
       sharing,
       /*attendees,*/
       organizers: organizers["2026"],
+      year: "2026",
     },
   };
 }
