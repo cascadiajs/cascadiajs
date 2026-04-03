@@ -20,17 +20,16 @@ excerpt: Most AI agent tutorials end at "call the LLM API and return the result.
 * Add fault tolerance patterns: auto-retries, circuit breakers, graceful degradation
 * Orchestrate parallel work across background workers that scale independently
 
-​## What you'll walk away with:
+## What you'll walk away with:
 
-​* A deployed, production-ready app powered by durable workflows
-* A GitHub repo you can keep building o
-
+* A deployed, production-ready app powered by durable workflows
+* A GitHub repo you can keep building on
+  
 ## Prerequisites:
 
 * ​Laptop with Node.js installed
 * GitHub account
 * Code editor of your choice
-* We recommend GitHub Codespaces for a zero-install experience. A pre-configured devcontainer is provided.
 
 ​**Experience level:** All levels welcome
 
