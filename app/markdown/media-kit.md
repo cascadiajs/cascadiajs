@@ -1,3 +1,3 @@
 ---
-redirect: /2025/media-kit
+redirect: /2026/media-kit
 ---
