@@ -1,5 +1,4 @@
 [{
-    
     "title": "Keynote",
     "type": "keynote",
     "speaker": {
@@ -11,6 +10,20 @@
       "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805" },
         { "type": "x-twitter", "url": "https://x.com/biilmann" }
+      ]
+    }
+  },
+  {
+    "title": "Keynote",
+    "type": "keynote",
+    "speaker": {
+      "name": "Joe Duffy",
+      "slug": "joe-duffy",
+      "image": "/_public/images/2026/speakers/joe-duffy.jpg",
+      "company": "Pulumi",
+      "location": "Seattle, WA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/joejduffy/" }
       ]
     }
   },
@@ -44,12 +57,6 @@
       ]
     }
   },
-  {
-    "type": "keynote",
-    "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
-    }
-  },
   { 
     "title": "AI Agent Swarms are Amazing",
     "type": "main",
@@ -63,24 +70,6 @@
       "location": "Portland, OR USA",
       "social": [
         { "type": "x-twitter", "url": "https://x.com/joelhooks" }
-      ]
-    }
-  },
-  { 
-    "title": "The Last Website You'll Ever Visit",
-    "type": "main",
-    "slug": "the-last-website-youll-ever-visit",
-    "abstract": "When was the last time you visited Stack Overflow?\n\nIf you are like most developers, you are asking an AI agent first. This marks a fundamental shift. We are moving from a navigation based web, where you go to a site, to an intent based web, where the result comes to you.\n\nFor years, we tried to keep users inside our apps by stuffing chatbots into the corners of our pages. You know the one. “A girl in your area wants to chat with you” about cloud infrastructure, of course. These bots were meant to automate support and keep users on our URLs.\n\nBut users have moved on. They are staying inside AI agents to get things done. If the user will not go to your URL, your app has to go to them.\n\nJoin Rizel to learn about MCP-UI and MCP Apps, an open standard that allows developers to render fully interactive, bidirectional interfaces directly inside agents like goose. You will learn why the URL is becoming a tool call and how your frontend skills position you to build the mini apps that will define the agentic era.",
-    "speaker": {
-      "name": "Rizel Scarlett",
-      "slug": "rizel-scarlett",
-      "image": "/_public/images/2026/speakers/rizel-scarlett.jpg",
-      "company": "Block",
-      "location": "Boston, MA USA",
-      "social": [
-        { "type": "linkedin", "url": "http://linkedin.com/in/rizel-bobb-semple" },
-        { "type": "x-twitter", "url": "http://x.com/blackgirlbytes" },
-        { "type": "bluesky", "url": "https://bsky.app/profile/blackgirlbytes.bsky.social" }
       ]
     }
   },  
@@ -315,6 +304,22 @@
       ]
     }
   },
+  { 
+    "title": "Building an AI Platform Your Engineers Actually Trust",
+    "type": "lightning",
+    "slug": "building-an-ai-platform-your-engineers-actually-trust",
+    "abstract": "Every engineering org has the same problem: developers use AI tools individually, but the organization can't measure, govern, or scale the impact. We went from scattered copilot usage and zero metrics to governed agent environments, shared tooling, and a measurement pipeline that proves what actually works. This is the story of how we built the infrastructure that turned individual AI adoption into organizational capability, and what the data told us along the way.",
+    "speaker": {
+      "name": "Jeff Otaño",
+      "slug": "jeff-otano",
+      "image": "/_public/images/2026/speakers/jeff-otano.jpg",
+      "company": "Onebrief",
+      "location": "Denver, CO USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/jeffrey-otano/" }
+      ]
+    }
+  },  
   {
     "type": "main",
     "speaker": {

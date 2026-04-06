@@ -628,6 +628,20 @@ const sponsors = {
       name: "Warp",
       url: "https://www.warp.dev",
     },
+    {
+      id: "seattlejs",
+      tier: "community",
+      logo: "seattlejs.png",
+      name: "SeattleJS",
+      url: "https://www.seattlejs.com",
+    },
+    {
+      id: "wpengine",
+      tier: "community",
+      logo: "wpengine.png",
+      name: "WP Engine",
+      url: "https://www.wpengine.com",
+    },
   ],
 };
 
