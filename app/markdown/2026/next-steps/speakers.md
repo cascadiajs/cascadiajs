@@ -40,7 +40,7 @@ The Hotel Monaco is the official speaker hotel.
 
 For speakers whose lodging is not being covered by their company:
 
-We will cover 3 nights of lodging at the Hotel Monaco with a check-in on May 31 and checkout on June 3. If you'd like to arrive earlier or depart later, that's totally OK, you'll just need to cover those extra nights. For assistance, contact allyssia.avitia@monaco-seattle.com to book those extra nights.
+We will cover 3 nights of lodging at the Hotel Monaco with a check-in on May 31 and checkout on June 3. If you'd like to arrive earlier or depart later, that's totally OK, you'll just need to cover those extra nights. For assistance, contact skylar.ratty@monaco-seattle.com to book those extra nights.
 
 ### Corporate Sponsorship
 
