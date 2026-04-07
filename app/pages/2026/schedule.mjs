@@ -115,8 +115,8 @@ function May31() {
                     <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
                         <div class="title">Welcome Reception &amp; Pre-Registration by <img src="/_public/images/sponsors/warp.png"/></div>
-                        <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and have fun with our friends from Warp and Whiskey Web.</p>
-                        <p>What if a party game built real software? Join Warp and Whiskey Web at the CascadiaJS Welcome Reception to find out. Pitch your wildest app idea from your phone, watch Oz bring it to life (complete with box art and a functional demo) and vote on the best ones. Drinks and Claude tokens included.</p>
+                        <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and have fun with our friends from Warp and Whiskey Web and Whatnot.</p>
+                        <p>What if a party game built real software? Join Warp and Whiskey Web and Whatnot at the CascadiaJS Welcome Reception to find out. Pitch your wildest app idea from your phone, watch Oz bring it to life (complete with box art and a functional demo) and vote on the best ones. Drinks and Claude tokens included.</p>
                     </div>
                 </div>
             </div>
