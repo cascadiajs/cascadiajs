@@ -227,7 +227,7 @@ function June1({ talks, ticket = undefined }) {
                     <div class="when">6:30pm</div>
                     <div class="what">
                         <div class="title">Networking Mixer</div>
-                        <p>Connect and have high quality conversations with your fellow attendees and companies that are hiring. The mixer will take place right after the Day One talks conclude.</p>
+                        <p>Connect and have high quality conversations with your fellow attendees and companies that are hiring, like Grow Therapy, Onebrief and more. The mixer will take place right after the Day One talks conclude.</p>
                     </div>
                 </div>
                 <div class="show track">   
