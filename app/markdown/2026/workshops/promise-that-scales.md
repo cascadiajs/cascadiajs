@@ -3,7 +3,7 @@ title: The Promise.all That Actually Scales
 excerpt: Most AI agent tutorials end at "call the LLM API and return the result." But what happens when your agent needs to do five things at once, each one taking 30 seconds, and you don't want your users staring at a spinner for three minutes?
 ---
 
-* When: Tuesday, June 2 (9am - 12pm)
+* When: Tuesday, June 2 (10:20am - 12:20pm)
 * Where: Town Hall, Forum level
 <!--* Instructor: [Sarah Guthals](https://twitter.com/drguthals)-->
 
