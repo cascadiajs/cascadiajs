@@ -5,7 +5,7 @@ excerpt: AI agents are becoming more popular, but to make them more useful and c
 
 * When: Monday, June 1 (1:40pm - 3:40pm)
 * Where: Town Hall, Forum level
-* Instructor: [Michael Daigler, Developer Advocate @ Apify](https://x.com/michaeldaigler)
+* Instructor: [Michael Daigler, Developer Advocate at Apify](https://x.com/michaeldaigler)
 
 AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools.
 
