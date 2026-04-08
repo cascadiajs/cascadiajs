@@ -199,17 +199,17 @@ function June1({ talks, ticket = undefined }) {
                 <h3>Workshop Track</h3>
                 <div class="location">Forum</div>
                 <div class="show-item">       
-                    <div class="when">10:30am</div>
-                    <div class="what">
-                        <div class="title"><a href="/2026/workshops/deploying-ai-agents">Deploying AI Agents on AWS with Pulumi and Amazon Bedrock AgentCore</a></div>
-                        <div class="speaker">​In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.</div>
-                    </div>
-                </div>
-                <div class="show-item">       
-                    <div class="when">1:30pm</div>
+                    <div class="when">10:20am</div>
                     <div class="what">
                         <div class="title">TBD Workshop</div>
                         <div class="speaker">More info coming soon!</div>
+                    </div>
+                </div>
+                <div class="show-item">       
+                    <div class="when">1:40pm</div>
+                    <div class="what">
+                        <div class="title"><a href="/2026/workshops/recipe-better-agents">Tools + Skills: The Recipe for Better Agents</a></div>
+                        <div class="speaker">AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools. In this workshop, participants will learn both sides of that equation.</div>
                     </div>
                 </div>
             </div>
@@ -304,17 +304,17 @@ function June2({ talks, ticket = undefined }) {
                 <h3>Workshop Track</h3>
                 <div class="location">Forum</div>
                 <div class="show-item">       
-                    <div class="when">10:30am</div>
+                    <div class="when">10:20am</div>
                     <div class="what">
                         <div class="title"><a href="/2026/workshops/promise-that-scales">The Promise.all That Actually Scales</a></div>
                         <div class="speaker">​Most AI agent tutorials end at "call the LLM API and return the result." But what happens when your agent needs to do five things at once, each one taking 30 seconds, and you don't want your users staring at a spinner for three minutes?</div>
                     </div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">1:30pm</div>
+                    <div class="when">1:40pm</div>
                     <div class="what">
-                        <div class="title">TBD Workshop</div>
-                        <div class="speaker">More info coming soon!</div>
+                        <div class="title"><a href="/2026/workshops/deploying-ai-agents">Deploying AI Agents on AWS with Pulumi and Amazon Bedrock AgentCore</a></div>
+                        <div class="speaker">​In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.</div>
                     </div>
                 </div>
             </div>
