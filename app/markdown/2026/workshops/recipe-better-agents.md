@@ -1,6 +1,6 @@
 ---
-title: Test title
-excerpt: Test excerpt
+title: Tools + Skills - The Recipe for Better Agents
+excerpt: AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools. In this workshop, participants will learn both sides of that equation.
 ---
 
 * When: Monday, June 1 (1:40pm - 3:40pm)
