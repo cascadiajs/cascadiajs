@@ -2,6 +2,7 @@
 title: Tools + Skills - The Recipe for Better Agents
 excerpt: AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools. In this workshop, participants will learn both sides of that equation.
 ---
+<img src="/_public/images/workshops/michael-daigler.jpg" width="300" alt="Michael Daigler">
 
 * When: Monday, June 1 (1:40pm - 3:40pm)
 * Where: Town Hall, Forum level
