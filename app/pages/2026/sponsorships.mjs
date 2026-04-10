@@ -421,9 +421,9 @@ export default function ({ html }) {
           <h3>Networking Mixer on June 1 (3 left!)</h3>
           <p>Connect and have high quality conversations with some of the best talent in the Pacific Northwest. The mixer will take place right after the Day One talks conclude.</p>
 
-          <h3>Karaoke on June 2 (1 Available)</h3>
-          <p>Brand recognition at a fun, informal evening karaoke event popular with attendees. This add-on creates a memorable association between your brand and one of the conference’s most talked-about social experiences.</p>
-
+          <h3>Private Karaoke Room at Closing Party on June 2 (Multiple available)</h3>
+          <p>Hang out with attendees, your team and guests in your own private karaoke room that you can brand and decorate as you like. This add-on creates a memorable association between your brand and one of the conference’s most talked-about social experiences.</p>
+          
           <h3>Coffee (1 Available)</h3>
           <p>Branding at conference coffee stations throughout the day. Coffee sponsorships provide high-frequency visibility and consistent foot traffic, making them one of the most effective brand placements at the event.</p>
 
