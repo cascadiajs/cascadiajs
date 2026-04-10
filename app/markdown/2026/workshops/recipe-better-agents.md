@@ -33,3 +33,7 @@ Understanding how to:
 * Laptop with internet access
 * Node.js, a coding agent (Claude Code or Cursor)
 * An Apify account (free credits provided)
+
+## About Michael
+
+Michael is a Developer Advocate at Apify, where he focuses on educating and helping developers and AI builders leverage Apify tools for their AI agents and workflows. He also runs AITX Community, a community for AI engineers and entrepreneurs across Texas. He's based in Austin, TX.
