@@ -430,7 +430,7 @@ export default function ({ html }) {
           <h3>Lanyards <span class="strike">(1 Available)</span> Sold out!</h3>
           <p>Logo placement on official attendee lanyards worn throughout the conference. This offers constant visibility during sessions, networking, and social events.</p>
 
-          <h3>Tote Bags (1 Available)</h3>
+          <h3>Tote Bags <span class="strike">(1 Available)</span> Sold out!</h3>
           <p>Logo placement on the official CascadiaJS tote bags given to attendees. Tote bags extend brand visibility beyond the event as attendees continue using them after the conference.</p>
 
           <h3>Videos (1 Available)</h3>
