@@ -62,7 +62,7 @@ function May29() {
                 <div class="show-item">       
                     <div class="when">5pm</div>
                     <div class="what">
-                        <div class="title"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon">Cascadia AI Hackathon</a></div>
+                        <div class="title"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026">Cascadia AI Hackathon</a></div>
                         <p>We're hosting an AI hackathon leading up to CascadiaJS 2026! Stay tuned for more details, but it will kick-off Friday evening and conclude Saturday afternoon, with the winning team being invited to demo what they built at CascadiaJS 2026!</p>
                     </div>
                 </div>
