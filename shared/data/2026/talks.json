@@ -1,5 +1,5 @@
 [{
-    "title": "Keynote",
+    "title": "Day One Opening Keynote",
     "type": "keynote",
     "speaker": {
       "name": "Matt Biilmann",
@@ -48,7 +48,7 @@
     "speaker": {
       "name": "Francesco Ciulla",
       "slug": "francesco-ciulla",
-      "image": "/_public/images/2026/speakers/francesco.jpg",
+      "image": "/_public/images/2026/speakers/francesco-ciulla.jpg",
       "company": "Zerops",
       "location": "Rome, Italy",
       "social": [
@@ -74,10 +74,40 @@
     }
   },  
   { 
+    "title": "Unlocking AI's Hidden Connections with Graphs",
+    "type": "main",
+    "slug": "unlocking-ais-hidden-connections-with-graphs",
+    "abstract": "When AI agents have to execute complex, multi-hop reasoning across interconnected knowledge domains, traditional Retrieval-Augmented Generation (RAG) systems fail. Although vector-based retrieval is very good at finding content that is semantically similar, it cannot find meaningful connections between data, which leads to hallucinations. In this talk, we'll dive into how engineers can ground agents and large language models (LLMs) to uncover connections in data that are often missed by conventional RAG techniques",
+    "speaker": {
+      "name": "Nyah Macklin",
+      "slug": "nyah-macklin",
+      "image": "/_public/images/2026/speakers/nyah-macklin.jpg",
+      "company": "Neo4j",
+      "location": "San Francisco, CA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://linkedin.com/in/nyahmacklin," },
+        { "type": "x-twitter", "url": "https:/x.com/NyahMacklinDev" }      ]
+    }
+  },  
+  { 
+    "title": "Coming Soon",
+    "type": "main",
+    "speaker": {
+      "name": "James Ide",
+      "slug": "james-ide",
+      "image": "/_public/images/2026/speakers/james-ide.jpg",
+      "company": "Expo",
+      "location": "Palo Alto, CA USA",
+      "social": [
+        { "type": "github", "url": "https://github.com/ide," },
+        { "type": "x-twitter", "url": "https:/x.com/JI" }      ]
+    }
+  },  
+  { 
     "title": "Teaching LLMs New Tricks",
     "type": "main",
     "slug": "teaching-llms-new-tricks",
-    "abstract": "AI bias for dominant patterns means training data = market share. That’s innovation friction! The right syntax, wrong semantics, e.g. any innovation with JSX looks like React. Explore specific strategies that work, co-developed with AI, and tested in real world projects.",
+    "abstract": "AI bias for dominant patterns means training data = market share. That's innovation friction! The right syntax, wrong semantics, e.g. any innovation with JSX looks like React. Explore specific strategies that work, co-developed with AI, and tested in real world projects.",
     "speaker": {
       "name": "Marty Nelson",
       "slug": "marty-nelson",
@@ -123,7 +153,7 @@
     "title": "Keep the Main Thread Free with Web Workers",
     "type": "main",
     "slug": "keep-the-main-thread-free-with-web-workers",
-    "abstract": "When heavy compute runs on the main thread, the UI stutters. I’ll show how to spot main-thread blocking, then move filtering/aggregation work into Web Workers with a clean message protocol, debouncing, progress updates, and cancellation so the UI stays smooth.",
+    "abstract": "When heavy compute runs on the main thread, the UI stutters. I'll show how to spot main-thread blocking, then move filtering/aggregation work into Web Workers with a clean message protocol, debouncing, progress updates, and cancellation so the UI stays smooth.",
     "speaker": {
       "name": "Courtney Yatteau",
       "slug": "courtney-yatteau",
@@ -174,7 +204,7 @@
     "title": "Beowulf Stroganoff: Building Economically Useless Chatbots",
     "type": "lightning",
     "slug": "beowulf-stroganoff-building-economically-useless-chatbots",
-    "abstract": "OpenAI says that AGI will perform “most economically valuable work,” but aren't the best things in life economically useless? I’ll explore what we can learn, both technically and artistically, from fine-tuning models with public domain texts like Beowulf and old cookbooks.",
+    "abstract": "OpenAI says that AGI will perform “most economically valuable work,” but aren't the best things in life economically useless? I'll explore what we can learn, both technically and artistically, from fine-tuning models with public domain texts like Beowulf and old cookbooks.",
     "speaker": {
       "name": "Molly Jean Bennett",
       "slug": "molly-jean-bennett",
@@ -207,7 +237,7 @@
     "title": "AI helped me learn: Vue through the lens of a React Developer",
     "type": "lightning",
     "slug": "ai-helped-me-learn-vue-through-the-lens-of-a-react-developer",
-    "abstract": "AI, React, Vue - what do all of these things have in common? They are tools meant to enhance the development experience - we must remember that. Join me in going over best practices on using AI to LEARN and not to do you your job for you “poorly I might add”. I’ll take you through the steps of how I used AI as a React developer to learn Vue - did I actually learn? Join this talk to find out!",
+    "abstract": "AI, React, Vue - what do all of these things have in common? They are tools meant to enhance the development experience - we must remember that. Join me in going over best practices on using AI to LEARN and not to do you your job for you “poorly I might add”. I'll take you through the steps of how I used AI as a React developer to learn Vue - did I actually learn? Join this talk to find out!",
     "speaker": {
       "name": "Daniel Mendoza",
       "slug": "daniel-mendoza",
@@ -240,7 +270,7 @@
     "title": "LLM Is Now the Drone Pilot. What Could Go Wrong?",
     "type": "main",
     "slug": "llm-is-now-the-drone-pilot-what-could-go-wrong",
-    "abstract": "We’ve all asked an LLM to write an email, draft some code, or summarize a meeting. But what if we gave it the controls to something a bit more… kinetic? Like, say, a drone. What could possibly go wrong? In this talk, we’ll explore the rise of autonomous AI agents through the lens of everyone’s favorite nightmare scenario: the chatbot that can actually move things in the real world. We’ll laugh (and maybe wince) our way through examples of unexpected agent behavior, the thin line between “smart assistant” and “chaotic intern,” and the real risks of turning text prediction into real-world action. By the end, you’ll know both why autonomous agents are so exciting—and why you might want to keep them very far away from your flying lawnmower",
+    "abstract": "We've all asked an LLM to write an email, draft some code, or summarize a meeting. But what if we gave it the controls to something a bit more… kinetic? Like, say, a drone. What could possibly go wrong? In this talk, we'll explore the rise of autonomous AI agents through the lens of everyone's favorite nightmare scenario: the chatbot that can actually move things in the real world. We'll laugh (and maybe wince) our way through examples of unexpected agent behavior, the thin line between “smart assistant” and “chaotic intern,” and the real risks of turning text prediction into real-world action. By the end, you'll know both why autonomous agents are so exciting—and why you might want to keep them very far away from your flying lawnmower",
     "speaker": {
       "name": "Confidence Okoghenun",
       "slug": "confidence-okoghenun",
@@ -274,7 +304,7 @@
     "title": "The Request Tax: Re-evaluating 20+ Years of Web Performance Dogma",
     "type": "lightning",
     "slug": "the-request-tax-re-evaluating-20-years-of-web-performance-dogma",
-    "abstract": "For 20 years, we've been told to \"Minimize HTTP Requests.\" But is that still true? I'm investigating how HTTP/3 and QUIC change the \"Request Tax\" and why I'm seeing patterns where granular fetches beat monolithic queries. Let’s look at the data and re-evaluate the rules.",
+    "abstract": "For 20 years, we've been told to \"Minimize HTTP Requests.\" But is that still true? I'm investigating how HTTP/3 and QUIC change the \"Request Tax\" and why I'm seeing patterns where granular fetches beat monolithic queries. Let's look at the data and re-evaluate the rules.",
     "speaker": {
       "name": "Alex Moon",
       "slug": "alex-moon",
@@ -330,18 +360,6 @@
     "type": "main",
     "speaker": {
       "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
-    }
-  },
-  {
-    "type": "main",
-    "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-04.png"
-    }
-  },
-  {
-    "type": "main",
-    "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-05.png"
     }
   }
 ]

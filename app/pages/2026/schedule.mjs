@@ -8,7 +8,8 @@ function renderSpeaker(time, talk) {
         <div class="what">
             ${ talk && talk.type === 'keynote' ? /*html*/`<div class="keynote-badge">Keynote</div>` : ""}
             <div class="title">
-                ${ talk ? `<a href="/2026/talks/${ talk.slug }">${ talk.title }</a>` : `TBD` }
+                ${ talk && talk.slug ? `<a href="/2026/talks/${ talk.slug }">${ talk.title }</a>` :
+                    (talk && talk.title ? talk.title : `Coming Soon` )}
             </div>
             <div class="speaker">${ talk ? talk.speaker.name : "" }</div>
         </div>
@@ -58,7 +59,7 @@ function May29() {
         </div>
         <div class="location">TBD</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">5pm</div>
                     <div class="what">
@@ -86,7 +87,7 @@ function May31() {
         </div>
         <div class="location">Pacific Central Station</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">11:30am</div>
                     <div class="what">
@@ -98,7 +99,7 @@ function May31() {
         </div>
         <div class="location">Union Station</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">2:10pm</div>
                     <div class="what">
@@ -110,7 +111,7 @@ function May31() {
         </div>
         <div class="location">Town Hall Seattle</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
@@ -159,36 +160,34 @@ function June1({ talks, ticket = undefined }) {
             <div class="main track">   
                 <h3>Main Track</h3>
                 <div class="location">Great Hall</div>
+                ${ renderSpeaker("9:00am", talks.find(t => t.speaker.slug === 'matt-biilmann'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'joel-hooks'))}
                 <div class="show-item">       
-                    <div class="when">9:00am</div>
-                    <div class="what"><div class="title">Opening Remarks</div></div>
-                </div>
-                ${ renderSpeaker("9:20am", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
-                <div class="show-item">       
-                    <div class="when">10:30am</div>
+                    <div class="when">10:20am</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("11:00am", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("11:00am", talks.find(t => t.speaker.slug === 'james-steinbach'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'courtney-yatteau'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'daniel-mendoza'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'james-ide'))}
                 <div class="location">Forum</div>
                 <div class="show-item">       
                     <div class="when">12:40pm</div>
                     <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div></div>
                 </div>
                 <div class="location">Great Hall</div>
-                ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === 'darius-cepulis'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jonathan-keslin'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'dylan-goings'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jeff-otano'))}
                 <div class="show-item">       
-                    <div class="when">3:15pm</div>
+                    <div class="when">3:20pm</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'joe-duffy'))}
                 <div class="show-item">       
-                    <div class="when">5:30pm</div>
+                    <div class="when">5:10pm</div>
                     <div class="what"><div class="title">Closing Day One</div></div>
                 </div>
             </div>
@@ -216,7 +215,7 @@ function June1({ talks, ticket = undefined }) {
         </div>
         <div class="location">Forum</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">6:00pm</div>
                     <div class="what">
@@ -230,10 +229,11 @@ function June1({ talks, ticket = undefined }) {
                         <p>Connect and have high quality conversations with your fellow attendees and companies that are hiring, like Grow Therapy, Onebrief and more. The mixer will take place right after the Day One talks conclude.</p>
                     </div>
                 </div>
-                <div class="show track">   
-                <div class="show-item">       
-                    <div class="when">9:30pm</div>
-                    <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Day One Close</div></div>
+                <div>   
+                    <div class="show-item">       
+                        <div class="when">9:30pm</div>
+                        <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Day One Close</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -264,36 +264,35 @@ function June2({ talks, ticket = undefined }) {
             <div class="main track">   
                 <h3>Main Track</h3>
                 <div class="location">Great Hall</div>
+                ${ renderSpeaker("9:00am", talks.find(t => t.speaker.slug === 'francesco-ciulla'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'filip-sodic'))}
                 <div class="show-item">       
-                    <div class="when">9:00am</div>
-                    <div class="what"><div class="title">Opening Remarks</div></div>
-                </div>
-                ${ renderSpeaker("9:20am", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
-                <div class="show-item">       
-                    <div class="when">10:30am</div>
+                    <div class="when">10:20am</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("11:30am", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("11:00am", talks.find(t => t.speaker.slug === 'alex-hinson'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'marty-nelson'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'molly-jean-bennett'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'jason-torres'))}
                 <div class="location">Forum</div>
                 <div class="show-item">       
                     <div class="when">12:40pm</div>
                     <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div></div>
                 </div>
                 <div class="location">Great Hall</div>
-                ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === 'nyah-macklin'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'brittany-ellich'))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'alex-moon'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
                 <div class="show-item">       
                     <div class="when">3:15pm</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'theo'))}
                 <div class="show-item">       
-                    <div class="when">5:40pm</div>
-                    <div class="what"><div class="title">Closing Day Two</div></div>
+                    <div class="when">5:10pm</div>
+                    <div class="what"><div class="title">Closing Ceremony</div></div>
                 </div>
             </div>
 
@@ -322,18 +321,20 @@ function June2({ talks, ticket = undefined }) {
         <div class="location">Capitol Hill</div>
         <div class="show-item">       
             <div class="when">6:00pm</div>
-            <div class="what"><div class="title"><i class="fas fa-utensils"></i>Dinner with Friends</div></div>
+            <div class="what"><div class="title"><i class="fas fa-utensils"></i>Dinner with Friends</div>
+            <p>Grab dinner with the new friends you've made at CascadiaJS in Capital Hall. There are dozens of places to choose from!</p>
+            </div>
         </div>
         <div class="location">Rockbox</div>
         <div class="show-item">       
-            <div class="when">7:00pm</div>
+            <div class="when">8:00pm</div>
             <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> Karaoke</div>
             <p>We will wrap-up CascadiaJS with an epic karaoke party at Rockbox Seattle. We are <b>buying out</b> the venue and there are 12 different rooms that we can use. Premium ticket holders will be able to skip the line and will be able to bring a plus-one! 🎤🎉</p>
             </div>
         </div>
         <div class="show-item">       
             <div class="when">11:00pm</div>
-            <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Day Two Close</div></div>
+            <div class="what"><div class="title"><i class="fas fa-door-closed"></i> Karaoke rooms close</div></div>
         </div>
     </div>
 
@@ -353,7 +354,7 @@ function Trainings() {
         </div>
         <div class="location">TBD</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">10am</div>
                     <div class="what">
@@ -373,7 +374,7 @@ function Trainings() {
         </div>
         <div class="location">TBD</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">10am</div>
                     <div class="what">
@@ -393,7 +394,7 @@ function Trainings() {
         </div>
         <div class="location">TBD</div>
         <div class="day-content">
-            <div class="show track">   
+            <div>   
                 <div class="show-item">       
                     <div class="when">10am</div>
                     <div class="what">
@@ -553,8 +554,12 @@ export default function ({ html, state }) {
             margin: 16px;
         }
         
+        .track .when {
+            width: 70px;
+            margin-right: 0;
+        }
+
         .when {
-            min-width: 50px;
             margin-right: 16px;
         }
         
