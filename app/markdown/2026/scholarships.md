@@ -15,7 +15,7 @@ excerpt: Help us make this the most diverse and inclusive CascadiaJS yet!
 
 ![conference family photo](/_public/images/past/cjs19-family-photo.jpg)
 
-CascadiaJS exists to educate and grow the web and AI community in the Pacific Northwest. We're constantly seeking new ways to make our community broader and more inclusive, so we're excited to work with our community to fund this year's Opportunity Scholarship Program.
+CascadiaJS exists to educate and grow the web and AI community in the Pacific Northwest, and we're constantly seeking new ways to make it broader and more inclusive. We're excited to work with our network and partners to fund this year's Opportunity Scholarship Program. **We offer at least partial funding to every qualified applicant who requests it so that ticket cost isn’t a barrier to attend.**
 
 <h2 id="requirements">Requirements</h2>
 
@@ -39,18 +39,19 @@ The Opportunity Scholarship Program is open to anyone who:
 
 <i class="fas fa-pen-field"></i> Apply for a Scholarship by <span class="highlight warning">April 14</span>
 
-<i class="fas fa-ticket-alt"></i> You will be offered a Scholarship Ticket at a discounted rate
+<i class="fas fa-ticket-alt"></i> You will be offered a Premium Ticket at a discounted rate.
 
-<i class="fas fa-heart"></i> If you cannot afford this ticket, you can request financial aid. Applicants that are selected for financial aid will be offered a fully loaded ticket for $15. 
+<i class="fas fa-heart"></i> If you can't afford this ticket, you'll be considered for full financial aid. Applicants that are selected for full financial aid will be offered a Premium ticket for $15. All other qualified applicants will be offered a General Admission ticket at a discounted rate. 
 
-Why $15? A small fee helps reduce no-shows and ensures scholarship tickets go to attendees who are able to participate, allowing us to offer more scholarships to the community. If cost is a barrier, please reach out.
+Why $15? A small fee helps reduce no-shows and ensures scholarship tickets go to attendees who are able to participate, allowing us to offer more scholarships to the community.
+
 
 <div class="cta"><a target="_blank" href="https://airtable.com/app2IZDYtOGyzBQLZ/shr35XuQs0LcZu7U2">Apply for a Scholarship</a></div>
 
 
 <h2 id="support">Support the program</h2>
 
-Our Scholarship Program only exists because of the support and generosity of our community. Here's how you can help:
+Our Opportunity Scholarship Program only exists because of the support and generosity of our community. Here's how you can help:
 
 * Make a donation. Any amount helps!
 * Spread the word by sharing this application with relevant people and organizations. 
