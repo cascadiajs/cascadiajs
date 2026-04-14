@@ -37,7 +37,7 @@ The Opportunity Scholarship Program is open to anyone who:
 
 <h2 id="howitworks">How it works</h2>
 
-<i class="fas fa-pen-field"></i> Apply for a Scholarship by <span class="highlight warning">April 14</span>
+<i class="fas fa-pen-field"></i> Apply for a Scholarship by <span class="highlight warning"><span class="strike">April 14</span> April 28</span>
 
 <i class="fas fa-ticket-alt"></i> You will be offered a Premium Ticket at a discounted rate.
 
