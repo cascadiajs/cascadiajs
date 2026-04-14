@@ -241,6 +241,69 @@
       "image": "robbie-wagner.jpg",
       "location": "Virginia, USA",
       "role": "Co-Emcee"
+    },
+    {
+      "id": "",
+      "name": "Kate Pond",
+      "image": "kate-pond.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Networking Lead"
+    },
+    {
+      "id": "",
+      "name": "Cristina Rodriguez",
+      "image": "cristina-rodriguez.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Scholarships"
+    },
+    {
+      "id": "",
+      "name": "Andre Wiggins",
+      "image": "andre-wiggins.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Workshops"
+    },
+    {
+      "id": "",
+      "name": "Ryan Soeder",
+      "image": "ryan-soeder.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Speaker Wrangler"
+    },
+    {
+      "id": "",
+      "name": "Kelli Rockwell",
+      "image": "kelli-rockwell.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Party Coordinator"
+    },
+    {
+      "id": "",
+      "name": "Jim Liu",
+      "image": "jim-liu.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Volunteer"
+    },
+    {
+      "id": "",
+      "name": "Megan Speir",
+      "image": "megan-speir.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Volunteer"
+    },
+    {
+      "id": "",
+      "name": "Stella Marie",
+      "image": "stella-marie.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Volunteer"
+    },
+    {
+      "id": "",
+      "name": "Allan Deutsch",
+      "image": "allan-deutsch.jpg",
+      "location": "Seattle, WA USA",
+      "role": "Volunteer"
     }
   ]
 }

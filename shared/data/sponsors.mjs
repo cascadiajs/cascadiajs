@@ -560,7 +560,7 @@ const sponsors = {
     },
     {
       id: "mux",
-      tier: "community",
+      tier: "bronze",
       logo: "mux.svg",
       name: "Mux",
       url: "https://www.mux.com",
