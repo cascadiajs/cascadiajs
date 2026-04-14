@@ -14,7 +14,7 @@ excerpt: Lodging, Travel, Guest Passes and more!
         <li><a href="#meals">Meals</a></li>
         <li><a href="#childcare">Childcare</a></li>
         -->
-        <li><a href="#connect">Connect</a></li>
+        <li><a href="#connect">Cascadia Connect</a></li>
     </ul>
 </div>
 <!-- making a change that has no effect -->
@@ -60,8 +60,8 @@ If you purchased a ticket that includes catering, please review our [plan for me
 Thanks to our wonderful sponsor Mastra, we are offering FREE, professional, on-site child care for kids 10 and under. Spots are limited. <a href="/2025/childcare">Learn more and sign up.</a>
 -->
 
-<h2 id="connect">Connect</h2>
+<h2 id="connect">Cascadia Connect</h2>
 
-CascadiaJS Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.
+Cascadia Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.
 
 <div class="cta secondary"><a href="/2026/connect">Cascadia Connect</a></div>
