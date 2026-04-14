@@ -39,7 +39,7 @@ These informal discussion groups will be set up around Town Hall with 6-8 BoaF a
 
 Add a conversation starter to your badge! Pick up stickers with prompts like "Talk to me about TypeScript" or "Ask me about my side project" to make starting conversations easier and more fun.
 
-## Cascadia Connect: Pair Programming IRL! 🤝
+## Pair Programming IRL! 🤝
 
 Whether you're coming to your first tech conference, flying solo, or just want to meet someone new, this light-touch pairing system helps you connect with another attendee based on shared vibes. No awkward icebreakers required.
 
