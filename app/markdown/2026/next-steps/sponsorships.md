@@ -35,16 +35,16 @@ There is no onsite parking, but there are several parking garages nearby. Visit 
 Sponsor load-in and set up: TBD<br />
 
 **Monday, June 1 (Day One)**<br />
-Sponsor load-in and set up: 6:30am - 8:00am<br />
+Sponsor load-in and set up: 7:00am - 8:00am<br />
 Doors open to attendees: 8:00am<br />
-Day end: 5:30pm
+Expo hall close: 5:00pm
 
 **Tuesday, June 2 (Day Two)**<br />
 Sponsor load-in and set up: 7:00am - 8:00am<br />
 Doors open to attendees: 8:00am<br />
-Day end: 4:00pm
+Expo hall close: 4:00pm
 
-All conference/sponsor items must be removed from Town Hall by 4:00pm on June 2nd.
+All conference/sponsor items must be removed from Town Hall by 5:00pm on June 2nd.
 
 ### Shipping
 Items can be shipped directly to Town Hall. Storage space is limited at the venue, so if you have large items or more than a few boxes to send, please contact us first. 
@@ -114,7 +114,6 @@ Diamond, Platinum, Gold and Silver sponsors can show off their brand by includin
 
 Diamond, Platinum and Gold sponsors can provide a video clip (no longer than 2 minutes) that promotes their company and products. This video will be played during the live event. [Here's an example](https://cascadiajs.com/2024/sponsors/temporal) from our 2024 event.
 
-[Use this link](https://www.dropbox.com/request/eMb2yLATY7HIue3cz5yT) to submit your video.
 
 <h2 id="discord">Discord</h2>
 
