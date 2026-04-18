@@ -59,6 +59,10 @@ export default function Sponsors({ html }) {
           margin: 32px;
         }
 
+        .diamond div {
+          height: 200px;
+        }
+
         .platinum div {
           height: 142px;
         }
@@ -89,7 +93,7 @@ export default function Sponsors({ html }) {
       }
     </style>
     <div class="sponsors-grid">
-      ${["platinum", "gold", "silver", "bronze", "community", "media"]
+      ${["diamond", "platinum", "gold", "silver", "bronze", "community", "media"]
         .map(
           (tier) => /*html*/ `
             ${
@@ -102,7 +106,7 @@ export default function Sponsors({ html }) {
                   .map(
                     (s) => /*html*/ `
                     ${
-                      ["platinum", "gold", "silver"].includes(s.tier)
+                      ["diamond", "platinum", "gold", "silver"].includes(s.tier)
                         ? `<div><a target="_new" href="${s.url}"><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></a></div>`
                         : `<div><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></div>`
                     }

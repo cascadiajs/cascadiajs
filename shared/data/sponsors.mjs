@@ -642,6 +642,20 @@ const sponsors = {
       name: "WP Engine",
       url: "https://www.wpengine.com",
     },
+    {
+      id: "aws",
+      tier: "diamond",
+      logo: "aws.png",
+      name: "AWS",
+      url: "https://aws.amazon.com",
+    },
+    {
+      id: "works-real-estate",
+      tier: "community",
+      logo: "works-real-estate.png",
+      name: "Works Real Estate",
+      url: "",
+    }
   ],
 };
 
