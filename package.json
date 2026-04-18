@@ -1,10 +1,6 @@
 {
   "name": "cascadiajs-website",
-<<<<<<< Updated upstream
   "version": "6.0.91",
-=======
-  "version": "6.0.88",
->>>>>>> Stashed changes
   "scripts": {
     "enhance": "enhance",
     "lint": "eslint ./app/**/*.mjs --fix",
