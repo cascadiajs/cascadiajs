@@ -217,17 +217,17 @@ function June1({ talks, ticket = undefined }) {
         <div class="day-content">
             <div>   
                 <div class="show-item">       
-                    <div class="when">6:00pm</div>
+                    <div class="when">5:30pm</div>
                     <div class="what">
                         <div class="title"><a href="/2026/meals">Dinner</a></div>
                     </div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">6:30pm</div>
+                    <div class="when">6:00pm</div>
                     <div class="what">
                         <div class="title">Networking Mixer</div>
 
-                        <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Pulumi, Grow Therapy, Onebrief, and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! The mixer kicks off right after dinner on Day 1.</p>
+                        <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Pulumi, Grow Therapy, Onebrief, RentSpree and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! The mixer kicks off right after dinner on Day 1.</p>
 
 
                     </div>
