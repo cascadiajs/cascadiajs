@@ -382,7 +382,7 @@ export default function ({ html, state }) {
                     </li>
                     <li>+1 for the Closing Party</li>
                   </ul>
-                  <p>* If registered by April 20, 2026</p>
+                  <p>* If registered by April 29, 2026</p>
                 </div>
               </div>
               <div class="ticket">
@@ -427,6 +427,8 @@ export default function ({ html, state }) {
                     <li>Access to free workshops</li>
                     <li>Access to all networking events &amp; parties</li>
                   </ul>
+
+                  <p>Does not include conference hoodie, meals or drinks.</p>
                 </div>
               </div>
               <div class="ticket">
@@ -446,6 +448,7 @@ export default function ({ html, state }) {
                   </ul>
                   <p>Must be a student who is not working in tech full-time.</p>
                   <p>Must be 21 to attend Closing Party.</p>
+                  <p>Does not include conference hoodie, meals or drinks.</p>
                 </div>
               </div>
             </div>

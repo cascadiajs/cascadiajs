@@ -76,7 +76,7 @@ export default function MainHeader({ html, state }) {
     </style>
     <header>
       <section class="alert">
-        Hoodie deadline extended until April 27th!
+        Hoodie deadline extended until April 29th!
         <a href="/2026/tickets"
           ><span style="text-decoration: underline;">Grab a ticket</span> <i class="fa-solid fa-hand-point-right"></i
         ></a>
