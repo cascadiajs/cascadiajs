@@ -3,11 +3,11 @@ title: Tickets to CascadiaJS 2026
 ---
 ## General Admission Tickets
 
-Our General Admission ticket is priced at $299 and provides access to the talk track, workshops, hallway track, expo hall, networking events and parties. Does not include meals, drinks, or conference hoodie.
+Our General Admission ticket is priced at $299 and provides access to the talk track, workshops, hallway track, expo hall, networking events and parties. **Does not include meals, drinks, or conference hoodie.**
 
 ## Premium Tickets
 
-Our Premium Ticket includes these extras: conference hoodie, breakfast and lunch (June 1 + 2), Dinner and Drinks (June 1), +1 for the Closing Party, priority access to workshops and parties. Premium tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
+Our Premium Ticket includes these extras: conference hoodie (if ticket is purchased by April 29th), breakfast and lunch (June 1 + 2), Dinner and Drinks (June 1), +1 for the Closing Party, priority access to workshops and parties. Premium tickets are released in batches. Each batch is limited in quantity, so please make sure you act fast to secure your ticket.
 
 <table class="styled-table">
     <thead>
