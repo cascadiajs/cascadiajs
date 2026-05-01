@@ -45,8 +45,9 @@ The Opportunity Scholarship Program is open to anyone who:
 
 Why $15? A small fee helps reduce no-shows and ensures scholarship tickets go to attendees who are able to participate, allowing us to offer more scholarships to the community.
 
+**Applications are closed for 2026**
 
-<div class="cta"><a target="_blank" href="https://airtable.com/app2IZDYtOGyzBQLZ/shr35XuQs0LcZu7U2">Apply for a Scholarship</a></div>
+<!--<div class="cta"><a target="_blank" href="https://airtable.com/app2IZDYtOGyzBQLZ/shr35XuQs0LcZu7U2">Apply for a Scholarship</a></div>-->
 
 
 <h2 id="support">Support the program</h2>
