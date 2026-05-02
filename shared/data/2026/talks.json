@@ -350,12 +350,22 @@
       ]
     }
   },  
-  {
-    "type": "main",
+  { 
+    "title": "Offloading Work, Without the Workers",
+    "type": "workshop",
+    "slug": "offloading-work-with-the-workers",
+    "abstract": "A workshop on using Render Workflows to handle background jobs without managing queues, retries, or worker infrastructure. You'll build chainable task functions for distributed compute, applicable to workloads like ETL, batch inference, and AI agents. By the end, you'll have a deployed background execution pipeline you can adapt for your own projects.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-02.png"
+      "name": "Ojus Save",
+      "slug": "ojus-save",
+      "image": "/_public/images/2026/workshops/ojus-save.jpg",
+      "company": "Render",
+      "location": "San Francisco, CA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/ojus/" }
+      ]
     }
-  },
+  },  
   {
     "type": "main",
     "speaker": {
