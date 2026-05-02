@@ -308,8 +308,10 @@ function June2({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">10:20am</div>
                     <div class="what">
-                        <div class="title"><a href="/2026/workshops/promise-that-scales">The Promise.all That Actually Scales</a></div>
-                        <div class="speaker">​Most AI agent tutorials end at "call the LLM API and return the result." But what happens when your agent needs to do five things at once, each one taking 30 seconds, and you don't want your users staring at a spinner for three minutes?</div>
+                        <div class="title"><a href="/2026/workshops/offloading-work-with-the-workers">Offloading Work, Without the Workers</a></div>
+                        <div class="speaker"><p>Render Workflows lets you implement background jobs as plain JavaScript functions — no queues, no worker fleets, no retry logic to manage yourself.</p>
+                            <p>In this workshop, you'll build a distributed execution pipeline with chainable tasks that scale across compute, and walk away with working code you can drop into your own ETL, batch inference, or agent workloads.</p>
+                            <p>Less infrastructure overhead. More shipping.</p></div>
                     </div>
                 </div>
                 <div class="show-item">       
