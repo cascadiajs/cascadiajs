@@ -662,6 +662,13 @@ const sponsors = {
       logo: "okta.png",
       name: "Okta",
       url: "https://www.okta.com",
+    },
+    {
+      id: "rent-spree",
+      tier: "bronze",
+      logo: "rentspree.png",
+      name: "Rent Spree",
+      url: "https://www.rentspree.com",
     }
   ],
 };
