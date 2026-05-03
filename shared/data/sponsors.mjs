@@ -655,6 +655,13 @@ const sponsors = {
       logo: "works-real-estate.png",
       name: "Works Real Estate",
       url: "",
+    },
+    {
+      id: "okta",
+      tier: "gold",
+      logo: "okta.png",
+      name: "Okta",
+      url: "https://www.okta.com",
     }
   ],
 };
