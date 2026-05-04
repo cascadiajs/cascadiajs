@@ -16,8 +16,8 @@ Our Premium Ticket includes these extras: conference hoodie (if ticket is purcha
     <tbody>
     <tr class="passed"><td>Blind Bird</td><td>Sep 19, 2025</td><td>$499</td></tr>
     <tr class="passed"><td>Early Bird</td><td>Nov 17, 2025</td><td>$599</td></tr>
-    <tr class="active-row"><td>Regular Bird</td><td>Feb 15, 2026</td><td>$699 ($499 with Indie Discount)</td></tr>
-    <tr><td>Full Price</td><td>May 4, 2026</td><td>$799 ($599 with Indie Discount)</td></tr>
+    <tr class="passed"><td>Regular Bird</td><td>Feb 15, 2026</td><td>$699 ($499 with Indie Discount)</td></tr>
+    <tr class="active-row"><td>Full Price</td><td>May 4, 2026</td><td>$799 ($599 with Indie Discount)</td></tr>
     </tbody>
 </table>
 
