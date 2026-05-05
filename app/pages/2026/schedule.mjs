@@ -228,7 +228,7 @@ function June1({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">6:00pm</div>
                     <div class="what">
-                        <div class="title">Networking Mixer</div>
+                        <div class="title">Networking Mixer & Job Fair</div>
 
                         <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Pulumi, Render, Expo, CopilotKit, Warp and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! </p>
 
