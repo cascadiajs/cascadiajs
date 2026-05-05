@@ -669,6 +669,18 @@ const sponsors = {
       logo: "rentspree.png",
       name: "Rent Spree",
       url: "https://www.rentspree.com",
+    },
+    {
+      id: "github",
+      tier: "community",
+      logo: "github.png",
+      name: "Github"
+    },
+    {
+      id: "neo4j",
+      tier: "community",
+      logo: "neo4j.svg",
+      name: "Neo4j"
     }
   ],
 };

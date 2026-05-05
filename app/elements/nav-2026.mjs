@@ -54,11 +54,12 @@ export default function Nav2026({ html }) {
               alt="CascadiaJS logo"
           /></a>
         </div>
+        <div><a href="/2026#networking">Networking</a></div>
         <div><a href="/2026#pricing">Pricing</a></div>
         <div><a href="/2026#speakers">Speakers</a></div>
         <div><a href="/2026/schedule">Schedule</a></div>
         <div><a href="/2026/attend">Attend</a></div>
-        <div><a href="/2026/scholarships">Scholarships</a></div>
+        <!--<div><a href="/2026/scholarships">Scholarships</a></div>-->
         <div><a href="/2026/sponsor">Sponsor</a></div>
         <div><a href="/2026/trainings">Trainings</a></div>
         <div><a class="buy" href="/2026/tickets">Tickets</a></div>

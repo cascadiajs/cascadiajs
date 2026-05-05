@@ -47,11 +47,15 @@ export default function ({ html, state }) {
 
         #pitch {
           background: #ccf1db;
+        }
+
+        #pitch, #networking {
           text-align: center;
           padding: 64px 64px;
         }
 
         #pitch p,
+        #networking p,
         .prompt {
           color: #112378;
           font-size: 24px;
@@ -247,7 +251,7 @@ export default function ({ html, state }) {
             justify-content: center;
           }
 
-          #pitch {
+          #pitch, #networking {
             padding: 64px 160px;
           }
         }
@@ -357,6 +361,20 @@ export default function ({ html, state }) {
               <strong>build your network</strong> and
               <strong>have fun</strong> for a few days in the
               <strong>beautiful PNW</strong>.
+            </p>
+          </section>
+          <section id="networking">
+            <h1>Networking Mixer</h1>
+            <p>
+              We're hosting a Networking Mixer and Job Fair for all registered attendees on June 1st from 6pm - 9pm.
+            </p>
+            <p>
+              <strong>Network with fellow attendees</strong> and talk to <strong>companies that are hiring</strong>, including:</p>
+            <p>
+              Grow Therapy, Onebrief, RentSpree, Pulumi, Render, CopilotKit and more!
+            </p>
+            <p>
+              Dinner and drinks are included for Premium ticket holders, and there will be a cash bar available as well.
             </p>
           </section>
           <section id="pricing" class="landing">
