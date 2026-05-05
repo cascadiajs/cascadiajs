@@ -58,6 +58,23 @@
     }
   },
   { 
+    "title": "How To Use Spec-Driven Development for Production Workflows",
+    "type": "keynote",
+    "slug": "how-to-use-spec-driven-development-for-production-workflows",
+    "abstract": "AI coding assistants are great at completing small tasks or features. But what do you do when you're working with more complex codebases and need to build in-depth features that require upfront planning?\n\nThis talk makes the case for spec-driven development. I'll show how AI coding assistants can help break down complex tasks into three phases: requirements gathering, technical design, and task implementation. Using a real-world example, we'll look at the trade-offs of this approach and how you can start using it in your own projects right away.",
+    "speaker": {
+      "name": "Erik Hanchett",
+      "slug": "erik-hanchett",
+      "image": "/_public/images/2026/speakers/erik-hanchett.jpg",
+      "company": "AWS",
+      "location": "Reno, NV, USA",
+      "social": [
+        { "type": "bluesky", "url": "https://bsky.app/profile/erikch.bsky.social" },
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/erikhanchett/" }
+      ]
+    }
+  },  
+  { 
     "title": "AI Agent Swarms are Amazing",
     "type": "main",
     "slug": "ai-agent-swarms-are-amazing",

@@ -5,7 +5,7 @@ import { marked } from "marked";
  */
 export default function ({ html, state }) {
   let { sharing } = state?.store;
-  let { name, logo, description, video, url } = state?.store?.sponsor;
+  let { name, logo, tier, description = '', video, url } = state?.store?.sponsor;
   if (sharing.social !== undefined) {
     return html`<social-sharing
       image="${sharing.image}"
@@ -14,14 +14,9 @@ export default function ({ html, state }) {
     ></social-sharing>`;
   } else {
     return html`
-      <style>
-        #logo {
-          height: 120px;
-        }
-      </style>
       <main-layout>
-        <simple-page title="Sponsor - ${name}">
-          <p><img id="logo" src="/_public/images/sponsors/${logo}" alt="${name}"/></p>
+        <simple-page title="2026 ${tier} Sponsor - ${name}">
+          <p><img id="logo" src="/_public/images/sponsors/${logo}" alt="${name} logo"/></p>
           ${
             video
               ? /*html*/ `<div style="position: relative; padding-top: 56.25%;">

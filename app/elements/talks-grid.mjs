@@ -24,37 +24,28 @@ export default function Talks({ html, state }) {
     </style>
     <div class="talks-list">
       ${talks
-        .filter((t) => t.slug)
         .filter((t) => {
           return types ? types.includes(t.type) : true;
         })
         /*.sort(() => Math.random() - 0.5)*/
         .map(
-          (t) => /*html*/ `
-            <talks-item
-                slug="${t.slug}" 
-                title="${t.title}" 
-                image="${t.speaker.image.startsWith("/") ? t.speaker.image : `/_public/images/speakers/${t.speaker.image}`}" 
-                name="${t.speaker.name || ""}"
-                company="${t.speaker.company || ""}" 
-                location="${t.speaker.location || ""}"
-            ></talks-item>`,
-        )
-        .join("")}
-      ${talks
-        .filter((t) => !t.slug)
-        .filter((t) => {
-          return types ? types.includes(t.type) : true;
-        })
-        /*.sort(() => Math.random() - 0.5)*/
-        .map(
-          (t) => /*html*/ `
-            <talks-item
-                image="${t.speaker.image.startsWith("/") ? t.speaker.image : `/_public/images/speakers/${t.speaker.image}`}" 
-                name="${t.speaker.name || ""}" 
-                company="${t.speaker.company || ""}" 
-                location="${t.speaker.location || ""}"
-            ></talks-item>`,
+          (t) => `
+            ${ t.slug 
+            ? `<talks-item
+                    slug="${t.slug}" 
+                    title="${t.title}" 
+                    abstract="${t.abstract}"
+                    image="${t.speaker.image.startsWith("/") ? t.speaker.image : `/_public/images/speakers/${t.speaker.image}`}" 
+                    name="${t.speaker.name || ""}"
+                    company="${t.speaker.company || ""}" 
+                    location="${t.speaker.location || ""}"
+                  ></talks-item>` 
+            : `<talks-item
+                    image="${t.speaker.image.startsWith("/") ? t.speaker.image : `/_public/images/speakers/${t.speaker.image}`}" 
+                    name="${t.speaker.name || ""}"
+                    company="${t.speaker.company || ""}" 
+                    location="${t.speaker.location || ""}"
+                ></talks-item>` }`
         )
         .join("")}
     </div>`;
