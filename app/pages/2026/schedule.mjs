@@ -220,6 +220,9 @@ function June1({ talks, ticket = undefined }) {
                     <div class="when">5:30pm</div>
                     <div class="what">
                         <div class="title"><a href="/2026/meals">Dinner</a></div>
+
+                        <p>Dinner and drinks are included for Premium ticket holders, and there will be a cash bar available as well.</p>
+
                     </div>
                 </div>
                 <div class="show-item">       
@@ -229,7 +232,6 @@ function June1({ talks, ticket = undefined }) {
 
                         <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Pulumi, Render, Expo, CopilotKit, Warp and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! </p>
 
-                        <p>Dinner and drinks are included for Premium ticket holders, and there will be a cash bar available as well. Dinner starts at 5:30pm, and the mixer kicks off at 6pm.
 
 
 
