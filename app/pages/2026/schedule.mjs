@@ -227,7 +227,11 @@ function June1({ talks, ticket = undefined }) {
                     <div class="what">
                         <div class="title">Networking Mixer</div>
 
-                        <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Pulumi, Render, Expo, CopilotKit, Warp and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! The mixer kicks off right after dinner on Day 1.</p>
+                        <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Pulumi, Render, Expo, CopilotKit, Warp and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! </p>
+
+                        <p>Dinner and drinks are included for Premium ticket holders, and there will be a cash bar available as well. Dinner starts at 5:30pm, and the mixer kicks off at 6pm.
+
+
 
 
                     </div>
