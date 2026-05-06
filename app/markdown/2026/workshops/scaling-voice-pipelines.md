@@ -1,6 +1,6 @@
 ---
 title: Scaling Voice Pipelines in Production
-excerpt: AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools. In this workshop, participants will learn both sides of that equation.
+excerpt: This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.
 ---
 
 <span class="highlight info">This workshop is free for attendees of CascadiaJS 2026.</span>
