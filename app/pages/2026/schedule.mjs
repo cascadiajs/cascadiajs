@@ -200,7 +200,7 @@ function June1({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">10:20am</div>
                     <div class="what">
-                        <div class="title">Scaling Voice Pipelines in Production</div>
+                        <div class="title"><a href="/2026/workshops/scaling-voice-pipelines">Scaling Voice Pipelines in Production</a></div>
                         <div class="speaker">This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.</div>
                     </div>
                 </div>
