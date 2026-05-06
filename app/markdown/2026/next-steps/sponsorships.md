@@ -72,7 +72,7 @@ Sponsors need to provide their own branded linens for tables.
 
 We recommend that booth sponsors bring a single, pop-up banner to place alongside their booth (see photo below). Diamond and Platinum sponsors will have space for an additional or larger banner.
 
-Recommended booth times are 8:00am - 5:00pm on June 1 and 8:00am - 4pm on June 2. 
+Recommended booth times are 8:00am - 5:00pm on June 1 and 8:00am - 4:00pm on June 2. 
 
 ![moovweb](/_public/images/past/cjs19-moovweb.jpg)
 
