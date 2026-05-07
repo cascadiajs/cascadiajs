@@ -371,7 +371,7 @@ export default function ({ html, state }) {
             <p>
               <strong>Network with fellow attendees</strong> and talk to <strong>companies that are hiring</strong>, including:</p>
             <p>
-              Grow Therapy, Onebrief, RentSpree, Pulumi, Render, CopilotKit and more!
+              Grow Therapy, Onebrief, RentSpree, Render, CopilotKit and more!
             </p>
             <p>
               Dinner and drinks are included for Premium ticket holders, and there will be a cash bar available as well.
