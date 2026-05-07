@@ -9,7 +9,7 @@ excerpt: A workshop on using Render Workflows to handle background jobs without 
 
 * When: Tuesday, June 2 (10:20am - 12:20pm)
 * Where: Town Hall, Forum level
-* Instructors: Brendan Fosberry and Ojus Save
+* Instructors: [Brendan Fosberry, Software Engineer at Render](https://www.linkedin.com/in/bfosberry/) and [Ojus Save, Developer Relations at Render](https://www.linkedin.com/in/ojus/)
 
 The moment your web app needs to offload resource-intensive tasks, your architecture changes. What starts as a single service suddenly balloons to include worker nodes, a job queue, and an orchestration layer to hold it all together. With the continuing surge in AI-powered features, teams are hitting this architectural speed bump early and often.
 
