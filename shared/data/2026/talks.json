@@ -383,10 +383,20 @@
       ]
     }
   },  
-  {
-    "type": "main",
+  { 
+    "title": "Deploying AI Agents on AWS with Pulumi and Amazon Bedrock AgentCore",
+    "type": "workshop",
+    "slug": "deploying-ai-agents-on-aws-with-pulumi-and-amazon-bedrock-agentcore",
+    "abstract": "In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.",
     "speaker": {
-      "image": "/_public/images/2026/speakers/speaker-mystery-03.png"
+      "name": "Engin Diri",
+      "slug": "engin-diri",
+      "image": "/_public/images/2026/speakers/engin-diri.jpg",
+      "company": "Pulumi",
+      "location": "Seattle, WA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/engin-diri/" }
+      ]
     }
   }
 ]
