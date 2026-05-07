@@ -184,7 +184,7 @@ function June1({ talks, ticket = undefined }) {
                     <div class="when">3:20pm</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("4:10pm", talks.find(t => t.speaker.slug === ''))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'joe-duffy'))}
                 <div class="show-item">       
                     <div class="when">5:10pm</div>
@@ -293,7 +293,7 @@ function June2({ talks, ticket = undefined }) {
                     <div class="when">3:15pm</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("3:50pm", talks.find(t => t.speaker.slug === ''))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'theo'))}
                 <div class="show-item">       
                     <div class="when">5:10pm</div>
