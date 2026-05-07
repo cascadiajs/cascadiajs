@@ -9,7 +9,7 @@ excerpt: This workshop with Vapi walks through the real execution work behind bu
 
 * When: Monday, June 1 (1:40pm - 3:40pm)
 * Where: Town Hall, Forum level
-* Instructor: [Veltson Bastien, Solutions Engineer at Vapi](https://www.linkedin.com/in/veltsonbastien/)
+* Instructor: [Veltson Bastien, Solutions Engineer at Vapi](https://www.linkedin.com/in/veltsonbastien/) and [Amanda Martin, Head of Developer Relations at Vapi](https://www.linkedin.com/in/amandamartin-dev/)
 
 Voice agents are increasingly being deployed in production for a wide range of use cases – customer support, sales outreach, scheduling, collections, fully automated phone operations, and many more. But shipping a voice agent that actually works on thousands of calls requires a different design discipline than building chatbots or text-based AI.
 
