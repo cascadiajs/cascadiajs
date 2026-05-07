@@ -395,7 +395,8 @@
       "company": "Pulumi",
       "location": "Seattle, WA USA",
       "social": [
-        { "type": "linkedin", "url": "https://www.linkedin.com/in/engin-diri/" }
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/engin-diri/" },
+        { "type": "github", "url": "https://github.com/dirien" }
       ]
     }
   }
