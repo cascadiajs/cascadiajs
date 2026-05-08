@@ -1,5 +1,5 @@
 ---
-title: Scaling Voice Pipelines in Production
+title: Technical Workshop - Build a Voice Agent with Vapi
 excerpt: This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.
 ---
 
