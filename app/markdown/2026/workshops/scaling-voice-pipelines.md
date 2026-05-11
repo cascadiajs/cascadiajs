@@ -7,7 +7,7 @@ excerpt: This workshop with Vapi walks through the real execution work behind bu
 
 <div class="cta"><a href="/2026/tickets">🎟️ Get Your Ticket Today!</a></div>
 
-* When: Monday, June 1 (1:40pm - 3:40pm)
+* When: Monday, June 1 (10:45am - 12:40pm)
 * Where: Town Hall, Forum level
 * Instructor: [Amanda Martin, Head of Developer Relations at Vapi](https://www.linkedin.com/in/amandamartin-dev/) and [Veltson Bastien, Solutions Engineer at Vapi](https://www.linkedin.com/in/veltsonbastien/)
 

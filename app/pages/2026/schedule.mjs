@@ -199,7 +199,7 @@ function June1({ talks, ticket = undefined }) {
                 <h3>Workshop Track</h3>
                 <div class="location">Forum</div>
                 <div class="show-item">       
-                    <div class="when">10:20am</div>
+                    <div class="when">10:45am</div>
                     <div class="what">
                         <div class="title"><a href="/2026/workshops/scaling-voice-pipelines">Technical Workshop: Build a Voice Agent with Vapi</a></div>
                         <div class="speaker">This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.</div>
