@@ -288,7 +288,7 @@ export default function ({ html }) {
               <td><b>Quantity</b></td>
               <td>Sold out!</td>
               <td>Sold out!</td>
-              <td><span class="strike">12</span> 4 left</td>
+              <td><span class="strike">12</span> 1 left!</td>
               <td>Multiple</td>
               <td>Multiple</td>
               <td>Unlimited</td>
@@ -418,7 +418,7 @@ export default function ({ html }) {
           <h3>Welcome Reception on May 31 <span class="strike">(1 Available)</span> Sold out!</h3>
           <p>Branding and recognition at the social event that kicks off the conference. This option associates your brand with one of the highest-energy, most well-attended moments of the event.</p>
 
-          <h3>Networking Mixer on June 1 (3 left!)</h3>
+          <h3>Networking Mixer on June 1 (1 left!)</h3>
           <p>Connect and have high quality conversations with some of the best talent in the Pacific Northwest. The mixer will take place right after the Day One talks conclude.</p>
 
           <h3>Private Karaoke Room at Closing Party on June 2 (Multiple available)</h3>
