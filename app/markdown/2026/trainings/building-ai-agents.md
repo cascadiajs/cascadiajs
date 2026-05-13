@@ -9,7 +9,9 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
-**Location:** TBD
+**Location:** Thinkspace Seattle (1700 Westlake Ave N Seattle WA 98109)
+
+**What to bring:** Laptop
 
 Explore everything from basic tool calling to sophisticated multi-step agents that can reason and act autonomously.
 

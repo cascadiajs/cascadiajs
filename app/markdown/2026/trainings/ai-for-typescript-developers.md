@@ -9,7 +9,9 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
-**Location:** TBD
+**Location:** Thinkspace Seattle (1700 Westlake Ave N Seattle WA 98109)
+
+**What to bring:** Laptop
 
 Ready to build AI-powered applications? Let's dive into the Vercel AI SDK and modern AI patterns to create intelligent features your users will love. We'll start with the fundamentals and work our way up to building production-ready AI applications.
 

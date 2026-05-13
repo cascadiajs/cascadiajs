@@ -9,7 +9,9 @@ excerpt: Eve Porcello
 
 **Instructor:** [Eve Porcello](https://twitter.com/eveporcello)
 
-**Location:** TBD
+**Location:** Thinkspace Seattle (1700 Westlake Ave N Seattle WA 98109)
+
+**What to bring:** Laptop
 
 AI is changing how we write code, and you're about to become fluent in these new tools. We'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks.
 

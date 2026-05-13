@@ -18,7 +18,7 @@ Note: these Training Workshops require the purchase of a separate ticket and ARE
     </tbody>
 </table>
 
-The location of the trainings will be in Seattle and announced closer to the event. 
+The location of the trainings will be at Thinkspace Seattle (1700 Westlake Ave N Seattle WA 98109). 
 
 <!--
 
