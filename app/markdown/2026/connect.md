@@ -57,12 +57,11 @@ These informal discussion groups will be set up around Town Hall with 6-8 BoaF a
 
 ## "Talk to Me About..." Stickers 🏷️
 
-Add a conversation starter to your badge! Pick up stickers with prompts like "Talk to me about TypeScript" or "Ask me about my side project" to make starting conversations easier and more fun.
+Add a conversation starter to your badge! Pick up stickers at the registraton desk with prompts like "Talk to me about TypeScript" or "Ask me about my side project" to make starting conversations easier and more fun.
 
 ## Low-Key Games 🎲
 
 Find quick, playful activities on the south side of the Forum (if you're coming from the Forum lobby, take a right as you head into the room). Think icebreaker games, trivia, or simple challenges that help people mingle without any pressure to be social.
-
 
 ---
 
