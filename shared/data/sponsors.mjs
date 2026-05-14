@@ -671,10 +671,10 @@ const sponsors = {
       url: "https://www.rentspree.com",
     },
     {
-      id: "github",
+      id: "bluesky",
       tier: "community",
-      logo: "github.png",
-      name: "Github"
+      logo: "bluesky.png",
+      name: "Bluesky"
     },
     {
       id: "neo4j",
