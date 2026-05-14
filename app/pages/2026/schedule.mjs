@@ -176,7 +176,7 @@ function June1({ talks, ticket = undefined }) {
                     <div class="when">12:40pm</div>
                     <div class="what">
                         <div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div>
-                        <div class="speaker">Meet at the West Entrance at 1pm to join the <a href="/2026/connect#walkie">Walkie Talkies</a></div>
+                        <div class="speaker">Meet at the West Entrance at 1pm to join <a href="/2026/connect#walkie">Walkie Talkies</a></div>
                     </div>
                 </div>
                 <div class="location">Great Hall</div>
@@ -288,7 +288,7 @@ function June2({ talks, ticket = undefined }) {
                     <div class="when">12:40pm</div>
                     <div class="what">
                         <div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div>
-                        <div class="speaker">Meet at the West Entrance at 1pm to join the <a href="/2026/connect#walkie">Walkie Talkies</a></div>
+                        <div class="speaker">Meet at the West Entrance at 1pm to join <a href="/2026/connect#walkie">Walkie Talkies</a></div>
                     </div>
                 </div>
                 <div class="location">Great Hall</div>
