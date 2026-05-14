@@ -174,7 +174,10 @@ function June1({ talks, ticket = undefined }) {
                 <div class="location">Forum</div>
                 <div class="show-item">       
                     <div class="when">12:40pm</div>
-                    <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div></div>
+                    <div class="what">
+                        <div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div>
+                        <div class="speaker">Meet at the West Entrance at 1pm to join the <a href="/2026/connect#walkie">Walkie Talkies</a></div>
+                    </div>
                 </div>
                 <div class="location">Great Hall</div>
                 ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === 'darius-cepulis'))}
@@ -283,7 +286,10 @@ function June2({ talks, ticket = undefined }) {
                 <div class="location">Forum</div>
                 <div class="show-item">       
                     <div class="when">12:40pm</div>
-                    <div class="what"><div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div></div>
+                    <div class="what">
+                        <div class="title"><i class="fas fa-taco"></i> <a href="/2026/meals">Lunch</a></div>
+                        <div class="speaker">Meet at the West Entrance at 1pm to join the <a href="/2026/connect#walkie">Walkie Talkies</a></div>
+                    </div>
                 </div>
                 <div class="location">Great Hall</div>
                 ${ renderSpeaker("1:40pm", talks.find(t => t.speaker.slug === 'nyah-macklin'))}

@@ -62,6 +62,5 @@ Thanks to our wonderful sponsor Mastra, we are offering FREE, professional, on-s
 
 <h2 id="connect">Cascadia Connect</h2>
 
-Cascadia Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness—just friendly ways to vibe, learn, and maybe not eat lunch alone.
+Cascadia Connect offers opt-in ways to meet fellow attendees. No pressure or awkwardness, just friendly ways to vibe, learn, and maybe not eat lunch alone. <a href="/2026/connect">Learn more about how you can connect!</a>
 
-<div class="cta secondary"><a href="/2026/connect">Cascadia Connect</a></div>

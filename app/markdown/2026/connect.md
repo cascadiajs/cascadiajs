@@ -1,11 +1,23 @@
 ---
 title: Cascadia Connect
 ---
+
+<div id="toc">
+<h2>On This Page</h2>
+    <ul>
+        <li><a href="#ppirl">Pair Programming IRL!</a></li>
+        <li><a href="#boaf">Birds of a Feather (BOAF) Tables</a></li>
+        <li><a href="#walkie">Walkie Talkies</a></li>
+        <li><a href="#talktome">"Talk to Me About..." Stickers</a></li>
+        <li><a href="#games">Low-Key Games</a></li>
+    </ul>
+</div>
+
 Low-pressure ways to meet cool humans at CascadiaJS.
 
 Whether you're a networking pro or prefer to keep things casual, Cascadia Connect offers opt-in ways to meet fellow attendees. No pressure, no awkwardness, just friendly ways to vibe, learn, and maybe not eat lunch alone.
 
-## Pair Programming IRL! 🤝
+<h2 id="ppirl">Pair Programming IRL! 🤝</h2>
 
 Whether you're coming to your first tech conference, flying solo, or just want to meet someone new, this light-touch pairing system helps you connect with another attendee based on shared vibes. No awkward icebreakers required.
 
@@ -13,7 +25,7 @@ If you're matched, we'll share your name and email with your match so you can co
 
 <div class="cta secondary"><a href="https://airtable.com/app2IZDYtOGyzBQLZ/pag7dXPfJZEMPcHid/form">SIGN UP BY MAY 26</a></div>
 
-## Birds of a Feather (BOAF) Tables 🦜
+<h2 id="boaf">BOAF Tables 🦜</h2>
 
 Join topic-based tables where you can connect with devs who share your interests. Tables will be located on the east side the Main Lobby, across from the coffee station. Look for the 8.5" x 11" signs at each table to find your topic of interest.
 
@@ -55,11 +67,18 @@ These informal discussion groups will be set up around Town Hall with 6-8 BoaF a
 **🎲 Low-Key Games** - Play a quick game
 -->
 
-## "Talk to Me About..." Stickers 🏷️
+<h2 id="walkie">Walkie Talkies 🚶🏽‍♀️</h2>
+
+Meet new people, one conversation at a time. Pair up, grab a conversation prompt, and take a walk together. Every 10 minutes, you’ll switch partners and topics.
+
+30 minutes total. Meet outside the West Entrance at 1pm (Mon + Tue) to join!
+
+
+<h2 id="talktome">"Talk to Me About..." Stickers 🏷️</h2>
 
 Add a conversation starter to your badge! Pick up stickers at the registraton desk with prompts like "Talk to me about TypeScript" or "Ask me about my side project" to make starting conversations easier and more fun.
 
-## Low-Key Games 🎲
+<h2 id="games">Low-Key Games 🎲</h2>
 
 Find quick, playful activities on the south side of the Forum (if you're coming from the Forum lobby, take a right as you head into the room). Think icebreaker games, trivia, or simple challenges that help people mingle without any pressure to be social.
 
