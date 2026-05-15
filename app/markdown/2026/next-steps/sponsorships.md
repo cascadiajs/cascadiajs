@@ -79,9 +79,7 @@ Recommended booth times are 8:00am - 5:00pm on June 1 and 8:00am - 4:00pm on Jun
 
 ### Lead Capture
 
-We're using an app that you can download to your iOS or Android phone for lead capture at this year's event. We'll provide more information on how to download and use the app closer to the event. 
-
-<!--[Read these instructions](/2025/next-steps/sponsor-leadcapture) on how to install and use the app.-->
+We're using an app that you can download to your iOS or Android phone for lead capture at this year's event. [Read these instructions](/2026/next-steps/leadcapture) on how to install and use the app.
 
 <h2 id="registration">Registration</h2>
 
