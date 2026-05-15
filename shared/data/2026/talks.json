@@ -75,7 +75,7 @@
     }
   },  
   { 
-    "title": "AI Agent Swarms are Amazing",
+    "title": "AI Agent Swarms Are Amazing",
     "type": "main",
     "slug": "ai-agent-swarms-are-amazing",
     "abstract": "Agent swarming is a fascinating pattern to massively parallelize work with AI Agents. Instead of a single agent churning through a todo list, you have a coordinator agent that delegates work to a horde of worker agents to break down a todo list in record time. We will dig into agent memory, optimization, and coordination. ",
@@ -91,7 +91,7 @@
     }
   },  
   { 
-    "title": "Unlocking AI's Hidden Connections with Graphs",
+    "title": "Unlocking AI's Hidden Connections With Graphs",
     "type": "main",
     "slug": "unlocking-ais-hidden-connections-with-graphs",
     "abstract": "When AI agents have to execute complex, multi-hop reasoning across interconnected knowledge domains, traditional Retrieval-Augmented Generation (RAG) systems fail. Although vector-based retrieval is very good at finding content that is semantically similar, it cannot find meaningful connections between data, which leads to hallucinations. In this talk, we'll dive into how engineers can ground agents and large language models (LLMs) to uncover connections in data that are often missed by conventional RAG techniques",
@@ -137,7 +137,7 @@
     }
   },  
   { 
-    "title": "Building Apps with ATProto",
+    "title": "Building Apps With ATProto",
     "type": "main",
     "slug": "building-apps-with-atproto",
     "abstract": "What if you owned your social media data and could move freely between apps? ATProto makes this possible. I'll teach the fundamentals—DIDs, data repos, why they're important, and how to build your first decentralized social platform.",
@@ -153,7 +153,7 @@
     }
   },  
   { 
-    "title": "Choosing the Wrong Abstraction (and What It Cost Us)",
+    "title": "Choosing the Wrong Abstraction (And What It Cost Us)",
     "type": "main",
     "slug": "choosing-the-wrong-abstraction-and-what-it-cost-us",
     "abstract": "We chose the wrong abstractions and had to throw out our most important component. Oops. This talk unpacks how a well-meaning API collapsed under real-world use, and why composable APIs scale better than configuration-heavy ones, across UI and deeper systems.",
@@ -167,7 +167,7 @@
     }
   },  
   { 
-    "title": "Keep the Main Thread Free with Web Workers",
+    "title": "Keep the Main Thread Free With Web Workers",
     "type": "main",
     "slug": "keep-the-main-thread-free-with-web-workers",
     "abstract": "When heavy compute runs on the main thread, the UI stutters. I'll show how to spot main-thread blocking, then move filtering/aggregation work into Web Workers with a clean message protocol, debouncing, progress updates, and cancellation so the UI stays smooth.",
@@ -185,7 +185,7 @@
     }
   },    
   { 
-    "title": "Accelerating Musical Live Coding with On-Device AI",
+    "title": "Accelerating Musical Live Coding With On-Device AI",
     "type": "main",
     "slug": "accelerating-musical-live-coding-with-on-device-ai",
     "abstract": "Let's explore a human-centric approach to live coding music. By fusing Strudel REPL with on-device AI via WebGPU and Wasm, we create an \"intelligent scaffolder\" that handles boilerplate syntax locally, keeping the performer in their flow state without losing agency.",
@@ -234,7 +234,7 @@
     }
   },
   { 
-    "title": "Practical Refactors with Modern CSS Colors",
+    "title": "Practical Refactors With Modern CSS Colors",
     "type": "main",
     "slug": "practical-refactors-with-modern-css-colors",
     "abstract": "Practical refactors with modern CSS colors: a hands-on talk on simplifying color tokens, dark mode, and theming using modern CSS. Fewer variables, less duplication, clearer intent—using light-dark(), relative colors, and more.",
@@ -251,7 +251,7 @@
     }
   },
   { 
-    "title": "AI helped me learn: Vue through the lens of a React Developer",
+    "title": "AI Helped Me Learn: Vue Through the Lens of a React Developer",
     "type": "lightning",
     "slug": "ai-helped-me-learn-vue-through-the-lens-of-a-react-developer",
     "abstract": "AI, React, Vue - what do all of these things have in common? They are tools meant to enhance the development experience - we must remember that. Join me in going over best practices on using AI to LEARN and not to do you your job for you “poorly I might add”. I'll take you through the steps of how I used AI as a React developer to learn Vue - did I actually learn? Join this talk to find out!",
@@ -302,7 +302,7 @@
     }
   },
   { 
-    "title": "The Schematic to Community as told by Rick Astley",
+    "title": "The Schematic to Community as Told by Rick Astley",
     "type": "lightning",
     "slug": "the-schematic-to-community-as-told-by-rick-astley",
     "abstract": "You think \"Rickrolling\" is just a prank? Think again buddy. the lyrics to \"Never Gonna Give You Up\" are actually a masterclass in community retention. We're breaking down the \"Six Pillars of Astley\" to help you build a community that is together forever (see what I did there) Expect deep insights, personal anecdotes, and—yes—you'll probably get trolled.",
@@ -336,7 +336,7 @@
     }
   },
   { 
-    "title": "How to successfully build a junior dev team",
+    "title": "How to Successfully Build a Junior Dev Team",
     "type": "lightning",
     "slug": "how-to-successfully-build-a-junior-dev-team",
     "abstract": "Growing a dev team while preserving your culture and mentoring junior devs sounds difficult, maybe impossible. Especially in this era of AI, how do you successfully build a home-grown team of young talent? I'll explore the success we've had with exactly that at Atomic Object, and practices you can implement today in your own companies to do the same.",
@@ -384,7 +384,7 @@
     }
   },  
   { 
-    "title": "Deploying AI Agents on AWS with Pulumi and Amazon Bedrock AgentCore",
+    "title": "Deploying AI Agents on AWS With Pulumi and Amazon Bedrock AgentCore",
     "type": "workshop",
     "slug": "deploying-ai-agents-on-aws-with-pulumi-and-amazon-bedrock-agentcore",
     "abstract": "In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.",
