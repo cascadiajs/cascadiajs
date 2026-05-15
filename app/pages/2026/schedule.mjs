@@ -336,7 +336,7 @@ function June2({ talks, ticket = undefined }) {
         <div class="show-item">       
             <div class="when">6:00pm</div>
             <div class="what"><div class="title"><i class="fas fa-utensils"></i>Dinner with Friends</div>
-            <p>Grab dinner with the new friends you've made at CascadiaJS in Capital Hall. There are dozens of places to choose from!</p>
+            <p>Grab dinner with the new friends you've made at CascadiaJS in Capitol Hill. There are dozens of places to choose from!</p>
             </div>
         </div>
         <div class="location">Rockbox</div>
