@@ -7,8 +7,8 @@ excerpt: Lodging, Travel, Guest Passes and more!
 <h2>On This Page</h2>
     <ul>
         <li><a href="#coc">Code of Conduct</a></li>
-        <li><a href="#prepare">Preparing for the Conference</a></li>
         <li><a href="#venue">Venue</a></li>
+        <li><a href="#prepare">Preparing for the Conference</a></li>
         <li><a href="#travel">Travel & Lodging</a></li>
         <li><a href="#meals">Meals</a></li>
         <li><a href="#childcare">Childcare</a></li>
@@ -21,15 +21,6 @@ excerpt: Lodging, Travel, Guest Passes and more!
 
 All attendees (including speakers, sponsors and staff) agree to abide by our [Code of Conduct](/code-of-conduct). Please make sure to review this before you arrive, and please understand that we take it very seriously. Anyone who violates our conduct policies will be asked to leave the venue. 
 
-<h2 id="prepare">Preparing for the Conference</h2>
-
-Before you leave your home to travel to Seattle, make sure you've got everything need to be ready for all the fun! Please remember to pack:
-
-- A government-issued photo ID if you plan on drinking alchohol
-- A water bottle
-- Snacks, if you need to nosh regularly throughout the day
-- Clothes appropriate for low to mid 70's during the day, dipping to the 50's at night
-
 <h2 id="venue">Venue</h2>
 
 Town Hall Seattle<br />
@@ -38,7 +29,17 @@ Seattle, WA 98101
 
 Please enter through the West Entrance, which is located off of Seneca street. 
 
-Visit the Town Hall website for information on <a href="https://townhallseattle.org/locations-and-entrances/">location and entrances</a>, <a href="https://townhallseattle.org/public-transit/">public transit</a>, <a href="https://townhallseattle.org/parking/">parking</a> (including bike parking!) and <a href="https://townhallseattle.org/accessibility/">accessibility</a>.  
+Visit the Town Hall website for information on <a href="https://townhallseattle.org/locations-and-entrances/">location and entrances</a>, <a href="https://townhallseattle.org/public-transit/">public transit</a>, <a href="https://townhallseattle.org/parking/">parking</a> (including bike parking!) and <a href="https://townhallseattle.org/accessibility/">accessibility</a>. 
+
+<h2 id="prepare">Preparing for the Conference</h2>
+
+Before you leave your home to travel to Seattle, make sure you've got everything need to be ready for all the fun! Please remember to pack:
+
+- A government-issued photo ID if you plan on drinking alchohol
+- A water bottle
+- Snacks, if you need to nosh regularly throughout the day
+- Clothes appropriate for low to mid 70's during the day, dipping to the 50's at night
+ 
 
 <h2 id="travel">Travel & Lodging</h2>
 
