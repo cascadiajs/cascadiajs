@@ -275,7 +275,7 @@ export default function ({ html, state }) {
                   loop=""
                   playsinline=""
                 >
-                  <source src="_public/sizzle.mp4" type="video/mp4" />
+                  <source src="/_public/sizzle.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="video-overlay">
@@ -294,7 +294,7 @@ export default function ({ html, state }) {
                   industry.
                 </p>
                 <p class="date-location">
-                  June 1-2, 2026<br />Seattle, WA, USA
+                  June 1-2, 2026<br />Town Hall Seattle<br/>Seattle, WA, USA
                 </p>
                 <div class="reserve-your-spot">
                   <a class="buy" href="/2026/tickets"
