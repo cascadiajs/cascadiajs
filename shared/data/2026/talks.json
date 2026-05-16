@@ -43,8 +43,10 @@
     }
   },
   { 
-    "title": "Keynote",
+    "title": "JavaScript Won the Web. Rust Is Taking the Critical Path.",
     "type": "keynote",
+    "slug": "javascript-won-the-web-rust-is-taking-the-critical-path",
+    "abstract": "JavaScript remains the default choice for frontend applications, product work, and most of the visible web. But more of the modern web now lives in critical paths: backend services, runtimes, proxies, WebAssembly modules, and infrastructure where latency, memory, safety, and predictability matter. I will explore where Rust fits, where it does not, and how it can complement JavaScript in serious production systems.",
     "speaker": {
       "name": "Francesco Ciulla",
       "slug": "francesco-ciulla",
@@ -52,7 +54,7 @@
       "company": "Zerops",
       "location": "Rome, Italy",
       "social": [
-        { "type": "linkedin", "url": "hhttps://www.linkedin.com/in/francesco-ciulla-roma/" },
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/francesco-ciulla-roma/" },
         { "type": "x-twitter", "url": "https://x.com/FrancescoCiull4" }
       ]
     }
