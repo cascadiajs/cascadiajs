@@ -35,7 +35,7 @@ const sponsors = {
       name: "Codingscape",
       url: "https://codingscape.com",
       description:
-        "Codingscape is a modern consultancy solving global technology problems while putting people first. The world’s leading companies trust our expertise when they need a reliable partner to develop scalable software and systems. Our senior teams work across US time zones to build digital solutions faster and more efficiently than organizations can through internal hiring.",
+        "Codingscape is a modern consultancy solving global technology problems while putting people first. The world's leading companies trust our expertise when they need a reliable partner to develop scalable software and systems. Our senior teams work across US time zones to build digital solutions faster and more efficiently than organizations can through internal hiring.",
     },
     {
       id: "infobip",
@@ -501,6 +501,7 @@ const sponsors = {
       logo: "elastic.svg",
       name: "Elastic",
       url: "https://www.elastic.co",
+      description: "Elastic, the Search AI Company, enables everyone to find the answers they need in real time, using all their data, at scale. Elastic's solutions for search, observability, and security are built on the Elastic Search AI Platform — the development platform used by thousands of companies, including more than 50% of the Fortune 500.\n\nLearn more about working at Elastic at [elastic.co/careers](https://www.elastic.co/careers)"
     },
     {
       id: "arcjet",
@@ -508,6 +509,7 @@ const sponsors = {
       logo: "arcjet.svg",
       name: "Arcjet",
       url: "https://www.arcjet.com",
+      description: "AI features are shipping fast. Security reviews are not. As agents gain the ability to call tools, access data, and trigger real-world side effects, the risk is no longer just unsafe text. It is unauthorized actions, data leakage, and runaway AI spend. Arcjet is the enforcement layer for AI features in production.\n\nInstead of filtering prompts at the edge, Arcjet enforces policy at the moment your application executes tools or releases data. Decisions are bound to real application context such as identity, route, session, permissions, and cost budgets.\n\nWith Arcjet you can:\n* Protect AI endpoints from automation and cost attacks with bot detection and per-user rate limits\n* Prevent sensitive data from leaking into model context, logs, or third-party tools with built-in detection and redaction\n* Allow or deny tool execution based on user roles, routes, and approval flows\n* Constrain tool arguments and enforce spend limits before high-risk actions execute\n\nArcjet runs directly inside your environment as an SDK, giving you inline enforcement with full visibility into why a decision was made. Guardrails classify text. Arcjet enforces policy on AI actions in production.\n\nIf you are shipping customer-facing AI features, Arcjet helps you do it safely without slowing down development."
     },
     {
       id: "expo",
@@ -515,6 +517,7 @@ const sponsors = {
       logo: "expo.svg",
       name: "Expo",
       url: "https://www.expo.dev",
+      description: "If you know JavaScript, you're already most of the way to building a mobile app with Expo.\n\nExpo helps teams build and ship native iOS and Android apps without getting dragged into a full-time infrastructure project. No fighting local build setup. No waiting around on app store reviews for every fix. No stitching together mobile CI/CD from scratch.\n\nWe'll be at CascadiaJS and would love to meet you at Booth #10.\n\nCome find us at the booth if you want to talk about things like:\n\n* Cloud builds for iOS and Android with Expo Build\n* Shipping updates and bug fixes instantly over the air with Expo OTA Updates\n* Automating mobile CI/CD with Expo Workflows\n* File-based routing for React apps with Expo Router\n* Or just the mobile problem that's been annoying you lately\n\nWhether you're a web developer exploring mobile or a team shipping a production app, we can help you move faster without wrestling native tooling.\n\nCome say hi! We like talking to developers :)"
     },
     {
       id: "render",
@@ -529,6 +532,7 @@ const sponsors = {
       logo: "onebrief.svg",
       name: "OneBrief",
       url: "https://www.onebrief.com",
+      description: "Onebrief is building collaboration and AI-powered workflow software for complex, real-world planning environments—where clarity, speed, and accuracy matter. Our platform helps teams operate more effectively in high-stakes, constrained settings by unifying information across systems, teams, and locations.\n\nWe're a remote-first team of builders from diverse backgrounds, focused on creating meaningful impact—alongside a strong culture of ownership and craft. Backed by leading investors including General Catalyst, Battery Ventures, and Insight Partners, and a Y Combinator alum, we're growing quickly and excited to connect with engineers who want to tackle hard problems and shape the world we live in.\n\nAt CascadiaJS, we'll have a Booth #1 both days—come meet the team, learn what we're building, and explore open roles.\n\nDon't miss Jeff Otaño's (Senior Software Engineering Manager) lightning talk: [From Skeptics to Champions: Building an AI Platform Your Engineers Actually Trust](/2026/talks/building-an-ai-platform-your-engineers-actually-trust). He'll share how we moved from decentralized, individual AI tool usage to a governed, measurable, and scalable AI platform—turning experimentation into real organizational capability.\n\nWe're also a host of Cascadia's networking event on June 1—come hang out, meet fellow engineers, and connect with the Onebrief team.\n\nLearn more: https://www.onebrief.com/life-at-onebrief"
     },
     {
       id: "grow-therapy",
@@ -620,6 +624,7 @@ const sponsors = {
       logo: "copilotkit.svg",
       name: "CopilotKit",
       url: "https://www.copilotkit.ai",
+      description: "CopilotKit is the agentic frontend stack & the company behind the AG-UI protocol. This protocol has been adopted by Google, Microsoft, AWS, LangChain & more, making it the easiest path for bringing AI functionality (like Generative UI) to full stack applications.\n\nWe're hiring: https://www.copilotkit.ai/careers"
     },
     {
       id: "warp",
@@ -648,6 +653,7 @@ const sponsors = {
       logo: "aws.png",
       name: "AWS",
       url: "https://aws.amazon.com",
+      description: "Amazon Web Services (AWS) is guided by customer obsession, pace of innovation, commitment to operational excellence, and long-term thinking. By democratizing technology for nearly two decades and making cloud computing and generative AI accessible to organizations of every size and industry, AWS has built one of the fastest-growing enterprise technology businesses in history. Millions of customers trust AWS to accelerate innovation, transform their businesses, and shape the future. With the most comprehensive AI capabilities and global infrastructure footprint, AWS empowers builders to turn big ideas into reality. Learn more at [aws.amazon.com](https://aws.amazon.com) and follow [@AWSNewsroom](https://twitter.com/AWSNewsroom)."
     },
     {
       id: "works-real-estate",

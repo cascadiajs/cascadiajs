@@ -14,9 +14,18 @@ export default function ({ html, state }) {
     ></social-sharing>`;
   } else {
     return html`
+      <style>
+        #logo {
+          text-align: center;
+        }
+
+        #logo img {    
+          width: 50%;
+        }
+      </style>
       <main-layout>
         <simple-page title="2026 ${tier} Sponsor - ${name}">
-          <p><img id="logo" src="/_public/images/sponsors/${logo}" alt="${name} logo"/></p>
+          <div id="logo"><img src="/_public/images/sponsors/${logo}" alt="${name} logo"/></div>
           ${
             video
               ? /*html*/ `<div style="position: relative; padding-top: 56.25%;">

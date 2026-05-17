@@ -1,6 +1,6 @@
 import { sponsors } from "../../shared/data/sponsors.mjs";
 
-const sponsors2025 = sponsors["2026"];
+const sponsors2026 = sponsors["2026"];
 
 export default function Sponsors({ html }) {
   return html` <style>
@@ -97,17 +97,17 @@ export default function Sponsors({ html }) {
         .map(
           (tier) => /*html*/ `
             ${
-              sponsors2025.filter((s) => s.tier === tier).length > 0
+              sponsors2026.filter((s) => s.tier === tier).length > 0
                 ? /*html*/ `
                 <div class="tier-wrap"><div class="tier-inner"><div class="tier-label">${tier}</div></div></div>
                 <div class="${tier} tier">
-                ${sponsors2025
+                ${sponsors2026
                   .filter((s) => s.tier === tier)
                   .map(
                     (s) => /*html*/ `
                     ${
                       ["diamond", "platinum", "gold", "silver"].includes(s.tier)
-                        ? `<div><a target="_new" href="${s.url}"><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></a></div>`
+                        ? `<div><a target="${ s.description ? "_self" : "_new"}" href="${ s.description ? `/2026/sponsors/${s.id}` : s.url}"><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></a></div>`
                         : `<div><img src="/_public/images/sponsors/${s.logo}" alt="${s.name} logo"/></div>`
                     }
                 `,
