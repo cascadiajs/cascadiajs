@@ -315,7 +315,7 @@ function June2({ talks, ticket = undefined }) {
                 <h3>Workshop Track</h3>
                 <div class="location">Forum</div>
                 <div class="show-item">       
-                    <div class="when">10:20am</div>
+                    <div class="when">10:45am</div>
                     <div class="what">
                         <div class="title"><a href="/2026/workshops/offloading-work-with-the-workers">Offloading Work, Without the Workers</a></div>
                         <div class="speaker"><p>Render Workflows lets you implement background jobs as plain JavaScript functions — no queues, no worker fleets, no retry logic to manage yourself.</p>
