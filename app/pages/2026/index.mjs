@@ -386,8 +386,8 @@ export default function ({ html, state }) {
                   &nbsp;
                   <div class="divider"></div>
                 </div>
-                <div class="price">$699</div>
-                <div class="until">Until May 10, 2026</div>
+                <div class="price">$799</div>
+                <div class="until">&nbsp;</div>
                 <div class="description">
                   <strong>Includes:</strong>
                   <ul>
@@ -409,8 +409,8 @@ export default function ({ html, state }) {
                   <div class="label">Indie Discount</div>
                   <div class="divider"></div>
                 </div>
-                <div class="price">$499</div>
-                <div class="until">Until May 10, 2026</div>
+                <div class="price">$599</div>
+                <div class="until">&nbsp;</div>
                 <div class="description">
                   <strong>Includes:</strong>
                   <ul>
