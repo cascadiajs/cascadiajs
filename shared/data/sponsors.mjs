@@ -663,11 +663,11 @@ const sponsors = {
       url: "",
     },
     {
-      id: "okta",
+      id: "auth0",
       tier: "gold",
-      logo: "okta.png",
-      name: "Okta",
-      url: "https://www.okta.com",
+      logo: "auth0.svg",
+      name: "Auth0",
+      url: "https://auth0.com",
     },
     {
       id: "rent-spree",
