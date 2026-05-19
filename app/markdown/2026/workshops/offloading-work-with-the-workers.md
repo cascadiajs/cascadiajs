@@ -7,7 +7,7 @@ excerpt: A workshop on using Render Workflows to handle background jobs without 
 
 <div class="cta"><a href="/2026/tickets">🎟️ Get Your Ticket Today!</a></div>
 
-* When: Tuesday, June 2 (10:20am - 12:20pm)
+* When: Tuesday, June 2 (10:45am - 12:40pm)
 * Where: Town Hall, Forum level
 * Instructors: [Brendan Fosberry, Software Engineer at Render](https://www.linkedin.com/in/bfosberry/) and [Ojus Save, Developer Relations at Render](https://www.linkedin.com/in/ojus/)
 
