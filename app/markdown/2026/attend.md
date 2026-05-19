@@ -11,7 +11,7 @@ excerpt: Lodging, Travel, Guest Passes and more!
         <li><a href="#prepare">Preparing for the Conference</a></li>
         <li><a href="#travel">Travel & Lodging</a></li>
         <li><a href="#meals">Meals</a></li>
-        <li><a href="#childcare">Childcare</a></li>
+        <!--<li><a href="#childcare">Childcare</a></li>-->
         <li><a href="#connect">Cascadia Connect</a></li>
     </ul>
 </div>
@@ -53,9 +53,9 @@ If you are coming from Portland, OR or Vancouver, BC you should definitely check
 
 If you purchased a Premium ticket, please review our [menu](/2026/meals) so you can plan accordingly.
 
-<h2 id="childcare">Childcare</h2>
+<!--<h2 id="childcare">Childcare</h2>
 
-We're offering subsidized, professional, on-site child care for kids 10 and under. Spots are limited. <a href="/2026/childcare">Learn more and sign up.</a>
+We're offering subsidized, professional, on-site child care for kids 10 and under. Spots are limited. <a href="/2026/childcare">Learn more and sign up.</a>-->
 
 
 <h2 id="connect">Cascadia Connect</h2>
