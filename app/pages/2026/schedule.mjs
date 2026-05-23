@@ -204,15 +204,17 @@ function June1({ talks, ticket = undefined }) {
                 <div class="show-item">       
                     <div class="when">10:45am</div>
                     <div class="what">
-                        <div class="title"><a href="/2026/workshops/scaling-voice-pipelines">Technical Workshop: Build a Voice Agent with Vapi</a></div>
+                        <div class="title"><a href="/2026/workshops/scaling-voice-pipelines">Build a Voice Agent with Vapi</a></div>
                         <div class="speaker">This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.</div>
                     </div>
                 </div>
                 <div class="show-item">       
                     <div class="when">1:40pm</div>
                     <div class="what">
-                        <div class="title"><a href="/2026/workshops/recipe-better-agents">Tools + Skills: The Recipe for Better Agents</a></div>
-                        <div class="speaker">AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools. In this workshop, participants will learn both sides of that equation.</div>
+                        <div class="title"><a href="/2026/workshops/recipe-better-agents">Build Better Agent Tools with Apify</a></div>
+                        <div class="speaker">
+                            <p>This workshop guides you through building a cloud-deployed web research tool for AI coding agents by wrapping Apify's RAG Web Browser with custom LLM-powered query generation and relevance filtering. The finished Actor runs on Apify's platform and gives agents like Claude Code or Cursor access to real-time web data. No Apify experience is needed — just a laptop with Node.js and a coding agent.</p>
+                        </div>
                     </div>
                 </div>
             </div>
