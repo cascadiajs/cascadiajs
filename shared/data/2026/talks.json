@@ -14,8 +14,10 @@
     }
   },
   {
-    "title": "Keynote",
+    "title": "The Last Mile Is Code",
     "type": "keynote",
+    "slug": "the-last-mile-is-code",
+    "abstract": "Agents have crossed a threshold on writing code. They've crossed nothing comparable on the world below it. YAML files, console UIs, copy-pasted snippets, bespoke infra DSLs, and cloud configuration that sit between \"it works on my laptop\" and \"it's running in production.\" For most developers, that world has always belonged to someone else: a platform team, an SRE rotation, the person on call. That's starting to change, and not just for individual developers. Engineers at every scale are arriving at the same realization that infrastructure is no longer a separate discipline once it's expressed in the same languages the application is. This talk is about what changes when agents can do the full loop instead of just the part that looks like code, where the line between coding and engineering goes from here, and why shipping is about to belong to everyone.",
     "speaker": {
       "name": "Joe Duffy",
       "slug": "joe-duffy",
@@ -28,7 +30,7 @@
     }
   },
   { 
-    "title": "Keynote",
+    "title": "Day Two Closing Keynote",
     "type": "keynote",
     "speaker": {
       "name": "Theo",
@@ -304,22 +306,6 @@
     }
   },
   { 
-    "title": "The Schematic to Community as Told by Rick Astley",
-    "type": "lightning",
-    "slug": "the-schematic-to-community-as-told-by-rick-astley",
-    "abstract": "You think \"Rickrolling\" is just a prank? Think again buddy. the lyrics to \"Never Gonna Give You Up\" are actually a masterclass in community retention. We're breaking down the \"Six Pillars of Astley\" to help you build a community that is together forever (see what I did there) Expect deep insights, personal anecdotes, and—yes—you'll probably get trolled.",
-    "speaker": {
-      "name": "Jason Torres",
-      "slug": "jason-torres",
-      "image": "/_public/images/2026/speakers/jason-torres.jpg",
-      "company": "Jetbrains",
-      "location": "Rochester, NY USA",
-      "social": [
-        { "type": "linkedin", "url": "https://www.linkedin.com/in/thejasontorres/" }
-      ]
-    }
-  },
-  { 
     "title": "The Request Tax: Re-evaluating 20+ Years of Web Performance Dogma",
     "type": "lightning",
     "slug": "the-request-tax-re-evaluating-20-years-of-web-performance-dogma",
@@ -399,6 +385,23 @@
       "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/engin-diri/" },
         { "type": "github", "url": "https://github.com/dirien" }
+      ]
+    }
+  },  
+  { 
+    "title": "Trust, But Verify: Human-in-the-Loop for Agents That Actually Matter",
+    "type": "lightning",
+    "slug": "trust-but-verify-human-in-the-loop-for-agents-that-actually-matter",
+    "abstract": "We've built an ecosystem of capable agent. Now let's learn how to make them stop. In this talk we'll walk through various human-in-the-loop patterns. From simple inline confirmations, to out-of-band permission gates, to handing your agent a wallet with real money in it and more.",
+    "speaker": {
+      "name": "Michael Liendo",
+      "slug": "michael-liendo",
+      "image": "/_public/images/2026/speakers/michael-liendo.jpg",
+      "company": "Okta",
+      "location": "Davenport, IA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/focusotter" },
+        { "type": "x-twitter", "url": "https://x.com/focusotter" }
       ]
     }
   }
