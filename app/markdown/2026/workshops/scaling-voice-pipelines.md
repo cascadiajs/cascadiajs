@@ -2,10 +2,9 @@
 title: Technical Workshop - Build a Voice Agent with Vapi
 excerpt: This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.
 ---
+<div class="highlight info">This workshop is FREE for attendees of CascadiaJS 2026. Seats are LIMITED, attendees MUST register to reserve their seat for this workshop. Check your email for the registration link.</div>
 
-<span class="highlight info">This workshop is free for attendees of CascadiaJS 2026.</span>
-
-<div class="cta"><a href="/2026/tickets">🎟️ Get Your Ticket Today!</a></div>
+<div class="cta"><a href="/2026/tickets">🎟️ Get Your Conference Ticket Today!</a></div>
 
 * When: Monday, June 1 (10:45am - 12:40pm)
 * Where: Town Hall, Forum level

@@ -2,9 +2,9 @@
 title: Build Better Agent Tools with Apify
 excerpt: AI agents are becoming more popular, but to make them more useful and capable, they need the right tools and instructions to use those tools. In this workshop, participants will learn both sides of that equation.
 ---
-<span class="highlight info">This workshop is free for attendees of CascadiaJS 2026.</span>
+<div class="highlight info">This workshop is FREE for attendees of CascadiaJS 2026. Seats are LIMITED, attendees MUST register to reserve their seat for this workshop. Check your email for the registration link.</div>
 
-<div class="cta"><a href="/2026/tickets">🎟️ Get Your Ticket Today!</a></div>
+<div class="cta"><a href="/2026/tickets">🎟️ Get Your Conference Ticket Today!</a></div>
 
 * When: Monday, June 1 (1:40pm - 3:40pm)
 * Where: Town Hall, Forum level

@@ -65,6 +65,7 @@ function May29() {
                     <div class="what">
                         <div class="title"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026">Cascadia AI Hackathon</a></div>
                         <p>We're hosting an AI hackathon leading up to CascadiaJS 2026! Stay tuned for more details, but it will kick-off Friday evening and conclude Saturday afternoon, with the winning team being invited to demo what they built at CascadiaJS 2026!</p>
+                        <p><span class="cta"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026">Register</a></span></p>
                     </div>
                 </div>
                 <div class="show-item">       
@@ -115,10 +116,11 @@ function May31() {
                 <div class="show-item">       
                     <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
-                        <div class="title">Welcome Reception &amp; Pre-Registration by <img src="/_public/images/sponsors/warp.png"/></div>
+                        <div class="title"><a target="_blank" href="https://luma.com/cascadiajs-2026-welcome-reception">Welcome Reception</a> &amp; Pre-Registration by <img src="/_public/images/sponsors/warp.png"/></div>
                         <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and have fun with our friends from Warp and Whiskey Web and Whatnot.</p>
 
                         <p>What if we all built a game together in just 1 hour? Come join Warp and Web Whiskey at the CascadiaJS Welcome Reception! You'll get to play a multiplayer game, suggest ways to improve the game, and watch coding agents ship your ideas. Dw, we'll foot the token bill.</p>
+                        <p><span class="cta"><a target="_blank" href="https://luma.com/cascadiajs-2026-welcome-reception">RSVP</a></span></p>
                     </div>
                 </div>
             </div>

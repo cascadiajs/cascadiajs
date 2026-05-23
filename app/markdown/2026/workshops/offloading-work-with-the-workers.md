@@ -2,10 +2,9 @@
 title: Offloading Work, Without the Workers
 excerpt: A workshop on using Render Workflows to handle background jobs without managing queues, retries, or worker infrastructure. You'll build chainable task functions for distributed compute, applicable to workloads like ETL, batch inference, and AI agents. By the end, you'll have a deployed background execution pipeline you can adapt for your own projects.
 ---
+<div class="highlight info">This workshop is FREE for attendees of CascadiaJS 2026. Seats are LIMITED, attendees MUST register to reserve their seat for this workshop. Check your email for the registration link.</div>
 
-<span class="highlight info">This workshop is free for attendees of CascadiaJS 2026.</span>
-
-<div class="cta"><a href="/2026/tickets">🎟️ Get Your Ticket Today!</a></div>
+<div class="cta"><a href="/2026/tickets">🎟️ Get Your Conference Ticket Today!</a></div>
 
 * When: Tuesday, June 2 (10:45am - 12:40pm)
 * Where: Town Hall, Forum level

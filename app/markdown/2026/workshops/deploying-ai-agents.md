@@ -2,14 +2,12 @@
 title: Deploying AI Agents on AWS with Pulumi and Amazon Bedrock AgentCore
 excerpt: Go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi.
 ---
+<div class="highlight info">This workshop is FREE for attendees of CascadiaJS 2026. Seats are LIMITED, attendees MUST register to reserve their seat for this workshop. Check your email for the registration link.</div>
 
-<span class="highlight info">This workshop is free for attendees of CascadiaJS 2026.</span>
-
-<div class="cta"><a href="/2026/tickets">🎟️ Get Your Ticket Today!</a></div>
+<div class="cta"><a href="/2026/tickets">🎟️ Get Your Conference Ticket Today!</a></div>
 
 * When: Tuesday, June 2 (1:40pm - 3:40pm)
 * Where: Town Hall, Forum level
-<!--* Instructor: [Sarah Guthals](https://twitter.com/drguthals)-->
 
 ​Most AI agent demos look great in a notebook, but getting them into production means dealing with authentication, secrets, IAM policies, container builds, observability, and repeatable deployments. The proof of concept rarely covers any of that.
 
