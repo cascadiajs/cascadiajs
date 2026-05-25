@@ -2,7 +2,7 @@ const sponsors = {
   previous: [
     {
       id: "temporal",
-      logo: "temporal.svg",
+      logo: "temporal.png",
       logoSquare: "temporal-square.jpg",
       name: "Temporal",
       url: "https://temporal.io/",
@@ -12,7 +12,7 @@ const sponsors = {
     },
     {
       id: "stytch",
-      logo: "stytch.svg",
+      logo: "stytch.png",
       logoSquare: "stytch-square.jpg",
       name: "Stytch",
       url: "https://stytch.com/",
@@ -21,7 +21,7 @@ const sponsors = {
     },
     {
       id: "datastax",
-      logo: "datastax.svg",
+      logo: "datastax.png",
       logoSquare: "datastax-square.jpg",
       name: "DataStax",
       url: "https://www.datastax.com",
@@ -30,7 +30,7 @@ const sponsors = {
     },
     {
       id: "codingscape",
-      logo: "codingscape.svg",
+      logo: "codingscape.png",
       logoSquare: "codingscape-square.jpg",
       name: "Codingscape",
       url: "https://codingscape.com",
@@ -39,7 +39,7 @@ const sponsors = {
     },
     {
       id: "infobip",
-      logo: "infobip.svg",
+      logo: "infobip.png",
       logoSquare: "infobip-square.jpg",
       name: "Infobip",
       url: "http://infobip.com/developers",
@@ -49,25 +49,25 @@ const sponsors = {
     },
     {
       id: "tbd",
-      logo: "tbd.svg",
+      logo: "tbd.png",
       name: "TBD",
       url: "https://tbd.website",
     },
     {
       id: "sentry",
-      logo: "sentry.svg",
+      logo: "sentry.png",
       name: "Sentry",
       url: "https://sentry.io",
     },
     {
       id: "hookdeck",
-      logo: "hookdeck.svg",
+      logo: "hookdeck.png",
       name: "HookDeck",
       url: "https://hookdeck.com?ref=cascadiajs-2024",
     },
     {
       id: "langchain",
-      logo: "langchain.svg",
+      logo: "langchain.png",
       name: "LangChain",
       url: "https://langchain.com",
     },
@@ -103,7 +103,7 @@ const sponsors = {
     },
     {
       id: "circleci",
-      logo: "circleci.svg",
+      logo: "circleci.png",
       name: "CircleCI",
       url: "https://circleci.com",
     },
@@ -121,7 +121,7 @@ const sponsors = {
     },
     {
       id: "dolbyio",
-      logo: "dolby.svg",
+      logo: "dolby.png",
       name: "Dolby.io",
       url: "https://dolby.io/",
     },
@@ -139,13 +139,13 @@ const sponsors = {
     },
     {
       id: "netlify",
-      logo: "netlify.svg",
+      logo: "netlify.png",
       name: "Netlify",
       url: "https://www.netlify.com",
     },
     {
       id: "new-relic",
-      logo: "new-relic.svg",
+      logo: "new-relic.png",
       name: "New Relic",
       url: "https://newrelic.com",
     },
@@ -157,13 +157,13 @@ const sponsors = {
     },
     {
       id: "openjs",
-      logo: "openjs.svg",
+      logo: "openjs.png",
       name: "OpenJS Foundation",
       url: "https://openjsf.org",
     },
     {
       id: "postman",
-      logo: "postman.svg",
+      logo: "postman.png",
       name: "Postman",
       url: "https://www.postman.com",
     },
@@ -187,7 +187,7 @@ const sponsors = {
     },
     {
       id: "stateful",
-      logo: "stateful.svg",
+      logo: "stateful.png",
       name: "Stateful",
       url: "https://stateful.com",
     },
@@ -199,7 +199,7 @@ const sponsors = {
     },
     {
       id: "twilio",
-      logo: "twilio.svg",
+      logo: "twilio.png",
       name: "Twilio",
       url: "https://www.twilio.com",
     },
@@ -217,7 +217,7 @@ const sponsors = {
     },
     {
       id: "xata",
-      logo: "xata.svg",
+      logo: "xata.png",
       name: "Xata",
       url: "https://xata.io",
     },
@@ -226,7 +226,7 @@ const sponsors = {
     {
       id: "webai",
       tier: "platinum",
-      logo: "google-webai.svg",
+      logo: "google-webai.png",
       logoSquare: "google-webai.png",
       name: "#WebAI",
       url: "https://www.linkedin.com/in/webai/",
@@ -246,8 +246,8 @@ const sponsors = {
     {
       id: "elastic",
       tier: "silver",
-      logo: "elastic.svg",
-      logoSquare: "elastic.svg",
+      logo: "elastic.png",
+      logoSquare: "elastic.png",
       name: "Elastic",
       url: "https://www.elastic.co/",
       description:
@@ -256,8 +256,8 @@ const sponsors = {
     {
       id: "arcjet",
       tier: "gold",
-      logo: "arcjet.svg",
-      logoSquare: "arcjet.svg",
+      logo: "arcjet.png",
+      logoSquare: "arcjet.png",
       name: "ArcJet",
       url: "https://arcjet.com/",
       description:
@@ -286,7 +286,7 @@ const sponsors = {
     {
       id: "atono",
       tier: "silver",
-      logo: "atono.svg",
+      logo: "atono.png",
       logoSquare: "atono.png",
       name: "Atono",
       url: "https://atono.io/",
@@ -296,7 +296,7 @@ const sponsors = {
     {
       id: "mastra",
       tier: "bronze",
-      logo: "mastra.svg",
+      logo: "mastra.png",
       name: "Mastra",
       url: "https://www.mastra.ai/",
       description:
@@ -365,7 +365,7 @@ const sponsors = {
     {
       id: "viata",
       tier: "community",
-      logo: "viata.svg",
+      logo: "viata.png",
       logoSquare: "viata.png",
       name: "Viata",
       url: "https://viata.ai",
@@ -375,7 +375,7 @@ const sponsors = {
     {
       id: "codeday",
       tier: "community",
-      logo: "codeday.svg",
+      logo: "codeday.png",
       logoSquare: "codeday.png",
       name: "CodeDay",
       url: "https://codeday.org",
@@ -406,7 +406,7 @@ const sponsors = {
       id: "github",
       tier: "community",
       logo: "github.png",
-      logoSquare: "github.svg",
+      logoSquare: "github.png",
       name: "Github",
       url: "https://github.com",
       description: "",
@@ -414,7 +414,7 @@ const sponsors = {
     {
       id: "mux",
       tier: "community",
-      logo: "mux.svg",
+      logo: "mux.png",
       logoSquare: "mux.png",
       name: "Mux",
       url: "https://mux.com",
@@ -451,7 +451,7 @@ const sponsors = {
     {
       id: "moment",
       tier: "gold",
-      logo: "moment.svg",
+      logo: "moment.png",
       logoSquare: "moment.png",
       name: "Moment",
       url: "https://moment.dev",
@@ -471,8 +471,8 @@ const sponsors = {
     {
       id: "copilotkit",
       tier: "gold",
-      logo: "copilotkit.svg",
-      logoSquare: "copilotkit.svg",
+      logo: "copilotkit.png",
+      logoSquare: "copilotkit.png",
       name: "CopilotKit",
       url: "https://www.copilotkit.ai",
       description:
@@ -489,7 +489,7 @@ const sponsors = {
     {
       id: "netlify",
       tier: "community",
-      logo: "netlify.svg",
+      logo: "netlify.png",
       name: "Netlify",
       url: "https://www.netlify.com",
     },
@@ -498,7 +498,7 @@ const sponsors = {
     {
       id: "elastic",
       tier: "gold",
-      logo: "elastic.svg",
+      logo: "elastic.png",
       name: "Elastic",
       url: "https://www.elastic.co",
       description: "Elastic, the Search AI Company, enables everyone to find the answers they need in real time, using all their data, at scale. Elastic's solutions for search, observability, and security are built on the Elastic Search AI Platform — the development platform used by thousands of companies, including more than 50% of the Fortune 500.\n\nLearn more about working at Elastic at [elastic.co/careers](https://www.elastic.co/careers)"
@@ -506,7 +506,7 @@ const sponsors = {
     {
       id: "arcjet",
       tier: "gold",
-      logo: "arcjet.svg",
+      logo: "arcjet.png",
       name: "Arcjet",
       url: "https://www.arcjet.com",
       description: "AI features are shipping fast. Security reviews are not. As agents gain the ability to call tools, access data, and trigger real-world side effects, the risk is no longer just unsafe text. It is unauthorized actions, data leakage, and runaway AI spend. Arcjet is the enforcement layer for AI features in production.\n\nInstead of filtering prompts at the edge, Arcjet enforces policy at the moment your application executes tools or releases data. Decisions are bound to real application context such as identity, route, session, permissions, and cost budgets.\n\nWith Arcjet you can:\n* Protect AI endpoints from automation and cost attacks with bot detection and per-user rate limits\n* Prevent sensitive data from leaking into model context, logs, or third-party tools with built-in detection and redaction\n* Allow or deny tool execution based on user roles, routes, and approval flows\n* Constrain tool arguments and enforce spend limits before high-risk actions execute\n\nArcjet runs directly inside your environment as an SDK, giving you inline enforcement with full visibility into why a decision was made. Guardrails classify text. Arcjet enforces policy on AI actions in production.\n\nIf you are shipping customer-facing AI features, Arcjet helps you do it safely without slowing down development."
@@ -514,7 +514,7 @@ const sponsors = {
     {
       id: "expo",
       tier: "gold",
-      logo: "expo.svg",
+      logo: "expo.png",
       name: "Expo",
       url: "https://www.expo.dev",
       description: "If you know JavaScript, you're already most of the way to building a mobile app with Expo.\n\nExpo helps teams build and ship native iOS and Android apps without getting dragged into a full-time infrastructure project. No fighting local build setup. No waiting around on app store reviews for every fix. No stitching together mobile CI/CD from scratch.\n\nWe'll be at CascadiaJS and would love to meet you at Booth #10.\n\nCome find us at the booth if you want to talk about things like:\n\n* Cloud builds for iOS and Android with Expo Build\n* Shipping updates and bug fixes instantly over the air with Expo OTA Updates\n* Automating mobile CI/CD with Expo Workflows\n* File-based routing for React apps with Expo Router\n* Or just the mobile problem that's been annoying you lately\n\nWhether you're a web developer exploring mobile or a team shipping a production app, we can help you move faster without wrestling native tooling.\n\nCome say hi! We like talking to developers :)"
@@ -522,14 +522,14 @@ const sponsors = {
     {
       id: "render",
       tier: "gold",
-      logo: "render.svg",
+      logo: "render.png",
       name: "Render",
       url: "https://www.render.com",
     },
     {
       id: "onebrief",
       tier: "gold",
-      logo: "onebrief.svg",
+      logo: "onebrief.png",
       name: "OneBrief",
       url: "https://www.onebrief.com",
       description: "Onebrief is building collaboration and AI-powered workflow software for complex, real-world planning environments—where clarity, speed, and accuracy matter. Our platform helps teams operate more effectively in high-stakes, constrained settings by unifying information across systems, teams, and locations.\n\nWe're a remote-first team of builders from diverse backgrounds, focused on creating meaningful impact—alongside a strong culture of ownership and craft. Backed by leading investors including General Catalyst, Battery Ventures, and Insight Partners, and a Y Combinator alum, we're growing quickly and excited to connect with engineers who want to tackle hard problems and shape the world we live in.\n\nAt CascadiaJS, we'll have a Booth #1 both days—come meet the team, learn what we're building, and explore open roles.\n\nDon't miss Jeff Otaño's (Senior Software Engineering Manager) lightning talk: [From Skeptics to Champions: Building an AI Platform Your Engineers Actually Trust](/2026/talks/building-an-ai-platform-your-engineers-actually-trust). He'll share how we moved from decentralized, individual AI tool usage to a governed, measurable, and scalable AI platform—turning experimentation into real organizational capability.\n\nWe're also a host of Cascadia's networking event on June 1—come hang out, meet fellow engineers, and connect with the Onebrief team.\n\nLearn more: https://www.onebrief.com/life-at-onebrief"
@@ -537,35 +537,37 @@ const sponsors = {
     {
       id: "grow-therapy",
       tier: "silver",
-      logo: "grow-therapy.svg",
+      logo: "grow-therapy.png",
       name: "Grow Therapy",
       url: "https://www.growtherapy.com",
     },
     {
       id: "apify",
       tier: "gold",
-      logo: "apify.svg",
+      logo: "apify.png",
       name: "Apify",
-      url: "https://www.apify.com",
+      url: "https://apify.com/?utm_source=cascadiajs&utm_medium=event&utm_campaign=events-cascadiajs26",
+      description: "Apify is the largest marketplace of tools for AI. 29,000 Actors to automate your business. Get real-time web data, track competitors, generate leads, monitor social media, and integrate your apps and agents.\n\nCan’t find an Actor for your use case? Join a global community of builders who create and earn from Actors. Apify takes care of infrastructure, billing, and distribution."
     },
     {
       id: "vapi",
       tier: "gold",
-      logo: "vapi.svg",
+      logo: "vapi.png",
       name: "Vapi",
       url: "https://www.vapi.ai",
+      description: "Vapi is a Voice AI platform that gives developers control over orchestrating and managing voice applications and models while connecting to the systems they already use for real-world action. This makes AI voice agents easy to build, safe to operate, and flexible to evolve."
     },
     {
       id: "atlassian",
       tier: "community",
-      logo: "atlassian.svg",
+      logo: "atlassian.png",
       name: "Atlassian",
       url: "https://go.atlassian.com/cascadiaJS26",
     },
     {
       id: "mux",
       tier: "silver",
-      logo: "mux.svg",
+      logo: "mux.png",
       name: "Mux",
       url: "https://www.mux.com",
     },
@@ -579,49 +581,49 @@ const sponsors = {
     {
       id: "codeandcoffee",
       tier: "community",
-      logo: "codeandcoffee.svg",
+      logo: "codeandcoffee.png",
       name: "Seattle Code and Coffee",
       url: "https://www.meetup.com/seattle-code-and-coffee/",
     },
     {
       id: "ai-portland",
       tier: "community",
-      logo: "ai-portland.svg",
+      logo: "ai-portland.png",
       name: "AI Portland",
       url: "https://www.meetup.com/ai-portland/",
     },
     {
       id: "pulumi",
       tier: "platinum",
-      logo: "pulumi.svg",
+      logo: "pulumi.png",
       name: "Pulumi",
       url: "https://www.pulumi.com",
     },
     {
       id: "chain-react",
       tier: "silver",
-      logo: "chain-react.svg",
+      logo: "chain-react.png",
       name: "Chain React",
       url: "https://ti.to/chainreact/chainreact2026/discount/CASCADIA26",
     },
     {
       id: "uber",
       tier: "bronze",
-      logo: "uber.svg",
+      logo: "uber.png",
       name: "Uber",
       url: "https://www.uber.com",
     },
     {
       id: "vanjs",
       tier: "community",
-      logo: "vanjs.svg",
+      logo: "vanjs.png",
       name: "VanJS",
       url: "https://www.luma.com/vanjs",
     },
     {
       id: "copilotkit",
       tier: "gold",
-      logo: "copilotkit.svg",
+      logo: "copilotkit.png",
       name: "CopilotKit",
       url: "https://www.copilotkit.ai",
       description: "CopilotKit is the agentic frontend stack & the company behind the AG-UI protocol. This protocol has been adopted by Google, Microsoft, AWS, LangChain & more, making it the easiest path for bringing AI functionality (like Generative UI) to full stack applications.\n\nWe're hiring: https://www.copilotkit.ai/careers"
@@ -629,7 +631,7 @@ const sponsors = {
     {
       id: "warp",
       tier: "bronze",
-      logo: "warp.svg",
+      logo: "warp.png",
       name: "Warp",
       url: "https://www.warp.dev",
     },
@@ -665,7 +667,7 @@ const sponsors = {
     {
       id: "auth0",
       tier: "gold",
-      logo: "auth0.svg",
+      logo: "auth0.png",
       name: "Auth0",
       url: "https://auth0.com",
     },
@@ -685,7 +687,7 @@ const sponsors = {
     {
       id: "neo4j",
       tier: "community",
-      logo: "neo4j.svg",
+      logo: "neo4j.png",
       name: "Neo4j"
     }
   ],
