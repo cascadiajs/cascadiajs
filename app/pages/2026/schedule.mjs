@@ -237,9 +237,14 @@ function June1({ talks, ticket = undefined }) {
                     <div class="when">6:00pm</div>
                     <div class="what">
                         <div class="title">Networking Mixer & Job Fair</div>
-
-                        <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Render, Expo, CopilotKit, Warp and more. Looking to grow your network? Make new friends during a Pog tournament hosted by Mux! </p>
-
+                        <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Render, Expo, CopilotKit, Warp and more. </p>
+                    </div>
+                </div> 
+                <div class="show-item">       
+                    <div class="when">6:00pm</div>
+                    <div class="what">
+                        <div class="title">Pog Tournament by <img src="/_public/images/sponsors/mux.svg" alt="Mux logo"/></div>
+                        <p>Looking to grow your network? Make new friends during a Pog tournament hosted by Mux!</p>
                     </div>
                 </div>
                 <div>   
@@ -286,7 +291,7 @@ function June2({ talks, ticket = undefined }) {
                 ${ renderSpeaker("11:00am", talks.find(t => t.speaker.slug === 'alex-hinson'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'marty-nelson'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'molly-jean-bennett'))}
-                ${ renderSpeaker("", talks.find(t => t.speaker.slug === ''))}
+                ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'kaelig-deloumeau-prigent'))}
                 <div class="location">Forum</div>
                 <div class="show-item">       
                     <div class="when">12:40pm</div>
