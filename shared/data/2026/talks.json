@@ -361,7 +361,7 @@
     "title": "Offloading Work, Without the Workers",
     "type": "workshop",
     "slug": "offloading-work-with-the-workers",
-    "abstract": "A workshop on using Render Workflows to handle background jobs without managing queues, retries, or worker infrastructure. You'll build chainable task functions for distributed compute, applicable to workloads like ETL, batch inference, and AI agents. By the end, you'll have a deployed background execution pipeline you can adapt for your own projects.",
+    "abstract": "A workshop on using Render Workflows to handle background jobs without managing queues, retries, or worker infrastructure. You'll build chainable task functions for distributed compute, applicable to workloads like ETL, batch inference, and AI agents. By the end, you'll have a deployed background execution pipeline you can adapt for your own projects.\n\n[[More info and how to register]](/2026/workshops/offloading-work-with-the-workers)",
     "speaker": {
       "name": "Ojus Save",
       "slug": "ojus-save",
@@ -377,7 +377,7 @@
     "title": "Deploying AI Agents on AWS With Pulumi and Amazon Bedrock AgentCore",
     "type": "workshop",
     "slug": "deploying-ai-agents-on-aws-with-pulumi-and-amazon-bedrock-agentcore",
-    "abstract": "In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.",
+    "abstract": "In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.\n\n[[More info and how to register]](/2026/workshops/deploying-ai-agents)",
     "speaker": {
       "name": "Engin Diri",
       "slug": "engin-diri",
@@ -404,6 +404,55 @@
       "social": [
         { "type": "linkedin", "url": "https://www.linkedin.com/in/focusotter" },
         { "type": "x-twitter", "url": "https://x.com/focusotter" }
+      ]
+    }
+  },  
+  { 
+    "title": "Design Tokens: Getting Agents to Follow Brand Guidelines",
+    "type": "lightning",
+    "slug": "design-tokens-getting-agents-to-follow-brand-guidelines",
+    "abstract": "While AI allows us to ship more UI than ever, it also makes it easier to ship experiences that don't match our design language. Let's see how Design Tokens, the lingua franca of design systems, bridge the gap between design, engineering, and AI.",
+    "speaker": {
+      "name": "Kaelig Deloumeau-Prigent",
+      "slug": "kaelig-deloumeau-prigent",
+      "image": "/_public/images/2026/speakers/kaelig-deloumeau-prigent.jpg",
+      "company": "Design Tokens W3C CG",
+      "location": "Seattle, WA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/kaelig" },
+        { "type": "x-twitter", "url": "https://x.com/kaelig" }
+      ]
+    }
+  },  
+  { 
+    "title": "Build Better Agent Tools with Apify",
+    "type": "workshop",
+    "slug": "build-better-agent-tools-with-apify",
+    "abstract": "This workshop guides you through building a cloud-deployed web research tool for AI coding agents by wrapping Apify's RAG Web Browser with custom LLM-powered query generation and relevance filtering. The finished Actor runs on Apify's platform and gives agents like Claude Code or Cursor access to real-time web data. No Apify experience is needed — just a laptop with Node.js and a coding agent.\n\n[[More info and how to register]](/2026/workshops/recipe-better-agents)",
+    "speaker": {
+      "name": "Michael Daigler",
+      "slug": "michael-daigler",
+      "image": "/_public/images/2026/speakers/michael-daigler.jpg",
+      "company": "Apify",
+      "location": "Austin, TX USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/mdaigz/" }
+      ]
+    }
+  },  
+  { 
+    "title": "Build a Voice Agent with Vapi",
+    "type": "workshop",
+    "slug": "build-a-voice-agent-with-vapi",
+    "abstract": "This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.\n\n[[More info and how to register]](/2026/workshops/scaling-voice-pipelines)",
+    "speaker": {
+      "name": "Amanda Martin",
+      "slug": "amanda-martin",
+      "image": "/_public/images/2026/speakers/amanda-martin.jpg",
+      "company": "Vapi",
+      "location": "San Francisco, CA USA",
+      "social": [
+        { "type": "linkedin", "url": "https://www.linkedin.com/in/amandamartin-dev/" }
       ]
     }
   }
