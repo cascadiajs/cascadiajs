@@ -30,7 +30,9 @@
     }
   },
   { 
-    "title": "Day Two Closing Keynote",
+    "title": "It's time to rethink everything",
+    "slug": "its-time-to-rethink-everything",
+    "abstract": "We spent decades building awesome tools for developers. Languages, frameworks, clouds, and more. They're great for humans. They're not so great for devs. What happens if we throw it all away and start from scratch?",
     "type": "keynote",
     "speaker": {
       "name": "Theo",
