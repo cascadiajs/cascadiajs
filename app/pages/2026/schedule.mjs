@@ -63,9 +63,9 @@ function May29() {
                 <div class="show-item">       
                     <div class="when">5pm</div>
                     <div class="what">
-                        <div class="title"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026">Cascadia AI Hackathon</a></div>
+                        <div class="title"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026?coupon=F7S4JY">Cascadia AI Hackathon</a></div>
                         <p>We're hosting an AI hackathon leading up to CascadiaJS 2026! Stay tuned for more details, but it will kick-off Friday evening and conclude Saturday afternoon, with the winning team being invited to demo what they built at CascadiaJS 2026!</p>
-                        <p><span class="cta"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026">Register</a></span></p>
+                        <p><span class="cta"><a target="_blank" href="https://luma.com/cascadia-ai-hackathon-2026?coupon=F7S4JY">Register</a></span></p>
                     </div>
                 </div>
                 <div class="show-item">       
@@ -116,11 +116,10 @@ function May31() {
                 <div class="show-item">       
                     <div class="when">5:30pm - 8:30pm</div>
                     <div class="what">
-                        <div class="title"><a target="_blank" href="https://luma.com/cascadiajs-2026-welcome-reception">Welcome Reception</a> &amp; Pre-Registration by <img src="/_public/images/sponsors/warp.png"/></div>
+                        <div class="title"><a target="_blank" href="https://luma.com/cascadiajs-2026-welcome-reception?coupon=UZHCP1">Welcome Reception</a> &amp; Pre-Registration by <img src="/_public/images/sponsors/warp.png"/></div>
                         <p>The Welcome Reception will be an opportunity for folks to pre-register, get their badge, pickup swag and have fun with our friends from Warp and Whiskey Web and Whatnot.</p>
-
-                        <p>What if we all built a game together in just 1 hour? Come join Warp and Web Whiskey at the CascadiaJS Welcome Reception! You'll get to play a multiplayer game, suggest ways to improve the game, and watch coding agents ship your ideas. Dw, we'll foot the token bill.</p>
-                        <p><span class="cta"><a target="_blank" href="https://luma.com/cascadiajs-2026-welcome-reception">RSVP</a></span></p>
+                        <p>Want to play a survival game... entirely driven by GitHub issues? Come join Warp and Web Whiskey at the CascadiaJS Welcome Reception! You'll get to play a multiplayer game based on the popular party game Death by AI, backed by Warp's issue triage agents to decide your fate. Can you survive the longest?</p>
+                        <p><span class="cta"><a target="_blank" href="https://luma.com/cascadiajs-2026-welcome-reception?coupon=UZHCP1">RSVP</a></span></p>
                     </div>
                 </div>
             </div>
@@ -351,8 +350,9 @@ function June2({ talks, ticket = undefined }) {
         <div class="location">Rockbox</div>
         <div class="show-item">       
             <div class="when">8:00pm</div>
-            <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> Karaoke</div>
+            <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> <a target="_blank" href="https://luma.com/cascadiajs-2027-karaoke?coupon=6KKM88">Karaoke</a></div>
             <p>We will wrap-up CascadiaJS with an epic karaoke party at Rockbox Seattle. We are <b>buying out</b> the venue and there are 12 different rooms that we can use. Premium ticket holders will be able to skip the line and will be able to bring a plus-one! 🎤🎉</p>
+            <div class="cta"><a target="_blank" href="https://luma.com/cascadiajs-2027-karaoke?coupon=6KKM88">RSVP</a></div>
             </div>
         </div>
         <div class="show-item">       
@@ -383,6 +383,7 @@ function Trainings() {
                     <div class="what">
                         <div class="title"><a href="/2026/trainings/coding-with-claude">Coding with Claude</a></div>
                         <p>AI is changing how we write code, and you're about to become fluent in these new tools. We'll explore everything from basic AI integration to building sophisticated AI agents that can help with development tasks. Let’s explore everything from AI-assisted coding in your editor to autonomous development with Claude Code.</p>
+                        <div class="cta"><a target="_blank" href="/2026/trainings/coding-with-claude">Learn More</a></div>
                     </div>
                 </div>
             </div>
@@ -403,6 +404,7 @@ function Trainings() {
                     <div class="what">
                         <div class="title"><a href="/2026/trainings/ai-for-typescript-developers">AI for TypeScript Developers</a></div>
                         <p>Ready to build AI-powered applications? Let's dive into the Vercel AI SDK and modern AI patterns to create intelligent features your users will love. We'll start with the fundamentals and work our way up to building production-ready AI applications.</p>
+                        <div class="cta"><a target="_blank" href="/2026/trainings/ai-for-typescript-developers">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -423,6 +425,7 @@ function Trainings() {
                     <div class="what">
                         <div class="title"><a href="/2026/trainings/building-ai-agents">Building AI Agents</a></div>
                         <p>Explore everything from basic tool calling to sophisticated multi-step agents that can reason and act autonomously. We'll build a simple agent that can search the web and answer questions, and then we'll add more complex agents that can reason and act autonomously.</p>
+                        <div class="cta"><a target="_blank" href="/2026/trainings/building-ai-agents">Learn More</a>
                     </div>
                 </div>
             </div>
