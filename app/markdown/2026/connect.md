@@ -23,7 +23,9 @@ Whether you're coming to your first tech conference, flying solo, or just want t
 
 If you're matched, we'll share your name and email with your match so you can connect before the conference; maybe at the Welcome Reception, over coffee, or just to swap notes between talks.
 
-<div class="cta secondary"><a href="https://airtable.com/app2IZDYtOGyzBQLZ/pag7dXPfJZEMPcHid/form">SIGN UP BY MAY 26</a></div>
+**Signups for Pair Programming IRL are now closed!**
+
+<!--<div class="cta secondary"><a href="https://airtable.com/app2IZDYtOGyzBQLZ/pag7dXPfJZEMPcHid/form">SIGN UP BY MAY 26</a></div>-->
 
 <h2 id="boaf">BOAF Tables 🦜</h2>
 
