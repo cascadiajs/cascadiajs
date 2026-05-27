@@ -26,6 +26,12 @@ Town Hall Seattle<br />
 1119 8th Ave<br />
 Seattle, WA 98101
 
+<h3>Maps</h3>
+
+- <a href="/_public/images/2026/venue/map-forum.png">Forum (Floor 1)</a> - workshops/meals<br/>
+- <a href="/_public/images/2026/venue/map-lobby.png">Main Lobby (Floor 2)</a> - Expo Hall<br/>
+- <a href="/_public/images/2026/venue/map-great-hall.png">Great Hall (Floor 3)</a> - Main stage talks
+
 Please enter through the West Entrance, which is located off of Seneca street. 
 
 Visit the Town Hall website for information on <a href="https://townhallseattle.org/locations-and-entrances/">location and entrances</a>, <a href="https://townhallseattle.org/public-transit/">public transit</a>, <a href="https://townhallseattle.org/parking/">parking</a> (including bike parking!) and <a href="https://townhallseattle.org/accessibility/">accessibility</a>. 
