@@ -350,9 +350,9 @@ function June2({ talks, ticket = undefined }) {
         <div class="location">Rockbox</div>
         <div class="show-item">       
             <div class="when">8:00pm</div>
-            <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> <a target="_blank" href="https://luma.com/cascadiajs-2027-karaoke?coupon=6KKM88">Karaoke</a></div>
+            <div class="what"><div class="title"><i class="fas fa-microphone-stand"></i> <a target="_blank" href="https://luma.com/cascadiajs-2026-karaoke?coupon=6KKM88">Karaoke</a></div>
             <p>We will wrap-up CascadiaJS with an epic karaoke party at Rockbox Seattle. We are <b>buying out</b> the venue and there are 12 different rooms that we can use. Premium ticket holders will be able to skip the line and will be able to bring a plus-one! 🎤🎉</p>
-            <div class="cta"><a target="_blank" href="https://luma.com/cascadiajs-2027-karaoke?coupon=6KKM88">RSVP</a></div>
+            <div class="cta"><a target="_blank" href="https://luma.com/cascadiajs-2026-karaoke?coupon=6KKM88">RSVP</a></div>
             </div>
         </div>
         <div class="show-item">       
