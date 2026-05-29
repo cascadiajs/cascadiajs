@@ -689,6 +689,12 @@ const sponsors = {
       tier: "community",
       logo: "neo4j.png",
       name: "Neo4j"
+    },
+    {
+      id: "storyblok",
+      tier: "community",
+      logo: "storyblok.png",
+      name: "Storyblok"
     }
   ],
 };
