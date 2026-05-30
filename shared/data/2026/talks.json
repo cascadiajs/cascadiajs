@@ -30,7 +30,7 @@
     }
   },
   { 
-    "title": "It's time to rethink everything",
+    "title": "It's Time To Rethink Everything",
     "slug": "its-time-to-rethink-everything",
     "abstract": "We spent decades building awesome tools for developers. Languages, frameworks, clouds, and more. They're great for humans. They're not so great for devs. What happens if we throw it all away and start from scratch?",
     "type": "keynote",
@@ -113,7 +113,7 @@
     }
   },  
   { 
-    "title": "Implementing the Web on Native with Linked Literate Programming",
+    "title": "Implementing the Web on Native With Linked Literate Programming",
     "slug": "implementing-the-web-on-native-with-linked-literate-programming",
     "abstract": "What does it take to make a browser API work outside the browser? This talk walks through implementing the W3C getUserMedia camera and microphone API for native iOS apps in Expo, using linked literate programming to connect the spec, Web Platform Tests, native code, and AI-assisted development.",
     "type": "main",
