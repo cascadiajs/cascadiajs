@@ -124,7 +124,7 @@
       "company": "Expo",
       "location": "Palo Alto, CA USA",
       "social": [
-        { "type": "github", "url": "https://github.com/ide," },
+        { "type": "github", "url": "https://github.com/ide" },
         { "type": "x-twitter", "url": "https:/x.com/JI" }      ]
     }
   },  
