@@ -233,14 +233,14 @@ function June1({ talks, ticket = undefined }) {
                     </div>
                 </div>
                 <div class="show-item">       
-                    <div class="when">6:00pm</div>
+                    <div class="when">6:30pm</div>
                     <div class="what">
                         <div class="title">Networking Mixer & Job Fair</div>
                         <p>Looking for a new opportunity? Have high-quality conversations with companies that are hiring, like Grow Therapy, Onebrief, RentSpree, Render, Expo, CopilotKit, Warp and more. </p>
                     </div>
                 </div> 
                 <div class="show-item">       
-                    <div class="when">6:00pm</div>
+                    <div class="when">7:00pm</div>
                     <div class="what">
                         <div class="title">Pog Tournament by <img src="/_public/images/sponsors/mux.svg" alt="Mux logo"/></div>
                         <p>Looking to grow your network? Make new friends during a Pog tournament hosted by Mux!</p>
