@@ -75,12 +75,9 @@ export default function MainHeader({ html, state }) {
       }
     </style>
     <header>
-      <!--<section class="alert">
-        Ticket prices go up on May 10th. 
-        <a href="/2026/tickets"
-          ><span style="text-decoration: underline;">Grab yours now</span> <i class="fa-solid fa-hand-point-right"></i
-        ></a>
-      </section>-->
+      <section class="alert">
+        CascadiaJS 2026 is SOLD OUT! See you in 2027!  
+      </section>
       ${path && path.startsWith("/20")
         ? html` ${path.startsWith("/2024") ? html`<nav-2024></nav-2024>` : ""}
           ${path.startsWith("/2025") ? html`<nav-2025></nav-2025>` : ""}

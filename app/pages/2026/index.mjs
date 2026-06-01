@@ -296,9 +296,9 @@ export default function ({ html, state }) {
                 <p class="date-location">
                   June 1-2, 2026<br />Town Hall Seattle<br/>Seattle, WA, USA
                 </p>
-                <div class="reserve-your-spot">
-                  <a class="buy" href="/2026/tickets"
-                    >Reserve Your Spot <i class="fa-solid fa-tree"></i
+                <div class="cta">
+                  <a class="nope" 
+                    >SOLD OUT <i class="fa-solid fa-tree"></i
                   ></a>
                 </div>
               </div>

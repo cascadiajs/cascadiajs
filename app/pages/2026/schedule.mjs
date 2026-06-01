@@ -375,7 +375,7 @@ function Trainings() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">TBD</div>
+        <div class="location">Thinkspace Seattle</div>
         <div class="day-content">
             <div>   
                 <div class="show-item">       
@@ -396,7 +396,7 @@ function Trainings() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">TBD</div>
+        <div class="location">Thinkspace Seattle</div>
         <div class="day-content">
             <div>   
                 <div class="show-item">       
@@ -417,7 +417,7 @@ function Trainings() {
             All times in PDT (UTC-7)
             </aside>
         </div>
-        <div class="location">TBD</div>
+        <div class="location">Thinkspace Seattle</div>
         <div class="day-content">
             <div>   
                 <div class="show-item">       
