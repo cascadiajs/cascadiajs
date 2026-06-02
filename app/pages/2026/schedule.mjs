@@ -308,7 +308,7 @@ function June2({ talks, ticket = undefined }) {
                     <div class="when">3:15pm</div>
                     <div class="what"><div class="title"><i class="fas fa-coffee"></i> Break</div></div>
                 </div>
-                ${ renderSpeaker("3:50pm", talks.find(t => t.speaker.slug === 'confidence-okoghenun'))}
+                ${ renderSpeaker("3:50pm", talks.find(t => t.speaker.slug === 'luis-montes'))}
                 ${ renderSpeaker("", talks.find(t => t.speaker.slug === 'theo'))}
                 <div class="show-item">       
                     <div class="when">5:10pm</div>
