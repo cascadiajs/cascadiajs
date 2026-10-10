@@ -51,6 +51,17 @@ const META_PIXEL_NOSCRIPT = ` <img height="1" width="1" style="display:none" src
 const origin = Astro.site ?? Astro.url.origin;
 const canonicalUrl = new URL(routePath(Astro.url), origin).href;
 const ogImageUrl = new URL(ogImage, origin).href;
+
+const buildInfo = {
+  version: "local",
+  buildId: "local",
+  buildContext: "local",
+};
+if (import.meta.env.NETLIFY) {
+  buildInfo.version = import.meta.env.COMMIT_REF;
+  buildInfo.buildId = import.meta.env.BUILD_ID;
+  buildInfo.buildContext = import.meta.env.CONTEXT;
+}
 ---
 
 <html lang="en">
@@ -63,6 +74,10 @@ const ogImageUrl = new URL(ogImage, origin).href;
       src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
     <script is:inline set:html={GTAG_CONFIG} />
     <script is:inline set:html={META_PIXEL} />
+    <meta name="version" content={buildInfo.version} />
+    <meta name="build-id" content={buildInfo.buildId} />
+    <meta name="build-context" content={buildInfo.buildContext} />
+
     <meta name="author" content="CascadiaJS" />
     <meta name="generator" content={Astro.generator} />
 
