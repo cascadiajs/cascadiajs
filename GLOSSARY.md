@@ -77,3 +77,19 @@ _Avoid_: Column, Size
 **Legacy Site**:
 The Enhance implementation CascadiaJS ran on before this port. The port reproduces its visible look, URLs and behavior; once the port is live it is a historical record only, not a specification to verify against.
 _Avoid_: Reference repo, old site
+
+**Post**:
+A dated piece of writing published on the site-wide blog, attributed to one Author and labelled with Tags. It belongs to no Event, though it may discuss one.
+_Avoid_: Article, Blog entry, News item
+
+**Author**:
+A person credited with writing a Post. Distinct from a Speaker and an Organizer, though one person may be any combination of the three.
+_Avoid_: Writer, Contributor, Byline
+
+**Tag**:
+A free-form topic label on a Post, used to group and find related Posts. Tags differing only in letter case are the same Tag.
+_Avoid_: Category, Topic, Keyword
+
+**Featured Post**:
+A Post deliberately flagged for prominence on the blog index, where it is displayed larger than other Posts. Only the newest few flagged Posts are shown that way at once. Unrelated to the Featured Event.
+_Avoid_: Pinned Post, Highlighted Post
