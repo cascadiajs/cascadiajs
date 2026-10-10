@@ -1,6 +1,12 @@
 name: Node CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [cascadiajs-legacy-pre-migration]
+    tags: ['v6.*.*']
+  pull_request:
+    branches: [cascadiajs-legacy-pre-migration]
+
 
 defaults:
   run:
@@ -45,7 +51,7 @@ jobs:
   deploy:
     # Setup
     needs: build
-    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
+    if: github.ref == 'refs/heads/cascadiajs-legacy-pre-migration' || startsWith(github.ref, 'refs/tags/v6.')
     runs-on: ubuntu-latest
     #runs-on: depot-ubuntu-24.04
 
@@ -63,7 +69,7 @@ jobs:
         run: npm i
 
       - name: Staging Deploy
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/cascadiajs-legacy-pre-migration'
         run: npx arc deploy --staging
         env:
           CI: true
@@ -71,7 +77,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Production Deploy
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/v6.')
         run: npx arc deploy --production
         env:
           CI: true
