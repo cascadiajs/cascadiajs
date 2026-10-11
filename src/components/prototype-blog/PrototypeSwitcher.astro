@@ -16,18 +16,23 @@ const { variants, views } = Astro.props;
       id="proto-switcher"
       data-variants={JSON.stringify(variants)}
       data-views={JSON.stringify(views)}
-      class="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/90 px-3 py-2 font-mono text-xs text-white shadow-2xl"
+      class="fixed top-1/2 left-2 z-50 flex w-24 -translate-y-1/2 flex-col items-stretch gap-1 rounded-2xl bg-black/90 p-2 font-mono text-xs text-white shadow-2xl"
     >
-      <button data-dir="-1" class="rounded px-2 py-1 hover:bg-white/20">
-        ◀
-      </button>
-      <span data-label class="min-w-40 text-center" />
-      <button data-dir="1" class="rounded px-2 py-1 hover:bg-white/20">
-        ▶
-      </button>
-      <span class="mx-1 h-5 w-px bg-white/30" />
+      <div class="flex justify-between">
+        <button data-dir="-1" class="rounded px-2 py-1 hover:bg-white/20">
+          ◀
+        </button>
+        <button data-dir="1" class="rounded px-2 py-1 hover:bg-white/20">
+          ▶
+        </button>
+      </div>
+      <span data-label class="text-center leading-tight" />
+      <span class="my-1 h-px bg-white/30" />
       {views.map((v) => (
-        <button data-view-btn={v} class="rounded px-2 py-1 hover:bg-white/20">
+        <button
+          data-view-btn={v}
+          class="rounded px-2 py-1 text-left hover:bg-white/20"
+        >
           {v}
         </button>
       ))}
