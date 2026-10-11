@@ -18,6 +18,15 @@ const { variants, views } = Astro.props;
       data-views={JSON.stringify(views)}
       class="fixed top-1/2 left-2 z-50 flex w-24 -translate-y-1/2 flex-col items-stretch gap-1 rounded-2xl bg-black/90 p-2 font-mono text-xs text-white shadow-2xl"
     >
+      <span class="text-madrona-yellow text-center text-[10px] leading-tight font-bold tracking-wider uppercase">
+        Prototype
+      </span>
+      <span class="text-center text-[10px] leading-tight text-white/60">
+        not part of the design
+      </span>
+      <span class="mt-1 text-[10px] tracking-wider text-white/60 uppercase">
+        Design
+      </span>
       <div class="flex justify-between">
         <button data-dir="-1" class="rounded px-2 py-1 hover:bg-white/20">
           ◀
@@ -28,6 +37,9 @@ const { variants, views } = Astro.props;
       </div>
       <span data-label class="text-center leading-tight" />
       <span class="my-1 h-px bg-white/30" />
+      <span class="text-[10px] tracking-wider text-white/60 uppercase">
+        Page
+      </span>
       {views.map((v) => (
         <button
           data-view-btn={v}
