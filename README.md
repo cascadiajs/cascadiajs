@@ -28,14 +28,14 @@ pnpm install
 pnpm dev          # http://localhost:4321
 ```
 
-| Command        | What it does                                            |
-| :------------- | :------------------------------------------------------ |
-| `pnpm dev`     | Dev server with hot reload at `localhost:4321`          |
-| `pnpm build`   | Production build to `dist/`                             |
-| `pnpm preview` | Serve the built `dist/` locally                         |
-| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`)     |
-| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                    |
-| `pnpm test`    | Build, preview, and run the Playwright end-to-end suite |
+| Command        | What it does                                        |
+| :------------- | :-------------------------------------------------- |
+| `pnpm dev`     | Dev server with hot reload at `localhost:4321`      |
+| `pnpm build`   | Production build to `dist/`                         |
+| `pnpm preview` | Serve the built `dist/` locally                     |
+| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`) |
+| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                |
+| `pnpm test`    | Build, preview, and run the Playwright e2e suite    |
 
 A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files. Type checks and tests run in CI.
 
@@ -43,7 +43,7 @@ A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on stag
 
 ### Issues and triage labels
 
-We track work in [GitHub Issues](https://github.com/bniedermeyer/cascadiajs-neo/issues). Each issue carries one triage label:
+We track work in [GitHub Issues](https://github.com/cascadiajs/cascadiajs/issues). Each issue carries one triage label:
 
 | Label             | Meaning                                                                |
 | :---------------- | :--------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ We track work in [GitHub Issues](https://github.com/bniedermeyer/cascadiajs-neo/
 | `ready-for-human` | Needs a person: judgment calls, design taste, or access an agent lacks |
 | `wontfix`         | We will not work on it                                                 |
 
-The `ready-for-agent` and `ready-for-human` labels decide who builds a ticket: an agent or you. An agent-ready issue has acceptance criteria that an agent can check without asking questions. If you take a `ready-for-agent` issue and it is not fully specified, relabel it instead of guessing.
+The `ready-for-agent` and `ready-for-human` labels decide who builds an issue: an agent or you. An agent-ready issue has acceptance criteria that an agent can check without asking questions. If you take a `ready-for-agent` issue and it is not fully specified, relabel it instead of guessing.
 
 ### Branches, commits and PRs
 
@@ -236,7 +236,7 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 
 1. Add an object to `src/shared/data/<year>/talks.json`, at the position where the Talk should appear. Required fields: `id`, `slug` (or `null` for no Talk page), `title`, `type` (`keynote`, `main`, `lightning`, `workshop`) and `speaker`. Optional fields: `abstract` (Markdown), `tags`, `yt`.
 2. Put the speaker photo in `src/assets/events/<year>/images/` and reference it in `speaker.image`.
-3. Optional: add a share card at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
+3. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
 4. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
 5. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
 
@@ -258,17 +258,41 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 1. Create `src/components/<Name>.astro` (or a subfolder for a family, like `schedule/`).
 2. Type its props with an `interface Props`, and use the shared types from `@shared/data/types` where they fit.
 3. Style with Tailwind utilities and tokens.
-4. If Markdown pages should use it, import it from an `.mdx` page.
+4. If content pages should use it, import it from an `.mdx` page.
 
 ### Launching a new Event
 
-This happens once a year and touches several places. The steps below use 2027 as the example.
+You launch a new Event once a year. The launch changes several files. The steps below use 2027 as the example.
 
-Start with config and data. Create `src/shared/data/events/2027.config.ts` modelled on `2026.config.ts` (name, dates, venue, logo, nav, share defaults). `events.ts` globs these configs, so the new file alone enables the `src/content/markdown/2027/` and `/2027/sponsors/*` pages. Add `"2027"` to the `events` enum in `sponsorSchema` in `src/content.config.ts`: `EventYear` derives from it, so nothing type-checks with `"2027"` until you do. Then create `src/shared/data/2027/` with `talks.json`, `organizers.json`, `tickets.json` and `activities.json`, and register a `talks2027` collection in `src/content.config.ts` next to `talks2026`.
+**Phase 1: Config and data**
 
-Next, the pages. Each Event has its own hand-written landing page, schedule and Talk pages. Create `src/pages/2027/` from the 2026 pages, then change the year and the collection name. Content pages go in `src/content/markdown/2027/`. Images go in `src/assets/events/2027/images/`, and share images go in `public/images/2027/share/`. Add `"2027"` to the `events` of each 2027 Sponsor.
+1. Create `src/shared/data/events/2027.config.ts`. Model it on `2026.config.ts` (name, dates, venue, logo, nav, share defaults).
+   `events.ts` globs these configs, so the new file alone enables the `src/content/markdown/2027/` and `/2027/sponsors/*` pages.
+2. Add `"2027"` to the `events` enum in `sponsorSchema` in `src/content.config.ts`.
+   `EventYear` derives from this enum. Nothing type-checks with `"2027"` until you add it.
+3. Create the directory `src/shared/data/2027/`.
+4. Add `talks.json`, `organizers.json`, `tickets.json` and `activities.json` to that directory.
+5. Register a `talks2027` collection in `src/content.config.ts`, next to `talks2026`.
+6. Add `"2027"` to the `events` array of each 2027 Sponsor in `src/shared/data/sponsors.json`.
 
-Flip the launch switch on launch day, once the 2027 pages are ready: set `FEATURED_EVENT` to `"2027"` and update `DEFAULT_DESCRIPTION` in `src/shared/site-defaults.ts`. The homepage, header, footer and site-wide pages read that value. Then run the full test suite. Several tests read `FEATURED_EVENT` and the data files, so they also change with the switch.
+**Phase 2: Pages and assets**
+
+7. If you want to use the previous year as a starting point, copy the 2026 pages from `src/pages/2026/` into `src/pages/2027/`. Otherwise build out the pages you want.
+   Each Event has its own hand-written landing page, schedule and Talk pages.
+8. Change the year and the collection name in the new pages.
+9. Put the content pages in `src/content/markdown/2027/`.
+10. Put the images in `src/assets/events/2027/images/`.
+11. Put the share images in `public/images/2027/share/`.
+
+**Phase 3: Launch day**
+
+Do these steps only after the 2027 pages are ready.
+
+12. Set `FEATURED_EVENT` to `"2027"` in `src/shared/site-defaults.ts`.
+    The homepage, header, footer and site-wide pages read that value.
+13. Update `DEFAULT_DESCRIPTION` in `src/shared/site-defaults.ts`.
+14. Run the whole e2e suite.
+    Several tests read `FEATURED_EVENT` and the data files, so their expected results change when `FEATURED_EVENT` changes.
 
 ## Testing and CI
 
@@ -312,14 +336,16 @@ You can work on this repo by hand. If you use a coding agent such as Claude Code
 
 The skills come from [Matt Pocock's skills collection](https://github.com/mattpocock/skills), installed in `.agents/skills/` and pinned in `skills-lock.json`. Skim that repo's README to learn the philosophy. In Claude Code, invoke a skill with `/<name>`.
 
-The repo installs more skills than we use. We use these:
+The repo installs more skills than we use. We use these. A _ticket_ is an issue that `/to-tickets` split from a spec.
 
 | Skill                           | Use it when                                                                                                                  | Example                                                         |
 | :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| `wayfinder`                     | The work is too big or unclear for one session. Chart it as a map issue of decision tickets and resolve them one at a time   | `/wayfinder migrate past years' content into Astro`             |
 | `grill-with-docs`               | You have an idea or plan and want it stress-tested before building. It also updates `GLOSSARY.md` and ADRs as decisions land | `/grill-with-docs I want speaker pages to show past talks`      |
 | `to-spec`                       | You and the agent agreed what to build. Turn that into an issue                                                              | `/to-spec`                                                      |
-| `to-tickets`                    | A spec is too big for one PR. Split it into issues in blocking order                                                         | `/to-tickets #42`                                               |
-| `triage`                        | Issues need evaluating, labelling, and agent-ready briefs                                                                    | `/triage`                                                       |
+| `to-tickets`                    | A spec is too big for one PR. Split it into tickets in blocking order                                                        | `/to-tickets #42`                                               |
+| `triage`                        | Issues need evaluation, labels and agent-ready briefs                                                                        | `/triage`                                                       |
+| `implement-spec`                | `/to-tickets` split a spec into tickets. Build every ticket on one integration branch                                        | `/implement-spec #42`                                           |
 | `implement`                     | Build an issue or spec end to end                                                                                            | `/implement #57`                                                |
 | `tdd`                           | Build or fix something test-first (red, green, refactor)                                                                     | `/tdd the schedule should hide unpublished activities`          |
 | `diagnosing-bugs`               | Something is broken, flaky or slow and the cause isn't obvious                                                               | `/diagnosing-bugs sponsor logos 404 on /2026/sponsors/temporal` |
@@ -329,12 +355,11 @@ The repo installs more skills than we use. We use these:
 
 ### A typical flow
 
-1. **Shape it.** `/grill-with-docs` on the idea until the open questions are gone.
+1. **Shape it.** `/grill-with-docs` on the idea until the open questions are gone. If it's too big for one session, start with `/wayfinder` and resolve its decision tickets first.
 2. **Record it.** `/to-spec` creates the issue. If the issue is large, `/to-tickets` splits it.
-3. **Triage.** `/triage` labels each ticket `ready-for-agent` or `ready-for-human`.
-4. **Build.** Run `/implement` (or `/tdd`) on an agent-ready ticket. Do the human-ready tickets yourself.
-5. **Review.** `/code-review` before opening the PR, then human review on the PR.
-6. If the session runs long, `/handoff` and continue in a fresh one.
+3. **Build.** Run `/implement` (or `/tdd`) on an agent-ready issue, or `/implement-spec` to build a whole split spec on one branch. Do the human-ready issues yourself.
+4. **Review.** `/code-review` before opening the PR, then human review on the PR.
+5. If the session runs long, `/handoff` and continue in a fresh one.
 
 Agents do well here when the issue is specific. For example, "Add the 2027 tickets from this table" works. "Make the tickets section better" does not.
 

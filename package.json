@@ -1,7 +1,7 @@
 {
   "name": "cascadiajs",
   "type": "module",
-  "version": "0.0.1",
+  "version": "7.0.0",
   "packageManager": "pnpm@12.7.0",
   "engines": {
     "node": ">=22.12.0"

@@ -27,7 +27,7 @@
 
 ### Issue tracker
 
-Issues live in GitHub Issues on bniedermeyer/cascadiajs-neo. See `docs/agents/issue-tracker.md`.
+Issues live in GitHub Issues on cascadiajs/cascadiajs. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
