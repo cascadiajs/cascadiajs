@@ -1,0 +1,397 @@
+---
+/**
+ * PROTOTYPE, throwaway (issue #55). Variant C, "Index": text-first, no
+ * images in lists. Featured Posts are three numbered headlines, the list is
+ * a dense date | title | tags | minutes table, the search form reads as a
+ * sentence, and the Post page has a sticky left meta column (byline,
+ * reading estimate, tags, share links as text). The progress bar lives in a
+ * sticky mini-header that carries the Post title.
+ */
+import { Image } from "astro:assets";
+import PostBody from "./PostBody.astro";
+import {
+  featured,
+  list,
+  post,
+  tag,
+  tagged,
+  author,
+  byAuthor,
+  query,
+  results,
+  allTags,
+  shareLinks,
+  type ProtoPost,
+} from "./data";
+
+const url = `https://cascadiajs.com/blog/post/${post.slug}`;
+const shares = shareLinks(url, post.title);
+const wrap = "mx-auto box-content max-w-[960px] px-4";
+const short = (d: Date) =>
+  d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+const rows = (ps: ProtoPost[]) => ps;
+---
+
+<div data-variant="C">
+  {/* ───────────── INDEX ───────────── */}
+  <section data-view="index">
+    <div class={`${wrap} pt-12`}>
+      <div class="flex flex-wrap items-baseline justify-between gap-4">
+        <h1 class="text-40 my-0">Blog</h1>
+        <form class="text-base" action="#" onsubmit="return false">
+          Find posts about
+          <input
+            type="search"
+            placeholder="anything"
+            class="border-sound-navy/40 w-32 border-b bg-transparent px-1 focus:outline-none"
+          />
+          tagged
+          <select class="border-sound-navy/40 border-b bg-transparent">
+            <option>any tag</option>
+            {allTags.map((t) => <option>{t}</option>)}
+          </select>
+          <button class="text-cascade-blue font-medium">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="bg-cedar-cream border-sound-navy/15 mt-8 border-y">
+      <ol class={`${wrap} m-0 grid list-none gap-8 py-10 md:grid-cols-3`}>
+        {
+          featured.map((p, i) => (
+            <li>
+              <span class="font-display text-cascade-blue text-64 leading-none">
+                {i + 1}
+              </span>
+              <h2 class="text-28 mt-2 mb-2">
+                <a
+                  href="#"
+                  class="text-sound-navy no-underline hover:underline"
+                >
+                  {p.title}
+                </a>
+              </h2>
+              <p class="mb-2 text-base">{p.description}</p>
+              <p class="text-sound-navy/70 m-0 text-sm">
+                {p.author.name} · {p.minutes} min
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <div class={`${wrap} py-10`}>
+      <table class="w-full border-collapse text-base">
+        <tbody>
+          {
+            rows(list).map((p) => (
+              <tr class="border-sound-navy/15 group border-b align-baseline">
+                <td class="text-sound-navy/60 w-20 py-4 pr-4 text-sm whitespace-nowrap tabular-nums">
+                  {short(p.pubDate)}
+                </td>
+                <td class="py-4 pr-4">
+                  <a
+                    href="#"
+                    class="text-sound-navy text-xl font-medium no-underline group-hover:underline"
+                  >
+                    {p.title}
+                  </a>
+                  <div class="text-sound-navy/70 text-sm">{p.description}</div>
+                  <div class="text-sm">by {p.author.name}</div>
+                </td>
+                <td class="hidden py-4 pr-4 text-sm md:table-cell">
+                  {p.tags.map((t) => (
+                    <a href="#" class="text-cascade-blue mr-2 no-underline">
+                      {t}
+                    </a>
+                  ))}
+                </td>
+                <td class="text-sound-navy/60 py-4 text-right text-sm whitespace-nowrap">
+                  {p.minutes} min
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <nav class="mt-8 flex justify-between text-base">
+        <span class="text-sound-navy/60">
+          Page <strong>1</strong> · <a href="#" class="text-cascade-blue">2</a> ·
+          <a href="#" class="text-cascade-blue">3</a>
+        </span>
+        <a href="#" class="text-cascade-blue">Older posts →</a>
+      </nav>
+    </div>
+  </section>
+
+  {/* ───────────── SEARCH ───────────── */}
+  <section data-view="search">
+    <div class={`${wrap} py-12`}>
+      <form
+        class="text-28 text-sound-navy font-serif"
+        action="#"
+        onsubmit="return false"
+      >
+        Posts about
+        <input
+          type="search"
+          value={query}
+          class="border-cascade-blue w-48 border-b-2 bg-transparent px-1 focus:outline-none"
+        />
+        tagged
+        <select class="border-cascade-blue border-b-2 bg-transparent">
+          <option>any tag</option>
+          {allTags.map((t) => <option>{t}</option>)}
+        </select>
+        <button class="text-cascade-blue">→</button>
+      </form>
+      <p class="text-sound-navy/60 mt-6 text-sm">{results.length} results</p>
+      <table class="w-full border-collapse text-base">
+        <tbody>
+          {
+            results.map((p) => (
+              <tr class="border-sound-navy/15 border-b align-baseline">
+                <td class="text-sound-navy/60 w-20 py-4 pr-4 text-sm">
+                  {short(p.pubDate)}
+                </td>
+                <td class="py-4">
+                  <a
+                    href="#"
+                    class="text-sound-navy text-xl font-medium no-underline hover:underline"
+                    set:html={p.title.replace(
+                      /astro/gi,
+                      (m) => `<mark class="bg-madrona-yellow/60">${m}</mark>`,
+                    )}
+                  />
+                  <div class="text-sm">
+                    by {p.author.name} ·{" "}
+                    {p.tags.map((t, i) => (
+                      <>
+                        {i ? ", " : ""}
+                        {t === query ? (
+                          <mark class="bg-madrona-yellow/60">{t}</mark>
+                        ) : (
+                          t
+                        )}
+                      </>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+
+      <p class="text-sound-navy/50 mt-16 text-xs tracking-widest uppercase">
+        Empty state ↓
+      </p>
+      <p class="text-xl">
+        Nothing matches “webassembly”. <a href="#" class="text-cascade-blue"
+          >Clear the search</a
+        > or try
+        {
+          allTags.slice(0, 3).map((t, i) => (
+            <>
+              {i ? ", " : " "}
+              <a href="#" class="text-cascade-blue">
+                {t}
+              </a>
+            </>
+          ))
+        }.
+      </p>
+    </div>
+  </section>
+
+  {/* ───────────── POST ───────────── */}
+  <section data-view="post">
+    {
+      /* Sticky mini-header: Post title + progress line, pins once the site header scrolls away */
+    }
+    <div
+      data-progress
+      class="bg-seafoam-cream/95 border-sound-navy/15 sticky top-0 z-40 border-b backdrop-blur"
+    >
+      <div class={`${wrap} flex items-center justify-between py-2 text-sm`}>
+        <span class="text-sound-navy truncate font-medium">{post.title}</span>
+        <span class="text-sound-navy/60 shrink-0 pl-4"
+          >{post.minutes} min read</span
+        >
+      </div>
+      <div data-progress-fill class="bg-emerald-city-green h-0.5 w-0"></div>
+    </div>
+
+    <article
+      class={`${wrap} grid gap-10 py-12 md:grid-cols-[200px_minmax(0,1fr)]`}
+    >
+      <aside class="text-sm md:order-none">
+        <div class="md:sticky md:top-16">
+          <Image
+            src={post.author.image}
+            alt=""
+            width={128}
+            class="size-16 rounded object-cover grayscale"
+          />
+          <a href="#" class="text-sound-navy mt-2 block font-medium"
+            >{post.author.name}</a
+          >
+          <div class="text-sound-navy/60">{post.author.title}</div>
+          <dl class="mt-6 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+            <dt class="text-sound-navy/60">Published</dt><dd class="m-0">
+              {short(post.pubDate)}, 2026
+            </dd>
+            <dt class="text-sound-navy/60">Reading</dt><dd class="m-0">
+              {post.minutes} min
+            </dd>
+            <dt class="text-sound-navy/60">Tags</dt>
+            <dd class="m-0">
+              {
+                post.tags.map((t) => (
+                  <a href="#" class="text-cascade-blue mr-2 block">
+                    {t}
+                  </a>
+                ))
+              }
+            </dd>
+          </dl>
+          <div class="text-sound-navy/60 mt-6">Share</div>
+          <ul class="m-0 list-none p-0">
+            {
+              shares.map((s) => (
+                <li>
+                  <a href={s.href} target="_blank" class="text-cascade-blue">
+                    {s.label}
+                  </a>
+                </li>
+              ))
+            }
+            <li><button class="text-cascade-blue">Copy link</button></li>
+            <li><button class="text-cascade-blue">More…</button></li>
+          </ul>
+        </div>
+      </aside>
+      <div>
+        <h1 class="text-64 mt-0 mb-4">{post.title}</h1>
+        <p class="text-22 text-sound-navy/80">{post.description}</p>
+        <div class="max-w-[680px] text-xl">
+          <PostBody codeTheme="min-light" />
+        </div>
+      </div>
+    </article>
+  </section>
+
+  {/* ───────────── TAG ───────────── */}
+  <section data-view="tag">
+    <div class={`${wrap} py-12`}>
+      <p class="m-0 text-base">
+        <a href="#" class="text-cascade-blue">Blog</a> / tags /
+      </p>
+      <h1 class="text-64 mt-1 mb-2">{tag}</h1>
+      <p class="text-sound-navy/60 text-base">{tagged.length} posts</p>
+      <table class="mt-6 w-full border-collapse text-base">
+        <tbody>
+          {
+            tagged.map((p) => (
+              <tr class="border-sound-navy/15 border-b align-baseline">
+                <td class="text-sound-navy/60 w-20 py-4 pr-4 text-sm">
+                  {short(p.pubDate)}
+                </td>
+                <td class="py-4">
+                  <a
+                    href="#"
+                    class="text-sound-navy text-xl font-medium no-underline hover:underline"
+                  >
+                    {p.title}
+                  </a>{" "}
+                  <span class="text-sm">by {p.author.name}</span>
+                </td>
+                <td class="text-sound-navy/60 py-4 text-right text-sm">
+                  {p.minutes} min
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {/* ───────────── AUTHOR ───────────── */}
+  <section data-view="author">
+    <div class={`${wrap} grid gap-10 py-12 md:grid-cols-[200px_minmax(0,1fr)]`}>
+      <aside class="text-sm">
+        <Image
+          src={author.image}
+          alt={`photo of ${author.name}`}
+          width={400}
+          class="aspect-square w-full rounded object-cover"
+        />
+        <dl class="mt-4 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+          <dt class="text-sound-navy/60">Pronouns</dt><dd class="m-0">
+            {author.pronouns}
+          </dd>
+          <dt class="text-sound-navy/60">Role</dt><dd class="m-0">
+            {author.title}
+          </dd>
+          <dt class="text-sound-navy/60">Company</dt><dd class="m-0">
+            {author.company}
+          </dd>
+          <dt class="text-sound-navy/60">Location</dt><dd class="m-0">
+            {author.location}
+          </dd>
+          <dt class="text-sound-navy/60">Web</dt><dd class="m-0">
+            <a href={author.url} class="text-cascade-blue"
+              >{author.url?.replace("https://", "")}</a
+            >
+          </dd>
+        </dl>
+        <ul class="m-0 mt-3 list-none p-0">
+          {
+            author.social.map((s) => (
+              <li>
+                <a href={s.url} class="text-cascade-blue capitalize">
+                  {s.type}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+      <div>
+        <h1 class="text-64 mt-0 mb-4">{author.name}</h1>
+        <p class="text-22 max-w-[55ch]">{author.bio}</p>
+        <h2 class="mt-10 text-xl">{byAuthor.length} posts</h2>
+        <table class="w-full border-collapse text-base">
+          <tbody>
+            {
+              byAuthor.map((p) => (
+                <tr class="border-sound-navy/15 border-b align-baseline">
+                  <td class="text-sound-navy/60 w-20 py-4 pr-4 text-sm">
+                    {short(p.pubDate)}
+                  </td>
+                  <td class="py-4">
+                    <a
+                      href="#"
+                      class="text-sound-navy text-xl font-medium no-underline hover:underline"
+                    >
+                      {p.title}
+                    </a>
+                  </td>
+                  <td class="text-sound-navy/60 py-4 text-right text-sm">
+                    {p.minutes} min
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>

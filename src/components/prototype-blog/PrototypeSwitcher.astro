@@ -1,0 +1,125 @@
+---
+/**
+ * PROTOTYPE, throwaway (issue #55). Floating variant + view switcher.
+ * Variant and view live in `?variant=` / `?view=`; ←/→ cycle variants.
+ */
+interface Props {
+  variants: { key: string; name: string }[];
+  views: string[];
+}
+const { variants, views } = Astro.props;
+---
+
+{
+  (import.meta.env.DEV || import.meta.env.CONTEXT !== "production") && (
+    <div
+      id="proto-switcher"
+      data-variants={JSON.stringify(variants)}
+      data-views={JSON.stringify(views)}
+      class="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/90 px-3 py-2 font-mono text-xs text-white shadow-2xl"
+    >
+      <button data-dir="-1" class="rounded px-2 py-1 hover:bg-white/20">
+        ◀
+      </button>
+      <span data-label class="min-w-40 text-center" />
+      <button data-dir="1" class="rounded px-2 py-1 hover:bg-white/20">
+        ▶
+      </button>
+      <span class="mx-1 h-5 w-px bg-white/30" />
+      {views.map((v) => (
+        <button data-view-btn={v} class="rounded px-2 py-1 hover:bg-white/20">
+          {v}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+<script>
+  const bar = document.getElementById("proto-switcher");
+  if (bar) {
+    const variants: { key: string; name: string }[] = JSON.parse(
+      bar.dataset.variants!,
+    );
+    const views: string[] = JSON.parse(bar.dataset.views!);
+    const params = new URLSearchParams(location.search);
+    let v = Math.max(
+      0,
+      variants.findIndex((x) => x.key === params.get("variant")),
+    );
+    let view = views.includes(params.get("view") ?? "")
+      ? params.get("view")!
+      : views[0];
+
+    const render = () => {
+      const key = variants[v].key;
+      document.querySelectorAll<HTMLElement>("[data-variant]").forEach((el) => {
+        el.hidden = el.dataset.variant !== key && view !== "code";
+        if (view === "code") {
+          el.hidden = true;
+        }
+      });
+      document.querySelectorAll<HTMLElement>("[data-view]").forEach((el) => {
+        el.hidden = el.dataset.view !== view;
+      });
+      bar.querySelector("[data-label]")!.textContent =
+        `${key} (${variants[v].name})`;
+      bar.querySelectorAll<HTMLElement>("[data-view-btn]").forEach((b) => {
+        b.classList.toggle("bg-white", b.dataset.viewBtn === view);
+        b.classList.toggle("text-black", b.dataset.viewBtn === view);
+      });
+      const u = new URL(location.href);
+      u.searchParams.set("variant", key);
+      u.searchParams.set("view", view);
+      history.replaceState(null, "", u);
+      onScroll();
+    };
+
+    const onScroll = () => {
+      const article = document.querySelector<HTMLElement>(
+        `[data-variant="${variants[v].key}"] [data-view="post"] article`,
+      );
+      const fill = document.querySelector<HTMLElement>(
+        `[data-variant="${variants[v].key}"] [data-progress-fill]`,
+      );
+      if (!article || !fill) {
+        return;
+      }
+      const r = article.getBoundingClientRect();
+      const total = r.height - innerHeight;
+      const pct = Math.min(1, Math.max(0, -r.top / (total || 1)));
+      fill.style.width = `${pct * 100}%`;
+    };
+
+    const cycle = (d: number) => {
+      v = (v + d + variants.length) % variants.length;
+      render();
+    };
+    bar
+      .querySelectorAll<HTMLElement>("[data-dir]")
+      .forEach((b) =>
+        b.addEventListener("click", () => cycle(Number(b.dataset.dir))),
+      );
+    bar.querySelectorAll<HTMLElement>("[data-view-btn]").forEach((b) =>
+      b.addEventListener("click", () => {
+        view = b.dataset.viewBtn!;
+        scrollTo(0, 0);
+        render();
+      }),
+    );
+    addEventListener("keydown", (e) => {
+      const t = e.target as HTMLElement;
+      if (t.closest("input, textarea, select, [contenteditable]")) {
+        return;
+      }
+      if (e.key === "ArrowLeft") {
+        cycle(-1);
+      }
+      if (e.key === "ArrowRight") {
+        cycle(1);
+      }
+    });
+    addEventListener("scroll", onScroll, { passive: true });
+    render();
+  }
+</script>

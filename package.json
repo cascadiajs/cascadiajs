@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prototype:blog": "astro dev --open /prototype/blog",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",

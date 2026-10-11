@@ -1,0 +1,63 @@
+---
+/**
+ * PROTOTYPE, throwaway (issue #55, "What should the blog look like?").
+ * Three visual directions for the blog, switchable via `?variant=A|B|C`, each
+ * covering every surface via `?view=index|search|post|tag|author`, plus a
+ * variant-independent `?view=code` Shiki theme comparison. Lives on the
+ * prototype branch only; never merge to main.
+ */
+import { Code } from "astro:components";
+import Layout from "@layouts/Layout.astro";
+import VariantA from "@components/prototype-blog/VariantA.astro";
+import VariantB from "@components/prototype-blog/VariantB.astro";
+import VariantC from "@components/prototype-blog/VariantC.astro";
+import PrototypeSwitcher from "@components/prototype-blog/PrototypeSwitcher.astro";
+import { sampleCode } from "@components/prototype-blog/data";
+
+const themes = [
+  "github-light",
+  "min-light",
+  "vitesse-light",
+  "catppuccin-latte",
+  "night-owl",
+  "github-dark",
+  "one-dark-pro",
+  "vitesse-dark",
+] as const;
+---
+
+<Layout title="PROTOTYPE: Blog">
+  <VariantA />
+  <VariantB />
+  <VariantC />
+
+  <section
+    data-view="code"
+    hidden
+    class="mx-auto box-content max-w-[1200px] px-4 py-10 pb-32"
+  >
+    <h1 class="text-40 mt-0">Shiki themes</h1>
+    <p>A: github-light · B: night-owl · C: min-light. Pick any.</p>
+    <div class="grid gap-6 lg:grid-cols-2">
+      {
+        themes.map((t) => (
+          <div>
+            <h2 class="mt-0 mb-2 text-xl">{t}</h2>
+            <div class="[&_pre]:overflow-x-auto [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:text-sm [&_pre]:leading-6">
+              <Code code={sampleCode} lang="astro" theme={t} />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <PrototypeSwitcher
+    variants={[
+      { key: "A", name: "Editorial" },
+      { key: "B", name: "Poster" },
+      { key: "C", name: "Index" },
+    ]}
+    views={["index", "search", "post", "tag", "author", "code"]}
+  />
+</Layout>

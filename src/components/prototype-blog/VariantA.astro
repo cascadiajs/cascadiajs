@@ -1,0 +1,447 @@
+---
+/**
+ * PROTOTYPE, throwaway (issue #55). Variant A, "Editorial": a magazine
+ * lead-story layout. One big lead Featured Post plus two stacked, a
+ * single-column row list with thumbnails, a narrow centered reading column,
+ * the progress bar fixed to the viewport's top edge, and the share bar inline
+ * under the byline and again at the end of the Post.
+ */
+import { Image } from "astro:assets";
+import PostBody from "./PostBody.astro";
+import {
+  featured,
+  list,
+  post,
+  tag,
+  tagged,
+  author,
+  byAuthor,
+  query,
+  results,
+  allTags,
+  fmtDate,
+  shareLinks,
+} from "./data";
+
+const url = `https://cascadiajs.com/blog/post/${post.slug}`;
+const shares = shareLinks(url, post.title);
+const wrap = "mx-auto box-content max-w-[1100px] px-4";
+---
+
+<div data-variant="A">
+  {/* ───────────── INDEX ───────────── */}
+  <section data-view="index">
+    <div class="bg-overcast-gray">
+      <div
+        class={`${wrap} flex flex-wrap items-end justify-between gap-4 py-6`}
+      >
+        <div>
+          <h1 class="text-64 my-0">Blog</h1>
+          <p class="text-sound-navy m-0 mt-2">
+            News, stories and notes from the CascadiaJS community.
+          </p>
+        </div>
+        <form class="flex gap-2" action="#" onsubmit="return false">
+          <input
+            type="search"
+            placeholder="Search posts"
+            class="border-sound-navy/40 w-56 rounded border bg-white px-3 py-2"
+          />
+          <select
+            class="border-sound-navy/40 rounded border bg-white px-2 py-2"
+          >
+            <option>All tags</option>
+            {allTags.map((t) => <option>{t}</option>)}
+          </select>
+          <button
+            class="bg-sound-navy text-cedar-cream rounded px-4 font-medium"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+
+    {/* Featured band: lead story + two stacked */}
+    <div class={`${wrap} grid gap-8 py-10 md:grid-cols-[2fr_1fr]`}>
+      <a href="#" class="group text-ink block no-underline">
+        {
+          featured[0].image && (
+            <Image
+              src={featured[0].image}
+              alt=""
+              width={900}
+              class="aspect-[16/9] w-full rounded object-cover"
+            />
+          )
+        }
+        <p
+          class="text-cascade-blue mt-4 mb-1 text-sm font-medium tracking-wide uppercase"
+        >
+          Featured
+        </p>
+        <h2 class="text-40 mt-0 mb-3 group-hover:underline">
+          {featured[0].title}
+        </h2>
+        <p class="text-xl">{featured[0].description}</p>
+        <p class="text-sound-navy/80 text-sm">
+          {featured[0].author.name} · {fmtDate(featured[0].pubDate)} ·{" "}
+          {featured[0].minutes} min read
+        </p>
+      </a>
+      <div
+        class="md:border-sound-navy/20 flex flex-col gap-8 md:border-l md:pl-8"
+      >
+        {
+          featured.slice(1).map((p) => (
+            <a href="#" class="group text-ink block no-underline">
+              {p.image && (
+                <Image
+                  src={p.image}
+                  alt=""
+                  width={500}
+                  class="aspect-[16/9] w-full rounded object-cover"
+                />
+              )}
+              <h3 class="text-28 mt-3 mb-2 group-hover:underline">{p.title}</h3>
+              <p class="text-sound-navy/80 m-0 text-sm">
+                {p.author.name} · {p.minutes} min read
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    {/* Regular list: single column rows */}
+    <div class={`${wrap} pb-10`}>
+      <h2 class="border-sound-navy border-b-2 pb-2">Latest</h2>
+      <ol class="m-0 list-none p-0">
+        {
+          list.map((p) => (
+            <li class="border-sound-navy/20 grid gap-6 border-b py-6 md:grid-cols-[220px_1fr]">
+              <div class="hidden md:block">
+                {p.image ? (
+                  <Image
+                    src={p.image}
+                    alt=""
+                    width={440}
+                    class="aspect-[4/3] w-full rounded object-cover"
+                  />
+                ) : (
+                  <div class="bg-mint aspect-[4/3] w-full rounded" />
+                )}
+              </div>
+              <div>
+                <p class="text-sound-navy/80 m-0 text-sm">
+                  {fmtDate(p.pubDate)} · {p.minutes} min read
+                </p>
+                <h3 class="text-28 mt-1 mb-2">
+                  <a
+                    href="#"
+                    class="text-sound-navy no-underline hover:underline"
+                  >
+                    {p.title}
+                  </a>
+                </h3>
+                <p class="mb-3">{p.description}</p>
+                <div class="flex flex-wrap items-center gap-3 text-sm">
+                  <span class="flex items-center gap-2">
+                    <Image
+                      src={p.author.image}
+                      alt=""
+                      width={48}
+                      class="size-6 rounded-full object-cover"
+                    />
+                    {p.author.name}
+                  </span>
+                  {p.tags.map((t) => (
+                    <a
+                      href="#"
+                      class="text-cascade-blue no-underline hover:underline"
+                    >
+                      #{t}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <nav class="mt-8 flex items-center justify-between text-lg">
+        <span class="text-sound-navy/40">← Newer posts</span>
+        <span class="text-sm">Page 1 of 3</span>
+        <a href="#" class="text-cascade-blue font-medium">Older posts →</a>
+      </nav>
+    </div>
+  </section>
+
+  {/* ───────────── SEARCH ───────────── */}
+  <section data-view="search">
+    <div class="bg-overcast-gray">
+      <div class={`${wrap} py-6`}>
+        <h1 class="text-40 my-0">Search</h1>
+        <form
+          class="mt-4 flex flex-wrap gap-2"
+          action="#"
+          onsubmit="return false"
+        >
+          <input
+            type="search"
+            value={query}
+            class="border-sound-navy/40 w-72 rounded border bg-white px-3 py-2"
+          />
+          <select
+            class="border-sound-navy/40 rounded border bg-white px-2 py-2"
+          >
+            <option>All tags</option>
+            {allTags.map((t) => <option>{t}</option>)}
+          </select>
+          <button
+            class="bg-sound-navy text-cedar-cream rounded px-4 font-medium"
+            >Search</button
+          >
+        </form>
+      </div>
+    </div>
+    <div class={`${wrap} py-8`}>
+      <p class="text-sound-navy">{results.length} posts match “{query}”</p>
+      <ol class="m-0 list-none p-0">
+        {
+          results.map((p) => (
+            <li class="border-sound-navy/20 border-b py-5">
+              <p class="text-sound-navy/80 m-0 text-sm">
+                {p.author.name} · {fmtDate(p.pubDate)} · {p.minutes} min read
+              </p>
+              <h3 class="text-28 mt-1 mb-2">
+                <a
+                  href="#"
+                  class="text-sound-navy no-underline hover:underline"
+                >
+                  {p.title}
+                </a>
+              </h3>
+              <p class="m-0">{p.description}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <p class="text-sound-navy/50 mt-16 text-xs tracking-widest uppercase">
+        Empty state ↓
+      </p>
+      <div
+        class="border-sound-navy/30 rounded border border-dashed p-8 text-center"
+      >
+        <h2 class="mt-0">No posts match “webassembly”</h2>
+        <p>Try a shorter search, or browse a tag:</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          {
+            allTags.slice(0, 8).map((t) => (
+              <a href="#" class="text-cascade-blue">
+                #{t}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────── POST ───────────── */}
+  <section data-view="post">
+    {/* Progress bar: fixed to the viewport top, over the site header */}
+    <div data-progress class="fixed inset-x-0 top-0 z-40 h-1">
+      <div data-progress-fill class="bg-cascade-blue h-full w-0"></div>
+    </div>
+
+    <article>
+      <header class="mx-auto box-content max-w-[720px] px-4 pt-12 text-center">
+        <div class="flex justify-center gap-3 text-sm">
+          {
+            post.tags.map((t) => (
+              <a
+                href="#"
+                class="text-cascade-blue tracking-wide uppercase no-underline"
+              >
+                {t}
+              </a>
+            ))
+          }
+        </div>
+        <h1 class="text-64 mt-4 mb-4">{post.title}</h1>
+        <p class="text-22 text-sound-navy">{post.description}</p>
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <Image
+            src={post.author.image}
+            alt=""
+            width={96}
+            class="size-12 rounded-full object-cover"
+          />
+          <div class="text-left text-base">
+            <a href="#" class="text-sound-navy font-medium"
+              >{post.author.name}</a
+            >
+            <div class="text-sound-navy/70 text-sm">
+              {fmtDate(post.pubDate)} · {post.minutes} min read
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 flex justify-center gap-2">
+          {
+            shares.map((s) => (
+              <a
+                href={s.href}
+                target="_blank"
+                aria-label={`Share on ${s.label}`}
+                class="border-sound-navy/30 text-sound-navy flex size-10 items-center justify-center rounded-full border hover:bg-white"
+              >
+                <i class={s.icon} />
+              </a>
+            ))
+          }
+          <button
+            aria-label="Copy link"
+            class="border-sound-navy/30 text-sound-navy flex size-10 items-center justify-center rounded-full border hover:bg-white"
+          >
+            <i class="fa-solid fa-link"></i>
+          </button>
+          <button
+            aria-label="Share"
+            class="border-sound-navy/30 text-sound-navy flex size-10 items-center justify-center rounded-full border hover:bg-white"
+          >
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+      {
+        post.image && (
+          <Image
+            src={post.image}
+            alt=""
+            width={1400}
+            class="mx-auto my-10 aspect-[21/9] w-full max-w-[1200px] object-cover"
+          />
+        )
+      }
+      <div class="mx-auto box-content max-w-[680px] px-4 pb-8 text-xl">
+        <PostBody codeTheme="github-light" />
+        <div
+          class="border-sound-navy/20 mt-12 flex flex-wrap items-center justify-between gap-4 border-y py-6"
+        >
+          <span class="text-sound-navy font-medium">Share this post</span>
+          <div class="flex gap-2 text-base">
+            {
+              shares.map((s) => (
+                <a href={s.href} target="_blank" class="text-cascade-blue">
+                  {s.label}
+                </a>
+              ))
+            }
+            <button class="text-cascade-blue">Copy link</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  {/* ───────────── TAG ───────────── */}
+  <section data-view="tag">
+    <div class="bg-overcast-gray">
+      <div class={`${wrap} py-8`}>
+        <p class="text-sound-navy/70 m-0 text-sm tracking-wide uppercase">
+          Tag
+        </p>
+        <h1 class="text-64 my-1">#{tag}</h1>
+        <p class="text-sound-navy m-0">
+          {tagged.length} posts · <a href="#" class="text-cascade-blue"
+            >All posts</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class={`${wrap} py-8`}>
+      {
+        tagged.map((p) => (
+          <div class="border-sound-navy/20 border-b py-5">
+            <h3 class="text-28 mt-0 mb-2">
+              <a href="#" class="text-sound-navy no-underline hover:underline">
+                {p.title}
+              </a>
+            </h3>
+            <p class="text-sound-navy/80 m-0 text-sm">
+              {p.author.name} · {fmtDate(p.pubDate)} · {p.minutes} min read
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ───────────── AUTHOR ───────────── */}
+  <section data-view="author">
+    <div class="bg-overcast-gray">
+      <div
+        class={`${wrap} flex flex-col gap-6 py-10 md:flex-row md:items-center`}
+      >
+        <Image
+          src={author.image}
+          alt={`photo of ${author.name}`}
+          width={320}
+          class="size-40 shrink-0 rounded object-cover"
+        />
+        <div>
+          <h1 class="text-64 my-0">
+            {author.name}
+            {
+              author.pronouns && (
+                <span class="text-sound-navy/70 text-xl font-light">
+                  {" "}
+                  ({author.pronouns})
+                </span>
+              )
+            }
+          </h1>
+          <p class="text-sound-navy m-0 mt-2 text-xl">
+            {author.title}, {author.company} · {author.location}
+          </p>
+          <p class="mt-4 max-w-[60ch]">{author.bio}</p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href={author.url} class="text-cascade-blue"
+              >{author.url?.replace("https://", "")}</a
+            >
+            {
+              author.social.map((s) => (
+                <a
+                  href={s.url}
+                  class="text-sound-navy text-xl"
+                  aria-label={s.type}
+                >
+                  <i class={`fa-brands fa-${s.type}`} />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class={`${wrap} py-8`}>
+      <h2 class="mt-0">Posts by {author.name}</h2>
+      {
+        byAuthor.map((p) => (
+          <div class="border-sound-navy/20 border-b py-5">
+            <h3 class="text-28 mt-0 mb-2">
+              <a href="#" class="text-sound-navy no-underline hover:underline">
+                {p.title}
+              </a>
+            </h3>
+            <p class="text-sound-navy/80 m-0 text-sm">
+              {fmtDate(p.pubDate)} · {p.minutes} min read
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</div>

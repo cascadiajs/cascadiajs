@@ -1,0 +1,37 @@
+---
+/** PROTOTYPE, throwaway (issue #55). Shared sample Post prose; variants own the layout around it. */
+import { Code } from "astro:components";
+import type { ComponentProps } from "astro/types";
+import Callout from "@components/Callout.astro";
+import { sampleCode } from "./data";
+
+interface Props {
+  codeTheme: ComponentProps<typeof Code>["theme"];
+}
+const { codeTheme } = Astro.props;
+const para =
+  "Cross-document view transitions landed in every evergreen browser this year, which means a plain multi-page site can animate between pages with a couple of lines of CSS. We tried it on the conference site and learned a few things about naming, timing and when to stay out of the way.";
+---
+
+<div
+  class="[&_h2]:text-28 [&_a]:text-cascade-blue [&_a]:underline [&_pre]:my-6 [&_pre]:overflow-x-auto [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:text-sm [&_pre]:leading-6"
+>
+  <p>{para}</p>
+  <p>{para}</p>
+  <h2>Start with the opt-in</h2>
+  <p>
+    The whole feature hangs off a single at-rule. Drop it in your global
+    stylesheet and every same-origin navigation crossfades by default. You can
+    read more in <a href="#">the spec</a>.
+  </p>
+  <Code code={sampleCode} lang="astro" theme={codeTheme} />
+  <Callout variant="info">
+    Respect <code>prefers-reduced-motion</code>: wrap the opt-in in a media
+    query.
+  </Callout>
+  <p>{para}</p>
+  <h2>Name the things that move</h2>
+  <p>{para}</p>
+  <p>{para}</p>
+  <p>{para}</p>
+</div>
