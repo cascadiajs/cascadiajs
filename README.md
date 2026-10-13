@@ -182,6 +182,13 @@ Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`
 
 See [ADR-0012](docs/adr/0012-mdx-content-pages.md) and Astro's [MDX guide](https://docs.astro.build/en/guides/integrations-guide/mdx/).
 
+The 2027 CFP embeds `TopicGrid` from `@components/TopicGrid.astro`. Edit its
+`topicGroups` array in `src/content/markdown/2027/cfp.mdx` to change category
+titles or topics. The component renders green topic pills in two columns when
+the content column has enough room, and one column on smaller screens. An odd
+final category spans both columns. Keep labels concise; each topic gets its own
+row. The CFP uses four topics per category to keep the grid balanced.
+
 ### Data (`src/shared/data/`)
 
 ```text

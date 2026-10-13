@@ -1,0 +1,337 @@
+---
+import EventLayout from "@layouts/EventLayout.astro";
+import SimplePage from "@layouts/SimplePage.astro";
+import SponsorsGrid from "@components/SponsorsGrid.astro";
+import CtaButton from "@components/CtaButton.astro";
+import Testimonials from "@components/Testimonials.astro";
+import Day from "@components/schedule/Day.astro";
+import DayHeader from "@components/schedule/DayHeader.astro";
+import LocationBand from "@components/schedule/LocationBand.astro";
+import ShowItem from "@components/schedule/ShowItem.astro";
+import DayContent from "@components/schedule/DayContent.astro";
+import Track from "@components/schedule/Track.astro";
+import TalkItem from "@components/schedule/TalkItem.astro";
+import HallwayTrack from "@components/schedule/HallwayTrack.astro";
+import { getEntry } from "astro:content";
+import { getActivity } from "@shared/data/events";
+
+// Workshop rows use ShowItem, not TalkItem. Title/description come from
+// the roster, but href doesn't match the Talk's own `slug` -- it's the
+// Talk's `registrationUrl`.
+async function workshopTalk(id: string): Promise<{
+  title: string;
+  url: string;
+  description: string;
+}> {
+  const talk = (await getEntry("talks2026", id))?.data;
+  if (!talk?.abstract) {
+    throw new Error(`No workshop Talk with an abstract found for id "${id}"`);
+  }
+  if (!talk.registrationUrl) {
+    throw new Error(`Workshop Talk "${id}" has no registrationUrl`);
+  }
+  return {
+    title: talk.title,
+    url: talk.registrationUrl,
+    description: talk.abstract,
+  };
+}
+
+// Looked up once so each is a single roster read, not three per row below.
+const voiceAgentWorkshop = await workshopTalk("build-a-voice-agent-with-vapi");
+const apifyWorkshop = await workshopTalk("build-better-agent-tools-with-apify");
+const offloadingWorkersWorkshop = await workshopTalk(
+  "offloading-work-with-the-workers",
+);
+const deployingAgentsWorkshop = await workshopTalk(
+  "deploying-ai-agents-on-aws-with-pulumi-and-amazon-bedrock-agentcore",
+);
+---
+
+<EventLayout
+  year="2026"
+  title="CascadiaJS 2026 | June 1 - 2 | Seattle, WA"
+  description="CascadiaJS 2026 is coming up June 1 - 2 in Seattle, WA!"
+>
+  <SimplePage title="Schedule" width="wide" class="mark-external-links">
+    {
+      /* Five simple days (Day/DayHeader/LocationBand/ShowItem only)
+         below; June 1-2's three-track days follow. */
+    }
+    <Day id="cascadia-ai-hackathon">
+      <DayHeader date={["Pre-Conf", "May 29"]} />
+      <LocationBand>TBD</LocationBand>
+      <ShowItem entry={getActivity("2026", "cascadia-ai-hackathon")} />
+    </Day>
+
+    <Day id="day-zero">
+      <DayHeader date="May 31" />
+      <LocationBand>Pacific Central Station</LocationBand>
+      <ShowItem entry={getActivity("2026", "vancouver-hacker-train")} />
+
+      <LocationBand>Union Station</LocationBand>
+      <ShowItem entry={getActivity("2026", "portland-hacker-train")} />
+
+      <LocationBand>Town Hall Seattle</LocationBand>
+      <ShowItem entry={getActivity("2026", "welcome-reception")} />
+    </Day>
+
+    {
+      /* June 1 stacks two DayHeaders; the "Conference" one sets
+           timezone=false -- the one exception to DayHeader's default. */
+    }
+    <Day id="day-one">
+      <DayHeader date="Conference" timezone={false} />
+      <DayHeader date={["Day One", "June 1"]} />
+
+      <LocationBand>Town Hall Seattle</LocationBand>
+      <ShowItem
+        when="8:00am"
+        title="Doors Open and Registration"
+        icon="fas fa-door-open"
+      />
+
+      <DayContent>
+        <Track kind="main" title="Main Track">
+          <LocationBand>Great Hall</LocationBand>
+          <TalkItem talk="day-one-opening-keynote" when="9:00am" />
+          <TalkItem talk="ai-agent-swarms-are-amazing" />
+          <ShowItem when="10:20am" title="Break" icon="fas fa-coffee" />
+          <TalkItem
+            talk="practical-refactors-with-modern-css-colors"
+            when="11:00am"
+          />
+          <TalkItem talk="keep-the-main-thread-free-with-web-workers" />
+          <TalkItem
+            talk="ai-helped-me-learn-vue-through-the-lens-of-a-react-developer"
+          />
+          <TalkItem
+            talk="implementing-the-web-on-native-with-linked-literate-programming"
+          />
+
+          <LocationBand>Forum</LocationBand>
+          <ShowItem
+            when="12:40pm"
+            title="Lunch"
+            icon="fas fa-taco"
+            url="/2026/meals"
+          >
+            <div>
+              Meet at the West Entrance at 1pm to join{" "}
+              <a href="/2026/connect#walkie" class="text-cascade-blue underline"
+                >Walkie Talkies</a
+              >
+            </div>
+          </ShowItem>
+
+          <LocationBand>Great Hall</LocationBand>
+          <TalkItem
+            talk="choosing-the-wrong-abstraction-and-what-it-cost-us"
+            when="1:40pm"
+          />
+          <TalkItem talk="shared-components-beyond-the-design-system" />
+          <TalkItem talk="how-to-successfully-build-a-junior-dev-team" />
+          <TalkItem
+            talk="building-an-ai-platform-your-engineers-actually-trust"
+          />
+          <ShowItem when="3:20pm" title="Break" icon="fas fa-coffee" />
+          <TalkItem
+            talk="how-to-use-spec-driven-development-for-production-workflows"
+            when="4:10pm"
+          />
+          <TalkItem talk="the-last-mile-is-code" />
+          <ShowItem when="5:10pm" title="Closing Day One" />
+        </Track>
+
+        <HallwayTrack year="2026" />
+
+        <Track kind="workshop" title="Workshop Track">
+          <LocationBand>Forum</LocationBand>
+          {
+            /* Workshop rows use ShowItem; title/url/description come
+                 from `workshopTalk()` above, not hand-typed. */
+          }
+          <ShowItem
+            when="10:45am"
+            title={voiceAgentWorkshop.title}
+            url={voiceAgentWorkshop.url}
+          >
+            <p>{voiceAgentWorkshop.description}</p>
+          </ShowItem>
+          <ShowItem
+            when="1:40pm"
+            title={apifyWorkshop.title}
+            url={apifyWorkshop.url}
+          >
+            <p>{apifyWorkshop.description}</p>
+          </ShowItem>
+        </Track>
+      </DayContent>
+
+      <LocationBand>Forum</LocationBand>
+      <ShowItem
+        when="5:30pm"
+        title="Dinner"
+        url="/2026/meals"
+        body={[
+          "Dinner and drinks are included for Premium ticket holders, and there will be a cash bar available as well.",
+        ]}
+      />
+      <ShowItem entry={getActivity("2026", "networking-mixer")} />
+      <ShowItem entry={getActivity("2026", "pog-tournament")} />
+      <ShowItem when="9:30pm" title="Day One Close" icon="fas fa-door-closed" />
+    </Day>
+
+    <Day id="day-two">
+      <DayHeader date={["Day Two", "June 2"]} />
+
+      <LocationBand>Town Hall Seattle</LocationBand>
+      <ShowItem
+        when="8:00am"
+        title="Doors Open and Registration"
+        icon="fas fa-door-open"
+      />
+
+      <DayContent>
+        <Track kind="main" title="Main Track">
+          <LocationBand>Great Hall</LocationBand>
+          <TalkItem
+            talk="javascript-won-the-web-rust-is-taking-the-critical-path"
+            when="9:00am"
+          />
+          <TalkItem talk="choosing-typescript-matters-more-than-ever" />
+          <ShowItem when="10:20am" title="Break" icon="fas fa-coffee" />
+          <TalkItem
+            talk="accelerating-musical-live-coding-with-on-device-ai"
+            when="11:00am"
+          />
+          <TalkItem talk="teaching-llms-new-tricks" />
+          <TalkItem
+            talk="beowulf-stroganoff-building-economically-useless-chatbots"
+          />
+          <TalkItem
+            talk="design-tokens-getting-agents-to-follow-brand-guidelines"
+          />
+
+          <LocationBand>Forum</LocationBand>
+          <ShowItem
+            when="12:40pm"
+            title="Lunch"
+            icon="fas fa-taco"
+            url="/2026/meals"
+          >
+            <div>
+              Meet at the West Entrance at 1pm to join{" "}
+              <a href="/2026/connect#walkie" class="text-cascade-blue underline"
+                >Walkie Talkies</a
+              >
+            </div>
+          </ShowItem>
+
+          <LocationBand>Great Hall</LocationBand>
+          <TalkItem
+            talk="unlocking-ais-hidden-connections-with-graphs"
+            when="1:40pm"
+          />
+          <TalkItem talk="building-apps-with-atproto" />
+          <TalkItem
+            talk="the-request-tax-re-evaluating-20-years-of-web-performance-dogma"
+          />
+          <TalkItem
+            talk="trust-but-verify-human-in-the-loop-for-agents-that-actually-matter"
+          />
+          <ShowItem when="3:15pm" title="Break" icon="fas fa-coffee" />
+          <TalkItem talk="hold-me-closer-tony-danza" when="3:50pm" />
+          <TalkItem talk="its-time-to-rethink-everything" />
+          <ShowItem when="5:10pm" title="Closing Ceremony" />
+        </Track>
+
+        <HallwayTrack year="2026" />
+
+        <Track kind="workshop" title="Workshop Track">
+          <LocationBand>Forum</LocationBand>
+          {
+            /* Workshop rows use ShowItem; title/url/description come
+                 from `workshopTalk()` above, not hand-typed. */
+          }
+          <ShowItem
+            when="10:45am"
+            title={offloadingWorkersWorkshop.title}
+            url={offloadingWorkersWorkshop.url}
+          >
+            <p>{offloadingWorkersWorkshop.description}</p>
+          </ShowItem>
+          <ShowItem
+            when="1:40pm"
+            title={deployingAgentsWorkshop.title}
+            url={deployingAgentsWorkshop.url}
+          >
+            <p>{deployingAgentsWorkshop.description}</p>
+          </ShowItem>
+        </Track>
+      </DayContent>
+
+      <LocationBand>Capitol Hill</LocationBand>
+      <ShowItem
+        when="6:00pm"
+        title="Dinner with Friends"
+        icon="fas fa-utensils"
+        body={[
+          "Grab dinner with the new friends you've made at CascadiaJS in Capitol Hill. There are dozens of places to choose from!",
+        ]}
+      />
+
+      <LocationBand>Rockbox</LocationBand>
+      <ShowItem entry={getActivity("2026", "karaoke")}>
+        <p class="mt-2">
+          We will wrap-up CascadiaJS with an epic karaoke party at Rockbox
+          Seattle. We are <b>buying out</b> the venue and there are 12 different rooms
+          that we can use. Premium ticket holders will be able to skip the line and
+          will be able to bring a plus-one! 🎤🎉
+        </p>
+      </ShowItem>
+      <ShowItem
+        when="11:00pm"
+        title="Karaoke rooms close"
+        icon="fas fa-door-closed"
+      />
+    </Day>
+
+    {
+      /* All three Trainings share the same anchor id -- a confirmed live
+           reference defect, preserved per acceptance criteria. The
+           reference also leaves several `<div>`s unclosed here, reparenting
+           elements in its DOM; we intentionally don't replicate that
+           malformed nesting, only the visual result (ADR-0001). */
+    }
+    <Day id="day-training">
+      <DayHeader date={["Post-Conf", "Training Workshops", "June 3"]} />
+      <LocationBand>Thinkspace Seattle</LocationBand>
+      <ShowItem entry={getActivity("2026", "coding-with-claude")} />
+    </Day>
+
+    <Day id="day-training">
+      <DayHeader date="June 4" />
+      <LocationBand>Thinkspace Seattle</LocationBand>
+      <ShowItem entry={getActivity("2026", "ai-for-typescript-developers")} />
+    </Day>
+
+    <Day id="day-training">
+      <DayHeader date="June 5" />
+      <LocationBand>Thinkspace Seattle</LocationBand>
+      <ShowItem entry={getActivity("2026", "building-ai-agents")} />
+    </Day>
+
+    <section
+      id="sponsors"
+      slot="after-body"
+      class="box-content p-8 text-center"
+    >
+      <h1 class="mt-0 mb-8 text-5xl">Our Sponsors</h1>
+      <SponsorsGrid year="2026" tiered={true} />
+      <CtaButton href="/2026/sponsor">Sponsor Our Event</CtaButton>
+    </section>
+
+    <Testimonials slot="after-body" />
+  </SimplePage>
+</EventLayout>

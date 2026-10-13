@@ -26,12 +26,40 @@ const { ticket } = Astro.props;
     }
     <div class="border-sound-navy flex-1 border-b-2"></div>
   </div>
-  <div class="text-64 my-8 font-sans font-medium">{ticket.price}</div>
+  <div class="price text-64 my-8 inline-block font-sans font-medium">
+    {ticket.price}
+  </div>
+  <div class="retail text-64 my-8 inline-block font-sans font-medium">
+    {ticket.retail}
+  </div>
+  <div class="text-64 my-8 font-sans font-medium">
+    {ticket.sale}
+  </div>
   <div class="mt-4 text-lg">
     <strong>Includes:</strong>
     <ul class="mt-0 list-disc pl-4">
       {ticket.includes.map((item) => <li>{item}</li>)}
     </ul>
-    {ticket.footnotes.map((note) => <p>{note}</p>)}
+    <br />
+    <i>{ticket.footnotes.map((note) => <p>{note}</p>)}</i>
   </div>
 </div>
+
+<style>
+  .retail {
+    position: relative;
+  }
+
+  .retail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top right,
+      transparent calc(50% - 3px),
+      #d01212 calc(50% - 3px),
+      #d01212 calc(50% + 3px),
+      transparent calc(50% + 3px)
+    );
+  }
+</style>

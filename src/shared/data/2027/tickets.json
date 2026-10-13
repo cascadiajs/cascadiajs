@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Conference",
+    "retail": "$799",
+    "sale": "$499",
+    "includes": [
+      "Access to all talks",
+      "Priority access to free workshops",
+      "Conference hoodie *",
+      "Meals Pass",
+      "Priority access to all networking events & parties",
+      "+1 for the Closing Party"
+    ],
+    "footnotes": ["* If registered by April 29, 2027"]
+  },
+  {
+    "name": "Conference",
+    "subLabel": "Indie Discount",
+    "retail": "$599",
+    "sale": "$299",
+    "includes": [
+      "Access to all talks",
+      "Priority access to free workshops",
+      "Conference hoodie *",
+      "Meals Pass",
+      "Priority access to all networking events & parties",
+      "+1 for the Closing Party"
+    ],
+    "footnotes": [
+      "Must be between jobs, self-employed, work for a educational institution , work for a non-profit organization or company with fewer than 10 employees"
+    ]
+  }
+]

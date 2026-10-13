@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Carter Rabasa",
+    "image": "/events/2026/images/carter-rabasa.jpg",
+    "roles": ["organizer"],
+    "title": "Lead Organizer",
+    "location": "Seattle, WA USA"
+  },
+  {
+    "name": "Carrie Rabasa",
+    "image": "/events/2026/images/carrie-rabasa.jpg",
+    "roles": ["organizer"],
+    "title": "Co-Organizer",
+    "location": "Seattle, WA USA"
+  },
+  {
+    "name": "Elise Worthy",
+    "image": "/events/2026/images/elise-worthy.jpg",
+    "roles": ["organizer"],
+    "title": "Sponsorships",
+    "location": "Seattle, WA USA"
+  }
+]

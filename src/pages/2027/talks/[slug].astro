@@ -1,0 +1,105 @@
+---
+import { getCollection } from "astro:content";
+import EventLayout from "@layouts/EventLayout.astro";
+import PersonDetail from "@components/PersonDetail.astro";
+import CtaButton from "@components/CtaButton.astro";
+import SponsorsGrid from "@components/SponsorsGrid.astro";
+import Testimonials from "@components/Testimonials.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import { marked } from "marked";
+import SimplePage from "@layouts/SimplePage.astro";
+
+export async function getStaticPaths() {
+  const talks = await getCollection("talks2026");
+  return talks
+    .filter((talk) => talk.data.slug)
+    .map((talk) => ({
+      params: { slug: talk.data.slug! },
+      props: { talk: talk.data },
+    }));
+}
+
+const { talk } = Astro.props;
+const { title, abstract, registrationUrl, tags, yt, speaker } = talk;
+
+const abstractHtml = marked.parse(abstract ?? "") as string;
+
+// Legacy title string, hardcoded year included.
+const metaTitle = `CascadiaJS 2026 | Speakers | ${speaker.name}`;
+
+// Legacy keyed Speaker cards on a name slug ("Jeff Otaño" -> "jeff-otano").
+// Speakers without a card fall back to the general image via EventLayout.
+const speakerSlug = speaker.name
+  .normalize("NFD")
+  .replace(/\p{Diacritic}/gu, "")
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-|-$/g, "");
+const speakerCard = `/images/2026/share/speaker-${speakerSlug}.png`;
+const speakerCards = Object.keys(
+  import.meta.glob("/public/images/2026/share/speaker-*.png"),
+);
+const ogImage = speakerCards.includes(`/public${speakerCard}`)
+  ? speakerCard
+  : undefined;
+---
+
+<EventLayout year="2026" title={metaTitle} ogImage={ogImage}>
+  <SimplePage title={title}>
+    {
+      tags && (
+        <div class="mb-2 flex flex-wrap">
+          {tags.map((tag) => (
+            <div class="bg-overcast-gray m-0.75 p-2">{tag}</div>
+          ))}
+        </div>
+      )
+    }
+    <MarkdownContent>
+      <div set:html={abstractHtml} />
+      {
+        registrationUrl && (
+          <p>
+            <a href={registrationUrl}>[More info and how to register]</a>
+          </p>
+        )
+      }
+    </MarkdownContent>
+    {
+      yt && (
+        <div>
+          <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${yt}`}
+            title="YouTube video player"
+            class="border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
+        </div>
+      )
+    }
+    <h2 class="text-32">About {speaker.name}</h2>
+    <PersonDetail
+      name={speaker.name}
+      image={speaker.image}
+      company={speaker.company}
+      location={speaker.location}
+      pronouns={speaker.pronouns}
+      social={speaker.social}
+      url={speaker.url}
+    />
+    <CtaButton href="/2026">
+      🎟️ Tickets to CascadiaJS 2026 on sale now!
+    </CtaButton>
+    <Fragment slot="after-body">
+      <section id="sponsors" class="box-content p-8 text-center">
+        <h1 class="mt-0 mb-8 text-5xl">Our Sponsors</h1>
+        <SponsorsGrid year="2026" tiered={true} />
+        <CtaButton href="/2026/sponsor">Sponsor Our Event</CtaButton>
+      </section>
+      <Testimonials />
+    </Fragment>
+  </SimplePage>
+</EventLayout>
