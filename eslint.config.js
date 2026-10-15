@@ -1,9 +1,10 @@
+import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import eslintPluginAstro from "eslint-plugin-astro";
 import * as mdx from "eslint-plugin-mdx";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+export default defineConfig(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,

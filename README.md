@@ -37,7 +37,7 @@ pnpm dev          # http://localhost:4321
 | `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                |
 | `pnpm test`    | Build, preview, and run the Playwright e2e suite    |
 
-A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files. Type checks and tests run in CI.
+A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`. Tests run in CI.
 
 ## How we work
 
