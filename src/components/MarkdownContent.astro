@@ -72,6 +72,14 @@
     text-decoration: line-through;
   }
 
+  /* MDX wraps a CtaButton label in a <p>. The link carries .cta so this
+     flattens that paragraph without touching other prose. */
+  .prose-content :global(.cta > p) {
+    display: inline;
+    margin: 0;
+    line-height: inherit;
+  }
+
   .prose-content :global(.styled-table) {
     border-collapse: collapse;
     margin: 25px 0;
