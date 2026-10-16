@@ -28,16 +28,16 @@ pnpm install
 pnpm dev          # http://localhost:4321
 ```
 
-| Command        | What it does                                        |
-| :------------- | :-------------------------------------------------- |
-| `pnpm dev`     | Dev server with hot reload at `localhost:4321`      |
-| `pnpm build`   | Production build to `dist/`                         |
-| `pnpm preview` | Serve the built `dist/` locally                     |
-| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`) |
-| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                |
-| `pnpm test`    | Build, preview, and run the Playwright e2e suite    |
+| Command        | What it does                                         |
+| :------------- | :--------------------------------------------------- |
+| `pnpm dev`     | Dev server with hot reload at `localhost:4321`       |
+| `pnpm build`   | Production build to `dist/`                          |
+| `pnpm preview` | Serve the built `dist/` locally                      |
+| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`)  |
+| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                 |
+| `pnpm test`    | Playwright e2e suite (currently disabled; see below) |
 
-A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files. Type checks and tests run in CI.
+A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`. Tests run in CI.
 
 ## How we work
 
@@ -182,6 +182,13 @@ Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`
 
 See [ADR-0012](docs/adr/0012-mdx-content-pages.md) and Astro's [MDX guide](https://docs.astro.build/en/guides/integrations-guide/mdx/).
 
+The 2027 CFP embeds `TopicGrid` from `@components/TopicGrid.astro`. Edit its
+`topicGroups` array in `src/content/markdown/2027/cfp.mdx` to change category
+titles or topics. The component renders green topic pills in two columns when
+the content column has enough room, and one column on smaller screens. An odd
+final category spans both columns. Keep labels concise; each topic gets its own
+row. The CFP uses four topics per category to keep the grid balanced.
+
 ### Data (`src/shared/data/`)
 
 ```text
@@ -296,7 +303,7 @@ Do these steps only after the 2027 pages are ready.
 
 ## Testing and CI
 
-End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys.
+End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys. The suite is disabled: `playwright.config.ts` ignores every spec. Remove that `testIgnore` line to run them again.
 
 ```sh
 pnpm exec playwright install chromium   # once, to download the browser
@@ -313,7 +320,7 @@ CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
 1. **checks:** `pnpm lint`, `prettier --check .`, `pnpm check`
 2. **build:** `pnpm build`
-3. **playwright:** the e2e suite, after both pass. On failure, download the `playwright-report` artifact from the run to see what failed.
+3. **playwright:** the e2e suite, after both pass. The suite is disabled, so this job collects no tests. On failure once it is enabled again, download the `playwright-report` artifact from the run to see what failed.
 
 ## Working with an agent
 

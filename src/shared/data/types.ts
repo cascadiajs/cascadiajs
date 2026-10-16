@@ -57,7 +57,9 @@ export type Activity = {
 export interface Ticket {
   name: string;
   subLabel?: string;
-  price: string;
+  price?: string;
+  retail?: string;
+  sale?: string;
   includes: string[];
   footnotes: string[];
 }

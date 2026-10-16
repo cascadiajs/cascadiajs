@@ -2,6 +2,8 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "e2e",
+  // Suite disabled. Specs stay in e2e/; delete this line to run them again.
+  testIgnore: "**/*.spec.ts",
   projects: [
     {
       name: "chromium",

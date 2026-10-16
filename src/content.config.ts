@@ -72,7 +72,7 @@ export const sponsorSchema = z.object({
   url: z.string().optional(),
   video: z.string().optional(),
   description: z.string().optional(),
-  events: z.array(z.enum(["previous", "2025", "2026"])),
+  events: z.array(z.enum(["previous", "2025", "2026", "2027"])),
 });
 
 const talks2026 = defineCollection({
