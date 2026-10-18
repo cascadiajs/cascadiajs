@@ -50,8 +50,12 @@ A public endorsement of CascadiaJS by an attendee or Speaker, displayed on the s
 _Avoid_: Tweet, Twitter Love
 
 **Organizer**:
-A person who runs an Event, credited with a role (Lead Organizer, Sponsorships, Co-Emcee, Volunteer). Distinct from a Speaker, though one person may be both across different Events.
+A person who runs an Event, credited with a title (Lead Organizer, Sponsorships, Co-Emcee, Volunteer). Distinct from a Speaker, though one person may be both across different Events.
 _Avoid_: Staff, Team member
+
+**Person**:
+One human the site credits, recorded once and shared by every page that names them. A Person's roles say which of Speaker, Organizer and Author they are, in any combination. An Event can override the details that were true only at that Event, such as their title or company.
+_Avoid_: User, Member, Profile
 
 **Frozen Snapshot**:
 The page for an Event that has already happened, captured once as a single self-contained Astro page: content inlined in the page's own frontmatter rather than loaded from a Collection or a shared dataset, assets copied to `public/images/events/<Event Key>/`, and links to unported routes collapsed to the Event root. It is never re-derived, and its inlined content is deliberately not extracted into components. See ADR-0008.
