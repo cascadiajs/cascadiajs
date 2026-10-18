@@ -5,3 +5,4 @@ test-results/
 playwright-report/
 .playwright/
 *.DS_STORE
+.env
