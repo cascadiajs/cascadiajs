@@ -25,7 +25,7 @@ const rows = images.reduce<{ src: string; alt: string }[][]>((acc, image) => {
 }, []);
 ---
 
-<section id={id} class="image-mosaic bg-mint">
+<section id={id} class="cjs-image-mosaic bg-mint">
   {
     rows.map((row) => (
       <div class="md:flex md:w-full">

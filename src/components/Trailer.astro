@@ -10,7 +10,7 @@ interface Props {
 const { heading, videoSrc, videoTitle } = Astro.props;
 ---
 
-<section class="trailer p-8 text-center">
+<section class="cjs-trailer p-8 text-center">
   <h1 class="mt-0 mb-8 text-5xl">{heading}</h1>
   <div class="md:mx-auto md:w-[70%]">
     <VideoEmbed src={videoSrc} title={videoTitle} />

@@ -14,7 +14,9 @@ const { date, timezone = true } = Astro.props;
 const lines = Array.isArray(date) ? date : [date];
 ---
 
-<div class="day-header border-sound-navy flex items-end border-b-[3px] pb-2">
+<div
+  class="cjs-day-header border-sound-navy flex items-end border-b-[3px] pb-2"
+>
   <h2 class="text-28 m-0 mr-4 font-serif leading-tight font-bold">
     {
       lines.map((line, i) => (

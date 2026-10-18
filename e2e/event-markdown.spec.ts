@@ -11,6 +11,6 @@ test.describe("root-level markdown pages keep the normal SiteHeader nav", () => 
   test("renders SiteHeader, not EventNav", async ({ page }) => {
     await page.goto(rootMarkdownPagePath());
     await expect(page.locator("#logo")).toBeVisible();
-    await expect(page.locator(".event-nav")).toHaveCount(0);
+    await expect(page.locator(".cjs-event-nav")).toHaveCount(0);
   });
 });

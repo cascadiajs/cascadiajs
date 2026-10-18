@@ -130,7 +130,7 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
       ))}
     </div>
   ) : (
-    <div class="sponsors-grid md:flex md:flex-wrap md:justify-center">
+    <div class="cjs-sponsors-grid md:flex md:flex-wrap md:justify-center">
       {flatSponsors.map((sponsor) => (
         <div id={`sponsor-${sponsor.id}`} class="text-center md:m-8">
           <Image

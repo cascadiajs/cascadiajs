@@ -51,22 +51,25 @@ test.describe("card grids", () => {
   test("image mosaic items sit side by side at desktop width and stack at mobile width", async ({
     page,
   }) => {
-    await gotoPageWith(page, ".image-mosaic img", 2);
-    await expectSideBySideThenStacked(page, ".image-mosaic img");
+    await gotoPageWith(page, ".cjs-image-mosaic img", 2);
+    await expectSideBySideThenStacked(page, ".cjs-image-mosaic img");
   });
 
   test("ticket cards sit side by side at desktop width and stack at mobile width", async ({
     page,
   }) => {
-    await gotoPageWith(page, ".ticket-grid .ticket-card", 2);
-    await expectSideBySideThenStacked(page, ".ticket-grid .ticket-card");
+    await gotoPageWith(page, ".cjs-ticket-grid .cjs-ticket-card", 2);
+    await expectSideBySideThenStacked(
+      page,
+      ".cjs-ticket-grid .cjs-ticket-card",
+    );
   });
 });
 
 test.describe("speaker card overlay", () => {
   test("shows only at desktop width", async ({ page }) => {
-    await gotoPageWith(page, ".talk-card-overlay");
-    const overlay = page.locator(".talk-card-overlay").first();
+    await gotoPageWith(page, ".cjs-talk-card-overlay");
+    const overlay = page.locator(".cjs-talk-card-overlay").first();
 
     await page.setViewportSize(DESKTOP);
     expect(
@@ -84,9 +87,9 @@ test.describe("hero", () => {
   test("headline wraps and the hero stays inside the viewport at desktop and mobile width", async ({
     page,
   }) => {
-    await gotoPageWith(page, ".video-hero h2");
-    const hero = page.locator(".video-hero").first();
-    const headline = page.locator(".video-hero h2").first();
+    await gotoPageWith(page, ".cjs-video-hero h2");
+    const hero = page.locator(".cjs-video-hero").first();
+    const headline = page.locator(".cjs-video-hero h2").first();
 
     for (const viewport of [DESKTOP, MOBILE]) {
       await page.setViewportSize(viewport);
@@ -120,8 +123,8 @@ test.describe("schedule", () => {
   test("Tracks sit side by side at desktop width and stack at mobile width", async ({
     page,
   }) => {
-    await gotoPageWith(page, ".day-content .track", 2);
-    await expectSideBySideThenStacked(page, ".day-content .track");
+    await gotoPageWith(page, ".cjs-day-content .cjs-track", 2);
+    await expectSideBySideThenStacked(page, ".cjs-day-content .cjs-track");
   });
 });
 

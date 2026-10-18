@@ -14,7 +14,7 @@ import {
  */
 
 async function expectEventNavPosition(page: Page) {
-  const nav = page.locator(".event-nav");
+  const nav = page.locator(".cjs-event-nav");
   await page.setViewportSize(DESKTOP);
   expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
     "sticky",
@@ -49,7 +49,7 @@ test.describe("Event markdown page", () => {
   });
 
   test("shows the EventNav and not the SiteHeader", async ({ page }) => {
-    await expect(page.locator(".event-nav")).toBeVisible();
+    await expect(page.locator(".cjs-event-nav")).toBeVisible();
     await expect(page.getByRole("banner").getByRole("navigation")).toHaveCount(
       0,
     );

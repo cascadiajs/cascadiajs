@@ -98,7 +98,7 @@ export function pastSponsorIds(): string[] {
 /** Assert the Past Sponsors grid shows exactly the past-sponsor set. */
 export async function expectPastSponsorsMatchFeaturedEvent(page: Page) {
   const ids = await page
-    .locator("#sponsors .sponsors-grid > [id^='sponsor-']")
+    .locator("#sponsors .cjs-sponsors-grid > [id^='sponsor-']")
     .evaluateAll((items) =>
       items.map((item) => item.id.slice("sponsor-".length)),
     );
@@ -114,7 +114,7 @@ export const MOBILE = { width: 390, height: 844 };
  */
 export async function expectSiteChrome(page: Page) {
   const banner = page.getByRole("banner");
-  const alert = banner.locator(".alert-banner");
+  const alert = banner.locator(".cjs-alert-banner");
   await expect(alert).toBeVisible();
   await expect(alert.getByRole("link")).not.toHaveCount(0);
   const logo = banner.locator("#logo");
@@ -128,7 +128,7 @@ export async function expectSiteChrome(page: Page) {
 
 /** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */
 export async function expectEventNav(page: Page, eventHref: string) {
-  const nav = page.locator(".event-nav").getByRole("navigation");
+  const nav = page.locator(".cjs-event-nav").getByRole("navigation");
   await expect(nav).toBeVisible();
   await expect(nav.getByRole("link").first()).toHaveAttribute(
     "href",
