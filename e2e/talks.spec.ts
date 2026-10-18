@@ -76,11 +76,11 @@ test.describe("Talk page share image", () => {
   };
 
   test("uses the Speaker's card when the file exists", async ({ page }) => {
-    const entry = talkPages.find(({ talk }) => cardsOf(talk).length > 0);
-    test.skip(!entry, "no Talk page has a Speaker card");
-    await page.goto(entry!.path);
+    const talkPage = talkPages.find(({ talk }) => cardsOf(talk).length > 0);
+    test.skip(!talkPage, "no Talk page has a Speaker card");
+    await page.goto(talkPage!.path);
     for (const path of await imagePaths(page)) {
-      expect(cardsOf(entry!.talk)).toContain(path);
+      expect(cardsOf(talkPage!.talk)).toContain(path);
     }
   });
 
@@ -88,9 +88,9 @@ test.describe("Talk page share image", () => {
     page,
     request,
   }) => {
-    const entry = talkPages.find(({ talk }) => cardsOf(talk).length === 0);
-    test.skip(!entry, "every Talk page has a Speaker card");
-    await page.goto(entry!.path);
+    const talkPage = talkPages.find(({ talk }) => cardsOf(talk).length === 0);
+    test.skip(!talkPage, "every Talk page has a Speaker card");
+    await page.goto(talkPage!.path);
     for (const path of await imagePaths(page)) {
       expect(path).not.toMatch(/\/share\/speaker-/);
       expect((await request.get(path)).status()).toBe(200);
@@ -102,10 +102,10 @@ test.describe("Talk page body", () => {
   test("a Talk with a registration URL shows a link to it", async ({
     page,
   }) => {
-    const entry = talkPages.find(({ talk }) => talk.registrationUrl);
-    test.skip(!entry, "no Talk page has a registration URL");
-    await page.goto(entry!.path);
-    const url = entry!.talk.registrationUrl!;
+    const talkPage = talkPages.find(({ talk }) => talk.registrationUrl);
+    test.skip(!talkPage, "no Talk page has a registration URL");
+    await page.goto(talkPage!.path);
+    const url = talkPage!.talk.registrationUrl!;
     const count = await page
       .locator(".cjs-markdown-content a")
       .evaluateAll(
@@ -120,11 +120,10 @@ test.describe("Talk page body", () => {
   }) => {
     const paragraphs = (talk: Talk) =>
       (talk.abstract ?? "").split(/\n\s*\n/).filter((p) => p.trim()).length;
-    const entry = talkPages.find(({ talk }) => paragraphs(talk) > 1);
-    test.skip(!entry, "no Talk page has a multi-paragraph abstract");
-    await page.goto(entry!.path);
-    const url = entry!.talk.registrationUrl ?? null;
-    // The registration link sits in a paragraph of its own.
+    const talkPage = talkPages.find(({ talk }) => paragraphs(talk) > 1);
+    test.skip(!talkPage, "no Talk page has a multi-paragraph abstract");
+    await page.goto(talkPage!.path);
+    const url = talkPage!.talk.registrationUrl ?? null;
     const abstractParagraphs = await page
       .locator(".cjs-markdown-content p")
       .evaluateAll(
@@ -139,24 +138,35 @@ test.describe("Talk page body", () => {
   test("the Sponsors grid and Testimonials come after the body", async ({
     page,
   }) => {
-    const entry = talkPages[0];
-    test.skip(!entry, "no Talk page found");
-    await page.goto(entry.path);
-    const follows = (selector: string) =>
-      page.evaluate((sel) => {
+    let positions: { selector: string; afterBody: boolean }[] = [];
+    for (const { path } of talkPages) {
+      await page.goto(path);
+      positions = await page.evaluate(() => {
         const body = document.querySelector(".cjs-markdown-content")!;
-        const el = document.querySelector(sel);
-        return el
-          ? !!(
-              body.compareDocumentPosition(el) &
-              Node.DOCUMENT_POSITION_FOLLOWING
-            )
-          : null;
-      }, selector);
-    const grid = await follows(".cjs-sponsors-grid");
-    const testimonials = await follows(".cjs-testimonials");
-    test.skip(grid === null && testimonials === null, "page shows neither");
-    expect(grid ?? true).toBe(true);
-    expect(testimonials ?? true).toBe(true);
+        return [".cjs-sponsors-grid", ".cjs-testimonials"].flatMap(
+          (selector) => {
+            const el = document.querySelector(selector);
+            return el
+              ? [
+                  {
+                    selector,
+                    afterBody: !!(
+                      body.compareDocumentPosition(el) &
+                      Node.DOCUMENT_POSITION_FOLLOWING
+                    ),
+                  },
+                ]
+              : [];
+          },
+        );
+      });
+      if (positions.length > 0) {
+        break;
+      }
+    }
+    test.skip(positions.length === 0, "no Talk page shows either");
+    for (const { selector, afterBody } of positions) {
+      expect(afterBody, selector).toBe(true);
+    }
   });
 });

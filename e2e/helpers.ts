@@ -62,18 +62,15 @@ export function eventMarkdownPagePath(): string | undefined {
 }
 
 /**
- * The Talk JSON of each Event that has its own, one array per Event. An Event
- * without Talk JSON adds none, though its pages can still render another
- * Event's Talks (the `[slug].astro` route of a newer Event does until it has
- * its own data), so checks match a rendered Talk against every Event's Talks.
+ * Every Event's Talks. An Event without Talk JSON adds none, though its pages
+ * can still render another Event's Talks, so checks match a rendered Talk
+ * against all of them.
  */
-export const EVENT_TALKS: readonly (readonly Talk[])[] = EVENTS_WITH_PAGES.map(
+export const ALL_TALKS: readonly Talk[] = EVENTS_WITH_PAGES.map(
   ({ year }) => `src/shared/data/${year}/talks.json`,
 )
   .filter((file) => existsSync(file))
-  .map((file) => JSON.parse(readFileSync(file, "utf8")) as Talk[]);
-
-export const ALL_TALKS: readonly Talk[] = EVENT_TALKS.flat();
+  .flatMap((file) => JSON.parse(readFileSync(file, "utf8")) as Talk[]);
 
 export const DESKTOP = { width: 1280, height: 900 };
 export const MOBILE = { width: 390, height: 844 };

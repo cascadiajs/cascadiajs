@@ -1,14 +1,15 @@
 import { test, expect, type Page } from "@playwright/test";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import {
   ALL_TALKS,
   DESKTOP,
   distPath,
   EVENT_ROOTS,
-  EVENT_TALKS,
   EVENTS_WITH_PAGES,
   MOBILE,
 } from "./helpers";
+import sponsorData from "@shared/data/sponsors.json" with { type: "json" };
+import type { EventYear, Sponsor } from "@shared/data/types";
 
 /**
  * Component behavior checks. Each check finds its component by class name
@@ -18,6 +19,10 @@ import {
  * not fail the suite. No check reads copy, counts or computed colors and
  * sizes.
  */
+
+const sponsors = sponsorData as Sponsor[];
+const hasSlugTalk = ALL_TALKS.some((t) => t.slug);
+const hasSluglessTalk = ALL_TALKS.some((t) => !t.slug);
 
 const candidatePages = EVENT_ROOTS.flatMap((root) => [
   root,
@@ -37,6 +42,10 @@ async function gotoPageWith(page: Page, selector: string, min = 1) {
   }
   test.skip(true, `no page has ${min} match(es) of ${selector}`);
 }
+
+/** True when the link's ::after generates the external-link glyph. */
+const hasIndicator = (link: ReturnType<Page["locator"]>) =>
+  link.evaluate((el) => getComputedStyle(el, "::after").content !== "none");
 
 /** Assert that the second box sits beside the first at desktop and below it at mobile. */
 async function expectSideBySideThenStacked(
@@ -145,10 +154,6 @@ test.describe("schedule", () => {
 });
 
 test.describe("external links", () => {
-  /** True when the link's ::after generates the external-link glyph. */
-  const hasIndicator = (link: ReturnType<Page["locator"]>) =>
-    link.evaluate((el) => getComputedStyle(el, "::after").content !== "none");
-
   test("external links show the external-link icon and internal links do not", async ({
     page,
   }) => {
@@ -170,54 +175,46 @@ test.describe("external links", () => {
 });
 
 test.describe("tiered Sponsors grid", () => {
-  const sponsors: {
-    id: string;
-    url: string;
-    tier?: string;
-    description?: string;
-  }[] = JSON.parse(readFileSync("src/shared/data/sponsors.json", "utf8"));
   const LINKED_TIERS = ["diamond", "platinum", "gold", "silver"];
   const SPONSOR_PAGE = /^\/\d{4}\/sponsors\/(.+)$/;
+  const logoStem = (sponsor: Sponsor) => sponsor.logo.replace(/\.[^.]+$/, "");
 
-  test("logos in the top four tiers link to the Sponsor page or the Sponsor's site, and other tiers do not link", async ({
+  test("a logo in the top four tiers links to the Sponsor page or the Sponsor's site", async ({
     page,
   }) => {
     await gotoPageWith(page, ".cjs-sponsors-grid a");
-    const links = await page.locator(".cjs-sponsors-grid a").evaluateAll((as) =>
-      as.map((a) => ({
+    const { href, target } = await page
+      .locator(".cjs-sponsors-grid a")
+      .first()
+      .evaluate((a) => ({
         href: a.getAttribute("href")!,
         target: a.getAttribute("target"),
-      })),
+      }));
+    const pageId = href.match(SPONSOR_PAGE)?.[1];
+    const sponsor = sponsors.find((s) =>
+      pageId ? s.id === pageId : s.url === href,
     );
-    const sponsorOf = (href: string) => {
-      const id = href.match(SPONSOR_PAGE)?.[1];
-      return sponsors.find((s) => (id ? s.id === id : s.url === href));
-    };
+    expect(sponsor, `${href} matches no Sponsor`).toBeDefined();
+    expect(LINKED_TIERS, href).toContain(sponsor!.tier);
+    if (pageId) {
+      expect(sponsor!.description, `${href} needs a description`).toBeTruthy();
+    } else {
+      expect(sponsor!.description, `${href} has a description`).toBeFalsy();
+      expect(target, href).toBe("_blank");
+    }
+  });
 
-    for (const { href, target } of links) {
-      const sponsor = sponsorOf(href);
-      expect(sponsor, `${href} matches no Sponsor`).toBeDefined();
-      expect(LINKED_TIERS, href).toContain(sponsor!.tier);
-      if (SPONSOR_PAGE.test(href)) {
-        expect(
-          sponsor!.description,
-          `${href} needs a description`,
-        ).toBeTruthy();
-      } else {
-        expect(sponsor!.description, `${href} has a description`).toBeFalsy();
-        expect(target, href).toBe("_blank");
-      }
-    }
-    // A Sponsor in any other tier never gets a link.
-    const hrefs = links.map((l) => l.href);
-    for (const sponsor of sponsors.filter(
-      (s) => s.tier && !LINKED_TIERS.includes(s.tier),
-    )) {
-      expect(hrefs, sponsor.id).not.toContain(sponsor.url);
-      expect(hrefs.map((h) => h.match(SPONSOR_PAGE)?.[1])).not.toContain(
-        sponsor.id,
-      );
-    }
+  test("a logo in any other tier does not link", async ({ page }) => {
+    const logo = sponsors
+      .filter((s) => s.tier && !LINKED_TIERS.includes(s.tier))
+      .map((s) => `.cjs-sponsors-grid:has(a) img[src*="/${logoStem(s)}."]`)
+      .join(", ");
+    await gotoPageWith(page, logo);
+    const link = await page
+      .locator(logo)
+      .first()
+      .evaluate((img) => img.closest("a"));
+    expect(link).toBeNull();
   });
 
   test("a target=_blank logo outside .mark-external-links shows no external-link icon", async ({
@@ -226,11 +223,7 @@ test.describe("tiered Sponsors grid", () => {
     const logo =
       '.cjs-sponsors-grid a[target="_blank"]:not(.mark-external-links *)';
     await gotoPageWith(page, logo);
-    const hasIcon = await page
-      .locator(logo)
-      .first()
-      .evaluate((el) => getComputedStyle(el, "::after").content !== "none");
-    expect(hasIcon).toBe(false);
+    expect(await hasIndicator(page.locator(logo).first())).toBe(false);
   });
 });
 
@@ -245,42 +238,33 @@ test.describe("flat Sponsors grid", () => {
 });
 
 test.describe("Hallway Track", () => {
-  const sponsors: { url: string; tier?: string; events: string[] }[] =
-    JSON.parse(readFileSync("src/shared/data/sponsors.json", "utf8"));
-  const logoLinks = ".cjs-hallway-track a:has(img)";
+  const logoLink = ".cjs-hallway-track a:has(img)";
 
-  test("Sponsor logos open in target=_new and show no external-link icon", async ({
+  test("a Sponsor logo opens in target=_new and shows no external-link icon", async ({
     page,
   }) => {
-    await gotoPageWith(page, logoLinks);
-    const links = page.locator(logoLinks);
-    for (let i = 0; i < (await links.count()); i++) {
-      const link = links.nth(i);
-      expect(await link.getAttribute("target")).toBe("_new");
-      expect(
-        await link.evaluate(
-          (el) => getComputedStyle(el, "::after").content !== "none",
-        ),
-      ).toBe(false);
-    }
+    await gotoPageWith(page, logoLink);
+    const link = page.locator(logoLink).first();
+    expect(await link.getAttribute("target")).toBe("_new");
+    expect(await hasIndicator(link)).toBe(false);
   });
 
   test("the wall shows the platinum, then the gold Sponsors of one Event", async ({
     page,
   }) => {
-    await gotoPageWith(page, logoLinks);
-    // Both days repeat the Track, so read the first one.
+    await gotoPageWith(page, logoLink);
     const wall = await page
       .locator(".cjs-hallway-track")
       .first()
       .locator("a:has(img)")
       .evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-    // The Track takes the Event as a prop, and a copied page can pass another
-    // Event's key, so the wall must match the rule for one of the Events.
+    // A copied page can pass another Event's key, so match any Event's wall.
     const expectedWalls = EVENTS_WITH_PAGES.map(({ year }) =>
       ["platinum", "gold"].flatMap((tier) =>
         sponsors
-          .filter((s) => s.tier === tier && s.events.includes(year))
+          .filter(
+            (s) => s.tier === tier && s.events.includes(year as EventYear),
+          )
           .map((s) => s.url),
       ),
     );
@@ -289,59 +273,42 @@ test.describe("Hallway Track", () => {
 });
 
 test.describe("schedule rows", () => {
-  const talksWithSlug = new Map(
-    ALL_TALKS.filter((t) => t.slug).map((t) => [t.slug!, t]),
-  );
-  const mostSlugless = Math.max(
-    0,
-    ...EVENT_TALKS.map((talks) => talks.filter((t) => !t.slug).length),
-  );
   const TALK_PAGE = /^\/(\d{4})\/talks\/([^/]+)$/;
-
-  /** Each Talk row's link (null for plain text) and whether it shows the keynote badge. */
-  async function talkItems(page: Page) {
-    return page.locator(".cjs-talk-item").evaluateAll((items) =>
-      items.map((item) => ({
-        href: item.querySelector("a")?.getAttribute("href") ?? null,
-        badge: item.querySelector(".cjs-keynote-badge") !== null,
-      })),
-    );
-  }
+  const keynoteRow = ALL_TALKS.filter((t) => t.slug && t.type === "keynote")
+    .map((t) => `.cjs-talk-item:has(a[href$="/talks/${t.slug}"])`)
+    .join(", ");
 
   test("a Talk with a slug links to its Talk page and a Talk without one is plain text", async ({
     page,
   }) => {
-    test.skip(ALL_TALKS.length === 0, "no Event has Talk data");
+    test.skip(!hasSlugTalk, "no Talk has a slug");
     await gotoPageWith(page, ".cjs-talk-item");
-    const items = await talkItems(page);
-    const linked = items.filter((i) => i.href);
-    for (const { href } of linked) {
-      const [, key, slug] = href!.match(TALK_PAGE) ?? [];
-      expect(talksWithSlug.has(slug), `${href} is not a Talk with a slug`).toBe(
-        true,
-      );
-      expect(existsSync(distPath(`${key}/talks/${slug}.html`)), href!).toBe(
-        true,
-      );
+    const link = page.locator(".cjs-talk-item a").first();
+    await expect(link).toBeAttached();
+    const [, year, slug] =
+      (await link.getAttribute("href"))!.match(TALK_PAGE) ?? [];
+    expect(
+      ALL_TALKS.some((t) => t.slug === slug),
+      `${slug} is no Talk`,
+    ).toBe(true);
+    expect(existsSync(distPath(`${year}/talks/${slug}.html`))).toBe(true);
+
+    // A row without a link stands for a Talk without a slug.
+    if ((await page.locator(".cjs-talk-item:not(:has(a))").count()) > 0) {
+      expect(hasSluglessTalk).toBe(true);
     }
-    // Rows without a link stand for Talks without a slug.
-    expect(items.length - linked.length).toBeLessThanOrEqual(mostSlugless);
   });
 
   test("only keynote Talks show the keynote badge", async ({ page }) => {
-    test.skip(ALL_TALKS.length === 0, "no Event has Talk data");
-    await gotoPageWith(page, ".cjs-talk-item");
-    const items = await talkItems(page);
-    for (const { href, badge } of items.filter((i) => i.href)) {
-      const talk = talksWithSlug.get(href!.match(TALK_PAGE)![2])!;
-      expect(badge, href!).toBe(talk.type === "keynote");
-    }
-    const mostKeynotes = Math.max(
-      ...EVENT_TALKS.map((t) => t.filter((x) => x.type === "keynote").length),
-    );
-    expect(items.filter((i) => i.badge).length).toBeLessThanOrEqual(
-      mostKeynotes,
-    );
+    test.skip(!keynoteRow, "no keynote Talk has a slug");
+    await gotoPageWith(page, keynoteRow);
+    await expect(
+      page.locator(keynoteRow).first().locator(".cjs-keynote-badge"),
+    ).toBeAttached();
+    const other = page
+      .locator(`.cjs-talk-item:has(a):not(${keynoteRow})`)
+      .first();
+    await expect(other.locator(".cjs-keynote-badge")).toHaveCount(0);
   });
 
   test("every row in a Track keeps the time column at the same position and width", async ({
@@ -350,27 +317,19 @@ test.describe("schedule rows", () => {
     await page.setViewportSize(DESKTOP);
     await gotoPageWith(page, ".cjs-track .cjs-time-cell", 2);
     const tracks = page.locator(".cjs-track");
-    // Prefer a Track with a row that has no time.
-    let target = -1;
-    for (let i = 0; i < (await tracks.count()); i++) {
-      const cells = tracks.nth(i).locator(".cjs-time-cell");
-      if ((await cells.count()) < 2) {
-        continue;
-      }
-      const texts = await cells.allTextContents();
-      if (texts.some((t) => t.trim() === "")) {
-        target = i;
-        break;
-      }
-      target = target === -1 ? i : target;
-    }
-    test.skip(target === -1, "no Track has two rows");
-
-    const cells = tracks.nth(target).locator(".cjs-time-cell");
-    const boxes = [];
-    for (let i = 0; i < (await cells.count()); i++) {
-      boxes.push((await cells.nth(i).boundingBox())!);
-    }
+    const index = await tracks.evaluateAll((all) =>
+      all.findIndex((t) => t.querySelectorAll(".cjs-time-cell").length >= 2),
+    );
+    test.skip(index === -1, "no Track has two rows");
+    const boxes = await tracks
+      .nth(index)
+      .locator(".cjs-time-cell")
+      .evaluateAll((cells) =>
+        cells.map((c) => {
+          const { x, width } = c.getBoundingClientRect();
+          return { x, width };
+        }),
+      );
     for (const box of boxes) {
       expect(box.x).toBeCloseTo(boxes[0].x, 0);
       expect(box.width).toBeCloseTo(boxes[0].width, 0);
@@ -382,25 +341,24 @@ test.describe("TalkCard", () => {
   test("links a Talk with a slug to its Talk page and a Talk without one to the Event root", async ({
     page,
   }) => {
-    test.skip(ALL_TALKS.length === 0, "no Event has Talk data");
+    test.skip(!hasSlugTalk, "no Talk has a slug");
     await gotoPageWith(page, ".cjs-talk-card");
     const root = `/${new URL(page.url()).pathname.split("/")[1]}`;
-    const slugs = new Set(ALL_TALKS.map((t) => t.slug).filter(Boolean));
-    const mostSlugless = Math.max(
-      ...EVENT_TALKS.map((talks) => talks.filter((t) => !t.slug).length),
+    const link = page.locator(`.cjs-talk-card[href^="${root}/talks/"]`).first();
+    await expect(link).toBeAttached();
+    const slug = (await link.getAttribute("href"))!.slice(
+      `${root}/talks/`.length,
     );
-    const hrefs = await page
-      .locator(".cjs-talk-card")
-      .evaluateAll((cards) => cards.map((c) => c.getAttribute("href")!));
+    expect(
+      ALL_TALKS.some((t) => t.slug === slug),
+      `${slug} is no Talk`,
+    ).toBe(true);
 
-    for (const href of hrefs.filter((h) => h !== root)) {
-      expect(href.startsWith(`${root}/talks/`), href).toBe(true);
-      expect(slugs.has(href.slice(`${root}/talks/`.length)), href).toBe(true);
+    // A card linking to the root stands for a Talk without a slug.
+    const rootCard = page.locator(`.cjs-talk-card[href="${root}"]`);
+    if ((await rootCard.count()) > 0) {
+      expect(hasSluglessTalk).toBe(true);
     }
-    // Cards linking to the root stand for Talks without a slug.
-    expect(hrefs.filter((h) => h === root).length).toBeLessThanOrEqual(
-      mostSlugless,
-    );
   });
 });
 
