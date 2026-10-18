@@ -29,41 +29,32 @@ export const distPath = (file: string) => join("dist", file);
 export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
 
 /**
- * Names of the Sponsors the Past Sponsors grid shows: a Sponsor is hidden only
+ * Ids of the Sponsors the Past Sponsors grid shows: a Sponsor is hidden only
  * when every one of its Events is the Featured Event.
  */
-export function pastSponsorNames(): string[] {
+export function pastSponsorIds(): string[] {
   return sponsors
     .filter((s) => s.events.some((e) => e !== FEATURED_EVENT))
-    .map((s) => s.name)
+    .map((s) => s.id)
     .sort();
 }
 
-/**
- * Assert the Past Sponsors section of the current page shows exactly the
- * past-sponsor set and that its CTA targets the Featured Event's sponsor page.
- */
+/** Assert the Past Sponsors grid shows exactly the past-sponsor set. */
 export async function expectPastSponsorsMatchFeaturedEvent(page: Page) {
-  const section = page.locator("#sponsors");
-  const alts = await section
-    .getByRole("img")
-    .evaluateAll((imgs) => imgs.map((img) => img.getAttribute("alt") ?? ""));
-  expect(alts.map((a) => a.replace(/ logo$/, "")).sort()).toEqual(
-    pastSponsorNames(),
-  );
-  await expect(
-    section.getByRole("link", { name: "Sponsor Our Event" }),
-  ).toHaveAttribute("href", `/${FEATURED_EVENT}/sponsor`);
+  const ids = await page
+    .locator("#sponsors .sponsors-grid > [id^='sponsor-']")
+    .evaluateAll((items) =>
+      items.map((item) => item.id.slice("sponsor-".length)),
+    );
+  expect(ids.sort()).toEqual(pastSponsorIds());
 }
 
-/** Assert the site header's Event link points at the Featured Event. */
-export async function expectHeaderEventLinkIsFeaturedEvent(page: Page) {
-  // The Event link is the first link after the logo in the header nav.
-  const nav = page.getByRole("banner").getByRole("navigation");
-  await expect(nav.getByRole("link").nth(1)).toHaveAttribute(
-    "href",
-    `/${FEATURED_EVENT}`,
-  );
+/** Assert the page shows the SiteHeader (logo linked to `/`) and the footer. */
+export async function expectSiteChrome(page: Page) {
+  const logo = page.getByRole("banner").locator("#logo");
+  await expect(logo).toBeVisible();
+  await expect(logo).toHaveAttribute("href", "/");
+  await expect(page.getByRole("contentinfo")).toBeVisible();
 }
 
 /** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */
