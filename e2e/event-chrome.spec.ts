@@ -1,6 +1,8 @@
 import { test, expect, type Page } from "@playwright/test";
 import {
+  DESKTOP,
   eventMarkdownPagePath,
+  MOBILE,
   EVENTS_WITH_PAGES,
   expectEventNav,
 } from "./helpers";
@@ -13,11 +15,11 @@ import {
 
 async function expectEventNavPosition(page: Page) {
   const nav = page.locator(".event-nav");
-  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.setViewportSize(DESKTOP);
   expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
     "sticky",
   );
-  await page.setViewportSize({ width: 390, height: 844 });
+  await page.setViewportSize(MOBILE);
   expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
     "static",
   );

@@ -23,10 +23,7 @@ if (!imageModule) {
 const imageSrc = (await imageModule()).default;
 ---
 
-<a
-  href={href}
-  class="talk-card group mr-2 mb-4 flex w-62.5 flex-col no-underline"
->
+<a href={href} class="group mr-2 mb-4 flex w-62.5 flex-col no-underline">
   <div class="relative h-62.5 w-62.5 overflow-hidden">
     <Image
       src={imageSrc}

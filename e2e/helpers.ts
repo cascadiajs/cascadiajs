@@ -105,11 +105,24 @@ export async function expectPastSponsorsMatchFeaturedEvent(page: Page) {
   expect(ids.sort()).toEqual(pastSponsorIds());
 }
 
-/** Assert the page shows the SiteHeader (logo linked to `/`) and the footer. */
+export const DESKTOP = { width: 1280, height: 900 };
+export const MOBILE = { width: 390, height: 844 };
+
+/**
+ * Assert the page shows the SiteHeader (alert banner holding a link, logo
+ * linked to `/`, Event link to an Event root) and the footer.
+ */
 export async function expectSiteChrome(page: Page) {
-  const logo = page.getByRole("banner").locator("#logo");
+  const banner = page.getByRole("banner");
+  const alert = banner.locator(".alert-banner");
+  await expect(alert).toBeVisible();
+  await expect(alert.getByRole("link")).not.toHaveCount(0);
+  const logo = banner.locator("#logo");
   await expect(logo).toBeVisible();
   await expect(logo).toHaveAttribute("href", "/");
+  const eventLink = banner.getByRole("navigation").getByRole("link").nth(1);
+  const href = await eventLink.getAttribute("href");
+  expect(EVENTS_WITH_PAGES.map((e) => `/${e.year}`)).toContain(href);
   await expect(page.getByRole("contentinfo")).toBeVisible();
 }
 

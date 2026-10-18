@@ -24,7 +24,10 @@ for (const { year } of EVENTS_WITH_PAGES) {
 }
 
 test("an unknown Talk slug returns 404", async ({ request }) => {
-  const [{ year }] = EVENTS_WITH_PAGES;
+  const year = EVENTS_WITH_PAGES.find((e) =>
+    existsSync(`src/shared/data/${e.year}/talks.json`),
+  )?.year;
+  test.skip(!year, "no Event has Talk data");
   const response = await request.get(`/${year}/talks/no-such-talk-slug`);
   expect(response.status()).toBe(404);
 });

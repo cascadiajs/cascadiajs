@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { EVENTS_WITH_PAGES } from "./helpers";
+import { DESKTOP, EVENTS_WITH_PAGES, MOBILE } from "./helpers";
 
 /**
  * Component behavior checks. Each check finds its component by class name
@@ -7,9 +7,6 @@ import { EVENTS_WITH_PAGES } from "./helpers";
  * come from the Events with pages, so no spec names a year. No check reads
  * copy, counts or computed colors and sizes.
  */
-
-const DESKTOP = { width: 1280, height: 900 };
-const MOBILE = { width: 390, height: 844 };
 
 const candidatePages = EVENTS_WITH_PAGES.flatMap(({ year }) => [
   `/${year}`,

@@ -22,7 +22,10 @@ for (const { year } of EVENTS_WITH_PAGES) {
 }
 
 test("an unknown Sponsor slug returns 404", async ({ request }) => {
-  const [{ year }] = EVENTS_WITH_PAGES;
+  const year = EVENTS_WITH_PAGES.find((e) =>
+    sponsors.some((s) => s.events.includes(e.year) && s.description),
+  )?.year;
+  test.skip(!year, "no Event has Sponsor data");
   const response = await request.get(`/${year}/sponsors/no-such-sponsor`);
   expect(response.status()).toBe(404);
 });
