@@ -1,6 +1,13 @@
 import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
-import { builtPages, distPath } from "./helpers";
+import {
+  builtPages,
+  distPath,
+  eventMarkdownPagePath,
+  EVENTS_WITH_PAGES,
+} from "./helpers";
+
+const eventRoot = `/${EVENTS_WITH_PAGES[0].year}`;
 
 const canonical = (page: Page) => page.locator('link[rel="canonical"]');
 
@@ -14,19 +21,20 @@ test.describe("Canonical URLs", () => {
   });
 
   test("event root canonical has no trailing slash", async ({ page }) => {
-    await page.goto("/2026");
+    await page.goto(eventRoot);
     await expect(canonical(page)).toHaveAttribute(
       "href",
-      "https://cascadiajs.com/2026",
+      `https://cascadiajs.com${eventRoot}`,
     );
   });
 
   test("nested route canonical has no trailing slash", async ({ page }) => {
-    const response = await page.goto("/2026/attend");
+    const nested = eventMarkdownPagePath();
+    const response = await page.goto(nested);
     expect(response?.status()).toBe(200);
     await expect(canonical(page)).toHaveAttribute(
       "href",
-      "https://cascadiajs.com/2026/attend",
+      `https://cascadiajs.com${nested}`,
     );
   });
 
@@ -69,8 +77,8 @@ test.describe("Build format", () => {
 
   test("pages build as files, not directory indexes", () => {
     const pages = builtPages();
-    expect(pages).toContain("2026.html");
-    expect(pages).toContain("2026/attend.html");
+    expect(pages).toContain(`${eventRoot.slice(1)}.html`);
+    expect(pages).toContain(`${eventMarkdownPagePath().slice(1)}.html`);
     expect(pages.filter((file) => file.endsWith("/index.html"))).toEqual([]);
   });
 });

@@ -114,12 +114,13 @@ export async function expectSiteChrome(page: Page) {
 }
 
 /** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */
-export async function expectEventNav(page: Page, eventHref = "/2026") {
+export async function expectEventNav(page: Page, eventHref: string) {
   const nav = page.locator(".event-nav").getByRole("navigation");
   await expect(nav).toBeVisible();
-  await expect(
-    nav.getByRole("link", { name: "CascadiaJS logo" }),
-  ).toHaveAttribute("href", eventHref);
+  await expect(nav.getByRole("link").first()).toHaveAttribute(
+    "href",
+    eventHref,
+  );
 }
 
 /**
