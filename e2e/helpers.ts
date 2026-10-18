@@ -1,9 +1,7 @@
-import { expect, test, type Page } from "@playwright/test";
-import { readdirSync, readFileSync } from "node:fs";
+import { expect, test } from "@playwright/test";
+import { readdirSync } from "node:fs";
 import { join } from "node:path";
-import sponsors from "@shared/data/sponsors.json" with { type: "json" };
 import type { EventConfig } from "@shared/data/types";
-import { FEATURED_EVENT } from "@shared/site-defaults";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -59,82 +57,8 @@ export function eventMarkdownPagePath(): string {
   throw new Error("no Event has a markdown page");
 }
 
-/** The URL path of one root-level markdown page, chosen by type: the first one. */
-export function rootMarkdownPagePath(): string {
-  const files = filesUnder("src/content/markdown", /^[^/\\]+\.mdx?$/);
-  if (files.length === 0) {
-    throw new Error("no root-level markdown page");
-  }
-  return `/${files[0].replace(/\.mdx?$/, "")}`;
-}
-
-/**
- * The URL path of one Event markdown page that embeds a local image, chosen
- * by type: the first file under an Event that references `@assets/`.
- */
-export function markdownPageWithImagePath(): string {
-  for (const { year: key } of EVENTS_WITH_PAGES) {
-    const dir = join("src/content/markdown", key);
-    for (const file of filesUnder(dir, /\.mdx?$/)) {
-      if (readFileSync(join(dir, file), "utf8").includes("](@assets/")) {
-        return `/${key}/${file.replace(/\.mdx?$/, "")}`;
-      }
-    }
-  }
-  throw new Error("no Event markdown page embeds an image");
-}
-
-/**
- * Ids of the Sponsors the Past Sponsors grid shows: a Sponsor is hidden only
- * when every one of its Events is the Featured Event.
- */
-export function pastSponsorIds(): string[] {
-  return sponsors
-    .filter((s) => s.events.some((e) => e !== FEATURED_EVENT))
-    .map((s) => s.id)
-    .sort();
-}
-
-/** Assert the Past Sponsors grid shows exactly the past-sponsor set. */
-export async function expectPastSponsorsMatchFeaturedEvent(page: Page) {
-  const ids = await page
-    .locator("#sponsors .cjs-sponsors-grid > [id^='sponsor-']")
-    .evaluateAll((items) =>
-      items.map((item) => item.id.slice("sponsor-".length)),
-    );
-  expect(ids.sort()).toEqual(pastSponsorIds());
-}
-
 export const DESKTOP = { width: 1280, height: 900 };
 export const MOBILE = { width: 390, height: 844 };
-
-/**
- * Assert the page shows the SiteHeader (alert banner holding a link, logo
- * linked to `/`, Event link to an Event root) and the footer.
- */
-export async function expectSiteChrome(page: Page) {
-  const banner = page.getByRole("banner");
-  const alert = banner.locator(".cjs-alert-banner");
-  await expect(alert).toBeVisible();
-  await expect(alert.getByRole("link")).not.toHaveCount(0);
-  const logo = banner.locator("#logo");
-  await expect(logo).toBeVisible();
-  await expect(logo).toHaveAttribute("href", "/");
-  const eventLink = banner.getByRole("navigation").getByRole("link").nth(1);
-  const href = await eventLink.getAttribute("href");
-  expect(EVENTS_WITH_PAGES.map((e) => `/${e.year}`)).toContain(href);
-  await expect(page.getByRole("contentinfo")).toBeVisible();
-}
-
-/** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */
-export async function expectEventNav(page: Page, eventHref: string) {
-  const nav = page.locator(".cjs-event-nav").getByRole("navigation");
-  await expect(nav).toBeVisible();
-  await expect(nav.getByRole("link").first()).toHaveAttribute(
-    "href",
-    eventHref,
-  );
-}
 
 /**
  * Shared checks for a Frozen Snapshot page (ADR-0008): a legacy page captured

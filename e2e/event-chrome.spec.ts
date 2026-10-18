@@ -4,7 +4,6 @@ import {
   eventMarkdownPagePath,
   MOBILE,
   EVENTS_WITH_PAGES,
-  expectEventNav,
 } from "./helpers";
 
 /**
@@ -31,7 +30,12 @@ test.describe("Event roots", () => {
       page,
     }) => {
       await page.goto(`/${key}`);
-      await expectEventNav(page, `/${key}`);
+      const nav = page.locator(".cjs-event-nav").getByRole("navigation");
+      await expect(nav).toBeVisible();
+      await expect(nav.getByRole("link").first()).toHaveAttribute(
+        "href",
+        `/${key}`,
+      );
     });
 
     test(`/${key} EventNav is sticky at desktop width and static at mobile width`, async ({
