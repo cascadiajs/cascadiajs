@@ -2,6 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 import sponsors from "@shared/data/sponsors.json" with { type: "json" };
+import type { EventConfig } from "@shared/data/types";
 import { FEATURED_EVENT } from "@shared/site-defaults";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
@@ -10,6 +11,21 @@ export function filesUnder(dir: string, pattern: RegExp): string[] {
     .filter((file) => pattern.test(file))
     .sort();
 }
+
+/**
+ * Events with pages, loaded from their configs. `@shared/data/events` uses
+ * `import.meta.glob`, which only runs under Vite, so specs import this list.
+ */
+export const EVENTS_WITH_PAGES: readonly EventConfig[] = await Promise.all(
+  filesUnder("src/shared/data/events", /\.config\.ts$/).map(
+    async (file) =>
+      (
+        (await import(`../src/shared/data/events/${file}`)) as {
+          default: EventConfig;
+        }
+      ).default,
+  ),
+);
 
 /**
  * Every built page's `dist/`-relative path. The preview webServer builds
