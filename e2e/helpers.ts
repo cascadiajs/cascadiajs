@@ -35,16 +35,6 @@ export function builtPages(): string[] {
   return filesUnder("dist", /\.html$/);
 }
 
-/**
- * Event Keys of the Events with pages: one per `events/*.config.ts`. Read from
- * disk because the Event registry uses Vite-only imports.
- */
-export function eventsWithPages(): string[] {
-  return filesUnder("src/shared/data/events", /\.config\.ts$/).map((f) =>
-    f.replace(/\.config\.ts$/, ""),
-  );
-}
-
 export const distPath = (file: string) => join("dist", file);
 
 /**

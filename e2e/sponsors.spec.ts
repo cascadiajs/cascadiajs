@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
-import { eventsWithPages } from "./helpers";
+import { EVENTS_WITH_PAGES } from "./helpers";
 import sponsors from "@shared/data/sponsors.json" with { type: "json" };
 
 /**
  * Sponsor route: data to page, one direction only. Each Sponsor of an Event
  * with a description has a page. An Event with no such Sponsor skips.
  */
-for (const year of eventsWithPages()) {
+for (const { year } of EVENTS_WITH_PAGES) {
   const withPages = sponsors.filter(
     (s) => s.events.includes(year) && s.description,
   );
@@ -22,7 +22,7 @@ for (const year of eventsWithPages()) {
 }
 
 test("an unknown Sponsor slug returns 404", async ({ request }) => {
-  const [year] = eventsWithPages();
+  const [{ year }] = EVENTS_WITH_PAGES;
   const response = await request.get(`/${year}/sponsors/no-such-sponsor`);
   expect(response.status()).toBe(404);
 });
