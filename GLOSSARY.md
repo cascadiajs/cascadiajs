@@ -83,7 +83,7 @@ The Enhance implementation CascadiaJS ran on before this port. The port reproduc
 _Avoid_: Reference repo, old site
 
 **Post**:
-A dated piece of writing published on the site-wide blog, attributed to one Author and labelled with Tags. It belongs to no Event, though it may discuss one.
+A dated piece of writing published on the site-wide blog, attributed to one or more Authors and labelled with Tags. It belongs to no Event, though it may discuss one.
 _Avoid_: Article, Blog entry, News item
 
 **Author**:
