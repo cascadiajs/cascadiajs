@@ -1,0 +1,61 @@
+import { test, expect, type Page } from "@playwright/test";
+import {
+  eventMarkdownPagePath,
+  EVENTS_WITH_PAGES,
+  expectEventNav,
+} from "./helpers";
+
+/**
+ * Event chrome: each Event root shows the EventNav, and an Event markdown
+ * page shows the EventNav instead of the SiteHeader. Events come from the
+ * list of Events with pages, so a new Event config is covered with no edit.
+ */
+
+async function expectEventNavPosition(page: Page) {
+  const nav = page.locator(".event-nav");
+  await page.setViewportSize({ width: 1280, height: 900 });
+  expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
+    "sticky",
+  );
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
+    "static",
+  );
+}
+
+test.describe("Event roots", () => {
+  for (const { year: key } of EVENTS_WITH_PAGES) {
+    test(`/${key} shows the EventNav with the logo linked to the Event root`, async ({
+      page,
+    }) => {
+      await page.goto(`/${key}`);
+      await expectEventNav(page, `/${key}`);
+    });
+
+    test(`/${key} EventNav is sticky at desktop width and static at mobile width`, async ({
+      page,
+    }) => {
+      await page.goto(`/${key}`);
+      await expectEventNavPosition(page);
+    });
+  }
+});
+
+test.describe("Event markdown page", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(eventMarkdownPagePath());
+  });
+
+  test("shows the EventNav and not the SiteHeader", async ({ page }) => {
+    await expect(page.locator(".event-nav")).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("navigation")).toHaveCount(
+      0,
+    );
+  });
+
+  test("EventNav is sticky at desktop width and static at mobile width", async ({
+    page,
+  }) => {
+    await expectEventNavPosition(page);
+  });
+});
