@@ -88,7 +88,7 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
 
 {
   tiered ? (
-    <div>
+    <div class="cjs-sponsors-grid">
       {tierBands.map(({ tier, sponsors: tierSponsors }) => (
         <>
           <div class="relative my-5 text-center">

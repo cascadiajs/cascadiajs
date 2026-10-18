@@ -33,6 +33,21 @@ test.describe("Sitewide head (every built page)", () => {
     }
   });
 
+  test("every page declares UTF-8 first in the head, and a viewport unless it is a Frozen Snapshot", () => {
+    for (const file of pages) {
+      const html = readFileSync(distPath(file), "utf8");
+      expect(html, `${file}: charset`).toMatch(
+        /<head[^>]*>\s*<meta charset="utf-8"/i,
+      );
+      if (FROZEN_SNAPSHOT_PAGES.includes(file)) {
+        continue;
+      }
+      expect(html, `${file}: viewport`).toContain(
+        '<meta name="viewport" content="width=device-width, initial-scale=1"',
+      );
+    }
+  });
+
   test("every page loads GA4 and the Meta Pixel, Frozen Snapshots included", () => {
     expect(pages).toEqual(expect.arrayContaining(FROZEN_SNAPSHOT_PAGES));
     for (const file of pages) {

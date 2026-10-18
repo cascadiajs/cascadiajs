@@ -25,11 +25,11 @@ const talk = entry.data;
 ---
 
 <div class="cjs-talk-item m-4 flex">
-  <div class="mr-4">{when}</div>
+  <div class="cjs-time-cell mr-4">{when}</div>
   <div class="flex-1">
     {
       talk.type === "keynote" && (
-        <div class="bg-emerald-city-green text-sound-navy mb-2 inline-block rounded px-2 py-0.5 text-sm">
+        <div class="cjs-keynote-badge bg-emerald-city-green text-sound-navy mb-2 inline-block rounded px-2 py-0.5 text-sm">
           Keynote
         </div>
       )

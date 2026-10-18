@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import type { Talk } from "@shared/data/types";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -59,6 +60,20 @@ export function eventMarkdownPagePath(): string | undefined {
   }
   return undefined;
 }
+
+/**
+ * The Talk JSON of each Event that has its own, one array per Event. An Event
+ * without Talk JSON adds none, though its pages can still render another
+ * Event's Talks (the `[slug].astro` route of a newer Event does until it has
+ * its own data), so checks match a rendered Talk against every Event's Talks.
+ */
+export const EVENT_TALKS: readonly (readonly Talk[])[] = EVENTS_WITH_PAGES.map(
+  ({ year }) => `src/shared/data/${year}/talks.json`,
+)
+  .filter((file) => existsSync(file))
+  .map((file) => JSON.parse(readFileSync(file, "utf8")) as Talk[]);
+
+export const ALL_TALKS: readonly Talk[] = EVENT_TALKS.flat();
 
 export const DESKTOP = { width: 1280, height: 900 };
 export const MOBILE = { width: 390, height: 844 };
