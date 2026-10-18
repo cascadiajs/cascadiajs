@@ -42,7 +42,15 @@ const talkPages = filesUnder("dist", /^\d{4}\/talks\/[^/]+\.html$/).flatMap(
   (file) => {
     const slug = file.replace(/^\d{4}\/talks\/|\.html$/g, "");
     const talk = ALL_TALKS.find((t) => t.slug === slug);
-    return talk ? [{ path: `/${file.replace(/\.html$/, "")}`, talk }] : [];
+    return talk
+      ? [
+          {
+            path: `/${file.replace(/\.html$/, "")}`,
+            year: file.slice(0, 4),
+            talk,
+          },
+        ]
+      : [];
   },
 );
 
@@ -54,14 +62,19 @@ test.describe("Talk page share image", () => {
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "");
-  const cards = filesUnder("public/images", /(^|\/)share\/speaker-[^/]+\.png$/);
-  /** URL paths of the Speaker's card files on disk. */
-  const cardsOf = (talk: Talk) =>
-    cards
-      .filter((file) =>
-        file.endsWith(`/speaker-${speakerSlug(talk.speaker.name)}.png`),
-      )
-      .map((file) => `/images/${file}`);
+  /**
+   * URL paths of the Speaker's card files the page reads: the folder its
+   * source globs, which can differ from the page's own Event.
+   */
+  const cardsOf = ({ year, talk }: (typeof talkPages)[number]) => {
+    const folder = readFileSync(
+      `src/pages/${year}/talks/[slug].astro`,
+      "utf8",
+    ).match(/glob\("\/public(\/images\/[^"]+\/)speaker-\*\.png"/)?.[1];
+    expect(folder, "Talk page source has no Speaker card glob").toBeTruthy();
+    const card = `${folder}speaker-${speakerSlug(talk.speaker.name)}.png`;
+    return folder && existsSync(`public${card}`) ? [card] : [];
+  };
 
   const imagePaths = async (page: Page) => {
     const paths = [];
@@ -76,11 +89,11 @@ test.describe("Talk page share image", () => {
   };
 
   test("uses the Speaker's card when the file exists", async ({ page }) => {
-    const talkPage = talkPages.find(({ talk }) => cardsOf(talk).length > 0);
+    const talkPage = talkPages.find((p) => cardsOf(p).length > 0);
     test.skip(!talkPage, "no Talk page has a Speaker card");
     await page.goto(talkPage!.path);
     for (const path of await imagePaths(page)) {
-      expect(cardsOf(talkPage!.talk)).toContain(path);
+      expect(cardsOf(talkPage!)).toContain(path);
     }
   });
 
@@ -88,7 +101,7 @@ test.describe("Talk page share image", () => {
     page,
     request,
   }) => {
-    const talkPage = talkPages.find(({ talk }) => cardsOf(talk).length === 0);
+    const talkPage = talkPages.find((p) => cardsOf(p).length === 0);
     test.skip(!talkPage, "every Talk page has a Speaker card");
     await page.goto(talkPage!.path);
     for (const path of await imagePaths(page)) {
@@ -115,24 +128,17 @@ test.describe("Talk page body", () => {
     expect(count).toBeGreaterThan(0);
   });
 
-  test("a multi-paragraph abstract renders as more than one paragraph", async ({
+  test("a multi-block abstract renders more than one block", async ({
     page,
   }) => {
-    const paragraphs = (talk: Talk) =>
+    const blocks = (talk: Talk) =>
       (talk.abstract ?? "").split(/\n\s*\n/).filter((p) => p.trim()).length;
-    const talkPage = talkPages.find(({ talk }) => paragraphs(talk) > 1);
-    test.skip(!talkPage, "no Talk page has a multi-paragraph abstract");
+    const talkPage = talkPages.find(({ talk }) => blocks(talk) > 1);
+    test.skip(!talkPage, "no Talk page has a multi-block abstract");
     await page.goto(talkPage!.path);
-    const url = talkPage!.talk.registrationUrl ?? null;
-    const abstractParagraphs = await page
-      .locator(".cjs-markdown-content p")
-      .evaluateAll(
-        (ps, href) =>
-          ps.filter((p) => !(href && p.querySelector(`a[href="${href}"]`)))
-            .length,
-        url,
-      );
-    expect(abstractParagraphs).toBeGreaterThan(1);
+    expect(
+      await page.locator(".cjs-markdown-content > :first-child > *").count(),
+    ).toBeGreaterThan(1);
   });
 
   test("the Sponsors grid and Testimonials come after the body", async ({

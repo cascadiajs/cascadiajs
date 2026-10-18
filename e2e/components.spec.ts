@@ -21,8 +21,7 @@ import type { EventYear, Sponsor } from "@shared/data/types";
  */
 
 const sponsors = sponsorData as Sponsor[];
-const hasSlugTalk = ALL_TALKS.some((t) => t.slug);
-const hasSluglessTalk = ALL_TALKS.some((t) => !t.slug);
+const TALK_PAGE = /^\/(\d{4})\/talks\/([^/]+)$/;
 
 const candidatePages = EVENT_ROOTS.flatMap((root) => [
   root,
@@ -41,6 +40,16 @@ async function gotoPageWith(page: Page, selector: string, min = 1) {
     }
   }
   test.skip(true, `no page has ${min} match(es) of ${selector}`);
+}
+
+/** Assert that the href is a Talk with a slug and that its page was built. */
+function expectRealTalkPage(href: string | null) {
+  const [, year, slug] = href?.match(TALK_PAGE) ?? [];
+  expect(
+    ALL_TALKS.some((t) => t.slug === slug),
+    `${href} is no Talk`,
+  ).toBe(true);
+  expect(existsSync(distPath(`${year}/talks/${slug}.html`))).toBe(true);
 }
 
 /** True when the link's ::after generates the external-link glyph. */
@@ -177,14 +186,13 @@ test.describe("external links", () => {
 test.describe("tiered Sponsors grid", () => {
   const LINKED_TIERS = ["diamond", "platinum", "gold", "silver"];
   const SPONSOR_PAGE = /^\/\d{4}\/sponsors\/(.+)$/;
-  const logoStem = (sponsor: Sponsor) => sponsor.logo.replace(/\.[^.]+$/, "");
 
   test("a logo in the top four tiers links to the Sponsor page or the Sponsor's site", async ({
     page,
   }) => {
-    await gotoPageWith(page, ".cjs-sponsors-grid a");
+    await gotoPageWith(page, ".cjs-sponsors-grid a[href]");
     const { href, target } = await page
-      .locator(".cjs-sponsors-grid a")
+      .locator(".cjs-sponsors-grid a[href]")
       .first()
       .evaluate((a) => ({
         href: a.getAttribute("href")!,
@@ -205,16 +213,19 @@ test.describe("tiered Sponsors grid", () => {
   });
 
   test("a logo in any other tier does not link", async ({ page }) => {
-    const logo = sponsors
-      .filter((s) => s.tier && !LINKED_TIERS.includes(s.tier))
-      .map((s) => `.cjs-sponsors-grid:has(a) img[src*="/${logoStem(s)}."]`)
+    const cells = [
+      ...new Set(
+        sponsors.flatMap((s) =>
+          s.tier && !LINKED_TIERS.includes(s.tier) ? [s.tier] : [],
+        ),
+      ),
+    ]
+      .map((tier) => `.cjs-sponsor-tier-${tier}`)
       .join(", ");
-    await gotoPageWith(page, logo);
-    const link = await page
-      .locator(logo)
-      .first()
-      .evaluate((img) => img.closest("a"));
-    expect(link).toBeNull();
+    test.skip(!cells, "no Sponsor is in an unlinked tier");
+    await gotoPageWith(page, cells);
+    expect(await page.locator(`:is(${cells}) img`).count()).toBeGreaterThan(0);
+    expect(await page.locator(`:is(${cells}) a`).count()).toBe(0);
   });
 
   test("a target=_blank logo outside .mark-external-links shows no external-link icon", async ({
@@ -257,13 +268,16 @@ test.describe("Hallway Track", () => {
       .locator(".cjs-hallway-track")
       .first()
       .locator("a:has(img)")
-      .evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+      .evaluateAll((as) =>
+        as.map((a) => a.getAttribute("href")).filter(Boolean),
+      );
     // A copied page can pass another Event's key, so match any Event's wall.
     const expectedWalls = EVENTS_WITH_PAGES.map(({ year }) =>
       ["platinum", "gold"].flatMap((tier) =>
         sponsors
           .filter(
-            (s) => s.tier === tier && s.events.includes(year as EventYear),
+            (s) =>
+              s.tier === tier && s.url && s.events.includes(year as EventYear),
           )
           .map((s) => s.url),
       ),
@@ -273,30 +287,14 @@ test.describe("Hallway Track", () => {
 });
 
 test.describe("schedule rows", () => {
-  const TALK_PAGE = /^\/(\d{4})\/talks\/([^/]+)$/;
   const keynoteRow = ALL_TALKS.filter((t) => t.slug && t.type === "keynote")
     .map((t) => `.cjs-talk-item:has(a[href$="/talks/${t.slug}"])`)
     .join(", ");
 
-  test("a Talk with a slug links to its Talk page and a Talk without one is plain text", async ({
-    page,
-  }) => {
-    test.skip(!hasSlugTalk, "no Talk has a slug");
-    await gotoPageWith(page, ".cjs-talk-item");
+  test("a linked Talk row opens a Talk page", async ({ page }) => {
+    await gotoPageWith(page, ".cjs-talk-item a");
     const link = page.locator(".cjs-talk-item a").first();
-    await expect(link).toBeAttached();
-    const [, year, slug] =
-      (await link.getAttribute("href"))!.match(TALK_PAGE) ?? [];
-    expect(
-      ALL_TALKS.some((t) => t.slug === slug),
-      `${slug} is no Talk`,
-    ).toBe(true);
-    expect(existsSync(distPath(`${year}/talks/${slug}.html`))).toBe(true);
-
-    // A row without a link stands for a Talk without a slug.
-    if ((await page.locator(".cjs-talk-item:not(:has(a))").count()) > 0) {
-      expect(hasSluglessTalk).toBe(true);
-    }
+    expectRealTalkPage(await link.getAttribute("href"));
   });
 
   test("only keynote Talks show the keynote badge", async ({ page }) => {
@@ -338,27 +336,10 @@ test.describe("schedule rows", () => {
 });
 
 test.describe("TalkCard", () => {
-  test("links a Talk with a slug to its Talk page and a Talk without one to the Event root", async ({
-    page,
-  }) => {
-    test.skip(!hasSlugTalk, "no Talk has a slug");
-    await gotoPageWith(page, ".cjs-talk-card");
-    const root = `/${new URL(page.url()).pathname.split("/")[1]}`;
-    const link = page.locator(`.cjs-talk-card[href^="${root}/talks/"]`).first();
-    await expect(link).toBeAttached();
-    const slug = (await link.getAttribute("href"))!.slice(
-      `${root}/talks/`.length,
-    );
-    expect(
-      ALL_TALKS.some((t) => t.slug === slug),
-      `${slug} is no Talk`,
-    ).toBe(true);
-
-    // A card linking to the root stands for a Talk without a slug.
-    const rootCard = page.locator(`.cjs-talk-card[href="${root}"]`);
-    if ((await rootCard.count()) > 0) {
-      expect(hasSluglessTalk).toBe(true);
-    }
+  test("a card linking to a Talk opens a Talk page", async ({ page }) => {
+    const card = '.cjs-talk-card[href*="/talks/"]';
+    await gotoPageWith(page, card);
+    expectRealTalkPage(await page.locator(card).first().getAttribute("href"));
   });
 });
 

@@ -110,7 +110,9 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
                 />
               );
               return (
-                <div class={`text-center md:m-8 ${TIER_HEIGHT[tier]}`}>
+                <div
+                  class={`cjs-sponsor-tier-${tier} text-center md:m-8 ${TIER_HEIGHT[tier]}`}
+                >
                   {LINKED_TIERS.has(tier) ? (
                     sponsor.description ? (
                       <a href={`/${year}/sponsors/${sponsor.id}`}>{logo}</a>
