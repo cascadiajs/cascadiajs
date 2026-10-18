@@ -58,9 +58,12 @@ export async function expectPastSponsorsMatchFeaturedEvent(page: Page) {
 
 /** Assert the site header's Event link points at the Featured Event. */
 export async function expectHeaderEventLinkIsFeaturedEvent(page: Page) {
-  await expect(
-    page.getByRole("link", { name: `CascadiaJS ${FEATURED_EVENT}` }),
-  ).toHaveAttribute("href", `/${FEATURED_EVENT}`);
+  // The Event link is the first link after the logo in the header nav.
+  const nav = page.getByRole("banner").getByRole("navigation");
+  await expect(nav.getByRole("link").nth(1)).toHaveAttribute(
+    "href",
+    `/${FEATURED_EVENT}`,
+  );
 }
 
 /** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */

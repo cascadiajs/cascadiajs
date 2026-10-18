@@ -28,14 +28,14 @@ pnpm install
 pnpm dev          # http://localhost:4321
 ```
 
-| Command        | What it does                                         |
-| :------------- | :--------------------------------------------------- |
-| `pnpm dev`     | Dev server with hot reload at `localhost:4321`       |
-| `pnpm build`   | Production build to `dist/`                          |
-| `pnpm preview` | Serve the built `dist/` locally                      |
-| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`)  |
-| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                 |
-| `pnpm test`    | Playwright e2e suite (currently disabled; see below) |
+| Command        | What it does                                        |
+| :------------- | :-------------------------------------------------- |
+| `pnpm dev`     | Dev server with hot reload at `localhost:4321`      |
+| `pnpm build`   | Production build to `dist/`                         |
+| `pnpm preview` | Serve the built `dist/` locally                     |
+| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`) |
+| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                |
+| `pnpm test`    | Build, preview, and run the Playwright e2e suite    |
 
 A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`. Tests run in CI.
 
@@ -299,11 +299,13 @@ Do these steps only after the 2027 pages are ready.
     The homepage, header, footer and site-wide pages read that value.
 13. Update `DEFAULT_DESCRIPTION` in `src/shared/site-defaults.ts`.
 14. Run the whole e2e suite.
-    Several tests read `FEATURED_EVENT` and the data files, so their expected results change when `FEATURED_EVENT` changes.
+    A Featured Event change needs no test edit.
 
 ## Testing and CI
 
-End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys. The suite is disabled: `playwright.config.ts` ignores every spec. Remove that `testIgnore` line to run them again.
+End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys.
+
+Tests check behavior, not content. A change to copy, data, design inside a section or the Featured Event does not break a test. Tests find pages by type, never by slug or title. They find elements by class name, id or role, never by text. A component that a test needs gets a class with its component name in kebab-case. No spec names a year, except the Frozen Snapshot specs (2024, 2025).
 
 ```sh
 pnpm exec playwright install chromium   # once, to download the browser
@@ -320,7 +322,7 @@ CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
 1. **checks:** `pnpm lint`, `prettier --check .`, `pnpm check`
 2. **build:** `pnpm build`
-3. **playwright:** the e2e suite, after both pass. The suite is disabled, so this job collects no tests. On failure once it is enabled again, download the `playwright-report` artifact from the run to see what failed.
+3. **playwright:** the e2e suite, after both pass. On failure, download the `playwright-report` artifact from the run to see what failed.
 
 ## Working with an agent
 

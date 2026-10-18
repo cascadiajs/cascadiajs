@@ -23,11 +23,9 @@ test.describe("home page", () => {
   });
 
   test("site header shows the alert banner", async ({ page }) => {
-    const header = page.getByRole("banner");
-    await expect(header).toBeVisible();
-    await expect(
-      header.getByText("CascadiaJS 2026 is SOLD OUT! See you in 2027!"),
-    ).toBeVisible();
+    const banner = page.locator(".alert-banner");
+    await expect(banner).toBeVisible();
+    await expect(banner.getByRole("link")).toHaveCount(1);
   });
 
   test("site header shows the logo linking home", async ({ page }) => {
@@ -35,23 +33,6 @@ test.describe("home page", () => {
     const logoLink = header.getByRole("link", { name: "CascadiaJS logo" });
     await expect(logoLink).toBeVisible();
     await expect(logoLink).toHaveAttribute("href", "/");
-  });
-
-  test("site header nav links point to their pages", async ({ page }) => {
-    const nav = page.getByRole("banner").getByRole("navigation");
-    await expect(nav).toBeVisible();
-
-    const links: [string, string][] = [
-      ["CascadiaJS 2026", "/2026"],
-      ["Newsletter", "/mailing-list"],
-      ["Code of Conduct", "/code-of-conduct"],
-    ];
-
-    for (const [name, href] of links) {
-      const link = nav.getByRole("link", { name });
-      await expect(link).toBeVisible();
-      await expect(link).toHaveAttribute("href", href);
-    }
   });
 
   test("hero shows pre-header, heading, and intro copy", async ({ page }) => {
@@ -70,32 +51,11 @@ test.describe("home page", () => {
     ).toBeVisible();
   });
 
-  test("hero CTA links to /2026", async ({ page }) => {
-    const cta = page.getByRole("link", { name: "CascadiaJS: June 2026" });
-    await expect(cta).toBeVisible();
-    await expect(cta).toHaveAttribute("href", "/2026");
-  });
-
   test("hero image is present with its alt text", async ({ page }) => {
     const image = page.getByRole("img", {
       name: "Sasquatch driving a camper van",
     });
     await expect(image).toBeVisible();
-  });
-
-  test("trailer shows the 2025 recap heading and video", async ({ page }) => {
-    await expect(
-      page.getByRole("heading", {
-        level: 1,
-        name: "Check-out our 2025 Recap!",
-      }),
-    ).toBeVisible();
-    const video = page.getByTitle("CascadiaJS 2025 Recap Video");
-    await expect(video).toBeVisible();
-    await expect(video).toHaveAttribute(
-      "src",
-      /customer-err733fa36e0jnfx\.cloudflarestream\.com/,
-    );
   });
 
   test("site footer is present with its sections", async ({ page }) => {
@@ -141,19 +101,6 @@ test.describe("home page", () => {
     );
   });
 
-  test("past sponsors grid drops 2026-only sponsors but keeps returning ones", async ({
-    page,
-  }) => {
-    // exclude="2026" hides a Sponsor only when *every* one of its Events is
-    // excluded: 2026-only Sponsors go, 2025+2026 Sponsors stay.
-    await expect(page.getByRole("img", { name: "AWS logo" })).toHaveCount(0);
-    await expect(page.getByRole("img", { name: "Apify logo" })).toHaveCount(0);
-    await expect(
-      page.getByRole("img", { name: "Cloudflare logo" }),
-    ).toBeVisible();
-    await expect(page.getByRole("img", { name: "Arcjet logo" })).toBeVisible();
-  });
-
   test("site header Event link points to the Featured Event", async ({
     page,
   }) => {
@@ -176,12 +123,6 @@ test.describe("home page", () => {
     await expect(
       page.getByRole("heading", { level: 2, name: "Past Sponsors" }),
     ).toBeVisible();
-  });
-
-  test("sponsors section CTA links to the sponsor page", async ({ page }) => {
-    const cta = page.getByRole("link", { name: "Sponsor Our Event" });
-    await expect(cta).toBeVisible();
-    await expect(cta).toHaveAttribute("href", "/2026/sponsor");
   });
 
   test("testimonials section is present with its fragment identifier", async ({
