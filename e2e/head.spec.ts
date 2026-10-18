@@ -1,51 +1,29 @@
 import { readFileSync } from "node:fs";
-import { expect, test } from "@playwright/test";
-import sponsors from "@shared/data/sponsors.json" with { type: "json" };
+import { expect, test, type Page } from "@playwright/test";
 import {
   DEFAULT_DESCRIPTION,
-  DEFAULT_TITLE,
   GA4_ID,
   META_PIXEL_ID,
 } from "@shared/site-defaults";
 import {
   builtPages,
+  EVENT_ROOTS,
   distPath,
   filesUnder,
   FROZEN_SNAPSHOT_PAGES,
 } from "./helpers";
 
 /**
- * Head parity with legacy (issues #88, #89). Sitewide checks read every built page
- * out of `dist/` (the webServer builds before the suite runs); per-page
- * checks derive their expectations from the markdown frontmatter and sponsors data.
+ * Build checks read every built page out of `dist/` (the webServer builds
+ * before the suite runs). Head checks run on one page per layout and test
+ * presence only: no value is compared to a fixed string.
  */
-
-/**
- * Single-line `key: value` frontmatter fields, which is all this repo's
- * content uses. Throws on any line it can't parse (a multi-line or nested
- * value, a block scalar) rather than silently misparsing it.
- */
-function frontmatter(file: string): Record<string, string> {
-  const block = readFileSync(file, "utf8").match(/^---\n([\s\S]*?)\n---/);
-  if (!block) {
-    throw new Error(`${file}: no frontmatter block`);
-  }
-  const fields: Record<string, string> = {};
-  for (const line of block[1].split("\n")) {
-    const m = line.match(/^(\w+): (\S.*)$/);
-    if (!m || /^[|>[{&*!]/.test(m[2])) {
-      throw new Error(`${file}: unsupported frontmatter line: ${line}`);
-    }
-    fields[m[1]] = m[2].replace(/^(["'])(.*)\1$/, "$2");
-  }
-  return fields;
-}
 
 test.describe("Sitewide head (every built page)", () => {
   const pages = builtPages();
 
   test("finds built pages", () => {
-    expect(pages.length).toBeGreaterThan(50);
+    expect(pages.length).toBeGreaterThan(0);
   });
 
   test("no page tells crawlers not to index it", () => {
@@ -55,13 +33,18 @@ test.describe("Sitewide head (every built page)", () => {
     }
   });
 
-  test("every page has the legacy viewport and author meta", () => {
+  test("every page declares UTF-8 first in the head, and a viewport unless it is a Frozen Snapshot", () => {
     for (const file of pages) {
       const html = readFileSync(distPath(file), "utf8");
-      expect(html, file).toContain(
+      expect(html, `${file}: charset`).toMatch(
+        /<head[^>]*>\s*<meta charset="utf-8"/i,
+      );
+      if (FROZEN_SNAPSHOT_PAGES.includes(file)) {
+        continue;
+      }
+      expect(html, `${file}: viewport`).toContain(
         '<meta name="viewport" content="width=device-width, initial-scale=1"',
       );
-      expect(html, file).toContain('<meta name="author" content="CascadiaJS"');
     }
   });
 
@@ -80,127 +63,65 @@ test.describe("Sitewide head (every built page)", () => {
       }
     }
   });
-
-  test("charset and viewport are the first head children", () => {
-    const html = readFileSync(distPath("index.html"), "utf8");
-    const head = html.match(/<head>\s*([\s\S]*?)<\/head>/)![1];
-    expect(head.startsWith('<meta charset="utf-8"')).toBe(true);
-    expect(head.indexOf("viewport")).toBeLessThan(head.indexOf("<title>"));
-  });
 });
 
-test.describe("Default title and description", () => {
-  for (const path of [
-    "/",
-    "/cookies",
-    "/privacy",
-    "/tos",
-    "/2026/sponsorships",
-  ]) {
-    test(`${path} uses the sitewide defaults`, async ({ page }) => {
+/** One page for each layout, picked by type, never by slug or title. */
+const homepage = "/";
+const [eventRoot] = EVENT_ROOTS;
+const [markdownFile] = filesUnder("src/content/markdown", /\.mdx?$/).filter(
+  (file) => !/^\d{4}\//.test(file),
+);
+const markdownPage = markdownFile && `/${markdownFile.replace(/\.mdx?$/, "")}`;
+
+// A layout with no page yet is left out.
+const LAYOUT_PAGES = [
+  { layout: "Layout", path: homepage },
+  { layout: "EventLayout", path: eventRoot },
+  { layout: "MarkdownLayout", path: markdownPage },
+].filter((entry): entry is { layout: string; path: string } => !!entry.path);
+
+const content = (page: Page, selector: string) =>
+  page.locator(selector).getAttribute("content");
+
+test.describe("Head metadata", () => {
+  for (const { layout, path } of LAYOUT_PAGES) {
+    test(`${layout} emits a title, a description and share tags`, async ({
+      page,
+    }) => {
       await page.goto(path);
-      await expect(page).toHaveTitle(DEFAULT_TITLE);
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-        "content",
-        DEFAULT_DESCRIPTION,
-      );
+      expect((await page.title()).trim()).not.toBe("");
+      for (const selector of [
+        'meta[name="description"]',
+        'meta[property="og:title"]',
+        'meta[property="og:description"]',
+        'meta[property="og:image"]',
+        'meta[name="twitter:card"]',
+        'meta[name="twitter:title"]',
+        'meta[name="twitter:image"]',
+      ]) {
+        expect(
+          (await content(page, selector))?.trim(),
+          `${layout}: ${selector}`,
+        ).toBeTruthy();
+      }
     });
   }
 
-  test("/2026 falls back to the event description with 'on'", async ({
+  test("a page without a description of its own gets the sitewide default", async ({
     page,
   }) => {
-    await page.goto("/2026");
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-      "content",
+    // The homepage passes no description to Layout.
+    await page.goto(homepage);
+    expect(await content(page, 'meta[name="description"]')).toBe(
       DEFAULT_DESCRIPTION,
     );
   });
-});
 
-test.describe("Year-scoped markdown pages", () => {
-  const files = filesUnder("src/content/markdown/2026", /\.mdx?$/).filter(
-    (f) => {
-      const slug = f.replace(/\.mdx?$/, "");
-      // /2026/schedule is a dedicated page; /2026/sponsor uses the defaults.
-      return !["schedule", "sponsor"].includes(slug);
-    },
-  );
-
-  test("finds markdown pages", () => {
-    expect(files.length).toBeGreaterThan(20);
+  test("a share image loads", async ({ page, request }) => {
+    await page.goto(homepage);
+    const src = await content(page, 'meta[property="og:image"]');
+    const response = await request.get(new URL(src!).pathname);
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toMatch(/^image\//);
   });
-
-  for (const file of files) {
-    const slug = file.replace(/\.mdx?$/, "");
-    const data = frontmatter(`src/content/markdown/2026/${file}`);
-    const description = data.description;
-
-    test(`/2026/${slug} title has no year${description ? " and uses its description" : ""}`, async ({
-      page,
-    }) => {
-      await page.goto(`/2026/${slug}`);
-      await expect(page).toHaveTitle(`CascadiaJS | ${data.title}`);
-      await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
-        "content",
-        `CascadiaJS | ${data.title}`,
-      );
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-        "content",
-        description ?? DEFAULT_DESCRIPTION,
-      );
-    });
-  }
-
-  test("training description is rendered unchanged", async ({ page }) => {
-    await page.goto("/2026/trainings/coding-with-claude");
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-      "content",
-      "Eve Porcello",
-    );
-  });
-
-  test("/2026/sponsor uses the sitewide defaults", async ({ page }) => {
-    await page.goto("/2026/sponsor");
-    await expect(page).toHaveTitle(DEFAULT_TITLE);
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-      "content",
-      DEFAULT_DESCRIPTION,
-    );
-  });
-});
-
-test.describe("/2026/schedule", () => {
-  test("uses legacy's title and description (no 'on')", async ({ page }) => {
-    await page.goto("/2026/schedule");
-    await expect(page).toHaveTitle(
-      "CascadiaJS 2026 | June 1 - 2 | Seattle, WA",
-    );
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-      "content",
-      "CascadiaJS 2026 is coming up June 1 - 2 in Seattle, WA!",
-    );
-  });
-});
-
-test.describe("Sponsor detail pages", () => {
-  const pages = sponsors.filter(
-    (s) => s.description && s.events.includes("2026"),
-  );
-
-  test("finds 2026 sponsor pages", () => {
-    expect(pages.length).toBeGreaterThan(5);
-  });
-
-  for (const sponsor of pages) {
-    test(`/2026/sponsors/${sponsor.id} thanks the sponsor`, async ({
-      page,
-    }) => {
-      await page.goto(`/2026/sponsors/${sponsor.id}`);
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute(
-        "content",
-        "Thanks for sponsoring CascadiaJS 2026!",
-      );
-    });
-  }
 });

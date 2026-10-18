@@ -1,8 +1,7 @@
-import { expect, test, type Page } from "@playwright/test";
-import { readdirSync } from "node:fs";
+import { expect, test } from "@playwright/test";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import sponsors from "@shared/data/sponsors.json" with { type: "json" };
-import { FEATURED_EVENT } from "@shared/site-defaults";
+import type { Talk } from "@shared/data/types";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -10,6 +9,16 @@ export function filesUnder(dir: string, pattern: RegExp): string[] {
     .filter((file) => pattern.test(file))
     .sort();
 }
+
+/**
+ * Events with pages: one per `src/shared/data/events/<key>.config.ts`. The
+ * list comes from the filenames, because the Event registry uses Vite-only
+ * imports and a config can import what Node cannot load.
+ */
+export const EVENTS_WITH_PAGES: readonly { year: string }[] = filesUnder(
+  "src/shared/data/events",
+  /^\d{4}\.config\.ts$/,
+).map((file) => ({ year: file.replace(/\.config\.ts$/, "") }));
 
 /**
  * Every built page's `dist/`-relative path. The preview webServer builds
@@ -22,6 +31,14 @@ export function builtPages(): string[] {
 export const distPath = (file: string) => join("dist", file);
 
 /**
+ * Roots (`/<key>`) of the Events with pages whose hand-written root page is
+ * built. A new Event config can land before its root page exists.
+ */
+export const EVENT_ROOTS: readonly string[] = EVENTS_WITH_PAGES.map(
+  ({ year }) => `/${year}`,
+).filter((root) => existsSync(distPath(`${root.slice(1)}.html`)));
+
+/**
  * Built pages (`dist/`-relative) that are Frozen Snapshots: exact legacy
  * captures (ADR-0008), not Layout-rendered. Sitewide checks of Layout's
  * output exclude or relax them.
@@ -29,48 +46,34 @@ export const distPath = (file: string) => join("dist", file);
 export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
 
 /**
- * Names of the Sponsors the Past Sponsors grid shows: a Sponsor is hidden only
- * when every one of its Events is the Featured Event.
+ * The URL path of one Event markdown page, chosen by type: the first
+ * top-level page of the first Event that has any. Undefined when no Event
+ * has one.
  */
-export function pastSponsorNames(): string[] {
-  return sponsors
-    .filter((s) => s.events.some((e) => e !== FEATURED_EVENT))
-    .map((s) => s.name)
-    .sort();
+export function eventMarkdownPagePath(): string | undefined {
+  for (const { year: key } of EVENTS_WITH_PAGES) {
+    const dir = join("src/content/markdown", key);
+    const files = filesUnder(dir, /^[^/\\]+\.mdx?$/);
+    if (files.length > 0) {
+      return `/${key}/${files[0].replace(/\.mdx?$/, "")}`;
+    }
+  }
+  return undefined;
 }
 
 /**
- * Assert the Past Sponsors section of the current page shows exactly the
- * past-sponsor set and that its CTA targets the Featured Event's sponsor page.
+ * Every Event's Talks. An Event without Talk JSON adds none, though its pages
+ * can still render another Event's Talks, so checks match a rendered Talk
+ * against all of them.
  */
-export async function expectPastSponsorsMatchFeaturedEvent(page: Page) {
-  const section = page.locator("#sponsors");
-  const alts = await section
-    .getByRole("img")
-    .evaluateAll((imgs) => imgs.map((img) => img.getAttribute("alt") ?? ""));
-  expect(alts.map((a) => a.replace(/ logo$/, "")).sort()).toEqual(
-    pastSponsorNames(),
-  );
-  await expect(
-    section.getByRole("link", { name: "Sponsor Our Event" }),
-  ).toHaveAttribute("href", `/${FEATURED_EVENT}/sponsor`);
-}
+export const ALL_TALKS: readonly Talk[] = EVENTS_WITH_PAGES.map(
+  ({ year }) => `src/shared/data/${year}/talks.json`,
+)
+  .filter((file) => existsSync(file))
+  .flatMap((file) => JSON.parse(readFileSync(file, "utf8")) as Talk[]);
 
-/** Assert the site header's Event link points at the Featured Event. */
-export async function expectHeaderEventLinkIsFeaturedEvent(page: Page) {
-  await expect(
-    page.getByRole("link", { name: `CascadiaJS ${FEATURED_EVENT}` }),
-  ).toHaveAttribute("href", `/${FEATURED_EVENT}`);
-}
-
-/** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */
-export async function expectEventNav(page: Page, eventHref = "/2026") {
-  const nav = page.locator("#nav").getByRole("navigation");
-  await expect(nav).toBeVisible();
-  await expect(
-    nav.getByRole("link", { name: "CascadiaJS logo" }),
-  ).toHaveAttribute("href", eventHref);
-}
+export const DESKTOP = { width: 1280, height: 900 };
+export const MOBILE = { width: 390, height: 844 };
 
 /**
  * Shared checks for a Frozen Snapshot page (ADR-0008): a legacy page captured

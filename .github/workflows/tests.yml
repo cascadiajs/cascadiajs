@@ -44,11 +44,10 @@ jobs:
           runtime: node@lts
           cache: true
           require-lockfile: true
-      # Browsers stay uninstalled while the suite is ignored in playwright.config.ts.
-      # - name: Install Playwright Browsers
-      #   run: pnpm exec playwright install --with-deps
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
-        run: pnpm exec playwright test --pass-with-no-tests
+        run: pnpm exec playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:

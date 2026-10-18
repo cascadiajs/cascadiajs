@@ -8,7 +8,10 @@ interface Props {
 const { videoSrc, posterImage, id = "hero" } = Astro.props;
 ---
 
-<section id={id} class="relative min-h-svh overflow-hidden text-left">
+<section
+  id={id}
+  class="cjs-video-hero relative min-h-svh overflow-hidden text-left"
+>
   <video
     class="h-[max(100svh,600px)] w-full scale-[1.2] object-cover object-center"
     preload="auto"

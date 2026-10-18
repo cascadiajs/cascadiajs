@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "test": "playwright test --pass-with-no-tests",
+    "test": "playwright test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"

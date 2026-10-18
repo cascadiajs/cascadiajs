@@ -9,11 +9,11 @@ interface Props {
 const { displayNav = true, displayAlert = true } = Astro.props;
 ---
 
-<header class="font-extralight">
+<header class="cjs-site-header font-extralight">
   <!-- Alert banner -->
   {
     displayAlert && (
-      <div class="bg-madrona-yellow text-sound-navy font-display p-2 text-center text-xl">
+      <div class="cjs-alert-banner bg-madrona-yellow text-sound-navy font-display p-2 text-center text-xl">
         <a href="/2027">
           Blind Bird tickets are on sale now for CascadiaJS 2027!
         </a>

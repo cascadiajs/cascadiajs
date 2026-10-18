@@ -54,7 +54,9 @@ const linkVariants = {
 };
 ---
 
-<Tag class={`group ${base[display]} ${sizes[size]} ${variants[variant]}`}>
+<Tag
+  class={`cjs-cta-button group ${base[display]} ${sizes[size]} ${variants[variant]}`}
+>
   {
     /* No whitespace before <slot />: a literal newline renders as a real
        space, visibly padding the label width (caught by the fidelity

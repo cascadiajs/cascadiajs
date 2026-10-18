@@ -65,9 +65,9 @@ const CtaWrapper = isInlineCta ? "p" : "div";
 const ctaWrapperClasses = isInlineCta ? "mt-2" : "";
 ---
 
-<div class="m-4 flex">
+<div class="cjs-show-item m-4 flex">
   {/* Time column renders even when `when` is empty, to stay aligned. */}
-  <div class="mr-4">{data.when}</div>
+  <div class="cjs-time-cell mr-4">{data.when}</div>
   <div class="flex-1">
     <div class="text-sound-navy text-22 font-serif leading-tight font-light">
       {

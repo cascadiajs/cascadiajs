@@ -23,7 +23,10 @@ if (!imageModule) {
 const imageSrc = (await imageModule()).default;
 ---
 
-<a href={href} class="group mr-2 mb-4 flex w-62.5 flex-col no-underline">
+<a
+  href={href}
+  class="cjs-talk-card group mr-2 mb-4 flex w-62.5 flex-col no-underline"
+>
   <div class="relative h-62.5 w-62.5 overflow-hidden">
     <Image
       src={imageSrc}
@@ -33,7 +36,7 @@ const imageSrc = (await imageModule()).default;
       height={250}
     />
     <div
-      class="md:bg-cascade-blue hidden md:absolute md:inset-0 md:block md:opacity-0 md:[transition:opacity_0.5s_ease] md:group-hover:opacity-100"
+      class="cjs-talk-card-overlay md:bg-cascade-blue hidden md:absolute md:inset-0 md:block md:opacity-0 md:[transition:opacity_0.5s_ease] md:group-hover:opacity-100"
     >
       <div
         class="font-display text-28 m-4 text-left leading-[1.125em] font-light text-white"

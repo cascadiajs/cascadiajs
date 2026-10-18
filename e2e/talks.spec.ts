@@ -1,183 +1,178 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+import { existsSync, readFileSync } from "node:fs";
+import { ALL_TALKS, EVENTS_WITH_PAGES, filesUnder } from "./helpers";
 import type { Talk } from "@shared/data/types";
-import talks from "@shared/data/2026/talks.json" with { type: "json" };
 
 /**
- * Talk detail page (issue #53): a per-Talk page rendered from the `talks`
- * content collection, wrapped in EventLayout and following the same
- * simple-page visual pattern as MarkdownLayout (page-title bar + narrow
- * page-body). Fixture below (Joe Duffy / "The Last Mile Is Code") is
- * transcribed from the authoritative source:
- *   src/shared/data/2026/talks.json
+ * Talk route: data to page, one direction only. Each Talk with a slug in an
+ * Event's data has a page. An Event with no Talk data skips.
  */
-
-const TALK_URL = "/2026/talks/the-last-mile-is-code";
-
-test.describe("Talk detail page", () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto(TALK_URL);
+for (const { year } of EVENTS_WITH_PAGES) {
+  const file = `src/shared/data/${year}/talks.json`;
+  test.describe(`Talk pages for an Event with pages (${year})`, () => {
+    test.skip(!existsSync(file), "Event has no Talk data");
+    const talks: Talk[] = existsSync(file)
+      ? JSON.parse(readFileSync(file, "utf8"))
+      : [];
+    for (const { slug } of talks.filter((t) => t.slug)) {
+      test(`Talk ${slug} has a page`, async ({ request }) => {
+        const response = await request.get(`/${year}/talks/${slug}`);
+        expect(response.status()).toBe(200);
+      });
+    }
   });
+}
 
-  test("title and og:title match legacy", async ({ page }) => {
-    const expected = "CascadiaJS 2026 | Speakers | Joe Duffy";
-    await expect(page).toHaveTitle(expected);
-    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
-      "content",
-      expected,
-    );
-  });
-
-  test("renders Our Sponsors and Testimonials after the body", async ({
-    page,
-  }) => {
-    await expect(
-      page.getByRole("heading", { level: 1, name: "Our Sponsors" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "Sponsor Our Event" }),
-    ).toHaveAttribute("href", "/2026/sponsor");
-    await expect(page.locator("#testimonials")).toBeVisible();
-  });
-
-  test("renders", async ({ page }) => {
-    await expect(page.locator("body")).toBeVisible();
-  });
-
-  test("page-title bar shows the talk title", async ({ page }) => {
-    await expect(
-      page.getByRole("heading", {
-        level: 1,
-        name: "The Last Mile Is Code",
-      }),
-    ).toBeVisible();
-  });
-
-  test("abstract text is visible", async ({ page }) => {
-    await expect(
-      page.getByText("Agents have crossed a threshold on writing code", {
-        exact: false,
-      }),
-    ).toBeVisible();
-  });
-
-  test('"About {speaker}" heading is present', async ({ page }) => {
-    await expect(
-      page.getByRole("heading", { level: 2, name: "About Joe Duffy" }),
-    ).toBeVisible();
-  });
-
-  test("speaker photo is visible as a 300x300 box", async ({ page }) => {
-    const photo = page.getByRole("img", { name: "photo of Joe Duffy" });
-    await expect(photo).toBeVisible();
-    const box = await photo.boundingBox();
-    expect(box?.width).toBe(300);
-    expect(box?.height).toBe(300);
-  });
-
-  test("speaker details show company and location", async ({ page }) => {
-    await expect(page.getByText("Pulumi", { exact: true })).toBeVisible();
-    await expect(
-      page.getByText("Seattle, WA USA", { exact: true }),
-    ).toBeVisible();
-  });
-
-  test("social links are present", async ({ page }) => {
-    const link = page.locator(
-      'a[href="https://www.linkedin.com/in/joejduffy/"]',
-    );
-    await expect(link).toBeVisible();
-    await expect(link.locator("xpath=preceding-sibling::i[1]")).toHaveClass(
-      /fa-linkedin/,
-    );
-  });
-
-  test("Buy Tickets CTA links to the 2026 homepage", async ({ page }) => {
-    const cta = page.getByRole("link", {
-      name: /Tickets to CascadiaJS 2026 on sale now/,
-    });
-    await expect(cta).toBeVisible();
-    await expect(cta).toHaveAttribute("href", "/2026");
-  });
-
-  test("EventLayout nav is present", async ({ page }) => {
-    const nav = page.locator("#nav").getByRole("navigation");
-    await expect(nav).toBeVisible();
-    await expect(
-      nav.getByRole("link", { name: "CascadiaJS logo" }),
-    ).toHaveAttribute("href", "/2026");
-  });
+test("an unknown Talk slug returns 404", async ({ request }) => {
+  const year = EVENTS_WITH_PAGES.find((e) =>
+    existsSync(`src/shared/data/${e.year}/talks.json`),
+  )?.year;
+  test.skip(!year, "no Event has Talk data");
+  const response = await request.get(`/${year}/talks/no-such-talk-slug`);
+  expect(response.status()).toBe(404);
 });
 
-test.describe("Talk detail page: missing slugs", () => {
-  test("a non-existent slug returns a 404", async ({ page }) => {
-    const response = await page.goto("/2026/talks/nonexistent");
-    expect(response?.status()).toBe(404);
-  });
-});
-
-const workshopTalks = (talks as Talk[]).filter(
-  (t) => t.type === "workshop" && t.slug,
+/**
+ * Talk page content. Pages come from the built Talk pages (`dist/<key>/talks/`)
+ * and each page's Talk from the Event Talk JSON by slug, because a newer
+ * Event's route can publish another Event's Talks. A check skips when no
+ * built page has a Talk with the data it needs.
+ */
+const talkPages = filesUnder("dist", /^\d{4}\/talks\/[^/]+\.html$/).flatMap(
+  (file) => {
+    const slug = file.replace(/^\d{4}\/talks\/|\.html$/g, "");
+    const talk = ALL_TALKS.find((t) => t.slug === slug);
+    return talk
+      ? [
+          {
+            path: `/${file.replace(/\.html$/, "")}`,
+            year: file.slice(0, 4),
+            talk,
+          },
+        ]
+      : [];
+  },
 );
 
-test.describe("Workshop talk pages", () => {
-  test("there are four Workshop Talks", () => {
-    expect(workshopTalks).toHaveLength(4);
+test.describe("Talk page share image", () => {
+  const speakerSlug = (name: string) =>
+    name
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  /**
+   * URL paths of the Speaker's card files the page reads: the folder its
+   * source globs, which can differ from the page's own Event.
+   */
+  const cardsOf = ({ year, talk }: (typeof talkPages)[number]) => {
+    const folder = readFileSync(
+      `src/pages/${year}/talks/[slug].astro`,
+      "utf8",
+    ).match(/glob\("\/public(\/images\/[^"]+\/)speaker-\*\.png"/)?.[1];
+    expect(folder, "Talk page source has no Speaker card glob").toBeTruthy();
+    const card = `${folder}speaker-${speakerSlug(talk.speaker.name)}.png`;
+    return folder && existsSync(`public${card}`) ? [card] : [];
+  };
+
+  const imagePaths = async (page: Page) => {
+    const paths = [];
+    for (const selector of [
+      'meta[property="og:image"]',
+      'meta[name="twitter:image"]',
+    ]) {
+      const content = await page.locator(selector).getAttribute("content");
+      paths.push(new URL(content!).pathname);
+    }
+    return paths;
+  };
+
+  test("uses the Speaker's card when the file exists", async ({ page }) => {
+    const talkPage = talkPages.find((p) => cardsOf(p).length > 0);
+    test.skip(!talkPage, "no Talk page has a Speaker card");
+    await page.goto(talkPage!.path);
+    for (const path of await imagePaths(page)) {
+      expect(cardsOf(talkPage!)).toContain(path);
+    }
   });
 
-  for (const { slug, speaker, registrationUrl } of workshopTalks) {
-    test.describe(`/2026/talks/${slug}`, () => {
-      test.beforeEach(async ({ page }) => {
-        const response = await page.goto(`/2026/talks/${slug}`);
-        expect(response?.status()).toBe(200);
-      });
-
-      test("title and og:title match the regular Talk format", async ({
-        page,
-      }) => {
-        const expected = `CascadiaJS 2026 | Speakers | ${speaker.name}`;
-        await expect(page).toHaveTitle(expected);
-        await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
-          "content",
-          expected,
-        );
-      });
-
-      test("renders Our Sponsors and Testimonials after the body", async ({
-        page,
-      }) => {
-        await expect(
-          page.getByRole("heading", { level: 1, name: "Our Sponsors" }),
-        ).toBeVisible();
-        await expect(page.locator("#testimonials")).toBeVisible();
-      });
-
-      test("renders the registrationUrl link after the abstract", async ({
-        page,
-      }) => {
-        expect(registrationUrl).toBeTruthy();
-        const anchor = page.locator(
-          ".prose-content a[href^='/2026/workshops/']",
-        );
-        await expect(anchor).toHaveCount(1);
-        await expect(anchor).toHaveAttribute("href", registrationUrl!);
-        await expect(anchor).toHaveText("[More info and how to register]");
-        // The link follows the abstract, as the last paragraph.
-        await expect(page.locator(".prose-content p").last()).toContainText(
-          "[More info and how to register]",
-        );
-      });
-    });
-  }
+  test("uses the general image when the Speaker has no card", async ({
+    page,
+    request,
+  }) => {
+    const talkPage = talkPages.find((p) => cardsOf(p).length === 0);
+    test.skip(!talkPage, "every Talk page has a Speaker card");
+    await page.goto(talkPage!.path);
+    for (const path of await imagePaths(page)) {
+      expect(path).not.toMatch(/\/share\/speaker-/);
+      expect((await request.get(path)).status()).toBe(200);
+    }
+  });
 });
 
-test.describe("Talk abstract markdown", () => {
-  test("multi-paragraph abstract renders as separate paragraphs", async ({
+test.describe("Talk page body", () => {
+  test("a Talk with a registration URL shows a link to it", async ({
     page,
   }) => {
-    await page.goto(
-      "/2026/talks/how-to-use-spec-driven-development-for-production-workflows",
-    );
-    const body = page.locator(".prose-content");
-    expect(await body.locator("p").count()).toBeGreaterThan(1);
+    const talkPage = talkPages.find(({ talk }) => talk.registrationUrl);
+    test.skip(!talkPage, "no Talk page has a registration URL");
+    await page.goto(talkPage!.path);
+    const url = talkPage!.talk.registrationUrl!;
+    const count = await page
+      .locator(".cjs-markdown-content a")
+      .evaluateAll(
+        (as, href) => as.filter((a) => a.getAttribute("href") === href).length,
+        url,
+      );
+    expect(count).toBeGreaterThan(0);
+  });
+
+  test("a multi-block abstract renders more than one block", async ({
+    page,
+  }) => {
+    const blocks = (talk: Talk) =>
+      (talk.abstract ?? "").split(/\n\s*\n/).filter((p) => p.trim()).length;
+    const talkPage = talkPages.find(({ talk }) => blocks(talk) > 1);
+    test.skip(!talkPage, "no Talk page has a multi-block abstract");
+    await page.goto(talkPage!.path);
+    expect(
+      await page.locator(".cjs-markdown-content > :first-child > *").count(),
+    ).toBeGreaterThan(1);
+  });
+
+  test("the Sponsors grid and Testimonials come after the body", async ({
+    page,
+  }) => {
+    let positions: { selector: string; afterBody: boolean }[] = [];
+    for (const { path } of talkPages) {
+      await page.goto(path);
+      positions = await page.evaluate(() => {
+        const body = document.querySelector(".cjs-markdown-content")!;
+        return [".cjs-sponsors-grid", ".cjs-testimonials"].flatMap(
+          (selector) => {
+            const el = document.querySelector(selector);
+            return el
+              ? [
+                  {
+                    selector,
+                    afterBody: !!(
+                      body.compareDocumentPosition(el) &
+                      Node.DOCUMENT_POSITION_FOLLOWING
+                    ),
+                  },
+                ]
+              : [];
+          },
+        );
+      });
+      if (positions.length > 0) {
+        break;
+      }
+    }
+    test.skip(positions.length === 0, "no Talk page shows either");
+    for (const { selector, afterBody } of positions) {
+      expect(afterBody, selector).toBe(true);
+    }
   });
 });

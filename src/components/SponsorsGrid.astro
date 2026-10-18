@@ -88,7 +88,7 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
 
 {
   tiered ? (
-    <div>
+    <div class="cjs-sponsors-grid">
       {tierBands.map(({ tier, sponsors: tierSponsors }) => (
         <>
           <div class="relative my-5 text-center">
@@ -110,7 +110,9 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
                 />
               );
               return (
-                <div class={`text-center md:m-8 ${TIER_HEIGHT[tier]}`}>
+                <div
+                  class={`cjs-sponsor-tier-${tier} text-center md:m-8 ${TIER_HEIGHT[tier]}`}
+                >
                   {LINKED_TIERS.has(tier) ? (
                     sponsor.description ? (
                       <a href={`/${year}/sponsors/${sponsor.id}`}>{logo}</a>
@@ -130,9 +132,9 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
       ))}
     </div>
   ) : (
-    <div class="md:flex md:flex-wrap md:justify-center">
+    <div class="cjs-sponsors-grid md:flex md:flex-wrap md:justify-center">
       {flatSponsors.map((sponsor) => (
-        <div class="text-center md:m-8">
+        <div id={`sponsor-${sponsor.id}`} class="text-center md:m-8">
           <Image
             src={sponsorImages[`./${sponsor.logo}`]()}
             alt={`${sponsor.name} logo`}
