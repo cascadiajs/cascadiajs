@@ -5,6 +5,9 @@ type Props = HTMLAttributes<"td">;
 const { ...attrs } = Astro.props;
 ---
 
-<td class="text-sound-navy w-37.5 bg-[#f0f0f0] p-2 text-center" {...attrs}>
+<td
+  class="table-label-cell text-sound-navy w-37.5 bg-[#f0f0f0] p-2 text-center"
+  {...attrs}
+>
   <slot />
 </td>

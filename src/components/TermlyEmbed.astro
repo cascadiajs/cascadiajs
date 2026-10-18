@@ -19,7 +19,7 @@ if (!uuidPattern.test(policyId)) {
 // reject it), but the third-party loader requires that exact selector.
 // Emit the mount as raw HTML so the DOM matches Termly's contract without
 // asserting a typed `<div name>` that isn't in the spec.
-const termlyMountHtml = `<div name="termly-embed" data-id="${policyId}"></div>`;
+const termlyMountHtml = `<div class="termly-embed" name="termly-embed" data-id="${policyId}"></div>`;
 ---
 
 <Fragment set:html={termlyMountHtml} />
