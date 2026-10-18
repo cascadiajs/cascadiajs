@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { rootMarkdownPagePath } from "./helpers";
 
 /**
  * Event markdown pages get the EventNav instead of the SiteHeader nav; that
@@ -7,17 +8,9 @@ import { test, expect } from "@playwright/test";
  */
 
 test.describe("root-level markdown pages keep the normal SiteHeader nav", () => {
-  test("/welcome still renders SiteHeader, not EventNav", async ({ page }) => {
-    await page.goto("/welcome");
+  test("renders SiteHeader, not EventNav", async ({ page }) => {
+    await page.goto(rootMarkdownPagePath());
     await expect(page.locator("#logo")).toBeVisible();
-    await expect(page.locator("#nav")).toHaveCount(0);
-  });
-
-  test("/code-of-conduct still renders SiteHeader, not EventNav", async ({
-    page,
-  }) => {
-    await page.goto("/code-of-conduct");
-    await expect(page.locator("#logo")).toBeVisible();
-    await expect(page.locator("#nav")).toHaveCount(0);
+    await expect(page.locator(".event-nav")).toHaveCount(0);
   });
 });

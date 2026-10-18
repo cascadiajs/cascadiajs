@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { readdirSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import sponsors from "@shared/data/sponsors.json" with { type: "json" };
 import type { EventConfig } from "@shared/data/types";
@@ -57,6 +57,31 @@ export function eventMarkdownPagePath(): string {
     }
   }
   throw new Error("no Event has a markdown page");
+}
+
+/** The URL path of one root-level markdown page, chosen by type: the first one. */
+export function rootMarkdownPagePath(): string {
+  const files = filesUnder("src/content/markdown", /^[^/\\]+\.mdx?$/);
+  if (files.length === 0) {
+    throw new Error("no root-level markdown page");
+  }
+  return `/${files[0].replace(/\.mdx?$/, "")}`;
+}
+
+/**
+ * The URL path of one Event markdown page that embeds a local image, chosen
+ * by type: the first file under an Event that references `@assets/`.
+ */
+export function markdownPageWithImagePath(): string {
+  for (const { year: key } of EVENTS_WITH_PAGES) {
+    const dir = join("src/content/markdown", key);
+    for (const file of filesUnder(dir, /\.mdx?$/)) {
+      if (readFileSync(join(dir, file), "utf8").includes("](@assets/")) {
+        return `/${key}/${file.replace(/\.mdx?$/, "")}`;
+      }
+    }
+  }
+  throw new Error("no Event markdown page embeds an image");
 }
 
 /**

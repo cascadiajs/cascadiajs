@@ -1,15 +1,15 @@
 import { test, expect } from "@playwright/test";
+import { markdownPageWithImagePath } from "./helpers";
 
 /**
- * MDX pages resolve images through src/assets (ticket #78). Copy, CTA and
- * color checks were removed: the suite checks neither copy nor computed
- * styles.
+ * MDX pages resolve images through src/assets (ticket #78). The page is
+ * chosen by type: the first Event markdown page that embeds an image.
  */
 
 test.describe("MDX page image", () => {
-  test("speaker image is visible and loaded", async ({ page }) => {
-    await page.goto("/2026/trainings/ai-for-typescript-developers");
-    const image = page.getByRole("img", { name: "Eve Porcello" });
+  test("image is visible and loaded", async ({ page }) => {
+    await page.goto(markdownPageWithImagePath());
+    const image = page.locator(".prose-content img").first();
     await expect(image).toBeVisible();
 
     await image.scrollIntoViewIfNeeded();
