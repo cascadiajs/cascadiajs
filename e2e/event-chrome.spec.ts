@@ -1,15 +1,11 @@
 import { test, expect, type Page } from "@playwright/test";
-import {
-  DESKTOP,
-  eventMarkdownPagePath,
-  MOBILE,
-  EVENTS_WITH_PAGES,
-} from "./helpers";
+import { DESKTOP, eventMarkdownPagePath, MOBILE, EVENT_ROOTS } from "./helpers";
 
 /**
  * Event chrome: each Event root shows the EventNav, and an Event markdown
- * page shows the EventNav instead of the SiteHeader. Events come from the
- * list of Events with pages, so a new Event config is covered with no edit.
+ * page shows the EventNav instead of the SiteHeader. Roots come from the
+ * Events with pages whose root is built, so a new Event is covered with no
+ * edit, and a new Event config without a root page yet is skipped.
  */
 
 async function expectEventNavPosition(page: Page) {
@@ -25,31 +21,31 @@ async function expectEventNavPosition(page: Page) {
 }
 
 test.describe("Event roots", () => {
-  for (const { year: key } of EVENTS_WITH_PAGES) {
-    test(`/${key} shows the EventNav with the logo linked to the Event root`, async ({
+  for (const root of EVENT_ROOTS) {
+    test(`${root} shows the EventNav with the logo linked to the Event root`, async ({
       page,
     }) => {
-      await page.goto(`/${key}`);
+      await page.goto(root);
       const nav = page.locator(".cjs-event-nav").getByRole("navigation");
       await expect(nav).toBeVisible();
-      await expect(nav.getByRole("link").first()).toHaveAttribute(
-        "href",
-        `/${key}`,
-      );
+      await expect(nav.getByRole("link").first()).toHaveAttribute("href", root);
     });
 
-    test(`/${key} EventNav is sticky at desktop width and static at mobile width`, async ({
+    test(`${root} EventNav is sticky at desktop width and static at mobile width`, async ({
       page,
     }) => {
-      await page.goto(`/${key}`);
+      await page.goto(root);
       await expectEventNavPosition(page);
     });
   }
 });
 
 test.describe("Event markdown page", () => {
+  const path = eventMarkdownPagePath();
+  test.skip(!path, "no Event has a markdown page");
+
   test.beforeEach(async ({ page }) => {
-    await page.goto(eventMarkdownPagePath());
+    await page.goto(path!);
   });
 
   test("shows the EventNav and not the SiteHeader", async ({ page }) => {

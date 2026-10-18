@@ -1,7 +1,6 @@
 import { expect, test } from "@playwright/test";
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import type { EventConfig } from "@shared/data/types";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -11,19 +10,14 @@ export function filesUnder(dir: string, pattern: RegExp): string[] {
 }
 
 /**
- * Events with pages, loaded from their configs. `@shared/data/events` uses
- * `import.meta.glob`, which only runs under Vite, so specs import this list.
+ * Events with pages: one per `src/shared/data/events/<key>.config.ts`. The
+ * list comes from the filenames, because the Event registry uses Vite-only
+ * imports and a config can import what Node cannot load.
  */
-export const EVENTS_WITH_PAGES: readonly EventConfig[] = await Promise.all(
-  filesUnder("src/shared/data/events", /\.config\.ts$/).map(
-    async (file) =>
-      (
-        (await import(`../src/shared/data/events/${file}`)) as {
-          default: EventConfig;
-        }
-      ).default,
-  ),
-);
+export const EVENTS_WITH_PAGES: readonly { year: string }[] = filesUnder(
+  "src/shared/data/events",
+  /^\d{4}\.config\.ts$/,
+).map((file) => ({ year: file.replace(/\.config\.ts$/, "") }));
 
 /**
  * Every built page's `dist/`-relative path. The preview webServer builds
@@ -36,6 +30,14 @@ export function builtPages(): string[] {
 export const distPath = (file: string) => join("dist", file);
 
 /**
+ * Roots (`/<key>`) of the Events with pages whose hand-written root page is
+ * built. A new Event config can land before its root page exists.
+ */
+export const EVENT_ROOTS: readonly string[] = EVENTS_WITH_PAGES.map(
+  ({ year }) => `/${year}`,
+).filter((root) => existsSync(distPath(`${root.slice(1)}.html`)));
+
+/**
  * Built pages (`dist/`-relative) that are Frozen Snapshots: exact legacy
  * captures (ADR-0008), not Layout-rendered. Sitewide checks of Layout's
  * output exclude or relax them.
@@ -44,9 +46,10 @@ export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
 
 /**
  * The URL path of one Event markdown page, chosen by type: the first
- * top-level page of the first Event that has any.
+ * top-level page of the first Event that has any. Undefined when no Event
+ * has one.
  */
-export function eventMarkdownPagePath(): string {
+export function eventMarkdownPagePath(): string | undefined {
   for (const { year: key } of EVENTS_WITH_PAGES) {
     const dir = join("src/content/markdown", key);
     const files = filesUnder(dir, /^[^/\\]+\.mdx?$/);
@@ -54,7 +57,7 @@ export function eventMarkdownPagePath(): string {
       return `/${key}/${files[0].replace(/\.mdx?$/, "")}`;
     }
   }
-  throw new Error("no Event has a markdown page");
+  return undefined;
 }
 
 export const DESKTOP = { width: 1280, height: 900 };

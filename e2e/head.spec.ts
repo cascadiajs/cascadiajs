@@ -7,7 +7,7 @@ import {
 } from "@shared/site-defaults";
 import {
   builtPages,
-  EVENTS_WITH_PAGES,
+  EVENT_ROOTS,
   distPath,
   filesUnder,
   FROZEN_SNAPSHOT_PAGES,
@@ -52,16 +52,18 @@ test.describe("Sitewide head (every built page)", () => {
 
 /** One page for each layout, picked by type, never by slug or title. */
 const homepage = "/";
-const eventRoot = `/${EVENTS_WITH_PAGES[0].year}`;
-const markdownPage = `/${filesUnder("src/content/markdown", /\.mdx?$/)
-  .filter((file) => !/^\d{4}\//.test(file))[0]
-  .replace(/\.mdx?$/, "")}`;
+const [eventRoot] = EVENT_ROOTS;
+const [markdownFile] = filesUnder("src/content/markdown", /\.mdx?$/).filter(
+  (file) => !/^\d{4}\//.test(file),
+);
+const markdownPage = markdownFile && `/${markdownFile.replace(/\.mdx?$/, "")}`;
 
+// A layout with no page yet is left out.
 const LAYOUT_PAGES = [
   { layout: "Layout", path: homepage },
   { layout: "EventLayout", path: eventRoot },
   { layout: "MarkdownLayout", path: markdownPage },
-];
+].filter((entry): entry is { layout: string; path: string } => !!entry.path);
 
 const content = (page: Page, selector: string) =>
   page.locator(selector).getAttribute("content");

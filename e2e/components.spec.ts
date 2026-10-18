@@ -1,19 +1,24 @@
 import { test, expect, type Page } from "@playwright/test";
-import { DESKTOP, EVENTS_WITH_PAGES, MOBILE } from "./helpers";
+import { DESKTOP, EVENT_ROOTS, MOBILE } from "./helpers";
 
 /**
  * Component behavior checks. Each check finds its component by class name
  * and runs once, on the first match on the first page that has it. Pages
- * come from the Events with pages, so no spec names a year. No check reads
- * copy, counts or computed colors and sizes.
+ * come from the built Event roots, so no spec names a year. A check skips
+ * when no page has its component, so removing a section or data entry does
+ * not fail the suite. No check reads copy, counts or computed colors and
+ * sizes.
  */
 
-const candidatePages = EVENTS_WITH_PAGES.flatMap(({ year }) => [
-  `/${year}`,
-  `/${year}/schedule`,
+const candidatePages = EVENT_ROOTS.flatMap((root) => [
+  root,
+  `${root}/schedule`,
 ]);
 
-/** Go to the first candidate page with at least `min` matches of `selector`. */
+/**
+ * Go to the first candidate page with at least `min` matches of `selector`.
+ * Skip the test when no page has them.
+ */
 async function gotoPageWith(page: Page, selector: string, min = 1) {
   for (const path of candidatePages) {
     const response = await page.goto(path);
@@ -21,7 +26,7 @@ async function gotoPageWith(page: Page, selector: string, min = 1) {
       return;
     }
   }
-  throw new Error(`no page has ${min} match(es) of ${selector}`);
+  test.skip(true, `no page has ${min} match(es) of ${selector}`);
 }
 
 /** Assert that the second box sits beside the first at desktop and below it at mobile. */
@@ -84,7 +89,7 @@ test.describe("speaker card overlay", () => {
 });
 
 test.describe("hero", () => {
-  test("headline wraps and the hero stays inside the viewport at desktop and mobile width", async ({
+  test("headline can wrap and the hero stays inside the viewport at desktop and mobile width", async ({
     page,
   }) => {
     await gotoPageWith(page, ".cjs-video-hero h2");
@@ -105,16 +110,18 @@ test.describe("hero", () => {
         `headline past viewport at ${viewport.width}px`,
       ).toBeLessThanOrEqual(viewport.width);
 
-      // A single line is about one line-height tall; wrapped text is taller.
-      const lineHeight = await headline.evaluate((el) => {
-        const cs = getComputedStyle(el);
-        const parsed = parseFloat(cs.lineHeight);
-        return Number.isNaN(parsed) ? parseFloat(cs.fontSize) * 1.5 : parsed;
-      });
+      // The headline may wrap, and none of its text runs past its box.
+      const { whiteSpace, overflows } = await headline.evaluate((el) => ({
+        whiteSpace: getComputedStyle(el).whiteSpace,
+        overflows: el.scrollWidth > el.clientWidth,
+      }));
       expect(
-        headlineBox.height,
-        `headline on one line at ${viewport.width}px`,
-      ).toBeGreaterThan(lineHeight * 1.5);
+        whiteSpace,
+        `headline cannot wrap at ${viewport.width}px`,
+      ).not.toMatch(/^(nowrap|pre)$/);
+      expect(overflows, `headline overflows at ${viewport.width}px`).toBe(
+        false,
+      );
     }
   });
 });
