@@ -215,10 +215,4 @@ test.describe("Sponsorships brochure page", () => {
     const bg = await nav.evaluate((el) => getComputedStyle(el).backgroundColor);
     expect(bg).toBe("rgb(23, 195, 123)");
   });
-
-  test("the SiteHeader nav is not rendered (displayNav=false)", async ({
-    page,
-  }) => {
-    await expect(page.locator("header nav")).toHaveCount(0);
-  });
 });

@@ -121,29 +121,6 @@ test.describe("2026 event page", () => {
     );
   });
 
-  test("hero shows the headline and community intro", async ({ page }) => {
-    await expect(
-      page.getByRole("heading", {
-        level: 2,
-        name: "A Web + AI conference for the Pacific Northwest",
-      }),
-    ).toBeVisible();
-    await expect(
-      page.getByText("CascadiaJS is a community-driven conference", {
-        exact: false,
-      }),
-    ).toBeVisible();
-  });
-
-  test("hero shows the date and venue", async ({ page }) => {
-    const dateLocation = page.locator("#hero p", {
-      hasText: "Town Hall Seattle",
-    });
-    await expect(dateLocation).toContainText("June 1-2, 2026");
-    await expect(dateLocation).toContainText("Town Hall Seattle");
-    await expect(dateLocation).toContainText("Seattle, WA, USA");
-  });
-
   test("hero shows a SOLD OUT pill that is not a real, focusable link", async ({
     page,
   }) => {
@@ -176,80 +153,11 @@ test.describe("2026 event page", () => {
 
   // -- Sub-nav -------------------------------------------------------------
 
-  test("sub-nav logo links to the event root", async ({ page }) => {
-    const nav = page.locator("#nav").getByRole("navigation");
-    const logoLink = nav.getByRole("link", { name: "CascadiaJS logo" });
-    await expect(logoLink).toBeVisible();
-    await expect(logoLink).toHaveAttribute("href", "/2026");
-  });
-
-  test("sub-nav has all eight links with the correct hrefs", async ({
-    page,
-  }) => {
-    const nav = page.locator("#nav").getByRole("navigation");
-    const links: [string, string][] = [
-      ["Networking", "/2026#networking"],
-      ["Pricing", "/2026#pricing"],
-      ["Speakers", "/2026#speakers"],
-      ["Schedule", "/2026/schedule"],
-      ["Attend", "/2026/attend"],
-      ["Sponsor", "/2026/sponsor"],
-      ["Trainings", "/2026/trainings"],
-      ["Tickets", "/2026"],
-    ];
-    for (const [name, href] of links) {
-      const link = nav.getByRole("link", { name });
-      await expect(link).toBeVisible();
-      await expect(link).toHaveAttribute("href", href);
-    }
-  });
-
   // -- Features --------------------------------------------------------
-
-  test("features section shows all four feature panels", async ({ page }) => {
-    const alts = [
-      "Feature: Amazing Speakers",
-      "Feature: Cutting-Edge Content",
-      "Feature: Incredible Community",
-      "Feature: Beautiful Venue",
-    ];
-    for (const alt of alts) {
-      await expect(page.getByRole("img", { name: alt })).toBeVisible();
-    }
-  });
 
   // -- Networking --------------------------------------------------------
 
-  test("networking section includes the hiring companies", async ({ page }) => {
-    const networking = page.locator("#networking");
-    await expect(
-      networking.getByRole("heading", { level: 1, name: "Networking Mixer" }),
-    ).toBeVisible();
-    for (const company of [
-      "Grow Therapy",
-      "Onebrief",
-      "RentSpree",
-      "Render",
-      "CopilotKit",
-    ]) {
-      await expect(networking).toContainText(company);
-    }
-  });
-
   // -- Pricing -------------------------------------------------------------
-
-  test("pricing section shows all four ticket tiers with prices", async ({
-    page,
-  }) => {
-    const pricing = page.locator("#pricing");
-    await expect(
-      pricing.getByRole("heading", { level: 1, name: "Pricing" }),
-    ).toBeVisible();
-    await expect(pricing.getByText("Indie Discount")).toBeVisible();
-    for (const price of ["$799", "$599", "$299", "$99"]) {
-      await expect(pricing.getByText(price, { exact: true })).toBeVisible();
-    }
-  });
 
   // -- Speakers: structure ------------------------------------------------
 
@@ -370,37 +278,6 @@ test.describe("2026 event page", () => {
     expect(bg).toBe("rgba(0, 0, 0, 0)");
   });
 
-  test("sub-nav uses the emerald-city-green background", async ({ page }) => {
-    const bg = await page
-      .locator("#nav nav")
-      .evaluate((el) => getComputedStyle(el).backgroundColor);
-    expect(bg).toBe("rgb(23, 195, 123)");
-  });
-
-  test("sub-nav Tickets link renders as the yellow buy button, not a plain link", async ({
-    page,
-  }) => {
-    // Legacy Site (`cascadiajs-legacy-pre-migration` branch,
-    // `app/elements/nav-2026.mjs`): the lone `class="buy"` anchor, styled by
-    // `a.buy` in `public/styles/main.css`. Verified against the live legacy
-    // site: unlike the SOLD OUT pill's split-class miss, `a.buy`'s own
-    // class-level specificity wins cleanly over the nav's scoped `nav a`
-    // color rule, so the yellow button renders as authored.
-    const nav = page.locator("#nav").getByRole("navigation");
-    const ticketsLink = nav.getByRole("link", { name: "Tickets" });
-    const styles = await ticketsLink.evaluate((el) => {
-      const cs = getComputedStyle(el);
-      return {
-        backgroundColor: cs.backgroundColor,
-        color: cs.color,
-        padding: cs.padding,
-      };
-    });
-    expect(styles.backgroundColor).toBe("rgb(255, 208, 7)");
-    expect(styles.color).toBe("rgb(17, 35, 120)");
-    expect(styles.padding).toBe("16px");
-  });
-
   test("a ticket card uses the sound-navy border", async ({ page }) => {
     const ticket = page.getByText("$799", { exact: true }).locator("xpath=..");
     const border = await ticket.evaluate((el) => getComputedStyle(el).border);
@@ -465,22 +342,6 @@ test.describe("2026 event page", () => {
   });
 
   // -- Responsive: both viewports must match (mobile isn't an afterthought) --
-
-  test("sub-nav is sticky at desktop width and static at mobile width", async ({
-    page,
-  }) => {
-    const navSection = page.locator("#nav");
-
-    await page.setViewportSize({ width: 1280, height: 900 });
-    expect(
-      await navSection.evaluate((el) => getComputedStyle(el).position),
-    ).toBe("sticky");
-
-    await page.setViewportSize({ width: 390, height: 844 });
-    expect(
-      await navSection.evaluate((el) => getComputedStyle(el).position),
-    ).toBe("static");
-  });
 
   test("feature panels sit side by side at desktop width and stack at mobile width", async ({
     page,

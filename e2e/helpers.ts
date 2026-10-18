@@ -45,6 +45,21 @@ export const distPath = (file: string) => join("dist", file);
 export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
 
 /**
+ * The URL path of one Event markdown page, chosen by type: the first
+ * top-level page of the first Event that has any.
+ */
+export function eventMarkdownPagePath(): string {
+  for (const { year: key } of EVENTS_WITH_PAGES) {
+    const dir = join("src/content/markdown", key);
+    const files = filesUnder(dir, /^[^/\\]+\.mdx?$/);
+    if (files.length > 0) {
+      return `/${key}/${files[0].replace(/\.mdx?$/, "")}`;
+    }
+  }
+  throw new Error("no Event has a markdown page");
+}
+
+/**
  * Ids of the Sponsors the Past Sponsors grid shows: a Sponsor is hidden only
  * when every one of its Events is the Featured Event.
  */
@@ -75,7 +90,7 @@ export async function expectSiteChrome(page: Page) {
 
 /** Assert the page renders the Event nav (#nav) with the logo linking to the Event home. */
 export async function expectEventNav(page: Page, eventHref = "/2026") {
-  const nav = page.locator("#nav").getByRole("navigation");
+  const nav = page.locator(".event-nav").getByRole("navigation");
   await expect(nav).toBeVisible();
   await expect(
     nav.getByRole("link", { name: "CascadiaJS logo" }),
