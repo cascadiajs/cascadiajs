@@ -3,9 +3,10 @@ import { FROZEN_SNAPSHOT_PAGES } from "./helpers";
 
 /**
  * Link crawl: starting at `/`, follow every same-origin link. Each internal
- * link and each asset (images, scripts, stylesheets, share images) on each
- * reachable page must return 200. Frozen Snapshot pages are checked for 200
- * but not crawled into; they have their own checks.
+ * link and each asset (images, scripts, stylesheets) on each reachable page
+ * must return 200. Share images are not crawled: a visitor does not see
+ * them, and head.spec.ts checks that one loads. Frozen Snapshot pages are
+ * checked for 200 but not crawled into; they have their own checks.
  */
 
 const ORIGIN = "https://cascadiajs.com";
@@ -83,11 +84,6 @@ test("every internal link and asset reachable from / returns 200", async ({
       ...attrs(html, "source", "src"),
       ...attrs(html, "script", "src"),
       ...attrs(html, "link", "href"),
-      ...[
-        ...html.matchAll(
-          /<meta [^>]*(?:property|name)="(?:og|twitter):image" content="([^"]*)"/g,
-        ),
-      ].map((m) => m[1]),
     ];
     for (const set of [
       ...attrs(html, "img", "srcset"),
