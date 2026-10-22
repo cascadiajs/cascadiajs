@@ -1,4 +1,4 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, reference } from "astro:content";
 import { readFileSync } from "node:fs";
 import { file, glob, type Loader } from "astro/loaders";
 import { z } from "astro/zod";
@@ -9,10 +9,30 @@ import {
   personSchema,
   resolvePerson,
 } from "./shared/people";
+import { duplicateIds, unknownAuthors } from "./shared/blog/posts";
+import {
+  FIXTURE_PEOPLE_FILE,
+  FIXTURE_POSTS_DIR,
+  TEST_FIXTURES,
+} from "./shared/test-fixtures";
 
 export { personSchema };
 
 const PEOPLE_FILE = "./src/shared/data/people.json";
+
+/** The Person registry, plus the fixture Authors in a test build. */
+function readPeople() {
+  const registry = readFileSync(PEOPLE_FILE, "utf8");
+  if (!TEST_FIXTURES) {
+    return parsePeople(registry);
+  }
+  return parsePeople(
+    JSON.stringify([
+      ...JSON.parse(registry),
+      ...JSON.parse(readFileSync(FIXTURE_PEOPLE_FILE, "utf8")),
+    ]),
+  );
+}
 const TALKS_2026_FILE = "./src/shared/data/2026/talks.json";
 
 const markdown = defineCollection({
@@ -74,7 +94,7 @@ const people = defineCollection({
   loader: {
     name: "people-loader",
     load: async ({ store, parseData, generateDigest }) => {
-      const records = parsePeople(readFileSync(PEOPLE_FILE, "utf8"));
+      const records = readPeople();
       store.clear();
       for (const record of records) {
         const data = await parseData({ id: record.id, data: record });
@@ -85,13 +105,68 @@ const people = defineCollection({
   schema: personRecordSchema,
 });
 
+const blogGlob = glob({
+  base: "./src/content",
+  // Fixture Posts load only in a test build.
+  pattern: [
+    "blog/**/index.{md,mdx}",
+    ...(TEST_FIXTURES ? [`${FIXTURE_POSTS_DIR}/**/index.{md,mdx}`] : []),
+  ],
+  // The Post id is its folder name, which is the URL slug.
+  generateId: ({ entry }) => entry.split("/").at(-2)!,
+});
+
+const blog = defineCollection({
+  loader: {
+    name: "blog-loader",
+    load: async (context) => {
+      await blogGlob.load(context);
+      // Astro only logs a `reference()` to a missing Person. Fail the build.
+      const personIds = new Set(readPeople().map((p) => p.id));
+      const unknown = unknownAuthors(
+        context.store.values() as never,
+        personIds,
+      );
+      if (unknown.length > 0) {
+        throw new Error(
+          `Posts list unknown Authors: ${unknown
+            .map(({ post, author }) => `${post} -> "${author}"`)
+            .join(", ")}`,
+        );
+      }
+    },
+  } satisfies Loader,
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      /** Person ids in byline order. The first is the lead Author. */
+      authors: z
+        .array(reference("people"))
+        .min(1)
+        .refine(
+          (authors) => duplicateIds(authors.map((a) => a.id)).length === 0,
+          {
+            message: "authors must not repeat a Person",
+          },
+        ),
+      tags: z.array(z.string()),
+      featured: z.boolean().default(false),
+      image: image().optional(),
+      ogImage: image().optional(),
+      published: z.boolean().default(true),
+    }),
+});
+
 const talkFileSchema = talkSchema.extend({ speaker: personRefSchema });
 
 const talks2026 = defineCollection({
   loader: {
     name: "talks2026-loader",
     load: async ({ store, parseData, generateDigest }) => {
-      const registry = parsePeople(readFileSync(PEOPLE_FILE, "utf8"));
+      const registry = readPeople();
       const talks = z
         .array(talkFileSchema)
         .parse(JSON.parse(readFileSync(TALKS_2026_FILE, "utf8")));
@@ -127,4 +202,4 @@ const sponsors = defineCollection({
   schema: sponsorSchema.extend({ order: z.number() }),
 });
 
-export const collections = { markdown, people, talks2026, sponsors };
+export const collections = { markdown, blog, people, talks2026, sponsors };

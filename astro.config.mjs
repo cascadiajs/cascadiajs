@@ -36,6 +36,15 @@ export default defineConfig({
   image: {
     layout: "constrained",
   },
+  // Code blocks keep their existing look (github-dark) everywhere. Shiki also
+  // emits Night Owl as CSS variables (`--shiki-blog`), which only Post bodies
+  // read (see PostBody.astro), so no existing Markdown page changes.
+  markdown: {
+    shikiConfig: {
+      themes: { default: "github-dark", blog: "night-owl" },
+      defaultColor: "default",
+    },
+  },
   integrations: [
     mdx(),
     sitemap({

@@ -1,0 +1,54 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { bylineSeparator } from "@shared/blog/format";
+
+interface Props {
+  /** In byline order. */
+  authors: { id: string; name: string; image: string }[];
+  class?: string;
+}
+
+const { authors, class: className } = Astro.props;
+
+const eventImages = import.meta.glob<{ default: ImageMetadata }>(
+  "@assets/events/**/*.{jpg,png,jpeg}",
+  { eager: false, base: "/src/assets" },
+);
+const avatars = await Promise.all(
+  authors.map(async (author) => {
+    const load = eventImages[`.${author.image}`];
+    if (!load) {
+      throw new Error(`PostByline: image not found at .${author.image}`);
+    }
+    return (await load()).default;
+  }),
+);
+
+const escape = (text: string) =>
+  text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+// One string, so no whitespace appears between a name and its separator.
+const namesHtml = authors
+  .map(
+    (author, index) =>
+      `${bylineSeparator(index, authors.length)}<a href="/blog/authors/${escape(author.id)}" class="text-cedar-cream underline-offset-2 hover:underline">${escape(author.name)}</a>`,
+  )
+  .join("");
+---
+
+<div class:list={["cjs-post-byline flex items-center gap-4", className]}>
+  <div class="flex -space-x-3">
+    {
+      authors.map((author, index) => (
+        <Image
+          src={avatars[index]}
+          alt=""
+          width={64}
+          height={64}
+          class="ring-madrona-yellow size-16 rounded-full object-cover ring-4"
+        />
+      ))
+    }
+  </div>
+  <p class="text-cedar-cream m-0 text-xl font-medium" set:html={namesHtml} />
+</div>

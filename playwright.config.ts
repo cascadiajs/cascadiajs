@@ -1,4 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
+import process from "node:process";
+
+// Test-build flag: the build under test includes the test-only fixtures
+// (fixture Posts and Authors, an Event override). Set here so the webServer
+// build and the test workers agree. Production builds never set it.
+process.env.CJS_TEST_FIXTURES = "1";
 
 export default defineConfig({
   testDir: "e2e",
@@ -31,6 +37,7 @@ export default defineConfig({
   webServer: {
     command: "pnpm run build && pnpm run preview --ignore-lock",
     port: 4321,
+    env: { CJS_TEST_FIXTURES: "1" },
     reuseExistingServer: true,
   },
 });

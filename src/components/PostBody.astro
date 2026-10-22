@@ -1,0 +1,34 @@
+---
+import MarkdownContent from "@components/MarkdownContent.astro";
+---
+
+<div class="cjs-post-body text-xl">
+  <MarkdownContent>
+    <slot />
+  </MarkdownContent>
+</div>
+
+<style>
+  /*
+   * Scoped <style> exception (ADR-0003): Shiki output inside a Post is
+   * generated from a Markdown fence, so no Tailwind class can reach it.
+   * astro.config.mjs keeps github-dark as the default theme so existing
+   * Markdown pages do not change, and emits Night Owl as CSS variables.
+   * Posts read those variables.
+   */
+  .cjs-post-body :global(.astro-code),
+  .cjs-post-body :global(.astro-code span) {
+    color: var(--shiki-blog) !important;
+  }
+
+  .cjs-post-body :global(.astro-code) {
+    background-color: var(--shiki-blog-bg) !important;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .cjs-post-body :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

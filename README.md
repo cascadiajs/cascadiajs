@@ -135,6 +135,8 @@ There are two kinds of page.
 
 A file under a year folder only gets a page if that Event has a config in `src/shared/data/events/` (see [Launching a new Event](#launching-a-new-event)). Set `published: false` in frontmatter to keep a page out of the build.
 
+**Blog Posts** are folders in `src/content/blog/`, served by `src/pages/blog/post/[slug].astro` at `/blog/post/<slug>`. The folder name is the slug. Every blog route gets its Posts from `getVisiblePosts()` in `src/shared/blog/get-posts.ts`, which hides drafts (`published: false`) in production and shows them in `pnpm dev`.
+
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.
 
 **URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. An e2e test scans every built page and fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
@@ -189,6 +191,27 @@ titles or topics. The component renders green topic pills in two columns when
 the content column has enough room, and one column on smaller screens. An odd
 final category spans both columns. Keep labels concise; each topic gets its own
 row. The CFP uses four topics per category to keep the grid balanced.
+
+### Blog Posts (`src/content/blog/`)
+
+A Post is a folder with an `index.md` or `index.mdx` and its images beside it: `src/content/blog/<slug>/index.mdx`. The `blog` Collection reads `src/content/blog/**/index.{md,mdx}` and the entry id is the folder name. Use lowercase kebab-case folder names. Frontmatter:
+
+| Field         | Type                | Notes                                                                        |
+| :------------ | :------------------ | :--------------------------------------------------------------------------- |
+| `title`       | string              | Required.                                                                    |
+| `description` | string              | Required. Used for the meta description.                                     |
+| `pubDate`     | date                | Required, e.g. `2026-03-10`.                                                 |
+| `updatedDate` | date                | Optional. Shows "Updated" on the Post and sets `article:modified_time`.      |
+| `authors`     | list of Person ids  | Required, at least one, no duplicates. Byline order; the first is the lead.  |
+| `tags`        | list of strings     | Required (can be empty). Normalized to a lowercase slug.                     |
+| `featured`    | boolean             | Default `false`.                                                             |
+| `image`       | relative image path | Optional hero image, e.g. `./hero.jpg`. Optimized.                           |
+| `ogImage`     | relative image path | Optional share image. Served as a 1200-wide JPEG. Default: site share image. |
+| `published`   | boolean             | Default `true`. `false` is a draft: visible only in `pnpm dev`.              |
+
+The build fails on invalid frontmatter: a missing `title`, an empty `authors`, an unknown Person id or a duplicate Author. The reading estimate ("N min read") is computed from the body. Code blocks use the Night Owl theme inside a Post. Other Markdown pages keep their code theme (`astro.config.mjs` keeps `github-dark` as the default and exposes Night Owl as a CSS variable that `PostBody` reads).
+
+**Test fixtures.** Test-only fixture Posts (`src/content/blog-fixtures/`), fixture Authors (`src/shared/data/fixtures/people.json`) and a fixture Event override (`src/shared/data/fixtures/organizer-overrides.json`) load only when the environment variable `CJS_TEST_FIXTURES=1` is set. `playwright.config.ts` sets it for its build, so e2e tests see them. A normal build never includes them. To look at them yourself, run `CJS_TEST_FIXTURES=1 pnpm dev`. Add a fixture Post as a folder in `src/content/blog-fixtures/` with the same frontmatter. The e2e helpers read the fixtures' frontmatter (`e2e/blog-helpers.ts`), so a new fixture Post is covered by the data-driven Post specs.
 
 ### Data (`src/shared/data/`)
 
@@ -249,6 +272,29 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 4. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
 5. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
 6. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
+
+### Add a Post
+
+1. Create `src/content/blog/<slug>/index.md` (or `index.mdx`). The folder name is the URL: `/blog/post/<slug>`.
+2. Add frontmatter: `title`, `description`, `pubDate`, `authors` (Person ids) and `tags`. See the [field table](#blog-posts-srccontentblog).
+3. Put images in the same folder and reference them relatively: `image: ./hero.jpg`, or `![alt](./diagram.png)` in the body.
+4. In an `.mdx` Post, import each component you use with an alias, right after the frontmatter. The page passes no `components` mapping:
+
+   ```mdx
+   import Callout from "@components/Callout.astro";
+   import VideoEmbed from "@components/VideoEmbed.astro";
+   import CtaButton from "@components/CtaButton.astro";
+   ```
+
+   ADR-0012's MDX rules apply: self-close void tags, escape `{` and `}`, and use `{/* */}` for comments.
+
+5. To keep a Post out of production while you write it, set `published: false`. It still shows in `pnpm dev`.
+
+### Add an Author
+
+1. Add a Person to `src/shared/data/people.json` (or add `author` to an existing Person's `roles`): `id` (kebab-case of the name, unique), `name`, `image`, `roles` including `author`, and optional `title`, `company`, `location`, `url`, `pronouns`, `social` and a plain-text `bio`.
+2. Put the photo in `src/assets/events/<year>/images/` and set `image` to the path under `src/assets/`.
+3. Use the id in a Post's `authors` list.
 
 ### Add a Sponsor
 
@@ -331,6 +377,8 @@ pnpm test --ui                          # Playwright's interactive runner
 ```
 
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
+
+The suite builds with `CJS_TEST_FIXTURES=1` (set in `playwright.config.ts`), so the test-only fixtures (Posts, Authors, an Event override) exist. See [Blog Posts](#blog-posts-srccontentblog).
 
 If a dev server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` before `pnpm test` if you want to test the real build.
 
