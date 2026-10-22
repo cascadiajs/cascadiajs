@@ -149,3 +149,20 @@ test.describe("Share bar layout", () => {
     expect(last.x).toBeGreaterThan(first.x);
   });
 });
+
+test.describe("Share bar on a phone", () => {
+  test.use({ viewport: MOBILE });
+
+  test("does not cover the end of the footer", async ({ page }) => {
+    await page.goto(path);
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    const last = page.locator(".cjs-site-footer").locator("*").last();
+    await expect
+      .poll(async () => {
+        const bar = (await page.locator(".cjs-share-bar > div").boundingBox())!;
+        const box = (await last.boundingBox())!;
+        return box.y + box.height <= bar.y;
+      })
+      .toBe(true);
+  });
+});
