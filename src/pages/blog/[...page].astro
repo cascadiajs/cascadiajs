@@ -1,0 +1,63 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@layouts/Layout.astro";
+import FeaturedBand from "@components/FeaturedBand.astro";
+import Pagination from "@components/Pagination.astro";
+import PostCard from "@components/PostCard.astro";
+import SearchForm from "@components/SearchForm.astro";
+import RssLink from "@components/RssLink.astro";
+import { getVisiblePosts } from "@shared/blog/get-posts";
+import { splitFeatured } from "@shared/blog/posts";
+
+// `[...page]` makes page 1 `/blog` and never generates `/blog/1`. Featured
+// Posts show in the band on page 1 and are out of the list on every page.
+export const getStaticPaths = (async ({ paginate }) => {
+  const { featured, rest } = splitFeatured(await getVisiblePosts());
+  return paginate(rest, { pageSize: 12, props: { featured } });
+}) satisfies GetStaticPaths;
+
+const { page, featured } = Astro.props;
+const href = (n: number) => (n === 1 ? "/blog" : `/blog/${n}`);
+const isEmpty = page.total === 0 && featured.length === 0;
+---
+
+<Layout
+  title="CascadiaJS | Blog"
+  description="News, recaps and stories from the CascadiaJS community."
+>
+  <RssLink slot="head" />
+  <section class="bg-sound-navy text-cedar-cream">
+    <div class="mx-auto box-content max-w-[1200px] px-4 pt-12 pb-8">
+      <h1
+        class="font-display text-cedar-cream my-0 text-6xl leading-none md:text-[96px]"
+      >
+        The Blog
+      </h1>
+    </div>
+  </section>
+  {page.currentPage === 1 && <FeaturedBand posts={featured} />}
+  <SearchForm />
+  <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
+    {
+      isEmpty ? (
+        <div class="cjs-blog-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center">
+          <h2 class="font-display text-cedar-cream text-40 mt-0">
+            No Posts yet
+          </h2>
+          <p>Check back soon for news from the CascadiaJS community.</p>
+        </div>
+      ) : (
+        <div class="cjs-post-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {page.data.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      )
+    }
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      href={href}
+    />
+  </div>
+</Layout>

@@ -5,21 +5,7 @@
     "title": "Day One Opening Keynote",
     "type": "keynote",
     "speaker": {
-      "name": "Matt Biilmann",
-      "image": "/events/2026/images/matt-biilmann.jpg",
-      "roles": ["speaker"],
-      "company": "Netlify",
-      "location": "San Francisco, CA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/biilmann"
-        }
-      ]
+      "id": "matt-biilmann"
     }
   },
   {
@@ -29,17 +15,7 @@
     "type": "keynote",
     "abstract": "Agents have crossed a threshold on writing code. They've crossed nothing comparable on the world below it. YAML files, console UIs, copy-pasted snippets, bespoke infra DSLs, and cloud configuration that sit between \"it works on my laptop\" and \"it's running in production.\" For most developers, that world has always belonged to someone else: a platform team, an SRE rotation, the person on call. That's starting to change, and not just for individual developers. Engineers at every scale are arriving at the same realization that infrastructure is no longer a separate discipline once it's expressed in the same languages the application is. This talk is about what changes when agents can do the full loop instead of just the part that looks like code, where the line between coding and engineering goes from here, and why shipping is about to belong to everyone.",
     "speaker": {
-      "name": "Joe Duffy",
-      "image": "/events/2026/images/joe-duffy.jpg",
-      "roles": ["speaker"],
-      "company": "Pulumi",
-      "location": "Seattle, WA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/joejduffy/"
-        }
-      ]
+      "id": "joe-duffy"
     }
   },
   {
@@ -49,21 +25,7 @@
     "type": "keynote",
     "abstract": "We spent decades building awesome tools for developers. Languages, frameworks, clouds, and more. They're great for humans. They're not so great for devs. What happens if we throw it all away and start from scratch?",
     "speaker": {
-      "name": "Theo",
-      "image": "/events/2026/images/theo.jpg",
-      "roles": ["speaker"],
-      "company": "T3 Chat",
-      "location": "San Francisco, CA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/t3gg/"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/theo"
-        }
-      ]
+      "id": "theo"
     }
   },
   {
@@ -73,21 +35,7 @@
     "type": "keynote",
     "abstract": "JavaScript remains the default choice for frontend applications, product work, and most of the visible web. But more of the modern web now lives in critical paths: backend services, runtimes, proxies, WebAssembly modules, and infrastructure where latency, memory, safety, and predictability matter. I will explore where Rust fits, where it does not, and how it can complement JavaScript in serious production systems.",
     "speaker": {
-      "name": "Francesco Ciulla",
-      "image": "/events/2026/images/francesco-ciulla.jpg",
-      "roles": ["speaker"],
-      "company": "Zerops",
-      "location": "Rome, Italy",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/francesco-ciulla-roma/"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/FrancescoCiull4"
-        }
-      ]
+      "id": "francesco-ciulla"
     }
   },
   {
@@ -97,21 +45,7 @@
     "type": "keynote",
     "abstract": "AI coding assistants are great at completing small tasks or features. But what do you do when you're working with more complex codebases and need to build in-depth features that require upfront planning?\n\nThis talk makes the case for spec-driven development. I'll show how AI coding assistants can help break down complex tasks into three phases: requirements gathering, technical design, and task implementation. Using a real-world example, we'll look at the trade-offs of this approach and how you can start using it in your own projects right away.",
     "speaker": {
-      "name": "Erik Hanchett",
-      "image": "/events/2026/images/erik-hanchett.jpg",
-      "roles": ["speaker"],
-      "company": "AWS",
-      "location": "Reno, NV, USA",
-      "social": [
-        {
-          "type": "bluesky",
-          "url": "https://bsky.app/profile/erikch.bsky.social"
-        },
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/erikhanchett/"
-        }
-      ]
+      "id": "erik-hanchett"
     }
   },
   {
@@ -121,17 +55,7 @@
     "type": "main",
     "abstract": "Agent swarming is a fascinating pattern to massively parallelize work with AI Agents. Instead of a single agent churning through a todo list, you have a coordinator agent that delegates work to a horde of worker agents to break down a todo list in record time. We will dig into agent memory, optimization, and coordination. ",
     "speaker": {
-      "name": "Joel Hooks",
-      "image": "/events/2026/images/joel-hooks.jpg",
-      "roles": ["speaker"],
-      "company": "Badass Courses",
-      "location": "Portland, OR USA",
-      "social": [
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/joelhooks"
-        }
-      ]
+      "id": "joel-hooks"
     }
   },
   {
@@ -141,21 +65,7 @@
     "type": "main",
     "abstract": "When AI agents have to execute complex, multi-hop reasoning across interconnected knowledge domains, traditional Retrieval-Augmented Generation (RAG) systems fail. Although vector-based retrieval is very good at finding content that is semantically similar, it cannot find meaningful connections between data, which leads to hallucinations. In this talk, we'll dive into how engineers can ground agents and large language models (LLMs) to uncover connections in data that are often missed by conventional RAG techniques",
     "speaker": {
-      "name": "Nyah Macklin",
-      "image": "/events/2026/images/nyah-macklin.jpg",
-      "roles": ["speaker"],
-      "company": "Neo4j",
-      "location": "San Francisco, CA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://linkedin.com/in/nyahmacklin"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/NyahMacklinDev"
-        }
-      ]
+      "id": "nyah-macklin"
     }
   },
   {
@@ -165,21 +75,7 @@
     "type": "main",
     "abstract": "What does it take to make a browser API work outside the browser? This talk walks through implementing the W3C getUserMedia camera and microphone API for native iOS apps in Expo, using linked literate programming to connect the spec, Web Platform Tests, native code, and AI-assisted development.",
     "speaker": {
-      "name": "James Ide",
-      "image": "/events/2026/images/james-ide.jpg",
-      "roles": ["speaker"],
-      "company": "Expo",
-      "location": "Palo Alto, CA USA",
-      "social": [
-        {
-          "type": "github",
-          "url": "https://github.com/ide"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/JI"
-        }
-      ]
+      "id": "james-ide"
     }
   },
   {
@@ -189,21 +85,7 @@
     "type": "main",
     "abstract": "AI bias for dominant patterns means training data = market share. That's innovation friction! The right syntax, wrong semantics, e.g. any innovation with JSX looks like React. Explore specific strategies that work, co-developed with AI, and tested in real world projects.",
     "speaker": {
-      "name": "Marty Nelson",
-      "image": "/events/2026/images/marty-nelson.jpg",
-      "roles": ["speaker"],
-      "company": "Works Real Estate",
-      "location": "Portland, OR USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/martypdx/"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/martypdx"
-        }
-      ]
+      "id": "marty-nelson"
     }
   },
   {
@@ -211,19 +93,9 @@
     "slug": "building-apps-with-atproto",
     "title": "Building Apps With ATProto",
     "type": "main",
-    "abstract": "What if you owned your social media data and could move freely between apps? ATProto makes this possible. I'll teach the fundamentals\u2014DIDs, data repos, why they're important, and how to build your first decentralized social platform.",
+    "abstract": "What if you owned your social media data and could move freely between apps? ATProto makes this possible. I'll teach the fundamentals—DIDs, data repos, why they're important, and how to build your first decentralized social platform.",
     "speaker": {
-      "name": "Brittany Ellich",
-      "image": "/events/2026/images/brittany-ellich.jpg",
-      "roles": ["speaker"],
-      "company": "Bluesky",
-      "location": "Portland, OR USA",
-      "social": [
-        {
-          "type": "bluesky",
-          "url": "https://bsky.app/profile/brittanyellich.com"
-        }
-      ]
+      "id": "brittany-ellich"
     }
   },
   {
@@ -233,12 +105,7 @@
     "type": "main",
     "abstract": "We chose the wrong abstractions and had to throw out our most important component. Oops. This talk unpacks how a well-meaning API collapsed under real-world use, and why composable APIs scale better than configuration-heavy ones, across UI and deeper systems.",
     "speaker": {
-      "name": "Darius Cepulis",
-      "image": "/events/2026/images/darius-cepulis.jpg",
-      "roles": ["speaker"],
-      "company": "Mux",
-      "location": "Oak Park, IL USA",
-      "url": "https://darius.cool"
+      "id": "darius-cepulis"
     }
   },
   {
@@ -248,25 +115,7 @@
     "type": "main",
     "abstract": "When heavy compute runs on the main thread, the UI stutters. I'll show how to spot main-thread blocking, then move filtering/aggregation work into Web Workers with a clean message protocol, debouncing, progress updates, and cancellation so the UI stays smooth.",
     "speaker": {
-      "name": "Courtney Yatteau",
-      "image": "/events/2026/images/courtney-yatteau.jpg",
-      "roles": ["speaker"],
-      "company": "esri",
-      "location": "Alexandria, VA USA",
-      "social": [
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/c_yatteau"
-        },
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/courtneyyatteau/"
-        },
-        {
-          "type": "bluesky",
-          "url": "https://bsky.app/profile/cyatteau.bsky.social"
-        }
-      ]
+      "id": "courtney-yatteau"
     }
   },
   {
@@ -276,17 +125,7 @@
     "type": "main",
     "abstract": "Let's explore a human-centric approach to live coding music. By fusing Strudel REPL with on-device AI via WebGPU and Wasm, we create an \"intelligent scaffolder\" that handles boilerplate syntax locally, keeping the performer in their flow state without losing agency.",
     "speaker": {
-      "name": "Alex Hinson",
-      "image": "/events/2026/images/alex-hinson.jpg",
-      "roles": ["speaker"],
-      "company": "Fleetio",
-      "location": "Chattanooga, TN USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/alex-hinson-015423129"
-        }
-      ]
+      "id": "alex-hinson"
     }
   },
   {
@@ -296,21 +135,7 @@
     "type": "main",
     "abstract": "If \"English is the new programming language\" and \"an agent's output is just machine code,\" should you still care about picking TypeScript? Yes, you absolutely should! Let's dig into the reasons why.",
     "speaker": {
-      "name": "Filip Sodi\u0107",
-      "image": "/events/2026/images/filip-sodic.jpg",
-      "roles": ["speaker"],
-      "company": "Wasp",
-      "location": "Zagreb, Croatia",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/filipsodic/"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/filipsodic"
-        }
-      ]
+      "id": "filip-sodic"
     }
   },
   {
@@ -318,19 +143,9 @@
     "slug": "beowulf-stroganoff-building-economically-useless-chatbots",
     "title": "Beowulf Stroganoff: Building Economically Useless Chatbots",
     "type": "lightning",
-    "abstract": "OpenAI says that AGI will perform \u201cmost economically valuable work,\u201d but aren't the best things in life economically useless? I'll explore what we can learn, both technically and artistically, from fine-tuning models with public domain texts like Beowulf and old cookbooks.",
+    "abstract": "OpenAI says that AGI will perform “most economically valuable work,” but aren't the best things in life economically useless? I'll explore what we can learn, both technically and artistically, from fine-tuning models with public domain texts like Beowulf and old cookbooks.",
     "speaker": {
-      "name": "Molly Jean Bennett",
-      "image": "/events/2026/images/molly-jean-bennett.jpg",
-      "roles": ["speaker"],
-      "company": "Grow Therapy",
-      "location": "Portland, OR, USA",
-      "social": [
-        {
-          "type": "bluesky",
-          "url": "https://bsky.app/profile/mollyjeanbennett.bsky.social"
-        }
-      ]
+      "id": "molly-jean-bennett"
     }
   },
   {
@@ -338,23 +153,9 @@
     "slug": "practical-refactors-with-modern-css-colors",
     "title": "Practical Refactors With Modern CSS Colors",
     "type": "main",
-    "abstract": "Practical refactors with modern CSS colors: a hands-on talk on simplifying color tokens, dark mode, and theming using modern CSS. Fewer variables, less duplication, clearer intent\u2014using light-dark(), relative colors, and more.",
+    "abstract": "Practical refactors with modern CSS colors: a hands-on talk on simplifying color tokens, dark mode, and theming using modern CSS. Fewer variables, less duplication, clearer intent—using light-dark(), relative colors, and more.",
     "speaker": {
-      "name": "James Steinbach",
-      "image": "/events/2026/images/james-steinbach.jpg",
-      "roles": ["speaker"],
-      "company": "Delinea",
-      "location": "Denver, CO, USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/jdsteinbach/"
-        },
-        {
-          "type": "bluesky",
-          "url": "https://bsky.app/profile/jdsteinbach.com"
-        }
-      ]
+      "id": "james-steinbach"
     }
   },
   {
@@ -362,20 +163,9 @@
     "slug": "ai-helped-me-learn-vue-through-the-lens-of-a-react-developer",
     "title": "AI Helped Me Learn: Vue Through the Lens of a React Developer",
     "type": "lightning",
-    "abstract": "AI, React, Vue - what do all of these things have in common? They are tools meant to enhance the development experience - we must remember that. Join me in going over best practices on using AI to LEARN and not to do you your job for you \u201cpoorly I might add\u201d. I'll take you through the steps of how I used AI as a React developer to learn Vue - did I actually learn? Join this talk to find out!",
+    "abstract": "AI, React, Vue - what do all of these things have in common? They are tools meant to enhance the development experience - we must remember that. Join me in going over best practices on using AI to LEARN and not to do you your job for you “poorly I might add”. I'll take you through the steps of how I used AI as a React developer to learn Vue - did I actually learn? Join this talk to find out!",
     "speaker": {
-      "name": "Daniel Mendoza",
-      "image": "/events/2026/images/daniel-mendoza.jpg",
-      "roles": ["speaker"],
-      "company": "Storyblok",
-      "location": "Chicago, IL, USA",
-      "url": "https://danieljmendoza.com/",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/daniel-mendoza-503396152/"
-        }
-      ]
+      "id": "daniel-mendoza"
     }
   },
   {
@@ -385,17 +175,7 @@
     "type": "main",
     "abstract": "Lots of companies have design system component libraries these days, but those aren't the only shared components around. This talk will center around higher-level shared components for those more complex common UI elements, including how to architect them for reusability, how to ensure they're flexible enough for novel use, and how to govern contributions.",
     "speaker": {
-      "name": "Jonathan Keslin",
-      "image": "/events/2026/images/jonathan-keslin.jpg",
-      "roles": ["speaker"],
-      "company": "Atlassian",
-      "location": "Kirkland, WA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/decompiled/"
-        }
-      ]
+      "id": "jonathan-keslin"
     }
   },
   {
@@ -405,21 +185,7 @@
     "type": "main",
     "abstract": "Mixing AI and karaoke together for great justice.",
     "speaker": {
-      "name": "Luis Montes",
-      "image": "/events/2026/images/luis-montes.jpg",
-      "roles": ["speaker"],
-      "company": "Iced Dev",
-      "location": "Phoenix, AZ",
-      "social": [
-        {
-          "type": "github",
-          "url": "https://github.com/monteslu"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/monteslu"
-        }
-      ]
+      "id": "luis-montes"
     }
   },
   {
@@ -429,25 +195,7 @@
     "type": "lightning",
     "abstract": "For 20 years, we've been told to \"Minimize HTTP Requests.\" But is that still true? I'm investigating how HTTP/3 and QUIC change the \"Request Tax\" and why I'm seeing patterns where granular fetches beat monolithic queries. Let's look at the data and re-evaluate the rules.",
     "speaker": {
-      "name": "Alex Moon",
-      "image": "/events/2026/images/alex-moon.jpg",
-      "roles": ["speaker"],
-      "company": "WP Engine",
-      "location": "Bellingham, WA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://linkedin.com/in/aj-moon/"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/moonmeister"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://twitter.com/moon_meister"
-        }
-      ]
+      "id": "alex-moon"
     }
   },
   {
@@ -457,17 +205,7 @@
     "type": "lightning",
     "abstract": "Growing a dev team while preserving your culture and mentoring junior devs sounds difficult, maybe impossible. Especially in this era of AI, how do you successfully build a home-grown team of young talent? I'll explore the success we've had with exactly that at Atomic Object, and practices you can implement today in your own companies to do the same.",
     "speaker": {
-      "name": "Dylan Goings",
-      "image": "/events/2026/images/dylan-goings.jpg",
-      "roles": ["speaker"],
-      "company": "Atomic Object",
-      "location": "Ann Arbor, MI USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://linkedin.com/in/dgoings"
-        }
-      ]
+      "id": "dylan-goings"
     }
   },
   {
@@ -477,17 +215,7 @@
     "type": "lightning",
     "abstract": "Every engineering org has the same problem: developers use AI tools individually, but the organization can't measure, govern, or scale the impact. We went from scattered copilot usage and zero metrics to governed agent environments, shared tooling, and a measurement pipeline that proves what actually works. This is the story of how we built the infrastructure that turned individual AI adoption into organizational capability, and what the data told us along the way.",
     "speaker": {
-      "name": "Jeff Ota\u00f1o",
-      "image": "/events/2026/images/jeff-otano.jpg",
-      "roles": ["speaker"],
-      "company": "Onebrief",
-      "location": "Denver, CO USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/jeffrey-otano/"
-        }
-      ]
+      "id": "jeff-otano"
     }
   },
   {
@@ -498,17 +226,7 @@
     "abstract": "A workshop on using Render Workflows to handle background jobs without managing queues, retries, or worker infrastructure. You'll build chainable task functions for distributed compute, applicable to workloads like ETL, batch inference, and AI agents. By the end, you'll have a deployed background execution pipeline you can adapt for your own projects.",
     "registrationUrl": "/2026/workshops/offloading-work-with-the-workers",
     "speaker": {
-      "name": "Ojus Save",
-      "image": "/events/2026/images/ojus-save.jpg",
-      "roles": ["speaker"],
-      "company": "Render",
-      "location": "San Francisco, CA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/ojus/"
-        }
-      ]
+      "id": "ojus-save"
     }
   },
   {
@@ -519,21 +237,7 @@
     "abstract": "In this hands-on workshop, you'll go from a minimal agent to a multi-tool, multi-agent system running on Amazon Bedrock AgentCore, with all infrastructure defined as code using Pulumi. You'll build and deploy agents that coordinate tasks, call external tools, execute code, and maintain state over time.",
     "registrationUrl": "/2026/workshops/deploying-ai-agents",
     "speaker": {
-      "name": "Engin Diri",
-      "image": "/events/2026/images/engin-diri.jpg",
-      "roles": ["speaker"],
-      "company": "Pulumi",
-      "location": "Seattle, WA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/engin-diri/"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/dirien"
-        }
-      ]
+      "id": "engin-diri"
     }
   },
   {
@@ -543,21 +247,7 @@
     "type": "lightning",
     "abstract": "We've built an ecosystem of capable agent. Now let's learn how to make them stop. In this talk we'll walk through various human-in-the-loop patterns. From simple inline confirmations, to out-of-band permission gates, to handing your agent a wallet with real money in it and more.",
     "speaker": {
-      "name": "Michael Liendo",
-      "image": "/events/2026/images/michael-liendo.jpg",
-      "roles": ["speaker"],
-      "company": "Auth0",
-      "location": "Davenport, IA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/focusotter"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/focusotter"
-        }
-      ]
+      "id": "michael-liendo"
     }
   },
   {
@@ -567,21 +257,7 @@
     "type": "lightning",
     "abstract": "While AI allows us to ship more UI than ever, it also makes it easier to ship experiences that don't match our design language. Let's see how Design Tokens, the lingua franca of design systems, bridge the gap between design, engineering, and AI.",
     "speaker": {
-      "name": "Kaelig Deloumeau-Prigent",
-      "image": "/events/2026/images/kaelig-deloumeau-prigent.jpg",
-      "roles": ["speaker"],
-      "company": "Design Tokens W3C CG",
-      "location": "Seattle, WA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/kaelig"
-        },
-        {
-          "type": "x-twitter",
-          "url": "https://x.com/kaelig"
-        }
-      ]
+      "id": "kaelig-deloumeau-prigent"
     }
   },
   {
@@ -589,20 +265,10 @@
     "slug": "build-better-agent-tools-with-apify",
     "title": "Build Better Agent Tools with Apify",
     "type": "workshop",
-    "abstract": "This workshop guides you through building a cloud-deployed web research tool for AI coding agents by wrapping Apify's RAG Web Browser with custom LLM-powered query generation and relevance filtering. The finished Actor runs on Apify's platform and gives agents like Claude Code or Cursor access to real-time web data. No Apify experience is needed \u2014 just a laptop with Node.js and a coding agent.",
+    "abstract": "This workshop guides you through building a cloud-deployed web research tool for AI coding agents by wrapping Apify's RAG Web Browser with custom LLM-powered query generation and relevance filtering. The finished Actor runs on Apify's platform and gives agents like Claude Code or Cursor access to real-time web data. No Apify experience is needed — just a laptop with Node.js and a coding agent.",
     "registrationUrl": "/2026/workshops/recipe-better-agents",
     "speaker": {
-      "name": "Michael Daigler",
-      "image": "/events/2026/images/michael-daigler.jpg",
-      "roles": ["speaker"],
-      "company": "Apify",
-      "location": "Austin, TX USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/mdaigz/"
-        }
-      ]
+      "id": "michael-daigler"
     }
   },
   {
@@ -610,20 +276,10 @@
     "slug": "build-a-voice-agent-with-vapi",
     "title": "Build a Voice Agent with Vapi",
     "type": "workshop",
-    "abstract": "This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents \u2013 from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.",
+    "abstract": "This workshop with Vapi walks through the real execution work behind building enterprise-grade voice agents – from conversation design fundamentals and persona calibration to prompt engineering patterns purpose-built for voice.",
     "registrationUrl": "/2026/workshops/scaling-voice-pipelines",
     "speaker": {
-      "name": "Amanda Martin",
-      "image": "/events/2026/images/amanda-martin.jpg",
-      "roles": ["speaker"],
-      "company": "Vapi",
-      "location": "San Francisco, CA USA",
-      "social": [
-        {
-          "type": "linkedin",
-          "url": "https://www.linkedin.com/in/amandamartin-dev/"
-        }
-      ]
+      "id": "amanda-martin"
     }
   }
 ]

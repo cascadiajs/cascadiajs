@@ -1,0 +1,39 @@
+[
+  {
+    "id": "fixture-ada",
+    "name": "Fixture Ada",
+    "image": "/events/2026/images/adam-argyle.jpg",
+    "roles": ["author"],
+    "pronouns": "she/her",
+    "title": "Staff Engineer",
+    "company": "Fixture Co",
+    "location": "Seattle, WA",
+    "url": "https://example.com/fixture-ada",
+    "social": [{ "type": "github", "url": "https://github.com/fixture-ada" }],
+    "bio": "Fixture Ada writes test Posts."
+  },
+  {
+    "id": "fixture-grace",
+    "name": "Fixture Grace",
+    "image": "/events/2026/images/alex-hinson.jpg",
+    "roles": ["author"]
+  },
+  {
+    "id": "fixture-linus",
+    "name": "Fixture Linus",
+    "image": "/events/2026/images/adam-argyle.jpg",
+    "roles": ["author"]
+  },
+  {
+    "id": "fixture-hedy",
+    "name": "Fixture Hedy",
+    "image": "/events/2026/images/alex-hinson.jpg",
+    "roles": ["author"]
+  },
+  {
+    "id": "fixture-no-posts",
+    "name": "Fixture Nopost",
+    "image": "/events/2026/images/adam-argyle.jpg",
+    "roles": ["author"]
+  }
+]

@@ -2,6 +2,17 @@ import { expect, test } from "@playwright/test";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Talk } from "@shared/data/types";
+import {
+  parsePeople,
+  resolvePerson,
+  type PersonRef,
+  type PersonRecord,
+} from "@shared/people";
+import {
+  applyFixtureOverrides,
+  FIXTURE_OVERRIDES_FILE,
+  TEST_FIXTURES,
+} from "@shared/test-fixtures";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -61,16 +72,49 @@ export function eventMarkdownPagePath(): string | undefined {
   return undefined;
 }
 
+/** The Person registry, `src/shared/data/people.json`. */
+export const PEOPLE: readonly PersonRecord[] = parsePeople(
+  readFileSync("src/shared/data/people.json", "utf8"),
+);
+
+/** A Talk as stored in an Event's talks.json: its Speaker is a reference. */
+type StoredTalk = Omit<Talk, "speaker"> & { speaker: PersonRef };
+
+/** An Event's Talks as stored, with Speaker references unresolved. */
+export function storedTalks(year: string): StoredTalk[] {
+  const file = `src/shared/data/${year}/talks.json`;
+  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : [];
+}
+
+/** An Event's Organizers as stored: Person references with overrides. */
+export function storedOrganizers(year: string): PersonRef[] {
+  const file = `src/shared/data/${year}/organizers.json`;
+  const refs: PersonRef[] = existsSync(file)
+    ? JSON.parse(readFileSync(file, "utf8"))
+    : [];
+  // Playwright sets the test-build variable, so the built site carries the
+  // fixture overrides too.
+  return TEST_FIXTURES
+    ? applyFixtureOverrides(
+        refs,
+        year,
+        JSON.parse(readFileSync(FIXTURE_OVERRIDES_FILE, "utf8")),
+      )
+    : refs;
+}
+
 /**
- * Every Event's Talks. An Event without Talk JSON adds none, though its pages
- * can still render another Event's Talks, so checks match a rendered Talk
- * against all of them.
+ * Every Event's Talks, each Speaker resolved through the Person registry. An
+ * Event without Talk JSON adds none, though its pages can still render
+ * another Event's Talks, so checks match a rendered Talk against all of them.
  */
-export const ALL_TALKS: readonly Talk[] = EVENTS_WITH_PAGES.map(
-  ({ year }) => `src/shared/data/${year}/talks.json`,
-)
-  .filter((file) => existsSync(file))
-  .flatMap((file) => JSON.parse(readFileSync(file, "utf8")) as Talk[]);
+export const ALL_TALKS: readonly Talk[] = EVENTS_WITH_PAGES.flatMap(
+  ({ year }) =>
+    storedTalks(year).map((talk) => ({
+      ...talk,
+      speaker: resolvePerson(PEOPLE, talk.speaker),
+    })),
+);
 
 export const DESKTOP = { width: 1280, height: 900 };
 export const MOBILE = { width: 390, height: 844 };

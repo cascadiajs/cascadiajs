@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { cardByline, readingMinutes } from "@shared/blog/format";
+import { getPostAuthors } from "@shared/blog/get-posts";
+
+interface Props {
+  /** A visible Featured Post. */
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const authors = await getPostAuthors(post);
+---
+
+<!--
+  The whole card is one link. The image zoom on hover runs only under
+  `motion-safe:`, so reduced motion gets no movement.
+-->
+<a
+  href={`/blog/post/${post.id}`}
+  class="cjs-featured-card group bg-cascade-blue relative block aspect-[3/4] overflow-hidden rounded-lg no-underline"
+>
+  {
+    post.data.image && (
+      <Image
+        src={post.data.image}
+        alt=""
+        width={600}
+        class="absolute inset-0 size-full object-cover motion-safe:transition motion-safe:duration-500 motion-safe:group-hover:scale-105"
+      />
+    )
+  }
+  <div
+    class="from-sound-navy via-sound-navy/60 absolute inset-0 bg-gradient-to-t to-transparent"
+  >
+  </div>
+  <div class="absolute inset-x-0 bottom-0 p-5">
+    <h2 class="font-display text-cedar-cream text-32 mt-0 mb-2">
+      {post.data.title}
+    </h2>
+    <p class="text-cedar-cream/80 m-0 text-sm">
+      {cardByline(authors.map((author) => author.name))} · {
+        readingMinutes(post.body ?? "")
+      } min read
+    </p>
+  </div>
+</a>

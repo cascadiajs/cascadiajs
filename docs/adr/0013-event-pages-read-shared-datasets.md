@@ -1,3 +1,7 @@
+---
+status: partially superseded by ADR-0017 (the clause that a Speaker stays embedded in their Talk)
+---
+
 # Event Pages Read Shared Per-Event Datasets
 
 An Event from 2026 onward keeps its Event Dataset — Talks, Organizers, Tickets, Activities — in shared files under `src/shared/data/<Event Key>/`, not in the frontmatter of the pages that render them. Each Event's Talks are their own content collection (`talks2026`, then `talks2027`), read directly with `getCollection` as Astro intends; the rest of the Event Dataset is read through one module keyed by Event Key, so a new Event adds a folder and a Talks collection, not a new module. This **supersedes ADR-0010's data-ownership clause** ("Events 2026 and later still own their data … not in a Collection or `src/shared/data/*.json`") and its clause that `Talk.speaker` becomes a reference into `Person`: a Speaker stays embedded in their Talk, because a Speaker is only ever shown through their Talk and nothing looks one up alone. The rest of ADR-0010, the shared presentational components, still stands.

@@ -1,3 +1,4 @@
 pnpm exec lint-staged
 pnpm check
+pnpm test:unit
 pnpm test

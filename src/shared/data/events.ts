@@ -1,3 +1,11 @@
+import peopleJson from "./people.json";
+import { parsePeople, resolvePerson, type PersonRef } from "../people";
+import {
+  applyFixtureOverrides,
+  TEST_FIXTURES,
+  type FixtureOverrides,
+} from "../test-fixtures";
+import fixtureOverrides from "./fixtures/organizer-overrides.json";
 import type { Activity, EventConfig, EventYear, Person, Ticket } from "./types";
 
 const configs = import.meta.glob<{ default: EventConfig }>(
@@ -36,10 +44,11 @@ export function getEventConfig(year: EventYear): EventConfig {
   return config;
 }
 
-const organizerFiles = import.meta.glob<Person[]>(
+const organizerFiles = import.meta.glob<PersonRef[]>(
   "@shared/data/*/organizers.json",
   { eager: true, import: "default" },
 );
+const registry = parsePeople(JSON.stringify(peopleJson));
 const ticketFiles = import.meta.glob<Ticket[]>("@shared/data/*/tickets.json", {
   eager: true,
   import: "default",
@@ -63,9 +72,17 @@ function readDataset<T>(
   return path ? files[path] : [];
 }
 
-/** An Event's Organizers, or [] when it has no Organizers file. */
+/**
+ * An Event's Organizers, resolved from the Person registry with the Event's
+ * overrides applied. [] when it has no Organizers file.
+ */
 export function getOrganizers(year: EventYear): Person[] {
-  return readDataset(organizerFiles, year, "organizers.json");
+  const refs = readDataset(organizerFiles, year, "organizers.json");
+  return (
+    TEST_FIXTURES
+      ? applyFixtureOverrides(refs, year, fixtureOverrides as FixtureOverrides)
+      : refs
+  ).map((ref) => resolvePerson(registry, ref));
 }
 
 /** An Event's Tickets, or [] when it has no Tickets file. */

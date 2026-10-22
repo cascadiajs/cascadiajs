@@ -32,6 +32,11 @@ function internalPath(ref: string): string | null {
   if (!url.startsWith("/")) {
     return null;
   }
+  // The Netlify Image CDN names its source image and size in the query, so
+  // the query is part of the asset's identity there.
+  if (url.startsWith("/.netlify/images?")) {
+    return url.split("#")[0];
+  }
   return url.split(/[#?]/)[0] || "/";
 }
 

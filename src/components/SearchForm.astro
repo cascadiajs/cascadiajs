@@ -1,0 +1,62 @@
+---
+// The blog search form: a plain GET form to /blog/search, in the
+// overcast-gray band. It works without JavaScript.
+import { getVisiblePosts } from "@shared/blog/get-posts";
+import { collectTags } from "@shared/blog/search";
+
+interface Props {
+  /** Prefill for the text input. */
+  q?: string;
+  /** Prefill for the Tag select: a normalized Tag. */
+  tag?: string;
+}
+
+const { q = "", tag = "" } = Astro.props;
+const tags = collectTags(
+  (await getVisiblePosts()).map((post) => ({ tags: post.data.tags })),
+);
+---
+
+<section class="cjs-search-form bg-overcast-gray">
+  <form
+    action="/blog/search"
+    method="get"
+    role="search"
+    class="mx-auto box-content flex max-w-[1200px] flex-wrap items-center gap-3 px-4 py-5"
+  >
+    <i
+      class="fa-solid fa-magnifying-glass text-sound-navy text-2xl"
+      aria-hidden="true"></i>
+    <label for="blog-search-q" class="sr-only">Search Posts</label>
+    <input
+      id="blog-search-q"
+      type="search"
+      name="q"
+      value={q}
+      maxlength="100"
+      placeholder="Search title, Author or Tag"
+      class="text-22 border-sound-navy placeholder:text-sound-navy/70 min-w-0 flex-1 border-b-2 bg-transparent px-2 py-2 focus:outline-none"
+    />
+    <label for="blog-search-tag" class="sr-only">Tag</label>
+    <select
+      id="blog-search-tag"
+      name="tag"
+      class="border-sound-navy rounded border-2 bg-transparent px-2 py-2"
+    >
+      <option value="">Any tag</option>
+      {
+        tags.map((t) => (
+          <option value={t} selected={t === tag}>
+            {t}
+          </option>
+        ))
+      }
+    </select>
+    <button
+      type="submit"
+      class="bg-sound-navy text-cedar-cream font-display rounded px-5 py-2"
+    >
+      Go
+    </button>
+  </form>
+</section>
