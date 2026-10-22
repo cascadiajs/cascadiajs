@@ -399,7 +399,7 @@ The blog specs are four files: `blog-index.spec.ts` (index, pagination, Featured
 
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
 
-If a server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` or `pnpm serve` before `pnpm test` if you want to test the real build.
+Playwright picks a free port for each run (set `PORT` to choose one) and never reuses a running server, so it always tests a fresh build, and a `pnpm dev` or `pnpm serve` on port 4321 does not get in its way. Two test runs at the same moment can still collide on `netlify serve`'s internal port 3999. Start the second run after the first one is up.
 
 Run `pnpm test` from a normal clone, not a Git worktree. In a worktree, the Netlify CLI finds the main checkout's `.git` directory and builds and serves that checkout instead.
 
