@@ -1,0 +1,91 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import type { PersonRecord } from "@shared/people";
+
+interface Props {
+  author: PersonRecord;
+}
+
+const { author } = Astro.props;
+
+const eventImages = import.meta.glob<{ default: ImageMetadata }>(
+  "@assets/events/**/*.{jpg,png,jpeg}",
+  { eager: false, base: "/src/assets" },
+);
+const load = eventImages[`.${author.image}`];
+if (!load) {
+  throw new Error(`AuthorHeader: image not found at .${author.image}`);
+}
+const picture = (await load()).default;
+const role = [author.title, author.company].filter(Boolean).join(" @ ");
+---
+
+<section class="cjs-author-header bg-sound-navy text-cedar-cream">
+  <div class="mx-auto box-content max-w-[1200px] px-4 py-14 text-center">
+    <Image
+      src={picture}
+      alt={`photo of ${author.name}`}
+      width={192}
+      height={192}
+      class="ring-madrona-yellow mx-auto size-48 rounded-full object-cover ring-8"
+    />
+    <h1
+      class="cjs-author-name font-display text-cedar-cream mt-6 mb-1 text-5xl leading-none md:text-[72px]"
+    >
+      {author.name}
+    </h1>
+    {
+      author.pronouns && (
+        <p class="cjs-author-pronouns text-madrona-yellow m-0 text-xl">
+          {author.pronouns}
+        </p>
+      )
+    }
+    {
+      role && (
+        <p class="cjs-author-role text-cedar-cream/90 mt-3 mb-0 text-xl">
+          {role}
+        </p>
+      )
+    }
+    {
+      author.location && (
+        <p class="cjs-author-location text-cedar-cream/90 mt-1 mb-0 text-xl">
+          <i class="fa-solid fa-location-dot" aria-hidden="true" />{" "}
+          {author.location}
+        </p>
+      )
+    }
+    {
+      author.bio && (
+        <p class="cjs-author-bio text-cedar-cream mx-auto mt-4 max-w-[55ch]">
+          {author.bio}
+        </p>
+      )
+    }
+    {
+      (author.url || author.social?.length) && (
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          {author.url && (
+            <a
+              href={author.url}
+              class="cjs-author-website bg-madrona-yellow text-sound-navy rounded-full px-4 py-2 font-medium no-underline"
+            >
+              <i class="fa-solid fa-globe" aria-hidden="true" /> Website
+            </a>
+          )}
+          {author.social?.map((link) => (
+            <a
+              href={link.url}
+              aria-label={link.type}
+              class="cjs-author-social bg-cedar-cream text-sound-navy flex size-10 items-center justify-center rounded-full text-xl no-underline"
+            >
+              <i class={`fa-brands fa-${link.type}`} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</section>

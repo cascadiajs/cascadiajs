@@ -14,12 +14,6 @@ const FROZEN = new Set(
   FROZEN_SNAPSHOT_PAGES.map((p) => "/" + p.replace(/\.html$/, "")),
 );
 
-/**
- * Pages linked from the blog but not built yet. #69 (Tag pages) and #70
- * (Author pages) build them and remove this.
- */
-const NOT_BUILT_YET = /^\/blog\/(tags|authors)\//;
-
 /** Same-origin path of `ref`, or null for external, mailto, tel, data and fragment-only refs. */
 function internalPath(ref: string): string | null {
   const url = ref.trim().replace(/&amp;/g, "&");
@@ -114,8 +108,6 @@ test("every internal link and asset reachable from / returns 200", async ({
       }
     }
   }
-  expect(
-    broken.filter((entry) => !NOT_BUILT_YET.test(entry.split(" ")[1])),
-  ).toEqual([]);
+  expect(broken).toEqual([]);
   expect(seenPages.size).toBeGreaterThan(1);
 });

@@ -1,0 +1,46 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@layouts/Layout.astro";
+import PostCard from "@components/PostCard.astro";
+import RssLink from "@components/RssLink.astro";
+import { getVisiblePosts } from "@shared/blog/get-posts";
+import { tagIndex } from "@shared/blog/posts";
+
+// One page per normalized Tag on a visible Post. A Tag used only by a draft
+// has no entry, so no page in production.
+export const getStaticPaths = (async () => {
+  const index = tagIndex(await getVisiblePosts());
+  return [...index].map(([tag, posts]) => ({
+    params: { tag },
+    props: { posts },
+  }));
+}) satisfies GetStaticPaths;
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout
+  title={`CascadiaJS | Blog | #${tag}`}
+  description={`Every CascadiaJS blog Post tagged ${tag}.`}
+>
+  <RssLink slot="head" />
+  <section class="cjs-tag-header bg-sound-navy text-cedar-cream">
+    <div class="mx-auto box-content max-w-[1200px] px-4 py-14">
+      <h1
+        class="bg-mint text-sound-navy font-display my-0 inline-block rounded-full px-6 py-2 text-4xl leading-none md:text-[56px]"
+      >
+        #{tag}
+      </h1>
+      <p class="text-cedar-cream mt-6 mb-0 text-xl">
+        {posts.length}
+        {posts.length === 1 ? "Post" : "Posts"}
+      </p>
+    </div>
+  </section>
+  <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
+    <div class="cjs-post-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </div>
+</Layout>

@@ -4,7 +4,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import TagChips from "@components/TagChips.astro";
 import {
-  cardByline,
+  bylineSeparator,
   formatPostDate,
   readingMinutes,
 } from "@shared/blog/format";
@@ -35,6 +35,22 @@ const avatars = await Promise.all(
   }),
 );
 const href = `/blog/post/${post.id}`;
+
+const escape = (text: string) =>
+  text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const authorLink = (author: { id: string; name: string }) =>
+  `<a href="/blog/authors/${escape(author.id)}" class="text-sound-navy no-underline hover:underline">${escape(author.name)}</a>`;
+// Same words as `cardByline`; each named Author links to their page. "N
+// others" names no single Author, so it stays plain text.
+const namesHtml =
+  authors.length <= 2
+    ? authors
+        .map(
+          (author, i) =>
+            `${bylineSeparator(i, authors.length)}${authorLink(author)}`,
+        )
+        .join("")
+    : `${authorLink(authors[0])} and ${authors.length - 1} others`;
 ---
 
 <article
@@ -91,9 +107,7 @@ const href = `/blog/post/${post.id}`;
           ))
         }
       </div>
-      <span class="cjs-post-card-names font-medium"
-        >{cardByline(authors.map((author) => author.name))}</span
-      >
+      <span class="cjs-post-card-names font-medium" set:html={namesHtml} />
     </div>
   </div>
 </article>
