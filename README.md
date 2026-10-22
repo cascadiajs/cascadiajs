@@ -28,16 +28,17 @@ pnpm install
 pnpm dev          # http://localhost:4321
 ```
 
-| Command        | What it does                                        |
-| :------------- | :-------------------------------------------------- |
-| `pnpm dev`     | Dev server with hot reload at `localhost:4321`      |
-| `pnpm build`   | Production build to `dist/`                         |
-| `pnpm preview` | Serve the built `dist/` locally                     |
-| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`) |
-| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                |
-| `pnpm test`    | Build, preview, and run the Playwright e2e suite    |
+| Command          | What it does                                        |
+| :--------------- | :-------------------------------------------------- |
+| `pnpm dev`       | Dev server with hot reload at `localhost:4321`      |
+| `pnpm build`     | Production build to `dist/`                         |
+| `pnpm preview`   | Serve the built `dist/` locally                     |
+| `pnpm check`     | Type-check `.astro` and `.ts` files (`astro check`) |
+| `pnpm lint`      | ESLint (`pnpm lint:fix` to auto-fix)                |
+| `pnpm test`      | Build, preview, and run the Playwright e2e suite    |
+| `pnpm test:unit` | Run the Vitest unit tests                           |
 
-A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`, then the Playwright suite (`pnpm test`). CI runs the tests too.
+A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`, then the unit tests (`pnpm test:unit`), then the Playwright suite (`pnpm test`). CI runs the tests too.
 
 ## How we work
 
@@ -59,7 +60,7 @@ The `ready-for-agent` and `ready-for-human` labels decide who builds an issue: a
 
 - Create a branch from `main`. Open a PR into `main`.
 - Commit messages use [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`, `ci:`. Read `git log` for examples of the house style.
-- CI must be green before merge. It runs lint, a Prettier check, `astro check`, a production build, and the Playwright suite. See [Testing and CI](#testing-and-ci).
+- CI must be green before merge. It runs lint, a Prettier check, `astro check`, a production build, the unit tests, and the Playwright suite. See [Testing and CI](#testing-and-ci).
 - If you change something this README documents (layouts, routing, content shape, commands, workflow, recipes), update the matching section in the same PR.
 
 ### Decisions and vocabulary
@@ -303,6 +304,19 @@ Do these steps only after the 2027 pages are ready.
 
 ## Testing and CI
 
+Two seams: Vitest unit tests for pure functions, Playwright for everything that renders.
+
+### Unit tests
+
+Unit tests live beside the code they test, as `src/**/*.test.ts`. Put pure functions over plain data here: helpers that take values and return values, with no Astro runtime, no disk reads and no DOM. Pass plain objects, not Astro entries. Vitest is configured in `vitest.config.ts` through Astro's `getViteConfig`, so the `@shared`, `@components`, `@layouts` and `@assets` aliases resolve as they do in the site. Playwright only reads `e2e/` and Vitest only reads `src/`, so neither picks up the other's files. See `src/shared/route-path.test.ts` for an example.
+
+```sh
+pnpm test:unit                                  # run once
+pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
+```
+
+### End-to-end tests
+
 End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys.
 
 Tests check behavior, not content. A change to copy, data, design inside a section or the Featured Event does not break a test. Tests find pages by type, never by slug or title. They find elements by class name, id or role, never by text. A component that a test needs gets a class with its component name in kebab-case. No spec names a year, except the Frozen Snapshot specs (2024, 2025).
@@ -322,7 +336,8 @@ CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
 1. **checks:** `pnpm lint`, `prettier --check .`, `pnpm check`
 2. **build:** `pnpm build`
-3. **playwright:** the e2e suite, after both pass. On failure, download the `playwright-report` artifact from the run to see what failed.
+3. **unit:** `pnpm test:unit`. A failing unit test fails the workflow.
+4. **playwright:** the e2e suite, after both pass. On failure, download the `playwright-report` artifact from the run to see what failed.
 
 ## Working with an agent
 
