@@ -395,6 +395,8 @@ pnpm test e2e/talks.spec.ts             # one file
 pnpm test --ui                          # Playwright's interactive runner
 ```
 
+The blog specs are four files: `blog-index.spec.ts` (index, pagination, Featured band, chrome links, sitemap, RSS), `blog-post.spec.ts` (Post page, meta, share bar, progress bar), `blog-archive.spec.ts` (Tag and Author pages) and `blog-search.spec.ts`. They find fixture Posts by property through `e2e/blog-helpers.ts`, never by slug, title, text or year.
+
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
 
 If a server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` or `pnpm serve` before `pnpm test` if you want to test the real build.

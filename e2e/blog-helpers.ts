@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { normalizeTag } from "@shared/blog/format";
 import { FIXTURE_PEOPLE_FILE, FIXTURE_POSTS_DIR } from "@shared/test-fixtures";
 import type { PersonRecord } from "@shared/people";
+import type { Page } from "@playwright/test";
 import { PEOPLE } from "./helpers";
 
 /** A fixture Post, read from its frontmatter. */
@@ -26,6 +27,8 @@ export interface FixturePost {
   authors: { id: string; name: string }[];
   /** Normalized Tags. */
   tags: string[];
+  /** True for a Post the fixture loader generates, not a hand-written one. */
+  generated: boolean;
 }
 
 const FIXTURE_AUTHORS: PersonRecord[] = JSON.parse(
@@ -84,6 +87,7 @@ export const FIXTURE_POST_LIST: FixturePost[] = readdirSync(
         name: author(id).name,
       })),
       tags: [...new Set((data.tags as string[]).map(normalizeTag))],
+      generated: false,
     },
   ];
 });
@@ -101,7 +105,7 @@ export const longDate = (iso: string) =>
 /** Posts per index page. */
 export const PAGE_SIZE = 12;
 
-const newestFirst = (a: FixturePost, b: FixturePost) =>
+export const newestFirst = (a: FixturePost, b: FixturePost) =>
   Date.parse(b.pubDate) - Date.parse(a.pubDate);
 
 /** Every visible flagged Post, newest first. */
@@ -122,7 +126,7 @@ export const listedPosts = () => {
 };
 
 /** The first visible Post matching `predicate`, or fail the test. */
-export function findPost(
+function findPost(
   description: string,
   predicate: (post: FixturePost) => boolean,
 ): FixturePost {
@@ -175,9 +179,6 @@ export const postWithoutOgImage = () =>
 export const postWithTags = () =>
   findPost("two Tags", (p) => p.tags.length >= 2);
 
-/** Fixture Authors, as read from the fixture people file. */
-export const FIXTURE_AUTHOR_RECORDS: PersonRecord[] = FIXTURE_AUTHORS;
-
 /** Visible Posts by one Author, newest first. */
 export const postsBy = (id: string) =>
   publishedFixturePosts()
@@ -186,7 +187,7 @@ export const postsBy = (id: string) =>
 
 /** A fixture Author with every optional profile field set. */
 export const fullAuthor = () => {
-  const found = FIXTURE_AUTHOR_RECORDS.find(
+  const found = FIXTURE_AUTHORS.find(
     (a) =>
       a.pronouns &&
       a.title &&
@@ -204,7 +205,7 @@ export const fullAuthor = () => {
 
 /** A fixture Author with no optional profile field set. */
 export const bareAuthor = () => {
-  const found = FIXTURE_AUTHOR_RECORDS.find(
+  const found = FIXTURE_AUTHORS.find(
     (a) =>
       !a.pronouns &&
       !a.title &&
@@ -223,7 +224,7 @@ export const bareAuthor = () => {
 
 /** A fixture Author with no visible Posts. */
 export const authorWithoutPosts = () => {
-  const found = FIXTURE_AUTHOR_RECORDS.find((a) => postsBy(a.id).length === 0);
+  const found = FIXTURE_AUTHORS.find((a) => postsBy(a.id).length === 0);
   if (!found) {
     throw new Error("No fixture Author without Posts");
   }
@@ -232,6 +233,14 @@ export const authorWithoutPosts = () => {
 
 /** The fixture Author with the most visible Posts. */
 export const busiestAuthor = () =>
-  [...FIXTURE_AUTHOR_RECORDS].sort(
+  [...FIXTURE_AUTHORS].sort(
     (a, b) => postsBy(b.id).length - postsBy(a.id).length,
   )[0];
+
+/** The Post slugs that the page's Post cards link to, in page order. */
+export const postCardSlugs = async (page: Page) =>
+  (
+    await page
+      .locator(".cjs-post-card a.cjs-post-card-link")
+      .evaluateAll((links) => links.map((a) => a.getAttribute("href")))
+  ).map((href) => href!.split("/").at(-1));

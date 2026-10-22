@@ -1,11 +1,17 @@
 import { readFileSync } from "node:fs";
-import { expect, test, type Page } from "@playwright/test";
+import {
+  expect,
+  test,
+  type APIRequestContext,
+  type Page,
+} from "@playwright/test";
 import {
   FIXTURE_POST_LIST,
   PAGE_SIZE,
   featuredPosts,
   flaggedPosts,
   listedPosts,
+  postCardSlugs,
   longDate,
   publishedFixturePosts,
 } from "./blog-helpers";
@@ -13,15 +19,10 @@ import { FEATURED_EVENT } from "@shared/site-defaults";
 import { distPath } from "./helpers";
 
 /**
- * Blog index, pagination and Featured band. The fixture Posts' frontmatter
+ * Blog index, pagination, Featured band, site-chrome links, sitemap and RSS feed. The fixture Posts' frontmatter
  * is the source of truth.
  */
-const gridSlugs = async (page: Page) =>
-  (
-    await page
-      .locator(".cjs-post-card a.cjs-post-card-link")
-      .evaluateAll((links) => links.map((a) => a.getAttribute("href")))
-  ).map((href) => href!.split("/").at(-1));
+const gridSlugs = postCardSlugs;
 const canonical = (page: Page) => page.locator('head link[rel="canonical"]');
 const pageCount = Math.ceil(listedPosts().length / PAGE_SIZE);
 const pagePath = (slug: string) => {
@@ -43,7 +44,7 @@ test.describe("Blog index", () => {
     expect(flaggedPosts().length).toBeGreaterThan(3);
   });
 
-  test("page 1 shows the newest three Featured Posts in the band, not in the grid", async ({
+  test("page 1 shows the newest three Featured Posts in the band, not in the grid, and later flagged Posts in the grid", async ({
     page,
   }) => {
     await page.goto("/blog");
@@ -63,16 +64,11 @@ test.describe("Blog index", () => {
     for (const post of featured) {
       expect(grid).not.toContain(post.slug);
     }
+    // A flagged Post past the third is a normal Post in the list.
+    expect(grid).toContain(flaggedPosts()[3].slug);
   });
 
-  test("the fourth flagged Post is in the list as a normal Post", async ({
-    page,
-  }) => {
-    await page.goto("/blog");
-    expect(await gridSlugs(page)).toContain(flaggedPosts()[3].slug);
-  });
-
-  test("page 1 holds 12 Posts, newest first, in 3 columns", async ({
+  test("page 1 holds 12 Posts, newest first, in 3 columns, with a canonical at /blog", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 1280, height: 900 });
@@ -83,6 +79,10 @@ test.describe("Blog index", () => {
         .map((post) => post.slug),
     );
     expect(await columns(page)).toBe(3);
+    await expect(canonical(page)).toHaveAttribute(
+      "href",
+      /^https?:\/\/[^/]+\/blog$/,
+    );
   });
 
   test("the grid collapses to one column on a phone", async ({ page }) => {
@@ -91,17 +91,15 @@ test.describe("Blog index", () => {
     expect(await columns(page)).toBe(1);
   });
 
-  test("page 1 canonical points to /blog", async ({ page }) => {
-    await page.goto("/blog");
-    await expect(canonical(page)).toHaveAttribute(
-      "href",
-      /^https?:\/\/[^/]+\/blog$/,
-    );
-  });
-
-  test("links the feed for autodiscovery", async ({ page }) => {
+  test("the index and a Post page link the feed for autodiscovery", async ({
+    page,
+  }) => {
     await page.goto("/blog");
     await expect(page.locator("head link.cjs-rss-link")).toHaveCount(1);
+    await page.goto(`/blog/post/${publishedFixturePosts()[0].slug}`);
+    await expect(
+      page.locator('head link[rel="alternate"][type="application/rss+xml"]'),
+    ).toHaveAttribute("href", "/blog/rss.xml");
   });
 
   test("numbered pagination links to the other pages", async ({ page }) => {
@@ -231,5 +229,61 @@ test.describe("Blog in the sitemap", () => {
       expect(urls()).not.toContain(draft.slug);
     }
     expect(urls()).not.toMatch(/\/blog\/1</);
+  });
+});
+
+/** RSS feed. */
+const feed = async (request: APIRequestContext) => {
+  const response = await request.get("/blog/rss.xml");
+  expect(response.status()).toBe(200);
+  return response.text();
+};
+const items = (xml: string) => xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+const tag = (xml: string, name: string) =>
+  xml.match(new RegExp(`<${name}>([\\s\\S]*?)</${name}>`))?.[1] ?? "";
+const text = (value: string) =>
+  value.replace(/^<!\[CDATA\[|\]\]>$/g, "").replaceAll("&amp;", "&");
+
+test.describe("Blog RSS feed", () => {
+  test("is valid RSS with one item per visible Post, newest first, with absolute links", async ({
+    request,
+  }) => {
+    const xml = await feed(request);
+    expect(xml).toMatch(/<rss [^>]*version="2\.0"/);
+    expect(tag(xml, "channel")).not.toBe("");
+
+    const expected = publishedFixturePosts().toSorted(
+      (a, b) => Date.parse(b.pubDate) - Date.parse(a.pubDate),
+    );
+    const found = items(xml);
+    expect(found).toHaveLength(expected.length);
+    for (const [i, post] of expected.entries()) {
+      const item = found[i];
+      expect(text(tag(item, "title"))).toBe(post.title);
+      expect(text(tag(item, "description"))).toBe(post.description);
+      expect(tag(item, "link")).toMatch(
+        new RegExp(`^https?://[^/]+/blog/post/${post.slug}$`),
+      );
+      expect(new Date(tag(item, "pubDate")).toISOString().slice(0, 10)).toBe(
+        post.pubDate.slice(0, 10),
+      );
+    }
+  });
+
+  test("items carry no body content and no author", async ({ request }) => {
+    for (const item of items(await feed(request))) {
+      expect(item).not.toContain("<content:encoded");
+      expect(item).not.toContain("<author");
+      expect(item).not.toContain("<dc:creator");
+    }
+  });
+
+  test("leaves out drafts", async ({ request }) => {
+    const xml = await feed(request);
+    const drafts = FIXTURE_POST_LIST.filter((p) => !p.published);
+    expect(drafts.length).toBeGreaterThan(0);
+    for (const draft of drafts) {
+      expect(xml).not.toContain(`/blog/post/${draft.slug}`);
+    }
   });
 });
