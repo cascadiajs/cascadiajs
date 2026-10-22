@@ -139,6 +139,8 @@ A file under a year folder only gets a page if that Event has a config in `src/s
 
 Each Post page has a share bar (`ShareBar`): a sticky rail beside the Post on desktop, a fixed bottom bar on phones. Bluesky, LinkedIn and X are plain links built at build time by the helpers in `src/shared/blog/format.ts`. Copy link and Web Share render hidden, and one script in the component reveals each where the browser supports it. Hover colors use `motion-safe:` transitions, so reduced motion changes color instantly.
 
+The RSS feed is `src/pages/blog/rss.xml.ts` (`@astrojs/rss`), served at `/blog/rss.xml`. It lists every visible Post newest first, with title, description, link and date only (no body, no author). Blog pages link it for autodiscovery by putting `<RssLink slot="head" />` in their `Layout`.
+
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.
 
 **On-demand routes** render on every request instead of at build time. The site stays `output: 'static'`, so every page is prerendered unless its file opts out with `export const prerender = false`. The `@astrojs/netlify` adapter deploys each such route as a Netlify Function. Use one only for a route that needs request data, such as a query string. See [ADR-0016](docs/adr/0016-on-demand-routes-via-netlify-adapter.md). To run one locally, use `pnpm serve` (it builds, then serves `dist/` and the function on a free port, printed in its output). `pnpm dev` also renders them, but without the production build. `pnpm preview` does not work with the adapter. The adapter also sends every `astro:assets` image through the Netlify Image CDN, so built pages link to `/.netlify/images?url=…` instead of `/_astro/…`.
@@ -382,14 +384,9 @@ pnpm test --ui                          # Playwright's interactive runner
 
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
 
-<<<<<<< HEAD
 `pnpm test` builds and serves its own checkout on a free port (set `PORT` to choose one), so runs from several worktrees at the same time do not collide. Playwright never reuses a server it did not start, unless you set `REUSE_SERVER=1`. `pnpm serve` also picks free ports: `PORT` or any free port for the site, and a free port for the Netlify CLI's internal static server. Read the site URL in its output.
-=======
+
 The suite builds with `CJS_TEST_FIXTURES=1` (set in `playwright.config.ts`), so the test-only fixtures (Posts, Authors, an Event override) exist. See [Blog Posts](#blog-posts-srccontentblog).
-
-If a dev server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` before `pnpm test` if you want to test the real build.
-
-> > > > > > > blog
 
 CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
