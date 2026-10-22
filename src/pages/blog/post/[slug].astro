@@ -4,6 +4,7 @@ import { getImage, Image } from "astro:assets";
 import { getEntries, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import CtaButton from "@components/CtaButton.astro";
+import RssLink from "@components/RssLink.astro";
 import PostBody from "@components/PostBody.astro";
 import PostByline from "@components/PostByline.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
@@ -53,6 +54,7 @@ if (post.data.ogImage) {
     tags,
   }}
 >
+  <RssLink slot="head" />
   <article class="cjs-post">
     <header class="bg-sound-navy text-cedar-cream">
       <div class="mx-auto box-content max-w-[1200px] px-4 pt-14 pb-12">
