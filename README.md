@@ -321,7 +321,7 @@ pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
 
 ### End-to-end tests
 
-End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against `netlify serve` (`pnpm serve`), which builds the site and serves it, including on-demand routes, the way Netlify does. `astro preview` does not work with the Netlify adapter.
+End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against `netlify serve` (`pnpm serve`, a small wrapper in `scripts/serve.mjs` that builds and serves only the checkout it lives in, also in a Git worktree), which builds the site and serves it, including on-demand routes, the way Netlify does. `astro preview` does not work with the Netlify adapter.
 
 Tests check behavior, not content. A change to copy, data, design inside a section or the Featured Event does not break a test. Tests find pages by type, never by slug or title. They find elements by class name, id or role, never by text. A component that a test needs gets a class with its component name in kebab-case. No spec names a year, except the Frozen Snapshot specs (2024, 2025).
 
@@ -395,5 +395,4 @@ Agents do well here when the issue is specific. For example, "Add the 2027 ticke
 
 - **No trailing slashes** in URLs or links. See [Pages and routing](#pages-and-routing).
 - **`.md` vs `.mdx`:** use `.mdx` only for pages that render components, and follow its stricter syntax. See [Content pages](#content-pages-srccontentmarkdown).
-- **`pnpm serve` in a Git worktree:** the Netlify CLI finds the repo root through the shared Git directory, so it builds in the main checkout, not the worktree. Run `pnpm serve` and `pnpm test` from a normal clone.
 - **Alias imports** across `src/` directories, never `../components/...`. ESLint enforces it. See [Imports](#imports).

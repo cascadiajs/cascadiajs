@@ -29,6 +29,9 @@ export default defineConfig({
   // and `cacheOnDemandPages` stays off.
   output: "static",
   adapter: netlify(),
+  // The site uses no sessions; this stops the adapter from setting up Netlify
+  // Blobs and bundling the session runtime.
+  session: false,
   // Legacy URLs never end in a slash (the slashed form 404s), so routes and
   // canonical URLs must match. The root stays "/".
   trailingSlash: "never",

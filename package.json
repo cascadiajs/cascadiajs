@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "serve": "netlify serve --offline --port 4321",
+    "serve": "node scripts/serve.mjs",
     "check": "astro check",
     "astro": "astro",
     "test": "playwright test",
