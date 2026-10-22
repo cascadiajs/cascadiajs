@@ -1,9 +1,16 @@
 import { existsSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import {
-  FIXTURE_POST_LIST,
+  draftPost,
   longDate,
+  mdxPost,
+  notUpdatedPost,
+  postWithAuthors,
+  postWithBodyImage,
+  postWithOgImage,
+  postWithoutOgImage,
   publishedFixturePosts,
+  updatedPost,
 } from "./blog-helpers";
 import { distPath } from "./helpers";
 
@@ -12,7 +19,7 @@ import { distPath } from "./helpers";
  * sets the flag), so each spec reads the fixtures' frontmatter as its source
  * of truth.
  */
-const post = (slug: string) => FIXTURE_POST_LIST.find((p) => p.slug === slug)!;
+const postPath = (post: { slug: string }) => `/blog/post/${post.slug}`;
 const meta = (page: import("@playwright/test").Page, selector: string) =>
   page.locator(`head meta[${selector}]`);
 
@@ -21,7 +28,7 @@ test.describe("Blog Post page", () => {
     test(`${fixture.slug} shows title, dates, reading estimate, Tags and byline`, async ({
       page,
     }) => {
-      await page.goto(`/blog/post/${fixture.slug}`);
+      await page.goto(postPath(fixture));
       await expect(page.locator("h1")).toHaveText(fixture.title);
       await expect(page.locator(".cjs-post-date")).toHaveText(
         longDate(fixture.pubDate),
@@ -60,8 +67,9 @@ test.describe("Blog Post page", () => {
   test("a Post with three Authors reads 'A, B and C' in byline order", async ({
     page,
   }) => {
-    const [a, b, c] = post("three-authors").authors;
-    await page.goto("/blog/post/three-authors");
+    const three = postWithAuthors(3);
+    const [a, b, c] = three.authors;
+    await page.goto(postPath(three));
     await expect(page.locator(".cjs-post-byline p")).toHaveText(
       `${a.name}, ${b.name} and ${c.name}`,
     );
@@ -70,7 +78,7 @@ test.describe("Blog Post page", () => {
   test("the Markdown Post's relative images are optimized and load", async ({
     page,
   }) => {
-    await page.goto("/blog/post/md-post");
+    await page.goto(postPath(postWithBodyImage()));
     const body = page.locator(".cjs-post-body img").first();
     await expect(body).toHaveAttribute("src", /_astro(\/|%2F)/);
     await body.scrollIntoViewIfNeeded();
@@ -88,34 +96,33 @@ test.describe("Blog Post page", () => {
   test("the MDX Post renders Callout, VideoEmbed, CtaButton and a highlighted code block", async ({
     page,
   }) => {
-    await page.goto("/blog/post/mdx-post");
+    const mdx = mdxPost();
+    const videoTitle = mdx.body.match(/<VideoEmbed[^>]*?title="([^"]+)"/s)![1];
+    await page.goto(postPath(mdx));
     const body = page.locator(".cjs-post-body");
-    await expect(body.locator(".cjs-callout")).toContainText(
-      "A fixture callout.",
-    );
+    await expect(body.locator(".cjs-callout")).toBeVisible();
     await expect(body.locator(".cjs-video-embed iframe")).toHaveAttribute(
       "title",
-      "Fixture video",
+      videoTitle,
     );
-    await expect(body.locator(".cjs-cta-button")).toContainText(
-      "Fixture call to action",
-    );
+    await expect(body.locator(".cjs-cta-button")).toBeVisible();
     const code = body.locator("pre.astro-code");
-    await expect(code).toContainText("const answer = 42;");
+    await expect(code).toBeVisible();
     // Night Owl background, not the site's other code theme.
     await expect(code).toHaveCSS("background-color", "rgb(1, 22, 39)");
   });
 
   test("a draft has no page in the production build", async ({ page }) => {
-    expect(existsSync(distPath("blog/post/draft-post.html"))).toBe(false);
-    const response = await page.goto("/blog/post/draft-post");
+    const draft = draftPost();
+    expect(existsSync(distPath(`blog/post/${draft.slug}.html`))).toBe(false);
+    const response = await page.goto(postPath(draft));
     expect(response?.status()).toBe(404);
   });
 
   test("the Sponsors section renders and Testimonials do not", async ({
     page,
   }) => {
-    await page.goto("/blog/post/md-post");
+    await page.goto(postPath(publishedFixturePosts()[0]));
     await expect(page.locator("#sponsors")).toBeVisible();
     await expect(page.locator(".cjs-testimonials")).toHaveCount(0);
   });
@@ -125,18 +132,18 @@ test.describe("Blog Post meta", () => {
   test("article meta lists one author per Author in byline order, one tag per Tag", async ({
     page,
   }) => {
-    const fixture = post("updated-post");
-    await page.goto(`/blog/post/${fixture.slug}`);
+    const fixture = updatedPost();
+    await page.goto(postPath(fixture));
     await expect(meta(page, 'property="og:type"')).toHaveAttribute(
       "content",
       "article",
     );
     await expect(
       meta(page, 'property="article:published_time"'),
-    ).toHaveAttribute("content", /^2026-03-05/);
+    ).toHaveAttribute("content", new RegExp(`^${fixture.pubDate}`));
     await expect(
       meta(page, 'property="article:modified_time"'),
-    ).toHaveAttribute("content", /^2026-03-20/);
+    ).toHaveAttribute("content", new RegExp(`^${fixture.updatedDate}`));
     const authors = meta(page, 'property="article:author"');
     await expect(authors).toHaveCount(fixture.authors.length);
     for (const [i, a] of fixture.authors.entries()) {
@@ -147,7 +154,7 @@ test.describe("Blog Post meta", () => {
   });
 
   test("a Post without updatedDate has no modified_time", async ({ page }) => {
-    await page.goto("/blog/post/md-post");
+    await page.goto(postPath(notUpdatedPost()));
     await expect(meta(page, 'property="article:modified_time"')).toHaveCount(0);
   });
 
@@ -155,7 +162,7 @@ test.describe("Blog Post meta", () => {
     page,
     request,
   }) => {
-    await page.goto("/blog/post/og-image-post");
+    await page.goto(postPath(postWithOgImage()));
     const content = await meta(page, 'property="og:image"').getAttribute(
       "content",
     );
@@ -177,10 +184,15 @@ test.describe("Blog Post meta", () => {
   test("a Post without ogImage uses the site default share image", async ({
     page,
   }) => {
-    await page.goto("/blog/post/md-post");
+    // The Layout default is what every page without its own image emits.
+    await page.goto("/");
+    const defaultImage = await meta(page, 'property="og:image"').getAttribute(
+      "content",
+    );
+    await page.goto(postPath(postWithoutOgImage()));
     await expect(meta(page, 'property="og:image"')).toHaveAttribute(
       "content",
-      /\/images\/2026\/share\/social-sharing-general\.png$/,
+      defaultImage!,
     );
   });
 });

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import {
   EVENTS_WITH_PAGES,
   PEOPLE,
@@ -12,6 +12,11 @@ import {
  * reference without one shows the registry value.
  */
 const registry = (id: string) => PEOPLE.find((p) => p.id === id)!;
+/** The Person card whose photo is of `name`. */
+const cardOf = (page: Page, name: string) =>
+  page.locator(".cjs-person-card").filter({
+    has: page.getByRole("img", { name: `photo of ${name}`, exact: true }),
+  });
 
 const overriddenOrganizers = EVENTS_WITH_PAGES.flatMap(({ year }) =>
   storedOrganizers(year)
@@ -27,10 +32,9 @@ test.describe("Person registry", () => {
       const refs = storedOrganizers(year);
       test.skip(refs.length === 0, "Event has no Organizers");
       await page.goto(`/${year}`);
-      const cards = page.locator(".cjs-person-card");
       for (const ref of refs.filter((r) => !r.overrides?.title)) {
         const { name, title } = registry(ref.id);
-        const card = cards.filter({ hasText: name });
+        const card = cardOf(page, name);
         await expect(card).toHaveCount(1);
         if (title) {
           await expect(card).toContainText(title);
@@ -63,9 +67,7 @@ test.describe("Person registry", () => {
     );
     for (const { year, ref } of overriddenOrganizers) {
       await page.goto(`/${year}`);
-      const card = page
-        .locator(".cjs-person-card")
-        .filter({ hasText: registry(ref.id).name });
+      const card = cardOf(page, registry(ref.id).name);
       await expect(card).toContainText(ref.overrides!.title!);
     }
   });

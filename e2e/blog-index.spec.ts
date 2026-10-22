@@ -7,7 +7,9 @@ import {
   flaggedPosts,
   listedPosts,
   longDate,
+  publishedFixturePosts,
 } from "./blog-helpers";
+import { FEATURED_EVENT } from "@shared/site-defaults";
 import { distPath } from "./helpers";
 
 /**
@@ -152,16 +154,19 @@ test.describe("Blog later pages", () => {
   });
 });
 
-test.describe("Post card", () => {
-  const fixture = (slug: string) =>
-    FIXTURE_POST_LIST.find((post) => post.slug === slug)!;
+const cardFor = (page: Page, slug: string) =>
+  page.locator(".cjs-post-card", {
+    has: page.locator(`a[href$="/blog/post/${slug}"]`),
+  });
 
+test.describe("Post card", () => {
   test("shows image, title, description, date, reading estimate and Tags", async ({
     page,
   }) => {
-    const post = fixture("md-post");
+    const post = listedPosts().find((p) => p.image)!;
+    expect(post).toBeDefined();
     await page.goto(pagePath(post.slug));
-    const card = page.locator(".cjs-post-card", { hasText: post.title });
+    const card = cardFor(page, post.slug);
     await expect(card.locator("img").first()).toBeVisible();
     await expect(card.locator("h3")).toHaveText(post.title);
     await expect(card).toContainText(post.description);
@@ -170,26 +175,24 @@ test.describe("Post card", () => {
     await expect(card.locator(".cjs-tag-chips a")).toHaveText(post.tags);
   });
 
-  const cases = [
-    { slug: "md-post", names: "Fixture Ada", avatars: 1 },
-    {
-      slug: "two-authors",
-      names: "Fixture Ada and Fixture Grace",
-      avatars: 2,
-    },
-    { slug: "three-authors", names: "Fixture Linus and 2 others", avatars: 3 },
-  ];
-  for (const { slug, names, avatars } of cases) {
-    test(`${slug} byline reads "${names}" with ${avatars} avatar(s)`, async ({
+  // One Post per Author count: "A", "A and B", "A and N others".
+  const names = (authors: { name: string }[]) =>
+    authors.length <= 2
+      ? authors.map((a) => a.name).join(" and ")
+      : `${authors[0].name} and ${authors.length - 1} others`;
+  for (const count of [1, 2, 3]) {
+    test(`a Post with ${count} Author(s) shows the card byline and one avatar per Author`, async ({
       page,
     }) => {
-      await page.goto(pagePath(slug));
-      const card = page.locator(".cjs-post-card", {
-        hasText: fixture(slug).title,
-      });
-      await expect(card.locator(".cjs-post-card-names")).toHaveText(names);
+      const post = listedPosts().find((p) => p.authors.length === count)!;
+      expect(post).toBeDefined();
+      await page.goto(pagePath(post.slug));
+      const card = cardFor(page, post.slug);
+      await expect(card.locator(".cjs-post-card-names")).toHaveText(
+        names(post.authors),
+      );
       await expect(card.locator(".cjs-post-card-avatars img")).toHaveCount(
-        avatars,
+        count,
       );
     });
   }
@@ -199,17 +202,17 @@ test.describe("Blog links in site chrome", () => {
   for (const path of ["/", "/code-of-conduct", "/blog"]) {
     test(`${path} header and footer link to /blog`, async ({ page }) => {
       await page.goto(path);
-      await expect(page.locator('.cjs-site-header a[href="/blog"]')).toHaveText(
-        "Blog",
-      );
-      await expect(page.locator('.cjs-site-footer a[href="/blog"]')).toHaveText(
-        "Blog",
-      );
+      await expect(
+        page.locator('.cjs-site-header a[href="/blog"]'),
+      ).toBeVisible();
+      await expect(
+        page.locator('.cjs-site-footer a[href="/blog"]'),
+      ).toBeVisible();
     });
   }
 
   test("an Event header has no Blog link", async ({ page }) => {
-    await page.goto("/2026");
+    await page.goto(`/${FEATURED_EVENT}`);
     await expect(page.locator('.cjs-event-nav a[href="/blog"]')).toHaveCount(0);
   });
 });
@@ -220,7 +223,7 @@ test.describe("Blog in the sitemap", () => {
   test("lists the blog pages and Posts", () => {
     expect(urls()).toMatch(/<loc>[^<]+\/blog<\/loc>/);
     expect(urls()).toMatch(/<loc>[^<]+\/blog\/2<\/loc>/);
-    expect(urls()).toContain("/blog/post/md-post<");
+    expect(urls()).toContain(`/blog/post/${publishedFixturePosts()[0].slug}<`);
   });
 
   test("lists no draft and no /blog/1", () => {

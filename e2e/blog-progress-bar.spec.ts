@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { postWithImage } from "./blog-helpers";
 
 /** Blog Post progress bar: CSS scroll timeline, no JS, hidden for reduced motion. */
-const POST = "/blog/post/md-post";
+const POST = `/blog/post/${postWithImage().slug}`;
 
 const fillWidth = async (page: import("@playwright/test").Page) =>
   (await page.locator(".cjs-progress-bar-fill").boundingBox())!.width;

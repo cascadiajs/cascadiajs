@@ -1,8 +1,9 @@
-import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
+import { normalizeTag } from "@shared/blog/format";
 import {
-  FIXTURE_POST_LIST,
+  draftPost,
   featuredPosts,
+  postWithTags,
   publishedFixturePosts,
 } from "./blog-helpers";
 
@@ -13,6 +14,17 @@ const postsWithTag = (tag: string) =>
   publishedFixturePosts()
     .filter((post) => post.tags.includes(tag))
     .sort(newestFirst);
+/** The Tags that visible Posts write in more than one case. */
+const mixedCaseTags = () => {
+  const spellings = new Map<string, Set<string>>();
+  for (const post of publishedFixturePosts()) {
+    for (const raw of post.rawTags) {
+      const tag = normalizeTag(raw);
+      spellings.set(tag, (spellings.get(tag) ?? new Set()).add(raw));
+    }
+  }
+  return [...spellings].filter(([, set]) => set.size > 1).map(([tag]) => tag);
+};
 const slugs = async (page: Page) =>
   (
     await page
@@ -22,30 +34,18 @@ const slugs = async (page: Page) =>
 
 test.describe("Tag pages", () => {
   test("fixtures write one Tag in different cases", () => {
-    const spellings = new Set(
-      ["md-post", "mdx-post"].flatMap((slug) => {
-        const dir = `src/content/blog-fixtures/${slug}`;
-        const file = FIXTURE_POST_LIST.find((p) => p.slug === slug)!;
-        expect(file).toBeDefined();
-        const src = readFileSync(
-          `${dir}/index.${slug === "mdx-post" ? "mdx" : "md"}`,
-          "utf8",
-        );
-        return [...src.matchAll(/^\s+-\s+(javascript)\s*$/gim)].map(
-          (m) => m[1],
-        );
-      }),
-    );
-    expect(spellings.size).toBeGreaterThan(1);
+    expect(mixedCaseTags().length).toBeGreaterThan(0);
   });
 
   test("a mixed-case Tag has one page at the lowercase slug listing every Post, newest first", async ({
     page,
   }) => {
-    const response = await page.goto("/blog/tags/javascript");
+    const tag = mixedCaseTags()[0];
+    expect(tag).toBe(tag.toLowerCase());
+    const response = await page.goto(`/blog/tags/${tag}`);
     expect(response?.status()).toBe(200);
-    await expect(page.locator("h1")).toHaveText("#javascript");
-    const expected = postsWithTag("javascript");
+    await expect(page.locator("h1")).toHaveText(`#${tag}`);
+    const expected = postsWithTag(tag);
     expect(expected.length).toBeGreaterThan(1);
     expect(await slugs(page)).toEqual(expected.map((p) => p.slug));
   });
@@ -53,12 +53,11 @@ test.describe("Tag pages", () => {
   test("a Featured Post is a normal card, with no Featured band and no search form", async ({
     page,
   }) => {
-    await page.goto("/blog/tags/featured");
-    const featured = featuredPosts();
-    expect(await slugs(page)).toEqual(
-      postsWithTag("featured").map((p) => p.slug),
-    );
-    expect(await slugs(page)).toContain(featured[0].slug);
+    const featured = featuredPosts()[0];
+    const tag = featured.tags[0];
+    await page.goto(`/blog/tags/${tag}`);
+    expect(await slugs(page)).toEqual(postsWithTag(tag).map((p) => p.slug));
+    expect(await slugs(page)).toContain(featured.slug);
     await expect(page.locator(".cjs-featured-band")).toHaveCount(0);
     await expect(page.locator(".cjs-featured-card")).toHaveCount(0);
     await expect(page.locator("form")).toHaveCount(0);
@@ -68,7 +67,7 @@ test.describe("Tag pages", () => {
   test("a Tag used only by a draft has no page in the production build", async ({
     request,
   }) => {
-    const draft = FIXTURE_POST_LIST.find((p) => !p.published)!;
+    const draft = draftPost();
     for (const tag of draft.tags) {
       if (postsWithTag(tag).length === 0) {
         expect((await request.get(`/blog/tags/${tag}`)).status()).toBe(404);
@@ -80,18 +79,19 @@ test.describe("Tag pages", () => {
   test("Tag chips on cards and Post pages link to the right Tag page", async ({
     page,
   }) => {
-    await page.goto("/blog/tags/teamwork");
-    const chip = page
-      .locator(".cjs-post-card")
-      .first()
-      .locator(".cjs-tag-chips a");
-    await chip.first().click();
-    await expect(page).toHaveURL(/\/blog\/tags\/teamwork$/);
-    await page.goto("/blog/post/md-post");
+    const post = postWithTags();
+    const [first, second] = post.tags;
+    await page.goto(`/blog/tags/${first}`);
     await page
-      .locator(".cjs-tag-chips a", { hasText: "web-components" })
+      .locator(".cjs-post-card", {
+        has: page.locator(`a[href$="/blog/post/${post.slug}"]`),
+      })
+      .locator(`.cjs-tag-chips a[href="/blog/tags/${second}"]`)
       .click();
-    await expect(page).toHaveURL(/\/blog\/tags\/web-components$/);
-    expect(await slugs(page)).toEqual(["md-post"]);
+    await expect(page).toHaveURL(new RegExp(`/blog/tags/${second}$`));
+    expect(await slugs(page)).toEqual(postsWithTag(second).map((p) => p.slug));
+    await page.goto(`/blog/post/${post.slug}`);
+    await page.locator(`.cjs-tag-chips a[href="/blog/tags/${first}"]`).click();
+    await expect(page).toHaveURL(new RegExp(`/blog/tags/${first}$`));
   });
 });
