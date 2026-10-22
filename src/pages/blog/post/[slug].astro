@@ -1,0 +1,111 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getImage, Image } from "astro:assets";
+import { getEntries, render } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import CtaButton from "@components/CtaButton.astro";
+import PostBody from "@components/PostBody.astro";
+import PostByline from "@components/PostByline.astro";
+import SponsorsGrid from "@components/SponsorsGrid.astro";
+import TagChips from "@components/TagChips.astro";
+import { normalizeTag, readingMinutes } from "@shared/blog/format";
+import { getVisiblePosts } from "@shared/blog/get-posts";
+import { FEATURED_EVENT } from "@shared/site-defaults";
+
+export const getStaticPaths = (async () => {
+  const posts = await getVisiblePosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const authors = (await getEntries(post.data.authors)).map((entry) => ({
+  id: entry.id,
+  name: entry.data.name,
+  image: entry.data.image,
+}));
+const tags = [...new Set(post.data.tags.map(normalizeTag))];
+const minutes = readingMinutes(post.body ?? "");
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", { dateStyle: "long", timeZone: "UTC" });
+
+// `ogImage` as an absolute URL to a 1200-wide JPEG; else the Layout default.
+let ogImage: string | undefined;
+if (post.data.ogImage) {
+  const resized = await getImage({
+    src: post.data.ogImage,
+    width: 1200,
+    format: "jpg",
+  });
+  ogImage = new URL(resized.src, Astro.site ?? Astro.url.origin).href;
+}
+---
+
+<Layout
+  title={`CascadiaJS | ${post.data.title}`}
+  description={post.data.description}
+  ogImage={ogImage}
+  article={{
+    publishedTime: post.data.pubDate,
+    modifiedTime: post.data.updatedDate,
+    authors: authors.map((author) => author.name),
+    tags,
+  }}
+>
+  <article class="cjs-post">
+    <header class="bg-sound-navy text-cedar-cream">
+      <div class="mx-auto box-content max-w-[1200px] px-4 pt-14 pb-12">
+        <TagChips tags={post.data.tags} />
+        <h1
+          class="font-display text-cedar-cream mt-5 mb-6 max-w-[18ch] text-5xl leading-none md:text-[80px]"
+        >
+          {post.data.title}
+        </h1>
+        <PostByline authors={authors} />
+        <p class="text-cedar-cream/70 mt-4 mb-0 text-sm">
+          <time datetime={post.data.pubDate.toISOString()} class="cjs-post-date"
+            >{formatDate(post.data.pubDate)}</time
+          >
+          {
+            post.data.updatedDate && (
+              <>
+                {" · Updated "}
+                <time
+                  datetime={post.data.updatedDate.toISOString()}
+                  class="cjs-post-updated"
+                >
+                  {formatDate(post.data.updatedDate)}
+                </time>
+              </>
+            )
+          }
+          {" · "}
+          <span class="cjs-post-reading-time">{minutes} min read</span>
+        </p>
+      </div>
+    </header>
+    {
+      post.data.image && (
+        <div class="mx-auto box-content max-w-[1200px] px-4 pt-8">
+          <Image
+            src={post.data.image}
+            alt=""
+            width={1200}
+            class="aspect-[2/1] w-full rounded-lg object-cover shadow-xl"
+          />
+        </div>
+      )
+    }
+    <div class="mx-auto box-content max-w-[720px] px-4 py-12">
+      <PostBody>
+        <Content />
+      </PostBody>
+    </div>
+  </article>
+  <section id="sponsors" class="box-content p-8 text-center">
+    <h2 class="font-display mt-0 mb-8 text-5xl">Past Sponsors</h2>
+    <SponsorsGrid exclude={FEATURED_EVENT} />
+    <CtaButton href={`/${FEATURED_EVENT}/sponsor`}>Sponsor Our Event</CtaButton>
+  </section>
+</Layout>

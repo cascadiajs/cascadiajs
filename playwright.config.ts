@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import process from "node:process";
 import { freePort } from "./scripts/free-port.mjs";
 
 // Each run picks its own free port, so concurrent runs (one per worktree) never
@@ -6,6 +7,11 @@ import { freePort } from "./scripts/free-port.mjs";
 // PORT to choose one.
 process.env.PORT ??= String(await freePort());
 const port = Number(process.env.PORT);
+
+// Test-build flag: the build under test includes the test-only fixtures
+// (fixture Posts and Authors, an Event override). Set here so the webServer
+// build and the test workers agree. Production builds never set it.
+process.env.CJS_TEST_FIXTURES = "1";
 
 export default defineConfig({
   testDir: "e2e",
@@ -42,6 +48,7 @@ export default defineConfig({
     // needs no login or linked site.
     command: "pnpm run serve",
     port,
+    env: { CJS_TEST_FIXTURES: "1" },
     timeout: 240_000,
     // Never test a server this run did not start. Set REUSE_SERVER=1 to reuse.
     reuseExistingServer: Boolean(process.env.REUSE_SERVER),

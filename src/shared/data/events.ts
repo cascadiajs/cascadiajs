@@ -1,5 +1,11 @@
 import peopleJson from "./people.json";
 import { parsePeople, resolvePerson, type PersonRef } from "../people";
+import {
+  applyFixtureOverrides,
+  TEST_FIXTURES,
+  type FixtureOverrides,
+} from "../test-fixtures";
+import fixtureOverrides from "./fixtures/organizer-overrides.json";
 import type { Activity, EventConfig, EventYear, Person, Ticket } from "./types";
 
 const configs = import.meta.glob<{ default: EventConfig }>(
@@ -71,9 +77,12 @@ function readDataset<T>(
  * overrides applied. [] when it has no Organizers file.
  */
 export function getOrganizers(year: EventYear): Person[] {
-  return readDataset(organizerFiles, year, "organizers.json").map((ref) =>
-    resolvePerson(registry, ref),
-  );
+  const refs = readDataset(organizerFiles, year, "organizers.json");
+  return (
+    TEST_FIXTURES
+      ? applyFixtureOverrides(refs, year, fixtureOverrides as FixtureOverrides)
+      : refs
+  ).map((ref) => resolvePerson(registry, ref));
 }
 
 /** An Event's Tickets, or [] when it has no Tickets file. */

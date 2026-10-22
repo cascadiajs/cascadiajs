@@ -1,0 +1,29 @@
+---
+title: Fixture MDX Post
+description: A test-only Post that uses Callout, VideoEmbed, CtaButton and a code block.
+pubDate: 2026-03-09
+authors:
+  - fixture-grace
+tags:
+  - mdx
+---
+
+import Callout from "@components/Callout.astro";
+import VideoEmbed from "@components/VideoEmbed.astro";
+import CtaButton from "@components/CtaButton.astro";
+
+This Post is MDX.
+
+<Callout variant="info">A fixture callout.</Callout>
+
+<VideoEmbed
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  title="Fixture video"
+/>
+
+```js
+const answer = 42;
+console.log(answer);
+```
+
+<CtaButton href="/mailing-list">Fixture call to action</CtaButton>
