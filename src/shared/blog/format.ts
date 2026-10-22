@@ -45,3 +45,18 @@ export function postByline(names: readonly string[]): string {
     .map((name, index) => bylineSeparator(index, names.length) + name)
     .join("");
 }
+
+/** Bluesky compose link; the text is "<title> <url>". */
+export function blueskyShareUrl(title: string, url: string): string {
+  return `https://bsky.app/intent/compose?text=${encodeURIComponent(`${title} ${url}`)}`;
+}
+
+/** LinkedIn share-offsite link. */
+export function linkedinShareUrl(url: string): string {
+  return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+}
+
+/** X tweet-intent link. */
+export function xShareUrl(title: string, url: string): string {
+  return `https://x.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+}
