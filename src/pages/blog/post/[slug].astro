@@ -7,6 +7,7 @@ import CtaButton from "@components/CtaButton.astro";
 import RssLink from "@components/RssLink.astro";
 import PostBody from "@components/PostBody.astro";
 import PostByline from "@components/PostByline.astro";
+import ShareBar from "@components/ShareBar.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
 import TagChips from "@components/TagChips.astro";
 import { normalizeTag, readingMinutes } from "@shared/blog/format";
@@ -99,7 +100,10 @@ if (post.data.ogImage) {
         </div>
       )
     }
-    <div class="mx-auto box-content max-w-[720px] px-4 py-12">
+    <div
+      class="mx-auto box-content max-w-[720px] px-4 py-12 md:grid md:max-w-[824px] md:grid-cols-[48px_minmax(0,720px)] md:gap-10"
+    >
+      <ShareBar title={post.data.title} />
       <PostBody>
         <Content />
       </PostBody>

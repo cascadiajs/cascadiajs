@@ -137,6 +137,8 @@ A file under a year folder only gets a page if that Event has a config in `src/s
 
 **Blog Posts** are folders in `src/content/blog/`, served by `src/pages/blog/post/[slug].astro` at `/blog/post/<slug>`. The folder name is the slug. Every blog route gets its Posts from `getVisiblePosts()` in `src/shared/blog/get-posts.ts`, which hides drafts (`published: false`) in production and shows them in `pnpm dev`.
 
+Each Post page has a share bar (`ShareBar`): a sticky rail beside the Post on desktop, a fixed bottom bar on phones. Bluesky, LinkedIn and X are plain links built at build time by the helpers in `src/shared/blog/format.ts`. Copy link and Web Share render hidden, and one script in the component reveals each where the browser supports it. Hover colors use `motion-safe:` transitions, so reduced motion changes color instantly.
+
 The RSS feed is `src/pages/blog/rss.xml.ts` (`@astrojs/rss`), served at `/blog/rss.xml`. It lists every visible Post newest first, with title, description, link and date only (no body, no author). Blog pages link it for autodiscovery by putting `<RssLink slot="head" />` in their `Layout`.
 
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.
