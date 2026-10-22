@@ -382,14 +382,9 @@ pnpm test --ui                          # Playwright's interactive runner
 
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
 
-<<<<<<< HEAD
 `pnpm test` builds and serves its own checkout on a free port (set `PORT` to choose one), so runs from several worktrees at the same time do not collide. Playwright never reuses a server it did not start, unless you set `REUSE_SERVER=1`. `pnpm serve` also picks free ports: `PORT` or any free port for the site, and a free port for the Netlify CLI's internal static server. Read the site URL in its output.
-=======
+
 The suite builds with `CJS_TEST_FIXTURES=1` (set in `playwright.config.ts`), so the test-only fixtures (Posts, Authors, an Event override) exist. See [Blog Posts](#blog-posts-srccontentblog).
-
-If a dev server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` before `pnpm test` if you want to test the real build.
-
-> > > > > > > blog
 
 CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
