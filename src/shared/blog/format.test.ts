@@ -1,5 +1,32 @@
 import { describe, expect, it } from "vitest";
-import { normalizeTag, postByline, readingMinutes } from "./format";
+import {
+  blueskyShareUrl,
+  linkedinShareUrl,
+  normalizeTag,
+  postByline,
+  readingMinutes,
+  xShareUrl,
+} from "./format";
+
+describe("share URL builders", () => {
+  const url = "https://cascadiajs.com/blog/post/a-b";
+  const encodedUrl = "https%3A%2F%2Fcascadiajs.com%2Fblog%2Fpost%2Fa-b";
+  it("builds a Bluesky compose link with title and URL as encoded text", () => {
+    expect(blueskyShareUrl("Hi & bye?", url)).toBe(
+      `https://bsky.app/intent/compose?text=Hi%20%26%20bye%3F%20${encodedUrl}`,
+    );
+  });
+  it("builds a LinkedIn link with the encoded URL", () => {
+    expect(linkedinShareUrl(url)).toBe(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    );
+  });
+  it("builds an X link with encoded title and URL", () => {
+    expect(xShareUrl('C++ #1 "best" 日本', url)).toBe(
+      `https://x.com/intent/tweet?text=C%2B%2B%20%231%20%22best%22%20%E6%97%A5%E6%9C%AC&url=${encodedUrl}`,
+    );
+  });
+});
 
 describe("normalizeTag", () => {
   it("lowercases", () => {
