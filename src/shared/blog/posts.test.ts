@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   duplicateIds,
   splitFeatured,
+  tagIndex,
   unknownAuthors,
   visiblePosts,
 } from "./posts";
@@ -83,5 +84,26 @@ describe("splitFeatured", () => {
   });
   it("handles no Posts", () => {
     expect(splitFeatured([])).toEqual({ featured: [], rest: [] });
+  });
+});
+
+describe("tagIndex", () => {
+  const tagged = (id: string, pubDate: string, tags: string[]) => ({
+    id,
+    data: { pubDate: new Date(pubDate), tags },
+  });
+
+  it("groups Posts by normalized Tag, newest first, merging case variants", () => {
+    const index = tagIndex([
+      tagged("old", "2026-01-01", ["JavaScript"]),
+      tagged("new", "2026-03-01", ["javascript", "Web Components"]),
+    ]);
+    expect([...index.keys()].sort()).toEqual(["javascript", "web-components"]);
+    expect(index.get("javascript")!.map((p) => p.id)).toEqual(["new", "old"]);
+  });
+
+  it("lists a Post once when it repeats a Tag in different cases", () => {
+    const index = tagIndex([tagged("a", "2026-01-01", ["JS", "js"])]);
+    expect(index.get("js")!.map((p) => p.id)).toEqual(["a"]);
   });
 });

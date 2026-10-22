@@ -15,10 +15,10 @@ const FROZEN = new Set(
 );
 
 /**
- * Pages linked from the blog but not built yet. #69 (Tag pages) and #70
- * (Author pages) build them and remove this.
+ * Pages linked from the blog but not built yet. #70 (Author pages) builds
+ * them and removes this.
  */
-const NOT_BUILT_YET = /^\/blog\/(tags|authors)\//;
+const NOT_BUILT_YET = /^\/blog\/authors\//;
 
 /** Same-origin path of `ref`, or null for external, mailto, tel, data and fragment-only refs. */
 function internalPath(ref: string): string | null {
