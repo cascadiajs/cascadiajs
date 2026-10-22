@@ -77,6 +77,7 @@ src/
   components/       Presentational Astro components
     schedule/       Building blocks for the Event schedule page
     table/          Table primitives (used by the sponsorship brochure)
+    blog/           Blog Post, index, Author, search and share components
   shared/
     data/           JSON datasets, Event configs, shared types, data helpers
     site-defaults.ts  Site-wide title/description, Featured Event, analytics IDs
@@ -143,7 +144,7 @@ Tag pages are `src/pages/blog/tags/[tag].astro`: one page per normalized Tag (`/
 
 Author pages are `src/pages/blog/authors/[id].astro`, at `/blog/authors/<id>`. There is one page for each Person with the `author` role, with or without Posts. `AuthorHeader` shows the picture, name, pronouns, title and company, location, website, social links and bio, and hides each field that is not set. Below it, every visible Post that lists the Person in `authors` shows as a `PostCard`, newest first, with no pagination, Featured band or search box. An Author with no visible Posts sees an empty state. Author names on `PostCard` and in the Post byline link to these pages.
 
-A Post page starts with a reading progress bar (`src/components/ProgressBar.astro`). It uses a CSS scroll timeline (`animation-timeline: scroll()`) inside `@supports`, with no JavaScript. It scrolls away with the header, then pins to the top. Browsers without scroll timelines and readers with `prefers-reduced-motion: reduce` see no bar.
+A Post page starts with a reading progress bar (`src/components/blog/ProgressBar.astro`). It uses a CSS scroll timeline (`animation-timeline: scroll()`) inside `@supports`, with no JavaScript. It scrolls away with the header, then pins to the top. Browsers without scroll timelines and readers with `prefers-reduced-motion: reduce` see no bar.
 
 Each Post page has a share bar (`ShareBar`): a sticky rail beside the Post on desktop, a fixed bottom bar on phones. Bluesky, LinkedIn and X are plain links built at build time by the helpers in `src/shared/blog/format.ts`. Copy link and Web Share render hidden, and one script in the component reveals each where the browser supports it. Hover colors use `motion-safe:` transitions, so reduced motion changes color instantly.
 

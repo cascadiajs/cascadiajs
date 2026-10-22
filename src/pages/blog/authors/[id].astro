@@ -2,9 +2,9 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import AuthorHeader from "@components/AuthorHeader.astro";
-import PostCard from "@components/PostCard.astro";
-import RssLink from "@components/RssLink.astro";
+import AuthorHeader from "@components/blog/AuthorHeader.astro";
+import PostCard from "@components/blog/PostCard.astro";
+import RssLink from "@components/blog/RssLink.astro";
 import { getVisiblePosts } from "@shared/blog/get-posts";
 import { postsByAuthor } from "@shared/blog/posts";
 

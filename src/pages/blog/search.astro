@@ -3,8 +3,8 @@
 export const prerender = false;
 
 import Layout from "@layouts/Layout.astro";
-import PostCard from "@components/PostCard.astro";
-import SearchForm from "@components/SearchForm.astro";
+import PostCard from "@components/blog/PostCard.astro";
+import SearchForm from "@components/blog/SearchForm.astro";
 import { getPostAuthors, getVisiblePosts } from "@shared/blog/get-posts";
 import {
   collectTags,

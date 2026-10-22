@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
 import Layout from "@layouts/Layout.astro";
-import FeaturedBand from "@components/FeaturedBand.astro";
-import Pagination from "@components/Pagination.astro";
-import PostCard from "@components/PostCard.astro";
-import SearchForm from "@components/SearchForm.astro";
-import RssLink from "@components/RssLink.astro";
+import FeaturedBand from "@components/blog/FeaturedBand.astro";
+import Pagination from "@components/blog/Pagination.astro";
+import PostCard from "@components/blog/PostCard.astro";
+import SearchForm from "@components/blog/SearchForm.astro";
+import RssLink from "@components/blog/RssLink.astro";
 import { getVisiblePosts } from "@shared/blog/get-posts";
 import { splitFeatured } from "@shared/blog/posts";
 
