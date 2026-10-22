@@ -29,8 +29,13 @@ export default defineConfig({
     baseURL: "http://localhost:4321",
   },
   webServer: {
-    command: "pnpm run build && pnpm run preview --ignore-lock",
+    // `astro preview` does not support the Netlify adapter, so tests run
+    // against `netlify serve`: it runs the build from netlify.toml, then serves
+    // `dist/` and the on-demand routes' function, as Netlify does. Offline mode
+    // needs no login or linked site.
+    command: "pnpm run serve",
     port: 4321,
+    timeout: 240_000,
     reuseExistingServer: true,
   },
 });

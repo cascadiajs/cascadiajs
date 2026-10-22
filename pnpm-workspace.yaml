@@ -4,3 +4,10 @@
 allowBuilds:
   esbuild: true
   sharp: true
+  # Optional install steps for the Netlify CLI (test server only); not needed.
+  netlify-cli: false
+  unix-dgram: false
+# One vite for astro, Tailwind and the Netlify adapter. Two copies break the
+# plugin types in astro.config.mjs (`pnpm check`).
+overrides:
+  vite: 8.3.5

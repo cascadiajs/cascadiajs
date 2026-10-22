@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
+import netlify from "@astrojs/netlify";
 
 // Netlify sets these at build time: URL is the site's main address,
 // DEPLOY_PRIME_URL the stable URL for a deploy preview or branch deploy, and
@@ -22,6 +23,12 @@ export default defineConfig({
   // Canonical/OG URLs resolve against `site`, so previews share their own
   // images and production consolidates on its main address.
   site,
+  // Static by default. A route opts into on-demand rendering with
+  // `export const prerender = false` (ADR-0016). The adapter keeps its default
+  // `imageCDN` (every astro:assets image is served by the Netlify Image CDN),
+  // and `cacheOnDemandPages` stays off.
+  output: "static",
+  adapter: netlify(),
   // Legacy URLs never end in a slash (the slashed form 404s), so routes and
   // canonical URLs must match. The root stays "/".
   trailingSlash: "never",
