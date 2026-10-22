@@ -4,6 +4,8 @@
  * import `astro:content` here; `get-posts.ts` does that.
  */
 
+import { normalizeTag } from "./format";
+
 export interface PostLike {
   id: string;
   data: { pubDate: Date; published: boolean };
@@ -78,4 +80,23 @@ export function postsByAuthor<
   return posts.filter((post) =>
     post.data.authors.some((author) => author.id === authorId),
   );
+}
+
+/**
+ * Tag index: normalized Tag to its Posts, newest first. Tags that differ only in case are one Tag. A Post that repeats a
+ * Tag in different cases is listed once.
+ */
+export function tagIndex<
+  T extends { data: { pubDate: Date; tags: readonly string[] } },
+>(posts: readonly T[]): Map<string, T[]> {
+  const index = new Map<string, T[]>();
+  const newestFirst = [...posts].sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+  );
+  for (const post of newestFirst) {
+    for (const tag of new Set(post.data.tags.map(normalizeTag))) {
+      index.set(tag, [...(index.get(tag) ?? []), post]);
+    }
+  }
+  return index;
 }
