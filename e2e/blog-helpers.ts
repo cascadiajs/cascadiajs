@@ -12,6 +12,7 @@ export interface FixturePost {
   pubDate: string;
   updatedDate?: string;
   published: boolean;
+  featured: boolean;
   ogImage?: string;
   authors: { id: string; name: string }[];
   /** Normalized Tags. */
@@ -62,6 +63,7 @@ export const FIXTURE_POST_LIST: FixturePost[] = readdirSync(
       pubDate: data.pubDate as string,
       updatedDate: data.updatedDate as string | undefined,
       published: data.published !== "false",
+      featured: data.featured === "true",
       ogImage: data.ogImage as string | undefined,
       authors: (data.authors as string[]).map((id) => ({
         id,
@@ -81,3 +83,26 @@ export const longDate = (iso: string) =>
     dateStyle: "long",
     timeZone: "UTC",
   });
+
+/** Posts per index page. */
+export const PAGE_SIZE = 12;
+
+const newestFirst = (a: FixturePost, b: FixturePost) =>
+  Date.parse(b.pubDate) - Date.parse(a.pubDate);
+
+/** Every visible flagged Post, newest first. */
+export const flaggedPosts = () =>
+  publishedFixturePosts()
+    .filter((post) => post.featured)
+    .sort(newestFirst);
+
+/** The Featured band: the newest three visible flagged Posts. */
+export const featuredPosts = () => flaggedPosts().slice(0, 3);
+
+/** The paginated list: every visible Post except the Featured band, newest first. */
+export const listedPosts = () => {
+  const featured = new Set(featuredPosts().map((post) => post.slug));
+  return publishedFixturePosts()
+    .filter((post) => !featured.has(post.slug))
+    .sort(newestFirst);
+};

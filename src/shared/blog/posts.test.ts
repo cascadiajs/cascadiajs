@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { duplicateIds, unknownAuthors, visiblePosts } from "./posts";
+import {
+  duplicateIds,
+  splitFeatured,
+  unknownAuthors,
+  visiblePosts,
+} from "./posts";
 
 describe("unknownAuthors", () => {
   it("lists Author ids missing from the registry, per Post", () => {
@@ -43,5 +48,40 @@ describe("visiblePosts", () => {
       "new",
       "old",
     ]);
+  });
+});
+
+describe("splitFeatured", () => {
+  const entry = (id: string, day: number, featured: boolean) => ({
+    id,
+    data: { pubDate: new Date(2026, 0, day), published: true, featured },
+  });
+  // Newest first, as `visiblePosts` returns them.
+  const list = [
+    entry("a", 9, true),
+    entry("b", 8, false),
+    entry("c", 7, true),
+    entry("d", 6, true),
+    entry("e", 5, true),
+    entry("f", 4, false),
+  ];
+
+  it("takes the newest three flagged Posts as Featured", () => {
+    expect(splitFeatured(list).featured.map((p) => p.id)).toEqual([
+      "a",
+      "c",
+      "d",
+    ]);
+  });
+  it("keeps every other Post, including older flagged ones, in order", () => {
+    expect(splitFeatured(list).rest.map((p) => p.id)).toEqual(["b", "e", "f"]);
+  });
+  it("returns fewer than three Featured when fewer are flagged", () => {
+    const split = splitFeatured([entry("x", 1, true), entry("y", 2, false)]);
+    expect(split.featured.map((p) => p.id)).toEqual(["x"]);
+    expect(split.rest.map((p) => p.id)).toEqual(["y"]);
+  });
+  it("handles no Posts", () => {
+    expect(splitFeatured([])).toEqual({ featured: [], rest: [] });
   });
 });

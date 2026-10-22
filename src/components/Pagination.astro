@@ -1,0 +1,42 @@
+---
+interface Props {
+  currentPage: number;
+  lastPage: number;
+  /** URL of page `n`. Page 1 is `/blog`, never `/blog/1`. */
+  href: (page: number) => string;
+}
+
+const { currentPage, lastPage, href } = Astro.props;
+const pages = Array.from({ length: lastPage }, (_, i) => i + 1);
+const link =
+  "ring-sound-navy text-sound-navy flex h-11 min-w-11 items-center justify-center rounded-full px-3 font-medium no-underline ring-2";
+---
+
+{
+  lastPage > 1 && (
+    <nav
+      class="cjs-pagination mt-12 flex flex-wrap justify-center gap-2"
+      aria-label="Pagination"
+    >
+      {pages.map((n) =>
+        n === currentPage ? (
+          <span
+            aria-current="page"
+            class="bg-sound-navy text-cedar-cream flex h-11 min-w-11 items-center justify-center rounded-full px-3 font-medium"
+          >
+            {n}
+          </span>
+        ) : (
+          <a href={href(n)} class={link}>
+            {n}
+          </a>
+        ),
+      )}
+      {currentPage < lastPage && (
+        <a href={href(currentPage + 1)} class={link} rel="next">
+          Next →
+        </a>
+      )}
+    </nav>
+  )
+}

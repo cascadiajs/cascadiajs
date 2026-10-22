@@ -45,3 +45,19 @@ export function postByline(names: readonly string[]): string {
     .map((name, index) => bylineSeparator(index, names.length) + name)
     .join("");
 }
+
+/** Card byline: "A", "A and B", or "A and N others" for three or more. */
+export function cardByline(names: readonly string[]): string {
+  if (names.length <= 2) {
+    return postByline(names);
+  }
+  return `${names[0]} and ${names.length - 1} others`;
+}
+
+/** "March 10, 2026". Dates are UTC calendar days. */
+export function formatPostDate(date: Date): string {
+  return date.toLocaleDateString("en-US", {
+    dateStyle: "long",
+    timeZone: "UTC",
+  });
+}

@@ -137,6 +137,8 @@ A file under a year folder only gets a page if that Event has a config in `src/s
 
 **Blog Posts** are folders in `src/content/blog/`, served by `src/pages/blog/post/[slug].astro` at `/blog/post/<slug>`. The folder name is the slug. Every blog route gets its Posts from `getVisiblePosts()` in `src/shared/blog/get-posts.ts`, which hides drafts (`published: false`) in production and shows them in `pnpm dev`.
 
+The blog index is `src/pages/blog/[...page].astro`: `/blog`, then `/blog/2`, `/blog/3` and on, 12 Posts per page, newest first (`/blog/1` is never built). Page 1 opens with the Featured band: the newest three visible Posts with `featured: true`. Featured Posts stay out of the paginated list on every page, and older flagged Posts join the list as normal Posts. With no visible Posts, `/blog` shows an empty state. `PostCard` is the one Post card (index, and later Tag, Author and search pages). `FeaturedCard` and `FeaturedBand` render the Featured band. A "Blog" link sits in `SiteHeader` and `SiteFooter`; Event headers do not have it.
+
 The RSS feed is `src/pages/blog/rss.xml.ts` (`@astrojs/rss`), served at `/blog/rss.xml`. It lists every visible Post newest first, with title, description, link and date only (no body, no author). Blog pages link it for autodiscovery by putting `<RssLink slot="head" />` in their `Layout`.
 
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.

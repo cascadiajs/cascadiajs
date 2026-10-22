@@ -52,3 +52,21 @@ export function visiblePosts<T extends PostLike>(
     .filter((post) => dev || post.data.published)
     .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 }
+
+/** The most Posts the Featured band holds. */
+export const FEATURED_LIMIT = 3;
+
+/**
+ * Split newest-first Posts into the Featured band and the rest. Featured is
+ * the newest three with `featured: true`. Older flagged Posts stay in `rest`
+ * as normal Posts, in their original order.
+ */
+export function splitFeatured<T extends { data: { featured: boolean } }>(
+  posts: readonly T[],
+): { featured: T[]; rest: T[] } {
+  const featured = posts
+    .filter((post) => post.data.featured)
+    .slice(0, FEATURED_LIMIT);
+  const chosen = new Set(featured);
+  return { featured, rest: posts.filter((post) => !chosen.has(post)) };
+}

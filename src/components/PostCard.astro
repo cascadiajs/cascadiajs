@@ -1,0 +1,99 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import TagChips from "@components/TagChips.astro";
+import {
+  cardByline,
+  formatPostDate,
+  readingMinutes,
+} from "@shared/blog/format";
+import { getPostAuthors } from "@shared/blog/get-posts";
+
+interface Props {
+  /** A visible Post. The one card for the index, Tag, Author and search pages. */
+  post: CollectionEntry<"blog">;
+  /** Rendered image width in px; search results pass a thumbnail size. */
+  imageWidth?: number;
+  class?: string;
+}
+
+const { post, imageWidth = 600, class: className } = Astro.props;
+const authors = await getPostAuthors(post);
+
+const eventImages = import.meta.glob<{ default: ImageMetadata }>(
+  "@assets/events/**/*.{jpg,png,jpeg}",
+  { eager: false, base: "/src/assets" },
+);
+const avatars = await Promise.all(
+  authors.map(async (author) => {
+    const load = eventImages[`.${author.image}`];
+    if (!load) {
+      throw new Error(`PostCard: image not found at .${author.image}`);
+    }
+    return (await load()).default;
+  }),
+);
+const href = `/blog/post/${post.id}`;
+---
+
+<article
+  class:list={[
+    "cjs-post-card ring-sound-navy/10 flex flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1",
+    className,
+  ]}
+>
+  {
+    post.data.image ? (
+      <Image
+        src={post.data.image}
+        alt=""
+        width={imageWidth}
+        class="aspect-[16/10] w-full object-cover"
+      />
+    ) : (
+      <div
+        class="bg-cascade-blue font-display text-cedar-cream flex aspect-[16/10] items-center justify-center p-6 text-center text-2xl"
+        aria-hidden="true"
+      >
+        {post.data.title}
+      </div>
+    )
+  }
+  <div class="flex flex-1 flex-col p-5">
+    <TagChips tags={post.data.tags} />
+    <h3 class="font-display text-sound-navy mt-3 mb-2 text-2xl">
+      <a
+        href={href}
+        class="cjs-post-card-link text-sound-navy no-underline hover:underline"
+        >{post.data.title}</a
+      >
+    </h3>
+    <p class="flex-1 text-base">{post.data.description}</p>
+    <p class="text-sound-navy/70 mt-2 mb-0 text-sm">
+      <time datetime={post.data.pubDate.toISOString()}
+        >{formatPostDate(post.data.pubDate)}</time
+      >
+      {" · "}
+      {readingMinutes(post.body ?? "")} min read
+    </p>
+    <div class="mt-3 flex items-center gap-3 text-sm">
+      <div class="cjs-post-card-avatars flex -space-x-3">
+        {
+          avatars.map((avatar) => (
+            <Image
+              src={avatar}
+              alt=""
+              width={32}
+              height={32}
+              class="size-8 rounded-full object-cover ring-2 ring-white"
+            />
+          ))
+        }
+      </div>
+      <span class="cjs-post-card-names font-medium"
+        >{cardByline(authors.map((author) => author.name))}</span
+      >
+    </div>
+  </div>
+</article>

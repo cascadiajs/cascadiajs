@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normalizeTag, postByline, readingMinutes } from "./format";
+import { cardByline, normalizeTag, postByline, readingMinutes } from "./format";
 
 describe("normalizeTag", () => {
   it("lowercases", () => {
@@ -50,5 +50,20 @@ describe("postByline", () => {
   });
   it("names every one of four Authors", () => {
     expect(postByline(["A", "B", "C", "D"])).toBe("A, B, C and D");
+  });
+});
+
+describe("cardByline", () => {
+  it("names one Author", () => {
+    expect(cardByline(["Ada"])).toBe("Ada");
+  });
+  it("names two Authors", () => {
+    expect(cardByline(["Ada", "Grace"])).toBe("Ada and Grace");
+  });
+  it("names two and counts the rest for three Authors", () => {
+    expect(cardByline(["Ada", "Grace", "Linus"])).toBe("Ada and 2 others");
+  });
+  it("counts every Author beyond the first", () => {
+    expect(cardByline(["A", "B", "C", "D", "E"])).toBe("A and 4 others");
   });
 });
