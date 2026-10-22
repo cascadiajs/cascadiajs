@@ -16,6 +16,8 @@ interface Props {
   ogImage?: string;
   displayNav?: boolean;
   displayAlert?: boolean;
+  /** Canonical path when it differs from the page's own (e.g. search). */
+  canonicalPath?: string;
   /** Set on an article page (a blog Post): switches `og:type` to article. */
   article?: {
     publishedTime: Date;
@@ -33,6 +35,7 @@ const {
   ogImage = "/images/2026/share/social-sharing-general.png",
   title = DEFAULT_TITLE,
   article,
+  canonicalPath,
 } = Astro.props;
 
 // Legacy snippets, verbatim from app/head.mjs. Kept as strings so the braces
@@ -58,7 +61,8 @@ fbq('track', 'PageView');
 `;
 const META_PIXEL_NOSCRIPT = ` <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1"> `;
 const origin = Astro.site ?? Astro.url.origin;
-const canonicalUrl = new URL(routePath(Astro.url), origin).href;
+const canonicalUrl = new URL(canonicalPath ?? routePath(Astro.url), origin)
+  .href;
 const ogImageUrl = new URL(ogImage, origin).href;
 
 const buildInfo = {

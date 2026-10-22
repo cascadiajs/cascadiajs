@@ -1,0 +1,97 @@
+---
+// On-demand route (ADR-0016): the only blog page rendered per request.
+export const prerender = false;
+
+import Layout from "@layouts/Layout.astro";
+import PostCard from "@components/PostCard.astro";
+import SearchForm from "@components/SearchForm.astro";
+import { getPostAuthors, getVisiblePosts } from "@shared/blog/get-posts";
+import {
+  collectTags,
+  parseSearchInput,
+  searchPosts,
+} from "@shared/blog/search";
+
+const posts = await getVisiblePosts();
+const { searchParams } = Astro.url;
+const input = parseSearchInput(
+  { q: searchParams.get("q"), tag: searchParams.get("tag") },
+  new Set(collectTags(posts.map((post) => ({ tags: post.data.tags })))),
+);
+
+if (input.kind === "redirect") {
+  return Astro.redirect("/blog");
+}
+if (input.kind === "invalid") {
+  return new Response("Invalid search", {
+    status: 400,
+    headers: { "Content-Type": "text/plain; charset=utf-8" },
+  });
+}
+
+const searchable = await Promise.all(
+  posts.map(async (post) => ({
+    post,
+    title: post.data.title,
+    tags: post.data.tags,
+    pubDate: post.data.pubDate,
+    authorNames: (await getPostAuthors(post)).map((author) => author.name),
+  })),
+);
+const results = searchPosts(searchable, input).map((item) => item.post);
+
+// Only this route is cached at the Netlify edge, per `q` and `tag`.
+Astro.response.headers.set(
+  "Netlify-CDN-Cache-Control",
+  "public, max-age=3600, durable",
+);
+Astro.response.headers.set("Netlify-Vary", "query=q|tag");
+---
+
+<Layout
+  title="CascadiaJS | Search the Blog"
+  description="Search CascadiaJS blog Posts by title, Author or Tag."
+  canonicalPath="/blog"
+>
+  <section class="bg-sound-navy text-cedar-cream">
+    <div class="mx-auto box-content max-w-[1200px] px-4 pt-12 pb-8">
+      <h1
+        class="font-display text-cedar-cream my-0 text-6xl leading-none md:text-[96px]"
+      >
+        Search
+      </h1>
+    </div>
+  </section>
+  <SearchForm q={input.q} tag={input.tag} />
+  <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
+    {
+      results.length === 0 ? (
+        <div class="cjs-search-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center">
+          <i
+            class="fa-solid fa-ghost text-madrona-yellow text-6xl"
+            aria-hidden="true"
+          />
+          <h2 class="font-display text-cedar-cream text-40">No Posts match</h2>
+          <p>Try fewer words, or browse every Post.</p>
+          <a
+            href="/blog"
+            class="bg-madrona-yellow text-sound-navy font-display inline-block rounded px-5 py-2 no-underline"
+          >
+            Back to the blog
+          </a>
+        </div>
+      ) : (
+        <>
+          <h2 class="cjs-search-count font-display text-sound-navy mt-0 text-2xl">
+            {results.length} {results.length === 1 ? "Post" : "Posts"}
+          </h2>
+          <div class="cjs-post-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {results.map((post) => (
+              <PostCard post={post} imageWidth={320} />
+            ))}
+          </div>
+        </>
+      )
+    }
+  </div>
+</Layout>

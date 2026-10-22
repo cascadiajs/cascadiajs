@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import FeaturedBand from "@components/FeaturedBand.astro";
 import Pagination from "@components/Pagination.astro";
 import PostCard from "@components/PostCard.astro";
+import SearchForm from "@components/SearchForm.astro";
 import RssLink from "@components/RssLink.astro";
 import { getVisiblePosts } from "@shared/blog/get-posts";
 import { splitFeatured } from "@shared/blog/posts";
@@ -35,6 +36,7 @@ const isEmpty = page.total === 0 && featured.length === 0;
     </div>
   </section>
   {page.currentPage === 1 && <FeaturedBand posts={featured} />}
+  <SearchForm />
   <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
     {
       isEmpty ? (

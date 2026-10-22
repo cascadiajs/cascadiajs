@@ -58,7 +58,9 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes("/admin"),
+      // /blog/search is on-demand and never indexed through the sitemap.
+      filter: (page) =>
+        !page.includes("/admin") && !page.includes("/blog/search"),
     }),
   ],
   vite: {
