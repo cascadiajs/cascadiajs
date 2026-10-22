@@ -197,10 +197,11 @@ src/shared/data/
   events/2026.config.ts   Event config: name, dates, venue, logo, nav, share defaults
   events.ts               Helpers: getEventConfig, getOrganizers, getTickets, getActivities, getActivity
   2026/                   The 2026 Event Dataset
-    talks.json            Talks, each with an embedded speaker
-    organizers.json
+    talks.json            Talks, each referring to its Speaker by Person id
+    organizers.json       Organizers, each a Person id (plus optional overrides)
     tickets.json
     activities.json       Schedule items that aren't Talks (parties, hackathon, meals)
+  people.json             The Person registry: every Speaker, Organizer and Author, once
   sponsors.json           Every Sponsor, across all Events
   testimonials.json
   types.ts                Shared TypeScript types
@@ -208,10 +209,10 @@ src/shared/data/
 
 You read data two ways:
 
-- **Talks and Sponsors are content collections** (`talks2026`, `sponsors`), so read them with `getCollection("talks2026")` / `getEntry(...)` from `astro:content`. Their Zod schemas in `src/content.config.ts` are the single source of truth. TypeScript infers the types in `types.ts` (`Talk`, `Person`, `Sponsor`) from these schemas, so change the schema, not the type. Astro sorts collection entries by id, so each loader stamps an `order` field with the entry's position in the JSON file. Sort by `order` when a listing should follow file order.
+- **Talks, People and Sponsors are content collections** (`talks2026`, `people`, `sponsors`), so read them with `getCollection("talks2026")` / `getEntry(...)` from `astro:content`. Their Zod schemas in `src/content.config.ts` are the single source of truth. TypeScript infers the types in `types.ts` (`Talk`, `Person`, `Sponsor`) from these schemas, so change the schema, not the type. Astro sorts collection entries by id, so each loader stamps an `order` field with the entry's position in the JSON file. Sort by `order` when a listing should follow file order.
 - **Organizers, Tickets and Activities** come from the helpers in `events.ts`, keyed by year: `getTickets("2026")`. The helpers **throw on an unknown year or Activity id**, so a typo fails the build instead of rendering an empty section.
 
-A Speaker isn't a separate record: it lives inside its Talk as `speaker`. Organizers use the same `Person` shape. Person images are paths under `src/assets/` (for example `/events/2026/images/jane-doe.jpg` means `src/assets/events/2026/images/jane-doe.jpg`), and the build fails if the file is missing.
+**The Person registry.** Every Person the site credits lives once in `src/shared/data/people.json` (ADR-0017). A record has the `Person` fields plus `id` (a hand-written kebab-case of the name, such as `carter-rabasa`), an optional plain-text `bio` and `roles` (`speaker`, `organizer`, `author`). The build fails on a duplicate `id`. Talks and organizer entries refer to a Person by id: `{ "id": "carter-rabasa" }`. An entry can add `overrides` (`title`, `company`, `location`, `image`) for details true only at that Event: `{ "id": "carter-rabasa", "overrides": { "title": "Past Title" } }`. An override field replaces the registry value and every other field comes from the registry. The `talks2026` collection and `getOrganizers` resolve a reference and its overrides into a full `Person`, so components still take a `Person` or a `Talk` with `speaker` filled in. The `people` collection holds the raw registry records. Frozen Snapshots (2024, 2025) keep their inline people (ADR-0008). Person images are paths under `src/assets/` (for example `/events/2026/images/jane-doe.jpg` means `src/assets/events/2026/images/jane-doe.jpg`), and the build fails if the file is missing.
 
 For the reasoning behind this split, see [ADR-0013](docs/adr/0013-event-pages-read-shared-datasets.md).
 
@@ -242,11 +243,12 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 
 ### Add a Talk and Speaker
 
-1. Add an object to `src/shared/data/<year>/talks.json`, at the position where the Talk should appear. Required fields: `id`, `slug` (or `null` for no Talk page), `title`, `type` (`keynote`, `main`, `lightning`, `workshop`) and `speaker`. Optional fields: `abstract` (Markdown), `tags`, `yt`.
-2. Put the speaker photo in `src/assets/events/<year>/images/` and reference it in `speaker.image`.
-3. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
-4. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
-5. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
+1. If the Speaker is new, add them to `src/shared/data/people.json`: `id` (kebab-case of the name, unique), `name`, `image`, `roles` (include `speaker`), and optional `title`, `company`, `location`, `url`, `pronouns`, `social`, `bio`. An existing Person needs no new record.
+2. Add an object to `src/shared/data/<year>/talks.json`, at the position where the Talk should appear. Required fields: `id`, `slug` (or `null` for no Talk page), `title`, `type` (`keynote`, `main`, `lightning`, `workshop`) and `speaker`, which is `{ "id": "<person id>" }`. Add `"overrides": { ... }` to the speaker for details true only at this Event. Optional fields: `abstract` (Markdown), `tags`, `yt`.
+3. Put the speaker photo in `src/assets/events/<year>/images/` and reference it in the Person's `image`.
+4. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
+5. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
+6. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
 
 ### Add a Sponsor
 
@@ -258,7 +260,7 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 ### Add an Organizer, Ticket or Activity
 
 1. Edit the matching file in `src/shared/data/<year>/` (`organizers.json`, `tickets.json`, `activities.json`). The shapes are in `src/shared/data/types.ts`.
-2. Organizer photos go in `src/assets/events/<year>/images/`.
+2. For an Organizer, add the Person to `src/shared/data/people.json` if they are new (`roles` includes `organizer`), then add `{ "id": "<person id>" }` to `organizers.json`. Add `overrides` for details true only at this Event. Organizer photos go in `src/assets/events/<year>/images/`.
 3. A new Activity also needs placing on the schedule: reference it by `id` from `src/pages/<year>/schedule.astro` with `getActivity(year, id)`.
 
 ### Add a component
@@ -279,7 +281,7 @@ You launch a new Event once a year. The launch changes several files. The steps 
 2. Add `"2027"` to the `events` enum in `sponsorSchema` in `src/content.config.ts`.
    `EventYear` derives from this enum. Nothing type-checks with `"2027"` until you add it.
 3. Create the directory `src/shared/data/2027/`.
-4. Add `talks.json`, `organizers.json`, `tickets.json` and `activities.json` to that directory.
+4. Add `talks.json`, `organizers.json`, `tickets.json` and `activities.json` to that directory. Talks and organizers refer to People by id, so add any new Person to `people.json`.
 5. Register a `talks2027` collection in `src/content.config.ts`, next to `talks2026`.
 6. Add `"2027"` to the `events` array of each 2027 Sponsor in `src/shared/data/sponsors.json`.
 

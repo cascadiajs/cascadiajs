@@ -1,6 +1,19 @@
 import { defineCollection } from "astro:content";
-import { file, glob } from "astro/loaders";
+import { readFileSync } from "node:fs";
+import { file, glob, type Loader } from "astro/loaders";
 import { z } from "astro/zod";
+import {
+  parsePeople,
+  personRecordSchema,
+  personRefSchema,
+  personSchema,
+  resolvePerson,
+} from "./shared/people";
+
+export { personSchema };
+
+const PEOPLE_FILE = "./src/shared/data/people.json";
+const TALKS_2026_FILE = "./src/shared/data/2026/talks.json";
 
 const markdown = defineCollection({
   loader: glob({ base: "./src/content/markdown", pattern: "**/*.{md,mdx}" }),
@@ -16,27 +29,6 @@ const markdown = defineCollection({
     showTestimonials: z.boolean().default(true),
     published: z.boolean().default(true),
   }),
-});
-
-/** A Speaker or Organizer profile, shared across Talks and roster pages. */
-export const personSchema = z.object({
-  name: z.string(),
-  image: z.string(),
-  roles: z.array(z.enum(["speaker", "organizer"])),
-  /** Descriptive position, e.g. "Lead Organizer", "Co-Emcee". */
-  title: z.string().optional(),
-  company: z.string().optional(),
-  location: z.string().optional(),
-  url: z.string().optional(),
-  pronouns: z.string().optional(),
-  social: z
-    .array(
-      z.object({
-        type: z.enum(["linkedin", "x-twitter", "bluesky", "github"]),
-        url: z.string(),
-      }),
-    )
-    .optional(),
 });
 
 export const talkSchema = z.object({
@@ -75,11 +67,47 @@ export const sponsorSchema = z.object({
   events: z.array(z.enum(["previous", "2025", "2026", "2027"])),
 });
 
+// Custom loaders instead of `file()`: a parser that throws inside `file()` is
+// logged and swallowed, so the build would still pass. A throw in `load()`
+// fails the build.
+const people = defineCollection({
+  loader: {
+    name: "people-loader",
+    load: async ({ store, parseData, generateDigest }) => {
+      const records = parsePeople(readFileSync(PEOPLE_FILE, "utf8"));
+      store.clear();
+      for (const record of records) {
+        const data = await parseData({ id: record.id, data: record });
+        store.set({ id: record.id, data, digest: generateDigest(data) });
+      }
+    },
+  } satisfies Loader,
+  schema: personRecordSchema,
+});
+
+const talkFileSchema = talkSchema.extend({ speaker: personRefSchema });
+
 const talks2026 = defineCollection({
-  loader: file("./src/shared/data/2026/talks.json", {
-    parser: (text) =>
-      (JSON.parse(text) as object[]).map((talk, order) => ({ ...talk, order })),
-  }),
+  loader: {
+    name: "talks2026-loader",
+    load: async ({ store, parseData, generateDigest }) => {
+      const registry = parsePeople(readFileSync(PEOPLE_FILE, "utf8"));
+      const talks = z
+        .array(talkFileSchema)
+        .parse(JSON.parse(readFileSync(TALKS_2026_FILE, "utf8")));
+      store.clear();
+      for (const [order, talk] of talks.entries()) {
+        // The Talk stores a Person reference; the Collection holds the
+        // resolved Person, so consumers still read `talk.speaker` whole.
+        const speaker = resolvePerson(registry, talk.speaker);
+        const data = await parseData({
+          id: talk.id,
+          data: { ...talk, speaker, order },
+        });
+        store.set({ id: talk.id, data, digest: generateDigest(data) });
+      }
+    },
+  } satisfies Loader,
   // The collection store sorts entries by id, so `order` records each Talk's
   // position in talks.json for pages that list Talks. It stays off the shared
   // Talk type.
@@ -99,4 +127,4 @@ const sponsors = defineCollection({
   schema: sponsorSchema.extend({ order: z.number() }),
 });
 
-export const collections = { markdown, talks2026, sponsors };
+export const collections = { markdown, people, talks2026, sponsors };

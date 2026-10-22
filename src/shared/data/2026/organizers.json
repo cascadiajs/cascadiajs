@@ -1,100 +1,44 @@
 [
   {
-    "name": "Carter Rabasa",
-    "image": "/events/2026/images/carter-rabasa.jpg",
-    "roles": ["organizer"],
-    "title": "Lead Organizer",
-    "location": "Seattle, WA USA"
+    "id": "carter-rabasa"
   },
   {
-    "name": "Carrie Rabasa",
-    "image": "/events/2026/images/carrie-rabasa.jpg",
-    "roles": ["organizer"],
-    "title": "Co-Organizer",
-    "location": "Seattle, WA USA"
+    "id": "carrie-rabasa"
   },
   {
-    "name": "Elise Worthy",
-    "image": "/events/2026/images/elise-worthy.jpg",
-    "roles": ["organizer"],
-    "title": "Sponsorships",
-    "location": "Seattle, WA USA"
+    "id": "elise-worthy"
   },
   {
-    "name": "Adam Argyle",
-    "image": "/events/2026/images/adam-argyle.jpg",
-    "roles": ["organizer"],
-    "title": "Co-Emcee",
-    "location": "Seattle, WA USA"
+    "id": "adam-argyle"
   },
   {
-    "name": "Robbie Wagner",
-    "image": "/events/2026/images/robbie-wagner.jpg",
-    "roles": ["organizer"],
-    "title": "Co-Emcee",
-    "location": "Virginia, USA"
+    "id": "robbie-wagner"
   },
   {
-    "name": "Kate Pond",
-    "image": "/events/2026/images/kate-pond.jpg",
-    "roles": ["organizer"],
-    "title": "Networking Lead",
-    "location": "Seattle, WA USA"
+    "id": "kate-pond"
   },
   {
-    "name": "Cristina Rodriguez",
-    "image": "/events/2026/images/cristina-rodriguez.jpg",
-    "roles": ["organizer"],
-    "title": "Scholarships",
-    "location": "Seattle, WA USA"
+    "id": "cristina-rodriguez"
   },
   {
-    "name": "Andre Wiggins",
-    "image": "/events/2026/images/andre-wiggins.jpg",
-    "roles": ["organizer"],
-    "title": "Workshops",
-    "location": "Seattle, WA USA"
+    "id": "andre-wiggins"
   },
   {
-    "name": "Ryan Soeder",
-    "image": "/events/2026/images/ryan-soeder.jpg",
-    "roles": ["organizer"],
-    "title": "Speaker Wrangler",
-    "location": "Seattle, WA USA"
+    "id": "ryan-soeder"
   },
   {
-    "name": "Kelli Rockwell",
-    "image": "/events/2026/images/kelli-rockwell.jpg",
-    "roles": ["organizer"],
-    "title": "Party Coordinator",
-    "location": "Seattle, WA USA"
+    "id": "kelli-rockwell"
   },
   {
-    "name": "Jim Liu",
-    "image": "/events/2026/images/jim-liu.jpg",
-    "roles": ["organizer"],
-    "title": "Volunteer",
-    "location": "Seattle, WA USA"
+    "id": "jim-liu"
   },
   {
-    "name": "Megan Speir",
-    "image": "/events/2026/images/megan-speir.jpg",
-    "roles": ["organizer"],
-    "title": "Volunteer",
-    "location": "Seattle, WA USA"
+    "id": "megan-speir"
   },
   {
-    "name": "Stella Marie",
-    "image": "/events/2026/images/stella-marie.jpg",
-    "roles": ["organizer"],
-    "title": "Volunteer",
-    "location": "Seattle, WA USA"
+    "id": "stella-marie"
   },
   {
-    "name": "Allan Deutsch",
-    "image": "/events/2026/images/allan-deutsch.jpg",
-    "roles": ["organizer"],
-    "title": "Volunteer",
-    "location": "Seattle, WA USA"
+    "id": "allan-deutsch"
   }
 ]
