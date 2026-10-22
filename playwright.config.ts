@@ -1,4 +1,11 @@
 import { defineConfig, devices } from "@playwright/test";
+import { freePort } from "./scripts/free-port.mjs";
+
+// Each run picks its own free port, so concurrent runs (one per worktree) never
+// meet. Workers load this file again and inherit the env var, so all agree. Set
+// PORT to choose one.
+process.env.PORT ??= String(await freePort());
+const port = Number(process.env.PORT);
 
 export default defineConfig({
   testDir: "e2e",
@@ -26,7 +33,7 @@ export default defineConfig({
     },
   ],
   use: {
-    baseURL: "http://localhost:4321",
+    baseURL: `http://localhost:${port}`,
   },
   webServer: {
     // `astro preview` does not support the Netlify adapter, so tests run
@@ -34,8 +41,9 @@ export default defineConfig({
     // `dist/` and the on-demand routes' function, as Netlify does. Offline mode
     // needs no login or linked site.
     command: "pnpm run serve",
-    port: 4321,
+    port,
     timeout: 240_000,
-    reuseExistingServer: true,
+    // Never test a server this run did not start. Set REUSE_SERVER=1 to reuse.
+    reuseExistingServer: Boolean(process.env.REUSE_SERVER),
   },
 });

@@ -137,7 +137,7 @@ A file under a year folder only gets a page if that Event has a config in `src/s
 
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.
 
-**On-demand routes** render on every request instead of at build time. The site stays `output: 'static'`, so every page is prerendered unless its file opts out with `export const prerender = false`. The `@astrojs/netlify` adapter deploys each such route as a Netlify Function. Use one only for a route that needs request data, such as a query string. See [ADR-0016](docs/adr/0016-on-demand-routes-via-netlify-adapter.md). To run one locally, use `pnpm serve` (it builds, then serves `dist/` and the function at `localhost:4321`). `pnpm dev` also renders them, but without the production build. `pnpm preview` does not work with the adapter. The adapter also sends every `astro:assets` image through the Netlify Image CDN, so built pages link to `/.netlify/images?url=…` instead of `/_astro/…`.
+**On-demand routes** render on every request instead of at build time. The site stays `output: 'static'`, so every page is prerendered unless its file opts out with `export const prerender = false`. The `@astrojs/netlify` adapter deploys each such route as a Netlify Function. Use one only for a route that needs request data, such as a query string. See [ADR-0016](docs/adr/0016-on-demand-routes-via-netlify-adapter.md). To run one locally, use `pnpm serve` (it builds, then serves `dist/` and the function on a free port, printed in its output). `pnpm dev` also renders them, but without the production build. `pnpm preview` does not work with the adapter. The adapter also sends every `astro:assets` image through the Netlify Image CDN, so built pages link to `/.netlify/images?url=…` instead of `/_astro/…`.
 
 **URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. An e2e test scans every built page and fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
 
@@ -334,7 +334,7 @@ pnpm test --ui                          # Playwright's interactive runner
 
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
 
-If a dev server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` before `pnpm test` if you want to test the real build.
+`pnpm test` builds and serves its own checkout on a free port (set `PORT` to choose one), so runs from several worktrees at the same time do not collide. Playwright never reuses a server it did not start, unless you set `REUSE_SERVER=1`. `pnpm serve` also picks free ports: `PORT` or any free port for the site, and a free port for the Netlify CLI's internal static server. Read the site URL in its output.
 
 CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
