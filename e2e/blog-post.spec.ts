@@ -72,7 +72,7 @@ test.describe("Blog Post page", () => {
   }) => {
     await page.goto("/blog/post/md-post");
     const body = page.locator(".cjs-post-body img").first();
-    await expect(body).toHaveAttribute("src", /\/_astro\//);
+    await expect(body).toHaveAttribute("src", /_astro(\/|%2F)/);
     await body.scrollIntoViewIfNeeded();
     await expect(async () => {
       expect(
@@ -81,7 +81,7 @@ test.describe("Blog Post page", () => {
     }).toPass();
     await expect(page.locator(".cjs-post img").first()).toHaveAttribute(
       "src",
-      /\/_astro\//,
+      /_astro(\/|%2F)/,
     );
   });
 
@@ -159,9 +159,11 @@ test.describe("Blog Post meta", () => {
     const content = await meta(page, 'property="og:image"').getAttribute(
       "content",
     );
-    expect(content).toMatch(/^https?:\/\/.+\.jpe?g$/);
-    const path = new URL(content!).pathname;
-    const response = await request.get(path);
+    // A JPEG variant 1200 wide, as an absolute URL.
+    expect(content).toMatch(/^https?:\/\/.+(\.jpe?g$|fm=jpg)/);
+    expect(content).toMatch(/(\.jpe?g$|w=1200)/);
+    const url = new URL(content!);
+    const response = await request.get(url.pathname + url.search);
     expect(response.ok()).toBe(true);
     const bytes = await response.body();
     // JPEG SOF0/SOF2 marker carries the image width.

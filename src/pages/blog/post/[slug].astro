@@ -36,7 +36,7 @@ if (post.data.ogImage) {
   const resized = await getImage({
     src: post.data.ogImage,
     width: 1200,
-    format: "jpeg",
+    format: "jpg",
   });
   ogImage = new URL(resized.src, Astro.site ?? Astro.url.origin).href;
 }

@@ -32,10 +32,10 @@ pnpm dev          # http://localhost:4321
 | :--------------- | :-------------------------------------------------- |
 | `pnpm dev`       | Dev server with hot reload at `localhost:4321`      |
 | `pnpm build`     | Production build to `dist/`                         |
-| `pnpm preview`   | Serve the built `dist/` locally                     |
+| `pnpm serve`     | Build and serve the site as Netlify does            |
 | `pnpm check`     | Type-check `.astro` and `.ts` files (`astro check`) |
 | `pnpm lint`      | ESLint (`pnpm lint:fix` to auto-fix)                |
-| `pnpm test`      | Build, preview, and run the Playwright e2e suite    |
+| `pnpm test`      | Build, serve, and run the Playwright e2e suite      |
 | `pnpm test:unit` | Run the Vitest unit tests                           |
 
 A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`, then the unit tests (`pnpm test:unit`), then the Playwright suite (`pnpm test`). CI runs the tests too.
@@ -138,6 +138,8 @@ A file under a year folder only gets a page if that Event has a config in `src/s
 **Blog Posts** are folders in `src/content/blog/`, served by `src/pages/blog/post/[slug].astro` at `/blog/post/<slug>`. The folder name is the slug. Every blog route gets its Posts from `getVisiblePosts()` in `src/shared/blog/get-posts.ts`, which hides drafts (`published: false`) in production and shows them in `pnpm dev`.
 
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.
+
+**On-demand routes** render on every request instead of at build time. The site stays `output: 'static'`, so every page is prerendered unless its file opts out with `export const prerender = false`. The `@astrojs/netlify` adapter deploys each such route as a Netlify Function. Use one only for a route that needs request data, such as a query string. See [ADR-0016](docs/adr/0016-on-demand-routes-via-netlify-adapter.md). To run one locally, use `pnpm serve` (it builds, then serves `dist/` and the function at `localhost:4321`). `pnpm dev` also renders them, but without the production build. `pnpm preview` does not work with the adapter. The adapter also sends every `astro:assets` image through the Netlify Image CDN, so built pages link to `/.netlify/images?url=…` instead of `/_astro/…`.
 
 **URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. An e2e test scans every built page and fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
 
@@ -365,7 +367,7 @@ pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
 
 ### End-to-end tests
 
-End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys.
+End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against `netlify serve` (`pnpm serve`, a small wrapper in `scripts/serve.mjs` that builds and serves only the checkout it lives in, also in a Git worktree), which builds the site and serves it, including on-demand routes, the way Netlify does. `astro preview` does not work with the Netlify adapter.
 
 Tests check behavior, not content. A change to copy, data, design inside a section or the Featured Event does not break a test. Tests find pages by type, never by slug or title. They find elements by class name, id or role, never by text. A component that a test needs gets a class with its component name in kebab-case. No spec names a year, except the Frozen Snapshot specs (2024, 2025).
 

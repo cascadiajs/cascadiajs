@@ -4,3 +4,6 @@
 allowBuilds:
   esbuild: true
   sharp: true
+  # Optional install steps for the Netlify CLI (test server only); not needed.
+  netlify-cli: false
+  unix-dgram: false
