@@ -1,7 +1,11 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { normalizeTag } from "@shared/blog/format";
-import { FIXTURE_PEOPLE_FILE, FIXTURE_POSTS_DIR } from "@shared/test-fixtures";
+import {
+  FIXTURE_PEOPLE_FILE,
+  FIXTURE_POSTS_DIR,
+  fillerPosts,
+} from "@shared/test-fixtures";
 import type { PersonRecord } from "@shared/people";
 import type { Page } from "@playwright/test";
 import { PEOPLE } from "./helpers";
@@ -58,7 +62,7 @@ function frontmatter(source: string): Record<string, string | string[]> {
   return data;
 }
 
-export const FIXTURE_POST_LIST: FixturePost[] = readdirSync(
+const HAND_WRITTEN_POSTS: FixturePost[] = readdirSync(
   join("src/content", FIXTURE_POSTS_DIR),
 ).flatMap((slug) => {
   const dir = join("src/content", FIXTURE_POSTS_DIR, slug);
@@ -91,6 +95,30 @@ export const FIXTURE_POST_LIST: FixturePost[] = readdirSync(
     },
   ];
 });
+
+/** Posts the fixture loader generates, in the shape of the hand-written ones. */
+const GENERATED_POSTS: FixturePost[] = fillerPosts().map(
+  ({ id, body, data }) => ({
+    slug: id,
+    ...data,
+    published: true,
+    featured: false,
+    ext: "md",
+    body,
+    rawTags: data.tags,
+    authors: data.authors.map((authorId) => ({
+      id: authorId,
+      name: author(authorId).name,
+    })),
+    tags: [...new Set(data.tags.map(normalizeTag))],
+    generated: true,
+  }),
+);
+
+export const FIXTURE_POST_LIST: FixturePost[] = [
+  ...HAND_WRITTEN_POSTS,
+  ...GENERATED_POSTS,
+];
 
 export const publishedFixturePosts = () =>
   FIXTURE_POST_LIST.filter((post) => post.published);

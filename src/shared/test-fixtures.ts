@@ -20,6 +20,34 @@ export const FIXTURE_PEOPLE_FILE = "./src/shared/data/fixtures/people.json";
 export const FIXTURE_OVERRIDES_FILE =
   "./src/shared/data/fixtures/organizer-overrides.json";
 
+/**
+ * Plain filler Posts that the `blog` Collection generates in a test build, so
+ * the index has a second page. One page of them is enough whatever the
+ * hand-written fixtures add. The data is plain frontmatter-shaped values.
+ */
+export const FILLER_POST_COUNT = 12;
+const FILLER_FIRST_DAY = Date.UTC(2026, 1, 1);
+const FILLER_BODY = "Index fixture body.";
+
+export function fillerPosts() {
+  return Array.from({ length: FILLER_POST_COUNT }, (_, i) => {
+    const number = String(i + 1).padStart(2, "0");
+    return {
+      id: `filler-${number}`,
+      body: FILLER_BODY,
+      data: {
+        title: `Fixture Filler ${number}`,
+        description: "A test-only Post for the blog index.",
+        pubDate: new Date(FILLER_FIRST_DAY + i * 86_400_000)
+          .toISOString()
+          .slice(0, 10),
+        authors: ["fixture-hedy"],
+        tags: ["Filler"],
+      },
+    };
+  });
+}
+
 export type FixtureOverrides = Record<
   string,
   Record<string, NonNullable<PersonRef["overrides"]>>

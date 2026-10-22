@@ -12,6 +12,7 @@ import {
 import { duplicateIds, unknownAuthors } from "./shared/blog/posts";
 import {
   FIXTURE_PEOPLE_FILE,
+  fillerPosts,
   FIXTURE_POSTS_DIR,
   TEST_FIXTURES,
 } from "./shared/test-fixtures";
@@ -121,6 +122,19 @@ const blog = defineCollection({
     name: "blog-loader",
     load: async (context) => {
       await blogGlob.load(context);
+      // A test build adds generated filler Posts next to the fixture folders.
+      if (TEST_FIXTURES) {
+        for (const { id, body, data } of fillerPosts()) {
+          const parsed = await context.parseData({ id, data });
+          context.store.set({
+            id,
+            data: parsed,
+            body,
+            rendered: { html: `<p>${body}</p>` },
+            digest: context.generateDigest(parsed),
+          });
+        }
+      }
       // Astro only logs a `reference()` to a missing Person. Fail the build.
       const personIds = new Set(readPeople().map((p) => p.id));
       const unknown = unknownAuthors(
