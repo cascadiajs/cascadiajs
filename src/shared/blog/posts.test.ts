@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   duplicateIds,
+  postsByAuthor,
   splitFeatured,
   unknownAuthors,
   visiblePosts,
@@ -83,5 +84,23 @@ describe("splitFeatured", () => {
   });
   it("handles no Posts", () => {
     expect(splitFeatured([])).toEqual({ featured: [], rest: [] });
+  });
+});
+
+describe("postsByAuthor", () => {
+  const post = (id: string, authors: string[]) => ({
+    id,
+    data: { authors: authors.map((a) => ({ id: a })) },
+  });
+  const list = [post("a", ["x", "y"]), post("b", ["y"]), post("c", ["z", "x"])];
+
+  it("returns every Post that lists the Author, keeping the input order", () => {
+    expect(postsByAuthor(list, "x").map((p) => p.id)).toEqual(["a", "c"]);
+  });
+  it("matches a co-Author at any position", () => {
+    expect(postsByAuthor(list, "y").map((p) => p.id)).toEqual(["a", "b"]);
+  });
+  it("returns nothing for an Author with no Posts", () => {
+    expect(postsByAuthor(list, "nobody")).toEqual([]);
   });
 });

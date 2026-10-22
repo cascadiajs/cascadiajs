@@ -70,3 +70,12 @@ export function splitFeatured<T extends { data: { featured: boolean } }>(
   const chosen = new Set(featured);
   return { featured, rest: posts.filter((post) => !chosen.has(post)) };
 }
+
+/** The Posts that list `authorId` in `authors`, in the input order. */
+export function postsByAuthor<
+  T extends { data: { authors: readonly { id: string }[] } },
+>(posts: readonly T[], authorId: string): T[] {
+  return posts.filter((post) =>
+    post.data.authors.some((author) => author.id === authorId),
+  );
+}

@@ -1,0 +1,50 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import AuthorHeader from "@components/AuthorHeader.astro";
+import PostCard from "@components/PostCard.astro";
+import RssLink from "@components/RssLink.astro";
+import { getVisiblePosts } from "@shared/blog/get-posts";
+import { postsByAuthor } from "@shared/blog/posts";
+
+// One page per Person with the `author` role, with or without Posts.
+export const getStaticPaths = (async () => {
+  const posts = await getVisiblePosts();
+  const people = await getCollection("people");
+  return people
+    .filter((person) => person.data.roles.includes("author"))
+    .map((person) => ({
+      params: { id: person.id },
+      props: { author: person.data, posts: postsByAuthor(posts, person.id) },
+    }));
+}) satisfies GetStaticPaths;
+
+const { author, posts } = Astro.props;
+---
+
+<Layout
+  title={`CascadiaJS | ${author.name}`}
+  description={author.bio ?? `Posts by ${author.name} on the CascadiaJS blog.`}
+>
+  <RssLink slot="head" />
+  <AuthorHeader author={author} />
+  <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
+    {
+      posts.length === 0 ? (
+        <div class="cjs-blog-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center">
+          <h2 class="font-display text-cedar-cream text-40 mt-0">
+            No Posts yet
+          </h2>
+          <p>{author.name} has not published a Post yet.</p>
+        </div>
+      ) : (
+        <div class="cjs-post-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</Layout>

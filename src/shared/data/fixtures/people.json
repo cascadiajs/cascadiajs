@@ -8,6 +8,8 @@
     "title": "Staff Engineer",
     "company": "Fixture Co",
     "location": "Seattle, WA",
+    "url": "https://example.com/fixture-ada",
+    "social": [{ "type": "github", "url": "https://github.com/fixture-ada" }],
     "bio": "Fixture Ada writes test Posts."
   },
   {
