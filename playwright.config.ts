@@ -2,11 +2,6 @@ import { defineConfig, devices } from "@playwright/test";
 import { createServer } from "node:net";
 import process from "node:process";
 
-// Test-build flag: the build under test includes the test-only fixtures
-// (fixture Posts and Authors, an Event override). Set here so the webServer
-// build and the test workers agree. Production builds never set it.
-process.env.CJS_TEST_FIXTURES = "1";
-
 // Free ports, so a busy port never fails the run and parallel runs (one per
 // worktree) never collide. `netlify serve` binds two ports: the one tests hit,
 // and its internal static server, which defaults to a fixed 3999. `PORT` and
@@ -61,7 +56,7 @@ export default defineConfig({
     // needs no login or linked site.
     command: `pnpm exec netlify serve --offline --port ${port} --staticServerPort ${staticPort}`,
     port,
-    env: { BROWSER: "none", CJS_TEST_FIXTURES: "1" },
+    env: { BROWSER: "none" },
     timeout: 240_000,
     // Always build and serve fresh, on a port nothing else uses.
     reuseExistingServer: false,
