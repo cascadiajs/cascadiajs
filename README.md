@@ -377,6 +377,10 @@ Two seams: Vitest unit tests for pure functions, Playwright for everything that 
 
 Unit tests live beside the code they test, as `src/**/*.test.ts`. Put pure functions over plain data here: helpers that take values and return values, with no Astro runtime, no disk reads and no DOM. Pass plain objects, not Astro entries. Vitest is configured in `vitest.config.ts` through Astro's `getViteConfig`, so the `@shared`, `@components`, `@layouts` and `@assets` aliases resolve as they do in the site. Playwright only reads `e2e/` and Vitest only reads `src/`, so neither picks up the other's files. See `src/shared/route-path.test.ts` for an example.
 
+**Component tests (Container API).** A test can render an `.astro` component with literal props through `experimental_AstroContainer` (`astro/container`) and assert on the HTML string. Name the file `Component.test.ts` beside the component. Give the component an optional prop for its data (for example `sponsors` on `SponsorsGrid` and `HallwayTrack`) so the test passes literal data and does not read a content collection. See `src/components/SponsorsGrid.test.ts`.
+
+**Sponsor selection** (`src/shared/sponsors.ts`) holds the rules for which Sponsors show: `selectSponsors` (include an Event Key, exclude Event Keys, tier order), `tierBands` (group by tier, mark the four linked tiers) and `hallwayWall` (platinum, then gold, of one Event). `SponsorsGrid` and `HallwayTrack` call it.
+
 ```sh
 pnpm test:unit                                  # run once
 pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
