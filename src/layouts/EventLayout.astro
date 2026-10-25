@@ -10,9 +10,10 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  displayAlert?: boolean;
 }
 
-const { year, title, description, ogImage } = Astro.props;
+const { year, title, description, ogImage, displayAlert = true } = Astro.props;
 
 const config = getEventConfig(year);
 ---
@@ -22,7 +23,7 @@ const config = getEventConfig(year);
   description={description ?? config.ogDescription}
   ogImage={ogImage ?? config.ogImage}
   displayNav={false}
-  displayAlert={true}
+  displayAlert={displayAlert}
 >
   <slot name="hero" />
   <EventNav year={config.year} logo={config.logo} nav={config.nav} />

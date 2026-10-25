@@ -152,6 +152,7 @@ Rules of thumb:
 - Start from the page's owner. If it belongs to an Event, use `EventLayout`. If not, use `Layout`.
 - Then decide the body. For a text-heavy page, nest `SimplePage` inside the layout. See `src/pages/2026/talks/[slug].astro` or `src/pages/[year]/sponsors/[slug].astro` for the pattern.
 - `EventLayout` has a `hero` slot that renders above the Event nav (the 2026 landing page puts its video there). `SimplePage` has an `after-body` slot that renders outside the text column, which is where sponsor grids and testimonials go.
+- The yellow alert banner at the top of the site header shows on every page by default. Pass `displayAlert={false}` to `Layout` or `EventLayout` to hide it (the 2027 landing page does, since the banner links there).
 - **Pages own their sponsors section.** Only `MarkdownLayout` renders sponsors for you. On a hand-written page, place `SponsorsGrid` yourself and pass `year` (and `tiered`) or `exclude` as needed.
 
 Wrap Markdown-derived HTML (an abstract, a description) in `MarkdownContent` to get prose styling for headings, lists and links.
