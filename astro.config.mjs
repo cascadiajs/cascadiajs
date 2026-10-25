@@ -28,9 +28,18 @@ export default defineConfig({
   // `imageCDN` (every astro:assets image is served by the Netlify Image CDN),
   // and `cacheOnDemandPages` stays off.
   output: "static",
-  // Vitest loads this config too. Without the adapter it starts no Netlify
-  // Edge Functions dev server, which sometimes fails at startup.
-  adapter: process.env.VITEST ? undefined : netlify(),
+  // `astro dev` and Vitest turn off only edge-function emulation: the site has
+  // no edge functions, and @netlify/edge-functions-dev 2.0.4/2.0.5 passes
+  // `--allow-scripts` to `deno eval`, which Deno 2.9.6+ rejects
+  // (netlify/cli#8522). Remove `edgeFunctions: false` once a fixed release
+  // ships. The other two keys repeat the defaults; the type requires all three.
+  adapter: netlify({
+    devFeatures: {
+      images: true,
+      environmentVariables: false,
+      edgeFunctions: false,
+    },
+  }),
   // The site uses no sessions; this stops the adapter from setting up Netlify
   // Blobs and bundling the session runtime.
   session: false,

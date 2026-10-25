@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
     "serve": "BROWSER=none netlify serve --offline --port 4321",
     "check": "astro check",
     "astro": "astro",
