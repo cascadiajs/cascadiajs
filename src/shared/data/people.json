@@ -2,7 +2,7 @@
   {
     "id": "matt-biilmann",
     "name": "Matt Biilmann",
-    "image": "/events/2026/images/matt-biilmann.jpg",
+    "image": "/people/matt-biilmann.jpg",
     "company": "Netlify",
     "location": "San Francisco, CA USA",
     "social": [
@@ -20,7 +20,7 @@
   {
     "id": "joe-duffy",
     "name": "Joe Duffy",
-    "image": "/events/2026/images/joe-duffy.jpg",
+    "image": "/people/joe-duffy.jpg",
     "company": "Pulumi",
     "location": "Seattle, WA USA",
     "social": [
@@ -34,7 +34,7 @@
   {
     "id": "theo",
     "name": "Theo",
-    "image": "/events/2026/images/theo.jpg",
+    "image": "/people/theo.jpg",
     "company": "T3 Chat",
     "location": "San Francisco, CA USA",
     "social": [
@@ -52,7 +52,7 @@
   {
     "id": "francesco-ciulla",
     "name": "Francesco Ciulla",
-    "image": "/events/2026/images/francesco-ciulla.jpg",
+    "image": "/people/francesco-ciulla.jpg",
     "company": "Zerops",
     "location": "Rome, Italy",
     "social": [
@@ -70,7 +70,7 @@
   {
     "id": "erik-hanchett",
     "name": "Erik Hanchett",
-    "image": "/events/2026/images/erik-hanchett.jpg",
+    "image": "/people/erik-hanchett.jpg",
     "company": "AWS",
     "location": "Reno, NV, USA",
     "social": [
@@ -88,7 +88,7 @@
   {
     "id": "joel-hooks",
     "name": "Joel Hooks",
-    "image": "/events/2026/images/joel-hooks.jpg",
+    "image": "/people/joel-hooks.jpg",
     "company": "Badass Courses",
     "location": "Portland, OR USA",
     "social": [
@@ -102,7 +102,7 @@
   {
     "id": "nyah-macklin",
     "name": "Nyah Macklin",
-    "image": "/events/2026/images/nyah-macklin.jpg",
+    "image": "/people/nyah-macklin.jpg",
     "company": "Neo4j",
     "location": "San Francisco, CA USA",
     "social": [
@@ -120,7 +120,7 @@
   {
     "id": "james-ide",
     "name": "James Ide",
-    "image": "/events/2026/images/james-ide.jpg",
+    "image": "/people/james-ide.jpg",
     "company": "Expo",
     "location": "Palo Alto, CA USA",
     "social": [
@@ -138,7 +138,7 @@
   {
     "id": "marty-nelson",
     "name": "Marty Nelson",
-    "image": "/events/2026/images/marty-nelson.jpg",
+    "image": "/people/marty-nelson.jpg",
     "company": "Works Real Estate",
     "location": "Portland, OR USA",
     "social": [
@@ -156,7 +156,7 @@
   {
     "id": "brittany-ellich",
     "name": "Brittany Ellich",
-    "image": "/events/2026/images/brittany-ellich.jpg",
+    "image": "/people/brittany-ellich.jpg",
     "company": "Bluesky",
     "location": "Portland, OR USA",
     "social": [
@@ -170,7 +170,7 @@
   {
     "id": "darius-cepulis",
     "name": "Darius Cepulis",
-    "image": "/events/2026/images/darius-cepulis.jpg",
+    "image": "/people/darius-cepulis.jpg",
     "company": "Mux",
     "location": "Oak Park, IL USA",
     "url": "https://darius.cool",
@@ -179,7 +179,7 @@
   {
     "id": "courtney-yatteau",
     "name": "Courtney Yatteau",
-    "image": "/events/2026/images/courtney-yatteau.jpg",
+    "image": "/people/courtney-yatteau.jpg",
     "company": "esri",
     "location": "Alexandria, VA USA",
     "social": [
@@ -201,7 +201,7 @@
   {
     "id": "alex-hinson",
     "name": "Alex Hinson",
-    "image": "/events/2026/images/alex-hinson.jpg",
+    "image": "/people/alex-hinson.jpg",
     "company": "Fleetio",
     "location": "Chattanooga, TN USA",
     "social": [
@@ -215,7 +215,7 @@
   {
     "id": "filip-sodic",
     "name": "Filip Sodić",
-    "image": "/events/2026/images/filip-sodic.jpg",
+    "image": "/people/filip-sodic.jpg",
     "company": "Wasp",
     "location": "Zagreb, Croatia",
     "social": [
@@ -233,7 +233,7 @@
   {
     "id": "molly-jean-bennett",
     "name": "Molly Jean Bennett",
-    "image": "/events/2026/images/molly-jean-bennett.jpg",
+    "image": "/people/molly-jean-bennett.jpg",
     "company": "Grow Therapy",
     "location": "Portland, OR, USA",
     "social": [
@@ -247,7 +247,7 @@
   {
     "id": "james-steinbach",
     "name": "James Steinbach",
-    "image": "/events/2026/images/james-steinbach.jpg",
+    "image": "/people/james-steinbach.jpg",
     "company": "Delinea",
     "location": "Denver, CO, USA",
     "social": [
@@ -265,7 +265,7 @@
   {
     "id": "daniel-mendoza",
     "name": "Daniel Mendoza",
-    "image": "/events/2026/images/daniel-mendoza.jpg",
+    "image": "/people/daniel-mendoza.jpg",
     "company": "Storyblok",
     "location": "Chicago, IL, USA",
     "url": "https://danieljmendoza.com/",
@@ -280,7 +280,7 @@
   {
     "id": "jonathan-keslin",
     "name": "Jonathan Keslin",
-    "image": "/events/2026/images/jonathan-keslin.jpg",
+    "image": "/people/jonathan-keslin.jpg",
     "company": "Atlassian",
     "location": "Kirkland, WA USA",
     "social": [
@@ -294,7 +294,7 @@
   {
     "id": "luis-montes",
     "name": "Luis Montes",
-    "image": "/events/2026/images/luis-montes.jpg",
+    "image": "/people/luis-montes.jpg",
     "company": "Iced Dev",
     "location": "Phoenix, AZ",
     "social": [
@@ -312,7 +312,7 @@
   {
     "id": "alex-moon",
     "name": "Alex Moon",
-    "image": "/events/2026/images/alex-moon.jpg",
+    "image": "/people/alex-moon.jpg",
     "company": "WP Engine",
     "location": "Bellingham, WA USA",
     "social": [
@@ -334,7 +334,7 @@
   {
     "id": "dylan-goings",
     "name": "Dylan Goings",
-    "image": "/events/2026/images/dylan-goings.jpg",
+    "image": "/people/dylan-goings.jpg",
     "company": "Atomic Object",
     "location": "Ann Arbor, MI USA",
     "social": [
@@ -348,7 +348,7 @@
   {
     "id": "jeff-otano",
     "name": "Jeff Otaño",
-    "image": "/events/2026/images/jeff-otano.jpg",
+    "image": "/people/jeff-otano.jpg",
     "company": "Onebrief",
     "location": "Denver, CO USA",
     "social": [
@@ -362,7 +362,7 @@
   {
     "id": "ojus-save",
     "name": "Ojus Save",
-    "image": "/events/2026/images/ojus-save.jpg",
+    "image": "/people/ojus-save.jpg",
     "company": "Render",
     "location": "San Francisco, CA USA",
     "social": [
@@ -376,7 +376,7 @@
   {
     "id": "engin-diri",
     "name": "Engin Diri",
-    "image": "/events/2026/images/engin-diri.jpg",
+    "image": "/people/engin-diri.jpg",
     "company": "Pulumi",
     "location": "Seattle, WA USA",
     "social": [
@@ -394,7 +394,7 @@
   {
     "id": "michael-liendo",
     "name": "Michael Liendo",
-    "image": "/events/2026/images/michael-liendo.jpg",
+    "image": "/people/michael-liendo.jpg",
     "company": "Auth0",
     "location": "Davenport, IA USA",
     "social": [
@@ -412,7 +412,7 @@
   {
     "id": "kaelig-deloumeau-prigent",
     "name": "Kaelig Deloumeau-Prigent",
-    "image": "/events/2026/images/kaelig-deloumeau-prigent.jpg",
+    "image": "/people/kaelig-deloumeau-prigent.jpg",
     "company": "Design Tokens W3C CG",
     "location": "Seattle, WA USA",
     "social": [
@@ -430,7 +430,7 @@
   {
     "id": "michael-daigler",
     "name": "Michael Daigler",
-    "image": "/events/2026/images/michael-daigler.jpg",
+    "image": "/people/michael-daigler.jpg",
     "company": "Apify",
     "location": "Austin, TX USA",
     "social": [
@@ -444,7 +444,7 @@
   {
     "id": "amanda-martin",
     "name": "Amanda Martin",
-    "image": "/events/2026/images/amanda-martin.jpg",
+    "image": "/people/amanda-martin.jpg",
     "company": "Vapi",
     "location": "San Francisco, CA USA",
     "social": [
@@ -458,7 +458,7 @@
   {
     "id": "carter-rabasa",
     "name": "Carter Rabasa",
-    "image": "/events/2026/images/carter-rabasa.jpg",
+    "image": "/people/carter-rabasa.jpg",
     "title": "Lead Organizer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -466,7 +466,7 @@
   {
     "id": "carrie-rabasa",
     "name": "Carrie Rabasa",
-    "image": "/events/2026/images/carrie-rabasa.jpg",
+    "image": "/people/carrie-rabasa.jpg",
     "title": "Co-Organizer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -474,7 +474,7 @@
   {
     "id": "elise-worthy",
     "name": "Elise Worthy",
-    "image": "/events/2026/images/elise-worthy.jpg",
+    "image": "/people/elise-worthy.jpg",
     "title": "Sponsorships",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -482,7 +482,7 @@
   {
     "id": "adam-argyle",
     "name": "Adam Argyle",
-    "image": "/events/2026/images/adam-argyle.jpg",
+    "image": "/people/adam-argyle.jpg",
     "title": "Co-Emcee",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -490,7 +490,7 @@
   {
     "id": "robbie-wagner",
     "name": "Robbie Wagner",
-    "image": "/events/2026/images/robbie-wagner.jpg",
+    "image": "/people/robbie-wagner.jpg",
     "title": "Co-Emcee",
     "location": "Virginia, USA",
     "roles": ["organizer"]
@@ -498,7 +498,7 @@
   {
     "id": "kate-pond",
     "name": "Kate Pond",
-    "image": "/events/2026/images/kate-pond.jpg",
+    "image": "/people/kate-pond.jpg",
     "title": "Networking Lead",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -506,7 +506,7 @@
   {
     "id": "cristina-rodriguez",
     "name": "Cristina Rodriguez",
-    "image": "/events/2026/images/cristina-rodriguez.jpg",
+    "image": "/people/cristina-rodriguez.jpg",
     "title": "Scholarships",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -514,7 +514,7 @@
   {
     "id": "andre-wiggins",
     "name": "Andre Wiggins",
-    "image": "/events/2026/images/andre-wiggins.jpg",
+    "image": "/people/andre-wiggins.jpg",
     "title": "Workshops",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -522,7 +522,7 @@
   {
     "id": "ryan-soeder",
     "name": "Ryan Soeder",
-    "image": "/events/2026/images/ryan-soeder.jpg",
+    "image": "/people/ryan-soeder.jpg",
     "title": "Speaker Wrangler",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -530,7 +530,7 @@
   {
     "id": "kelli-rockwell",
     "name": "Kelli Rockwell",
-    "image": "/events/2026/images/kelli-rockwell.jpg",
+    "image": "/people/kelli-rockwell.jpg",
     "title": "Party Coordinator",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -538,7 +538,7 @@
   {
     "id": "jim-liu",
     "name": "Jim Liu",
-    "image": "/events/2026/images/jim-liu.jpg",
+    "image": "/people/jim-liu.jpg",
     "title": "Volunteer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -546,7 +546,7 @@
   {
     "id": "megan-speir",
     "name": "Megan Speir",
-    "image": "/events/2026/images/megan-speir.jpg",
+    "image": "/people/megan-speir.jpg",
     "title": "Volunteer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -554,7 +554,7 @@
   {
     "id": "stella-marie",
     "name": "Stella Marie",
-    "image": "/events/2026/images/stella-marie.jpg",
+    "image": "/people/stella-marie.jpg",
     "title": "Volunteer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
@@ -562,7 +562,7 @@
   {
     "id": "allan-deutsch",
     "name": "Allan Deutsch",
-    "image": "/events/2026/images/allan-deutsch.jpg",
+    "image": "/people/allan-deutsch.jpg",
     "title": "Volunteer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]

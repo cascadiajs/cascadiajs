@@ -1,6 +1,6 @@
 ---
+import { personImages } from "@shared/person-images";
 import type { CollectionEntry } from "astro:content";
-import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import TagChips from "@components/blog/TagChips.astro";
 import {
@@ -30,13 +30,9 @@ const authors =
   Astro.props.authors ??
   (await getPostAuthors(post as CollectionEntry<"blog">));
 
-const eventImages = import.meta.glob<{ default: ImageMetadata }>(
-  "@assets/events/**/*.{jpg,png,jpeg}",
-  { eager: false, base: "/src/assets" },
-);
 const avatars = await Promise.all(
   authors.map(async (author) => {
-    const load = eventImages[`.${author.image}`];
+    const load = personImages[`.${author.image}`];
     if (!load) {
       throw new Error(`PostCard: image not found at .${author.image}`);
     }

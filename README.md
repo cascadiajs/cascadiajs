@@ -268,7 +268,7 @@ For the reasoning behind this split, see [ADR-0013](docs/adr/0013-event-pages-re
 
 - `id`: required. The name in lowercase, with dashes between words, for example `carter-rabasa`. Each id must be different.
 - `name`: required.
-- `image`: required. A path under `src/assets/`, for example `/events/2026/images/jane-doe.jpg`. The build stops if the file is missing.
+- `image`: required. The path of a photo in `src/assets/people/`, for example `/people/jane-doe.jpg`. Use a `.jpg` or `.png` file. The build stops if the file is missing.
 - `roles`: required. One or more of `speaker`, `organizer` and `author`.
 - `title`, `company`, `location`, `url`, `pronouns`, `social` and `bio`: optional.
 
@@ -305,7 +305,7 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 
 1. If the Speaker is new, add them to `src/shared/data/people.json` with `speaker` in `roles`. See [People](#people) for the fields.
 2. Add an object to `src/shared/data/<year>/talks.json`, at the position where the Talk should appear. Required fields: `id`, `slug` (or `null` for no Talk page), `title`, `type` (`keynote`, `main`, `lightning`, `workshop`) and `speaker`, which is `{ "id": "<person id>" }`. Optional fields: `abstract` (Markdown), `tags`, `yt`.
-3. Put the Speaker's photo in `src/assets/events/<year>/images/`. Set the Person's `image` to its path.
+3. Put the Speaker's photo in `src/assets/people/`. Set the Person's `image` to `/people/<file>`.
 4. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
 5. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
 6. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
@@ -321,7 +321,7 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 ### Add an Author
 
 1. Add the Person to `src/shared/data/people.json` with `author` in `roles`. See [People](#people) for the fields. If the Person is already there, add `author` to their `roles`.
-2. Put the photo in `src/assets/events/<year>/images/`. Set `image` to its path.
+2. Put the photo in `src/assets/people/`. Set `image` to `/people/<file>`.
 3. Use the id in a Post's `authors` list.
 
 ### Add a Sponsor
@@ -334,7 +334,7 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 ### Add an Organizer, Ticket or Activity
 
 1. Edit the matching file in `src/shared/data/<year>/` (`organizers.json`, `tickets.json`, `activities.json`). The shapes are in `src/shared/data/types.ts`.
-2. For a new Organizer, add them to `src/shared/data/people.json` with `organizer` in `roles`. Then add `{ "id": "<person id>" }` to `organizers.json`. Organizer photos go in `src/assets/events/<year>/images/`.
+2. For a new Organizer, add them to `src/shared/data/people.json` with `organizer` in `roles`. Then add `{ "id": "<person id>" }` to `organizers.json`. Put Organizer photos in `src/assets/people/`.
 3. A new Activity also needs placing on the schedule: reference it by `id` from `src/pages/<year>/schedule.astro` with `getActivity(year, id)`.
 
 ### Add a component

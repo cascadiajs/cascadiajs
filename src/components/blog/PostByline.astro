@@ -1,5 +1,5 @@
 ---
-import type { ImageMetadata } from "astro";
+import { personImages } from "@shared/person-images";
 import { Image } from "astro:assets";
 import { bylineSeparator } from "@shared/blog/format";
 
@@ -25,13 +25,9 @@ const {
 const formatDate = (date: Date) =>
   date.toLocaleDateString("en-US", { dateStyle: "long", timeZone: "UTC" });
 
-const eventImages = import.meta.glob<{ default: ImageMetadata }>(
-  "@assets/events/**/*.{jpg,png,jpeg}",
-  { eager: false, base: "/src/assets" },
-);
 const avatars = await Promise.all(
   authors.map(async (author) => {
-    const load = eventImages[`.${author.image}`];
+    const load = personImages[`.${author.image}`];
     if (!load) {
       throw new Error(`PostByline: image not found at .${author.image}`);
     }
