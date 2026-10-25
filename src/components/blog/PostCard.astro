@@ -12,14 +12,23 @@ import { getPostAuthors } from "@shared/blog/get-posts";
 
 interface Props {
   /** A visible Post. The one card for the index, Tag, Author and search pages. */
-  post: CollectionEntry<"blog">;
+  post: Pick<CollectionEntry<"blog">, "id" | "body"> & {
+    data: Pick<
+      CollectionEntry<"blog">["data"],
+      "title" | "description" | "pubDate" | "tags" | "image"
+    > & { authors: unknown };
+  };
+  /** The Post's Authors in byline order. Read from the Post when omitted. */
+  authors?: { id: string; name: string; image: string }[];
   /** Rendered image width in px; search results pass a thumbnail size. */
   imageWidth?: number;
   class?: string;
 }
 
 const { post, imageWidth = 600, class: className } = Astro.props;
-const authors = await getPostAuthors(post);
+const authors =
+  Astro.props.authors ??
+  (await getPostAuthors(post as CollectionEntry<"blog">));
 
 const eventImages = import.meta.glob<{ default: ImageMetadata }>(
   "@assets/events/**/*.{jpg,png,jpeg}",
