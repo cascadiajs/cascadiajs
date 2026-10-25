@@ -28,7 +28,9 @@ export default defineConfig({
   // `imageCDN` (every astro:assets image is served by the Netlify Image CDN),
   // and `cacheOnDemandPages` stays off.
   output: "static",
-  adapter: netlify(),
+  // Vitest loads this config too. Without the adapter it starts no Netlify
+  // Edge Functions dev server, which sometimes fails at startup.
+  adapter: process.env.VITEST ? undefined : netlify(),
   // The site uses no sessions; this stops the adapter from setting up Netlify
   // Blobs and bundling the session runtime.
   session: false,

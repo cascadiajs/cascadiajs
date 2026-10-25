@@ -12,7 +12,7 @@ const sponsor = (
   id,
   tier,
   name: id,
-  logo: "ai-portland.svg",
+  logo: "test-logo.svg",
   url: `https://${id}.example.com`,
   events: ["2026"],
   ...extra,

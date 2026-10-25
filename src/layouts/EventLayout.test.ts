@@ -5,7 +5,7 @@ import EventLayout from "./EventLayout.astro";
 vi.mock("@shared/data/events", () => ({
   getEventConfig: (year: string) => ({
     year,
-    logo: "/events/2026/images/theo.jpg",
+    logo: "/events/sample/images/test-photo.png",
     ogImage: "/share.png",
     ogDescription: "An Event",
     nav: [{ label: "Tickets", href: `/${year}/tickets` }],

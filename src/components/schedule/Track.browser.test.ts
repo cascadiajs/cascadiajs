@@ -26,7 +26,11 @@ async function mountTrack(
 ) {
   const track = (await mountAstro(TRACK, { kind, title })).firstElementChild!;
   for (const [rowTitle, when] of rows) {
-    const row = await mountAstro(TALK_ROW, { talk: talk(rowTitle), when });
+    const row = await mountAstro(TALK_ROW, {
+      talk: talk(rowTitle),
+      when,
+      talksBase: "/test-base/talks",
+    });
     track.append(...row.children);
   }
   parent.append(track);

@@ -9,12 +9,6 @@ const SHARE_BAR = "src/components/blog/ShareBar.astro";
 const FOOTER = "src/components/SiteFooter.astro";
 const PROPS = { title: "A literal title" };
 
-// Font Awesome loads from a kit script that the test page does not have. Give
-// each icon the box a loaded glyph has, so the bar has its real height.
-const iconBox = document.createElement("style");
-iconBox.textContent = `i[class*="fa-"] { display: inline-block; width: 1em; height: 1em; }`;
-document.head.append(iconBox);
-
 afterEach(() => {
   unmountAll();
   vi.restoreAllMocks();

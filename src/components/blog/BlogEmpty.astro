@@ -1,0 +1,15 @@
+---
+/** The empty state of a list of Posts: the blog index and an Author page. */
+interface Props {
+  message: string;
+}
+
+const { message } = Astro.props;
+---
+
+<div
+  class="cjs-blog-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center"
+>
+  <h2 class="font-display text-cedar-cream text-40 mt-0">No Posts yet</h2>
+  <p>{message}</p>
+</div>

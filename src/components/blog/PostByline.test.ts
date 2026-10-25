@@ -4,7 +4,7 @@ import PostByline from "./PostByline.astro";
 
 // A path that resolves to an image in `src/assets`; the component needs a
 // real image to render.
-const image = "/events/2026/images/carrie-rabasa.jpg";
+const image = "/events/sample/images/test-photo.png";
 const ada = { id: "ada", name: "Ada Lovelace", image };
 const grace = { id: "grace", name: "Grace Hopper", image };
 const linus = { id: "linus", name: "Linus Torvalds", image };

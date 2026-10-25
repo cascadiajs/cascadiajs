@@ -73,4 +73,15 @@ describe("share bar hover under reduced motion", () => {
     expect(getComputedStyle(link).backgroundColor).not.toBe(before);
     expect(link.getAnimations()).toEqual([]);
   });
+
+  test("transitions when motion is allowed", async () => {
+    await page.viewport(1280, 800);
+    await commands.emulateReducedMotion("no-preference");
+    await mountAstro(SHARE_BAR, { title: "A literal title" });
+    const link = page.getByRole("link", { name: "Bluesky" }).element();
+
+    await page.getByRole("link", { name: "Bluesky" }).hover();
+
+    expect(link.getAnimations().length).toBeGreaterThan(0);
+  });
 });

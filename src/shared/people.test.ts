@@ -4,7 +4,7 @@ import { parsePeople, resolvePerson } from "@shared/people";
 const person = (id: string, extra: object = {}) => ({
   id,
   name: id,
-  image: "/events/2026/images/x.jpg",
+  image: "/events/sample/images/test-photo.png",
   roles: ["speaker"],
   ...extra,
 });
@@ -51,7 +51,7 @@ describe("resolvePerson", () => {
   it("returns the registry values when there are no overrides", () => {
     expect(resolvePerson(registry, { id: "jo" })).toEqual({
       name: "jo",
-      image: "/events/2026/images/x.jpg",
+      image: "/events/sample/images/test-photo.png",
       roles: ["speaker"],
       title: "Lead",
       company: "Acme",
