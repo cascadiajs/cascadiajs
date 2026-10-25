@@ -371,7 +371,7 @@ Do these steps only after the 2027 pages are ready.
 
 ## Testing and CI
 
-Two seams: Vitest unit tests for pure functions, Playwright for everything that renders.
+Three seams: Vitest unit tests for pure functions, Vitest browser tests for components in a real browser, Playwright for the built site.
 
 ### Unit tests
 
@@ -381,6 +381,12 @@ Unit tests live beside the code they test, as `src/**/*.test.ts`. Put pure funct
 pnpm test:unit                                  # run once
 pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
 ```
+
+### Browser tests
+
+Component tests that need real CSS or a client script live beside the component as `src/**/*.browser.test.ts`. They run in headless Chromium through Vitest browser mode (Playwright provider, second project `browser` in `vitest.config.ts`). `pnpm test:unit` runs both projects. Run one with `pnpm exec vitest run --project browser`. Install the browser once with `pnpm exec playwright install chromium`.
+
+The Astro Container API cannot render inside browser mode. A test renders a component with the `renderAstro` command (`vitest.commands.ts`), which renders on the Node side and returns the HTML. In a test, call `mountAstro("src/components/blog/ShareBar.astro", { title: "Literal" }, "<div>%s</div>")` from `@shared/test/mount-astro` and import the CSS the test needs (`../../styles/global.css`, plus any CSS file the component imports). A component whose client script a test must run keeps that script in a module (`share-bar.ts`) that the component imports. Set the viewport with `page.viewport(width, height)`. See `src/components/blog/ShareBar.browser.test.ts`.
 
 ### End-to-end tests
 
