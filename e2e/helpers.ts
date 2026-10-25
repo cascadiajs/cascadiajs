@@ -1,33 +1,7 @@
 import { expect, test } from "@playwright/test";
-import { readdirSync } from "node:fs";
-
-/** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
-export function filesUnder(dir: string, pattern: RegExp): string[] {
-  return (readdirSync(dir, { recursive: true, encoding: "utf8" }) as string[])
-    .filter((file) => pattern.test(file))
-    .sort();
-}
 
 /**
- * Events with pages: one per `src/shared/data/events/<key>.config.ts`. The
- * list comes from the filenames, because the Event registry uses Vite-only
- * imports and a config can import what Node cannot load.
- */
-export const EVENTS_WITH_PAGES: readonly { year: string }[] = filesUnder(
-  "src/shared/data/events",
-  /^\d{4}\.config\.ts$/,
-).map((file) => ({ year: file.replace(/\.config\.ts$/, "") }));
-
-/**
- * Roots (`/<key>`) of the Events with pages. Only components.spec.ts uses
- * this; delete it with that file.
- */
-export const EVENT_ROOTS: readonly string[] = EVENTS_WITH_PAGES.map(
-  ({ year }) => `/${year}`,
-);
-
-/**
- * URL paths of the Frozen Snapshots: exact legacy captures (ADR-0008), not
+ * Pages of the Frozen Snapshots: exact legacy captures (ADR-0008), not
  * Layout-rendered. Sitewide checks of Layout's output exclude or relax them.
  */
 export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
