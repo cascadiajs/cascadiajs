@@ -7,7 +7,8 @@ const config: EventConfig = {
   dates: "June 7-8, 2027",
   venue: "Seattle Convention Center",
   location: "Seattle, WA, USA",
-  logo: "/events/2026/images/icon-dark-blue.png",
+  logo: "/events/2027/images/cjs-icon-blue.svg",
+  logoHeightClass: "h-10.5",
   ogImage: "/images/2027/share/social-sharing-general.png",
   ogDescription: DEFAULT_DESCRIPTION,
   nav: [

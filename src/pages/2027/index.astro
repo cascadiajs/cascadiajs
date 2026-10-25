@@ -13,7 +13,7 @@ import { Image } from "astro:assets";
 //import { getCollection } from "astro:content";
 import { getOrganizers, getTickets } from "@shared/data/events";
 //import type { Talk } from "@shared/data/types";
-import lockupImage from "@assets/events/2026/images/lockup-horizontal-webai-white.png";
+import lockupImage from "@assets/events/2027/images/cjs-lockup-white.svg";
 
 //const talks = (await getCollection("talks2026"))
 //  .sort((a, b) => a.data.order - b.data.order)
@@ -58,11 +58,7 @@ const paragraphClass =
       */
     }
     <div>
-      <Image
-        src={lockupImage}
-        alt="CascadiaJS 2027 Web + AI conference"
-        class="inline w-75"
-      />
+      <Image src={lockupImage} alt="CascadiaJS logo" class="inline w-75" />
     </div>
     <h2 class="my-10 font-serif text-[clamp(16px,8vw,60px)] text-white">
       A Web + AI conference for the Pacific Northwest
