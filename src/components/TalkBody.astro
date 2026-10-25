@@ -1,0 +1,37 @@
+---
+/**
+ * The body of a Talk page: Tags, the abstract as Markdown, and a link to the
+ * Talk's registration page when it has one.
+ */
+import { marked } from "marked";
+import MarkdownContent from "./MarkdownContent.astro";
+import type { Talk } from "@shared/data/types";
+
+interface Props {
+  talk: Talk;
+}
+
+const { abstract, registrationUrl, tags } = Astro.props.talk;
+
+const abstractHtml = marked.parse(abstract ?? "") as string;
+---
+
+{
+  tags && (
+    <div class="mb-2 flex flex-wrap">
+      {tags.map((tag) => (
+        <div class="bg-overcast-gray m-0.75 p-2">{tag}</div>
+      ))}
+    </div>
+  )
+}
+<MarkdownContent>
+  <div set:html={abstractHtml} />
+  {
+    registrationUrl && (
+      <p>
+        <a href={registrationUrl}>[More info and how to register]</a>
+      </p>
+    )
+  }
+</MarkdownContent>

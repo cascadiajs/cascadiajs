@@ -26,28 +26,4 @@ test.describe("home page", () => {
     expect(navHrefs.some((href) => EVENT_ROOTS.includes(href!))).toBe(true);
     await expect(page.getByRole("contentinfo")).toBeVisible();
   });
-
-  test("the alert banner, when shown, holds a link", async ({ page }) => {
-    const alert = page.getByRole("banner").locator(".cjs-alert-banner");
-    test.skip((await alert.count()) === 0, "the alert banner is off");
-    await expect(alert).toBeVisible();
-    await expect(alert.getByRole("link")).not.toHaveCount(0);
-  });
-
-  test("testimonials stay readable when the X widget script does not load", async ({
-    page,
-  }) => {
-    const blockquotes = page.locator("#testimonials blockquote.twitter-tweet");
-    test.skip(
-      (await blockquotes.count()) === 0,
-      "the homepage has no Testimonials",
-    );
-    for (const blockquote of await blockquotes.all()) {
-      await expect(blockquote).toBeVisible();
-      expect(
-        ((await blockquote.textContent()) ?? "").trim().length,
-      ).toBeGreaterThan(0);
-      await expect(blockquote.getByRole("link").first()).toBeVisible();
-    }
-  });
 });

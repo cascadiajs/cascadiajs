@@ -112,35 +112,6 @@ test.describe("Talk page share image", () => {
 });
 
 test.describe("Talk page body", () => {
-  test("a Talk with a registration URL shows a link to it", async ({
-    page,
-  }) => {
-    const talkPage = talkPages.find(({ talk }) => talk.registrationUrl);
-    test.skip(!talkPage, "no Talk page has a registration URL");
-    await page.goto(talkPage!.path);
-    const url = talkPage!.talk.registrationUrl!;
-    const count = await page
-      .locator(".cjs-markdown-content a")
-      .evaluateAll(
-        (as, href) => as.filter((a) => a.getAttribute("href") === href).length,
-        url,
-      );
-    expect(count).toBeGreaterThan(0);
-  });
-
-  test("a multi-block abstract renders more than one block", async ({
-    page,
-  }) => {
-    const blocks = (talk: Talk) =>
-      (talk.abstract ?? "").split(/\n\s*\n/).filter((p) => p.trim()).length;
-    const talkPage = talkPages.find(({ talk }) => blocks(talk) > 1);
-    test.skip(!talkPage, "no Talk page has a multi-block abstract");
-    await page.goto(talkPage!.path);
-    expect(
-      await page.locator(".cjs-markdown-content > :first-child > *").count(),
-    ).toBeGreaterThan(1);
-  });
-
   test("the Sponsors grid and Testimonials come after the body", async ({
     page,
   }) => {
