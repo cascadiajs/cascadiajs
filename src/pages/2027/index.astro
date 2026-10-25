@@ -35,7 +35,11 @@ const paragraphClass =
   "text-sound-navy font-serif text-2xl leading-normal font-normal";
 ---
 
-<EventLayout year="2027" title="CascadiaJS 2027 | June 7 - 8 | Seattle, WA">
+<EventLayout
+  year="2027"
+  title="CascadiaJS 2027 | June 7 - 8 | Seattle, WA"
+  displayAlert={false}
+>
   <VideoHero slot="hero" videoSrc="/events/2026/video/sizzle.mp4">
     {
       /*
@@ -178,4 +182,22 @@ const paragraphClass =
   <section id="testimonials" class="text-center">
     <Testimonials />
   </section>
+
+  <style is:global>
+    /* The Event nav's in-page links (/2027#networking, #pricing) glide to
+       their section. Global because it has to reach <html>; Astro only ships
+       this page's styles with this page. */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    /* From md up the Event nav is sticky (112px tall); stop the section
+       below it instead of underneath it. */
+    @media (width >= 48rem) {
+      html {
+        scroll-padding-top: 112px;
+      }
+    }
+  </style>
 </EventLayout>
