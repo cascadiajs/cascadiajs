@@ -144,7 +144,7 @@ Tag pages are `src/pages/blog/tags/[tag].astro`: one page per normalized Tag (`/
 
 Author pages are `src/pages/blog/authors/[id].astro`, at `/blog/authors/<id>`. There is one page for each Person with the `author` role, with or without Posts. `AuthorHeader` shows the picture, name, pronouns, title and company, location, website, social links and bio, and hides each field that is not set. Below it, every visible Post that lists the Person in `authors` shows as a `PostCard`, newest first, with no pagination, Featured band or search box. An Author with no visible Posts sees an empty state. Author names on `PostCard` and in the Post byline link to these pages.
 
-A Post page starts with a reading progress bar (`src/components/blog/ProgressBar.astro`). It uses a CSS scroll timeline (`animation-timeline: scroll()`) inside `@supports`, with no JavaScript. It scrolls away with the header, then pins to the top. Browsers without scroll timelines and readers with `prefers-reduced-motion: reduce` see no bar.
+A Post page starts with a reading progress bar (`src/components/blog/ProgressBar.astro`). It uses a CSS scroll timeline (`animation-timeline: scroll()`) inside `@supports`, with no JavaScript. The CSS lives in `progress-bar.css`, which the component imports, so a browser test can import it too. It scrolls away with the header, then pins to the top. Browsers without scroll timelines and readers with `prefers-reduced-motion: reduce` see no bar.
 
 Each Post page has a share bar (`ShareBar`): a sticky rail beside the Post on desktop, a fixed bottom bar on phones. Bluesky, LinkedIn and X are plain links built at build time by the helpers in `src/shared/blog/format.ts`. Copy link and Web Share render hidden, and one script in the component reveals each where the browser supports it. Hover colors use `motion-safe:` transitions, so reduced motion changes color instantly.
 
@@ -371,18 +371,26 @@ Do these steps only after the 2027 pages are ready.
 
 ## Testing and CI
 
-Three seams: Vitest unit tests for pure functions, Vitest component tests with the Astro Container API for component HTML, Playwright for the built site.
+Four seams: Vitest unit tests for pure functions, Vitest component tests with the Astro Container API for component HTML, Vitest browser tests for components in a real browser, Playwright for the built site.
 
 ### Unit tests
 
 Unit tests live beside the code they test, as `src/**/*.test.ts`. Put pure functions over plain data here: helpers that take values and return values, with no Astro runtime, no disk reads and no DOM. Pass plain objects, not Astro entries. Vitest is configured in `vitest.config.ts` through Astro's `getViteConfig`, so the `@shared`, `@components`, `@layouts` and `@assets` aliases resolve as they do in the site. Playwright only reads `e2e/` and Vitest only reads `src/`, so neither picks up the other's files. See `src/shared/route-path.test.ts` for an example.
 
-**Component tests.** A `.astro` component is tested in Node with the Astro Container API (`experimental_AstroContainer` from `astro/container`), beside the component as `Component.test.ts`. Pass literal props, render with `container.renderToString(Component, { props })`, and assert the HTML string. Pass `request: new Request("https://example.test/path")` when the component reads `Astro.url`. No test reads real Event data or fixture files. A component that needs an image takes a real path under `src/assets`. See `src/components/blog/TagChips.test.ts`. The helpers `render`, `tags` and `text` in `src/shared/test-render.ts` wrap the container and read tags and text from the HTML. See `src/components/components.test.ts` for Event components. A component that loads its own data takes that data as an optional prop, so a test can pass literals (`HallwayTrack` takes `sponsors`, `Testimonials` takes `testimonials`, `TalkRow` and `TalkBody` take a `talk`). A test that must replace a module, such as the Event config for `EventLayout`, uses `vi.mock`.
+**Component tests.** A `.astro` component is tested in Node with the Astro Container API (`experimental_AstroContainer` from `astro/container`), beside the component as `Component.test.ts`. Pass literal props, render with `container.renderToString(Component, { props })`, and assert the HTML string. Pass `request: new Request("https://example.test/path")` when the component reads `Astro.url`. No test reads real Event data or fixture files. A component that needs an image takes a real path under `src/assets`. See `src/components/blog/TagChips.test.ts`. Give a component that reads a content collection an optional prop for its data (for example `sponsors` on `SponsorsGrid` and `HallwayTrack`), so the test passes literal data. The helpers `render`, `tags` and `text` in `src/shared/test-render.ts` wrap the container and read tags and text from the HTML (see `src/components/components.test.ts`). A test that must replace a module, such as the Event config for `EventLayout`, uses `vi.mock`.
+
+**Sponsor selection** (`src/shared/sponsors.ts`) holds the rules for which Sponsors show: `selectSponsors` (include an Event Key, exclude Event Keys, tier order), `tierBands` (group by tier, mark the four linked tiers) and `hallwayWall` (platinum, then gold, of one Event). `SponsorsGrid` and `HallwayTrack` call it.
 
 ```sh
 pnpm test:unit                                  # run once
 pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
 ```
+
+### Browser tests
+
+Component tests that need real CSS or a client script live beside the component as `src/**/*.browser.test.ts`. They run in headless Chromium through Vitest browser mode (Playwright provider, second project `browser` in `vitest.config.ts`). `pnpm test:unit` runs both projects. Run one with `pnpm exec vitest run --project browser`. Install the browser once with `pnpm exec playwright install chromium`.
+
+The Astro Container API cannot render inside browser mode. A test renders a component with the `renderAstro` command (`vitest.commands.ts`), which renders on the Node side and returns the HTML. In a test, call `mountAstro("src/components/blog/ShareBar.astro", { title: "Literal" }, "<div>%s</div>")` from `@shared/test/mount-astro` and import the CSS the test needs (`../../styles/global.css`, plus any CSS file the component imports). A component whose client script a test must run keeps that script in a module (`share-bar.ts`) that the component imports. Set the viewport with `page.viewport(width, height)`. Set `prefers-reduced-motion` with `commands.emulateReducedMotion("reduce")` (from `vitest/browser`) and reset it with `"no-preference"` in `afterEach`. See `src/components/blog/ShareBar.browser.test.ts`.
 
 ### End-to-end tests
 

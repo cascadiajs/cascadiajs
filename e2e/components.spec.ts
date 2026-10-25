@@ -1,7 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { DESKTOP, EVENT_ROOTS, EVENTS_WITH_PAGES, MOBILE } from "./helpers";
-import sponsorData from "@shared/data/sponsors.json" with { type: "json" };
-import type { EventYear, Sponsor } from "@shared/data/types";
+import { DESKTOP, EVENT_ROOTS, MOBILE } from "./helpers";
 
 /**
  * Component behavior checks. Each check finds its component by class name
@@ -11,8 +9,6 @@ import type { EventYear, Sponsor } from "@shared/data/types";
  * not fail the suite. No check reads copy, counts or computed colors and
  * sizes.
  */
-
-const sponsors = sponsorData as Sponsor[];
 
 const candidatePages = EVENT_ROOTS.flatMap((root) => [
   root,
@@ -164,50 +160,6 @@ test.describe("external links", () => {
 });
 
 test.describe("tiered Sponsors grid", () => {
-  const LINKED_TIERS = ["diamond", "platinum", "gold", "silver"];
-  const SPONSOR_PAGE = /^\/\d{4}\/sponsors\/(.+)$/;
-
-  test("a logo in the top four tiers links to the Sponsor page or the Sponsor's site", async ({
-    page,
-  }) => {
-    await gotoPageWith(page, ".cjs-sponsors-grid a[href]");
-    const { href, target } = await page
-      .locator(".cjs-sponsors-grid a[href]")
-      .first()
-      .evaluate((a) => ({
-        href: a.getAttribute("href")!,
-        target: a.getAttribute("target"),
-      }));
-    const pageId = href.match(SPONSOR_PAGE)?.[1];
-    const sponsor = sponsors.find((s) =>
-      pageId ? s.id === pageId : s.url === href,
-    );
-    expect(sponsor, `${href} matches no Sponsor`).toBeDefined();
-    expect(LINKED_TIERS, href).toContain(sponsor!.tier);
-    if (pageId) {
-      expect(sponsor!.description, `${href} needs a description`).toBeTruthy();
-    } else {
-      expect(sponsor!.description, `${href} has a description`).toBeFalsy();
-      expect(target, href).toBe("_blank");
-    }
-  });
-
-  test("a logo in any other tier does not link", async ({ page }) => {
-    const cells = [
-      ...new Set(
-        sponsors.flatMap((s) =>
-          s.tier && !LINKED_TIERS.includes(s.tier) ? [s.tier] : [],
-        ),
-      ),
-    ]
-      .map((tier) => `.cjs-sponsor-tier-${tier}`)
-      .join(", ");
-    test.skip(!cells, "no Sponsor is in an unlinked tier");
-    await gotoPageWith(page, cells);
-    expect(await page.locator(`:is(${cells}) img`).count()).toBeGreaterThan(0);
-    expect(await page.locator(`:is(${cells}) a`).count()).toBe(0);
-  });
-
   test("a target=_blank logo outside .mark-external-links shows no external-link icon", async ({
     page,
   }) => {
@@ -215,45 +167,6 @@ test.describe("tiered Sponsors grid", () => {
       '.cjs-sponsors-grid a[target="_blank"]:not(.mark-external-links *)';
     await gotoPageWith(page, logo);
     expect(await hasIndicator(page.locator(logo).first())).toBe(false);
-  });
-});
-
-test.describe("flat Sponsors grid", () => {
-  test("logos are not links", async ({ page }) => {
-    await page.goto("/");
-    const grid = page.locator(".cjs-sponsors-grid");
-    test.skip((await grid.count()) === 0, "homepage has no Sponsors grid");
-    expect(await grid.locator("img").count()).toBeGreaterThan(0);
-    expect(await grid.locator("a").count()).toBe(0);
-  });
-});
-
-test.describe("Hallway Track", () => {
-  const logoLink = ".cjs-hallway-track a:has(img)";
-
-  test("the wall shows the platinum, then the gold Sponsors of one Event", async ({
-    page,
-  }) => {
-    await gotoPageWith(page, logoLink);
-    const wall = await page
-      .locator(".cjs-hallway-track")
-      .first()
-      .locator("a:has(img)")
-      .evaluateAll((as) =>
-        as.map((a) => a.getAttribute("href")).filter(Boolean),
-      );
-    // A copied page can pass another Event's key, so match any Event's wall.
-    const expectedWalls = EVENTS_WITH_PAGES.map(({ year }) =>
-      ["platinum", "gold"].flatMap((tier) =>
-        sponsors
-          .filter(
-            (s) =>
-              s.tier === tier && s.url && s.events.includes(year as EventYear),
-          )
-          .map((s) => s.url),
-      ),
-    );
-    expect(expectedWalls).toContainEqual(wall);
   });
 });
 

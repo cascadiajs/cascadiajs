@@ -15,29 +15,24 @@ import { getCollection } from "astro:content";
 import CtaButton from "../CtaButton.astro";
 import LocationBand from "./LocationBand.astro";
 import type { EventYear, Sponsor } from "@shared/data/types";
+import { hallwayWall } from "@shared/sponsors";
 
 interface Props {
   /** Event Key whose Sponsors and Cascadia Connect page to show. */
   year: EventYear;
-  /** Sponsors to pick the wall from, in order. Defaults to the `sponsors` collection. */
+  /** Sponsors to choose from; defaults to the `sponsors` collection. */
   sponsors?: Sponsor[];
 }
 
-const { year } = Astro.props;
+const { year, sponsors: given } = Astro.props;
 
 const sponsors: Sponsor[] =
-  Astro.props.sponsors ??
+  given ??
   (await getCollection("sponsors"))
     .sort((a, b) => a.data.order - b.data.order)
     .map((entry) => entry.data);
 
-// Platinum before gold, matching the reference's own iteration order.
-const HALLWAY_TIERS = ["platinum", "gold"] as const;
-const wallSponsors = HALLWAY_TIERS.flatMap((tier) =>
-  sponsors.filter(
-    (sponsor) => sponsor.tier === tier && sponsor.events.includes(year),
-  ),
-);
+const wallSponsors = hallwayWall(sponsors, year);
 
 const titleClasses =
   "text-sound-navy font-serif text-22 leading-tight font-light";
