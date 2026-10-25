@@ -7,6 +7,7 @@ declare module "vitest/browser" {
       props?: Record<string, unknown>,
       url?: string,
     ) => Promise<string>;
+    emulateReducedMotion: (mode: "reduce" | "no-preference") => Promise<void>;
   }
 }
 

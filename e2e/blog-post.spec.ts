@@ -25,8 +25,6 @@ const SHARE_POST = publishedFixturePosts()[0];
 const SHARE_PATH = postPath(SHARE_POST);
 const SHARE_BAR = ".cjs-share-bar";
 const PROGRESS_PATH = postPath(postWithImage());
-const fillWidth = async (page: import("@playwright/test").Page) =>
-  (await page.locator(".cjs-progress-bar-fill").boundingBox())!.width;
 const meta = (page: import("@playwright/test").Page, selector: string) =>
   page.locator(`head meta[${selector}]`);
 
@@ -303,23 +301,6 @@ test.describe("Blog share bar with JavaScript", () => {
     await page.waitForTimeout(100);
     expect(errors).toEqual([]);
   });
-
-  test("hover changes color at once under reduced motion", async ({ page }) => {
-    await page.emulateMedia({ reducedMotion: "reduce" });
-    await page.setViewportSize(DESKTOP);
-    await page.goto(SHARE_PATH);
-    const link = page.locator(".cjs-share-link").first();
-    const before = await link.evaluate(
-      (el) => getComputedStyle(el).backgroundColor,
-    );
-    await link.hover();
-    expect(
-      await link.evaluate((el) => getComputedStyle(el).transitionDuration),
-    ).toBe("0s");
-    await expect
-      .poll(() => link.evaluate((el) => getComputedStyle(el).backgroundColor))
-      .not.toBe(before);
-  });
 });
 
 test.describe("Blog share bar layout", () => {
@@ -367,41 +348,10 @@ test.describe("Blog share bar on a phone", () => {
 });
 
 test.describe("Blog progress bar", () => {
-  test("is present on a Post page and its fill grows as the page scrolls", async ({
-    page,
-  }) => {
+  test("is present on a Post page", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 400 });
     await page.goto(PROGRESS_PATH);
-    const bar = page.locator(".cjs-progress-bar");
-    await expect(bar).toBeVisible();
-    const start = await fillWidth(page);
-    const scrollable = await page.evaluate(
-      () => document.documentElement.scrollHeight - window.innerHeight,
-    );
-    expect(scrollable).toBeGreaterThan(200);
-    await page.evaluate((y) => window.scrollTo(0, y), scrollable / 2);
-    await expect.poll(() => fillWidth(page)).toBeGreaterThan(start);
-    const middle = await fillWidth(page);
-    await page.evaluate((y) => window.scrollTo(0, y), scrollable);
-    await expect.poll(() => fillWidth(page)).toBeGreaterThan(middle);
-  });
-
-  test("stays at the top after the header scrolls away", async ({ page }) => {
-    await page.setViewportSize({ width: 1280, height: 400 });
-    await page.goto(PROGRESS_PATH);
-    const bar = page.locator(".cjs-progress-bar");
-    const initialTop = (await bar.boundingBox())!.y;
-    expect(initialTop).toBeGreaterThan(0);
-    await page.evaluate(() => window.scrollTo(0, 300));
-    await expect.poll(async () => (await bar.boundingBox())!.y).toBe(0);
-  });
-
-  test("is hidden under reduced motion", async ({ browser }) => {
-    const context = await browser.newContext({ reducedMotion: "reduce" });
-    const page = await context.newPage();
-    await page.goto(PROGRESS_PATH);
-    await expect(page.locator(".cjs-progress-bar")).toBeHidden();
-    await context.close();
+    await expect(page.locator(".cjs-progress-bar")).toBeVisible();
   });
 
   test("does not appear on non-Post pages", async ({ page }) => {
@@ -409,10 +359,5 @@ test.describe("Blog progress bar", () => {
       await page.goto(path);
       await expect(page.locator(".cjs-progress-bar")).toHaveCount(0);
     }
-  });
-
-  test("ships no script for the bar", async ({ page }) => {
-    await page.goto(PROGRESS_PATH);
-    await expect(page.locator(".cjs-progress-bar script")).toHaveCount(0);
   });
 });

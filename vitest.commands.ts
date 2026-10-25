@@ -35,3 +35,14 @@ export const renderAstro: BrowserCommand<
     request: new Request(url),
   });
 };
+
+/**
+ * Set the `prefers-reduced-motion` media feature for the test page. Playwright
+ * emulates it at page level, so a browser test cannot set it in the page.
+ */
+export const emulateReducedMotion: BrowserCommand<
+  [mode: "reduce" | "no-preference"],
+  void
+> = async ({ page }, mode) => {
+  await page.emulateMedia({ reducedMotion: mode });
+};
