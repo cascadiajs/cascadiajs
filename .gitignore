@@ -7,3 +7,4 @@ playwright-report/
 *.DS_STORE
 .env
 .netlify/
+.claude/launch.json
