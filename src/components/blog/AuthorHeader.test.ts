@@ -33,7 +33,7 @@ test("shows every profile field that is set", async () => {
   expect(html).toContain("Wrote the first program.");
   expect(html).toContain('href="https://ada.example/"');
   expect(html).toContain('href="https://github.com/ada"');
-  expect(html).toContain('aria-label="github"');
+  expect(html).toContain('data-social="github"');
 });
 
 test("hides every profile field that is not set", async () => {
@@ -43,7 +43,7 @@ test("hides every profile field that is not set", async () => {
   expect(html).not.toContain(" @ ");
   expect(html).not.toContain("fa-location-dot");
   expect(html).not.toContain("Website");
-  expect(html).not.toContain("aria-label=");
+  expect(html).not.toContain("data-social=");
   expect(html).not.toContain("<p");
 });
 

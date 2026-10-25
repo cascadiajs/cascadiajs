@@ -66,12 +66,12 @@ test("shows the image, and no placeholder, when the Post has one", async () => {
     image: { src: "/cover.jpg", width: 1200, height: 750, format: "jpg" },
   });
   expect(html).toMatch(/<img[^>]*cover\.jpg/);
-  expect(html).not.toContain('aria-hidden="true">Hello World');
+  expect(html).not.toContain("data-post-placeholder");
 });
 
 test("shows the title in a placeholder when the Post has no image", async () => {
   const html = await render([ada]);
-  expect(html).toMatch(/aria-hidden="true"[^>]*>\s*Hello World\s*</);
+  expect(html).toMatch(/data-post-placeholder[^>]*>\s*Hello World\s*</);
 });
 
 test("byline of one Author", async () => {

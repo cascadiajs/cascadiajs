@@ -79,6 +79,7 @@ const role = [author.title, author.company].filter(Boolean).join(" @ ");
             <a
               href={link.url}
               aria-label={link.type}
+              data-social={link.type}
               class="cjs-author-social bg-cedar-cream text-sound-navy flex size-10 items-center justify-center rounded-full text-xl no-underline"
             >
               <i class={`fa-brands fa-${link.type}`} aria-hidden="true" />
