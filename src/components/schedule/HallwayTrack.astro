@@ -19,13 +19,17 @@ import type { EventYear, Sponsor } from "@shared/data/types";
 interface Props {
   /** Event Key whose Sponsors and Cascadia Connect page to show. */
   year: EventYear;
+  /** Sponsors to pick the wall from, in order. Defaults to the `sponsors` collection. */
+  sponsors?: Sponsor[];
 }
 
 const { year } = Astro.props;
 
-const sponsors: Sponsor[] = (await getCollection("sponsors"))
-  .sort((a, b) => a.data.order - b.data.order)
-  .map((entry) => entry.data);
+const sponsors: Sponsor[] =
+  Astro.props.sponsors ??
+  (await getCollection("sponsors"))
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((entry) => entry.data);
 
 // Platinum before gold, matching the reference's own iteration order.
 const HALLWAY_TIERS = ["platinum", "gold"] as const;

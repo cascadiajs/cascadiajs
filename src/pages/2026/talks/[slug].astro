@@ -5,8 +5,7 @@ import PersonDetail from "@components/PersonDetail.astro";
 import CtaButton from "@components/CtaButton.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
 import Testimonials from "@components/Testimonials.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import { marked } from "marked";
+import TalkBody from "@components/TalkBody.astro";
 import SimplePage from "@layouts/SimplePage.astro";
 
 export async function getStaticPaths() {
@@ -20,9 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { talk } = Astro.props;
-const { title, abstract, registrationUrl, tags, yt, speaker } = talk;
-
-const abstractHtml = marked.parse(abstract ?? "") as string;
+const { title, yt, speaker } = talk;
 
 // Legacy title string, hardcoded year included.
 const metaTitle = `CascadiaJS 2026 | Speakers | ${speaker.name}`;
@@ -46,25 +43,7 @@ const ogImage = speakerCards.includes(`/public${speakerCard}`)
 
 <EventLayout year="2026" title={metaTitle} ogImage={ogImage}>
   <SimplePage title={title}>
-    {
-      tags && (
-        <div class="mb-2 flex flex-wrap">
-          {tags.map((tag) => (
-            <div class="bg-overcast-gray m-0.75 p-2">{tag}</div>
-          ))}
-        </div>
-      )
-    }
-    <MarkdownContent>
-      <div set:html={abstractHtml} />
-      {
-        registrationUrl && (
-          <p>
-            <a href={registrationUrl}>[More info and how to register]</a>
-          </p>
-        )
-      }
-    </MarkdownContent>
+    <TalkBody talk={talk} />
     {
       yt && (
         <div>

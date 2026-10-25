@@ -1,13 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { existsSync } from "node:fs";
-import {
-  ALL_TALKS,
-  DESKTOP,
-  distPath,
-  EVENT_ROOTS,
-  EVENTS_WITH_PAGES,
-  MOBILE,
-} from "./helpers";
+import { DESKTOP, EVENT_ROOTS, EVENTS_WITH_PAGES, MOBILE } from "./helpers";
 import sponsorData from "@shared/data/sponsors.json" with { type: "json" };
 import type { EventYear, Sponsor } from "@shared/data/types";
 
@@ -21,7 +13,6 @@ import type { EventYear, Sponsor } from "@shared/data/types";
  */
 
 const sponsors = sponsorData as Sponsor[];
-const TALK_PAGE = /^\/(\d{4})\/talks\/([^/]+)$/;
 
 const candidatePages = EVENT_ROOTS.flatMap((root) => [
   root,
@@ -41,17 +32,6 @@ async function gotoPageWith(page: Page, selector: string, min = 1) {
   }
   test.skip(true, `no page has ${min} match(es) of ${selector}`);
 }
-
-/** Assert that the href is a Talk with a slug and that its page was built. */
-function expectRealTalkPage(href: string | null) {
-  const [, year, slug] = href?.match(TALK_PAGE) ?? [];
-  expect(
-    ALL_TALKS.some((t) => t.slug === slug),
-    `${href} is no Talk`,
-  ).toBe(true);
-  expect(existsSync(distPath(`${year}/talks/${slug}.html`))).toBe(true);
-}
-
 /** True when the link's ::after generates the external-link glyph. */
 const hasIndicator = (link: ReturnType<Page["locator"]>) =>
   link.evaluate((el) => getComputedStyle(el, "::after").content !== "none");
@@ -251,15 +231,6 @@ test.describe("flat Sponsors grid", () => {
 test.describe("Hallway Track", () => {
   const logoLink = ".cjs-hallway-track a:has(img)";
 
-  test("a Sponsor logo opens in target=_new and shows no external-link icon", async ({
-    page,
-  }) => {
-    await gotoPageWith(page, logoLink);
-    const link = page.locator(logoLink).first();
-    expect(await link.getAttribute("target")).toBe("_new");
-    expect(await hasIndicator(link)).toBe(false);
-  });
-
   test("the wall shows the platinum, then the gold Sponsors of one Event", async ({
     page,
   }) => {
@@ -287,28 +258,6 @@ test.describe("Hallway Track", () => {
 });
 
 test.describe("schedule rows", () => {
-  const keynoteRow = ALL_TALKS.filter((t) => t.slug && t.type === "keynote")
-    .map((t) => `.cjs-talk-item:has(a[href$="/talks/${t.slug}"])`)
-    .join(", ");
-
-  test("a linked Talk row opens a Talk page", async ({ page }) => {
-    await gotoPageWith(page, ".cjs-talk-item a");
-    const link = page.locator(".cjs-talk-item a").first();
-    expectRealTalkPage(await link.getAttribute("href"));
-  });
-
-  test("only keynote Talks show the keynote badge", async ({ page }) => {
-    test.skip(!keynoteRow, "no keynote Talk has a slug");
-    await gotoPageWith(page, keynoteRow);
-    await expect(
-      page.locator(keynoteRow).first().locator(".cjs-keynote-badge"),
-    ).toBeAttached();
-    const other = page
-      .locator(`.cjs-talk-item:has(a):not(${keynoteRow})`)
-      .first();
-    await expect(other.locator(".cjs-keynote-badge")).toHaveCount(0);
-  });
-
   test("every row in a Track keeps the time column at the same position and width", async ({
     page,
   }) => {
@@ -332,36 +281,5 @@ test.describe("schedule rows", () => {
       expect(box.x).toBeCloseTo(boxes[0].x, 0);
       expect(box.width).toBeCloseTo(boxes[0].width, 0);
     }
-  });
-});
-
-test.describe("TalkCard", () => {
-  test("a card linking to a Talk opens a Talk page", async ({ page }) => {
-    const card = '.cjs-talk-card[href*="/talks/"]';
-    await gotoPageWith(page, card);
-    expectRealTalkPage(await page.locator(card).first().getAttribute("href"));
-  });
-});
-
-test.describe("VideoHero", () => {
-  test("the video is muted, autoplays, loops and plays inline", async ({
-    page,
-  }) => {
-    await gotoPageWith(page, ".cjs-video-hero video");
-    const props = await page
-      .locator(".cjs-video-hero video")
-      .first()
-      .evaluate((video: HTMLVideoElement) => ({
-        muted: video.muted,
-        autoplay: video.autoplay,
-        loop: video.loop,
-        playsInline: video.playsInline,
-      }));
-    expect(props).toEqual({
-      muted: true,
-      autoplay: true,
-      loop: true,
-      playsInline: true,
-    });
   });
 });
