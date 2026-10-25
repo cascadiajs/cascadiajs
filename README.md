@@ -230,8 +230,6 @@ A Post is a folder with an `index.md` or `index.mdx` and its images beside it: `
 
 The build fails on invalid frontmatter: a missing `title`, an empty `authors`, an unknown Person id or a duplicate Author. The reading estimate ("N min read") is computed from the body. Code blocks use the Night Owl theme inside a Post. Other Markdown pages keep their code theme (`astro.config.mjs` keeps `github-dark` as the default and exposes Night Owl as a CSS variable that `PostBody` reads).
 
-**Test fixtures.** Test-only fixture Posts (`src/content/blog-fixtures/`), fixture Authors (`src/shared/data/fixtures/people.json`) and a fixture Event override (`src/shared/data/fixtures/organizer-overrides.json`) load only when the environment variable `CJS_TEST_FIXTURES=1` is set. `playwright.config.ts` sets it for its build, so e2e tests see them. A normal build never includes them. To look at them yourself, run `CJS_TEST_FIXTURES=1 pnpm dev`. Add a fixture Post as a folder in `src/content/blog-fixtures/` with the same frontmatter. The loader also generates 12 plain filler Posts (`fillerPosts()` in `src/shared/test-fixtures.ts`, added in the `blog` loader in `src/content.config.ts`) so the index has a second page; the e2e helpers read the same generator. The e2e helpers read the fixtures' frontmatter (`e2e/blog-helpers.ts`), so a new fixture Post is covered by the data-driven Post specs.
-
 ### Data (`src/shared/data/`)
 
 ```text
@@ -405,7 +403,7 @@ pnpm test e2e/talks.spec.ts             # one file
 pnpm test --ui                          # Playwright's interactive runner
 ```
 
-The blog specs are four files: `blog-index.spec.ts` (index, pagination, Featured band, chrome links, sitemap, RSS), `blog-post.spec.ts` (Post page, meta, share bar, progress bar), `blog-archive.spec.ts` (Tag and Author pages) and `blog-search.spec.ts`. They find fixture Posts by property through `e2e/blog-helpers.ts`, never by slug, title, text or year.
+The blog specs are two files: `blog-index.spec.ts` (`/blog/1` and late pages return 404, chrome links, sitemap) and `blog-search.spec.ts` (search input rules, cache headers, canonical, sitemap). They need no Post. The repo holds no fixture Posts, fixture Authors or test-build flag, so the production build and the test build are the same build.
 
 Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
 
@@ -413,7 +411,7 @@ Playwright picks a free port for each run (set `PORT` to choose one) and never r
 
 Run `pnpm test` from a normal clone, not a Git worktree. In a worktree, the Netlify CLI finds the main checkout's `.git` directory and builds and serves that checkout instead.
 
-The suite builds with `CJS_TEST_FIXTURES=1` (set in `playwright.config.ts`), so the test-only fixtures (Posts, Authors, an Event override) exist. See [Blog Posts](#blog-posts-srccontentblog).
+Some specs read `dist/` when Playwright collects them, before the web server builds. Run `pnpm build` before `pnpm test`, or those specs fail. The Husky pre-commit hook runs `pnpm test`, so run `pnpm build` before you commit.
 
 CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 

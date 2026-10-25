@@ -10,29 +10,13 @@ import {
   resolvePerson,
 } from "./shared/people";
 import { duplicateIds, unknownAuthors } from "./shared/blog/posts";
-import {
-  FIXTURE_PEOPLE_FILE,
-  fillerPosts,
-  FIXTURE_POSTS_DIR,
-  TEST_FIXTURES,
-} from "./shared/test-fixtures";
 
 export { personSchema };
 
 const PEOPLE_FILE = "./src/shared/data/people.json";
 
-/** The Person registry, plus the fixture Authors in a test build. */
 function readPeople() {
-  const registry = readFileSync(PEOPLE_FILE, "utf8");
-  if (!TEST_FIXTURES) {
-    return parsePeople(registry);
-  }
-  return parsePeople(
-    JSON.stringify([
-      ...JSON.parse(registry),
-      ...JSON.parse(readFileSync(FIXTURE_PEOPLE_FILE, "utf8")),
-    ]),
-  );
+  return parsePeople(readFileSync(PEOPLE_FILE, "utf8"));
 }
 const TALKS_2026_FILE = "./src/shared/data/2026/talks.json";
 
@@ -108,11 +92,7 @@ const people = defineCollection({
 
 const blogGlob = glob({
   base: "./src/content",
-  // Fixture Posts load only in a test build.
-  pattern: [
-    "blog/**/index.{md,mdx}",
-    ...(TEST_FIXTURES ? [`${FIXTURE_POSTS_DIR}/**/index.{md,mdx}`] : []),
-  ],
+  pattern: "blog/**/index.{md,mdx}",
   // The Post id is its folder name, which is the URL slug.
   generateId: ({ entry }) => entry.split("/").at(-2)!,
 });
@@ -122,19 +102,6 @@ const blog = defineCollection({
     name: "blog-loader",
     load: async (context) => {
       await blogGlob.load(context);
-      // A test build adds generated filler Posts next to the fixture folders.
-      if (TEST_FIXTURES) {
-        for (const { id, body, data } of fillerPosts()) {
-          const parsed = await context.parseData({ id, data });
-          context.store.set({
-            id,
-            data: parsed,
-            body,
-            rendered: { html: `<p>${body}</p>` },
-            digest: context.generateDigest(parsed),
-          });
-        }
-      }
       // Astro only logs a `reference()` to a missing Person. Fail the build.
       const personIds = new Set(readPeople().map((p) => p.id));
       const unknown = unknownAuthors(

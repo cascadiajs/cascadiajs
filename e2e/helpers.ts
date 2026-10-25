@@ -8,11 +8,6 @@ import {
   type PersonRef,
   type PersonRecord,
 } from "@shared/people";
-import {
-  applyFixtureOverrides,
-  FIXTURE_OVERRIDES_FILE,
-  TEST_FIXTURES,
-} from "@shared/test-fixtures";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -89,18 +84,7 @@ export function storedTalks(year: string): StoredTalk[] {
 /** An Event's Organizers as stored: Person references with overrides. */
 export function storedOrganizers(year: string): PersonRef[] {
   const file = `src/shared/data/${year}/organizers.json`;
-  const refs: PersonRef[] = existsSync(file)
-    ? JSON.parse(readFileSync(file, "utf8"))
-    : [];
-  // Playwright sets the test-build variable, so the built site carries the
-  // fixture overrides too.
-  return TEST_FIXTURES
-    ? applyFixtureOverrides(
-        refs,
-        year,
-        JSON.parse(readFileSync(FIXTURE_OVERRIDES_FILE, "utf8")),
-      )
-    : refs;
+  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : [];
 }
 
 /**
