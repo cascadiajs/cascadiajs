@@ -390,6 +390,8 @@ Component tests that need real CSS or a client script live beside the component 
 
 The Astro Container API cannot render inside browser mode. A test renders a component with the `renderAstro` command (`vitest.commands.ts`), which renders on the Node side and returns the HTML. In a test, call `mountAstro("src/components/blog/ShareBar.astro", { title: "Literal" }, "<div>%s</div>")` from `@shared/test/mount-astro` and import the CSS the test needs (`../../styles/global.css`, plus any CSS file the component imports). A component whose client script a test must run keeps that script in a module (`share-bar.ts`) that the component imports. Set the viewport with `page.viewport(width, height)`. Set `prefers-reduced-motion` with `commands.emulateReducedMotion("reduce")` (from `vitest/browser`) and reset it with `"no-preference"` in `afterEach`. See `src/components/blog/ShareBar.browser.test.ts`.
 
+`renderAstro` passes props only, not slots. To test a component with slot content (`Track`, `VideoHero`), mount it, then mount the child and append its nodes to the component's element, as in `src/components/schedule/Track.browser.test.ts`. Layout tests (side by side at desktop width, stacked at phone width, visible or hidden) read `getBoundingClientRect()` or use `toBeVisible()`. Only `src/components/external-links.browser.test.ts` reads a computed style, because the external-link icon is a `::after` glyph.
+
 ### End-to-end tests
 
 End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against `netlify serve` (`pnpm serve`), which builds the site and serves it, including on-demand routes, the way Netlify does. `astro preview` does not work with the Netlify adapter.
