@@ -158,7 +158,7 @@ Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].a
 
 **On-demand routes** render on every request instead of at build time. The site stays `output: 'static'`, so every page is prerendered unless its file opts out with `export const prerender = false`. The `@astrojs/netlify` adapter deploys each such route as a Netlify Function. Use one only for a route that needs request data, such as a query string. See [ADR-0016](docs/adr/0016-on-demand-routes-via-netlify-adapter.md). To run one locally, use `pnpm serve` (it builds, then serves `dist/` and the function on port 4321). `pnpm dev` also renders them, but without the production build. `pnpm preview` does not work with the adapter. The adapter also sends every `astro:assets` image through the Netlify Image CDN, so built pages link to `/.netlify/images?url=…` instead of `/_astro/…`.
 
-**URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. An e2e test scans every built page and fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
+**URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. The link crawl (`e2e/link-crawl.spec.ts`) fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
 
 ## Layouts: which one to use
 
@@ -413,7 +413,7 @@ Playwright picks a free port for each run (set `PORT` to choose one) and never r
 
 Run `pnpm test` from a normal clone, not a Git worktree. In a worktree, the Netlify CLI finds the main checkout's `.git` directory and builds and serves that checkout instead.
 
-Some specs read `dist/` when Playwright collects them, before the web server builds. Run `pnpm build` before `pnpm test`, or those specs fail. The Husky pre-commit hook runs `pnpm test`, so run `pnpm build` before you commit.
+e2e specs get pages, robots.txt and the sitemap over HTTP. No spec reads `dist/`, so `pnpm test` needs no earlier build.
 
 CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 

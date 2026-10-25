@@ -55,10 +55,10 @@ test.describe("Blog search delivery", () => {
 
   test("canonical points to /blog, with no noindex", async ({ page }) => {
     await page.goto(search({ q: "cascadia" }));
-    const href = await page
-      .locator('head link[rel="canonical"]')
-      .getAttribute("href");
-    expect(new URL(href!).pathname).toBe("/blog");
+    await expect(page.locator('head link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      /^https?:\/\/[^/]+\/blog$/,
+    );
     await expect(page.locator('head meta[name="robots"]')).toHaveCount(0);
   });
 
