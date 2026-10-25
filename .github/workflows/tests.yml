@@ -43,6 +43,8 @@ jobs:
           runtime: node@lts
           cache: true
           require-lockfile: true
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
       - name: Run unit tests
         run: pnpm run test:unit
   playwright:
