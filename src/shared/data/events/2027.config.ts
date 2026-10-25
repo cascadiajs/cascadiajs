@@ -7,7 +7,8 @@ const config: EventConfig = {
   dates: "June 7-8, 2027",
   venue: "Seattle Convention Center",
   location: "Seattle, WA, USA",
-  logo: "/events/2026/images/icon-dark-blue.png",
+  logo: "/events/2027/images/cjs-icon-blue.svg",
+  logoHeightClass: "h-10.5",
   ogImage: "/images/2027/share/social-sharing-general.png",
   ogDescription: DEFAULT_DESCRIPTION,
   nav: [
@@ -16,7 +17,7 @@ const config: EventConfig = {
     //{ label: "Speakers", href: "/2026#speakers" },
     //{ label: "Schedule", href: "/2026/schedule" },
     //{ label: "Attend", href: "/2026/attend" },
-    { label: "CFP", href: "/2027/cfp" },
+    { label: "CFP", href: "https://cfp.cascadiajs.com" },
     { label: "Sponsor", href: "/2027/sponsor" },
     //{ label: "Trainings", href: "/2026/trainings" },
     { label: "Tickets", href: "/2027/tickets", isCta: true },

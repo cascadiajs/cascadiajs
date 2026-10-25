@@ -87,6 +87,8 @@ export interface EventConfig {
   venue: string;
   location: string;
   logo: string;
+  /** Tailwind height class for the Event nav logo; defaults to `h-14`. */
+  logoHeightClass?: string;
   ogImage: string;
   ogDescription: string;
   nav: EventNavItem[];

@@ -182,6 +182,7 @@ Rules of thumb:
 - Start from the page's owner. If it belongs to an Event, use `EventLayout`. If not, use `Layout`.
 - Then decide the body. For a text-heavy page, nest `SimplePage` inside the layout. See `src/pages/2026/talks/[slug].astro` or `src/pages/[year]/sponsors/[slug].astro` for the pattern.
 - `EventLayout` has a `hero` slot that renders above the Event nav (the 2026 landing page puts its video there). `SimplePage` has an `after-body` slot that renders outside the text column, which is where sponsor grids and testimonials go.
+- The yellow alert banner at the top of the site header shows on every page by default. Pass `displayAlert={false}` to `Layout` or `EventLayout` to hide it (the 2027 landing page does, since the banner links there).
 - **Pages own their sponsors section.** Only `MarkdownLayout` renders sponsors for you. On a hand-written page, place `SponsorsGrid` yourself and pass `year` (and `tiered`) or `exclude` as needed.
 
 Wrap Markdown-derived HTML (an abstract, a description) in `MarkdownContent` to get prose styling for headings, lists and links.
@@ -212,13 +213,6 @@ Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`
 
 See [ADR-0012](docs/adr/0012-mdx-content-pages.md) and Astro's [MDX guide](https://docs.astro.build/en/guides/integrations-guide/mdx/).
 
-The 2027 CFP embeds `TopicGrid` from `@components/TopicGrid.astro`. Edit its
-`topicGroups` array in `src/content/markdown/2027/cfp.mdx` to change category
-titles or topics. The component renders green topic pills in two columns when
-the content column has enough room, and one column on smaller screens. An odd
-final category spans both columns. Keep labels concise; each topic gets its own
-row. The CFP uses four topics per category to keep the grid balanced.
-
 ### Blog Posts (`src/content/blog/`)
 
 A Post is a folder with one `index.md` or `index.mdx` file. Put the Post's images in the same folder. Write the folder name in lowercase, with dashes between words, for example `my-first-post`. The frontmatter has these fields:
@@ -242,7 +236,7 @@ The build stops if a field is wrong, for example a missing `title` or an unknown
 
 ```text
 src/shared/data/
-  events/2026.config.ts   Event config: name, dates, venue, logo, nav, share defaults
+  events/2026.config.ts   Event config: name, dates, venue, logo (+ optional height class), nav, share defaults
   events.ts               Helpers: getEventConfig, getOrganizers, getTickets, getActivities, getActivity
   2026/                   The 2026 Event Dataset
     talks.json            Talks, each referring to its Speaker by Person id

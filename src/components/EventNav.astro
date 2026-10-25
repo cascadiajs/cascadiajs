@@ -6,14 +6,15 @@ import type { EventNavItem } from "@shared/data/types";
 interface Props {
   year: string;
   logo: string;
+  logoHeightClass?: string;
   nav: EventNavItem[];
   id?: string;
 }
 
-const { year, logo, nav, id = "nav" } = Astro.props;
+const { year, logo, logoHeightClass = "h-14", nav, id = "nav" } = Astro.props;
 
 const eventImages = import.meta.glob<{ default: ImageMetadata }>(
-  "@assets/events/**/*.{jpg,png,jpeg}",
+  "@assets/events/**/*.{jpg,png,jpeg,svg}",
   { eager: false, base: "/src/assets" },
 );
 
@@ -33,7 +34,7 @@ const logoSrc = (await logoModule()).default;
           <Image
             src={logoSrc}
             alt="CascadiaJS logo"
-            class="inline h-14 w-auto align-baseline"
+            class:list={["inline w-auto align-baseline", logoHeightClass]}
           />
         </a>
       </div>
