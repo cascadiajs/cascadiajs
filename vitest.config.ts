@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
 import { getViteConfig } from "astro/config";
 import { playwright } from "@vitest/browser-playwright";
-import { renderAstro } from "./vitest.commands.ts";
+import { emulateReducedMotion, renderAstro } from "./vitest.commands.ts";
 
 // Two Vitest projects. `unit` runs `src/**/*.test.ts` in Node. `browser` runs
 // `src/**/*.browser.test.ts` in headless Chromium. Playwright specs live in
@@ -26,7 +26,7 @@ export default getViteConfig({
             enabled: true,
             headless: true,
             provider: playwright(),
-            commands: { renderAstro },
+            commands: { renderAstro, emulateReducedMotion },
             instances: [{ browser: "chromium" }],
           },
         },
