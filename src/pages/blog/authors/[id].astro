@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import AuthorHeader from "@components/blog/AuthorHeader.astro";
+import BlogEmpty from "@components/blog/BlogEmpty.astro";
 import PostCard from "@components/blog/PostCard.astro";
 import RssLink from "@components/blog/RssLink.astro";
 import { getVisiblePosts } from "@shared/blog/get-posts";
@@ -32,12 +33,7 @@ const { author, posts } = Astro.props;
   <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
     {
       posts.length === 0 ? (
-        <div class="cjs-blog-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center">
-          <h2 class="font-display text-cedar-cream text-40 mt-0">
-            No Posts yet
-          </h2>
-          <p>{author.name} has not published a Post yet.</p>
-        </div>
+        <BlogEmpty message={`${author.name} has not published a Post yet.`} />
       ) : (
         <div class="cjs-post-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (

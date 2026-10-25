@@ -4,7 +4,7 @@ import AuthorHeader from "./AuthorHeader.astro";
 
 // A path that resolves to an image in `src/assets`; the component needs a
 // real image to render.
-const image = "/events/2026/images/carrie-rabasa.jpg";
+const image = "/events/sample/images/test-photo.png";
 
 async function render(author: Record<string, unknown>) {
   const container = await AstroContainer.create();

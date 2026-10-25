@@ -13,7 +13,7 @@ const PROPS = {
     type: "main",
     speaker: {
       name: "A Speaker",
-      image: "/events/2026/images/adam-argyle.jpg",
+      image: "/events/sample/images/test-photo.png",
       roles: ["speaker"],
     },
   },

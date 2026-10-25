@@ -17,7 +17,7 @@ const SPONSOR = {
   id: "a-sponsor",
   tier: "platinum",
   name: "A Sponsor",
-  logo: "ai-portland.svg",
+  logo: "test-logo.svg",
   url: "https://sponsor.example.com",
   events: ["2026"],
 };

@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import Layout from "@layouts/Layout.astro";
 import FeaturedBand from "@components/blog/FeaturedBand.astro";
 import Pagination from "@components/blog/Pagination.astro";
+import BlogEmpty from "@components/blog/BlogEmpty.astro";
 import PostCard from "@components/blog/PostCard.astro";
 import SearchForm from "@components/blog/SearchForm.astro";
 import RssLink from "@components/blog/RssLink.astro";
@@ -40,12 +41,7 @@ const isEmpty = page.total === 0 && featured.length === 0;
   <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
     {
       isEmpty ? (
-        <div class="cjs-blog-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center">
-          <h2 class="font-display text-cedar-cream text-40 mt-0">
-            No Posts yet
-          </h2>
-          <p>Check back soon for news from the CascadiaJS community.</p>
-        </div>
+        <BlogEmpty message="Check back soon for news from the CascadiaJS community." />
       ) : (
         <div class="cjs-post-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {page.data.map((post) => (

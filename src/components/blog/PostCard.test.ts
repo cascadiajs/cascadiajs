@@ -4,7 +4,7 @@ import PostCard from "./PostCard.astro";
 
 // A path that resolves to an image in `src/assets`; the component needs a
 // real image to render.
-const avatar = "/events/2026/images/carrie-rabasa.jpg";
+const avatar = "/events/sample/images/test-photo.png";
 const ada = { id: "ada", name: "Ada Lovelace", image: avatar };
 const grace = { id: "grace", name: "Grace Hopper", image: avatar };
 const linus = { id: "linus", name: "Linus Torvalds", image: avatar };

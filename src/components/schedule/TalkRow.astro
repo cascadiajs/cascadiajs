@@ -3,11 +3,13 @@ import type { Talk } from "@shared/data/types";
 
 interface Props {
   talk: Talk;
+  /** URL prefix of the Talk pages, with no trailing slash. */
+  talksBase: string;
   /** Omitted after the first Talk in a run -- row still reserves the time column. */
   when?: string;
 }
 
-const { talk, when } = Astro.props;
+const { talk, when, talksBase } = Astro.props;
 ---
 
 <div class="cjs-talk-item m-4 flex">
@@ -24,7 +26,7 @@ const { talk, when } = Astro.props;
       {
         talk.slug ? (
           <a
-            href={`/2026/talks/${talk.slug}`}
+            href={`${talksBase}/${talk.slug}`}
             class="text-sound-navy hover:text-cascade-blue no-underline hover:underline"
           >
             {talk.title}

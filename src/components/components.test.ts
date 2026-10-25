@@ -12,7 +12,7 @@ import HallwayTrack from "./schedule/HallwayTrack.astro";
 import TalkRow from "./schedule/TalkRow.astro";
 
 /** A photo that exists under `src/assets`. */
-const PHOTO = "/events/2026/images/theo.jpg";
+const PHOTO = "/events/sample/images/test-photo.png";
 
 const talk = (overrides: Partial<Talk> = {}): Talk => ({
   id: "a-talk",
@@ -32,18 +32,22 @@ const talk = (overrides: Partial<Talk> = {}): Talk => ({
 describe("TalkRow", () => {
   test("a Talk with a slug links to the Talk page of that slug", async () => {
     const html = await render(TalkRow, {
-      props: { talk: talk({ slug: "ada-on-agents" }), when: "9:00am" },
+      props: {
+        talk: talk({ slug: "ada-on-agents" }),
+        when: "9:00am",
+        talksBase: "/test-base/talks",
+      },
     });
     const links = tags(html, "a");
     expect(links.map((a) => a.attrs.href)).toEqual([
-      "/2026/talks/ada-on-agents",
+      "/test-base/talks/ada-on-agents",
     ]);
     expect(text(html)).toContain("A Talk Title");
   });
 
   test("a Talk without a slug shows its title and no link", async () => {
     const html = await render(TalkRow, {
-      props: { talk: talk({ slug: null }) },
+      props: { talk: talk({ slug: null }), talksBase: "/test-base/talks" },
     });
     expect(tags(html, "a")).toEqual([]);
     expect(text(html)).toContain("A Talk Title");
@@ -51,7 +55,10 @@ describe("TalkRow", () => {
 
   test("a keynote Talk shows the keynote badge", async () => {
     const html = await render(TalkRow, {
-      props: { talk: talk({ type: "keynote" }) },
+      props: {
+        talk: talk({ type: "keynote" }),
+        talksBase: "/test-base/talks",
+      },
     });
     expect(text(html)).toContain("Keynote");
   });
@@ -59,7 +66,9 @@ describe("TalkRow", () => {
   test.each(["main", "lightning", "workshop"] as const)(
     "a %s Talk shows no keynote badge",
     async (type) => {
-      const html = await render(TalkRow, { props: { talk: talk({ type }) } });
+      const html = await render(TalkRow, {
+        props: { talk: talk({ type }), talksBase: "/test-base/talks" },
+      });
       expect(text(html)).not.toContain("Keynote");
     },
   );

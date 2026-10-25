@@ -5,8 +5,8 @@ import { mountAstro, unmountAll } from "@shared/test/mount-astro";
 
 const IMAGE_MOSAIC = "src/components/ImageMosaic.astro";
 const IMAGES = [
-  { src: "/events/2026/images/adam-argyle.jpg", alt: "First" },
-  { src: "/events/2026/images/alex-hinson.jpg", alt: "Second" },
+  { src: "/events/sample/images/test-photo.png", alt: "First" },
+  { src: "/events/sample/images/test-photo.png", alt: "Second" },
 ];
 
 afterEach(unmountAll);

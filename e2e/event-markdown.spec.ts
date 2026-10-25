@@ -10,7 +10,8 @@ test.describe("root-level markdown pages keep the normal SiteHeader nav", () => 
   test("renders SiteHeader, not EventNav", async ({ page }) => {
     await page.goto("/code-of-conduct");
     await expect(page.getByRole("banner")).toBeVisible();
-    // EventNav has no role or label that tells it from the SiteHeader nav.
-    await expect(page.locator(".cjs-event-nav")).toHaveCount(0);
+    await expect(page.getByRole("navigation", { name: "Event" })).toHaveCount(
+      0,
+    );
   });
 });

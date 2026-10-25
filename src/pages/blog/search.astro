@@ -4,6 +4,7 @@ export const prerender = false;
 
 import Layout from "@layouts/Layout.astro";
 import PostCard from "@components/blog/PostCard.astro";
+import SearchEmpty from "@components/blog/SearchEmpty.astro";
 import SearchForm from "@components/blog/SearchForm.astro";
 import { getPostAuthors, getVisiblePosts } from "@shared/blog/get-posts";
 import {
@@ -66,20 +67,7 @@ Astro.response.headers.set("Netlify-Vary", "query=q|tag");
   <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
     {
       results.length === 0 ? (
-        <div class="cjs-search-empty bg-sound-navy text-cedar-cream rounded-lg p-12 text-center">
-          <i
-            class="fa-solid fa-ghost text-madrona-yellow text-6xl"
-            aria-hidden="true"
-          />
-          <h2 class="font-display text-cedar-cream text-40">No Posts match</h2>
-          <p>Try fewer words, or browse every Post.</p>
-          <a
-            href="/blog"
-            class="bg-madrona-yellow text-sound-navy font-display inline-block rounded px-5 py-2 no-underline"
-          >
-            Back to the blog
-          </a>
-        </div>
+        <SearchEmpty />
       ) : (
         <>
           <h2 class="cjs-search-count font-display text-sound-navy mt-0 text-2xl">

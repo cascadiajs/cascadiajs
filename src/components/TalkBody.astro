@@ -16,22 +16,24 @@ const { abstract, registrationUrl, tags } = Astro.props.talk;
 const abstractHtml = marked.parse(abstract ?? "") as string;
 ---
 
-{
-  tags && (
-    <div class="mb-2 flex flex-wrap">
-      {tags.map((tag) => (
-        <div class="bg-overcast-gray m-0.75 p-2">{tag}</div>
-      ))}
-    </div>
-  )
-}
-<MarkdownContent>
-  <div set:html={abstractHtml} />
+<div class="cjs-talk-body">
   {
-    registrationUrl && (
-      <p>
-        <a href={registrationUrl}>[More info and how to register]</a>
-      </p>
+    tags && (
+      <div class="mb-2 flex flex-wrap">
+        {tags.map((tag) => (
+          <div class="bg-overcast-gray m-0.75 p-2">{tag}</div>
+        ))}
+      </div>
     )
   }
-</MarkdownContent>
+  <MarkdownContent>
+    <div set:html={abstractHtml} />
+    {
+      registrationUrl && (
+        <p>
+          <a href={registrationUrl}>[More info and how to register]</a>
+        </p>
+      )
+    }
+  </MarkdownContent>
+</div>
