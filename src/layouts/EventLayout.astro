@@ -26,6 +26,11 @@ const config = getEventConfig(year);
   displayAlert={displayAlert}
 >
   <slot name="hero" />
-  <EventNav year={config.year} logo={config.logo} nav={config.nav} />
+  <EventNav
+    year={config.year}
+    logo={config.logo}
+    logoHeightClass={config.logoHeightClass}
+    nav={config.nav}
+  />
   <slot />
 </Layout>

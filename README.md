@@ -187,7 +187,7 @@ See [ADR-0012](docs/adr/0012-mdx-content-pages.md) and Astro's [MDX guide](https
 
 ```text
 src/shared/data/
-  events/2026.config.ts   Event config: name, dates, venue, logo, nav, share defaults
+  events/2026.config.ts   Event config: name, dates, venue, logo (+ optional height class), nav, share defaults
   events.ts               Helpers: getEventConfig, getOrganizers, getTickets, getActivities, getActivity
   2026/                   The 2026 Event Dataset
     talks.json            Talks, each with an embedded speaker
