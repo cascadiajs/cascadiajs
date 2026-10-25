@@ -6,3 +6,4 @@ playwright-report/
 .playwright/
 *.DS_STORE
 .env
+.claude/launch.json
