@@ -6,10 +6,24 @@ import { bylineSeparator } from "@shared/blog/format";
 interface Props {
   /** In byline order. */
   authors: { id: string; name: string; image: string }[];
+  /** With `pubDate`, the dates line renders under the Author names. */
+  pubDate?: Date;
+  updatedDate?: Date;
+  /** Reading time in minutes, shown on the dates line. */
+  minutes?: number;
   class?: string;
 }
 
-const { authors, class: className } = Astro.props;
+const {
+  authors,
+  pubDate,
+  updatedDate,
+  minutes,
+  class: className,
+} = Astro.props;
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", { dateStyle: "long", timeZone: "UTC" });
 
 const eventImages = import.meta.glob<{ default: ImageMetadata }>(
   "@assets/events/**/*.{jpg,png,jpeg}",
@@ -52,3 +66,26 @@ const namesHtml = authors
   </div>
   <p class="text-cedar-cream m-0 text-xl font-medium" set:html={namesHtml} />
 </div>
+{
+  pubDate && (
+    <p class="text-cedar-cream/70 mt-4 mb-0 text-sm">
+      <time datetime={pubDate.toISOString()} class="cjs-post-date">
+        {formatDate(pubDate)}
+      </time>
+      {updatedDate && (
+        <>
+          {" · Updated "}
+          <time datetime={updatedDate.toISOString()} class="cjs-post-updated">
+            {formatDate(updatedDate)}
+          </time>
+        </>
+      )}
+      {minutes !== undefined && (
+        <>
+          {" · "}
+          <span class="cjs-post-reading-time">{minutes} min read</span>
+        </>
+      )}
+    </p>
+  )
+}
