@@ -407,7 +407,7 @@ pnpm test --ui                          # Playwright's interactive runner
 
 The blog specs are four files: `blog-index.spec.ts` (index, pagination, Featured band, chrome links, sitemap, RSS), `blog-post.spec.ts` (Post page, meta, share bar, progress bar), `blog-archive.spec.ts` (Tag and Author pages) and `blog-search.spec.ts`. They find fixture Posts by property through `e2e/blog-helpers.ts`, never by slug, title, text or year.
 
-Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
+No e2e test skips, searches Event data to choose a page, or loops over data. A spec that needs an Event page uses the Featured Event root (`FEATURED_EVENT` from `@shared/site-defaults`). The link crawl checks that every Talk page and Sponsor page linked from the homepage returns 200. Add or update a spec when you add a page, a route or a behavior.
 
 Playwright picks a free port for each run (set `PORT` to choose one) and never reuses a running server, so it always tests a fresh build, and a `pnpm dev` or `pnpm serve` on port 4321 does not get in its way. Two test runs at the same moment can still collide on `netlify serve`'s internal port 3999. Start the second run after the first one is up.
 

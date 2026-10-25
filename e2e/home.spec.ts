@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { EVENT_ROOTS } from "./helpers";
+import { FEATURED_EVENT } from "@shared/site-defaults";
 
 test.describe("home page", () => {
   test.beforeEach(async ({ page }) => {
@@ -23,7 +23,7 @@ test.describe("home page", () => {
       .getByRole("navigation")
       .getByRole("link")
       .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
-    expect(navHrefs.some((href) => EVENT_ROOTS.includes(href!))).toBe(true);
+    expect(navHrefs).toContain(`/${FEATURED_EVENT}`);
     await expect(page.getByRole("contentinfo")).toBeVisible();
   });
 });

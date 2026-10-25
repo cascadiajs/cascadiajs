@@ -2,16 +2,11 @@ import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
 import {
   DEFAULT_DESCRIPTION,
+  FEATURED_EVENT,
   GA4_ID,
   META_PIXEL_ID,
 } from "@shared/site-defaults";
-import {
-  builtPages,
-  EVENT_ROOTS,
-  distPath,
-  filesUnder,
-  FROZEN_SNAPSHOT_PAGES,
-} from "./helpers";
+import { builtPages, distPath, FROZEN_SNAPSHOT_PAGES } from "./helpers";
 
 /**
  * Build checks read every built page out of `dist/` (the webServer builds
@@ -67,18 +62,11 @@ test.describe("Sitewide head (every built page)", () => {
 
 /** One page for each layout, picked by type, never by slug or title. */
 const homepage = "/";
-const [eventRoot] = EVENT_ROOTS;
-const [markdownFile] = filesUnder("src/content/markdown", /\.mdx?$/).filter(
-  (file) => !/^\d{4}\//.test(file),
-);
-const markdownPage = markdownFile && `/${markdownFile.replace(/\.mdx?$/, "")}`;
-
-// A layout with no page yet is left out.
 const LAYOUT_PAGES = [
   { layout: "Layout", path: homepage },
-  { layout: "EventLayout", path: eventRoot },
-  { layout: "MarkdownLayout", path: markdownPage },
-].filter((entry): entry is { layout: string; path: string } => !!entry.path);
+  { layout: "EventLayout", path: `/${FEATURED_EVENT}` },
+  { layout: "MarkdownLayout", path: "/code-of-conduct" },
+];
 
 const content = (page: Page, selector: string) =>
   page.locator(selector).getAttribute("content");
