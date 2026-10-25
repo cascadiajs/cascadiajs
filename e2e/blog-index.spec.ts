@@ -17,18 +17,18 @@ test.describe("Blog links in site chrome", () => {
     test(`${path} header and footer link to /blog`, async ({ page }) => {
       await page.goto(path);
       await expect(
-        page.getByRole("banner").locator('a[href="/blog"]'),
-      ).toBeVisible();
+        page.getByRole("banner").getByRole("link", { name: "Blog" }),
+      ).toHaveAttribute("href", "/blog");
       await expect(
-        page.getByRole("contentinfo").locator('a[href="/blog"]'),
-      ).toBeVisible();
+        page.getByRole("contentinfo").getByRole("link", { name: "Blog" }),
+      ).toHaveAttribute("href", "/blog");
     });
   }
 
   test("an Event header has no Blog link", async ({ page }) => {
     await page.goto(`/${FEATURED_EVENT}`);
     await expect(
-      page.getByRole("navigation").locator('a[href="/blog"]'),
+      page.getByRole("navigation").getByRole("link", { name: "Blog" }),
     ).toHaveCount(0);
   });
 });

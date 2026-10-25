@@ -16,14 +16,12 @@ test.describe("home page", () => {
     page,
   }) => {
     const banner = page.getByRole("banner");
-    const logo = banner.locator("#logo");
+    const logo = banner.getByRole("link", { name: "CascadiaJS logo" });
     await expect(logo).toBeVisible();
     await expect(logo).toHaveAttribute("href", "/");
-    const navHrefs = await banner
-      .getByRole("navigation")
-      .getByRole("link")
-      .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
-    expect(navHrefs).toContain(`/${FEATURED_EVENT}`);
+    await expect(
+      banner.getByRole("navigation").locator(`a[href="/${FEATURED_EVENT}"]`),
+    ).toBeVisible();
     await expect(page.getByRole("contentinfo")).toBeVisible();
   });
 });

@@ -1,18 +1,16 @@
 import { test, expect } from "@playwright/test";
-import { filesUnder } from "./helpers";
 
 /**
  * Event markdown pages get the EventNav instead of the SiteHeader nav; that
- * check lives in event-chrome.spec.ts and runs once on one page chosen by
- * type. Root-level markdown pages keep the normal SiteHeader nav.
+ * check lives in event-chrome.spec.ts. Root-level markdown pages keep the
+ * normal SiteHeader nav.
  */
 
 test.describe("root-level markdown pages keep the normal SiteHeader nav", () => {
   test("renders SiteHeader, not EventNav", async ({ page }) => {
-    // The page is chosen by type: the first root-level markdown file.
-    const [file] = filesUnder("src/content/markdown", /^[^/\\]+\.mdx?$/);
-    await page.goto(`/${file.replace(/\.mdx?$/, "")}`);
-    await expect(page.locator("#logo")).toBeVisible();
+    await page.goto("/code-of-conduct");
+    await expect(page.getByRole("banner")).toBeVisible();
+    // EventNav has no role or label that tells it from the SiteHeader nav.
     await expect(page.locator(".cjs-event-nav")).toHaveCount(0);
   });
 });

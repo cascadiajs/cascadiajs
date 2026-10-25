@@ -1,13 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
-import type { Talk } from "@shared/data/types";
-import {
-  parsePeople,
-  resolvePerson,
-  type PersonRef,
-  type PersonRecord,
-} from "@shared/people";
+import { readdirSync } from "node:fs";
 
 /** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
 export function filesUnder(dir: string, pattern: RegExp): string[] {
@@ -27,78 +19,18 @@ export const EVENTS_WITH_PAGES: readonly { year: string }[] = filesUnder(
 ).map((file) => ({ year: file.replace(/\.config\.ts$/, "") }));
 
 /**
- * Every built page's `dist/`-relative path. The preview webServer builds
- * first, so `dist/` always reflects the site.
- */
-export function builtPages(): string[] {
-  return filesUnder("dist", /\.html$/);
-}
-
-export const distPath = (file: string) => join("dist", file);
-
-/**
- * Roots (`/<key>`) of the Events with pages whose hand-written root page is
- * built. A new Event config can land before its root page exists.
+ * Roots (`/<key>`) of the Events with pages. Only components.spec.ts uses
+ * this; delete it with that file.
  */
 export const EVENT_ROOTS: readonly string[] = EVENTS_WITH_PAGES.map(
   ({ year }) => `/${year}`,
-).filter((root) => existsSync(distPath(`${root.slice(1)}.html`)));
+);
 
 /**
- * Built pages (`dist/`-relative) that are Frozen Snapshots: exact legacy
- * captures (ADR-0008), not Layout-rendered. Sitewide checks of Layout's
- * output exclude or relax them.
+ * URL paths of the Frozen Snapshots: exact legacy captures (ADR-0008), not
+ * Layout-rendered. Sitewide checks of Layout's output exclude or relax them.
  */
 export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
-
-/**
- * The URL path of one Event markdown page, chosen by type: the first
- * top-level page of the first Event that has any. Undefined when no Event
- * has one.
- */
-export function eventMarkdownPagePath(): string | undefined {
-  for (const { year: key } of EVENTS_WITH_PAGES) {
-    const dir = join("src/content/markdown", key);
-    const files = filesUnder(dir, /^[^/\\]+\.mdx?$/);
-    if (files.length > 0) {
-      return `/${key}/${files[0].replace(/\.mdx?$/, "")}`;
-    }
-  }
-  return undefined;
-}
-
-/** The Person registry, `src/shared/data/people.json`. */
-export const PEOPLE: readonly PersonRecord[] = parsePeople(
-  readFileSync("src/shared/data/people.json", "utf8"),
-);
-
-/** A Talk as stored in an Event's talks.json: its Speaker is a reference. */
-type StoredTalk = Omit<Talk, "speaker"> & { speaker: PersonRef };
-
-/** An Event's Talks as stored, with Speaker references unresolved. */
-export function storedTalks(year: string): StoredTalk[] {
-  const file = `src/shared/data/${year}/talks.json`;
-  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : [];
-}
-
-/** An Event's Organizers as stored: Person references with overrides. */
-export function storedOrganizers(year: string): PersonRef[] {
-  const file = `src/shared/data/${year}/organizers.json`;
-  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : [];
-}
-
-/**
- * Every Event's Talks, each Speaker resolved through the Person registry. An
- * Event without Talk JSON adds none, though its pages can still render
- * another Event's Talks, so checks match a rendered Talk against all of them.
- */
-export const ALL_TALKS: readonly Talk[] = EVENTS_WITH_PAGES.flatMap(
-  ({ year }) =>
-    storedTalks(year).map((talk) => ({
-      ...talk,
-      speaker: resolvePerson(PEOPLE, talk.speaker),
-    })),
-);
 
 export const DESKTOP = { width: 1280, height: 900 };
 export const MOBILE = { width: 390, height: 844 };

@@ -1,7 +1,10 @@
-import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
 import { FEATURED_EVENT } from "@shared/site-defaults";
-import { builtPages, distPath } from "./helpers";
+
+/**
+ * Canonical URLs. The sitewide rules (no internal link with a trailing slash,
+ * no `.html` in a URL) are checked on every page in link-crawl.spec.ts.
+ */
 
 const eventRoot = `/${FEATURED_EVENT}`;
 
@@ -24,46 +27,13 @@ test.describe("Canonical URLs", () => {
     );
   });
 
-  test("no built page has an internal link with a trailing slash", () => {
-    const pages = builtPages();
-    expect(pages.length).toBeGreaterThan(50);
-
-    const slashed: string[] = [];
-    for (const file of pages) {
-      const html = readFileSync(distPath(file), "utf8");
-      for (const [, href] of html.matchAll(/\shref="(\/[^"]*)"/g)) {
-        const path = href.split(/[?#]/)[0];
-        if (path !== "/" && path.endsWith("/")) {
-          slashed.push(`${file}: ${href}`);
-        }
-      }
-    }
-    expect(slashed).toEqual([]);
-  });
-});
-
-test.describe("Build format", () => {
-  test("no canonical, og:url or internal href exposes .html", () => {
-    const leaks: string[] = [];
-    for (const file of builtPages()) {
-      const html = readFileSync(distPath(file), "utf8");
-      const urls = [
-        ...html.matchAll(/<link rel="canonical" href="([^"]*)"/g),
-        ...html.matchAll(/<meta property="og:url" content="([^"]*)"/g),
-        ...html.matchAll(/\shref="(\/[^"]*)"/g),
-      ].map((m) => m[1]);
-      for (const url of urls) {
-        if (/\.html([?#]|$)/.test(url)) {
-          leaks.push(`${file}: ${url}`);
-        }
-      }
-    }
-    expect(leaks).toEqual([]);
-  });
-
-  test("pages build as files, not directory indexes", () => {
-    const pages = builtPages();
-    expect(pages).toContain(`${FEATURED_EVENT}.html`);
-    expect(pages.filter((file) => file.endsWith("/index.html"))).toEqual([]);
+  test("a markdown page canonical has no trailing slash and no .html", async ({
+    page,
+  }) => {
+    await page.goto("/code-of-conduct");
+    await expect(canonical(page)).toHaveAttribute(
+      "href",
+      "https://cascadiajs.com/code-of-conduct",
+    );
   });
 });

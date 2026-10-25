@@ -8,16 +8,11 @@ import { DESKTOP, MOBILE } from "./helpers";
  * SiteHeader is a Container test in `src/layouts/EventLayout.test.ts`.
  */
 
-async function expectEventNavPosition(page: Page) {
-  const nav = page.locator(".cjs-event-nav");
-  await page.setViewportSize(DESKTOP);
-  expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
-    "sticky",
-  );
-  await page.setViewportSize(MOBILE);
-  expect(await nav.evaluate((el) => getComputedStyle(el).position)).toBe(
-    "static",
-  );
+async function scrollDown(page: Page) {
+  await page.evaluate(() => window.scrollTo(0, 2500));
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeGreaterThan(0);
 }
 
 test.describe("Featured Event root", () => {
@@ -27,15 +22,26 @@ test.describe("Featured Event root", () => {
     page,
   }) => {
     await page.goto(root);
-    const nav = page.locator(".cjs-event-nav").getByRole("navigation");
+    const nav = page.getByRole("navigation");
     await expect(nav).toBeVisible();
     await expect(nav.getByRole("link").first()).toHaveAttribute("href", root);
   });
 
-  test("EventNav is sticky at desktop width and static at mobile width", async ({
+  test("EventNav stays at the top after a scroll at desktop width", async ({
     page,
   }) => {
+    await page.setViewportSize(DESKTOP);
     await page.goto(root);
-    await expectEventNavPosition(page);
+    await scrollDown(page);
+    const nav = page.getByRole("navigation");
+    await expect.poll(async () => (await nav.boundingBox())?.y).toBe(0);
+  });
+
+  test("EventNav scrolls away at mobile width", async ({ page }) => {
+    await page.setViewportSize(MOBILE);
+    await page.goto(root);
+    await scrollDown(page);
+    const nav = page.getByRole("navigation");
+    await expect.poll(async () => (await nav.boundingBox())?.y).toBeLessThan(0);
   });
 });
