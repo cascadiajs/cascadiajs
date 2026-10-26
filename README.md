@@ -449,6 +449,8 @@ CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 3. **unit:** `pnpm test:unit`
 4. **playwright:** the end-to-end tests, after checks and build pass. If they fail, download the `playwright-report` artifact from the run to see what failed.
 
+The unit and playwright jobs run in the official Playwright Docker image (`mcr.microsoft.com/playwright`), which has Chromium and its OS dependencies preinstalled. When you upgrade `@playwright/test`, change the image tag in `tests.yml` to the same version. If the versions differ, the tests fail with "Executable doesn't exist".
+
 ## Working with an agent
 
 You can work on this repo by hand. If you use a coding agent such as Claude Code or Codex, it relies on the files below.

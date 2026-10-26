@@ -36,6 +36,10 @@ jobs:
   unit:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    # The Playwright image has Chromium and its OS dependencies preinstalled.
+    # Keep the tag equal to the @playwright/test version in pnpm-lock.yaml.
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble
     needs: [checks, build]
     steps:
       - uses: actions/checkout@v6
@@ -44,26 +48,15 @@ jobs:
           runtime: node@lts
           cache: true
           require-lockfile: true
-      - name: Get Playwright version
-        id: playwright-version
-        run: echo "version=$(pnpm exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
-      - name: Cache Playwright Browsers
-        id: playwright-cache
-        uses: actions/cache@v6
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
-      - name: Install Playwright Browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: pnpm exec playwright install --with-deps chromium
-      - name: Install Playwright system dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: pnpm exec playwright install-deps chromium
       - name: Run unit tests
         run: pnpm run test:unit
   playwright:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    # The Playwright image has Chromium and its OS dependencies preinstalled.
+    # Keep the tag equal to the @playwright/test version in pnpm-lock.yaml.
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble
     needs: [checks, build]
     steps:
       - uses: actions/checkout@v6
@@ -72,21 +65,6 @@ jobs:
           runtime: node@lts
           cache: true
           require-lockfile: true
-      - name: Get Playwright version
-        id: playwright-version
-        run: echo "version=$(pnpm exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
-      - name: Cache Playwright Browsers
-        id: playwright-cache
-        uses: actions/cache@v6
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
-      - name: Install Playwright Browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: pnpm exec playwright install --with-deps chromium
-      - name: Install Playwright system dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: pnpm exec playwright install-deps chromium
       - name: Run Playwright tests
         run: pnpm exec playwright test
       - uses: actions/upload-artifact@v7
