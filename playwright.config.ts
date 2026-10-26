@@ -28,7 +28,7 @@ export default defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
-        // Every page loads GA4 and the Meta Pixel; make those hosts
+        // Every page loads GA4, the Meta Pixel and PostHog; make those hosts
         // unresolvable so tests never send real hits.
         launchOptions: {
           args: [
@@ -37,6 +37,7 @@ export default defineConfig({
               "google-analytics.com",
               "connect.facebook.net",
               "facebook.com",
+              "posthog.com",
             ]
               .flatMap((host) => [host, `*.${host}`])
               .map((host) => `MAP ${host} ~NOTFOUND`)
