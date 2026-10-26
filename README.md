@@ -168,6 +168,21 @@ Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].a
 
 **URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. The link crawl (`e2e/link-crawl.spec.ts`) fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
 
+### Which kind of page to create
+
+> [!NOTE]
+> For a blog Post, see [Blog Posts](#blog-posts-srccontentblog). This list is for pages.
+
+Use the first option that fits:
+
+1. **`.md`**: The page is text under a title bar. Markdown and inline HTML are enough. Example: `code-of-conduct.md`.
+2. **`.mdx`**: The page is text, but it shows an Astro component such as `CtaButton`. Example: `2026/childcare.mdx`.
+3. **`.astro` route**: The page has its own layout, has dynamic behavior, calls any APIs, shows data from `src/shared/data/`, or makes one page per item. Example: `src/pages/2026/schedule.astro`.
+
+Put `.md` and `.mdx` files in `src/content/markdown/`, or in `src/content/markdown/<year>/` for an Event page. Put an `.astro` route in `src/pages/<year>/`.
+
+Do not give a content page and an `.astro` route the same URL. Astro uses the `.astro` route and ignores the content page. It shows no error.
+
 ## Layouts: which one to use
 
 | Layout           | Use it for                                                                           | What it adds                                                                                                                  |
@@ -290,10 +305,11 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 
 ### Add or edit a content page
 
-1. Create `src/content/markdown/<name>.md` for a site-wide page, or `src/content/markdown/<year>/<name>.md` for an Event page.
-2. Add frontmatter: at least `title`, and usually `description`. See the [field table](#content-pages-srccontentmarkdown).
-3. Only if it needs a component: use `.mdx` and import the component with an alias.
-4. Link to it without a trailing slash.
+1. Check that the page is content and not an `.astro` route. See [Which kind of page to create](#which-kind-of-page-to-create).
+2. Create `src/content/markdown/<name>.md` for a site-wide page, or `src/content/markdown/<year>/<name>.md` for an Event page.
+3. Add frontmatter: at least `title`, and usually `description`. See the [field table](#content-pages-srccontentmarkdown).
+4. Only if it needs a component: use `.mdx` and import the component with an alias.
+5. Link to it without a trailing slash.
 
 ### Add a Talk and Speaker
 
