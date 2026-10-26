@@ -1,25 +1,31 @@
-import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
-import { distPath } from "./helpers";
 
-test.describe("Built robots.txt", () => {
-  const robots = () => readFileSync(distPath("robots.txt"), "utf8");
-
-  test("allows everything", () => {
-    expect(robots()).toContain("User-agent: *\nAllow: /");
-    expect(robots()).not.toContain("Disallow");
+test.describe("robots.txt", () => {
+  test("allows everything", async ({ request }) => {
+    const response = await request.get("/robots.txt");
+    expect(response.status()).toBe(200);
+    const robots = await response.text();
+    expect(robots).toContain("User-agent: *\nAllow: /");
+    expect(robots).not.toContain("Disallow");
   });
 
-  test("points at the sitemap index", () => {
-    expect(robots()).toMatch(/^Sitemap: \S+sitemap-index\.xml$/m);
+  test("points at the sitemap index", async ({ request }) => {
+    const robots = await (await request.get("/robots.txt")).text();
+    expect(robots).toMatch(/^Sitemap: \S+sitemap-index\.xml$/m);
   });
 });
 
 test.describe("Sitemap", () => {
-  test("index is built and /admin pages are filtered out", () => {
-    const index = readFileSync(distPath("sitemap-index.xml"), "utf8");
-    expect(index).toContain("sitemap-0.xml");
-    const urls = readFileSync(distPath("sitemap-0.xml"), "utf8");
+  test("index lists the sitemap", async ({ request }) => {
+    const response = await request.get("/sitemap-index.xml");
+    expect(response.status()).toBe(200);
+    expect(await response.text()).toContain("sitemap-0.xml");
+  });
+
+  test("lists URLs and filters /admin pages out", async ({ request }) => {
+    const response = await request.get("/sitemap-0.xml");
+    expect(response.status()).toBe(200);
+    const urls = await response.text();
     expect(urls).toContain("<loc>");
     expect(urls).not.toContain("/admin");
   });

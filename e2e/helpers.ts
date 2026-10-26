@@ -1,76 +1,10 @@
 import { expect, test } from "@playwright/test";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
-import type { Talk } from "@shared/data/types";
-
-/** Every file under `dir` (recursively) matching `pattern`, as `dir`-relative paths. */
-export function filesUnder(dir: string, pattern: RegExp): string[] {
-  return (readdirSync(dir, { recursive: true, encoding: "utf8" }) as string[])
-    .filter((file) => pattern.test(file))
-    .sort();
-}
 
 /**
- * Events with pages: one per `src/shared/data/events/<key>.config.ts`. The
- * list comes from the filenames, because the Event registry uses Vite-only
- * imports and a config can import what Node cannot load.
- */
-export const EVENTS_WITH_PAGES: readonly { year: string }[] = filesUnder(
-  "src/shared/data/events",
-  /^\d{4}\.config\.ts$/,
-).map((file) => ({ year: file.replace(/\.config\.ts$/, "") }));
-
-/**
- * Every built page's `dist/`-relative path. The preview webServer builds
- * first, so `dist/` always reflects the site.
- */
-export function builtPages(): string[] {
-  return filesUnder("dist", /\.html$/);
-}
-
-export const distPath = (file: string) => join("dist", file);
-
-/**
- * Roots (`/<key>`) of the Events with pages whose hand-written root page is
- * built. A new Event config can land before its root page exists.
- */
-export const EVENT_ROOTS: readonly string[] = EVENTS_WITH_PAGES.map(
-  ({ year }) => `/${year}`,
-).filter((root) => existsSync(distPath(`${root.slice(1)}.html`)));
-
-/**
- * Built pages (`dist/`-relative) that are Frozen Snapshots: exact legacy
- * captures (ADR-0008), not Layout-rendered. Sitewide checks of Layout's
- * output exclude or relax them.
+ * Pages of the Frozen Snapshots: exact legacy captures (ADR-0008), not
+ * Layout-rendered. Sitewide checks of Layout's output exclude or relax them.
  */
 export const FROZEN_SNAPSHOT_PAGES = ["2024.html", "2025.html"];
-
-/**
- * The URL path of one Event markdown page, chosen by type: the first
- * top-level page of the first Event that has any. Undefined when no Event
- * has one.
- */
-export function eventMarkdownPagePath(): string | undefined {
-  for (const { year: key } of EVENTS_WITH_PAGES) {
-    const dir = join("src/content/markdown", key);
-    const files = filesUnder(dir, /^[^/\\]+\.mdx?$/);
-    if (files.length > 0) {
-      return `/${key}/${files[0].replace(/\.mdx?$/, "")}`;
-    }
-  }
-  return undefined;
-}
-
-/**
- * Every Event's Talks. An Event without Talk JSON adds none, though its pages
- * can still render another Event's Talks, so checks match a rendered Talk
- * against all of them.
- */
-export const ALL_TALKS: readonly Talk[] = EVENTS_WITH_PAGES.map(
-  ({ year }) => `src/shared/data/${year}/talks.json`,
-)
-  .filter((file) => existsSync(file))
-  .flatMap((file) => JSON.parse(readFileSync(file, "utf8")) as Talk[]);
 
 export const DESKTOP = { width: 1280, height: 900 };
 export const MOBILE = { width: 390, height: 844 };

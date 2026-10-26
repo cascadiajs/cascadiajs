@@ -28,16 +28,24 @@ pnpm install
 pnpm dev          # http://localhost:4321
 ```
 
-| Command        | What it does                                        |
-| :------------- | :-------------------------------------------------- |
-| `pnpm dev`     | Dev server with hot reload at `localhost:4321`      |
-| `pnpm build`   | Production build to `dist/`                         |
-| `pnpm preview` | Serve the built `dist/` locally                     |
-| `pnpm check`   | Type-check `.astro` and `.ts` files (`astro check`) |
-| `pnpm lint`    | ESLint (`pnpm lint:fix` to auto-fix)                |
-| `pnpm test`    | Build, preview, and run the Playwright e2e suite    |
+| Command          | What it does                                        |
+| :--------------- | :-------------------------------------------------- |
+| `pnpm dev`       | Dev server with hot reload at `localhost:4321`      |
+| `pnpm build`     | Production build to `dist/`                         |
+| `pnpm serve`     | Build and serve the site as Netlify does            |
+| `pnpm check`     | Type-check `.astro` and `.ts` files (`astro check`) |
+| `pnpm lint`      | ESLint (`pnpm lint:fix` to auto-fix)                |
+| `pnpm test`      | Build, serve, and run the Playwright e2e suite      |
+| `pnpm test:unit` | Run the Vitest unit tests                           |
 
-A pre-commit hook (Husky + lint-staged) runs ESLint `--fix` and Prettier on staged files, then `astro check`, then the Playwright suite (`pnpm test`). CI runs the tests too.
+A pre-commit hook (Husky + lint-staged) runs these steps in order:
+
+1. ESLint `--fix` and Prettier on staged files
+2. `astro check`
+3. The unit tests (`pnpm test:unit`)
+4. The Playwright suite (`pnpm test`)
+
+CI runs the tests too.
 
 ## How we work
 
@@ -59,7 +67,7 @@ The `ready-for-agent` and `ready-for-human` labels decide who builds an issue: a
 
 - Create a branch from `main`. Open a PR into `main`.
 - Commit messages use [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`, `ci:`. Read `git log` for examples of the house style.
-- CI must be green before merge. It runs lint, a Prettier check, `astro check`, a production build, and the Playwright suite. See [Testing and CI](#testing-and-ci).
+- CI must be green before merge. It runs lint, a Prettier check, `astro check`, a production build, the unit tests, and the Playwright suite. See [Testing and CI](#testing-and-ci).
 - If you change something this README documents (layouts, routing, content shape, commands, workflow, recipes), update the matching section in the same PR.
 
 ### Decisions and vocabulary
@@ -76,6 +84,7 @@ src/
   components/       Presentational Astro components
     schedule/       Building blocks for the Event schedule page
     table/          Table primitives (used by the sponsorship brochure)
+    blog/           Blog Post, index, Author, search and share components
   shared/
     data/           JSON datasets, Event configs, shared types, data helpers
     site-defaults.ts  Site-wide title/description, Featured Event, analytics IDs
@@ -134,9 +143,45 @@ There are two kinds of page.
 
 A file under a year folder only gets a page if that Event has a config in `src/shared/data/events/` (see [Launching a new Event](#launching-a-new-event)). Set `published: false` in frontmatter to keep a page out of the build.
 
+**Blog Posts** live in `src/content/blog/`. Each Post is a folder, and the folder name becomes its URL: `/blog/post/<folder-name>`. A draft (`published: false`) shows in `pnpm dev` but not on the live site.
+
+The blog has these pages:
+
+| URL                      | File                                |
+| :----------------------- | :---------------------------------- |
+| `/blog`, `/blog/2`, …    | `src/pages/blog/[...page].astro`    |
+| `/blog/post/<slug>`      | `src/pages/blog/post/[slug].astro`  |
+| `/blog/tags/<tag>`       | `src/pages/blog/tags/[tag].astro`   |
+| `/blog/authors/<id>`     | `src/pages/blog/authors/[id].astro` |
+| `/blog/search?q=…&tag=…` | `src/pages/blog/search.astro`       |
+| `/blog/rss.xml`          | `src/pages/blog/rss.xml.ts`         |
+
+The blog components live in `src/components/blog/`.
+
+Search is the only page that runs on each request (see on-demand routes below). Netlify caches search results and limits how often one visitor can search. You can't test either one locally. Check them on a deploy preview.
+
 Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].astro` makes one page per Talk with a `slug`. `src/pages/[year]/sponsors/[slug].astro` makes one page per Sponsor with a `description`, for each Event that the Sponsor sponsored. See Astro's [routing guide](https://docs.astro.build/en/guides/routing/) for how `[param]` and `[...rest]` routes and `getStaticPaths` work.
 
-**URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. An e2e test scans every built page and fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
+**On-demand routes.** Astro builds most pages ahead of time. A page that needs data from the request, like a search query, can run on each request instead. To do that, add `export const prerender = false` to the page file, and Netlify runs the page as a function. Only do this when the page needs it ([ADR-0016](docs/adr/0016-on-demand-routes-via-netlify-adapter.md)).
+
+`pnpm dev` runs these pages too. To test them the way Netlify runs them, use `pnpm serve`. There is no `pnpm preview`, because Astro's preview does not work with Netlify. Built pages load images from `/.netlify/images`, which is Netlify's image service.
+
+**URLs never end in a slash.** `/2026/attend` works. `/2026/attend/` does not. Write every internal link without a trailing slash. The root `/` is the only exception. The link crawl (`e2e/link-crawl.spec.ts`) fails on a slashed internal link. `Layout` builds canonical URLs from `routePath()` in `src/shared/route-path.ts`. If a page needs its own path, call `routePath()` instead of reading `Astro.url.pathname`.
+
+### Which kind of page to create
+
+> [!NOTE]
+> For a blog Post, see [Blog Posts](#blog-posts-srccontentblog). This list is for pages.
+
+Use the first option that fits:
+
+1. **`.md`**: The page is text under a title bar. Markdown and inline HTML are enough. Example: `code-of-conduct.md`.
+2. **`.mdx`**: The page is text, but it shows an Astro component such as `CtaButton`. Example: `2026/childcare.mdx`.
+3. **`.astro` route**: The page has its own layout, has dynamic behavior, calls any APIs, shows data from `src/shared/data/`, or makes one page per item. Example: `src/pages/2026/schedule.astro`.
+
+Put `.md` and `.mdx` files in `src/content/markdown/`, or in `src/content/markdown/<year>/` for an Event page. Put an `.astro` route in `src/pages/<year>/`.
+
+Do not give a content page and an `.astro` route the same URL. Astro uses the `.astro` route and ignores the content page. It shows no error.
 
 ## Layouts: which one to use
 
@@ -183,6 +228,25 @@ Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`
 
 See [ADR-0012](docs/adr/0012-mdx-content-pages.md) and Astro's [MDX guide](https://docs.astro.build/en/guides/integrations-guide/mdx/).
 
+### Blog Posts (`src/content/blog/`)
+
+A Post is a folder with one `index.md` or `index.mdx` file. Put the Post's images in the same folder. Write the folder name in lowercase, with dashes between words, for example `my-first-post`. The frontmatter has these fields:
+
+| Field         | Type               | Notes                                                                |
+| :------------ | :----------------- | :------------------------------------------------------------------- |
+| `title`       | text               | Required.                                                            |
+| `description` | text               | Required. The page uses it as its meta description.                  |
+| `pubDate`     | date               | Required, for example `2026-03-10`.                                  |
+| `updatedDate` | date               | Optional. The Post then shows "Updated" and this date.               |
+| `authors`     | list of Person ids | Required. At least one, each id one time. The first id is the lead.  |
+| `tags`        | list of text       | Required. The list can be empty.                                     |
+| `featured`    | true or false      | Optional. Default `false`.                                           |
+| `image`       | image path         | Optional. The large image at the top of the Post, e.g. `./hero.jpg`. |
+| `ogImage`     | image path         | Optional. The image for social media shares.                         |
+| `published`   | true or false      | Optional. Default `true`. A `false` Post shows only in `pnpm dev`.   |
+
+The build stops if a field is wrong, for example a missing `title` or an unknown Person id.
+
 ### Data (`src/shared/data/`)
 
 ```text
@@ -190,10 +254,11 @@ src/shared/data/
   events/2026.config.ts   Event config: name, dates, venue, logo (+ optional height class), nav, share defaults
   events.ts               Helpers: getEventConfig, getOrganizers, getTickets, getActivities, getActivity
   2026/                   The 2026 Event Dataset
-    talks.json            Talks, each with an embedded speaker
-    organizers.json
+    talks.json            Talks, each referring to its Speaker by Person id
+    organizers.json       Organizers, each a Person id (plus optional overrides)
     tickets.json
     activities.json       Schedule items that aren't Talks (parties, hackathon, meals)
+  people.json             The Person registry: every Speaker, Organizer and Author, once
   sponsors.json           Every Sponsor, across all Events
   testimonials.json
   types.ts                Shared TypeScript types
@@ -201,12 +266,24 @@ src/shared/data/
 
 You read data two ways:
 
-- **Talks and Sponsors are content collections** (`talks2026`, `sponsors`), so read them with `getCollection("talks2026")` / `getEntry(...)` from `astro:content`. Their Zod schemas in `src/content.config.ts` are the single source of truth. TypeScript infers the types in `types.ts` (`Talk`, `Person`, `Sponsor`) from these schemas, so change the schema, not the type. Astro sorts collection entries by id, so each loader stamps an `order` field with the entry's position in the JSON file. Sort by `order` when a listing should follow file order.
+- **Talks, People and Sponsors are content collections** (`talks2026`, `people`, `sponsors`), so read them with `getCollection("talks2026")` / `getEntry(...)` from `astro:content`. Their Zod schemas in `src/content.config.ts` are the single source of truth. TypeScript infers the types in `types.ts` (`Talk`, `Person`, `Sponsor`) from these schemas, so change the schema, not the type. Astro sorts collection entries by id, so each loader stamps an `order` field with the entry's position in the JSON file. Sort by `order` when a listing should follow file order.
 - **Organizers, Tickets and Activities** come from the helpers in `events.ts`, keyed by year: `getTickets("2026")`. The helpers **throw on an unknown year or Activity id**, so a typo fails the build instead of rendering an empty section.
 
-A Speaker isn't a separate record: it lives inside its Talk as `speaker`. Organizers use the same `Person` shape. Person images are paths under `src/assets/` (for example `/events/2026/images/jane-doe.jpg` means `src/assets/events/2026/images/jane-doe.jpg`), and the build fails if the file is missing.
-
 For the reasoning behind this split, see [ADR-0013](docs/adr/0013-event-pages-read-shared-datasets.md).
+
+### People
+
+`src/shared/data/people.json` lists every Speaker, Organizer and Author one time ([ADR-0017](docs/adr/0017-people-live-in-one-registry.md)). Each Person has these fields:
+
+- `id`: required. The name in lowercase, with dashes between words, for example `carter-rabasa`. Each id must be different.
+- `name`: required.
+- `image`: required. The path of a photo in `src/assets/people/`, for example `/people/jane-doe.jpg`. Use a `.jpg` or `.png` file. The build stops if the file is missing.
+- `roles`: required. One or more of `speaker`, `organizer` and `author`.
+- `title`, `company`, `location`, `url`, `pronouns`, `social` and `bio`: optional.
+
+A Talk or an Organizer entry points to a Person by id: `{ "id": "carter-rabasa" }`. If a detail was different at one Event, add `overrides` for that detail: `{ "id": "carter-rabasa", "overrides": { "title": "Past Title" } }`. You can override `title`, `company`, `location` and `image`. All other fields come from `people.json`.
+
+Past Events (2024 and 2025) do not use `people.json`. Their pages keep their own copy of each Person ([ADR-0008](docs/adr/0008-past-event-pages-are-frozen-snapshots.md)).
 
 ## Styling
 
@@ -228,18 +305,34 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 
 ### Add or edit a content page
 
-1. Create `src/content/markdown/<name>.md` for a site-wide page, or `src/content/markdown/<year>/<name>.md` for an Event page.
-2. Add frontmatter: at least `title`, and usually `description`. See the [field table](#content-pages-srccontentmarkdown).
-3. Only if it needs a component: use `.mdx` and import the component with an alias.
-4. Link to it without a trailing slash.
+1. Check that the page is content and not an `.astro` route. See [Which kind of page to create](#which-kind-of-page-to-create).
+2. Create `src/content/markdown/<name>.md` for a site-wide page, or `src/content/markdown/<year>/<name>.md` for an Event page.
+3. Add frontmatter: at least `title`, and usually `description`. See the [field table](#content-pages-srccontentmarkdown).
+4. Only if it needs a component: use `.mdx` and import the component with an alias.
+5. Link to it without a trailing slash.
 
 ### Add a Talk and Speaker
 
-1. Add an object to `src/shared/data/<year>/talks.json`, at the position where the Talk should appear. Required fields: `id`, `slug` (or `null` for no Talk page), `title`, `type` (`keynote`, `main`, `lightning`, `workshop`) and `speaker`. Optional fields: `abstract` (Markdown), `tags`, `yt`.
-2. Put the speaker photo in `src/assets/events/<year>/images/` and reference it in `speaker.image`.
-3. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
-4. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
-5. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
+1. If the Speaker is new, add them to `src/shared/data/people.json` with `speaker` in `roles`. See [People](#people) for the fields.
+2. Add an object to `src/shared/data/<year>/talks.json`, at the position where the Talk should appear. Required fields: `id`, `slug` (or `null` for no Talk page), `title`, `type` (`keynote`, `main`, `lightning`, `workshop`) and `speaker`, which is `{ "id": "<person id>" }`. Optional fields: `abstract` (Markdown), `tags`, `yt`.
+3. Put the Speaker's photo in `src/assets/people/`. Set the Person's `image` to `/people/<file>`.
+4. Optional: add a share image at `public/images/<year>/share/speaker-<name-slug>.png`. The Talk page uses it when the file exists.
+5. For a Workshop with a registration page, set `registrationUrl` to a site-relative path and add the page under `src/content/markdown/<year>/workshops/`.
+6. Place it on the schedule. Add a `<TalkItem talk="<id>" />` in `src/pages/<year>/schedule.astro`. Workshops use `ShowItem` instead, so copy an existing Workshop entry. The schedule shows only the Talks you place on it.
+
+### Add a Post
+
+1. Create `src/content/blog/<slug>/index.md` (or `index.mdx`). The folder name is the URL: `/blog/post/<slug>`.
+2. Add frontmatter: `title`, `description`, `pubDate`, `authors` (Person ids) and `tags`. See the [field table](#blog-posts-srccontentblog).
+3. Put images in the same folder and reference them relatively: `image: ./hero.jpg`, or `![alt](./diagram.png)` in the body.
+4. In an `.mdx` Post, import each component you use. Put the imports below the frontmatter, for example `import Callout from "@components/Callout.astro";`. Follow the MDX rules in [ADR-0012](docs/adr/0012-mdx-content-pages.md).
+5. To keep a Post out of production while you write it, set `published: false`. It still shows in `pnpm dev`.
+
+### Add an Author
+
+1. Add the Person to `src/shared/data/people.json` with `author` in `roles`. See [People](#people) for the fields. If the Person is already there, add `author` to their `roles`.
+2. Put the photo in `src/assets/people/`. Set `image` to `/people/<file>`.
+3. Use the id in a Post's `authors` list.
 
 ### Add a Sponsor
 
@@ -251,7 +344,7 @@ Checklists for the common changes. Run `pnpm dev` and open the page in a browser
 ### Add an Organizer, Ticket or Activity
 
 1. Edit the matching file in `src/shared/data/<year>/` (`organizers.json`, `tickets.json`, `activities.json`). The shapes are in `src/shared/data/types.ts`.
-2. Organizer photos go in `src/assets/events/<year>/images/`.
+2. For a new Organizer, add them to `src/shared/data/people.json` with `organizer` in `roles`. Then add `{ "id": "<person id>" }` to `organizers.json`. Put Organizer photos in `src/assets/people/`.
 3. A new Activity also needs placing on the schedule: reference it by `id` from `src/pages/<year>/schedule.astro` with `getActivity(year, id)`.
 
 ### Add a component
@@ -272,7 +365,7 @@ You launch a new Event once a year. The launch changes several files. The steps 
 2. Add `"2027"` to the `events` enum in `sponsorSchema` in `src/content.config.ts`.
    `EventYear` derives from this enum. Nothing type-checks with `"2027"` until you add it.
 3. Create the directory `src/shared/data/2027/`.
-4. Add `talks.json`, `organizers.json`, `tickets.json` and `activities.json` to that directory.
+4. Add `talks.json`, `organizers.json`, `tickets.json` and `activities.json` to that directory. Add each new Speaker and Organizer to `people.json`.
 5. Register a `talks2027` collection in `src/content.config.ts`, next to `talks2026`.
 6. Add `"2027"` to the `events` array of each 2027 Sponsor in `src/shared/data/sponsors.json`.
 
@@ -297,7 +390,40 @@ Do these steps only after the 2027 pages are ready.
 
 ## Testing and CI
 
-End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They run against a production build (`pnpm build && pnpm preview`), the same output Netlify deploys.
+The project has three kinds of test:
+
+- **Unit tests** check small functions and single components. They run in Vitest.
+- **Browser tests** check components that need real CSS or JavaScript. They run in Vitest, in a browser with no window.
+- **End-to-end tests** check the built site. They run in Playwright.
+
+### Unit tests
+
+Put a unit test next to the file it tests, as `<name>.test.ts`. See `src/shared/route-path.test.ts` for an example. Give the function plain values and check the result. Do not read real Event data or files from disk.
+
+If a test needs an image, use `/events/sample/images/test-photo.png` for a person, or `test-logo.svg` for a Sponsor logo. Do not use a real Event or Sponsor image.
+
+Vitest keeps a cache of each component. If a component does not find an image or file that you added, delete `node_modules/.vitest-cache` and run the tests again.
+
+**Component tests.** To test an `.astro` component, render it to HTML with Astro's Container API and check the HTML. Put the test next to the component, as `<Component>.test.ts`. The helpers in `src/shared/test-render.ts` do the rendering. See `src/components/components.test.ts` for examples.
+
+If a component reads a content collection, give it an optional prop for that data. The test can then give its own data, for example the `sponsors` prop on `SponsorsGrid`.
+
+```sh
+pnpm test:unit                                  # run once
+pnpm exec vitest src/shared/route-path.test.ts  # one file, watch mode
+```
+
+### Browser tests
+
+Put a browser test next to the component, as `<Component>.browser.test.ts`. `pnpm test:unit` runs the browser tests and the unit tests. To run only the browser tests, use `pnpm exec vitest run --project browser`. Before the first run, install the browser with `pnpm exec playwright install chromium`.
+
+To show a component in a browser test, use `mountAstro` from `@shared/test/mount-astro`. Import the CSS that the component needs. `src/components/blog/ShareBar.browser.test.ts` is a full example. It also shows how to set the screen size and reduced motion.
+
+`mountAstro` cannot add slot content. For a component with slots, copy the approach in `src/components/schedule/Track.browser.test.ts`.
+
+### End-to-end tests
+
+End-to-end tests live in `e2e/` and use [Playwright](https://playwright.dev/docs/intro). They build the site and run it with `netlify serve`, the same way Netlify runs it. You do not need to build first.
 
 Tests check behavior, not content. A change to copy, data, design inside a section or the Featured Event does not break a test. Tests find pages by type, never by slug or title. They find elements by class name, id or role, never by text. A component that a test needs gets a class with its component name in kebab-case. No spec names a year, except the Frozen Snapshot specs (2024, 2025).
 
@@ -308,15 +434,22 @@ pnpm test e2e/talks.spec.ts             # one file
 pnpm test --ui                          # Playwright's interactive runner
 ```
 
-Many tests generate their cases from the data files. For example, one test checks that each Talk with a slug has a page. Another test checks that each Sponsor with a description has a detail page. In most cases, new data needs no new tests. Add or update a spec when you add a page, a route or a behavior.
+The tests use the real site build. The repo has no test Posts or test Authors, so the blog tests pass with no Posts.
 
-If a dev server is already running on port 4321, Playwright reuses it instead of building. Stop `pnpm dev` before `pnpm test` if you want to test the real build.
+Tests do not skip, do not loop over data, and do not search Event data to choose a page. If a test needs an Event page, use the Featured Event (`FEATURED_EVENT` from `@shared/site-defaults`). Add or update a test when you add a page, a route or a behavior.
+
+Each test run builds the site again and uses its own free port. A `pnpm dev` or `pnpm serve` that is running does not get in the way. Do not start two test runs at the same moment, because both use port 3999. Start the second run after the first one is up.
+
+Run `pnpm test` from a normal clone, not a Git worktree. In a worktree, Netlify tests the main checkout instead of your changes.
 
 CI (`.github/workflows/tests.yml`) runs on every PR and push to `main`:
 
 1. **checks:** `pnpm lint`, `prettier --check .`, `pnpm check`
 2. **build:** `pnpm build`
-3. **playwright:** the e2e suite, after both pass. On failure, download the `playwright-report` artifact from the run to see what failed.
+3. **unit:** `pnpm test:unit`
+4. **playwright:** the end-to-end tests, after checks and build pass. If they fail, download the `playwright-report` artifact from the run to see what failed.
+
+The unit and playwright jobs run in the official Playwright Docker image (`mcr.microsoft.com/playwright`), which has Chromium and its OS dependencies preinstalled. When you upgrade `@playwright/test`, change the image tag in `tests.yml` to the same version. If the versions differ, the tests fail with "Executable doesn't exist".
 
 ## Working with an agent
 

@@ -1,0 +1,570 @@
+[
+  {
+    "id": "matt-biilmann",
+    "name": "Matt Biilmann",
+    "image": "/people/matt-biilmann.jpg",
+    "company": "Netlify",
+    "location": "San Francisco, CA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/biilmann"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "joe-duffy",
+    "name": "Joe Duffy",
+    "image": "/people/joe-duffy.jpg",
+    "company": "Pulumi",
+    "location": "Seattle, WA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/joejduffy/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "theo",
+    "name": "Theo",
+    "image": "/people/theo.jpg",
+    "company": "T3 Chat",
+    "location": "San Francisco, CA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/t3gg/"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/theo"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "francesco-ciulla",
+    "name": "Francesco Ciulla",
+    "image": "/people/francesco-ciulla.jpg",
+    "company": "Zerops",
+    "location": "Rome, Italy",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/francesco-ciulla-roma/"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/FrancescoCiull4"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "erik-hanchett",
+    "name": "Erik Hanchett",
+    "image": "/people/erik-hanchett.jpg",
+    "company": "AWS",
+    "location": "Reno, NV, USA",
+    "social": [
+      {
+        "type": "bluesky",
+        "url": "https://bsky.app/profile/erikch.bsky.social"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/erikhanchett/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "joel-hooks",
+    "name": "Joel Hooks",
+    "image": "/people/joel-hooks.jpg",
+    "company": "Badass Courses",
+    "location": "Portland, OR USA",
+    "social": [
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/joelhooks"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "nyah-macklin",
+    "name": "Nyah Macklin",
+    "image": "/people/nyah-macklin.jpg",
+    "company": "Neo4j",
+    "location": "San Francisco, CA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://linkedin.com/in/nyahmacklin"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/NyahMacklinDev"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "james-ide",
+    "name": "James Ide",
+    "image": "/people/james-ide.jpg",
+    "company": "Expo",
+    "location": "Palo Alto, CA USA",
+    "social": [
+      {
+        "type": "github",
+        "url": "https://github.com/ide"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/JI"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "marty-nelson",
+    "name": "Marty Nelson",
+    "image": "/people/marty-nelson.jpg",
+    "company": "Works Real Estate",
+    "location": "Portland, OR USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/martypdx/"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/martypdx"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "brittany-ellich",
+    "name": "Brittany Ellich",
+    "image": "/people/brittany-ellich.jpg",
+    "company": "Bluesky",
+    "location": "Portland, OR USA",
+    "social": [
+      {
+        "type": "bluesky",
+        "url": "https://bsky.app/profile/brittanyellich.com"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "darius-cepulis",
+    "name": "Darius Cepulis",
+    "image": "/people/darius-cepulis.jpg",
+    "company": "Mux",
+    "location": "Oak Park, IL USA",
+    "url": "https://darius.cool",
+    "roles": ["speaker"]
+  },
+  {
+    "id": "courtney-yatteau",
+    "name": "Courtney Yatteau",
+    "image": "/people/courtney-yatteau.jpg",
+    "company": "esri",
+    "location": "Alexandria, VA USA",
+    "social": [
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/c_yatteau"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/courtneyyatteau/"
+      },
+      {
+        "type": "bluesky",
+        "url": "https://bsky.app/profile/cyatteau.bsky.social"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "alex-hinson",
+    "name": "Alex Hinson",
+    "image": "/people/alex-hinson.jpg",
+    "company": "Fleetio",
+    "location": "Chattanooga, TN USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/alex-hinson-015423129"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "filip-sodic",
+    "name": "Filip Sodić",
+    "image": "/people/filip-sodic.jpg",
+    "company": "Wasp",
+    "location": "Zagreb, Croatia",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/filipsodic/"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/filipsodic"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "molly-jean-bennett",
+    "name": "Molly Jean Bennett",
+    "image": "/people/molly-jean-bennett.jpg",
+    "company": "Grow Therapy",
+    "location": "Portland, OR, USA",
+    "social": [
+      {
+        "type": "bluesky",
+        "url": "https://bsky.app/profile/mollyjeanbennett.bsky.social"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "james-steinbach",
+    "name": "James Steinbach",
+    "image": "/people/james-steinbach.jpg",
+    "company": "Delinea",
+    "location": "Denver, CO, USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/jdsteinbach/"
+      },
+      {
+        "type": "bluesky",
+        "url": "https://bsky.app/profile/jdsteinbach.com"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "daniel-mendoza",
+    "name": "Daniel Mendoza",
+    "image": "/people/daniel-mendoza.jpg",
+    "company": "Storyblok",
+    "location": "Chicago, IL, USA",
+    "url": "https://danieljmendoza.com/",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/daniel-mendoza-503396152/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "jonathan-keslin",
+    "name": "Jonathan Keslin",
+    "image": "/people/jonathan-keslin.jpg",
+    "company": "Atlassian",
+    "location": "Kirkland, WA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/decompiled/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "luis-montes",
+    "name": "Luis Montes",
+    "image": "/people/luis-montes.jpg",
+    "company": "Iced Dev",
+    "location": "Phoenix, AZ",
+    "social": [
+      {
+        "type": "github",
+        "url": "https://github.com/monteslu"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/monteslu"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "alex-moon",
+    "name": "Alex Moon",
+    "image": "/people/alex-moon.jpg",
+    "company": "WP Engine",
+    "location": "Bellingham, WA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://linkedin.com/in/aj-moon/"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/moonmeister"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://twitter.com/moon_meister"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "dylan-goings",
+    "name": "Dylan Goings",
+    "image": "/people/dylan-goings.jpg",
+    "company": "Atomic Object",
+    "location": "Ann Arbor, MI USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://linkedin.com/in/dgoings"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "jeff-otano",
+    "name": "Jeff Otaño",
+    "image": "/people/jeff-otano.jpg",
+    "company": "Onebrief",
+    "location": "Denver, CO USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/jeffrey-otano/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "ojus-save",
+    "name": "Ojus Save",
+    "image": "/people/ojus-save.jpg",
+    "company": "Render",
+    "location": "San Francisco, CA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/ojus/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "engin-diri",
+    "name": "Engin Diri",
+    "image": "/people/engin-diri.jpg",
+    "company": "Pulumi",
+    "location": "Seattle, WA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/engin-diri/"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/dirien"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "michael-liendo",
+    "name": "Michael Liendo",
+    "image": "/people/michael-liendo.jpg",
+    "company": "Auth0",
+    "location": "Davenport, IA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/focusotter"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/focusotter"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "kaelig-deloumeau-prigent",
+    "name": "Kaelig Deloumeau-Prigent",
+    "image": "/people/kaelig-deloumeau-prigent.jpg",
+    "company": "Design Tokens W3C CG",
+    "location": "Seattle, WA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/kaelig"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://x.com/kaelig"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "michael-daigler",
+    "name": "Michael Daigler",
+    "image": "/people/michael-daigler.jpg",
+    "company": "Apify",
+    "location": "Austin, TX USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/mdaigz/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "amanda-martin",
+    "name": "Amanda Martin",
+    "image": "/people/amanda-martin.jpg",
+    "company": "Vapi",
+    "location": "San Francisco, CA USA",
+    "social": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/amandamartin-dev/"
+      }
+    ],
+    "roles": ["speaker"]
+  },
+  {
+    "id": "carter-rabasa",
+    "name": "Carter Rabasa",
+    "image": "/people/carter-rabasa.jpg",
+    "title": "Lead Organizer",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "carrie-rabasa",
+    "name": "Carrie Rabasa",
+    "image": "/people/carrie-rabasa.jpg",
+    "title": "Co-Organizer",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "elise-worthy",
+    "name": "Elise Worthy",
+    "image": "/people/elise-worthy.jpg",
+    "title": "Sponsorships",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "adam-argyle",
+    "name": "Adam Argyle",
+    "image": "/people/adam-argyle.jpg",
+    "title": "Co-Emcee",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "robbie-wagner",
+    "name": "Robbie Wagner",
+    "image": "/people/robbie-wagner.jpg",
+    "title": "Co-Emcee",
+    "location": "Virginia, USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "kate-pond",
+    "name": "Kate Pond",
+    "image": "/people/kate-pond.jpg",
+    "title": "Networking Lead",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "cristina-rodriguez",
+    "name": "Cristina Rodriguez",
+    "image": "/people/cristina-rodriguez.jpg",
+    "title": "Scholarships",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "andre-wiggins",
+    "name": "Andre Wiggins",
+    "image": "/people/andre-wiggins.jpg",
+    "title": "Workshops",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "ryan-soeder",
+    "name": "Ryan Soeder",
+    "image": "/people/ryan-soeder.jpg",
+    "title": "Speaker Wrangler",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "kelli-rockwell",
+    "name": "Kelli Rockwell",
+    "image": "/people/kelli-rockwell.jpg",
+    "title": "Party Coordinator",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "jim-liu",
+    "name": "Jim Liu",
+    "image": "/people/jim-liu.jpg",
+    "title": "Volunteer",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "megan-speir",
+    "name": "Megan Speir",
+    "image": "/people/megan-speir.jpg",
+    "title": "Volunteer",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "stella-marie",
+    "name": "Stella Marie",
+    "image": "/people/stella-marie.jpg",
+    "title": "Volunteer",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  },
+  {
+    "id": "allan-deutsch",
+    "name": "Allan Deutsch",
+    "image": "/people/allan-deutsch.jpg",
+    "title": "Volunteer",
+    "location": "Seattle, WA USA",
+    "roles": ["organizer"]
+  }
+]

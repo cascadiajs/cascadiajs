@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
+import netlify from "@astrojs/netlify";
 
 // Netlify sets these at build time: URL is the site's main address,
 // DEPLOY_PRIME_URL the stable URL for a deploy preview or branch deploy, and
@@ -22,6 +23,26 @@ export default defineConfig({
   // Canonical/OG URLs resolve against `site`, so previews share their own
   // images and production consolidates on its main address.
   site,
+  // Static by default. A route opts into on-demand rendering with
+  // `export const prerender = false` (ADR-0016). The adapter keeps its default
+  // `imageCDN` (every astro:assets image is served by the Netlify Image CDN),
+  // and `cacheOnDemandPages` stays off.
+  output: "static",
+  // `astro dev` and Vitest turn off only edge-function emulation: the site has
+  // no edge functions, and @netlify/edge-functions-dev 2.0.4/2.0.5 passes
+  // `--allow-scripts` to `deno eval`, which Deno 2.9.6+ rejects
+  // (netlify/cli#8522). Remove `edgeFunctions: false` once a fixed release
+  // ships. The other two keys repeat the defaults; the type requires all three.
+  adapter: netlify({
+    devFeatures: {
+      images: true,
+      environmentVariables: false,
+      edgeFunctions: false,
+    },
+  }),
+  // The site uses no sessions; this stops the adapter from setting up Netlify
+  // Blobs and bundling the session runtime.
+  session: false,
   // Legacy URLs never end in a slash (the slashed form 404s), so routes and
   // canonical URLs must match. The root stays "/".
   trailingSlash: "never",
@@ -36,10 +57,21 @@ export default defineConfig({
   image: {
     layout: "constrained",
   },
+  // Code blocks keep their existing look (github-dark) everywhere. Shiki also
+  // emits Night Owl as CSS variables (`--shiki-blog`), which only Post bodies
+  // read (see PostBody.astro), so no existing Markdown page changes.
+  markdown: {
+    shikiConfig: {
+      themes: { default: "github-dark", blog: "night-owl" },
+      defaultColor: "default",
+    },
+  },
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes("/admin"),
+      // /blog/search is on-demand and never indexed through the sitemap.
+      filter: (page) =>
+        !page.includes("/admin") && !page.includes("/blog/search"),
     }),
   ],
   vite: {

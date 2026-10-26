@@ -1,0 +1,7 @@
+/* Below md the bar is fixed to the viewport bottom. Reserve room under the
+   footer, so the end of the page scrolls clear of the bar. */
+@media (max-width: 767.98px) {
+  body:has(.cjs-share-bar) .cjs-site-footer {
+    padding-bottom: 6rem;
+  }
+}

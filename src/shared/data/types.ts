@@ -5,7 +5,8 @@
  */
 
 import z from "astro/zod";
-import { talkSchema, personSchema, sponsorSchema } from "../../content.config";
+import { talkSchema, sponsorSchema } from "../../content.config";
+import type { Person as ResolvedPerson } from "../people";
 /**
  * A presentation delivered by a Speaker at an Event.
  *
@@ -17,7 +18,7 @@ export type Talk = z.infer<typeof talkSchema>;
  * Derived from the `person` content collection's Zod schema, which is
  * the single source of truth for this shape -- see `content.config.ts`.
  */
-export type Person = z.infer<typeof personSchema>;
+export type Person = ResolvedPerson;
 
 /** A Sponsor for an Event, with tier, logo, and other metadata.
  * Derived from the `sponsor` content collection's Zod schema, which is

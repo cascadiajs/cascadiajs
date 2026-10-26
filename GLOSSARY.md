@@ -50,8 +50,12 @@ A public endorsement of CascadiaJS by an attendee or Speaker, displayed on the s
 _Avoid_: Tweet, Twitter Love
 
 **Organizer**:
-A person who runs an Event, credited with a role (Lead Organizer, Sponsorships, Co-Emcee, Volunteer). Distinct from a Speaker, though one person may be both across different Events.
+A person who runs an Event, credited with a title (Lead Organizer, Sponsorships, Co-Emcee, Volunteer). Distinct from a Speaker, though one person may be both across different Events.
 _Avoid_: Staff, Team member
+
+**Person**:
+One human the site credits, recorded once and shared by every page that names them. A Person's roles say which of Speaker, Organizer and Author they are, in any combination. An Event can override the details that were true only at that Event, such as their title or company.
+_Avoid_: User, Member, Profile
 
 **Frozen Snapshot**:
 The page for an Event that has already happened, captured once as a single self-contained Astro page: content inlined in the page's own frontmatter rather than loaded from a Collection or a shared dataset, assets copied to `public/images/events/<Event Key>/`, and links to unported routes collapsed to the Event root. It is never re-derived, and its inlined content is deliberately not extracted into components. See ADR-0008.
@@ -77,3 +81,19 @@ _Avoid_: Column, Size
 **Legacy Site**:
 The Enhance implementation CascadiaJS ran on before this port. The port reproduces its visible look, URLs and behavior; once the port is live it is a historical record only, not a specification to verify against.
 _Avoid_: Reference repo, old site
+
+**Post**:
+A dated piece of writing published on the site-wide blog, attributed to one or more Authors and labelled with Tags. It belongs to no Event, though it may discuss one.
+_Avoid_: Article, Blog entry, News item
+
+**Author**:
+A person credited with writing a Post. Distinct from a Speaker and an Organizer, though one person may be any combination of the three.
+_Avoid_: Writer, Contributor, Byline
+
+**Tag**:
+A free-form topic label on a Post, used to group and find related Posts. Tags differing only in letter case are the same Tag.
+_Avoid_: Category, Topic, Keyword
+
+**Featured Post**:
+A Post deliberately flagged for prominence on the blog index, where it is displayed larger than other Posts. Only the newest few flagged Posts are shown that way at once. Unrelated to the Featured Event.
+_Avoid_: Pinned Post, Highlighted Post

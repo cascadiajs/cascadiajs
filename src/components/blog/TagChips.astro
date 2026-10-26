@@ -1,0 +1,33 @@
+---
+import { normalizeTag } from "@shared/blog/format";
+
+interface Props {
+  /** Tags as written in frontmatter; chips show and link the normalized form. */
+  tags: string[];
+  class?: string;
+}
+
+const { tags, class: className } = Astro.props;
+// Tags that differ only in case are one Tag.
+const normalized = [...new Set(tags.map(normalizeTag))];
+---
+
+<ul
+  class:list={[
+    "cjs-tag-chips m-0 flex list-none flex-wrap gap-2 p-0",
+    className,
+  ]}
+>
+  {
+    normalized.map((tag) => (
+      <li>
+        <a
+          href={`/blog/tags/${tag}`}
+          class="bg-mint text-sound-navy hover:bg-emerald-city-green rounded-full px-3 py-0.5 text-sm font-medium no-underline"
+        >
+          {tag}
+        </a>
+      </li>
+    ))
+  }
+</ul>

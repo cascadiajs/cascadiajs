@@ -1,0 +1,15 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+# Rate limit for the on-demand search route (ADR-0016), per client IP. The
+# rule rewrites to the Astro adapter's SSR function. Confirm on a deploy
+# preview that it returns 429 over the limit and that the page still renders.
+[[redirects]]
+  from = "/blog/search"
+  to = "/.netlify/functions/ssr"
+  status = 200
+  [redirects.rate_limit]
+    window_limit = 20
+    window_size = 60
+    aggregate_by = ["ip", "domain"]

@@ -9,16 +9,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "serve": "BROWSER=none netlify serve --offline --port 4321",
     "check": "astro check",
     "astro": "astro",
     "test": "playwright test",
+    "test:unit": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",
+    "@astrojs/netlify": "^8.2.10",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^7.3.5",
@@ -31,14 +34,17 @@
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.6.4",
+    "@vitest/browser-playwright": "^5.0.5",
     "eslint": "^10.5.0",
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-mdx": "^3.8.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "netlify-cli": "^27.14.0",
     "prettier": "3.8.4",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.0",
-    "typescript-eslint": "^8.61.0"
+    "typescript-eslint": "^8.61.0",
+    "vitest": "^5.0.5"
   }
 }

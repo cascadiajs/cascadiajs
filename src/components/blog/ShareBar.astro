@@ -1,0 +1,72 @@
+---
+import {
+  blueskyShareUrl,
+  linkedinShareUrl,
+  xShareUrl,
+} from "@shared/blog/format";
+import { routePath } from "@shared/route-path";
+import "./share-bar.css";
+
+interface Props {
+  /** The Post title, used in the share text. */
+  title: string;
+}
+
+const { title } = Astro.props;
+const url = new URL(routePath(Astro.url), Astro.site ?? Astro.url.origin).href;
+
+const links = [
+  { label: "Bluesky", icon: "bluesky", href: blueskyShareUrl(title, url) },
+  { label: "LinkedIn", icon: "linkedin-in", href: linkedinShareUrl(url) },
+  { label: "X", icon: "x-twitter", href: xShareUrl(title, url) },
+];
+
+const button =
+  "text-cedar-cream hover:text-madrona-yellow md:hover:text-cedar-cream md:hover:bg-cascade-blue md:bg-sound-navy bg-transparent px-3 py-1 md:p-0 motion-safe:transition-colors flex cursor-pointer flex-col items-center justify-center border-0 no-underline md:size-12 md:rounded-full md:text-xl";
+const barLabel = "text-xs md:sr-only";
+---
+
+<aside class="cjs-share-bar" aria-label="Share this post" data-url={url}>
+  <div
+    class="bg-sound-navy fixed inset-x-0 bottom-0 z-30 flex justify-around py-2 md:sticky md:inset-x-auto md:top-8 md:bottom-auto md:flex-col md:items-center md:gap-3 md:bg-transparent md:py-0"
+  >
+    {
+      links.map((link) => (
+        <a
+          class={`cjs-share-link ${button}`}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class={`fa-brands fa-${link.icon}`} aria-hidden="true" />
+          <span class={barLabel}>{link.label}</span>
+        </a>
+      ))
+    }
+    <button
+      type="button"
+      hidden
+      data-share-copy
+      class={`cjs-share-copy ${button}`}
+    >
+      <i class="fa-solid fa-link" aria-hidden="true" data-share-icon></i>
+      <span class={barLabel} data-share-label>Copy link</span>
+    </button>
+    <button
+      type="button"
+      hidden
+      data-share-native
+      class={`cjs-share-native ${button}`}
+    >
+      <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+      <span class={barLabel}>Share</span>
+    </button>
+  </div>
+  <p class="cjs-share-status sr-only" role="status" aria-live="polite"></p>
+</aside>
+
+<script>
+  import { initShareBars } from "./share-bar";
+
+  initShareBars();
+</script>

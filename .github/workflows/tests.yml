@@ -33,9 +33,13 @@ jobs:
           require-lockfile: true
       - name: Build
         run: pnpm run build
-  playwright:
-    timeout-minutes: 60
+  unit:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
+    # The Playwright image has Chromium and its OS dependencies preinstalled.
+    # Keep the tag equal to the @playwright/test version in pnpm-lock.yaml.
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble
     needs: [checks, build]
     steps:
       - uses: actions/checkout@v6
@@ -44,11 +48,32 @@ jobs:
           runtime: node@lts
           cache: true
           require-lockfile: true
-      - name: Install Playwright Browsers
-        run: pnpm exec playwright install --with-deps
+      - name: Run unit tests
+        run: pnpm run test:unit
+  playwright:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    # The Playwright image has Chromium and its OS dependencies preinstalled.
+    # Keep the tag equal to the @playwright/test version in pnpm-lock.yaml.
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble
+    needs: [checks, build]
+    env:
+      # In the container, netlify-cli's function worker and main thread
+      # resolve `localhost` to different loopback addresses, so every on-demand
+      # route returns 500 (ECONNREFUSED). IPv4 first makes both use 127.0.0.1.
+      # See netlify/cli#7106.
+      NODE_OPTIONS: --dns-result-order=ipv4first
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/setup@v3
+        with:
+          runtime: node@lts
+          cache: true
+          require-lockfile: true
       - name: Run Playwright tests
         run: pnpm exec playwright test
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
           name: playwright-report

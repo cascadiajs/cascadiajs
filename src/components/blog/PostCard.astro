@@ -1,0 +1,119 @@
+---
+import { personImages } from "@shared/person-images";
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import TagChips from "@components/blog/TagChips.astro";
+import {
+  bylineSeparator,
+  formatPostDate,
+  readingMinutes,
+} from "@shared/blog/format";
+import { getPostAuthors } from "@shared/blog/get-posts";
+
+interface Props {
+  /** A visible Post. The one card for the index, Tag, Author and search pages. */
+  post: Pick<CollectionEntry<"blog">, "id" | "body"> & {
+    data: Pick<
+      CollectionEntry<"blog">["data"],
+      "title" | "description" | "pubDate" | "tags" | "image"
+    > & { authors: unknown };
+  };
+  /** The Post's Authors in byline order. Read from the Post when omitted. */
+  authors?: { id: string; name: string; image: string }[];
+  /** Rendered image width in px; search results pass a thumbnail size. */
+  imageWidth?: number;
+  class?: string;
+}
+
+const { post, imageWidth = 600, class: className } = Astro.props;
+const authors =
+  Astro.props.authors ??
+  (await getPostAuthors(post as CollectionEntry<"blog">));
+
+const avatars = await Promise.all(
+  authors.map(async (author) => {
+    const load = personImages[`.${author.image}`];
+    if (!load) {
+      throw new Error(`PostCard: image not found at .${author.image}`);
+    }
+    return (await load()).default;
+  }),
+);
+const href = `/blog/post/${post.id}`;
+
+const escape = (text: string) =>
+  text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const authorLink = (author: { id: string; name: string }) =>
+  `<a href="/blog/authors/${escape(author.id)}" class="text-sound-navy no-underline hover:underline">${escape(author.name)}</a>`;
+// Same words as `cardByline`; each named Author links to their page. "N
+// others" names no single Author, so it stays plain text.
+const namesHtml =
+  authors.length <= 2
+    ? authors
+        .map(
+          (author, i) =>
+            `${bylineSeparator(i, authors.length)}${authorLink(author)}`,
+        )
+        .join("")
+    : `${authorLink(authors[0])} and ${authors.length - 1} others`;
+---
+
+<article
+  class:list={[
+    "cjs-post-card ring-sound-navy/10 flex flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1",
+    className,
+  ]}
+>
+  {
+    post.data.image ? (
+      <Image
+        src={post.data.image}
+        alt=""
+        width={imageWidth}
+        class="aspect-[16/10] w-full object-cover"
+      />
+    ) : (
+      <div
+        class="bg-cascade-blue font-display text-cedar-cream flex aspect-[16/10] items-center justify-center p-6 text-center text-2xl"
+        aria-hidden="true"
+        data-post-placeholder
+      >
+        {post.data.title}
+      </div>
+    )
+  }
+  <div class="flex flex-1 flex-col p-5">
+    <TagChips tags={post.data.tags} />
+    <h3 class="font-display text-sound-navy mt-3 mb-2 text-2xl">
+      <a
+        href={href}
+        class="cjs-post-card-link text-sound-navy no-underline hover:underline"
+        >{post.data.title}</a
+      >
+    </h3>
+    <p class="flex-1 text-base">{post.data.description}</p>
+    <p class="text-sound-navy/70 mt-2 mb-0 text-sm">
+      <time datetime={post.data.pubDate.toISOString()}
+        >{formatPostDate(post.data.pubDate)}</time
+      >
+      {" · "}
+      {readingMinutes(post.body ?? "")} min read
+    </p>
+    <div class="mt-3 flex items-center gap-3 text-sm">
+      <div class="cjs-post-card-avatars flex -space-x-3">
+        {
+          avatars.map((avatar) => (
+            <Image
+              src={avatar}
+              alt=""
+              width={32}
+              height={32}
+              class="size-8 rounded-full object-cover ring-2 ring-white"
+            />
+          ))
+        }
+      </div>
+      <span class="cjs-post-card-names font-medium" set:html={namesHtml} />
+    </div>
+  </div>
+</article>

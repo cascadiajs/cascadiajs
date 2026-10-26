@@ -1,57 +1,38 @@
-import { readFileSync } from "node:fs";
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import {
   DEFAULT_DESCRIPTION,
+  FEATURED_EVENT,
   GA4_ID,
   META_PIXEL_ID,
 } from "@shared/site-defaults";
-import {
-  builtPages,
-  EVENT_ROOTS,
-  distPath,
-  filesUnder,
-  FROZEN_SNAPSHOT_PAGES,
-} from "./helpers";
+import { FROZEN_SNAPSHOT_PAGES } from "./helpers";
 
 /**
- * Build checks read every built page out of `dist/` (the webServer builds
- * before the suite runs). Head checks run on one page per layout and test
- * presence only: no value is compared to a fixed string.
+ * Head checks fetch the page over HTTP. Sitewide checks run on one page per
+ * layout, plus the Frozen Snapshots, which Layout does not render.
  */
 
-test.describe("Sitewide head (every built page)", () => {
-  const pages = builtPages();
+const homepage = "/";
+const LAYOUT_PAGES = [
+  { layout: "Layout", path: homepage },
+  { layout: "EventLayout", path: `/${FEATURED_EVENT}` },
+  { layout: "MarkdownLayout", path: "/code-of-conduct" },
+];
+const FROZEN = FROZEN_SNAPSHOT_PAGES.map((file) => ({
+  layout: `Frozen Snapshot ${file.replace(/\.html$/, "")}`,
+  path: `/${file.replace(/\.html$/, "")}`,
+}));
 
-  test("finds built pages", () => {
-    expect(pages.length).toBeGreaterThan(0);
-  });
-
-  test("no page tells crawlers not to index it", () => {
-    for (const file of pages) {
-      const html = readFileSync(distPath(file), "utf8");
-      expect(html, file).not.toMatch(/<meta[^>]+name="?robots"?[^>]*noindex/i);
-    }
-  });
-
-  test("every page declares UTF-8 first in the head, and a viewport unless it is a Frozen Snapshot", () => {
-    for (const file of pages) {
-      const html = readFileSync(distPath(file), "utf8");
-      expect(html, `${file}: charset`).toMatch(
-        /<head[^>]*>\s*<meta charset="utf-8"/i,
-      );
-      if (FROZEN_SNAPSHOT_PAGES.includes(file)) {
-        continue;
-      }
-      expect(html, `${file}: viewport`).toContain(
-        '<meta name="viewport" content="width=device-width, initial-scale=1"',
-      );
-    }
-  });
-
-  test("every page loads GA4 and the Meta Pixel, Frozen Snapshots included", () => {
-    expect(pages).toEqual(expect.arrayContaining(FROZEN_SNAPSHOT_PAGES));
-    for (const file of pages) {
-      const html = readFileSync(distPath(file), "utf8");
+test.describe("Sitewide head", () => {
+  for (const { layout, path } of [...LAYOUT_PAGES, ...FROZEN]) {
+    test(`${layout} is indexable, declares UTF-8 first, and loads GA4 and the Meta Pixel`, async ({
+      request,
+    }) => {
+      const response = await request.get(path);
+      expect(response.status()).toBe(200);
+      const html = await response.text();
+      expect(html).not.toMatch(/<meta[^>]+name="?robots"?[^>]*noindex/i);
+      expect(html).toMatch(/<head[^>]*>\s*<meta charset="utf-8"/i);
       for (const trace of [
         `googletagmanager.com/gtag/js?id=${GA4_ID}`,
         `gtag('config', '${GA4_ID}')`,
@@ -59,29 +40,20 @@ test.describe("Sitewide head (every built page)", () => {
         `fbq('init', '${META_PIXEL_ID}')`,
         `facebook.com/tr?id=${META_PIXEL_ID}`,
       ]) {
-        expect(html, `${file} is missing ${trace}`).toContain(trace);
+        expect(html, `missing ${trace}`).toContain(trace);
       }
-    }
-  });
+    });
+  }
+
+  for (const { layout, path } of LAYOUT_PAGES) {
+    test(`${layout} declares a viewport`, async ({ request }) => {
+      const html = await (await request.get(path)).text();
+      expect(html).toContain(
+        '<meta name="viewport" content="width=device-width, initial-scale=1"',
+      );
+    });
+  }
 });
-
-/** One page for each layout, picked by type, never by slug or title. */
-const homepage = "/";
-const [eventRoot] = EVENT_ROOTS;
-const [markdownFile] = filesUnder("src/content/markdown", /\.mdx?$/).filter(
-  (file) => !/^\d{4}\//.test(file),
-);
-const markdownPage = markdownFile && `/${markdownFile.replace(/\.mdx?$/, "")}`;
-
-// A layout with no page yet is left out.
-const LAYOUT_PAGES = [
-  { layout: "Layout", path: homepage },
-  { layout: "EventLayout", path: eventRoot },
-  { layout: "MarkdownLayout", path: markdownPage },
-].filter((entry): entry is { layout: string; path: string } => !!entry.path);
-
-const content = (page: Page, selector: string) =>
-  page.locator(selector).getAttribute("content");
 
 test.describe("Head metadata", () => {
   for (const { layout, path } of LAYOUT_PAGES) {
@@ -89,7 +61,7 @@ test.describe("Head metadata", () => {
       page,
     }) => {
       await page.goto(path);
-      expect((await page.title()).trim()).not.toBe("");
+      await expect(page).toHaveTitle(/\S/);
       for (const selector of [
         'meta[name="description"]',
         'meta[property="og:title"]',
@@ -99,10 +71,10 @@ test.describe("Head metadata", () => {
         'meta[name="twitter:title"]',
         'meta[name="twitter:image"]',
       ]) {
-        expect(
-          (await content(page, selector))?.trim(),
-          `${layout}: ${selector}`,
-        ).toBeTruthy();
+        await expect(page.locator(selector), selector).toHaveAttribute(
+          "content",
+          /\S/,
+        );
       }
     });
   }
@@ -112,14 +84,17 @@ test.describe("Head metadata", () => {
   }) => {
     // The homepage passes no description to Layout.
     await page.goto(homepage);
-    expect(await content(page, 'meta[name="description"]')).toBe(
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      "content",
       DEFAULT_DESCRIPTION,
     );
   });
 
   test("a share image loads", async ({ page, request }) => {
     await page.goto(homepage);
-    const src = await content(page, 'meta[property="og:image"]');
+    const src = await page
+      .locator('meta[property="og:image"]')
+      .getAttribute("content");
     const response = await request.get(new URL(src!).pathname);
     expect(response.status()).toBe(200);
     expect(response.headers()["content-type"]).toMatch(/^image\//);

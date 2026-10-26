@@ -1,0 +1,13 @@
+---
+/**
+ * Reading progress bar for a Post. CSS only: the fill is driven by the page's
+ * scroll timeline. It sits under the site header, scrolls with the page, then
+ * pins to the top. Place it as the first child of a tall element.
+ * Browsers without scroll timelines show no bar. No bar under reduced motion.
+ */
+import "./progress-bar.css";
+---
+
+<div class="cjs-progress-bar" aria-hidden="true">
+  <div class="cjs-progress-bar-fill"></div>
+</div>

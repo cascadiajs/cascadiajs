@@ -1,0 +1,39 @@
+/* Reading progress bar. CSS only: the page's scroll timeline drives the fill.
+   Browsers without scroll timelines show no bar. */
+.cjs-progress-bar {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .cjs-progress-bar {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    height: 0.5rem;
+    background-color: color-mix(in srgb, var(--color-sound-navy) 10%, white);
+  }
+
+  .cjs-progress-bar-fill {
+    height: 100%;
+    background-color: var(--color-madrona-yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation-name: cjs-progress-grow;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root block);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cjs-progress-bar {
+      display: none;
+    }
+  }
+}
+
+@keyframes cjs-progress-grow {
+  to {
+    transform: scaleX(1);
+  }
+}

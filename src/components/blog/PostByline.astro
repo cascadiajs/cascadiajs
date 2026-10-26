@@ -1,0 +1,87 @@
+---
+import { personImages } from "@shared/person-images";
+import { Image } from "astro:assets";
+import { bylineSeparator } from "@shared/blog/format";
+
+interface Props {
+  /** In byline order. */
+  authors: { id: string; name: string; image: string }[];
+  /** With `pubDate`, the dates line renders under the Author names. */
+  pubDate?: Date;
+  updatedDate?: Date;
+  /** Reading time in minutes, shown on the dates line. */
+  minutes?: number;
+  class?: string;
+}
+
+const {
+  authors,
+  pubDate,
+  updatedDate,
+  minutes,
+  class: className,
+} = Astro.props;
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", { dateStyle: "long", timeZone: "UTC" });
+
+const avatars = await Promise.all(
+  authors.map(async (author) => {
+    const load = personImages[`.${author.image}`];
+    if (!load) {
+      throw new Error(`PostByline: image not found at .${author.image}`);
+    }
+    return (await load()).default;
+  }),
+);
+
+const escape = (text: string) =>
+  text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+// One string, so no whitespace appears between a name and its separator.
+const namesHtml = authors
+  .map(
+    (author, index) =>
+      `${bylineSeparator(index, authors.length)}<a href="/blog/authors/${escape(author.id)}" class="text-cedar-cream underline-offset-2 hover:underline">${escape(author.name)}</a>`,
+  )
+  .join("");
+---
+
+<div class:list={["cjs-post-byline flex items-center gap-4", className]}>
+  <div class="flex -space-x-3">
+    {
+      authors.map((author, index) => (
+        <Image
+          src={avatars[index]}
+          alt=""
+          width={64}
+          height={64}
+          class="ring-madrona-yellow size-16 rounded-full object-cover ring-4"
+        />
+      ))
+    }
+  </div>
+  <p class="text-cedar-cream m-0 text-xl font-medium" set:html={namesHtml} />
+</div>
+{
+  pubDate && (
+    <p class="text-cedar-cream/70 mt-4 mb-0 text-sm">
+      <time datetime={pubDate.toISOString()} class="cjs-post-date">
+        {formatDate(pubDate)}
+      </time>
+      {updatedDate && (
+        <>
+          {" · Updated "}
+          <time datetime={updatedDate.toISOString()} class="cjs-post-updated">
+            {formatDate(updatedDate)}
+          </time>
+        </>
+      )}
+      {minutes !== undefined && (
+        <>
+          {" · "}
+          <span class="cjs-post-reading-time">{minutes} min read</span>
+        </>
+      )}
+    </p>
+  )
+}

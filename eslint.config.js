@@ -42,6 +42,12 @@ export default defineConfig(
     },
   },
   {
-    ignores: ["dist/**", ".astro/**", ".agents/**", ".claude/**"],
+    ignores: [
+      "dist/**",
+      ".astro/**",
+      ".netlify/**",
+      ".agents/**",
+      ".claude/**",
+    ],
   },
 );

@@ -10,7 +10,13 @@ interface Testimonial {
   body: string;
 }
 
-const testimonials = testimonialsData as Testimonial[];
+interface Props {
+  /** Defaults to the shared testimonials data. */
+  testimonials?: Testimonial[];
+}
+
+const testimonials =
+  Astro.props.testimonials ?? (testimonialsData as Testimonial[]);
 ---
 
 <section id="testimonials" class="cjs-testimonials">

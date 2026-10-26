@@ -3,6 +3,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import type { EventYear, Sponsor } from "@shared/data/types";
+import { selectSponsors, tierBands } from "@shared/sponsors";
 
 interface BaseProps {
   /**
@@ -13,6 +14,8 @@ interface BaseProps {
    * Sponsors such as Cloudflare, Arcjet and Elastic.
    */
   exclude?: Sponsor["events"][number] | Sponsor["events"][number][];
+  /** Sponsors to show; defaults to the `sponsors` collection. */
+  sponsors?: Sponsor[];
 }
 
 /**
@@ -25,41 +28,14 @@ type Props =
   | (BaseProps & { tiered: true; year: EventYear })
   | (BaseProps & { tiered?: false; year?: EventYear });
 
-const { year, exclude, tiered = false } = Astro.props;
+const { year, exclude, tiered = false, sponsors: given } = Astro.props;
 
-const sponsorsData = await getCollection("sponsors");
-const sponsors = sponsorsData.map((s) => s.data);
-
-const excluded =
-  exclude === undefined ? [] : Array.isArray(exclude) ? exclude : [exclude];
-
-const selected = sponsors.filter((sponsor) => {
-  if (year && !sponsor.events.includes(year)) {
-    return false;
-  }
-  if (
-    excluded.length > 0 &&
-    sponsor.events.every((e) => excluded.includes(e))
-  ) {
-    return false;
-  }
-  return true;
-});
-
-// Fixed tier order (diamond -> media); only the top four tiers link out.
-const TIER_ORDER = [
-  "diamond",
-  "platinum",
-  "gold",
-  "silver",
-  "bronze",
-  "community",
-  "media",
-] as const;
-const LINKED_TIERS = new Set(["diamond", "platinum", "gold", "silver"]);
+const sponsors =
+  given ?? (await getCollection("sponsors")).map((entry) => entry.data);
+const selected = selectSponsors(sponsors, { year, exclude });
 
 // md-breakpoint logo heights, one per tier, in TIER_ORDER order.
-const TIER_HEIGHT: Record<(typeof TIER_ORDER)[number], string> = {
+const TIER_HEIGHT: Record<NonNullable<Sponsor["tier"]>, string> = {
   diamond: "md:h-[200px]",
   platinum: "md:h-[142px]",
   gold: "md:h-[110px]",
@@ -73,12 +49,7 @@ const flatSponsors = tiered
   ? []
   : [...selected].sort((a, b) => a.name.localeCompare(b.name));
 
-const tierBands = tiered
-  ? TIER_ORDER.map((tier) => ({
-      tier,
-      sponsors: selected.filter((sponsor) => sponsor.tier === tier),
-    })).filter((band) => band.sponsors.length > 0)
-  : [];
+const bands = tiered ? tierBands(selected) : [];
 
 const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
   "@assets/images/sponsors/*.{jpg,png,svg,jpeg}",
@@ -89,7 +60,7 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
 {
   tiered ? (
     <div class="cjs-sponsors-grid">
-      {tierBands.map(({ tier, sponsors: tierSponsors }) => (
+      {bands.map(({ tier, linked, sponsors: tierSponsors }) => (
         <>
           <div class="relative my-5 text-center">
             <div class="border-sound-navy/20 absolute top-1/2 left-0 w-full border-t" />
@@ -113,7 +84,7 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
                 <div
                   class={`cjs-sponsor-tier-${tier} text-center md:m-8 ${TIER_HEIGHT[tier]}`}
                 >
-                  {LINKED_TIERS.has(tier) ? (
+                  {linked ? (
                     sponsor.description ? (
                       <a href={`/${year}/sponsors/${sponsor.id}`}>{logo}</a>
                     ) : (

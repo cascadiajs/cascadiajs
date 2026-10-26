@@ -6,7 +6,9 @@ import { FROZEN_SNAPSHOT_PAGES } from "./helpers";
  * link and each asset (images, scripts, stylesheets) on each reachable page
  * must return 200. Share images are not crawled: a visitor does not see
  * them, and head.spec.ts checks that one loads. Frozen Snapshot pages are
- * checked for 200 but not crawled into; they have their own checks.
+ * checked for 200 but not crawled into; they have their own checks. The crawl
+ * also fails on an internal link with a trailing slash and on a link,
+ * canonical or og:url that exposes `.html`.
  */
 
 const ORIGIN = "https://cascadiajs.com";
@@ -32,6 +34,11 @@ function internalPath(ref: string): string | null {
   if (!url.startsWith("/")) {
     return null;
   }
+  // The Netlify Image CDN names its source image and size in the query, so
+  // the query is part of the asset's identity there.
+  if (url.startsWith("/.netlify/images?")) {
+    return url.split("#")[0];
+  }
   return url.split(/[#?]/)[0] || "/";
 }
 
@@ -47,6 +54,8 @@ test("every internal link and asset reachable from / returns 200", async ({
   const queue = ["/"];
   const seenPages = new Set(queue);
   const broken: string[] = [];
+  const slashed: string[] = [];
+  const htmlLeaks: string[] = [];
   const checked = new Map<string, number>();
 
   const status = async (path: string) => {
@@ -70,6 +79,22 @@ test("every internal link and asset reachable from / returns 200", async ({
       continue;
     }
     const html = await res.text();
+
+    for (const [, href] of html.matchAll(/\shref="(\/[^"]*)"/g)) {
+      const hrefPath = href.split(/[?#]/)[0];
+      if (hrefPath !== "/" && hrefPath.endsWith("/")) {
+        slashed.push(`${path}: ${href}`);
+      }
+    }
+    for (const url of [
+      ...html.matchAll(/<link rel="canonical" href="([^"]*)"/g),
+      ...html.matchAll(/<meta property="og:url" content="([^"]*)"/g),
+      ...html.matchAll(/\shref="(\/[^"]*)"/g),
+    ].map((m) => m[1])) {
+      if (/\.html([?#]|$)/.test(url)) {
+        htmlLeaks.push(`${path}: ${url}`);
+      }
+    }
 
     for (const href of attrs(html, "a", "href")) {
       const target = internalPath(href);
@@ -104,5 +129,8 @@ test("every internal link and asset reachable from / returns 200", async ({
     }
   }
   expect(broken).toEqual([]);
+  // URLs never end in a slash (except `/`) and never expose `.html`.
+  expect(slashed).toEqual([]);
+  expect(htmlLeaks).toEqual([]);
   expect(seenPages.size).toBeGreaterThan(1);
 });
