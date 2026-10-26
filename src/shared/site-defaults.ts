@@ -20,3 +20,11 @@ export const FEATURED_EVENT = "2027" as const;
  */
 export const GA4_ID = "G-XBTPEH9RZW";
 export const META_PIXEL_ID = "1431763387943877";
+
+/**
+ * PostHog project API key (starts with `phc_`; public by design) and the US
+ * Cloud ingestion host. Loaded on every page like the IDs above (ADR-0014).
+ * The key is under PostHog → Project settings. Empty keeps PostHog off.
+ */
+export const POSTHOG_KEY = "phc_sdbLxJtTjYECEQwzZGpSiN76bmVVpzWQfsf6k9p3Vq7i";
+export const POSTHOG_HOST = "https://us.i.posthog.com";

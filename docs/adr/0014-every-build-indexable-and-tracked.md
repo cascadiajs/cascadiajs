@@ -1,12 +1,12 @@
 # Every Build Is Indexable and Tracked
 
-Every build, whatever its address, is indexable by search engines and loads analytics (GA4 and Meta Pixel). There is no live/non-live distinction in the code: robots.txt always allows crawling and lists the sitemap, no page carries a `noindex` meta tag, and `Layout` always emits both analytics snippets. Traffic from anywhere other than cascadiajs.com is filtered out vendor-side, not at build time.
+Every build, whatever its address, is indexable by search engines and loads analytics (GA4, Meta Pixel and PostHog). There is no live/non-live distinction in the code: robots.txt always allows crawling and lists the sitemap, no page carries a `noindex` meta tag, and `Layout` always emits every analytics snippet. Traffic from anywhere other than cascadiajs.com is filtered out vendor-side, not at build time.
 
-**Vendor-side filtering.** GA4 drops non-production hits with a "Web hostname traffic" data filter ([GA4 data filters](https://support.google.com/analytics/answer/10108813)). Meta Pixel does the same with a Traffic permissions allowlist of domains ([Meta Pixel traffic permissions](https://www.facebook.com/business/help/278125336598935)). Both are configured in the vendor dashboards, not in this repo.
+**Vendor-side filtering.** GA4 drops non-production hits with a "Web hostname traffic" data filter ([GA4 data filters](https://support.google.com/analytics/answer/10108813)). Meta Pixel does the same with a Traffic permissions allowlist of domains ([Meta Pixel traffic permissions](https://www.facebook.com/business/help/278125336598935)). PostHog does the same with its internal and test account filters, set to drop events whose `$host` is not cascadiajs.com. All three are configured in the vendor dashboards, not in this repo.
 
 **Duplicate indexing is acceptable.** Until cutover the same content can be reachable on netlify.app and cascadiajs.com. Google does not treat duplicate content as a spam violation and chooses a canonical URL itself ([canonicalization](https://developers.google.com/search/docs/crawling-indexing/canonicalization)). Netlify adds `X-Robots-Tag` only to Deploy Previews and older branch deploys, not to production ([deploy overview](https://docs.netlify.com/deploy/deploy-overview/)), so previews stay out of the index without any help from the code.
 
-**Frozen Snapshots.** The 2024 and 2025 Event pages are raw captured pages ([ADR-0008](0008-past-event-pages-are-frozen-snapshots.md)). Their GA4 and Meta Pixel snippets are uncommented in source, which restores the analytics the legacy page was captured with. Analytics on these pages is part of the capture, not an addition, so ADR-0008 still holds.
+**Frozen Snapshots.** The 2024 and 2025 Event pages are raw captured pages ([ADR-0008](0008-past-event-pages-are-frozen-snapshots.md)). Their GA4 and Meta Pixel snippets are uncommented in source, which restores the analytics the legacy page was captured with. Analytics on these pages is part of the capture, not an addition, so ADR-0008 still holds. PostHog came after the capture and lives only in `Layout`, so the Frozen Snapshots do not load it.
 
 ## Consequences
 
