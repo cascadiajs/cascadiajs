@@ -57,6 +57,9 @@ export default defineConfig({
     command: `pnpm exec netlify serve --offline --port ${port} --staticServerPort ${staticPort}`,
     port,
     env: { BROWSER: "none" },
+    // `netlify serve` logs function errors to stdout. Show them in CI, where
+    // they are the only record of why an on-demand route failed.
+    stdout: process.env.CI ? "pipe" : "ignore",
     timeout: 240_000,
     // Always build and serve fresh, on a port nothing else uses.
     reuseExistingServer: false,
