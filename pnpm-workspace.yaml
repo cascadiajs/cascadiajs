@@ -7,3 +7,5 @@ allowBuilds:
   # Optional install steps for the Netlify CLI (test server only); not needed.
   netlify-cli: false
   unix-dgram: false
+  # posthog-js dependency; its postinstall only prints a funding banner.
+  core-js: false
