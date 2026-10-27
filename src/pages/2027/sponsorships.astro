@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Callout from "@components/Callout.astro";
 import CtaButton from "@components/CtaButton.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
 import Table from "@components/table/Table.astro";
@@ -238,6 +239,10 @@ const salePrice = (amount: number) => usd(Math.round(amount * (1 - DISCOUNT)));
         Choose a base package, then add a talk or workshop and branded
         experiences to meet your goals.
       </p>
+      <Callout variant="warning">
+        <i slot="icon" class="fa-solid fa-tag pt-1"></i>
+        <strong>Super Early Bird Discount</strong> - 30% off until Dec 31, 2026
+      </Callout>
     </article>
   </section>
 
