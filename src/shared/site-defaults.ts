@@ -22,9 +22,15 @@ export const GA4_ID = "G-XBTPEH9RZW";
 export const META_PIXEL_ID = "1431763387943877";
 
 /**
- * PostHog project API key (starts with `phc_`; public by design) and the US
- * Cloud ingestion host. Loaded on every page like the IDs above (ADR-0014).
- * The key is under PostHog → Project settings. Empty keeps PostHog off.
+ * PostHog project API key (starts with `phc_`; public by design). Loaded on
+ * every page like the IDs above (ADR-0014). The key is under PostHog →
+ * Project settings. Empty keeps PostHog off.
  */
 export const POSTHOG_KEY = "phc_sdbLxJtTjYECEQwzZGpSiN76bmVVpzWQfsf6k9p3Vq7i";
-export const POSTHOG_HOST = "https://us.i.posthog.com";
+/**
+ * Events go through our Cloudflare reverse proxy so ad blockers don't drop
+ * them; the proxy forwards to PostHog US Cloud. POSTHOG_UI_HOST keeps the
+ * SDK's links into the PostHog app (toolbar, etc.) pointing at PostHog.
+ */
+export const POSTHOG_HOST = "https://g.cascadiajs.com";
+export const POSTHOG_UI_HOST = "https://us.posthog.com";

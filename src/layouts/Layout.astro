@@ -88,13 +88,18 @@ if (import.meta.env.NETLIFY) {
     <script is:inline set:html={GTAG_CONFIG} />
     <script is:inline set:html={META_PIXEL} />
     <script>
-      import { POSTHOG_HOST, POSTHOG_KEY } from "@shared/site-defaults";
+      import {
+        POSTHOG_HOST,
+        POSTHOG_KEY,
+        POSTHOG_UI_HOST,
+      } from "@shared/site-defaults";
 
       // Imported lazily, so the SDK is fetched only once a key is set.
       if (POSTHOG_KEY) {
         void import("posthog-js").then(({ posthog }) => {
           posthog.init(POSTHOG_KEY, {
             api_host: POSTHOG_HOST,
+            ui_host: POSTHOG_UI_HOST,
             defaults: "2026-08-30",
           });
         });
