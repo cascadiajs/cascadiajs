@@ -32,6 +32,8 @@ const markdown = defineCollection({
     ogImage: z.string().optional(),
     showSponsors: z.boolean().default(true),
     showTestimonials: z.boolean().default(true),
+    /** Show the site-wide alert banner above the header. */
+    displayAlert: z.boolean().default(true),
     published: z.boolean().default(true),
   }),
 });

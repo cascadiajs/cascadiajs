@@ -216,6 +216,7 @@ The `markdown` collection schema in `src/content.config.ts` checks each file's f
 | `ogImage`          |            | Share image path under `public/`                                   |
 | `showSponsors`     | `true`     | Append the sponsors section                                        |
 | `showTestimonials` | `true`     | Append testimonials                                                |
+| `displayAlert`     | `true`     | `false` hides the yellow alert banner above the header             |
 | `published`        | `true`     | `false` leaves the page out of the build                           |
 
 Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`.
