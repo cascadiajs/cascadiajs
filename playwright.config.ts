@@ -38,6 +38,8 @@ export default defineConfig({
               "connect.facebook.net",
               "facebook.com",
               "posthog.com",
+              // PostHog's reverse proxy (Cloudflare).
+              "g.cascadiajs.com",
             ]
               .flatMap((host) => [host, `*.${host}`])
               .map((host) => `MAP ${host} ~NOTFOUND`)
