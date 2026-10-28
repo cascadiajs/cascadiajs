@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Callout from "@components/Callout.astro";
 import CtaButton from "@components/CtaButton.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
 import Table from "@components/table/Table.astro";
@@ -13,13 +14,93 @@ import TableLabelCell from "@components/table/TableLabelCell.astro";
 import TableCell from "@components/table/TableCell.astro";
 import Testimonials from "@components/Testimonials.astro";
 import { Image } from "astro:assets";
-import logoImage from "@assets/events/2026/images/icon-dark-blue.png";
+import logoImage from "@assets/events/2027/images/cjs-icon-blue.svg";
 import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
 
 // The sponsorship brochure is a standalone page meant to be shared with
 // prospective sponsors: it draws its own header band (dates, URL, location)
 // and logo below. So it uses the base Layout with the site nav and alert
 // hidden, not EventLayout, whose Event nav would duplicate that header.
+
+// Base package prices, Diamond → Community. A discounted price shows struck
+// through with the 30%-off price beneath; Community isn't discounted.
+const packagePrices = [
+  { price: 43000, discounted: true },
+  { price: 32000, discounted: true },
+  { price: 21500, discounted: true },
+  { price: 8600, discounted: true },
+  { price: 5400, discounted: true },
+  { price: 2700, discounted: false },
+];
+// Additional Sponsorship Opportunities, in table order. Scholarships isn't
+// discounted.
+const extraOpportunities = [
+  {
+    name: "Karaoke After-party",
+    price: 10000,
+    discounted: true,
+    included:
+      "Premier sponsorship with prominent branding at the conference after-party on June 8.",
+  },
+  {
+    name: "Networking Mixer",
+    price: 8000,
+    discounted: true,
+    included: "Branding at a dedicated networking experience on June 7.",
+  },
+  {
+    name: "Welcome Reception",
+    price: 7500,
+    discounted: true,
+    included: "Branding at the opening social event on June 6.",
+  },
+  {
+    name: "Lanyards",
+    price: 5000,
+    discounted: true,
+    included: "Logo on attendee lanyards.",
+  },
+  {
+    name: "ASL Interpretation",
+    price: 5000,
+    discounted: true,
+    included: "Recognition as a supporter of conference accessibility.",
+  },
+  {
+    name: "Coffee",
+    price: 4000,
+    discounted: true,
+    included: "Branding at conference coffee stations.",
+  },
+  {
+    name: "Conference Videos",
+    price: 4000,
+    discounted: true,
+    included: "Brand placement associated with conference recordings.",
+  },
+  {
+    name: "Tote Bags",
+    price: 4000,
+    discounted: true,
+    included: "Logo on attendee tote bags.",
+  },
+  {
+    name: "Photo Booth",
+    price: 2500,
+    discounted: true,
+    included: "Branded photo experience for attendees.",
+  },
+  {
+    name: "Scholarships",
+    price: 2500,
+    discounted: false,
+    included: "Recognition as a supporter of attendee scholarships.",
+  },
+];
+
+const DISCOUNT = 0.3;
+const usd = (amount: number) => `$${amount.toLocaleString("en-US")}`;
+const salePrice = (amount: number) => usd(Math.round(amount * (1 - DISCOUNT)));
 ---
 
 <Layout displayNav={false} displayAlert={false}>
@@ -36,7 +117,7 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
       <Image
         src={logoImage}
         alt="CascadiaJS logo"
-        class="mx-auto h-25 w-auto"
+        class="mx-auto h-[75px] w-auto"
       />
     </div>
     <h1 class="text-40 text-center">CascadiaJS 2027 Sponsorship Brochure</h1>
@@ -158,6 +239,10 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
         Choose a base package, then add a talk or workshop and branded
         experiences to meet your goals.
       </p>
+      <Callout variant="warning">
+        <i slot="icon" class="fa-solid fa-tag pt-1"></i>
+        <strong>Super Early Bird Discount</strong> - 30% off until Dec 31, 2026
+      </Callout>
     </article>
   </section>
 
@@ -369,12 +454,21 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
           <TableLabelCell>
             <b>Price</b>
           </TableLabelCell>
-          <TableCell>$43,000</TableCell>
-          <TableCell>$32,000</TableCell>
-          <TableCell>$21,500</TableCell>
-          <TableCell>$8,600</TableCell>
-          <TableCell>$5,400</TableCell>
-          <TableCell>$2,700</TableCell>
+          {
+            packagePrices.map(({ price, discounted }) => (
+              <TableCell>
+                {discounted ? (
+                  <>
+                    <s>{usd(price)}</s>
+                    <br />
+                    {salePrice(price)}
+                  </>
+                ) : (
+                  usd(price)
+                )}
+              </TableCell>
+            ))
+          }
         </TableRow>
       </TableBody>
     </Table>
@@ -410,7 +504,11 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
               <TableLabelCell>
                 <b>Workshop hosting</b>
               </TableLabelCell>
-              <TableCell>$7,500</TableCell>
+              <TableCell>
+                <s>{usd(7500)}</s>
+                <br />
+                {salePrice(7500)}
+              </TableCell>
               <TableCell>Yes</TableCell>
               <TableCell>Yes</TableCell>
               <TableCell>Yes</TableCell>
@@ -419,7 +517,11 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
               <TableLabelCell>
                 <b>Main Stage Lightning Talk (10 min)</b>
               </TableLabelCell>
-              <TableCell>$3,000</TableCell>
+              <TableCell>
+                <s>{usd(3000)}</s>
+                <br />
+                {salePrice(3000)}
+              </TableCell>
               <TableCell>Yes</TableCell>
               <TableCell>Yes</TableCell>
               <TableCell>Yes</TableCell>
@@ -478,69 +580,29 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
             </TableHeadRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableLabelCell><b>Karaoke After-party</b></TableLabelCell>
-              <TableCell>$10,000</TableCell>
-              <TableCell
-                >Premier sponsorship with prominent branding at the conference
-                after-party on June 8.</TableCell
-              >
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Welcome Reception</b></TableLabelCell>
-              <TableCell>$7,500</TableCell>
-              <TableCell
-                >Branding at the opening social event on June 6.</TableCell
-              >
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Networking Mixer</b></TableLabelCell>
-              <TableCell>$5,000</TableCell>
-              <TableCell
-                >Branding at a dedicated networking experience on June 7.</TableCell
-              >
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Lanyards</b></TableLabelCell>
-              <TableCell>$5,000</TableCell>
-              <TableCell>Logo on attendee lanyards.</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Coffee</b></TableLabelCell>
-              <TableCell>$4,000</TableCell>
-              <TableCell>Branding at conference coffee stations.</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Conference Videos</b></TableLabelCell>
-              <TableCell>$4,000</TableCell>
-              <TableCell
-                >Brand placement associated with conference recordings.</TableCell
-              >
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Tote Bags</b></TableLabelCell>
-              <TableCell>$4,000</TableCell>
-              <TableCell>Logo on attendee tote bags.</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>ASL Interpretation</b></TableLabelCell>
-              <TableCell>$4,000</TableCell>
-              <TableCell
-                >Recognition as a supporter of conference accessibility.</TableCell
-              >
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Photo Booth</b></TableLabelCell>
-              <TableCell>$2,500</TableCell>
-              <TableCell>Branded photo experience for attendees.</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableLabelCell><b>Scholarships</b></TableLabelCell>
-              <TableCell>$2,500</TableCell>
-              <TableCell
-                >Recognition as a supporter of attendee scholarships.</TableCell
-              >
-            </TableRow>
+            {
+              extraOpportunities.map(
+                ({ name, price, discounted, included }) => (
+                  <TableRow>
+                    <TableLabelCell>
+                      <b>{name}</b>
+                    </TableLabelCell>
+                    <TableCell>
+                      {discounted ? (
+                        <>
+                          <s>{usd(price)}</s>
+                          <br />
+                          {salePrice(price)}
+                        </>
+                      ) : (
+                        usd(price)
+                      )}
+                    </TableCell>
+                    <TableCell>{included}</TableCell>
+                  </TableRow>
+                ),
+              )
+            }
           </TableBody>
         </Table>
       </div>
@@ -570,4 +632,15 @@ import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
   <Testimonials />
 
   <SponsorsGrid exclude="2026" />
+
+  <style is:global>
+    /* "Learn more" (#event-at-a-glance) glides to its section. Global because
+       it has to reach <html>; Astro only ships this page's styles with this
+       page. */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+  </style>
 </Layout>

@@ -14,6 +14,7 @@ interface Props {
   showSponsors?: boolean;
   showTestimonials?: boolean;
   ogImage?: string;
+  displayAlert?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   showSponsors = true,
   showTestimonials = true,
   ogImage,
+  displayAlert = true,
 } = Astro.props;
 const metaTitle = title ? `CascadiaJS | ${title}` : DEFAULT_TITLE;
 ---
@@ -31,6 +33,7 @@ const metaTitle = title ? `CascadiaJS | ${title}` : DEFAULT_TITLE;
   title={metaTitle}
   description={description ?? metaTitle}
   ogImage={ogImage}
+  displayAlert={displayAlert}
 >
   <SimplePage title={title} width={width}>
     <MarkdownContent>

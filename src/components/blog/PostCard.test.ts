@@ -69,6 +69,24 @@ test("shows the image, and no placeholder, when the Post has one", async () => {
   expect(html).not.toContain("data-post-placeholder");
 });
 
+test("gives the image its alt text when the Post has one", async () => {
+  const html = await render([ada], {
+    image: { src: "/cover.jpg", width: 1200, height: 750, format: "jpg" },
+    imageAlt: "A sunset over Puget Sound",
+  });
+  expect(html).toMatch(
+    /<img[^>]*cover\.jpg[^>]*alt="A sunset over Puget Sound"/,
+  );
+});
+
+test("leaves the image decorative when the Post has no alt text", async () => {
+  const html = await render([ada], {
+    image: { src: "/cover.jpg", width: 1200, height: 750, format: "jpg" },
+  });
+  // Astro renders an empty alt as a bare `alt` attribute.
+  expect(html).toMatch(/<img[^>]*cover\.jpg[^>]*\salt[\s>]/);
+});
+
 test("shows the title in a placeholder when the Post has no image", async () => {
   const html = await render([ada]);
   expect(html).toMatch(/data-post-placeholder[^>]*>\s*Hello World\s*</);

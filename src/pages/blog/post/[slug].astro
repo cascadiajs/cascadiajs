@@ -77,7 +77,7 @@ if (post.data.ogImage) {
         <div class="mx-auto box-content max-w-[1200px] px-4 pt-8">
           <Image
             src={post.data.image}
-            alt=""
+            alt={post.data.imageAlt ?? ""}
             width={1200}
             class="aspect-[2/1] w-full rounded-lg object-cover shadow-xl"
           />

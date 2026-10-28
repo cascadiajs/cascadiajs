@@ -6,6 +6,17 @@ import EventLayout from "@layouts/EventLayout.astro";
   <div id="form">
     <h1>Provide Email to Unlock Blind Bird Tickets</h1>
     <p>Blind Bird tickets are almost sold out!</p>
+    <script is:inline>
+      // Kit stores `cksubscribed-<form uid>` once someone submits this form;
+      // anyone who already has skips straight to the ticket page.
+      try {
+        if (localStorage.getItem("cksubscribed-44b5c8e9d5")) {
+          location.replace("/2027/buy-tickets");
+        }
+      } catch {
+        // Storage blocked: just show the form.
+      }
+    </script>
     <script
       async
       data-uid="44b5c8e9d5"

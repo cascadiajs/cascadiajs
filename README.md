@@ -216,6 +216,7 @@ The `markdown` collection schema in `src/content.config.ts` checks each file's f
 | `ogImage`          |            | Share image path under `public/`                                   |
 | `showSponsors`     | `true`     | Append the sponsors section                                        |
 | `showTestimonials` | `true`     | Append testimonials                                                |
+| `displayAlert`     | `true`     | `false` hides the yellow alert banner above the header             |
 | `published`        | `true`     | `false` leaves the page out of the build                           |
 
 Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`.
@@ -242,6 +243,7 @@ A Post is a folder with one `index.md` or `index.mdx` file. Put the Post's image
 | `tags`        | list of text       | Required. The list can be empty.                                     |
 | `featured`    | true or false      | Optional. Default `false`.                                           |
 | `image`       | image path         | Optional. The large image at the top of the Post, e.g. `./hero.jpg`. |
+| `imageAlt`    | text               | Optional. Alt text for `image`. Without it, the image is decorative. |
 | `ogImage`     | image path         | Optional. The image for social media shares.                         |
 | `published`   | true or false      | Optional. Default `true`. A `false` Post shows only in `pnpm dev`.   |
 

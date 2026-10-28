@@ -30,7 +30,7 @@ const { author, posts } = Astro.props;
 >
   <RssLink slot="head" />
   <AuthorHeader author={author} />
-  <div class="mx-auto box-content max-w-[1200px] px-4 py-12">
+  <div class="mx-auto box-content max-w-300 px-4 py-12">
     {
       posts.length === 0 ? (
         <BlogEmpty message={`${author.name} has not published a Post yet.`} />
