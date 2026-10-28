@@ -15,7 +15,7 @@ interface Props {
   post: Pick<CollectionEntry<"blog">, "id" | "body"> & {
     data: Pick<
       CollectionEntry<"blog">["data"],
-      "title" | "description" | "pubDate" | "tags" | "image"
+      "title" | "description" | "pubDate" | "tags" | "image" | "imageAlt"
     > & { authors: unknown };
   };
   /** The Post's Authors in byline order. Read from the Post when omitted. */
@@ -68,7 +68,7 @@ const namesHtml =
     post.data.image ? (
       <Image
         src={post.data.image}
-        alt=""
+        alt={post.data.imageAlt ?? ""}
         width={imageWidth}
         class="aspect-[16/10] w-full object-cover"
       />
