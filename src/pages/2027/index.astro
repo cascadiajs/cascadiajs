@@ -10,7 +10,7 @@ import PeopleGrid from "@components/PeopleGrid.astro";
 import PersonCard from "@components/PersonCard.astro";
 import TicketCard from "@components/TicketCard.astro";
 import { Image } from "astro:assets";
-//import { getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import { getOrganizers, getTickets } from "@shared/data/events";
 //import type { Talk } from "@shared/data/types";
 import lockupImage from "@assets/events/2027/images/cjs-lockup-white.svg";
@@ -20,6 +20,33 @@ import lockupImage from "@assets/events/2027/images/cjs-lockup-white.svg";
 //  .map((entry) => entry.data);
 const organizers = getOrganizers("2027");
 const tickets = getTickets("2027");
+
+// No 2027 Sponsors yet, so show the 20 past Sponsors people in tech know best.
+const PAST_SPONSOR_IDS = [
+  "aws",
+  "google",
+  "github",
+  "cloudflare",
+  "uber",
+  "salesforce-devs",
+  "tmobile",
+  "atlassian",
+  "twilio",
+  "datadog",
+  "netlify",
+  "sentry",
+  "postman",
+  "auth0",
+  "new-relic",
+  "elastic",
+  "bluesky",
+  "circleci",
+  "langchain",
+  "retool",
+];
+const pastSponsors = (await getCollection("sponsors"))
+  .map((entry) => entry.data)
+  .filter((sponsor) => PAST_SPONSOR_IDS.includes(sponsor.id));
 
 //const keynotes = talks.filter((t) => t.type === "keynote");
 //const speakerTalks = talks.filter((t) =>
@@ -170,8 +197,8 @@ const paragraphClass =
   </section>
 
   <section id="sponsors" class="box-content p-8 text-center">
-    <h1 class="mt-0 mb-8 text-5xl">Our Sponsors</h1>
-    <SponsorsGrid year="2027" tiered={true} />
+    <h1 class="mt-0 mb-8 text-5xl">Past Sponsors</h1>
+    <SponsorsGrid sponsors={pastSponsors} />
     <CtaButton href="/2027/sponsor">Sponsor Our Event</CtaButton>
   </section>
 
