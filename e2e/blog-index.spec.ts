@@ -16,7 +16,7 @@ test.describe("Blog links in site chrome", () => {
   for (const path of ["/", "/code-of-conduct", "/blog"]) {
     // The Blog link is commented out in SiteHeader and SiteFooter until the
     // blog has Posts. Unskip these tests when the link comes back.
-    test.skip(`${path} header and footer link to /blog`, async ({ page }) => {
+    test(`${path} header and footer link to /blog`, async ({ page }) => {
       await page.goto(path);
       await expect(
         page.getByRole("banner").getByRole("link", { name: "Blog" }),

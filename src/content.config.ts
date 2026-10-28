@@ -138,6 +138,8 @@ const blog = defineCollection({
       tags: z.array(z.string()),
       featured: z.boolean().default(false),
       image: image().optional(),
+      /** Alt text for `image`. Without it the image is decorative. */
+      imageAlt: z.string().optional(),
       ogImage: image().optional(),
       published: z.boolean().default(true),
     }),

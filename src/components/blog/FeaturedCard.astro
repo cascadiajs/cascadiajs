@@ -25,7 +25,7 @@ const authors = await getPostAuthors(post);
     post.data.image && (
       <Image
         src={post.data.image}
-        alt=""
+        alt={post.data.imageAlt ?? ""}
         width={600}
         class="absolute inset-0 size-full object-cover motion-safe:transition motion-safe:duration-500 motion-safe:group-hover:scale-105"
       />

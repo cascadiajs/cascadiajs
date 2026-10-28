@@ -461,7 +461,8 @@
     "image": "/people/carter-rabasa.jpg",
     "title": "Lead Organizer",
     "location": "Seattle, WA USA",
-    "roles": ["organizer"]
+    "roles": ["organizer", "author"],
+    "bio": "Carter Rabasa is the lead organizer of CascadiaJS. Carter lives in Seattle and loves bringing the Pacific Northwest web community together."
   },
   {
     "id": "carrie-rabasa",
