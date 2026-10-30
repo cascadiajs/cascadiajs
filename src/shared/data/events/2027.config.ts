@@ -12,8 +12,8 @@ const config: EventConfig = {
   ogImage: "/images/2027/share/social-sharing-general.png",
   ogDescription: DEFAULT_DESCRIPTION,
   nav: [
-    { label: "Networking", href: "/2027#networking" },
-    { label: "Pricing", href: "/2027#pricing" },
+    { label: "Networking", href: "/#networking" },
+    { label: "Pricing", href: "/#pricing" },
     //{ label: "Speakers", href: "/2026#speakers" },
     //{ label: "Schedule", href: "/2026/schedule" },
     //{ label: "Attend", href: "/2026/attend" },

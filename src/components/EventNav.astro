@@ -2,6 +2,7 @@
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import type { EventNavItem } from "@shared/data/types";
+import { FEATURED_EVENT } from "@shared/site-defaults";
 
 interface Props {
   year: string;
@@ -24,13 +25,15 @@ if (!logoModule) {
   throw new Error(`EventNav: logo not found at ${logoKey}`);
 }
 const logoSrc = (await logoModule()).default;
+// The Featured Event's landing page is the site root; past Events keep /<year>.
+const eventRoot = year === FEATURED_EVENT ? "/" : `/${year}`;
 ---
 
 <section id={id} class="cjs-event-nav md:sticky md:top-0 md:z-1000">
   <nav class="bg-emerald-city-green font-display text-21 p-2.5 font-medium">
     <div class="md:mx-auto md:flex md:items-center md:justify-center">
       <div class="mb-2 md:mr-10 md:mb-0 md:pt-0.5">
-        <a href={`/${year}`}>
+        <a href={eventRoot}>
           <Image
             src={logoSrc}
             alt="CascadiaJS logo"
