@@ -124,14 +124,16 @@ The full glossary is in [`GLOSSARY.md`](GLOSSARY.md). You'll meet these four thr
 
 - **Event**: one annual CascadiaJS conference, such as CascadiaJS 2026.
 - **Event Key**: the short id that ties data to an Event: a year (`"2026"`) or the bucket `"previous"` for older sponsors. In code, the `EventYear` type holds a value that can only be a real year, and you can name that value `year`. Anything that can hold `previous` is an Event Key.
-- **Featured Event**: the one Event the site-wide pages (homepage, header, footer, legal and general content pages) promote. `FEATURED_EVENT` in `src/shared/site-defaults.ts` sets it, and you change it when a new Event launches. An Event's own pages always refer to _that_ Event, never to the Featured Event.
+- **Featured Event**: the one Event the site-wide pages (header, footer, legal and general content pages) promote. Its landing page is the homepage, `/`. `FEATURED_EVENT` in `src/shared/site-defaults.ts` sets it, and you change it when a new Event launches. An Event's own pages always refer to _that_ Event, never to the Featured Event.
 - **Event Dataset**: an Event's Talks (each with its Speaker), Organizers, Tickets and Activities, stored under `src/shared/data/<year>/`. Sponsors and Testimonials span Events, so they aren't part of it.
 
 ## Pages and routing
 
 There are two kinds of page.
 
-**Hand-written pages** are `.astro` files in `src/pages/`. The file path is the URL: `src/pages/2026/schedule.astro` serves `/2026/schedule`. Use these for anything with custom structure: the homepage, the Event landing page, the schedule, Talk pages, and the legal pages.
+**Hand-written pages** are `.astro` files in `src/pages/`. The file path is the URL: `src/pages/2026/schedule.astro` serves `/2026/schedule`. Use these for anything with custom structure: the Event landing page, the schedule, Talk pages, and the legal pages.
+
+The Featured Event's landing page is `src/pages/index.astro`, so it serves `/`, and `public/_redirects` sends `/<year>` there with a 301. Its other pages keep the year: `/2027/schedule`, `/2027/sponsorships`. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
 
 **Content pages** are Markdown files in `src/content/markdown/`, served by two catch-all routes:
 
@@ -187,7 +189,7 @@ Do not give a content page and an `.astro` route the same URL. Astro uses the `.
 
 | Layout           | Use it for                                                                           | What it adds                                                                                                                  |
 | :--------------- | :----------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
-| `Layout`         | Site-wide pages that don't belong to an Event: homepage, legal pages, 404            | The whole document: `<head>` (title, description, canonical, Open Graph), site header and footer, global CSS                  |
+| `Layout`         | Site-wide pages that don't belong to an Event: legal pages, blog, 404                | The whole document: `<head>` (title, description, canonical, Open Graph), site header and footer, global CSS                  |
 | `EventLayout`    | Every page that belongs to an Event                                                  | Wraps `Layout`, adds the Event nav bar, and defaults the description and share image from the Event's config. Requires `year` |
 | `MarkdownLayout` | Non-Event content pages. **Don't import it yourself.** The `[...slug]` route uses it | Wraps `Layout` and `SimplePage`, styles the Markdown, and appends Past Sponsors and Testimonials (toggled by frontmatter)     |
 | `SimplePage`     | Any page that's mostly a column of text under a title bar                            | Not a full page: the grey title bar and a narrow (50%) or wide (70%) content column. Nest it inside `Layout` or `EventLayout` |
@@ -197,7 +199,7 @@ Rules of thumb:
 - Start from the page's owner. If it belongs to an Event, use `EventLayout`. If not, use `Layout`.
 - Then decide the body. For a text-heavy page, nest `SimplePage` inside the layout. See `src/pages/2026/talks/[slug].astro` or `src/pages/[year]/sponsors/[slug].astro` for the pattern.
 - `EventLayout` has a `hero` slot that renders above the Event nav (the 2026 landing page puts its video there). `SimplePage` has an `after-body` slot that renders outside the text column, which is where sponsor grids and testimonials go.
-- The yellow alert banner at the top of the site header shows on every page by default. Pass `displayAlert={false}` to `Layout` or `EventLayout` to hide it (the 2027 landing page does, since the banner links there).
+- The yellow alert banner at the top of the site header shows on every page by default. Pass `displayAlert={false}` to `Layout` or `EventLayout` to hide it (the Featured Event's landing page at `/` does, since the banner links there).
 - **Pages own their sponsors section.** Only `MarkdownLayout` renders sponsors for you. On a hand-written page, place `SponsorsGrid` yourself and pass `year` (and `tiered`) or `exclude` as needed.
 
 Wrap Markdown-derived HTML (an abstract, a description) in `MarkdownContent` to get prose styling for headings, lists and links.
@@ -374,7 +376,7 @@ You launch a new Event once a year. The launch changes several files. The steps 
 **Phase 2: Pages and assets**
 
 7. If you want to use the previous year as a starting point, copy the 2026 pages from `src/pages/2026/` into `src/pages/2027/`. Otherwise build out the pages you want.
-   Each Event has its own hand-written landing page, schedule and Talk pages.
+   Each Event has its own hand-written landing page, schedule and Talk pages. Build the 2027 landing page as `src/pages/2027/index.astro` (served at `/2027`) until launch day.
 8. Change the year and the collection name in the new pages.
 9. Put the content pages in `src/content/markdown/2027/`.
 10. Put the images in `src/assets/events/2027/images/`.
@@ -385,10 +387,11 @@ You launch a new Event once a year. The launch changes several files. The steps 
 Do these steps only after the 2027 pages are ready.
 
 12. Set `FEATURED_EVENT` to `"2027"` in `src/shared/site-defaults.ts`.
-    The homepage, header, footer and site-wide pages read that value.
-13. Update `DEFAULT_DESCRIPTION` in `src/shared/site-defaults.ts`.
-14. Run the whole e2e suite.
-    A Featured Event change needs no test edit.
+    The header, footer, Event nav logo and site-wide pages read that value.
+13. Swap the landing pages: move the old Featured Event's `src/pages/index.astro` back to `src/pages/<old year>/index.astro`, and move `src/pages/2027/index.astro` to `src/pages/index.astro`. Change the Event's own nav anchors in its config (`/2027#pricing`) to root anchors (`/#pricing`), and the old Event's back to `/<old year>#…`.
+14. In `public/_redirects`, replace the old year's `/<old year> / 301` line with `/2027 / 301`.
+15. Update `DEFAULT_DESCRIPTION` in `src/shared/site-defaults.ts`.
+16. Run the whole e2e suite.
 
 ## Testing and CI
 

@@ -1,5 +1,4 @@
 import { expect, test } from "@playwright/test";
-import { FEATURED_EVENT } from "@shared/site-defaults";
 
 /** Blog routes that need no Post: page 404s, site-chrome links, sitemap. */
 test.describe("Blog pages", () => {
@@ -13,7 +12,7 @@ test.describe("Blog pages", () => {
 });
 
 test.describe("Blog links in site chrome", () => {
-  for (const path of ["/", "/code-of-conduct", "/blog"]) {
+  for (const path of ["/tos", "/code-of-conduct", "/blog"]) {
     // The Blog link is commented out in SiteHeader and SiteFooter until the
     // blog has Posts. Unskip these tests when the link comes back.
     test(`${path} header and footer link to /blog`, async ({ page }) => {
@@ -28,7 +27,7 @@ test.describe("Blog links in site chrome", () => {
   }
 
   test("an Event header has no Blog link", async ({ page }) => {
-    await page.goto(`/${FEATURED_EVENT}`);
+    await page.goto("/");
     await expect(
       page.getByRole("navigation").getByRole("link", { name: "Blog" }),
     ).toHaveCount(0);

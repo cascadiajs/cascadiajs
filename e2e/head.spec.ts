@@ -1,7 +1,6 @@
 import { expect, test } from "@playwright/test";
 import {
   DEFAULT_DESCRIPTION,
-  FEATURED_EVENT,
   GA4_ID,
   META_PIXEL_ID,
 } from "@shared/site-defaults";
@@ -12,10 +11,9 @@ import { FROZEN_SNAPSHOT_PAGES } from "./helpers";
  * layout, plus the Frozen Snapshots, which Layout does not render.
  */
 
-const homepage = "/";
 const LAYOUT_PAGES = [
-  { layout: "Layout", path: homepage },
-  { layout: "EventLayout", path: `/${FEATURED_EVENT}` },
+  { layout: "Layout", path: "/tos" },
+  { layout: "EventLayout", path: "/" },
   { layout: "MarkdownLayout", path: "/code-of-conduct" },
 ];
 const FROZEN = FROZEN_SNAPSHOT_PAGES.map((file) => ({
@@ -82,8 +80,8 @@ test.describe("Head metadata", () => {
   test("a page without a description of its own gets the sitewide default", async ({
     page,
   }) => {
-    // The homepage passes no description to Layout.
-    await page.goto(homepage);
+    // /tos passes no description to Layout.
+    await page.goto("/tos");
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       "content",
       DEFAULT_DESCRIPTION,
@@ -91,7 +89,7 @@ test.describe("Head metadata", () => {
   });
 
   test("a share image loads", async ({ page, request }) => {
-    await page.goto(homepage);
+    await page.goto("/");
     const src = await page
       .locator('meta[property="og:image"]')
       .getAttribute("content");

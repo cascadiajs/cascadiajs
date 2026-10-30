@@ -14,7 +14,7 @@ A single Event Key that is always a four-digit year may be named `year` in code;
 _Avoid_: Year (in prose, for the Event itself — say "the 2026 Event", not "the 2026 year")
 
 **Featured Event**:
-The one Event the site-wide pages — the homepage, legal pages, header, footer and non-Event markdown pages — promote and link to. It changes deliberately when a new Event launches, not by date, and not when a new Event's pages start being built. An Event's own pages refer to that Event, never to the Featured Event.
+The one Event the site-wide pages — legal pages, header, footer and non-Event markdown pages — promote and link to. Its landing page is the homepage, `/`; its other pages keep their `/<year>/` prefix. It changes deliberately when a new Event launches, not by date, and not when a new Event's pages start being built. An Event's own pages refer to that Event, never to the Featured Event.
 _Avoid_: Current Event, Upcoming Event, highlighted event
 
 **Event Dataset**:

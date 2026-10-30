@@ -1,12 +1,12 @@
 import { expect, test, type Page } from "@playwright/test";
-import { FEATURED_EVENT } from "@shared/site-defaults";
 
 /**
  * Canonical URLs. The sitewide rules (no internal link with a trailing slash,
  * no `.html` in a URL) are checked on every page in link-crawl.spec.ts.
  */
 
-const eventRoot = `/${FEATURED_EVENT}`;
+// The Featured Event lives at "/", so check a past Event root.
+const eventRoot = "/2026";
 
 const canonical = (page: Page) => page.locator('link[rel="canonical"]');
 

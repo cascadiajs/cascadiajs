@@ -1,41 +1,226 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Hero from "@components/Hero.astro";
+import EventLayout from "@layouts/EventLayout.astro";
 import CtaButton from "@components/CtaButton.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
 import Testimonials from "@components/Testimonials.astro";
-import { FEATURED_EVENT } from "@shared/site-defaults";
-import heroImage from "@assets/images/hero-camper.png";
+import VideoHero from "@components/VideoHero.astro";
+import ImageMosaic from "@components/ImageMosaic.astro";
+import PeopleGrid from "@components/PeopleGrid.astro";
+//import TalkCard from "@components/TalkCard.astro";
+import PersonCard from "@components/PersonCard.astro";
+import TicketCard from "@components/TicketCard.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { getOrganizers, getTickets } from "@shared/data/events";
+//import type { Talk } from "@shared/data/types";
+import lockupImage from "@assets/events/2027/images/cjs-lockup-white.svg";
+
+//const talks = (await getCollection("talks2026"))
+//  .sort((a, b) => a.data.order - b.data.order)
+//  .map((entry) => entry.data);
+const organizers = getOrganizers("2027");
+const tickets = getTickets("2027");
+
+// No 2027 Sponsors yet, so show the 20 past Sponsors people in tech know best.
+const PAST_SPONSOR_IDS = [
+  "aws",
+  "google",
+  "github",
+  "cloudflare",
+  "uber",
+  "salesforce-devs",
+  "tmobile",
+  "atlassian",
+  "twilio",
+  "datadog",
+  "netlify",
+  "sentry",
+  "postman",
+  "auth0",
+  "new-relic",
+  "elastic",
+  "bluesky",
+  "circleci",
+  "langchain",
+  "retool",
+];
+const pastSponsors = (await getCollection("sponsors"))
+  .map((entry) => entry.data)
+  .filter((sponsor) => PAST_SPONSOR_IDS.includes(sponsor.id));
+
+//const keynotes = talks.filter((t) => t.type === "keynote");
+//const speakerTalks = talks.filter((t) =>
+//  ["main", "lightning", "workshop"].includes(t.type),
+//);
+
+//function talkHref(talk: Talk): string {
+//  return talk.slug ? `/2026/talks/${talk.slug}` : "/2026";
+//}
+
+const headingClass = "mt-0 mb-8 text-5xl";
+const paragraphClass =
+  "text-sound-navy font-serif text-2xl leading-normal font-normal";
 ---
 
-<Layout>
-  <Hero
-    preHeader="Connecting devs since 2012"
-    heading="We're a community for web + AI developers in the Pacific Northwest."
-    imageSrc={heroImage}
-    imageAlt="Sasquatch driving a camper van"
-  >
-    <p>
-      We create events that will help you level up, grow your network, find a
-      job and have fun! In 2027 we'll be back in Seattle for 2+ days of talks,
-      workshops and karaoke.
+<EventLayout
+  year="2027"
+  title="CascadiaJS 2027 | June 7 - 8 | Seattle, WA"
+  displayAlert={false}
+>
+  <VideoHero slot="hero" videoSrc="/events/2026/video/sizzle.mp4">
+    {
+      /*
+        The overlay is shrink-to-fit, but the browser caps that at the width
+        available after the 3vw left offset — which is what makes the headline
+        wrap instead of running off-screen. max-w reproduces that cap.
+
+        The h2's 40px vertical margins look wrong against the reference's
+        `.video-overlay h2 { margin: 0 }`, but that rule loses: the same
+        stylesheet has `#landing h2 { margin: 40px 0 }`, and an ID selector
+        outranks a class. 40px is what actually renders (ADR-0001).
+
+        The lockup stays inline inside a wrapper div, as in the reference —
+        Tailwind's preflight would otherwise make it block and drop the ~4px
+        of descender space below the baseline-aligned image.
+      */
+    }
+    <div>
+      <Image src={lockupImage} alt="CascadiaJS logo" class="inline w-75" />
+    </div>
+    <h2 class="my-10 font-serif text-[clamp(16px,8vw,60px)] text-white">
+      A Web + AI conference for the Pacific Northwest
+    </h2>
+    <p class="text-[clamp(18px,2vw,24px)] text-white md:w-1/2">
+      CascadiaJS is a community-driven conference for developers in the PNW and
+      beyond. You will hear from amazing speakers, connect with 500+ fellow
+      devs, and explore the latest in web and AI technologies with some of the
+      top companies in the industry.
     </p>
-    <CtaButton href={`/${FEATURED_EVENT}`} variant="primary">
-      CascadiaJS: June 2027
-    </CtaButton>
-  </Hero>
+    <p class="w-1/2 font-serif text-[clamp(18px,2vw,24px)] leading-[1.125em]">
+      June 7-8, 2027<br />Seattle Convention Center<br />Seattle, WA, USA
+    </p>
+    <a
+      class="font-display border-cascade-blue bg-cascade-blue text-cedar-cream hover:border-sound-navy hover:bg-sound-navy leading-body my-4 inline-block border-4 px-4 py-2 text-2xl font-medium no-underline"
+      href="/2027/tickets"
+    >
+      BUY TICKETS <i class="fa-solid fa-tree"></i>
+    </a>
+  </VideoHero>
 
-  <!--Trailer
-    heading="Check-out our 2025 Recap!"
-    videoSrc="https://customer-err733fa36e0jnfx.cloudflarestream.com/a439eea2d251499f21c9388ebc2d5370/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-err733fa36e0jnfx.cloudflarestream.com%2Fa439eea2d251499f21c9388ebc2d5370%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-    videoTitle="CascadiaJS 2025 Recap Video"
-  /-->
+  <ImageMosaic
+    images={[
+      {
+        src: "/events/2026/images/feature-01.png",
+        alt: "Feature: Amazing Speakers",
+      },
+      {
+        src: "/events/2026/images/feature-02.png",
+        alt: "Feature: Cutting-Edge Content",
+      },
+      {
+        src: "/events/2026/images/feature-03.png",
+        alt: "Feature: Incredible Community",
+      },
+      {
+        src: "/events/2026/images/feature-04.png",
+        alt: "Feature: Beautiful Venue",
+      },
+    ]}
+  />
 
-  <section id="sponsors" class="box-content p-8 text-center">
-    <h2 class="font-display mt-0 mb-8 text-5xl">Past Sponsors</h2>
-    <SponsorsGrid exclude={FEATURED_EVENT} />
-    <CtaButton href={`/${FEATURED_EVENT}/sponsor`}>Sponsor Our Event</CtaButton>
+  <section id="pitch" class="bg-mint p-16 text-center md:px-40">
+    <p class={paragraphClass}>
+      <strong>CascadiaJS</strong> is an annual reunion of <strong
+        >web developers</strong
+      > in the <strong>Pacific Northwest</strong> and beyond, where <strong
+        >friends</strong
+      > new and old meet to celebrate our unique community, share knowledge and explore
+      ideas on the cutting edge of the <strong>web, JavaScript and AI</strong>.
+    </p>
+    <p class={paragraphClass}>
+      We are a conference <strong>for devs by devs</strong>. You'll hear
+      technical talks from <strong>top engineers</strong>, get connected to
+      <strong>industry-leading companies</strong> and discuss what you've learned
+      during our hallway track with <strong>500+ other</strong> attendees.
+    </p>
+    <p class={paragraphClass}>
+      This is an event designed to help you <strong>level up</strong> your skills,
+      <strong>build your network</strong> and <strong>have fun</strong> for a few
+      days in the <strong>beautiful PNW</strong>.
+    </p>
   </section>
 
-  <Testimonials />
-</Layout>
+  <section id="networking" class="p-16 text-center md:px-40">
+    <h1 class="text-40">Networking Mixer</h1>
+    <p class={paragraphClass}>
+      We're hosting a Networking Mixer and Job Fair for all registered attendees
+      on June 7th from 6pm - 9pm.
+    </p>
+    <p class={paragraphClass}>
+      <strong>Network with fellow attendees</strong> and talk to <strong
+        >companies that are hiring.</strong
+      >
+    </p>
+    <p class={paragraphClass}>Dinner and drinks are included!</p>
+  </section>
+
+  <section id="pricing" class="text-sound-navy p-8 text-center">
+    <h1 class={headingClass}>Pricing</h1>
+    <div
+      class="cjs-ticket-grid text-left md:mx-auto md:my-4 md:flex md:justify-center"
+    >
+      {tickets.map((ticket) => <TicketCard ticket={ticket} />)}
+    </div>
+  </section>
+
+  <!--section id="speakers" class="p-8 text-center">
+    <h1 class={headingClass}>Keynotes</h1>
+    <PeopleGrid>
+      {keynotes.map((talk) => <TalkCard talk={talk} href={talkHref(talk)} />)}
+    </PeopleGrid>
+
+    <h1 class={headingClass}>Speakers</h1>
+    <PeopleGrid>
+      {
+        speakerTalks.map((talk) => (
+          <TalkCard talk={talk} href={talkHref(talk)} />
+        ))
+      }
+    </PeopleGrid>
+  </section-->
+
+  <section id="organizers" class="p-8 text-center">
+    <h1 class={headingClass}>Organizers</h1>
+    <PeopleGrid>
+      {organizers.map((person) => <PersonCard person={person} />)}
+    </PeopleGrid>
+  </section>
+
+  <section id="sponsors" class="box-content p-8 text-center">
+    <h1 class="mt-0 mb-8 text-5xl">Past Sponsors</h1>
+    <SponsorsGrid sponsors={pastSponsors} />
+    <CtaButton href="/2027/sponsor">Sponsor Our Event</CtaButton>
+  </section>
+
+  <section id="testimonials" class="text-center">
+    <Testimonials />
+  </section>
+
+  <style is:global>
+    /* The Event nav's in-page links (/#networking, #pricing) glide to
+       their section. Global because it has to reach <html>; Astro only ships
+       this page's styles with this page. */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    /* From md up the Event nav is sticky (112px tall); stop the section
+       below it instead of underneath it. */
+    @media (width >= 48rem) {
+      html {
+        scroll-padding-top: 112px;
+      }
+    }
+  </style>
+</EventLayout>

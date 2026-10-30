@@ -16,5 +16,9 @@ test.describe("root-level markdown pages keep the normal SiteHeader nav", () => 
     await expect(
       nav.getByRole("link", { name: "CascadiaJS logo" }),
     ).toHaveAttribute("href", "/");
+    // The Featured Event's landing page is the site root too.
+    await expect(
+      nav.getByRole("link", { name: /^CascadiaJS \d{4}$/ }),
+    ).toHaveAttribute("href", "/");
   });
 });
