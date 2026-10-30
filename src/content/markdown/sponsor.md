@@ -1,5 +1,6 @@
 ---
 title: Sponsorship Brochure Request
+featuredEventNav: true
 displayAlert: false
 ---
 
@@ -10,7 +11,7 @@ Thank you for your interest in sponsoring CascadiaJS 2027! Please fill out the f
   // shows them a "go to the brochure" message on return. Skip straight there.
   try {
     if (localStorage.getItem("cksubscribed-8371f9bcf5")) {
-      location.replace("/2027/sponsorships");
+      location.replace("/sponsorships");
     }
   } catch {}
 </script>

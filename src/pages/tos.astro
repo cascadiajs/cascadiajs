@@ -1,20 +1,30 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import EventLayout from "@layouts/EventLayout.astro";
 import TermlyEmbed from "@components/TermlyEmbed.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
 import CtaButton from "@components/CtaButton.astro";
 import Testimonials from "@components/Testimonials.astro";
-import { FEATURED_EVENT } from "@shared/site-defaults";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  FEATURED_EVENT,
+} from "@shared/site-defaults";
 ---
 
-<Layout>
+<!-- The Featured Event's nav, as on `/`, with the sitewide head defaults. -->
+<EventLayout
+  year={FEATURED_EVENT}
+  title={DEFAULT_TITLE}
+  description={DEFAULT_DESCRIPTION}
+  displayAlert={false}
+>
   <TermlyEmbed policyId="520e6b8e-80c5-4fe8-aca3-46dce7122abe" />
 
   <section id="sponsors" class="box-content p-8 text-center">
     <h2 class="font-display mt-0 mb-8 text-5xl">Past Sponsors</h2>
     <SponsorsGrid exclude={FEATURED_EVENT} />
-    <CtaButton href={`/${FEATURED_EVENT}/sponsor`}>Sponsor Our Event</CtaButton>
+    <CtaButton href="/sponsor">Sponsor Our Event</CtaButton>
   </section>
 
   <Testimonials />
-</Layout>
+</EventLayout>

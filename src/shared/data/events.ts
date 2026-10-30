@@ -1,5 +1,6 @@
 import peopleJson from "./people.json";
 import { parsePeople, resolvePerson, type PersonRef } from "../people";
+import { FEATURED_EVENT } from "../site-defaults";
 import type { Activity, EventConfig, EventYear, Person, Ticket } from "./types";
 
 const configs = import.meta.glob<{ default: EventConfig }>(
@@ -36,6 +37,14 @@ export function getEventConfig(year: EventYear): EventConfig {
     throw new Error(`getEventConfig: no event config found for year "${year}"`);
   }
   return config;
+}
+
+/**
+ * The brochure-request page for an Event. The Featured Event's lives at the
+ * site root (`/sponsor`); past Events keep `/<year>/sponsor`.
+ */
+export function sponsorPagePath(year: string): string {
+  return year === FEATURED_EVENT ? "/sponsor" : `/${year}/sponsor`;
 }
 
 const organizerFiles = import.meta.glob<PersonRef[]>(

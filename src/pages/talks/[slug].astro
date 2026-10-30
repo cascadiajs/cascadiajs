@@ -10,7 +10,7 @@ import SimplePage from "@layouts/SimplePage.astro";
 
 export async function getStaticPaths() {
   // TODO: switch to the 2027 Talk data when it exists. This route still
-  // publishes the 2026 Talks under /2027/talks/.
+  // publishes the 2026 Talks under /talks/.
   const talks = await getCollection("talks2026");
   return talks
     .filter((talk) => talk.data.slug)

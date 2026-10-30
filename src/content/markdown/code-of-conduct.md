@@ -3,6 +3,8 @@ title: Code of Conduct
 ogImage: /images/2026/share/code-of-conduct.png
 image: "@assets/images/cjs18-pronoun-stickers.jpg"
 description: CascadiaJS is a safe and inclusive event for everyone
+featuredEventNav: true
+displayAlert: false
 ---
 
 ![pronoun stickers](@assets/images/cjs18-pronoun-stickers.jpg)

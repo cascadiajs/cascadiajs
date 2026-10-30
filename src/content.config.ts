@@ -34,6 +34,9 @@ const markdown = defineCollection({
     showTestimonials: z.boolean().default(true),
     /** Show the site-wide alert banner above the header. */
     displayAlert: z.boolean().default(true),
+    /** Root-level pages only: show the Featured Event's nav (as on `/`)
+        instead of the SiteHeader nav. */
+    featuredEventNav: z.boolean().default(false),
     published: z.boolean().default(true),
   }),
 });

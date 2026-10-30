@@ -1,6 +1,8 @@
 ---
-title: Thanks for signing up for our newletter
+title: Thanks for signing up for our newsletter
 ogImage: /images/2026/share/mailing-list-thanks.png
+featuredEventNav: true
+displayAlert: false
 ---
 
 ## If you are signing-up for the first time:

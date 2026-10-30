@@ -1,6 +1,8 @@
 ---
 title: You are unsubscribed
 ogImage: /images/2026/share/unsubscribed.png
+featuredEventNav: true
+displayAlert: false
 ---
 
 We have unsubscribed you from ALL of our mailing lists.

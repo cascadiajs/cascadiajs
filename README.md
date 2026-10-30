@@ -133,7 +133,7 @@ There are two kinds of page.
 
 **Hand-written pages** are `.astro` files in `src/pages/`. The file path is the URL: `src/pages/2026/schedule.astro` serves `/2026/schedule`. Use these for anything with custom structure: the Event landing page, the schedule, Talk pages, and the legal pages.
 
-The Featured Event's landing page is `src/pages/index.astro`, so it serves `/`, and `public/_redirects` sends `/<year>` there with a 301. Its other pages keep the year: `/2027/schedule`, `/2027/sponsorships`. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
+The Featured Event's pages all live at the site root, with no year in the URL. Its landing page is `src/pages/index.astro` (`/`), and the rest sit beside it: `src/pages/tickets.astro`, `schedule.astro`, `sponsorships.astro` and `talks/[slug].astro`, plus the root-level markdown pages `sponsor.md` and `buy-tickets.mdx` (with `featuredEventNav: true`). Links to the brochure request go through `sponsorPagePath()` in `src/shared/data/events.ts`, so past Events keep `/<year>/sponsor`. `public/_redirects` sends `/<year>` and the old `/2027/…` URLs to their root pages with a 301. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
 
 **Content pages** are Markdown files in `src/content/markdown/`, served by two catch-all routes:
 
@@ -219,6 +219,7 @@ The `markdown` collection schema in `src/content.config.ts` checks each file's f
 | `showSponsors`     | `true`     | Append the sponsors section                                        |
 | `showTestimonials` | `true`     | Append testimonials                                                |
 | `displayAlert`     | `true`     | `false` hides the yellow alert banner above the header             |
+| `featuredEventNav` | `false`    | Root-level pages: `true` shows the Featured Event's nav, as on `/` |
 | `published`        | `true`     | `false` leaves the page out of the build                           |
 
 Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`.
