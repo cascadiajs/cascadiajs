@@ -20,9 +20,9 @@ const config: EventConfig = {
     { label: "CFP", href: "https://cfp.cascadiajs.com" },
     { label: "Sponsor", href: "/sponsor" },
     //{ label: "Trainings", href: "/2026/trainings" },
-    { label: "Tickets", href: "/2027/tickets", isCta: true },
+    { label: "Tickets", href: "/tickets", isCta: true },
   ],
-  cta: { label: "Buy Tickets", href: "/2027/tickets" },
+  cta: { label: "Buy Tickets", href: "/tickets" },
 };
 
 export default config;
