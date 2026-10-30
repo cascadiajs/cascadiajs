@@ -3,7 +3,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { marked } from "marked";
-import { findEventWithPages } from "@shared/data/events";
+import { findEventWithPages, sponsorPagePath } from "@shared/data/events";
 import EventLayout from "@layouts/EventLayout.astro";
 import SimplePage from "@layouts/SimplePage.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
@@ -93,7 +93,7 @@ const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
       <section id="sponsors" class="box-content p-8 text-center">
         <h1 class="mt-0 mb-8 text-5xl">Our Sponsors</h1>
         <SponsorsGrid year={year} tiered={true} />
-        <CtaButton href={`/${year}/sponsor`}>Sponsor Our Event</CtaButton>
+        <CtaButton href={sponsorPagePath(year)}>Sponsor Our Event</CtaButton>
       </section>
       <Testimonials />
     </Fragment>

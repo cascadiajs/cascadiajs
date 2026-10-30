@@ -133,7 +133,7 @@ There are two kinds of page.
 
 **Hand-written pages** are `.astro` files in `src/pages/`. The file path is the URL: `src/pages/2026/schedule.astro` serves `/2026/schedule`. Use these for anything with custom structure: the Event landing page, the schedule, Talk pages, and the legal pages.
 
-The Featured Event's landing page is `src/pages/index.astro`, so it serves `/`, and `public/_redirects` sends `/<year>` there with a 301. Its other pages keep the year: `/2027/schedule`, `/2027/sponsorships`. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
+The Featured Event's landing page is `src/pages/index.astro`, so it serves `/`, and `public/_redirects` sends `/<year>` there with a 301. Its sponsor pages are at the root too: the brochure request is `src/content/markdown/sponsor.md` (`/sponsor`, linked via `sponsorPagePath()` in `src/shared/data/events.ts`) and the brochure is `src/pages/sponsorships.astro` (`/sponsorships`), with 301s from their old `/2027/…` URLs. Its other pages still keep the year, such as `/2027/schedule`. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
 
 **Content pages** are Markdown files in `src/content/markdown/`, served by two catch-all routes:
 

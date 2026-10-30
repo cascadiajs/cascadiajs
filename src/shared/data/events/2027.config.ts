@@ -18,7 +18,7 @@ const config: EventConfig = {
     //{ label: "Schedule", href: "/2026/schedule" },
     //{ label: "Attend", href: "/2026/attend" },
     { label: "CFP", href: "https://cfp.cascadiajs.com" },
-    { label: "Sponsor", href: "/2027/sponsor" },
+    { label: "Sponsor", href: "/sponsor" },
     //{ label: "Trainings", href: "/2026/trainings" },
     { label: "Tickets", href: "/2027/tickets", isCta: true },
   ],
