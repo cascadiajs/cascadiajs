@@ -219,6 +219,7 @@ The `markdown` collection schema in `src/content.config.ts` checks each file's f
 | `showSponsors`     | `true`     | Append the sponsors section                                        |
 | `showTestimonials` | `true`     | Append testimonials                                                |
 | `displayAlert`     | `true`     | `false` hides the yellow alert banner above the header             |
+| `featuredEventNav` | `false`    | Root-level pages: `true` shows the Featured Event's nav, as on `/` |
 | `published`        | `true`     | `false` leaves the page out of the build                           |
 
 Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`.

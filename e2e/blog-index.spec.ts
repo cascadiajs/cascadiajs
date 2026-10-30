@@ -12,19 +12,29 @@ test.describe("Blog pages", () => {
 });
 
 test.describe("Blog links in site chrome", () => {
-  for (const path of ["/tos", "/code-of-conduct", "/blog"]) {
-    // The Blog link is commented out in SiteHeader and SiteFooter until the
-    // blog has Posts. Unskip these tests when the link comes back.
-    test(`${path} header and footer link to /blog`, async ({ page }) => {
-      await page.goto(path);
-      await expect(
-        page.getByRole("banner").getByRole("link", { name: "Blog" }),
-      ).toHaveAttribute("href", "/blog");
-      await expect(
-        page.getByRole("contentinfo").getByRole("link", { name: "Blog" }),
-      ).toHaveAttribute("href", "/blog");
-    });
-  }
+  // The blog is the one section that keeps the SiteHeader nav. Only
+  // SiteHeader links to the blog; SiteFooter's slot links to the Code of
+  // Conduct instead.
+  test("/blog renders SiteHeader, whose links go to the site root and /blog", async ({
+    page,
+  }) => {
+    await page.goto("/blog");
+    await expect(page.getByRole("banner")).toBeVisible();
+    // One nav, and its logo links to the site root, not to an Event root.
+    const nav = page.getByRole("navigation");
+    await expect(nav).toHaveCount(1);
+    await expect(
+      nav.getByRole("link", { name: "CascadiaJS logo" }),
+    ).toHaveAttribute("href", "/");
+    // The Featured Event's landing page is the site root too.
+    await expect(
+      nav.getByRole("link", { name: /^CascadiaJS \d{4}$/ }),
+    ).toHaveAttribute("href", "/");
+    await expect(nav.getByRole("link", { name: "Blog" })).toHaveAttribute(
+      "href",
+      "/blog",
+    );
+  });
 
   test("an Event header has no Blog link", async ({ page }) => {
     await page.goto("/");

@@ -12,7 +12,7 @@ import { FROZEN_SNAPSHOT_PAGES } from "./helpers";
  */
 
 const LAYOUT_PAGES = [
-  { layout: "Layout", path: "/tos" },
+  { layout: "Layout", path: "/blog" },
   { layout: "EventLayout", path: "/" },
   { layout: "MarkdownLayout", path: "/code-of-conduct" },
 ];
@@ -80,8 +80,8 @@ test.describe("Head metadata", () => {
   test("a page without a description of its own gets the sitewide default", async ({
     page,
   }) => {
-    // /tos passes no description to Layout.
-    await page.goto("/tos");
+    // /privacy has no description of its own; it passes the sitewide default.
+    await page.goto("/privacy");
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       "content",
       DEFAULT_DESCRIPTION,

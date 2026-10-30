@@ -1,8 +1,15 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import EventLayout from "@layouts/EventLayout.astro";
+import { FEATURED_EVENT } from "@shared/site-defaults";
 ---
 
-<Layout title="404" description="404">
+<!-- The Featured Event's nav, as on `/` and `/tos`. -->
+<EventLayout
+  year={FEATURED_EVENT}
+  title="404"
+  description="404"
+  displayAlert={false}
+>
   <main>
     <h1 class="sr-only">404</h1>
     <p class="sr-only">Page not found</p>
@@ -15,4 +22,4 @@ import Layout from "@layouts/Layout.astro";
       </video>
     </div>
   </main>
-</Layout>
+</EventLayout>

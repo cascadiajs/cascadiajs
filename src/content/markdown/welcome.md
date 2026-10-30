@@ -1,6 +1,8 @@
 ---
 title: Welcome to our Community!
 ogImage: /images/2026/share/welcome.png
+featuredEventNav: true
+displayAlert: false
 ---
 
 Here are some other ways you can connect with us:

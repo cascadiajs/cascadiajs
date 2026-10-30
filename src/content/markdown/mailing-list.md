@@ -1,6 +1,8 @@
 ---
-title: Sign-up for our mailing list
+title: Join our mailing list
 ogImage: /images/2026/share/mailing-list.png
+featuredEventNav: true
+displayAlert: false
 ---
 
 Receive updates and information on all things CascadiaJS 🌲

@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import EventLayout from "./EventLayout.astro";
 import SimplePage from "./SimplePage.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
 import SponsorsGrid from "@components/SponsorsGrid.astro";
@@ -15,6 +16,8 @@ interface Props {
   showTestimonials?: boolean;
   ogImage?: string;
   displayAlert?: boolean;
+  /** Use the Featured Event's nav (as on `/`) instead of the SiteHeader nav. */
+  featuredEventNav?: boolean;
 }
 
 const {
@@ -25,11 +28,15 @@ const {
   showTestimonials = true,
   ogImage,
   displayAlert = true,
+  featuredEventNav = false,
 } = Astro.props;
 const metaTitle = title ? `CascadiaJS | ${title}` : DEFAULT_TITLE;
+// EventLayout wraps Layout, so both take the same head and alert props.
+const Shell = featuredEventNav ? EventLayout : Layout;
 ---
 
-<Layout
+<Shell
+  year={FEATURED_EVENT}
   title={metaTitle}
   description={description ?? metaTitle}
   ogImage={ogImage}
@@ -54,4 +61,4 @@ const metaTitle = title ? `CascadiaJS | ${title}` : DEFAULT_TITLE;
       {showTestimonials && <Testimonials />}
     </Fragment>
   </SimplePage>
-</Layout>
+</Shell>
