@@ -67,6 +67,33 @@ const paragraphClass =
   title="CascadiaJS 2027 | June 7 - 8 | Seattle, WA"
   displayAlert={false}
 >
+  <Fragment slot="head">
+    {
+      /* Arriving at /#networking or /#pricing from another page, keep the
+        page hidden until it's parsed and scrolled to the section, so the
+        top of the page doesn't flash before the jump. The browser keeps the
+        previous page on screen meanwhile. Inline so it runs before <body>. */
+    }
+    <script is:inline>
+      (() => {
+        const id = decodeURIComponent(location.hash.slice(1));
+        if (!id) {
+          return;
+        }
+        const html = document.documentElement;
+        html.classList.add("cjs-hold-paint");
+        document.addEventListener("DOMContentLoaded", () => {
+          document.getElementById(id)?.scrollIntoView();
+          html.classList.remove("cjs-hold-paint");
+        });
+      })();
+    </script>
+    <style is:inline>
+      html.cjs-hold-paint body {
+        visibility: hidden;
+      }
+    </style>
+  </Fragment>
   <VideoHero slot="hero" videoSrc="/events/2026/video/sizzle.mp4">
     {
       /*
@@ -206,12 +233,24 @@ const paragraphClass =
     <Testimonials />
   </section>
 
+  <script>
+    // Arriving from another page (/#networking) jumps straight to the
+    // section; only clicks made on this page glide.
+    const smooth = () =>
+      document.documentElement.classList.add("cjs-smooth-scroll");
+    if (document.readyState === "complete") {
+      smooth();
+    } else {
+      window.addEventListener("load", smooth, { once: true });
+    }
+  </script>
+
   <style is:global>
     /* The Event nav's in-page links (/#networking, #pricing) glide to
        their section. Global because it has to reach <html>; Astro only ships
        this page's styles with this page. */
     @media (prefers-reduced-motion: no-preference) {
-      html {
+      html.cjs-smooth-scroll {
         scroll-behavior: smooth;
       }
     }
