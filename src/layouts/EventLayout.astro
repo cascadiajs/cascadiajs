@@ -25,6 +25,7 @@ const config = getEventConfig(year);
   displayNav={false}
   displayAlert={displayAlert}
 >
+  <slot name="head" slot="head" />
   <slot name="hero" />
   <EventNav
     year={config.year}
