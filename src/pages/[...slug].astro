@@ -3,10 +3,14 @@ import { getCollection, render } from "astro:content";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
 
 export async function getStaticPaths() {
+  // Markdown entries that a page of their own renders instead. (Astro runs
+  // getStaticPaths on its own, so this can't live outside it.)
+  const OWN_PAGE = new Set(["code-of-conduct"]);
   const entries = await getCollection("markdown");
   return entries
     .filter((entry) => entry.data.published)
     .filter((entry) => !/^\d{4}\//.test(entry.id))
+    .filter((entry) => !OWN_PAGE.has(entry.id))
     .map((entry) => ({
       params: { slug: entry.id },
       props: { entry },

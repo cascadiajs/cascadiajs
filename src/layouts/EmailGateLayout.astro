@@ -1,0 +1,70 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HomeNav from "@components/HomeNav.astro";
+import HomeFooter from "@components/HomeFooter.astro";
+import KitSignup from "@components/KitSignup.astro";
+import { getEventConfig } from "@shared/data/events";
+
+/**
+ * A 2027 email gate: a headline and a Kit form people fill in to reach the
+ * page behind it (/tickets → /buy-tickets, /sponsor → /sponsorships). It has
+ * the home page's chrome: the green nav (sticky here, as there's no hero)
+ * and HomeFooter. Kit sends people on once they submit; anyone who already
+ * has skips straight there.
+ */
+interface Props {
+  /** The h1, also the start of <title>. */
+  heading: string;
+  /** The tab's title, before " | CascadiaJS 2027 …". Defaults to `heading`. */
+  title?: string;
+  /** The Kit form's uid, from its embed code (`data-uid`). */
+  uid: string;
+  /** Where people who already submitted the form are sent. */
+  next: string;
+}
+
+const { heading, title = heading, uid, next } = Astro.props;
+const config = getEventConfig("2027");
+---
+
+<Layout
+  title={`${title} | CascadiaJS 2027 | June 7 - 8 | Seattle, WA`}
+  description={config.ogDescription}
+  ogImage={config.ogImage}
+  displayNav={false}
+  displayAlert={false}
+>
+  <script slot="head" is:inline define:vars={{ uid, next }}>
+    // Kit stores `cksubscribed-<form uid>` once someone submits the form;
+    // anyone who already has skips straight to the page behind it.
+    try {
+      if (localStorage.getItem(`cksubscribed-${uid}`)) {
+        location.replace(next);
+      }
+    } catch {
+      // Storage blocked: just show the form.
+    }
+  </script>
+
+  <div
+    class="bg-mist text-sound-navy [&_a:focus-visible]:outline-sound-navy font-normal [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-2"
+  >
+    <HomeNav sticky />
+
+    {
+      /* 64px from the nav to the headline, and from the headline to the form. */
+    }
+    <div
+      class="[&_:is(input,button):focus-visible]:outline-sound-navy px-4 pt-16 pb-32 text-center [&_:is(input,button):focus-visible]:outline-2 [&_:is(input,button):focus-visible]:outline-offset-2"
+    >
+      <h1
+        class="font-display text-sound-navy m-0 mb-16 text-5xl leading-[0.95] font-light md:text-[72px]"
+      >
+        {heading}
+      </h1>
+      <KitSignup uid={uid} />
+    </div>
+  </div>
+
+  <HomeFooter slot="footer" />
+</Layout>

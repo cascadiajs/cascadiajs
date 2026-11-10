@@ -1,0 +1,47 @@
+---
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+
+// What to do after buying a 2027 ticket. More sections are coming; add each
+// one to `sections` too, so the section bar links to it.
+const sections = [
+  { label: "Connect With Our Community", href: "#connect-with-our-community" },
+];
+
+// The same section styles as /buy-tickets: 16px from a heading to its
+// text, and a 700px text measure.
+const heading =
+  "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
+const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
+const link = "text-sound-navy underline";
+---
+
+<InteriorLayout title="Next Steps" sections={sections}>
+  <section id="connect-with-our-community" class="scroll-mt-8">
+    <h2 class={heading}>Connect With Our Community</h2>
+    <p class={`${body} mb-4!`}>
+      You don’t have to wait until the conference to start enjoying CascadiaJS!
+      Here are some ways you can connect with our community right now:
+    </p>
+    <ul class={`${body} list-disc pl-[1.5em]`}>
+      <li>
+        Join our <a href="https://discord.gg/kkYR86GM29" class={link}
+          >Discord Community</a
+        >
+      </li>
+      <li>
+        Follow us on <a
+          href="https://bsky.app/profile/cascadiajs.com"
+          class={link}>Bluesky</a
+        >, <a href="https://www.linkedin.com/showcase/cascadiajs" class={link}
+          >LinkedIn</a
+        >, or <a href="https://twitter.com/CascadiaJS" class={link}>Twitter</a>
+      </li>
+      <li>
+        Watch prior year talks on <a
+          href="https://www.youtube.com/@cascadiajs"
+          class={link}>YouTube</a
+        >
+      </li>
+    </ul>
+  </section>
+</InteriorLayout>

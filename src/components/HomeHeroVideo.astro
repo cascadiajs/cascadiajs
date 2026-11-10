@@ -1,0 +1,98 @@
+---
+import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: string;
+  poster: ImageMetadata;
+  label: string;
+}
+
+const { src, poster, label } = Astro.props;
+const posterImage = await getImage({ src: poster, width: 1920 });
+---
+
+{
+  /*
+    The home page's full-width 16:9 hero video. The poster shows until the
+    video can play, and instead of it for anyone who prefers reduced motion
+    or has JavaScript off. The script starts the video (there is no
+    autoplay attribute, so reduced-motion visitors never see it move), and
+    the button pauses and plays it: moving content that runs longer than
+    five seconds needs a way to stop it (WCAG 2.2.2).
+
+    `muted` stays even though the file has no sound: Chrome only lets a
+    video play by itself when it's marked muted.
+  */
+}
+<div class="cjs-home-hero-video relative" data-home-nav-pin>
+  <video
+    class="block aspect-video w-full object-cover"
+    poster={posterImage.src}
+    preload="metadata"
+    muted
+    loop
+    playsinline
+    aria-label={label}
+  >
+    <source src={src} type="video/mp4" />
+  </video>
+  <button
+    type="button"
+    hidden
+    data-home-hero-toggle
+    aria-label="Pause video"
+    class="bg-sound-navy/60 hover:bg-sound-navy/80 focus-visible:outline-mist absolute right-4 bottom-4 flex size-11 cursor-pointer items-center justify-center rounded-full border-0 p-0 text-white focus-visible:outline-2 focus-visible:outline-offset-2"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path data-icon="pause" d="M6 4h4v16H6zM14 4h4v16h-4z"></path>
+      <path data-icon="play" d="M7 4l13 8-13 8z" class="hidden"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  const root = document.querySelector(".cjs-home-hero-video");
+  const video = root?.querySelector("video");
+  const button = root?.querySelector<HTMLButtonElement>(
+    "[data-home-hero-toggle]",
+  );
+  if (video && button) {
+    const pauseIcon = button.querySelector("[data-icon=pause]")!;
+    const playIcon = button.querySelector("[data-icon=play]")!;
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+    const showState = () => {
+      const playing = !video.paused;
+      button.setAttribute("aria-label", playing ? "Pause video" : "Play video");
+      pauseIcon.classList.toggle("hidden", !playing);
+      playIcon.classList.toggle("hidden", playing);
+    };
+    video.addEventListener("play", showState);
+    video.addEventListener("pause", showState);
+
+    // A play() the browser refuses leaves the poster up, which is fine.
+    const play = () => video.play().catch(() => {});
+    button.addEventListener("click", () =>
+      video.paused ? play() : video.pause(),
+    );
+
+    if (!reduceMotion.matches) {
+      play();
+    }
+    reduceMotion.addEventListener("change", () => {
+      if (reduceMotion.matches) {
+        video.pause();
+      }
+    });
+
+    button.hidden = false;
+    showState();
+  }
+</script>

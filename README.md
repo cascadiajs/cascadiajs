@@ -133,17 +133,17 @@ There are two kinds of page.
 
 **Hand-written pages** are `.astro` files in `src/pages/`. The file path is the URL: `src/pages/2026/schedule.astro` serves `/2026/schedule`. Use these for anything with custom structure: the Event landing page, the schedule, Talk pages, and the legal pages.
 
-The Featured Event's pages all live at the site root, with no year in the URL. Its landing page is `src/pages/index.astro` (`/`), and the rest sit beside it: `src/pages/tickets.astro`, `schedule.astro`, `sponsorships.astro` and `talks/[slug].astro`, plus the root-level markdown pages `sponsor.md` and `buy-tickets.mdx` (with `featuredEventNav: true`). Links to the brochure request go through `sponsorPagePath()` in `src/shared/data/events.ts`, so past Events keep `/<year>/sponsor`. `public/_redirects` sends `/<year>` and the old `/2027/…` URLs to their root pages with a 301. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
+The Featured Event's pages all live at the site root, with no year in the URL. Its landing page is `src/pages/index.astro` (`/`), and the rest sit beside it: `src/pages/tickets.astro`, `buy-tickets.astro`, `next-steps/attendees.astro`, `schedule.astro`, `sponsor.astro`, `sponsorships.astro` and `talks/[slug].astro`. Links to the brochure request go through `sponsorPagePath()` in `src/shared/data/events.ts`, so past Events keep `/<year>/sponsor`. `public/_redirects` sends `/<year>` and the old `/2027/…` URLs to their root pages with a 301. A past Event's landing page lives at `src/pages/<year>/index.astro` and serves `/<year>`.
 
 **Content pages** are Markdown files in `src/content/markdown/`, served by two catch-all routes:
 
 | File                                               | URL                         | Route                              |
 | :------------------------------------------------- | :-------------------------- | :--------------------------------- |
-| `src/content/markdown/code-of-conduct.md`          | `/code-of-conduct`          | `src/pages/[...slug].astro`        |
+| `src/content/markdown/mailing-list.md`             | `/mailing-list`             | `src/pages/[...slug].astro`        |
 | `src/content/markdown/2026/attend.mdx`             | `/2026/attend`              | `src/pages/[year]/[...slug].astro` |
 | `src/content/markdown/2026/next-steps/speakers.md` | `/2026/next-steps/speakers` | `src/pages/[year]/[...slug].astro` |
 
-A file under a year folder only gets a page if that Event has a config in `src/shared/data/events/` (see [Launching a new Event](#launching-a-new-event)). Set `published: false` in frontmatter to keep a page out of the build.
+`code-of-conduct.md` is the exception: `src/pages/code-of-conduct.astro` renders it on `InteriorLayout`, so edit its text in the markdown file, and `[...slug].astro` skips it (its `OWN_PAGE` list). A file under a year folder only gets a page if that Event has a config in `src/shared/data/events/` (see [Launching a new Event](#launching-a-new-event)). Set `published: false` in frontmatter to keep a page out of the build.
 
 **Blog Posts** live in `src/content/blog/`. Each Post is a folder, and the folder name becomes its URL: `/blog/post/<folder-name>`. A draft (`published: false`) shows in `pnpm dev` but not on the live site.
 
@@ -177,7 +177,7 @@ Two more dynamic routes generate pages from data. `src/pages/2026/talks/[slug].a
 
 Use the first option that fits:
 
-1. **`.md`**: The page is text under a title bar. Markdown and inline HTML are enough. Example: `code-of-conduct.md`.
+1. **`.md`**: The page is text under a title bar. Markdown and inline HTML are enough. Example: `mailing-list.md`.
 2. **`.mdx`**: The page is text, but it shows an Astro component such as `CtaButton`. Example: `2026/childcare.mdx`.
 3. **`.astro` route**: The page has its own layout, has dynamic behavior, calls any APIs, shows data from `src/shared/data/`, or makes one page per item. Example: `src/pages/2026/schedule.astro`.
 
@@ -200,6 +200,7 @@ Rules of thumb:
 - Then decide the body. For a text-heavy page, nest `SimplePage` inside the layout. See `src/pages/2026/talks/[slug].astro` or `src/pages/[year]/sponsors/[slug].astro` for the pattern.
 - `EventLayout` has a `hero` slot that renders above the Event nav (the 2026 landing page puts its video there). `SimplePage` has an `after-body` slot that renders outside the text column, which is where sponsor grids and testimonials go.
 - The yellow alert banner at the top of the site header shows on every page by default. Pass `displayAlert={false}` to `Layout` or `EventLayout` to hide it (the Featured Event's landing page at `/` does, since the banner links there).
+- `Layout` has a `footer` slot that replaces `SiteFooter`. The 2027 landing page at `/` uses `Layout` directly with its own chrome from the Figma mockup: a header, `HomeHeroVideo` (the looping hero video from `public/events/2027/video/`, with a photo poster, a pause button, and no motion for visitors who prefer reduced motion), `HomeGallery` (the rotating photo row under the CFP section: every photo in `src/assets/images/home-gallery/`, in filename order, 3:2 and at least 1200×800; add or remove files there to change it), `HomeNav` (the green nav bar; from the `nav` breakpoint, 880px, up it takes no room in the page and slides down from the top of the window once the top of the element marked `data-home-nav-pin`, the hero video, reaches it; below that its items collapse behind a menu button) and `HomeFooter` (in the `footer` slot). The email gates, `/tickets` (to `/buy-tickets`) and `/sponsor` (to the brochure at `/sponsorships`), use `EmailGateLayout`: the same chrome with `<HomeNav sticky />` (the bar is fixed to the top of the window at every width, with a spacer holding its place), a headline and a Kit form. Pass it the `heading`, the Kit form's `uid` and `next`, where people who already submitted the form are sent straight away. Interior pages (`/buy-tickets`, `/next-steps/attendees`, `/code-of-conduct`, and the Termly policies at `/privacy`, `/tos` and `/cookies`) use `InteriorLayout`, which adds `PageSubNav` under the sticky nav (a bar with the page's name and links to its sections, which sticks below the nav; on phones the name is dropped so the links fit) and the page's h1. Pass it the page's `title` and its `sections` (`{ label, href }`, each `href` an `#id` of a section on the page), and put the page's content in its default slot. Leave `sections` out for a page with no section bar, and set `hideTitle` when the content shows its own title, as Termly's policy iframe does. On `/buy-tickets`, a card under the title shows the release on sale now (the `current` one in the page's release data) and jumps to Luma's checkout embed (an iframe). The email gates' and footer's forms are `KitSignup` (`uid` is the Kit form's `data-uid` from its embed code), which styles Kit's embed as one row of field and green button, stacked below 480px. Other pages keep the Event nav and `SiteFooter` for now.
 - **Pages own their sponsors section.** Only `MarkdownLayout` renders sponsors for you. On a hand-written page, place `SponsorsGrid` yourself and pass `year` (and `tiered`) or `exclude` as needed.
 
 Wrap Markdown-derived HTML (an abstract, a description) in `MarkdownContent` to get prose styling for headings, lists and links.
@@ -210,17 +211,17 @@ Wrap Markdown-derived HTML (an abstract, a description) in `MarkdownContent` to 
 
 The `markdown` collection schema in `src/content.config.ts` checks each file's frontmatter:
 
-| Field              | Default    | Notes                                                              |
-| :----------------- | :--------- | :----------------------------------------------------------------- |
-| `title`            | (required) | Title bar text. The route also builds the page's `<title>` from it |
-| `description`      |            | Meta and Open Graph description                                    |
-| `width`            | `narrow`   | `narrow` or `wide` content column                                  |
-| `ogImage`          |            | Share image path under `public/`                                   |
-| `showSponsors`     | `true`     | Append the sponsors section                                        |
-| `showTestimonials` | `true`     | Append testimonials                                                |
-| `displayAlert`     | `true`     | `false` hides the yellow alert banner above the header             |
-| `featuredEventNav` | `false`    | Root-level pages: `true` shows the Featured Event's nav, as on `/` |
-| `published`        | `true`     | `false` leaves the page out of the build                           |
+| Field              | Default    | Notes                                                                      |
+| :----------------- | :--------- | :------------------------------------------------------------------------- |
+| `title`            | (required) | Title bar text. The route also builds the page's `<title>` from it         |
+| `description`      |            | Meta and Open Graph description                                            |
+| `width`            | `narrow`   | `narrow` or `wide` content column                                          |
+| `ogImage`          |            | Share image path under `public/`                                           |
+| `showSponsors`     | `true`     | Append the sponsors section                                                |
+| `showTestimonials` | `true`     | Append testimonials                                                        |
+| `displayAlert`     | `true`     | `false` hides the yellow alert banner above the header                     |
+| `featuredEventNav` | `false`    | Root-level pages: `true` shows the Featured Event's nav, as on `/schedule` |
+| `published`        | `true`     | `false` leaves the page out of the build                                   |
 
 Reference images in `src/assets/` by alias: `![alt](@assets/images/example.jpg)`.
 

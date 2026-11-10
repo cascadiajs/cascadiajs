@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+/**
+ * The home page's rotating photo gallery: every photo in
+ * src/assets/images/home-gallery, in filename order, scrolling slowly left
+ * in an endless loop. To change the photos, add or remove files there
+ * (3:2 landscape, at least 1200x800).
+ */
+const photos = Object.entries(
+  import.meta.glob<{ default: ImageMetadata }>(
+    "@assets/images/home-gallery/*.{jpg,jpeg,png}",
+    { eager: true },
+  ),
+)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, module]) => module.default);
+
+// Seconds per photo: about 39px a second at the mockup's 1512px width.
+const duration = `${photos.length * 16}s`;
+---
+
+{
+  /*
+    600x400 photos, 24px apart, starting where the mockup's still row does
+    (281px left of the page at 1512px); below 1512px they scale with the
+    window. The track holds the photos twice and slides left by half its
+    width, one full set, so the loop has no seam. Each photo carries its gap
+    as a right margin (not a flex gap) so that half is exact.
+
+    The script starts the motion (data-playing) unless the visitor prefers
+    reduced motion; without it the row stays still, as in the mockup. It
+    pauses while hovered, and the button pauses and plays it: moving content
+    that runs longer than five seconds needs a way to stop it (WCAG 2.2.2).
+    The photos are decoration, so screen readers skip them; the button
+    stays reachable.
+  */
+}
+<div
+  class="cjs-home-gallery group relative mt-16 overflow-clip"
+  style={`--home-gallery-duration: ${duration}`}
+>
+  <div
+    aria-hidden="true"
+    data-home-gallery-track
+    class="group-data-playing:animate-home-gallery ml-[calc(50%-min(68.59vw,1037px))] flex w-max group-hover:[animation-play-state:paused]! group-data-paused:[animation-play-state:paused]!"
+  >
+    {
+      [...photos, ...photos].map((photo) => (
+        <Image
+          src={photo}
+          alt=""
+          widths={[600, 1200]}
+          sizes="(min-width: 1512px) 600px, 40vw"
+          class="mr-[min(1.59vw,24px)] h-[min(26.46vw,400px)] w-[min(39.68vw,600px)] shrink-0 object-cover"
+        />
+      ))
+    }
+  </div>
+  <button
+    type="button"
+    hidden
+    data-home-gallery-toggle
+    aria-label="Pause photo gallery"
+    class="bg-sound-navy/60 hover:bg-sound-navy/80 focus-visible:outline-mist absolute right-4 bottom-4 flex size-11 cursor-pointer items-center justify-center rounded-full border-0 p-0 text-white focus-visible:outline-2 focus-visible:outline-offset-2"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path data-icon="pause" d="M6 4h4v16H6zM14 4h4v16h-4z"></path>
+      <path data-icon="play" d="M7 4l13 8-13 8z" class="hidden"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  const gallery = document.querySelector<HTMLElement>(".cjs-home-gallery");
+  const button = gallery?.querySelector<HTMLButtonElement>(
+    "[data-home-gallery-toggle]",
+  );
+  if (gallery && button) {
+    const pauseIcon = button.querySelector("[data-icon=pause]")!;
+    const playIcon = button.querySelector("[data-icon=play]")!;
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+    // Once started, the animation keeps its place when paused.
+    const setPlaying = (playing: boolean) => {
+      if (playing) {
+        gallery.dataset.playing = "";
+      }
+      gallery.toggleAttribute("data-paused", !playing);
+      button.setAttribute(
+        "aria-label",
+        playing ? "Pause photo gallery" : "Play photo gallery",
+      );
+      pauseIcon.classList.toggle("hidden", !playing);
+      playIcon.classList.toggle("hidden", playing);
+    };
+    button.addEventListener("click", () =>
+      setPlaying(gallery.hasAttribute("data-paused")),
+    );
+    reduceMotion.addEventListener("change", () => {
+      if (reduceMotion.matches) {
+        setPlaying(false);
+      }
+    });
+
+    setPlaying(!reduceMotion.matches);
+    button.hidden = false;
+  }
+</script>

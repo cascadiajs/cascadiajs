@@ -1,0 +1,88 @@
+---
+/**
+ * A Kit (ConvertKit) form embed, styled as in the 2027 Figma mockups: one
+ * row with a white email field and the green Subscribe button. Used by
+ * HomeFooter and /tickets.
+ */
+interface Props {
+  /** The form's Kit uid, from its embed code (`data-uid`). */
+  uid: string;
+  class?: string;
+}
+
+const { uid, class: className } = Astro.props;
+const src = `https://cascadiajs.kit.com/${uid}/index.js`;
+---
+
+<div class:list={["cjs-kit-signup mx-auto max-w-[635px]", className]}>
+  <script is:inline async data-uid={uid} src={src}></script>
+</div>
+
+<style is:global>
+  /* Kit's script embed injects its own form with inline styles, which only
+     !important overrides reach (ADR-0003's exception: markup we can't put
+     classes on). Lay the field and button out in one row, as in the mockup. */
+  .cjs-kit-signup .formkit-form {
+    max-width: none !important;
+    background: none !important;
+  }
+  .cjs-kit-signup .formkit-fields {
+    display: flex !important;
+    gap: 4px;
+    margin: 0 !important;
+  }
+  .cjs-kit-signup .formkit-field {
+    flex: 1 !important;
+    margin: 0 !important;
+  }
+  .cjs-kit-signup .formkit-input {
+    height: 43px !important;
+    padding-left: 14px !important;
+    border-radius: 5px !important;
+    font-family: var(--font-sans) !important;
+    font-size: 18px !important;
+  }
+  .cjs-kit-signup .formkit-input::placeholder {
+    color: var(--color-sound-navy) !important;
+    opacity: 1;
+  }
+  /* At least 152px (the mockup's Subscribe button), and wider for a longer
+     label, padded like the Tickets buttons. */
+  .cjs-kit-signup .formkit-submit {
+    flex: 0 0 auto !important;
+    min-width: 152px;
+    padding: 0 32px !important;
+    white-space: nowrap;
+    height: 43px !important;
+    margin: 0 !important;
+    border-radius: 5px !important;
+    background-color: var(--color-emerald-city-green) !important;
+    color: var(--color-sound-navy) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+  }
+  .cjs-kit-signup .formkit-submit:hover {
+    /* A 20% tint of the green, as on the header's Tickets button. */
+    background-color: color-mix(
+      in srgb,
+      var(--color-emerald-city-green),
+      white 20%
+    ) !important;
+  }
+  /* On phones, stack the field above a full-width button, so a long button
+     label doesn't squeeze the field too narrow to type in. */
+  @media (width < 30rem) {
+    .cjs-kit-signup .formkit-fields {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  /* Kit darkens the button by tinting this span with 10% black on hover and
+     focus. With its padding gone the span is only a strip across the middle,
+     so drop the tint and let the button's own hover colour show. */
+  .cjs-kit-signup .formkit-submit > span {
+    padding: 0 !important;
+    background: none !important;
+  }
+</style>

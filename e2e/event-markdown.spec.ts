@@ -8,9 +8,8 @@ import { test, expect } from "@playwright/test";
  * blog-index.spec.ts.
  */
 
-test.describe("featuredEventNav markdown pages get the home page's EventNav", () => {
+test.describe("featuredEventNav markdown pages get the Featured Event's EventNav", () => {
   for (const path of [
-    "/code-of-conduct",
     "/mailing-list",
     "/media-kit",
     "/welcome",

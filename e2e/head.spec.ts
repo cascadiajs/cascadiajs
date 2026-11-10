@@ -14,7 +14,8 @@ import { FROZEN_SNAPSHOT_PAGES } from "./helpers";
 const LAYOUT_PAGES = [
   { layout: "Layout", path: "/blog" },
   { layout: "EventLayout", path: "/" },
-  { layout: "MarkdownLayout", path: "/code-of-conduct" },
+  { layout: "MarkdownLayout", path: "/mailing-list" },
+  { layout: "InteriorLayout", path: "/code-of-conduct" },
 ];
 const FROZEN = FROZEN_SNAPSHOT_PAGES.map((file) => ({
   layout: `Frozen Snapshot ${file.replace(/\.html$/, "")}`,

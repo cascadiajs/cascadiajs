@@ -1,0 +1,14 @@
+---
+import EmailGateLayout from "@layouts/EmailGateLayout.astro";
+
+// The 2027 sponsor brochure gate, in the /tickets style. It replaces the
+// old `sponsor.md` markdown page and keeps its Kit form; once someone
+// submits it, Kit sends them on to the brochure at /sponsorships.
+const BROCHURE_FORM_UID = "8371f9bcf5";
+---
+
+<EmailGateLayout
+  heading="Request Sponsor Brochure"
+  uid={BROCHURE_FORM_UID}
+  next="/sponsorships"
+/>
