@@ -247,4 +247,65 @@ describe("Testimonials", () => {
       "https://x.com/someone/status/1",
     ]);
   });
+
+  test("with show, all are in the page but only the first few are embeds until the script picks", async () => {
+    const testimonial = (id: string) => ({
+      id,
+      permalink: `https://x.com/someone/status/${id}`,
+      author: "Some One",
+      handle: "@someone",
+      date: "June 1, 2026",
+      body: `Testimonial ${id}`,
+    });
+    const html = await render(Testimonials, {
+      props: {
+        testimonials: ["1", "2", "3"].map(testimonial),
+        show: 2,
+      },
+    });
+    expect(html).toContain('data-show="2"');
+    expect(html.match(/<blockquote/g)).toHaveLength(3);
+    expect(html.match(/class="twitter-tweet /g)).toHaveLength(2);
+    expect(html.match(/<div hidden/g)).toHaveLength(1);
+  });
+
+  test("a Bluesky post is a Bluesky embed and a LinkedIn post is our own card", async () => {
+    const html = await render(Testimonials, {
+      props: {
+        testimonials: [
+          {
+            id: "bsky-1",
+            platform: "bluesky",
+            permalink: "https://bsky.app/profile/someone/post/1",
+            author: "Some One",
+            handle: "@someone",
+            date: "June 1, 2026",
+            body: "Great conference!",
+            blueskyUri: "at://did:plc:abc/app.bsky.feed.post/1",
+            blueskyCid: "bafy",
+          },
+          {
+            id: "linkedin-1",
+            platform: "linkedin",
+            permalink: "https://www.linkedin.com/posts/someone",
+            author: "Another One",
+            handle: "anotherone",
+            date: "June 2, 2026",
+            body: "Loved it!",
+          },
+        ],
+      },
+    });
+    expect(html).toContain('class="bluesky-embed ');
+    expect(html).toContain(
+      'data-bluesky-uri="at://did:plc:abc/app.bsky.feed.post/1"',
+    );
+    const card = html.match(/<figure[^>]*>([\s\S]*?)<\/figure>/);
+    expect(card).not.toBeNull();
+    expect(text(card![1])).toContain("Loved it!");
+    expect(text(card![1])).toContain("Another One");
+    expect(tags(card![1], "a").map((a) => a.attrs.href)).toEqual([
+      "https://www.linkedin.com/posts/someone",
+    ]);
+  });
 });

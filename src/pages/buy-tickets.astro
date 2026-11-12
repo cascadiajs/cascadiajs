@@ -1,5 +1,6 @@
 ---
 import InteriorLayout from "@layouts/InteriorLayout.astro";
+import Arrow from "@components/Arrow.astro";
 
 // The 2027 ticket page, from the Figma "Interior page - buy-tickets -
 // laptop" frame. People reach it from the /tickets email form.
@@ -69,7 +70,7 @@ const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
           href="#luma-checkout"
           class="bg-sound-navy inline-flex items-center justify-center gap-2.5 rounded-[5px] px-7 py-3.5 text-lg font-bold whitespace-nowrap text-white no-underline hover:bg-[color-mix(in_srgb,var(--color-sound-navy),black_30%)]"
         >
-          Get your ticket <span aria-hidden="true">↓</span>
+          Get your ticket <Arrow direction="down" />
         </a>
       </div>
     )

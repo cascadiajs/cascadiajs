@@ -1,9 +1,15 @@
 ---
 /**
- * The right arrow from FreightSans Pro's ornaments, as the Figma mockup sets
- * it: the letter "J" with the `ornm` OpenType feature on. Use it inside
- * FreightSans text. Hidden from screen readers, which would read "J".
+ * An arrow from FreightSans Pro's ornaments, as the Figma mockup sets it: a
+ * letter with the `ornm` OpenType feature on ("J" is the right arrow, "K"
+ * the down arrow). Use it inside FreightSans text. Hidden from screen
+ * readers, which would read the letter.
  */
+interface Props {
+  direction?: "right" | "down";
+}
+const { direction = "right" } = Astro.props;
+const glyph = { right: "J", down: "K" }[direction];
 ---
 
-<span aria-hidden="true" class="[font-feature-settings:'ornm']">J</span>
+<span aria-hidden="true" class="[font-feature-settings:'ornm']">{glyph}</span>

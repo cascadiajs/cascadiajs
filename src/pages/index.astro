@@ -5,13 +5,12 @@ import HomeFooter from "@components/HomeFooter.astro";
 import Arrow from "@components/Arrow.astro";
 import HomeHeroVideo from "@components/HomeHeroVideo.astro";
 import HomeGallery from "@components/HomeGallery.astro";
+import HomeSpeakers from "@components/HomeSpeakers.astro";
 import Testimonials from "@components/Testimonials.astro";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { getCollection } from "astro:content";
 import { getEventConfig } from "@shared/data/events";
-import testimonialsData from "@shared/data/testimonials.json";
-import speakerPhoto from "@assets/images/home-cfp.jpg";
 // A stand-in photo until the one in the Figma mockup is added: the hero
 // video's poster.
 import heroPhoto from "@assets/images/cjs19-family-photo.jpg";
@@ -37,7 +36,6 @@ const PAST_SPONSOR_IDS = [
   "postman",
   "pulumi",
   "retool",
-  "salesforce-devs",
   "sentry",
   "tmobile",
   "twilio",
@@ -47,14 +45,26 @@ const pastSponsors = (await getCollection("sponsors"))
   .map((entry) => entry.data)
   .filter((sponsor) => PAST_SPONSOR_IDS.includes(sponsor.id))
   .sort((a, b) => a.name.localeCompare(b.name));
+// Logos the home page shows in place of a Sponsor's own: GitHub as its
+// lockup. The Sponsor record keeps the logo its event pages use.
+const HOME_LOGOS: Record<string, { logo: string; name: string }> = {
+  github: { logo: "github-lockup.svg", name: "GitHub" },
+};
 const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
   "@assets/images/sponsors/*.{jpg,png,svg,jpeg}",
   { eager: false, base: "/src/assets/images/sponsors" },
 );
 // The logos run left, centre, right across each row of three.
 const sponsorAlign = ["justify-start", "justify-center", "justify-end"];
-
-const testimonials = testimonialsData.slice(0, 4);
+// The logo grid with its "Past sponsors" badge (null) in the middle cell.
+// With 3 columns that cell is the exact center only for an even number of
+// logos in an odd number of rows (20 logos make 3×7 with the badge).
+const half = Math.floor(pastSponsors.length / 2);
+const sponsorCells = [
+  ...pastSponsors.slice(0, half),
+  null,
+  ...pastSponsors.slice(half),
+];
 
 // Sizes and spacing are the Figma "Home - laptop" frame's own values: a
 // 1176px content column, 64px between sections, and Figma's "Auto" line
@@ -122,13 +132,7 @@ const arrowLink =
       id="cfp"
       class={`${container} pt-16 md:grid md:grid-cols-[600fr_111fr_367fr_98fr]`}
     >
-      <Image
-        src={speakerPhoto}
-        alt="A speaker on stage, seen from behind, facing a packed hall under arched stained-glass windows"
-        widths={[600, 1200]}
-        sizes="(min-width: 768px) 600px, 100vw"
-        class="aspect-square w-full object-cover"
-      />
+      <HomeSpeakers />
       <div class="mt-8 md:col-start-3 md:mt-0">
         <p class={`${eyebrow} mb-4 text-lg`}>Call for presenters</p>
         <h2 class={heading}>Speak at CascadiaJS</h2>
@@ -142,46 +146,69 @@ const arrowLink =
       </div>
     </section>
 
-    <HomeGallery />
+    <div class={`${container} pt-16`}>
+      <hr class="border-sound-navy/10 m-0 border-t" />
+    </div>
 
     <section
       id="sponsor"
       class={`${container} pt-[65px] md:grid md:grid-cols-[367fr_209fr_593fr_7fr]`}
     >
       <div>
+        <p class={`${eyebrow} mb-4 text-lg`}>Partner with us</p>
         <h2 class={heading}>Sponsor</h2>
         <p class={body}>
-          CascadiaJS connects sponsors with highly technical developers who
-          evaluate tools, share recommendations, and influence technology
-          decisions at their organizations.
+          <strong class="font-semibold">
+            More face time. Better conversations.
+          </strong>
+          <br />
+          CascadiaJS connects sponsors with 600+ developers who evaluate tools, share
+          recommendations, and influence technology decisions at their organizations.
         </p>
         <a href="/sponsor" class={arrowLink}>See sponsor brochure <Arrow /></a>
       </div>
       <div class="mt-12 md:col-start-3 md:mt-0">
-        <p class={`${eyebrow} mb-[30px] text-xl`}>Past sponsors</p>
         <ul
-          class="m-0 grid list-none grid-cols-3 items-center gap-x-6 gap-y-10 p-0"
+          aria-label="Past sponsors"
+          class="@container m-0 grid list-none grid-cols-3 items-center gap-x-6 gap-y-10 p-0"
         >
           {
-            pastSponsors.map((sponsor, i) => (
-              <li
-                class={`flex h-7 min-w-0 items-center md:h-10 ${sponsorAlign[i % 3]}`}
-              >
-                <Image
-                  src={sponsorImages[`./${sponsor.logo}`]()}
-                  alt={`${sponsor.name} logo`}
-                  height={80}
-                  class="h-auto max-h-full w-auto max-w-full"
-                />
-              </li>
-            ))
+            sponsorCells.map((sponsor, i) =>
+              sponsor ? (
+                <li
+                  class={`flex h-7 min-w-0 items-center md:h-10 ${sponsorAlign[i % 3]}`}
+                >
+                  <Image
+                    src={sponsorImages[
+                      `./${HOME_LOGOS[sponsor.id]?.logo ?? sponsor.logo}`
+                    ]()}
+                    alt={`${HOME_LOGOS[sponsor.id]?.name ?? sponsor.name} logo`}
+                    height={80}
+                    class="h-auto max-h-full w-auto max-w-full"
+                  />
+                </li>
+              ) : (
+                /* A badge like the Past speakers one on the CFP grid, in navy
+                   to stand out on the page's mist background. The list's
+                   label says the same to screen readers. It's sized to the grid. */
+                <li
+                  aria-hidden="true"
+                  class="flex h-7 items-center justify-center md:h-10"
+                >
+                  <span class="font-display bg-sound-navy text-mist rounded-[0.4em] px-[0.8em] py-[0.5em] text-[clamp(13px,4.6cqw,25px)] leading-none font-light whitespace-nowrap">
+                    Past sponsors
+                  </span>
+                </li>
+              ),
+            )
           }
         </ul>
       </div>
     </section>
 
+    <HomeGallery />
+
     <section id="testimonials" class={`${container} pt-16 pb-16`}>
-      <hr class="border-sound-navy/10 m-0 mb-16 border-t" />
       <h2 class={`${heading} md:mb-16`}>Testimonials</h2>
       {
         /* Each embed is a fixed 300px column, so four need 1264px; as in the
@@ -190,12 +217,14 @@ const arrowLink =
            wrap. */
       }
       <div class="min-[1352px]:-mr-22">
-        <Testimonials testimonials={testimonials} />
+        <Testimonials show={4} />
       </div>
-      {/* Not a link until there's a page to send people to. */}
-      <p class={`${arrowLink} mt-6 mb-0`}>
-        More love for CascadiaJS <Arrow />
-      </p>
+      {
+        /* Hidden until there's a page of testimonials to send people to:
+           <p class={`${arrowLink} mt-6 mb-0`}>
+             More love for CascadiaJS <Arrow />
+           </p> */
+      }
     </section>
   </div>
 

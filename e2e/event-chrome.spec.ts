@@ -36,11 +36,15 @@ test.describe("Featured Event root", () => {
     await expect.poll(async () => (await nav.boundingBox())?.y).toBe(0);
   });
 
-  test("EventNav scrolls away at mobile width", async ({ page }) => {
+  // On phones the home nav waits above the window until the hero video has
+  // scrolled past, then stays at the top (see e2e/home.spec.ts).
+  test("the nav stays at the top after a scroll at mobile width", async ({
+    page,
+  }) => {
     await page.setViewportSize(MOBILE);
     await page.goto(root);
     await scrollDown(page);
     const nav = page.getByRole("navigation");
-    await expect.poll(async () => (await nav.boundingBox())?.y).toBeLessThan(0);
+    await expect.poll(async () => (await nav.boundingBox())?.y).toBe(0);
   });
 });

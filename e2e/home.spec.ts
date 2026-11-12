@@ -44,11 +44,13 @@ test.describe("the home page", () => {
     );
   });
 
-  test("nav items without a page aren't links", async ({ page }) => {
+  test("About links to the About page", async ({ page }) => {
     await page.goto("/");
     const nav = page.getByRole("navigation", { name: "Main" });
-    await expect(nav.getByText("About")).toBeVisible();
-    await expect(nav.getByRole("link", { name: "About" })).toHaveCount(0);
+    await expect(nav.getByRole("link", { name: "About" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
   });
 
   test("leaves out the items hidden for now", async ({ page }) => {
@@ -124,15 +126,25 @@ test.describe("the home page", () => {
     });
   });
 
+  /** The top of the home nav, relative to the window: -75 is slid away. */
+  const navTop = async (page: Page) =>
+    Math.round(
+      (await page
+        .getByRole("navigation", { name: "Main" })
+        .evaluate((el) => el.getBoundingClientRect().top)) as number,
+    );
+
+  /** Scroll to just past the hero video, where the nav shows at any width. */
+  const scrollPastHero = async (page: Page) => {
+    await page.evaluate(() => {
+      const hero = document.querySelector("[data-home-nav-pin]")!;
+      scrollTo(0, hero.getBoundingClientRect().bottom + scrollY + 10);
+    });
+    await expect.poll(() => navTop(page)).toBe(0);
+  };
+
   test.describe("from 880px up, where the full nav fits on one line", () => {
     test.use({ viewport: { width: 1280, height: 900 } });
-
-    const navTop = async (page: Page) =>
-      Math.round(
-        (await page
-          .getByRole("navigation", { name: "Main" })
-          .evaluate((el) => el.getBoundingClientRect().top)) as number,
-      );
 
     test("the nav takes no room: Call for presenters is 64px below the photo", async ({
       page,
@@ -180,8 +192,60 @@ test.describe("the home page", () => {
   test.describe("below 880px, the nav items collapse into a menu", () => {
     test.use({ viewport: { width: 375, height: 800 } });
 
+    test("the nav takes no room: Call for presenters is 64px below the video", async ({
+      page,
+    }) => {
+      await page.goto("/");
+      const gap = await page.evaluate(() => {
+        const hero = document.querySelector("[data-home-nav-pin]")!;
+        const cfp = document.querySelector("#cfp")!.firstElementChild!;
+        return (
+          cfp.getBoundingClientRect().top - hero.getBoundingClientRect().bottom
+        );
+      });
+      expect(Math.round(gap)).toBe(64);
+    });
+
+    test("the nav slides in once the whole video has scrolled past", async ({
+      page,
+    }) => {
+      await page.goto("/");
+      await expect.poll(() => navTop(page)).toBe(-75);
+      const heroBottom = await page
+        .locator("[data-home-nav-pin]")
+        .evaluate((el) => el.getBoundingClientRect().bottom + scrollY);
+
+      // Still away with the video's top past the top of the window.
+      await page.evaluate((y) => scrollTo(0, y), heroBottom - 10);
+      await expect.poll(() => navTop(page)).toBe(-75);
+
+      await page.evaluate((y) => scrollTo(0, y), heroBottom + 10);
+      await expect.poll(() => navTop(page)).toBe(0);
+
+      // It stays at the top further down the page.
+      await page.evaluate((y) => scrollTo(0, y), heroBottom + 1000);
+      await expect.poll(() => navTop(page)).toBe(0);
+
+      await page.evaluate(() => scrollTo(0, 0));
+      await expect.poll(() => navTop(page)).toBe(-75);
+    });
+
+    test("the menu closes when the nav slides away", async ({ page }) => {
+      await page.goto("/");
+      await scrollPastHero(page);
+      const button = page
+        .getByRole("navigation", { name: "Main" })
+        .getByRole("button", { name: "Menu" });
+      await button.click();
+      await expect(button).toHaveAttribute("aria-expanded", "true");
+      await button.blur();
+      await page.evaluate(() => scrollTo(0, 0));
+      await expect(button).toHaveAttribute("aria-expanded", "false");
+    });
+
     test("the bar is one row with a menu button", async ({ page }) => {
       await page.goto("/");
+      await scrollPastHero(page);
       const nav = page.getByRole("navigation", { name: "Main" });
       await expect(nav.getByRole("button", { name: "Menu" })).toBeVisible();
       await expect(nav.getByRole("link", { name: "CFP" })).toBeHidden();
@@ -192,6 +256,7 @@ test.describe("the home page", () => {
       page,
     }) => {
       await page.goto("/");
+      await scrollPastHero(page);
       const nav = page.getByRole("navigation", { name: "Main" });
       const button = nav.getByRole("button", { name: "Menu" });
 
@@ -216,6 +281,42 @@ test.describe("the home page", () => {
     await expect(nav.getByRole("button", { name: "Menu" })).toBeHidden();
     await expect(nav.getByRole("link", { name: "CFP" })).toBeVisible();
     expect(Math.round((await nav.boundingBox())!.height)).toBe(75);
+  });
+
+  test("the CFP section rotates past speakers through four tiles", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const grid = page
+      .locator("#cfp")
+      .getByRole("list", { name: "Past CascadiaJS speakers" });
+    const items = grid.getByRole("listitem");
+    await expect(items).toHaveCount(4);
+    expect(await grid.locator("img:not([data-incoming])").count()).toBe(4);
+    await expect(items.first()).toHaveText("Shruti Kapoor");
+    await expect(items.nth(1)).toHaveText("Theo");
+    // One tile at a time comes out from under the overlay: the first tile,
+    // then the second.
+    const inColor = grid.locator("li:not([data-overlay])");
+    await expect(inColor).toHaveText("Shruti Kapoor");
+    await expect(inColor).toHaveText("Theo");
+    // Once the second is back under the overlay, the first (not the one
+    // just in color) swaps to the next Speaker on the list.
+    await expect(items.first()).toHaveText("Bree Hall");
+    await expect(items.nth(1)).toHaveText("Theo");
+  });
+
+  test("past speakers don't rotate for reduced motion", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+    const grid = page
+      .locator("#cfp")
+      .getByRole("list", { name: "Past CascadiaJS speakers" });
+    await page.waitForTimeout(3500);
+    await expect(grid.locator("li[data-overlay]")).toHaveCount(0);
+    await expect(grid.getByRole("listitem").first()).toHaveText(
+      "Shruti Kapoor",
+    );
   });
 
   // The testimonials row overhangs the content column; below 1352px that
@@ -485,5 +586,47 @@ test.describe("the sponsor brochure page", () => {
     );
     await page.goto("/sponsor");
     await expect(page).toHaveURL(/\/sponsorships$/);
+  });
+});
+
+/** /about, on the /buy-tickets template (InteriorLayout). */
+test.describe("the about page", () => {
+  test("has the green nav, section bar, sections, Organizers and past Events", async ({
+    page,
+  }) => {
+    await page.goto("/about");
+    await expect(page.locator(".cjs-home-footer")).toHaveCount(1);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "About" }),
+    ).toBeVisible();
+    const sectionBar = page.getByRole("navigation", {
+      name: "About sections",
+    });
+    for (const name of ["Organizers", "Past Events", "Contact"]) {
+      await expect(page.getByRole("heading", { level: 2, name })).toBeVisible();
+      await expect(sectionBar.getByRole("link", { name })).toBeVisible();
+    }
+    const organizers = page.locator("#organizers li");
+    await expect(organizers).toHaveCount(3);
+    await expect(organizers.first()).toContainText("Carter Rabasa");
+    await expect(organizers.nth(0)).toContainText("Organizer");
+    await expect(organizers.nth(1)).toContainText("Carrie Rabasa");
+    await expect(organizers.nth(1)).not.toContainText("Co-Organizer");
+    await expect(
+      page.getByRole("link", { name: "CascadiaJS 2026" }),
+    ).toHaveAttribute("href", "/2026");
+    await expect(page.locator("#past-events li")).toHaveCount(13);
+    await expect(
+      page.getByRole("link", { name: "CascadiaJS 2012" }),
+    ).toHaveAttribute("href", "https://2012.cascadiajs.com");
+  });
+
+  test("doesn't scroll sideways at 375px", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto("/about");
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+    expect(overflow).toBe(0);
   });
 });

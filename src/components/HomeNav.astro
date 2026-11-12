@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 import iconBlue from "@assets/events/2027/images/cjs-icon-blue.svg";
 
 /**
- * The 2027 green nav bar (Figma "Home - laptop"). Trainings, Attend and About
- * have no page yet, so they show as plain text, not links.
+ * The 2027 green nav bar (Figma "Home - laptop"). Trainings and Attend have
+ * no page yet, so they show as plain text, not links.
  *
  * `sticky` is for pages without a hero photo, such as /tickets: the bar sits
  * at the top of the window and stays there as you scroll, at every width.
@@ -21,7 +21,7 @@ const { sticky = false } = Astro.props;
 // See the comment above the <nav> for how the home page's bar behaves.
 const position = sticky
   ? "fixed inset-x-0 top-0 z-1000"
-  : "max-nav:relative max-nav:z-10 nav:fixed nav:inset-x-0 nav:top-0 nav:z-1000 nav:-translate-y-full nav:focus-within:translate-y-0 nav:data-pinned:translate-y-0 motion-safe:nav:transition-transform motion-safe:nav:duration-200 motion-safe:nav:ease-out";
+  : "fixed inset-x-0 top-0 z-1000 -translate-y-full focus-within:translate-y-0 data-pinned:translate-y-0 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out";
 
 // `hidden` items are left out of the nav for now; drop the flag to show
 // one again.
@@ -32,23 +32,24 @@ const links = (
     { label: "Trainings", hidden: true },
     { label: "Schedule", href: "/schedule", hidden: true },
     { label: "Attend", hidden: true },
-    { label: "About" },
+    { label: "About", href: "/about" },
   ] as { label: string; href?: string; hidden?: boolean }[]
 ).filter((link) => !link.hidden);
 ---
 
 {
   /*
-    From the `nav` breakpoint up (880px, where the full row fits on one 75px
-    line) the nav takes no room in the page: it waits just above the window
-    and slides down once the top of the hero photo (marked
-    data-home-nav-pin) reaches the top, and back up when you scroll above it.
-    It also slides down while it has keyboard focus, so it's reachable from
-    the top of the page.
+    The nav takes no room in the page: it waits just above the window and
+    slides down once you scroll to the hero video (marked data-home-nav-pin),
+    and back up when you scroll above it. From the `nav` breakpoint up
+    (880px, where the full row fits on one 75px line) it comes in when the
+    top of the video reaches the top of the window; below that, on phones,
+    once the whole video has scrolled past. It also slides down while it has
+    keyboard focus, so it's reachable from the top of the page.
 
-    Below the breakpoint it sits in the page under the photo, and its items
-    collapse behind a menu button that opens them as a list under the bar.
-    The script sets data-menu; without it, the items show in the bar.
+    Below the breakpoint its items collapse behind a menu button that opens
+    them as a list under the bar. The script sets data-menu; without it, the
+    items show in the bar.
 
     With `sticky`, none of the sliding applies: the bar stays at the top of
     the window, with a spacer below it holding its place in the page.
@@ -134,13 +135,25 @@ const links = (
 <script>
   const nav = document.querySelector<HTMLElement>(".cjs-home-nav");
   const pin = document.querySelector("[data-home-nav-pin]");
+  // From the nav breakpoint up (55rem, 880px).
+  const wide = matchMedia("(width >= 55rem)");
   if (nav && pin) {
     let pinned: boolean | undefined;
     const update = () => {
-      const next = pin.getBoundingClientRect().top <= 0;
+      // Wide: once the video's top reaches the top of the window. Phones:
+      // once the whole video has scrolled past.
+      const box = pin.getBoundingClientRect();
+      const next = (wide.matches ? box.top : box.bottom) <= 0;
       if (next !== pinned) {
         pinned = next;
         nav.toggleAttribute("data-pinned", next);
+        // Don't leave the menu open on a bar that has slid away.
+        if (!next && nav.dataset.menu === "open") {
+          nav.dataset.menu = "closed";
+          nav
+            .querySelector("[data-home-nav-toggle]")
+            ?.setAttribute("aria-expanded", "false");
+        }
       }
     };
     addEventListener("scroll", update, { passive: true });
@@ -180,20 +193,16 @@ const links = (
         setOpen(false);
       }
     });
-    matchMedia("(width >= 55rem)").addEventListener("change", () =>
-      setOpen(false),
-    );
+    wide.addEventListener("change", () => setOpen(false));
   }
 </script>
 
 <style is:global>
-  /* While the nav is pinned (from the nav breakpoint up, 75px tall), keep
-     in-page scrolls and keyboard focus from landing underneath it. A global
-     rule because it has to reach <html>. */
-  @media (width >= 55rem) {
-    html:has(.cjs-home-nav[data-pinned]) {
-      scroll-padding-top: 75px;
-    }
+  /* While the nav is pinned (75px tall at every width), keep in-page
+     scrolls and keyboard focus from landing underneath it. A global rule
+     because it has to reach <html>. */
+  html:has(.cjs-home-nav[data-pinned]) {
+    scroll-padding-top: 75px;
   }
   /* The sticky bar is 75px tall at every width. */
   html:has(.cjs-home-nav[data-sticky]) {
