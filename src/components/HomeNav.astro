@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import iconBlue from "@assets/events/2027/images/cjs-icon-blue.svg";
+import iconGreen from "@assets/events/2027/images/cjs-icon-green.svg";
 
 /**
  * The 2027 green nav bar (Figma "Home - laptop"). Trainings and Attend have
@@ -11,12 +12,32 @@ import iconBlue from "@assets/events/2027/images/cjs-icon-blue.svg";
  * It's fixed rather than `position: sticky`, which would only stick until
  * the end of <main> and scroll away over the footer, so it leaves a 75px
  * spacer to hold its place in the page.
+ *
+ * `variant="navy"` is the sponsor brochure's bar: navy with the green logo
+ * and button, and no links (`links={false}`). `cta` replaces the Tickets
+ * button.
  */
-interface Props {
+export interface Props {
   sticky?: boolean;
+  variant?: "green" | "navy";
+  /** Show the site's links. Without them the bar is the logo and button. */
+  links?: boolean;
+  cta?: { label: string; href: string };
+  /**
+   * Short facts, such as the dates and venue, shown between the logo and
+   * the button from 768px up (phones have no room for them).
+   */
+  details?: string[];
 }
 
-const { sticky = false } = Astro.props;
+const {
+  sticky = false,
+  variant = "green",
+  links: showLinks = true,
+  cta = { label: "Tickets", href: "/tickets" },
+  details = [],
+} = Astro.props;
+const navy = variant === "navy";
 
 // See the comment above the <nav> for how the home page's bar behaves.
 const position = sticky
@@ -59,7 +80,8 @@ const links = (
   aria-label="Main"
   data-sticky={sticky || undefined}
   class:list={[
-    "cjs-home-nav group bg-emerald-city-green font-display px-4 py-4 text-[24px] leading-none font-light shadow-[0_4px_12px_rgb(17_35_120/0.1)]",
+    "cjs-home-nav group font-display px-4 py-4 text-[24px] leading-none font-light shadow-[0_4px_12px_rgb(17_35_120/0.1)]",
+    navy ? "bg-sound-navy" : "bg-emerald-city-green",
     position,
   ]}
 >
@@ -68,65 +90,100 @@ const links = (
        opens, and sits just left of Tickets. */
   }
   <div
-    class="nav:justify-center nav:gap-x-10 flex flex-wrap items-center gap-x-4 gap-y-3"
+    class:list={[
+      "flex flex-wrap items-center gap-x-4 gap-y-3",
+      showLinks
+        ? "nav:justify-center nav:gap-x-10"
+        : "mx-auto max-w-294 justify-between",
+    ]}
   >
     <a href="/" class="block">
-      <Image src={iconBlue} alt="CascadiaJS home" class="h-8 w-auto" />
+      <Image
+        src={navy ? iconGreen : iconBlue}
+        alt="CascadiaJS home"
+        class="h-8 w-auto"
+      />
     </a>
-    <button
-      type="button"
-      hidden
-      data-home-nav-toggle
-      aria-controls="home-nav-menu"
-      aria-expanded="false"
-      aria-label="Menu"
-      class="nav:hidden text-sound-navy focus-visible:outline-sound-navy ml-auto flex h-[43px] w-11 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-offset-2"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        width="28"
-        height="28"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        aria-hidden="true"
-      >
-        <path class="group-data-[menu=open]:hidden" d="M3 6h18M3 12h18M3 18h18"
-        ></path>
-        <path
-          class="hidden group-data-[menu=open]:inline"
-          d="M5 5l14 14M19 5L5 19"></path>
-      </svg>
-    </button>
-    <ul
-      id="home-nav-menu"
-      class="max-nav:group-data-[menu]:bg-emerald-city-green max-nav:group-data-[menu]:border-sound-navy/15 max-nav:group-data-[menu]:absolute max-nav:group-data-[menu]:inset-x-0 max-nav:group-data-[menu]:top-full max-nav:group-data-[menu]:flex-col max-nav:group-data-[menu]:items-stretch max-nav:group-data-[menu]:gap-0 max-nav:group-data-[menu]:border-t max-nav:group-data-[menu]:py-2 max-nav:group-data-[menu]:shadow-[0_4px_12px_rgb(17_35_120/0.1)] max-nav:group-data-[menu=closed]:hidden m-0 flex list-none flex-wrap items-center gap-x-10 gap-y-3 p-0"
-    >
-      {
-        links.map(({ label, href }) => (
-          <li>
-            {href ? (
-              <a
-                href={href}
-                class="text-sound-navy max-nav:group-data-[menu]:block max-nav:group-data-[menu]:px-4 max-nav:group-data-[menu]:py-3 no-underline hover:underline"
-              >
-                {label}
-              </a>
-            ) : (
-              <span class="text-sound-navy max-nav:group-data-[menu]:block max-nav:group-data-[menu]:px-4 max-nav:group-data-[menu]:py-3">
-                {label}
-              </span>
-            )}
-          </li>
-        ))
-      }
-    </ul>
+    {
+      showLinks && (
+        <>
+          <button
+            type="button"
+            hidden
+            data-home-nav-toggle
+            aria-controls="home-nav-menu"
+            aria-expanded="false"
+            aria-label="Menu"
+            class="nav:hidden text-sound-navy focus-visible:outline-sound-navy ml-auto flex h-[43px] w-11 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path
+                class="group-data-[menu=open]:hidden"
+                d="M3 6h18M3 12h18M3 18h18"
+              />
+              <path
+                class="hidden group-data-[menu=open]:inline"
+                d="M5 5l14 14M19 5L5 19"
+              />
+            </svg>
+          </button>
+          <ul
+            id="home-nav-menu"
+            class="max-nav:group-data-[menu]:bg-emerald-city-green max-nav:group-data-[menu]:border-sound-navy/15 max-nav:group-data-[menu]:absolute max-nav:group-data-[menu]:inset-x-0 max-nav:group-data-[menu]:top-full max-nav:group-data-[menu]:flex-col max-nav:group-data-[menu]:items-stretch max-nav:group-data-[menu]:gap-0 max-nav:group-data-[menu]:border-t max-nav:group-data-[menu]:py-2 max-nav:group-data-[menu]:shadow-[0_4px_12px_rgb(17_35_120/0.1)] max-nav:group-data-[menu=closed]:hidden m-0 flex list-none flex-wrap items-center gap-x-10 gap-y-3 p-0"
+          >
+            {links.map(({ label, href }) => (
+              <li>
+                {href ? (
+                  <a
+                    href={href}
+                    class="text-sound-navy max-nav:group-data-[menu]:block max-nav:group-data-[menu]:px-4 max-nav:group-data-[menu]:py-3 no-underline hover:underline"
+                  >
+                    {label}
+                  </a>
+                ) : (
+                  <span class="text-sound-navy max-nav:group-data-[menu]:block max-nav:group-data-[menu]:px-4 max-nav:group-data-[menu]:py-3">
+                    {label}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+    {
+      details.length > 0 && (
+        <p
+          class:list={[
+            "m-0 hidden gap-x-8 md:flex",
+            navy ? "text-emerald-city-green" : "text-sound-navy",
+          ]}
+        >
+          {details.map((detail) => (
+            <span>{detail}</span>
+          ))}
+        </p>
+      )
+    }
     <a
-      href="/tickets"
-      class="text-sound-navy bg-mist block rounded-[5px] px-8 py-2 font-sans text-xl leading-[27px] font-bold no-underline hover:bg-white hover:underline"
+      href={cta.href}
+      class:list={[
+        "text-sound-navy block rounded-[5px] px-8 py-2 font-sans text-xl leading-[27px] font-bold no-underline hover:underline",
+        navy
+          ? "bg-emerald-city-green hover:bg-[color-mix(in_srgb,var(--color-emerald-city-green),white_20%)]"
+          : "bg-mist hover:bg-white",
+      ]}
     >
-      Tickets
+      {cta.label}
     </a>
   </div>
 </nav>

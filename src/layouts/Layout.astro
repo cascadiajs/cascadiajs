@@ -26,6 +26,12 @@ interface Props {
     authors: string[];
     tags: string[];
   };
+  /**
+   * The page's background, behind everything: cream for the older pages,
+   * mist for the 2027 design, so a short page has no cream band above the
+   * footer.
+   */
+  background?: "cream" | "mist";
 }
 
 const {
@@ -36,7 +42,12 @@ const {
   title = DEFAULT_TITLE,
   article,
   canonicalPath,
+  background = "cream",
 } = Astro.props;
+const backgroundClass = {
+  cream: "bg-seafoam-cream",
+  mist: "bg-mist",
+}[background];
 
 // Legacy snippets, verbatim from app/head.mjs. Kept as strings so the braces
 // in them aren't parsed as template expressions.
@@ -176,7 +187,10 @@ if (import.meta.env.NETLIFY) {
        max-content, which would let an overwide section (2026 pricing row)
        stretch the whole grid. -->
   <body
-    class="bg-seafoam-cream md:grid md:min-h-screen md:grid-cols-[100%] md:grid-rows-[auto_1fr_auto]"
+    class:list={[
+      backgroundClass,
+      "md:grid md:min-h-screen md:grid-cols-[100%] md:grid-rows-[auto_1fr_auto]",
+    ]}
   >
     <SiteHeader displayNav={displayNav} displayAlert={displayAlert} />
 

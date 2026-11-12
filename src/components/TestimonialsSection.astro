@@ -1,0 +1,47 @@
+---
+import Testimonials from "@components/Testimonials.astro";
+import type { Testimonial } from "@components/Testimonials.astro";
+
+/**
+ * The 2027 Testimonials section: the heading and 4 testimonials picked at
+ * random on each visit, in the home page's 1176px column. Used by the home
+ * page and /sponsorships. `headingSize="interior"` matches an interior
+ * page's section headings (48px) instead of the home page's (72px).
+ * `testimonials` picks from a set of its own, as /sponsorships does with
+ * sponsors' posts.
+ */
+interface Props {
+  headingSize?: "home" | "interior";
+  /** Defaults to the shared testimonials data. */
+  testimonials?: Testimonial[];
+}
+
+const { headingSize = "home", testimonials } = Astro.props;
+---
+
+<section
+  id="testimonials"
+  class="text-sound-navy mx-auto box-content max-w-294 px-4 pt-16 pb-16 font-normal"
+>
+  <h2
+    class:list={[
+      "mt-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold",
+      headingSize === "home" ? "md:mb-16 md:text-[72px]" : "md:mb-8",
+    ]}
+  >
+    Testimonials
+  </h2>
+  {
+    /* Each embed is a fixed 300px column, so four need 1264px; as in the
+       mockup, the row runs 88px past the content's right edge, but only
+       from 1352px up, where the window has room for it. Narrower, they
+       wrap. */
+  }
+  <div class="min-[1352px]:-mr-22">
+    <Testimonials show={4} testimonials={testimonials} />
+  </div>
+  {
+    /* Hidden until there's a page of testimonials to send people to:
+       <p>More love for CascadiaJS <Arrow /></p> */
+  }
+</section>

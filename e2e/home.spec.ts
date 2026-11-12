@@ -101,6 +101,43 @@ test.describe("the home page", () => {
           : style.animationPlayState;
       });
 
+    // Each photo's image file, minus Astro's per-build hash and size.
+    const order = (page: Page) =>
+      page
+        .locator("[data-home-gallery-track] img")
+        .evaluateAll((imgs) =>
+          imgs.map((img) =>
+            decodeURIComponent((img as HTMLImageElement).src).replace(
+              /.*\/([^/.]+)\..*/,
+              "$1",
+            ),
+          ),
+        );
+
+    test("shuffles the photos, with both sets in the same order", async ({
+      page,
+    }) => {
+      // A seeded Math.random, so two visits get two known orders.
+      const visit = async (seed: number) => {
+        await page.addInitScript((start) => {
+          let state = start;
+          Math.random = () => {
+            state = (state * 1103515245 + 12345) % 2 ** 31;
+            return state / 2 ** 31;
+          };
+        }, seed);
+        await page.goto("/");
+        const photos = await order(page);
+        const half = photos.length / 2;
+        expect(photos.slice(half)).toEqual(photos.slice(0, half));
+        return photos.slice(0, half);
+      };
+      const first = await visit(1);
+      const second = await visit(2);
+      expect(second).not.toEqual(first);
+      expect([...second].sort()).toEqual([...first].sort());
+    });
+
     test("scrolls, and the button pauses and plays it", async ({ page }) => {
       await page.goto("/");
       await expect.poll(() => playState(page)).toBe("running");
@@ -589,6 +626,94 @@ test.describe("the sponsor brochure page", () => {
   });
 });
 
+/** /sponsorships, the sponsor brochure, on the /buy-tickets template. */
+test.describe("the sponsorship brochure page", () => {
+  test("has the interior chrome, the offer card and its sections", async ({
+    page,
+  }) => {
+    await page.goto("/sponsorships");
+    await expect(page.locator(".cjs-home-footer")).toHaveCount(1);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Sponsorships" }),
+    ).toBeVisible();
+    await expect(
+      page.getByText("CascadiaJS 2027", { exact: true }),
+    ).toBeVisible();
+    await expect(
+      page.getByText("Super Early Bird: 30% off until Dec 31, 2026"),
+    ).toBeVisible();
+    const sectionBar = page.getByRole("navigation", {
+      name: "Sponsorships sections",
+    });
+    for (const [label, heading] of [
+      ["Audience", "Audience"],
+      ["Packages", "Packages"],
+      ["Add-Ons", "Speaking & Workshop Add-Ons"],
+      ["Contact", "Build Your Package"],
+    ]) {
+      await expect(sectionBar.getByRole("link", { name: label })).toBeVisible();
+      await expect(
+        page.getByRole("heading", { level: 2, name: heading }),
+      ).toBeVisible();
+    }
+    await expect(page.getByRole("heading", { name: "About" })).toHaveCount(0);
+    for (const heading of [
+      "Connect with Developers Building the Future of Web and AI",
+      "Additional Sponsorship Opportunities",
+    ]) {
+      await expect(
+        page.getByRole("heading", { level: 2, name: heading }),
+      ).toBeVisible();
+    }
+    await expect(
+      page.getByText("30% off until Dec 31, 2026", { exact: true }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /See packages/ }),
+    ).toHaveAttribute("href", "#packages");
+    // Its own navy bar: the logo and a booking button, no site links.
+    const nav = page.getByRole("navigation", { name: "Main" });
+    await expect(nav.getByRole("link")).toHaveText(["", "Book a time to talk"]);
+    await expect(nav).toHaveCSS("background-color", "rgb(17, 35, 120)");
+    await expect(nav).toContainText("June 7-8, 2027");
+    await expect(nav).toContainText("Seattle Convention Center");
+    const packages = page.getByRole("region", { name: "Sponsorship packages" });
+    await expect(packages.getByRole("columnheader")).toHaveText([
+      "Diamond",
+      "Platinum",
+      "Gold",
+      "Silver",
+      "Bronze",
+      "Community",
+    ]);
+    await expect(
+      page.getByRole("list", { name: "Past sponsors" }).getByRole("img"),
+    ).toHaveCount(20);
+    await expect(
+      page.locator("#testimonials [data-show] > div:not([hidden])"),
+    ).toHaveCount(4);
+    // Picked from the sponsors' own set, not the home page's.
+    await expect(page.locator("#testimonials [data-show] > div")).toHaveCount(
+      4,
+    );
+  });
+
+  test("doesn't scroll sideways at 375px, and its section bar fits", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto("/sponsorships");
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+    expect(overflow).toBe(0);
+    const barOverflow = await page
+      .locator(".cjs-page-subnav > div")
+      .evaluate((bar) => bar.scrollWidth - bar.clientWidth);
+    expect(barOverflow).toBe(0);
+  });
+});
+
 /** /about, on the /buy-tickets template (InteriorLayout). */
 test.describe("the about page", () => {
   test("has the green nav, section bar, sections, Organizers and past Events", async ({
@@ -628,5 +753,26 @@ test.describe("the about page", () => {
       () => document.documentElement.scrollWidth - window.innerWidth,
     );
     expect(overflow).toBe(0);
+  });
+});
+
+/**
+ * The 2027 pages are mist behind everything, so a short one has no band of
+ * the older pages' cream between its content and the footer.
+ */
+test.describe("the page background", () => {
+  const bodyBackground = (page: Page) =>
+    page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+
+  for (const path of ["/", "/tickets", "/about"]) {
+    test(`${path} is mist`, async ({ page }) => {
+      await page.goto(path);
+      expect(await bodyBackground(page)).toBe("rgb(245, 250, 248)");
+    });
+  }
+
+  test("an older page keeps its cream", async ({ page }) => {
+    await page.goto("/2026");
+    expect(await bodyBackground(page)).toBe("rgb(255, 251, 235)");
   });
 });
