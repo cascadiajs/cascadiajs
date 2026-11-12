@@ -1,0 +1,53 @@
+---
+/**
+ * The 2027 interior pages' section bar (Figma "Interior page - buy-tickets -
+ * laptop"): the page's name, then links to its sections. It sits under
+ * `<HomeNav sticky />` and sticks just below it while you scroll through
+ * the page's content.
+ */
+interface Props {
+  title: string;
+  links: { label: string; href: string }[];
+}
+
+const { title, links } = Astro.props;
+---
+
+{
+  /* 47px tall, as in the mockup: 14px above, 19px of text, 13px below and
+     a 1px border. On phones (below 640px) the page's name is dropped (the
+     page title says it) and the gaps narrow, so the links fit on one row
+     from 360px wide up. Narrower than that it scrolls sideways as a last
+     resort, with no scrollbar, which would draw over the labels. */
+}
+<nav
+  aria-label={`${title} sections`}
+  class="cjs-page-subnav bg-mist border-sound-navy/10 sticky top-[75px] z-999 border-b pt-[14px] pb-[13px]"
+>
+  <div
+    class="mx-auto box-content flex min-h-[19px] max-w-294 [scrollbar-width:none] items-start gap-x-4 overflow-x-auto px-4 whitespace-nowrap sm:gap-x-6 md:gap-x-10"
+  >
+    <span
+      class="font-display text-sound-navy hidden text-xl leading-[0.95] sm:inline"
+      >{title}</span
+    >
+    {
+      links.map(({ label, href }) => (
+        <a
+          href={href}
+          class="text-sound-navy text-lg leading-[0.95] no-underline hover:underline"
+        >
+          {label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<style is:global>
+  /* Land in-page links and keyboard focus below both bars (75px + 47px).
+     More specific than HomeNav's 75px rule, so this one wins. */
+  html:has(.cjs-home-nav[data-sticky]):has(.cjs-page-subnav) {
+    scroll-padding-top: 122px;
+  }
+</style>

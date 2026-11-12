@@ -1,0 +1,153 @@
+---
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+import Arrow from "@components/Arrow.astro";
+
+// The 2027 ticket page, from the Figma "Interior page - buy-tickets -
+// laptop" frame. People reach it from the /tickets email form.
+const sections = [
+  { label: "Buy Tickets", href: "#buy-tickets" },
+  { label: "Release Schedule", href: "#release-schedule" },
+  { label: "Group Sales", href: "#group-sales" },
+];
+
+const included = [
+  "Access to talks & workshops",
+  "Conference hoodie (if registered by April 29, 2027)",
+  "Coffee and lunch (June 7 + 8)",
+  "Dinner and Drinks (June 7)",
+  "+1 for the Closing Party",
+];
+
+// Prices in dollars. The release on sale now is marked `current`; the card
+// under the page title shows its prices.
+const releases = [
+  {
+    name: "Blind Bird",
+    until: "100 tickets sold",
+    price: 499,
+    indie: 299,
+    current: true,
+  },
+  { name: "Early Bird", until: "Feb 2027", price: 599, indie: 399 },
+  { name: "Regular Bird", until: "April 2027", price: 699, indie: 499 },
+  { name: "Full Price", until: "June 2027", price: 799, indie: 599 },
+];
+const onSale = releases.find((release) => release.current);
+
+const LUMA_EVENT_ID = "evt-lnaYPvSZF8EnaHw";
+
+// Sizes and spacing are the mockup's: 64px between sections, 16px from a
+// heading to its text, and a 700px text measure.
+const heading =
+  "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
+const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
+---
+
+<InteriorLayout title="Tickets" sections={sections}>
+  {
+    /* The release on sale now, its prices, and a jump to the checkout.
+       One row from 640px up; stacked on phones. Each price is a dt/dd
+       pair, shown price first but read label first. */
+    onSale && (
+      <div class="border-sound-navy mb-12 grid max-w-[760px] items-center gap-4 rounded-md border-2 bg-white px-6 py-5 sm:grid-cols-[auto_1fr_auto] sm:gap-6">
+        <span class="bg-emerald-city-green w-fit rounded-[3px] px-2 text-sm leading-[1.5] font-bold">
+          On sale now
+        </span>
+        <dl class="m-0 flex gap-8">
+          {[
+            { label: onSale.name, price: onSale.price },
+            { label: "Indie", price: onSale.indie },
+          ].map(({ label, price }) => (
+            <div class="flex flex-col-reverse">
+              <dt class="text-sound-navy/70 text-sm">{label}</dt>
+              <dd class="m-0 font-serif text-[32px] leading-9 font-bold">
+                ${price}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <a
+          href="#luma-checkout"
+          class="bg-sound-navy inline-flex items-center justify-center gap-2.5 rounded-[5px] px-7 py-3.5 text-lg font-bold whitespace-nowrap text-white no-underline hover:bg-[color-mix(in_srgb,var(--color-sound-navy),black_30%)]"
+        >
+          Get your ticket <Arrow direction="down" />
+        </a>
+      </div>
+    )
+  }
+
+  {
+    /* Not in the mockup, but it's how people buy: what a ticket includes,
+       who qualifies for an Indie ticket, then Luma's checkout, up to 600px
+       wide as Luma's embed code sets it. Luma can't hide the event's cover
+       image, so the embed is tall enough to show everything (cover, ticket
+       choices and its bottom links) without scrolling inside it: 820px at
+       600px wide, and 880px on phones, where its contents stack. */
+  }
+  <section id="buy-tickets" aria-label="Buy Tickets" class="scroll-mt-8">
+    <p class={body}>Your conference ticket includes:</p>
+    <ul class={`${body} list-disc pl-[1.5em]`}>
+      {included.map((item) => <li>{item}</li>)}
+    </ul>
+    <p class={`${body} mt-4! mb-8!`}>
+      You qualify for an Indie ticket if you’re between jobs, self-employed,
+      work for an educational institution, or work for a non-profit organization
+      or company with fewer than 10 employees.
+    </p>
+    <iframe
+      src={`https://luma.com/embed/event/${LUMA_EVENT_ID}/simple`}
+      id="luma-checkout"
+      title="Buy CascadiaJS 2027 tickets on Luma"
+      width="600"
+      height="820"
+      allow="fullscreen; payment"
+      loading="lazy"
+      class="block h-[880px] w-full max-w-[600px] scroll-mt-8 rounded-[4px] border border-[#bfcbda88] sm:h-[820px]"
+    ></iframe>
+  </section>
+
+  <section id="release-schedule" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Release Schedule</h2>
+    <table
+      class="w-full max-w-[700px] border-collapse text-left text-lg leading-[1.5]"
+    >
+      <thead>
+        <tr class="border-sound-navy border-b">
+          <th scope="col" class="py-1 pr-6 font-bold">Release</th>
+          <th scope="col" class="py-1 pr-6 font-bold">On Sale Until</th>
+          <th scope="col" class="py-1 font-bold">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          releases.map(({ name, until, price, indie, current }) => (
+            <tr class="border-sound-navy/10 border-b">
+              <th scope="row" class="py-1 pr-6 font-normal">
+                {name}
+                {current && (
+                  <span class="bg-emerald-city-green ml-2 inline-block rounded-[5px] px-2 text-sm leading-[1.5] font-bold whitespace-nowrap">
+                    On sale now
+                  </span>
+                )}
+              </th>
+              <td class="py-1 pr-6">{until}</td>
+              <td class="py-1">
+                ${price} (${indie} with Indie Discount)
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </section>
+
+  <section id="group-sales" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Group Sales</h2>
+    <p class={body}>
+      For group/team purchases of 5 people or more, please email us at <a
+        href="mailto:info@cascadiajs.com"
+        class="text-sound-navy underline">info@cascadiajs.com</a
+      >.
+    </p>
+  </section>
+</InteriorLayout>

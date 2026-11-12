@@ -184,7 +184,7 @@ if (import.meta.env.NETLIFY) {
       <slot />
     </main>
 
-    <SiteFooter />
+    <slot name="footer"><SiteFooter /></slot>
     <noscript set:html={META_PIXEL_NOSCRIPT} />
   </body>
 </html>

@@ -1,0 +1,29 @@
+---
+import { getEntry, render } from "astro:content";
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+
+// The Code of Conduct, on the 2027 interior template. Its text stays in
+// `src/content/markdown/code-of-conduct.md`; edit it there.
+const entry = await getEntry("markdown", "code-of-conduct");
+if (!entry) {
+  throw new Error("src/content/markdown/code-of-conduct.md is missing");
+}
+const { Content } = await render(entry);
+---
+
+<InteriorLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  ogImage={entry.data.ogImage}
+>
+  {
+    /* Markdown can't carry classes, so its elements are styled from here,
+       to match the interior pages' sections: 64px above each heading, 16px
+       from a heading to its text, and a 700px text measure. */
+  }
+  <div
+    class="[&_a]:text-sound-navy max-w-[700px] text-lg leading-[1.5] [&_a]:underline [&_h2]:mt-16 [&_h2]:mb-4 [&_h2]:font-serif [&_h2]:text-[32px] [&_h2]:leading-[0.95] [&_h2]:font-semibold md:[&_h2]:text-5xl [&_img]:mb-8 [&_img]:block [&_img]:h-auto [&_img]:w-full [&_img]:rounded-md [&_li]:mb-1 [&_p]:mt-0 [&_p]:mb-4 [&_ul]:mt-0 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-[1.5em]"
+  >
+    <Content />
+  </div>
+</InteriorLayout>

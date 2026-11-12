@@ -1,9 +1,11 @@
 [
   {
-    "id": "carter-rabasa"
+    "id": "carter-rabasa",
+    "overrides": { "title": "Organizer" }
   },
   {
-    "id": "carrie-rabasa"
+    "id": "carrie-rabasa",
+    "overrides": { "title": "Organizer" }
   },
   {
     "id": "elise-worthy"

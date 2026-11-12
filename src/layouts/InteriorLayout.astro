@@ -1,0 +1,71 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HomeNav from "@components/HomeNav.astro";
+import HomeFooter from "@components/HomeFooter.astro";
+import PageSubNav from "@components/PageSubNav.astro";
+import { getEventConfig } from "@shared/data/events";
+
+/**
+ * The 2027 interior page template (Figma "Interior page - buy-tickets -
+ * laptop"): the sticky green nav, a section bar with links to the page's
+ * sections, the page title, then the page's content (the default slot),
+ * and HomeFooter. Each section the bar links to needs a matching `id`.
+ */
+interface Props {
+  /** The page's h1, also the section bar's name and the start of <title>. */
+  title: string;
+  /**
+   * The section bar's links, one per section, in page order. Leave it out
+   * for a page with no section bar.
+   */
+  sections?: { label: string; href: string }[];
+  /** Defaults to the 2027 Event's. */
+  description?: string;
+  /** Defaults to the 2027 Event's. */
+  ogImage?: string;
+  /**
+   * Keep the h1 for screen readers but don't show it: for content that
+   * shows its own title, like a Termly policy.
+   */
+  hideTitle?: boolean;
+}
+
+const config = getEventConfig("2027");
+const {
+  title,
+  sections = [],
+  description = config.ogDescription,
+  ogImage = config.ogImage,
+  hideTitle = false,
+} = Astro.props;
+---
+
+<Layout
+  title={`${title} | CascadiaJS 2027 | June 7 - 8 | Seattle, WA`}
+  description={description}
+  ogImage={ogImage}
+  displayNav={false}
+  displayAlert={false}
+>
+  <div
+    class="bg-mist text-sound-navy [&_a:focus-visible]:outline-sound-navy font-normal [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-2"
+  >
+    <HomeNav sticky />
+    {sections.length > 0 && <PageSubNav title={title} links={sections} />}
+
+    {/* A 1176px column, as in the mockup, 64px below the bars. */}
+    <div class="mx-auto box-content max-w-294 px-4 pt-16 pb-16">
+      <h1
+        class:list={[
+          "font-display text-sound-navy m-0 mb-12 text-5xl leading-[0.95] font-light md:text-[72px]",
+          { "sr-only": hideTitle },
+        ]}
+      >
+        {title}
+      </h1>
+      <slot />
+    </div>
+  </div>
+
+  <HomeFooter slot="footer" />
+</Layout>

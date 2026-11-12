@@ -1,0 +1,148 @@
+---
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+import { Image } from "astro:assets";
+import { getOrganizers } from "@shared/data/events";
+import { personImages } from "@shared/person-images";
+
+// The About page, on the /buy-tickets template (InteriorLayout): the
+// sticky green nav, a section bar, the title, an intro, then the sections.
+const sections = [
+  { label: "Organizers", href: "#organizers" },
+  { label: "Past Events", href: "#past-events" },
+  { label: "Contact", href: "#contact" },
+];
+
+// Every past Event, most recent first (there was none in 2017 or 2023).
+// From 2024 on they have pages on this site; earlier ones keep their own
+// sites at <year>.cascadiajs.com.
+// `when` is the dates, venue and place.
+const pastEvents = (
+  [
+    { year: 2026, when: "June 1–2, 2026 · Town Hall Seattle, Seattle, WA" },
+    { year: 2025, when: "Sept 18–19, 2025 · Town Hall Seattle, Seattle, WA" },
+    { year: 2024, when: "June 19–22, 2024 · Town Hall Seattle, Seattle, WA" },
+    {
+      year: 2022,
+      when: "Aug 30–Sept 2, 2022 · Sunriver Resort, Bend, OR",
+    },
+    {
+      year: 2021,
+      when: "Nov 3–4, 2021 · Hybrid events in Seattle, Portland and Vancouver",
+    },
+    { year: 2020, when: "Sept 1–2, 2020 · Virtual" },
+    { year: 2019, when: "Nov 7–8, 2019 · Town Hall Seattle, Seattle, WA" },
+    {
+      year: 2018,
+      when: "Nov 15–16, 2018 · Amazon Meeting Center, Seattle, WA",
+    },
+    { year: 2016, when: "Aug 3–5, 2016 · Semiahmoo Resort, Blaine, WA" },
+    { year: 2015, when: "July 8–10, 2015 · Semiahmoo Resort, Blaine, WA" },
+    { year: 2014, when: "July 31–Aug 1, 2014 · Jupiter Hotel, Portland, OR" },
+    { year: 2013, when: "Nov 14–15, 2013 · The Imperial, Vancouver, BC" },
+    { year: 2012, when: "Nov 8–9, 2012 · Hub, Seattle, WA" },
+  ] as { year: number; when?: string }[]
+).map((event) => ({
+  ...event,
+  href:
+    event.year >= 2024
+      ? `/${event.year}`
+      : `https://${event.year}.cascadiajs.com`,
+}));
+
+const organizers = await Promise.all(
+  getOrganizers("2027").map(async (person) => {
+    const image = personImages[`.${person.image}`];
+    if (!image) {
+      throw new Error(`about: no photo at ${person.image}`);
+    }
+    return { ...person, photo: (await image()).default };
+  }),
+);
+
+// The /buy-tickets page's sizes: 64px between sections, 16px from a heading
+// to its text, and a 700px text measure.
+const heading =
+  "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
+const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
+const link = "text-sound-navy underline";
+---
+
+<InteriorLayout title="About" sections={sections}>
+  <div class="mb-16">
+    <p class={body}>
+      Since 2012, CascadiaJS has brought together web developers from the
+      Pacific Northwest and beyond to share knowledge, connect, and explore
+      ideas on the cutting edge of JavaScript, the web and AI.
+    </p>
+    <p class={`${body} mt-4!`}>
+      We work to make our events open to everyone, with Indie pricing,
+      scholarships, support for first-time speakers, and a <a
+        href="/code-of-conduct"
+        class={link}>Code of Conduct</a
+      > we take seriously, and to help our community be more successful in the tech
+      industry.
+    </p>
+    <p class={`${body} mt-4!`}>
+      Our 14th conference takes place June 7–8, 2027, at the Seattle Convention
+      Center in downtown Seattle.
+    </p>
+  </div>
+
+  <section id="organizers" class="scroll-mt-8">
+    <h2 class={heading}>Organizers</h2>
+    <ul
+      class="m-0 grid max-w-[760px] list-none grid-cols-2 gap-6 p-0 sm:grid-cols-3"
+    >
+      {
+        organizers.map((person) => (
+          <li>
+            <Image
+              src={person.photo}
+              alt=""
+              widths={[240, 480]}
+              sizes="(min-width: 640px) 240px, 50vw"
+              class="block aspect-square h-auto w-full rounded-[5px] object-cover"
+            />
+            <p class="font-display m-0 mt-3 text-2xl leading-none font-light">
+              {person.name}
+            </p>
+            <p class="text-sound-navy/70 m-0 mt-1 text-base">{person.title}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="past-events" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Past Events</h2>
+    {
+      /* On phones each Event's dates and venue go on their own line under
+         its name; from 640px up, one line each. */
+    }
+    <ul class={`${body} list-none p-0`}>
+      {
+        pastEvents.map(({ year, href, when }) => (
+          <li class="mb-3 sm:mb-0">
+            <a href={href} class={link}>{`CascadiaJS ${year}`}</a>
+            {when && (
+              <span class="text-sound-navy/70 block text-base sm:inline sm:text-lg">
+                <span class="hidden sm:inline"> · </span>
+                {when}
+              </span>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="contact" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Contact</h2>
+    <p class={body}>
+      Questions about the conference? Email us at <a
+        href="mailto:info@cascadiajs.com"
+        class={link}>info@cascadiajs.com</a
+      >.
+    </p>
+  </section>
+</InteriorLayout>

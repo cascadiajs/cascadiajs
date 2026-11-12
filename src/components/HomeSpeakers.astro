@@ -1,0 +1,236 @@
+---
+import { Image, getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+/**
+ * The home page's notable past Speakers, in the CFP section: a 2×2 grid
+ * in black and white under a navy overlay (screen blend), with no names.
+ * One tile at a time shows its photo in full color, with the Speaker's
+ * name, for a moment, then returns to the overlay; the tile whose color
+ * moment came before it then fades to the next Speaker in this list, so
+ * everyone comes round in turn. Visitors who prefer reduced motion get the
+ * first four, in full color, with no rotation. Each photo is
+ * src/assets/images/home-speakers/<slug>.jpg (or .png), square and at
+ * least 640px. To add someone, add their photo there and a line below.
+ * A "Past speakers" badge sits where the four tiles meet.
+ */
+const speakers = [
+  { name: "Shruti Kapoor", slug: "shruti-kapoor" },
+  { name: "Theo", slug: "theo" },
+  { name: "Jack Herrington", slug: "jack-herrington" },
+  { name: "Matt Biilmann", slug: "matt-biilmann" },
+  { name: "Bree Hall", slug: "bree-hall" },
+  { name: "Kent C. Dodds", slug: "kent-dodds" },
+  { name: "Tracy Lee", slug: "tracy-lee" },
+  { name: "Adam Argyle", slug: "adam-argyle" },
+  { name: "Brian Holt", slug: "brian-holt" },
+  { name: "Brian LeRoux", slug: "brian-leroux" },
+  { name: "Joel Hooks", slug: "joel-hooks" },
+  { name: "Michael Liendo", slug: "michael-liendo" },
+  { name: "Rachel Lee Nabors", slug: "rachel-lee-nabors" },
+  { name: "Aaron Gustafson", slug: "aaron-gustafson" },
+  { name: "Jason Lengstorf", slug: "jason-lengstorf" },
+  { name: "Nyah Macklin", slug: "nyah-macklin" },
+  { name: "Shawn Swyx Wang", slug: "shawn-swyx-wang" },
+  { name: "Josh Goldberg", slug: "josh-goldberg" },
+  { name: "Francesco Ciulla", slug: "francesco-ciulla" },
+  { name: "Marcy Sutton Todd", slug: "marcy-sutton-todd" },
+  { name: "Tejas Kumar", slug: "tejas-kumar" },
+  { name: "Charlie Gerard", slug: "charlie-gerard" },
+];
+
+const TILES = 4;
+const widths = [320, 640];
+const sizes = "(min-width: 768px) 300px, 50vw";
+
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  "@assets/images/home-speakers/*.{jpg,jpeg,png}",
+  { eager: true },
+);
+const photoFor = (slug: string) => {
+  const match = Object.entries(files).find(([file]) =>
+    new RegExp(`/${slug}\\.(jpe?g|png)$`).test(file),
+  );
+  if (!match) {
+    throw new Error(`No photo in src/assets/images/home-speakers/ for ${slug}`);
+  }
+  return match[1].default;
+};
+
+// Every Speaker's image URLs, for the script to swap tiles to.
+const rotation = await Promise.all(
+  speakers.map(async ({ name, slug }) => {
+    const image = await getImage({ src: photoFor(slug), widths });
+    return { name, src: image.src, srcset: image.srcSet.attribute };
+  }),
+);
+---
+
+<div class="@container relative">
+  <ul
+    aria-label="Past CascadiaJS speakers"
+    class="cjs-home-speakers m-0 grid list-none grid-cols-2 gap-2 p-0"
+    data-speakers={JSON.stringify(rotation)}
+  >
+    {
+      speakers.slice(0, TILES).map(({ name, slug }) => (
+        <li class="group @container relative overflow-hidden rounded-[5px]">
+          <Image
+            src={photoFor(slug)}
+            alt=""
+            widths={widths}
+            sizes={sizes}
+            class="block aspect-square h-auto w-full object-cover group-data-overlay:grayscale motion-safe:transition-[filter] motion-safe:duration-700"
+          />
+          {/* The next Speaker's photo fades in here, over the current one. */}
+          <img
+            data-incoming
+            alt=""
+            sizes={sizes}
+            class="absolute inset-0 size-full object-cover opacity-0 group-data-overlay:grayscale data-shown:opacity-100 motion-safe:transition-[opacity,filter] motion-safe:duration-[1500ms] motion-safe:data-instant:transition-none"
+          />
+          <span
+            aria-hidden="true"
+            class="bg-sound-navy pointer-events-none absolute inset-0 opacity-0 mix-blend-screen group-data-overlay:opacity-100 motion-safe:transition-opacity motion-safe:duration-700"
+          />
+          {/* Only a tile in full color shows its Speaker's name, sized to the
+            tile. It sits at the bottom of the photo, high enough to clear the
+            badge where the tiles meet. */}
+          <span
+            data-name
+            class="font-display from-sound-navy/85 absolute inset-x-0 bottom-0 bg-linear-to-t to-transparent px-[5cqw] pt-[16cqw] pb-[11cqw] text-[21cqw] leading-[0.9] font-light tracking-tight text-white group-data-overlay:translate-y-2 group-data-overlay:opacity-0 motion-safe:transition-[opacity,translate] motion-safe:duration-700"
+          >
+            {name}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+  {
+    /* Labels the grid where its four tiles meet, sized to the grid. The
+       list's own label says the same to screen readers. */
+  }
+  <p
+    aria-hidden="true"
+    class="font-display bg-mist text-sound-navy pointer-events-none absolute top-1/2 left-1/2 m-0 -translate-1/2 rounded-[0.4em] px-[0.8em] py-[0.5em] text-[clamp(14px,4.2cqw,26px)] leading-none font-light whitespace-nowrap"
+  >
+    Past speakers
+  </p>
+</div>
+
+<script>
+  type Speaker = { name: string; src: string; srcset: string };
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  const rotate = (list: HTMLElement) => {
+    const speakers: Speaker[] = JSON.parse(list.dataset.speakers ?? "[]");
+    const tiles = [...list.querySelectorAll<HTMLLIElement>(":scope > li")];
+    const COLOR_MS = 2600; // full color, from the start of its fade-in
+    const HOLD_MS = 400; // full color after the other tile's swap
+    const FADE_MS = 700; // matches the overlay's transition
+    const GAP_MS = 400; // all four under the overlay before the next one
+
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const load = ({ src, srcset }: Speaker) => {
+      const img = new Image();
+      img.srcset = srcset;
+      img.src = src;
+      return img.decode().catch(() => {});
+    };
+    // Fades the tile from its current Speaker to the next one: the new
+    // photo fades in over the old. The name is hidden under the overlay, so
+    // it just changes.
+    const CROSSFADE_MS = 1500; // matches the incoming photo's transition
+    const show = async (tile: HTMLLIElement, speaker: Speaker) => {
+      const current = tile.querySelector<HTMLImageElement>(
+        "img:not([data-incoming])",
+      )!;
+      const incoming =
+        tile.querySelector<HTMLImageElement>("img[data-incoming]")!;
+      const name = tile.querySelector<HTMLElement>("[data-name]")!;
+      incoming.srcset = speaker.srcset;
+      incoming.src = speaker.src;
+      await incoming.decode().catch(() => {});
+      incoming.dataset.shown = "";
+      name.textContent = speaker.name;
+      await wait(CROSSFADE_MS);
+      // Move the new photo underneath and put the incoming one away.
+      current.srcset = speaker.srcset;
+      current.src = speaker.src;
+      await current.decode().catch(() => {});
+      incoming.dataset.instant = "";
+      delete incoming.dataset.shown;
+      incoming.getBoundingClientRect();
+      delete incoming.dataset.instant;
+    };
+
+    for (const tile of tiles) {
+      tile.dataset.overlay = "";
+    }
+
+    let next = tiles.length; // the next Speaker to bring in
+    let turn = 0; // the tile whose turn it is
+    // The tiles that had the last two turns, most recent last. The one two
+    // turns back swaps; the one just back under the overlay keeps its
+    // Speaker for now.
+    const history: number[] = [];
+    let stopped = false;
+    reduceMotion.addEventListener("change", () => {
+      if (reduceMotion.matches) {
+        stopped = true;
+        for (const tile of tiles) {
+          delete tile.dataset.overlay;
+        }
+      }
+    });
+
+    const run = async () => {
+      await wait(GAP_MS);
+      while (!stopped) {
+        const tile = tiles[turn];
+        const swap =
+          history.length === 2 && speakers.length > tiles.length
+            ? history[0]
+            : undefined;
+        const speaker = speakers[next % speakers.length];
+        const loaded = swap === undefined ? undefined : load(speaker);
+        const started = performance.now();
+        delete tile.dataset.overlay;
+        // Once this tile is fully in color, another one swaps to the next
+        // Speaker while it stays in color: one change at a time.
+        await wait(FADE_MS);
+        if (stopped) {
+          break;
+        }
+        if (swap !== undefined) {
+          await loaded;
+          await show(tiles[swap], speaker);
+          next++;
+          if (stopped) {
+            break;
+          }
+        }
+        await wait(Math.max(HOLD_MS, COLOR_MS - (performance.now() - started)));
+        if (stopped) {
+          break;
+        }
+        tile.dataset.overlay = "";
+        await wait(FADE_MS);
+        history.push(turn);
+        if (history.length > 2) {
+          history.shift();
+        }
+        turn = (turn + 1) % tiles.length;
+        await wait(GAP_MS);
+      }
+    };
+    run();
+  };
+
+  if (!reduceMotion.matches) {
+    document
+      .querySelectorAll<HTMLElement>(".cjs-home-speakers")
+      .forEach(rotate);
+  }
+</script>

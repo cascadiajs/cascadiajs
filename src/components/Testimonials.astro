@@ -3,20 +3,41 @@ import testimonialsData from "@shared/data/testimonials.json";
 
 interface Testimonial {
   id: string;
+  /** Where it was posted. Defaults to "x". */
+  platform?: "x" | "bluesky" | "linkedin";
   permalink: string;
   author: string;
   handle: string;
   date: string;
+  /** The post's text as HTML. */
   body: string;
+  /** A Bluesky post's AT URI and CID, which its embed needs. */
+  blueskyUri?: string;
+  blueskyCid?: string;
 }
 
 interface Props {
   /** Defaults to the shared testimonials data. */
   testimonials?: Testimonial[];
+  /**
+   * Show only this many, picked at random on each visit. All of them are in
+   * the page; a script shows the picks before the embed scripts run, so they
+   * only embed those. Without JavaScript, the first ones show.
+   */
+  show?: number;
 }
 
 const testimonials =
   Astro.props.testimonials ?? (testimonialsData as Testimonial[]);
+const { show } = Astro.props;
+const shown = (i: number) => show === undefined || i < show;
+
+// X and Bluesky posts are blockquotes that each platform's script turns into
+// an embed when they carry its class; LinkedIn has no such script, so its
+// posts are our own card.
+const embedClass = { x: "twitter-tweet", bluesky: "bluesky-embed" } as const;
+const quote =
+  "[&_a]:text-cascade-blue [&_a:visited]:text-cascade-blue m-0 border-l-2 border-[#aaa] pl-4.5 [&_a]:underline";
 ---
 
 <section id="testimonials" class="cjs-testimonials">
@@ -29,19 +50,92 @@ const testimonials =
     site exactly; without it the iframe renders 16px too wide. See #23.
   */
   }
-  <div class="md:flex md:flex-wrap md:justify-center">
+  <div class="md:flex md:flex-wrap md:justify-center" data-show={show}>
     {
-      testimonials.map((testimonial) => (
-        <div class="md:mr-4 md:flex md:w-75 md:[&_.twitter-tweet-rendered]:mr-4">
-          <blockquote class="twitter-tweet [&_a]:text-cascade-blue [&_a:visited]:text-cascade-blue m-0 border-l-2 border-[#aaa] pl-4.5 [&_a]:underline">
-            <p lang="en" dir="ltr" set:html={testimonial.body} />
-            &mdash; {testimonial.author} ({testimonial.handle}){" "}
-            <a href={testimonial.permalink}>{testimonial.date}</a>
-          </blockquote>
-        </div>
-      ))
+      testimonials.map((testimonial, i) => {
+        const platform = testimonial.platform ?? "x";
+        return (
+          <div
+            hidden={!shown(i)}
+            class="md:mr-4 md:flex md:w-75 md:[&_.twitter-tweet-rendered]:mr-4"
+          >
+            {platform === "linkedin" ? (
+              <figure class="m-0 mb-4 w-full self-start rounded-xl border border-[#cfd9de] bg-white p-4 font-[system-ui,sans-serif] text-[15px] leading-snug text-[#0f1419] md:mr-4 md:mb-0">
+                <figcaption class="mb-3 flex items-start justify-between gap-3">
+                  <span>
+                    <strong class="block font-bold">
+                      {testimonial.author}
+                    </strong>
+                    <span class="text-sm text-[#536471]">on LinkedIn</span>
+                  </span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    aria-hidden="true"
+                    class="shrink-0"
+                  >
+                    <path
+                      fill="#0A66C2"
+                      d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+                    />
+                  </svg>
+                </figcaption>
+                <blockquote class="m-0" set:html={testimonial.body} />
+                <a
+                  href={testimonial.permalink}
+                  class="mt-3 block text-sm text-[#536471] no-underline hover:underline"
+                >
+                  {testimonial.date} · View on LinkedIn
+                </a>
+              </figure>
+            ) : (
+              <blockquote
+                class:list={[shown(i) && embedClass[platform], quote]}
+                data-embed-class={embedClass[platform]}
+                data-bluesky-uri={testimonial.blueskyUri}
+                data-bluesky-cid={testimonial.blueskyCid}
+              >
+                <p lang="en" dir="ltr" set:html={testimonial.body} />
+                &mdash; {testimonial.author} ({testimonial.handle}){" "}
+                <a href={testimonial.permalink}>{testimonial.date}</a>
+              </blockquote>
+            )}
+          </div>
+        );
+      })
     }
   </div>
+  {
+    /* Runs as soon as the cards are parsed, before the embed scripts: picks
+       the ones to show, then loads Bluesky's script if one of them needs it. */
+  }
+  <script is:inline>
+    (() => {
+      const list = document.currentScript.previousElementSibling;
+      const cards = [...list.children];
+      const show = Number(list.dataset.show);
+      if (show) {
+        const picks = new Set();
+        while (picks.size < Math.min(show, cards.length)) {
+          picks.add(Math.floor(Math.random() * cards.length));
+        }
+        cards.forEach((card, i) => {
+          card.hidden = !picks.has(i);
+          const quote = card.querySelector("[data-embed-class]");
+          if (quote) {
+            quote.classList.toggle(quote.dataset.embedClass, picks.has(i));
+          }
+        });
+      }
+      if (list.querySelector(".bluesky-embed")) {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://embed.bsky.app/static/embed.js";
+        document.head.append(script);
+      }
+    })();
+  </script>
   <script
     is:inline
     async

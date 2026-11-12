@@ -11,6 +11,12 @@
   --color-cedar-cream: #fff5cc;
   --color-overcast-gray: #cfd3e4;
   --color-mint: #ccf1db;
+  /* The 2027 home page background (Figma "Home - laptop"). */
+  --color-mist: #f5faf8;
+
+  /* Where the home page's full nav row (831px, plus 32px padding) fits on
+     one line. Below it, HomeNav collapses its items into a menu button. */
+  --breakpoint-nav: 55rem;
 
   /* Fallback stacks match the legacy stylesheet exactly: computed
      font-family was verified against the Legacy Site (ADR-0015), and extra
@@ -58,6 +64,22 @@
      but should keep the body's line-height rather than the heading mode
      above. Replaces the arbitrary `text-2xl/[20.25px]` pattern. */
   --leading-body: 20.25px;
+}
+
+/* HomeGallery's endless scroll: the track holds its photos twice, so sliding
+   it left by half shows one full set. HomeGallery sets the duration from its
+   photo count on the gallery itself, so this is `inline`: the utility gets
+   the value as written, and var() resolves on the element. In a plain @theme
+   it would resolve at :root, where the duration isn't set. */
+@theme inline {
+  --animate-home-gallery: home-gallery var(--home-gallery-duration) linear
+    infinite;
+
+  @keyframes home-gallery {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 /* Match the reference's base typographic norms. Tailwind's preflight forces

@@ -1,0 +1,95 @@
+---
+import KitSignup from "@components/KitSignup.astro";
+
+/**
+ * The 2027 home page footer (Figma "Home - laptop"): the mailing list signup,
+ * social links and legal links. Other pages keep SiteFooter for now.
+ */
+const socials = [
+  {
+    label: "Discord",
+    icon: "fa-discord",
+    href: "https://discord.gg/kkYR86GM29",
+  },
+  {
+    label: "LinkedIn",
+    icon: "fa-linkedin",
+    href: "https://www.linkedin.com/showcase/cascadiajs/",
+  },
+  {
+    label: "Bluesky",
+    icon: "fa-bluesky",
+    href: "https://bsky.app/profile/cascadiajs.com",
+  },
+  {
+    label: "Twitter",
+    icon: "fa-twitter",
+    href: "https://twitter.com/CascadiaJS",
+  },
+  {
+    label: "YouTube",
+    icon: "fa-youtube",
+    href: "https://www.youtube.com/@cascadiajs",
+  },
+  {
+    label: "GitHub",
+    icon: "fa-github",
+    href: "https://github.com/cascadiajs/cascadiajs/",
+  },
+];
+
+const legal = [
+  { label: "Code of Conduct", href: "/code-of-conduct" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/tos" },
+  { label: "Cookie Policy", href: "/cookies" },
+];
+---
+
+<footer
+  class="cjs-home-footer bg-sound-navy [&_:is(a,input,button):focus-visible]:outline-mist px-4 pt-16 pb-32 text-center text-white [&_:is(a,input,button):focus-visible]:outline-2 [&_:is(a,input,button):focus-visible]:outline-offset-2"
+>
+  <h2
+    class="text-mist mt-0 mb-6 font-serif text-[32px] leading-[0.95] font-semibold"
+  >
+    Stay in touch!
+  </h2>
+  <KitSignup uid="635889aa26" />
+  <p class="mt-2 mb-8 text-base leading-[0.95]">
+    Be the first to hear about CascadiaJS news and discounts.
+  </p>
+  {
+    /* 40px apart, as in the mockup; closer on phones, so all six fit on
+       one row from 360px wide, and wrapping below that. */
+  }
+  <ul
+    class="m-0 mb-16 flex list-none flex-wrap justify-center gap-x-6 gap-y-4 p-0 text-[32px] sm:gap-x-10"
+  >
+    {
+      socials.map(({ label, icon, href }) => (
+        <li>
+          <a
+            href={href}
+            class="text-mist hover:text-emerald-city-green"
+            aria-label={label}
+          >
+            <i class={`fa-brands ${icon}`} aria-hidden="true" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <ul
+    class="m-0 flex list-none flex-wrap justify-center gap-x-6 gap-y-2 p-0 text-base leading-[0.95]"
+  >
+    {
+      legal.map(({ label, href }) => (
+        <li>
+          <a href={href} class="text-white no-underline hover:underline">
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
