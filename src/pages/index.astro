@@ -19,6 +19,14 @@ const config = getEventConfig("2027");
 // Sizes and spacing are the Figma "Home - laptop" frame's own values: a
 // 1176px content column, 64px between sections, and Figma's "Auto" line
 // height as CSS `normal`.
+// The "What to Expect" figures.
+const expectations = [
+  { figure: "2", label: "Days" },
+  { figure: "20+", label: "Speakers" },
+  { figure: "4", label: "Workshops" },
+  { figure: "2", label: "Parties" },
+];
+
 const container = "mx-auto box-content max-w-294 px-4";
 const heading =
   "mt-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold md:text-[72px]";
@@ -78,6 +86,38 @@ const arrowLink =
     />
 
     <HomeNav />
+
+    {
+      /* The conference at a glance, after circlesconference.com's "What to
+         Expect" (without its visible heading; screen readers get it as the
+         section's label): four big figures in a row, divided by thin rules
+         (none before the first in each row), two by two on phones. Each
+         figure is a dt/dd pair, shown figure first but read label first. */
+    }
+    <section
+      id="what-to-expect"
+      aria-label="What to Expect"
+      class={`${container} pt-16`}
+    >
+      <dl class="m-0 grid grid-cols-2 gap-y-10 md:grid-cols-4">
+        {
+          expectations.map(({ figure, label }) => (
+            <div class="border-sound-navy/15 flex flex-col-reverse border-l pl-5 first:border-l-0 first:pl-0 max-md:odd:border-l-0 max-md:odd:pl-0 md:pl-8">
+              <dt class="font-display mt-3 text-lg leading-none font-light md:mt-5 md:text-2xl">
+                {label}
+              </dt>
+              <dd class="font-display m-0 text-[72px] leading-[0.85] font-light md:text-[120px]">
+                {figure}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <div class={`${container} pt-16`}>
+      <hr class="border-sound-navy/10 m-0 border-t" />
+    </div>
 
     <section
       id="cfp"
