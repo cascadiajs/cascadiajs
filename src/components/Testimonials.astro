@@ -1,7 +1,7 @@
 ---
 import testimonialsData from "@shared/data/testimonials.json";
 
-interface Testimonial {
+export interface Testimonial {
   id: string;
   /** Where it was posted. Defaults to "x". */
   platform?: "x" | "bluesky" | "linkedin";
@@ -81,7 +81,10 @@ const quote =
                     />
                   </svg>
                 </figcaption>
-                <blockquote class="m-0" set:html={testimonial.body} />
+                <blockquote
+                  class="m-0 [&_a]:text-[#0a66c2] [&_a]:underline"
+                  set:html={testimonial.body}
+                />
                 <a
                   href={testimonial.permalink}
                   class="mt-3 block text-sm text-[#536471] no-underline hover:underline"

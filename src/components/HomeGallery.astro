@@ -4,8 +4,9 @@ import type { ImageMetadata } from "astro";
 
 /**
  * The home page's rotating photo gallery: every photo in
- * src/assets/images/home-gallery, in filename order, scrolling slowly left
- * in an endless loop. To change the photos, add or remove files there
+ * src/assets/images/home-gallery, in a new random order on each visit
+ * (filename order without JavaScript), scrolling slowly left in an endless
+ * loop. To change the photos, add or remove files there
  * (3:2 landscape, at least 1200x800).
  */
 const photos = Object.entries(
@@ -58,6 +59,27 @@ const duration = `${photos.length * 16}s`;
       ))
     }
   </div>
+  {
+    /* Runs as soon as the track is parsed, before it's painted: shuffles the
+       first set of photos and puts the second in the same order, so the
+       loop still has no seam. */
+  }
+  <script is:inline>
+    (() => {
+      const track = document.currentScript.previousElementSibling;
+      const photos = [...track.children];
+      const count = photos.length / 2;
+      const order = [...Array(count).keys()];
+      for (let i = count - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      track.append(
+        ...order.map((i) => photos[i]),
+        ...order.map((i) => photos[count + i]),
+      );
+    })();
+  </script>
   <button
     type="button"
     hidden

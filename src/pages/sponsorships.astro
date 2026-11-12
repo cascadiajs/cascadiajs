@@ -1,37 +1,112 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Callout from "@components/Callout.astro";
-import CtaButton from "@components/CtaButton.astro";
-import SponsorsGrid from "@components/SponsorsGrid.astro";
-import Table from "@components/table/Table.astro";
-import TableHead from "@components/table/TableHead.astro";
-import TableBody from "@components/table/TableBody.astro";
-import TableHeadRow from "@components/table/TableHeadRow.astro";
-import TableRow from "@components/table/TableRow.astro";
-import TableHeaderCell from "@components/table/TableHeaderCell.astro";
-import TableLabelHeaderCell from "@components/table/TableLabelHeaderCell.astro";
-import TableLabelCell from "@components/table/TableLabelCell.astro";
-import TableCell from "@components/table/TableCell.astro";
-import Testimonials from "@components/Testimonials.astro";
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+import Arrow from "@components/Arrow.astro";
+import PastSponsors from "@components/PastSponsors.astro";
+import TestimonialsSection from "@components/TestimonialsSection.astro";
+import type { Testimonial } from "@components/Testimonials.astro";
+import sponsorTestimonials from "@shared/data/sponsor-testimonials.json";
 import { Image } from "astro:assets";
-import logoImage from "@assets/events/2027/images/cjs-icon-blue.svg";
-import heroImage from "@assets/events/2026/images/sponsor-brochure/hero.jpg";
+import auth0Photo from "@assets/images/sponsor-photos/auth0.jpg";
+import onebriefPhoto from "@assets/images/sponsor-photos/onebrief.jpg";
+import expoPhoto from "@assets/images/sponsor-photos/expo.jpg";
+import pulumiPhoto from "@assets/images/sponsor-photos/pulumi.jpg";
+import elasticPhoto from "@assets/images/sponsor-photos/elastic.jpg";
+import vapiPhoto from "@assets/images/sponsor-photos/vapi.jpg";
+import arcjetPhoto from "@assets/images/sponsor-photos/arcjet.jpg";
+import awsPhoto from "@assets/images/sponsor-photos/aws.jpg";
 
-// The sponsorship brochure is a standalone page meant to be shared with
-// prospective sponsors: it draws its own header band (dates, URL, location)
-// and logo below. So it uses the base Layout with the site nav and alert
-// hidden, not EventLayout, whose Event nav would duplicate that header.
-
-// Base package prices, Diamond → Community. A discounted price shows struck
-// through with the 30%-off price beneath; Community isn't discounted.
-const packagePrices = [
-  { price: 43000, discounted: true },
-  { price: 32000, discounted: true },
-  { price: 21500, discounted: true },
-  { price: 8600, discounted: true },
-  { price: 5400, discounted: true },
-  { price: 2700, discounted: false },
+// The 2027 sponsorship brochure, on the /buy-tickets template
+// (InteriorLayout). People reach it from the /sponsor email form, and it's
+// shared directly with prospective sponsors.
+const sections = [
+  { label: "Audience", href: "#audience" },
+  { label: "Packages", href: "#packages" },
+  { label: "Add-Ons", href: "#add-ons" },
+  { label: "Contact", href: "#contact" },
 ];
+
+// Past sponsors at CascadiaJS: booths, a main-stage talk and a workshop.
+const sponsorPhotos = [
+  { src: auth0Photo, alt: "A crowd around a demo at the Auth0 booth" },
+  { src: onebriefPhoto, alt: "A Onebrief speaker on the main stage" },
+  {
+    src: expoPhoto,
+    alt: "Attendees talking with the Expo team at their booth",
+  },
+  { src: pulumiPhoto, alt: "A conversation at the Pulumi booth" },
+  { src: elasticPhoto, alt: "Attendees at the Elastic booth" },
+  { src: vapiPhoto, alt: "A Vapi workshop" },
+  { src: arcjetPhoto, alt: "Attendees at the Arcjet booth" },
+  { src: awsPhoto, alt: "The AWS booth" },
+];
+
+const BOOKING_URL = "https://calendly.com/elise-worthy";
+const DISCOUNT = 0.3;
+const DISCOUNT_ENDS = "Dec 31, 2026";
+const usd = (amount: number) => `$${amount.toLocaleString("en-US")}`;
+const salePrice = (amount: number) => usd(Math.round(amount * (1 - DISCOUNT)));
+
+// Base packages, Diamond → Community. A discounted price shows struck
+// through with the sale price beside it; Community isn't discounted.
+const packages = [
+  { name: "Diamond", price: 43000, discounted: true },
+  { name: "Platinum", price: 32000, discounted: true },
+  { name: "Gold", price: 21500, discounted: true },
+  { name: "Silver", price: 8600, discounted: true },
+  { name: "Bronze", price: 5400, discounted: true },
+  { name: "Community", price: 2700, discounted: false },
+];
+
+// What each package includes, one value per package in the order above:
+// text, `true` for a check mark, or `null` for not included.
+type Value = string | true | null;
+const _ = null;
+const Y = true;
+const features: [string, Value[]][] = [
+  ["Quantity", ["1", "1", "12", "Multiple", "Multiple", "Unlimited"]],
+  ["Dedicated Main-stage Banner", [Y, _, _, _, _, _]],
+  ["Main Stage 25-min Speaker Slot", ["Keynote", Y, _, _, _, _]],
+  ["Live Stage Address", ["5 minutes", "2 minutes", "2 minutes", _, _, _]],
+  [
+    "Custom Newsletter Message",
+    ["Full list", "Full list", "Attendees", _, _, _],
+  ],
+  [
+    "Booth",
+    [
+      "Extra-large + monitor",
+      "Extra-large + monitor",
+      "6-foot + monitor",
+      _,
+      _,
+      _,
+    ],
+  ],
+  ["Dedicated Sponsor Page", [Y, Y, Y, _, _, _]],
+  ["Lead Capture", ["2 users", "2 users", "2 users", _, _, _]],
+  ["Attendee-bag Item", [Y, Y, Y, Y, _, _]],
+  ["Dedicated Social Post", [Y, Y, Y, _, _, _]],
+  ["Grouped Social Post", [_, _, _, Y, Y, Y]],
+  ["Logo on Event Banners and Website", [Y, Y, Y, Y, Y, Y]],
+  ["Included Passes", ["12", "10", "8", "4", "2", "1"]],
+  ["Discount on Additional Passes", ["50%", "50%", "50%", "25%", "25%", _]],
+];
+
+const speakingAddOns = [
+  {
+    name: "Workshop",
+    price: 7500,
+    description:
+      "Lead a hands-on session where developers build, experiment, or solve a technical problem with your team.",
+  },
+  {
+    name: "Main Stage Lightning Talk",
+    price: 3000,
+    description:
+      "Share a focused technical idea, demo, or lesson in a short, 10-minute presentation.",
+  },
+];
+
 // Additional Sponsorship Opportunities, in table order. Scholarships isn't
 // discounted.
 const extraOpportunities = [
@@ -98,549 +173,342 @@ const extraOpportunities = [
   },
 ];
 
-const DISCOUNT = 0.3;
-const usd = (amount: number) => `$${amount.toLocaleString("en-US")}`;
-const salePrice = (amount: number) => usd(Math.round(amount * (1 - DISCOUNT)));
+// The /buy-tickets page's sizes: 64px between sections, 16px from a heading
+// to its text, and a 700px text measure.
+const heading =
+  "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
+const subheading = "m-0 mb-2 font-serif text-2xl leading-tight font-semibold";
+const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
+const link = "text-sound-navy underline";
+// The green tag the discount wears, in the card and above the packages.
+const badge =
+  "bg-emerald-city-green inline-block rounded-[3px] px-2 text-sm leading-[1.5] font-bold";
+const arrowLink =
+  "text-sound-navy border-emerald-city-green hover:border-sound-navy inline-block border-b-3 pb-[3px] text-xl leading-[27px] font-bold no-underline";
+// The /buy-tickets release table's rules: a navy line under the header and
+// faint lines between rows.
+const table = "w-full border-collapse text-left text-lg leading-[1.5]";
+const headRow = "border-sound-navy border-b";
+const row = "border-sound-navy/10 border-b";
+const cell = "py-2 pr-6 align-top";
 ---
 
-<Layout displayNav={false} displayAlert={false}>
-  <nav
-    class="bg-emerald-city-green text-sound-navy font-display flex p-3 text-center text-lg font-extralight"
+<InteriorLayout
+  title="Sponsorships"
+  eyebrow="CascadiaJS 2027"
+  nav={{
+    variant: "navy",
+    links: false,
+    cta: { label: "Book a time to talk", href: BOOKING_URL },
+    details: ["June 7-8, 2027", "Seattle Convention Center"],
+  }}
+  sections={sections}
+  description="Sponsor CascadiaJS 2027, the Pacific Northwest's web + AI developer conference: packages, add-ons and pricing."
+>
+  {
+    /* The offer up front, like the /buy-tickets "On sale now" card: the
+       discount, big, and a jump to the packages. */
+  }
+  <div
+    class="border-sound-navy mb-12 grid max-w-[760px] items-center gap-4 rounded-md border-2 bg-white px-6 py-5 sm:grid-cols-[1fr_auto] sm:gap-6"
   >
-    <div class="w-1/3">June 7-8, 2027</div>
-    <div class="w-1/3">cascadiajs.com</div>
-    <div class="w-1/3">Seattle, WA, USA</div>
-  </nav>
-
-  <section class="bg-mint py-4">
-    <div class="text-center">
-      <Image
-        src={logoImage}
-        alt="CascadiaJS logo"
-        class="mx-auto h-[75px] w-auto"
-      />
-    </div>
-    <h1 class="text-40 text-center">CascadiaJS 2027 Sponsorship Brochure</h1>
-    <h2 class="text-32 mt-2 text-center">
-      The Pacific Northwest&rsquo;s Web + AI Developer Conference
-    </h2>
-    <article class="mx-auto w-[90%] py-2 leading-[1.4em] md:w-1/2 md:py-6">
-      Since 2012, we've been bringing together hundreds of developers to help
-      them level up their skills, grow their network and have fun. We're excited
-      to present our 14th annual conference, which will be held June 7-8, 2027
-      at the Seattle Convention Center, located in the heart of downtown
-      Seattle, WA.
-    </article>
-    <article
-      class="p-2 text-center leading-[1.4em] md:mx-auto md:px-32 md:py-6"
+    <p class="m-0">
+      <span class={badge}>Super Early Bird</span>
+      <strong
+        class="mt-2 block font-serif text-2xl leading-tight font-bold md:text-[32px]"
+      >
+        {DISCOUNT * 100}% off until {DISCOUNT_ENDS}
+      </strong>
+    </p>
+    <a
+      href="#packages"
+      class="bg-sound-navy inline-flex items-center justify-center gap-2.5 rounded-[5px] px-7 py-3.5 text-lg font-bold whitespace-nowrap text-white no-underline hover:bg-[color-mix(in_srgb,var(--color-sound-navy),black_30%)]"
     >
-      <div class="flex flex-wrap justify-center gap-4">
-        <CtaButton href="https://calendly.com/elise-worthy"
-          >Book a time to talk</CtaButton
-        >
-        <CtaButton href="#event-at-a-glance" variant="secondary"
-          >Learn more 👇</CtaButton
-        >
-      </div>
-    </article>
-    <article
-      class="p-2 text-center leading-[1.4em] md:mx-auto md:px-32 md:py-6"
+      See packages <Arrow direction="down" />
+    </a>
+  </div>
+
+  <p class={body}>
+    <strong class="font-semibold"
+      >The Pacific Northwest&rsquo;s Web + AI Developer Conference.</strong
     >
-      <Image
-        src={heroImage}
-        alt="CascadiaJS 2026 sponsorship brochure"
-        class="mx-auto"
-      />
-    </article>
+    Since 2012, we've been bringing together hundreds of developers to help them level
+    up their skills, grow their network and have fun. We're excited to present our
+    14th annual conference, which will be held June 7-8, 2027 at the Seattle Convention
+    Center, located in the heart of downtown Seattle, WA.
+  </p>
+  {/* Four across from 768px up, two on phones. */}
+  <ul class="m-0 mt-12 grid list-none grid-cols-2 gap-2 p-0 md:grid-cols-4">
+    {
+      sponsorPhotos.map(({ src, alt }) => (
+        <li>
+          <Image
+            src={src}
+            alt={alt}
+            widths={[400, 800]}
+            sizes="(min-width: 1208px) 290px, (min-width: 768px) 25vw, 50vw"
+            class="block aspect-[3/2] h-auto w-full rounded-[5px] object-cover"
+          />
+        </li>
+      ))
+    }
+  </ul>
 
-    <article
-      class="mx-auto w-[90%] py-2 leading-[1.4em] md:w-1/2 md:py-6"
-      id="event-at-a-glance"
-    >
-      <h2 class="text-32 mt-2 text-center">What It Is</h2>
-      <p>
-        <strong class="font-bold">CascadiaJS 2027</strong> is a two-day, <em
-          >highly technical conference</em
-        >.
-      </p>
-
-      <p>
-        There will be at least <strong class="font-bold">20 expert talks</strong
-        > covering web, JavaScript, and AI topics, plus structured, low-pressure networking
-        opportunities that help companies build relationships with engineers in a
-        technically focused, community-centric setting.
-      </p>
-
-      <p>
-        <strong class="font-bold">Past sponsors</strong> include top web and developer
-        brands such as Google, AWS, IBM, Elastic, Cloudflare, and many more &mdash;
-        a testament to the value of connecting with this audience.
-      </p>
-    </article>
-
-    <article class="mx-auto w-[90%] py-2 leading-[1.4em] md:w-1/2 md:py-6">
-      <h2 class="text-32 mt-2 text-center">
-        Connect with the Developers Building the Future of Web and AI
+  {/* The pitch, with the past Sponsors beside it from 768px up. */}
+  <section class="mt-16 md:grid md:grid-cols-[700fr_100fr_376fr]">
+    <div>
+      <h2 class={heading}>
+        Connect with Developers Building the Future of Web and AI
       </h2>
-      <p>
+      <p class={body}>
         Since 2012, CascadiaJS has brought together developers building the
         modern web. Rooted in the JavaScript ecosystem and evolving alongside
         AI, CascadiaJS connects the engineers, tools, and ideas shaping the next
         generation of software.
       </p>
-
-      <p>
+      <p class={`${body} mt-4!`}>
         CascadiaJS connects sponsors with highly technical developers who
         evaluate tools, share recommendations, and influence technology
         decisions at their organizations.
       </p>
-
-      <p>
+      <p class={`${body} mt-4!`}>
         Unlike massive conferences where hundreds of exhibitors compete for
         passing traffic, CascadiaJS offers a high-trust environment for
         meaningful conversations. Demonstrate your technology, gather feedback,
         share expertise, build relationships, and get your products considered
         when teams make technology decisions.
       </p>
-
-      <p>
-        <strong class="font-bold"
+      <p class={`${body} mt-4!`}>
+        <strong class="font-semibold"
           >More face time. Better conversations. High value from every
           sponsorship dollar.</strong
         >
       </p>
-    </article>
-
-    <article class="mx-auto w-[90%] py-2 leading-[1.4em] md:w-1/2 md:py-6">
-      <h2 class="text-32 mt-2 text-center">Our Audience</h2>
-      <p>
-        CascadiaJS attracts an engaged community of developers working across
-        JavaScript, modern web technologies, and AI.
-      </p>
-      <ul class="list-disc pl-6">
-        <li><strong class="font-bold">600+ attendees</strong></li>
-        <li>Frontend, full-stack, and platform engineers</li>
-        <li>
-          Strong representation of senior engineers and technical
-          decision-influencers
-        </li>
-        <li>Primarily Pacific Northwest audience</li>
-        <li>Active and passive job seekers</li>
-        <li>High interest in modern web &amp; AI tooling</li>
-        <li>
-          <strong class="font-bold">5,400+ newsletter subscribers</strong>
-        </li>
-      </ul>
-    </article>
-
-    <h2 class="text-32 mt-2 text-center">Sponsorship Packages</h2>
-    <article class="mx-auto w-[90%] py-2 leading-[1.4em] md:w-1/2 md:py-6">
-      <p>
-        Choose a base package, then add a talk or workshop and branded
-        experiences to meet your goals.
-      </p>
-      <Callout variant="warning">
-        <i slot="icon" class="fa-solid fa-tag pt-1"></i>
-        <strong>Super Early Bird Discount</strong> - 30% off until Dec 31, 2026
-      </Callout>
-    </article>
+    </div>
+    <PastSponsors class="mt-12 md:col-start-3 md:mt-0" />
   </section>
 
-  <section class="bg-mint overflow-x-auto py-4">
-    <Table>
-      <TableHead>
-        <TableHeadRow>
-          <TableLabelHeaderCell>&nbsp;</TableLabelHeaderCell>
-          <TableHeaderCell>Diamond</TableHeaderCell>
-          <TableHeaderCell>Platinum</TableHeaderCell>
-          <TableHeaderCell>Gold</TableHeaderCell>
-          <TableHeaderCell>Silver</TableHeaderCell>
-          <TableHeaderCell>Bronze</TableHeaderCell>
-          <TableHeaderCell>Community</TableHeaderCell>
-        </TableHeadRow>
-      </TableHead>
-      <TableBody>
-        <TableRow>
-          <TableLabelCell>
-            <b>Quantity</b>
-          </TableLabelCell>
-          <TableCell>1</TableCell>
-          <TableCell>1</TableCell>
-          <TableCell>12</TableCell>
-          <TableCell>Multiple</TableCell>
-          <TableCell>Multiple</TableCell>
-          <TableCell>Unlimited</TableCell>
-        </TableRow>
+  <section id="audience" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Audience</h2>
+    <p class={body}>
+      CascadiaJS attracts an engaged community of developers working across
+      JavaScript, modern web technologies, and AI.
+    </p>
+    {/* The headline numbers, big, then the rest as a list. */}
+    <dl class="my-8 flex flex-wrap gap-x-16 gap-y-6">
+      {
+        [
+          { figure: "600+", label: "attendees" },
+          { figure: "5,400+", label: "newsletter subscribers" },
+        ].map(({ figure, label }) => (
+          <div class="flex flex-col-reverse">
+            <dt class="font-display mt-2 text-xl leading-none font-light">
+              {label}
+            </dt>
+            <dd class="m-0 font-serif text-[52px] leading-none font-normal md:text-[64px]">
+              {figure}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+    <ul class={`${body} list-disc pl-[1.5em]`}>
+      <li>Frontend, full-stack, and platform engineers</li>
+      <li>
+        Strong representation of senior engineers and technical
+        decision-influencers
+      </li>
+      <li>Primarily Pacific Northwest audience</li>
+      <li>Active and passive job seekers</li>
+      <li>High interest in modern web &amp; AI tooling</li>
+    </ul>
+  </section>
 
-        <TableRow>
-          <TableLabelCell>
-            <b>Dedicated Main-stage Banner</b>
-          </TableLabelCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell colspan={5}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Main Stage 25-min Speaker Slot</b>
-          </TableLabelCell>
-          <TableCell>
-            Keynote <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell colspan={4}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Live Stage Address</b>
-          </TableLabelCell>
-          <TableCell>5 minutes</TableCell>
-          <TableCell>2 minutes</TableCell>
-          <TableCell>2 minutes</TableCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Custom Newsletter Message</b>
-          </TableLabelCell>
-          <TableCell>Full list</TableCell>
-          <TableCell>Full list</TableCell>
-          <TableCell>Attendees</TableCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Booth</b>
-          </TableLabelCell>
-          <TableCell>Extra-large + monitor</TableCell>
-          <TableCell>Extra-large + monitor</TableCell>
-          <TableCell>6-foot + monitor</TableCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Dedicated Sponsor Page</b>
-          </TableLabelCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Lead Capture</b>
-          </TableLabelCell>
-          <TableCell>2 users</TableCell>
-          <TableCell>2 users</TableCell>
-          <TableCell>2 users</TableCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Attendee-bag Item</b>
-          </TableLabelCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell colspan={2}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Dedicated Social Post</b>
-          </TableLabelCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Grouped Social Post</b>
-          </TableLabelCell>
-          <TableCell colspan={3}>&nbsp;</TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Logo on Event Banners and Website</b>
-          </TableLabelCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-          <TableCell>
-            <i class="fa-solid fa-check"></i>
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Included Passes</b>
-          </TableLabelCell>
-          <TableCell>12</TableCell>
-          <TableCell>10</TableCell>
-          <TableCell>8</TableCell>
-          <TableCell>4</TableCell>
-          <TableCell>2</TableCell>
-          <TableCell>1</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Discount on Additional Passes</b>
-          </TableLabelCell>
-          <TableCell>50%</TableCell>
-          <TableCell>50%</TableCell>
-          <TableCell>50%</TableCell>
-          <TableCell>25%</TableCell>
-          <TableCell>25%</TableCell>
-          <TableCell>&nbsp;</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableLabelCell>
-            <b>Price</b>
-          </TableLabelCell>
+  <section id="packages" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Packages</h2>
+    <p class="m-0 mb-4">
+      <span class={badge}>
+        Super Early Bird: {DISCOUNT * 100}% off until {DISCOUNT_ENDS}
+      </span>
+    </p>
+    <p class={`${body} mb-8!`}>
+      Choose a base package, then add a talk or workshop and branded experiences
+      to meet your goals.
+    </p>
+    {
+      /* Six packages don't fit a phone, so the table scrolls sideways in its
+         own region, which keyboard users can focus to scroll. */
+    }
+    <div
+      class="overflow-x-auto"
+      role="region"
+      aria-label="Sponsorship packages"
+      tabindex="0"
+    >
+      <table class={`${table} min-w-[880px] table-fixed`}>
+        {/* The labels get a wider column; the six packages share the rest. */}
+        <colgroup>
+          <col class="w-[22%]" />
+          {packages.map(() => <col />)}
+        </colgroup>
+        <thead>
+          <tr class={headRow}>
+            <td class={cell}></td>
+            {
+              packages.map(({ name }) => (
+                <th scope="col" class={`${cell} font-bold`}>
+                  {name}
+                </th>
+              ))
+            }
+          </tr>
+        </thead>
+        <tbody>
           {
-            packagePrices.map(({ price, discounted }) => (
-              <TableCell>
-                {discounted ? (
-                  <>
-                    <s>{usd(price)}</s>
-                    <br />
-                    {salePrice(price)}
-                  </>
-                ) : (
-                  usd(price)
-                )}
-              </TableCell>
+            features.map(([label, values]) => (
+              <tr class={row}>
+                <th scope="row" class={`${cell} font-normal`}>
+                  {label}
+                </th>
+                {values.map((value) => (
+                  <td class={cell}>
+                    {value === true ? (
+                      <i
+                        class="fa-solid fa-check"
+                        role="img"
+                        aria-label="Included"
+                      />
+                    ) : (
+                      value
+                    )}
+                  </td>
+                ))}
+              </tr>
             ))
           }
-        </TableRow>
-      </TableBody>
-    </Table>
-  </section>
-
-  <section id="speaking-workshop-addons" class="bg-mint py-4">
-    <div class="mx-auto w-[90%] leading-[1.4em]">
-      <h2 class="text-32 mt-2 text-center">Speaking &amp; Workshop Add-Ons</h2>
-      <p class="mx-auto md:w-5/9">
-        Share your expertise, showcase your technology, and give developers a
-        deeper look at what your team is building.
-      </p>
-      <div class="my-7 overflow-x-auto">
-        <Table class="[&_td]:text-left [&_th]:text-left">
-          <colgroup>
-            <col class="w-[36%]" />
-            <col class="w-[16%]" />
-            <col class="w-[16%]" />
-            <col class="w-[16%]" />
-            <col class="w-[16%]" />
-          </colgroup>
-          <TableHead>
-            <TableHeadRow>
-              <TableHeaderCell>Opportunity</TableHeaderCell>
-              <TableHeaderCell>Price</TableHeaderCell>
-              <TableHeaderCell>Diamond</TableHeaderCell>
-              <TableHeaderCell>Platinum</TableHeaderCell>
-              <TableHeaderCell>Gold</TableHeaderCell>
-            </TableHeadRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableLabelCell>
-                <b>Workshop hosting</b>
-              </TableLabelCell>
-              <TableCell>
-                <s>{usd(7500)}</s>
-                <br />
-                {salePrice(7500)}
-              </TableCell>
-              <TableCell>Yes</TableCell>
-              <TableCell>Yes</TableCell>
-              <TableCell>Yes</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableLabelCell>
-                <b>Main Stage Lightning Talk (10 min)</b>
-              </TableLabelCell>
-              <TableCell>
-                <s>{usd(3000)}</s>
-                <br />
-                {salePrice(3000)}
-              </TableCell>
-              <TableCell>Yes</TableCell>
-              <TableCell>Yes</TableCell>
-              <TableCell>Yes</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </div>
-      <div class="mx-auto md:w-5/9">
-        <h3 class="text-2xl"><strong>Workshop &mdash; $7,500</strong></h3>
-        <p>
-          Lead a hands-on session where developers build, experiment, or solve a
-          technical problem with your team.
-        </p>
-        <h3 class="text-2xl"><strong>Lightning Talk &mdash; $3,000</strong></h3>
-        <p>
-          Share a focused technical idea, demo, or lesson in a short
-          presentation.
-        </p>
-        <p>
-          <em
-            >Speaking and workshop opportunities are limited, subject to
-            approval, and purchased in addition to the base sponsorship package.</em
-          >
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-mint py-4">
-    <div class="mx-auto w-[90%] leading-[1.4em]">
-      <h2 class="text-32 mt-2 text-center">
-        Additional Sponsorship Opportunities
-      </h2>
-      <p class="mx-auto md:w-5/9">
-        Put your brand into the moments where developers gather, connect, and
-        learn. These opportunities offer additional visibility and ways to
-        engage with the CascadiaJS community.
-      </p>
-      <div
-        class="my-7 overflow-x-auto"
-        role="region"
-        aria-label="Sponsorship add-on opportunities"
-        tabindex="0"
-      >
-        <Table class="[&_td]:text-left [&_th]:text-left">
-          <colgroup>
-            <col class="w-1/4" />
-            <col class="w-[15%]" />
-            <col class="w-[60%]" />
-          </colgroup>
-          <TableHead>
-            <TableHeadRow>
-              <TableHeaderCell>Opportunity</TableHeaderCell>
-              <TableHeaderCell>Price</TableHeaderCell>
-              <TableHeaderCell>What's included</TableHeaderCell>
-            </TableHeadRow>
-          </TableHead>
-          <TableBody>
+          <tr class={headRow}>
+            <th scope="row" class={`${cell} font-bold`}>Price</th>
             {
-              extraOpportunities.map(
-                ({ name, price, discounted, included }) => (
-                  <TableRow>
-                    <TableLabelCell>
-                      <b>{name}</b>
-                    </TableLabelCell>
-                    <TableCell>
-                      {discounted ? (
-                        <>
-                          <s>{usd(price)}</s>
-                          <br />
-                          {salePrice(price)}
-                        </>
-                      ) : (
-                        usd(price)
-                      )}
-                    </TableCell>
-                    <TableCell>{included}</TableCell>
-                  </TableRow>
-                ),
-              )
+              packages.map(({ price, discounted }) => (
+                <td class={`${cell} font-bold`}>
+                  {discounted ? (
+                    <>
+                      <s class="text-sound-navy/60 block font-normal">
+                        {usd(price)}
+                      </s>
+                      {salePrice(price)}
+                    </>
+                  ) : (
+                    usd(price)
+                  )}
+                </td>
+              ))
             }
-          </TableBody>
-        </Table>
-      </div>
-
-      <div class="mx-auto md:w-5/9">
-        <h2 id="book-call" class="text-32 mt-2 text-center">
-          Build Your Package
-        </h2>
-        <p>
-          Start with a sponsorship package that fits your goals, then add
-          speaking opportunities, hands-on workshops, or branded experiences to
-          expand your reach. Whether you're showcasing a product, sharing
-          technical expertise, or building relationships with developers,
-          CascadiaJS offers more opportunities for meaningful engagement and
-          more value from your sponsorship investment.
-        </p>
-        <p>
-          <strong class="font-bold">Contact:</strong> elise@cascadiajs.com
-        </p>
-        <CtaButton href="https://calendly.com/elise-worthy" variant="secondary"
-          >Book a time to talk</CtaButton
-        >
-      </div>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <Testimonials />
-
-  <SponsorsGrid exclude="2026" />
-
-  <style is:global>
-    /* "Learn more" (#event-at-a-glance) glides to its section. Global because
-       it has to reach <html>; Astro only ships this page's styles with this
-       page. */
-    @media (prefers-reduced-motion: no-preference) {
-      html {
-        scroll-behavior: smooth;
+  <section id="add-ons" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Speaking &amp; Workshop Add-Ons</h2>
+    <p class={body}>
+      Share your expertise, showcase your technology, and give developers a
+      deeper look at what your team is building.
+    </p>
+    <ul class="m-0 my-8 grid max-w-[760px] list-none gap-6 p-0 sm:grid-cols-2">
+      {
+        speakingAddOns.map(({ name, price, description }) => (
+          <li class="border-sound-navy/20 rounded-md border bg-white px-6 py-5">
+            <h3 class={subheading}>{name}</h3>
+            <p class="m-0 mb-3 text-lg">
+              <s class="text-sound-navy/60">{usd(price)}</s>{" "}
+              <strong class="font-serif text-2xl font-bold">
+                {salePrice(price)}
+              </strong>
+            </p>
+            <p class="m-0 text-base leading-[1.5]">{description}</p>
+            <p class="text-sound-navy/70 m-0 mt-3 text-sm">
+              For Diamond, Platinum and Gold sponsors
+            </p>
+          </li>
+        ))
       }
-    }
-  </style>
-</Layout>
+    </ul>
+    <p class={`${body} italic`}>
+      Speaking and workshop opportunities are limited, subject to approval, and
+      purchased in addition to the base sponsorship package.
+    </p>
+  </section>
+
+  <section class="mt-16">
+    <h2 class={heading}>Additional Sponsorship Opportunities</h2>
+    <p class={`${body} mb-8!`}>
+      Put your brand into the moments where developers gather, connect, and
+      learn. These opportunities offer additional visibility and ways to engage
+      with the CascadiaJS community.
+    </p>
+    <div
+      class="overflow-x-auto"
+      role="region"
+      aria-label="Sponsorship add-on opportunities"
+      tabindex="0"
+    >
+      <table class={`${table} max-w-[960px] min-w-[560px]`}>
+        <thead>
+          <tr class={headRow}>
+            <th scope="col" class={`${cell} font-bold`}>Opportunity</th>
+            <th scope="col" class={`${cell} font-bold`}>Price</th>
+            <th scope="col" class={`${cell} font-bold`}>What's included</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            extraOpportunities.map(({ name, price, discounted, included }) => (
+              <tr class={row}>
+                <th scope="row" class={`${cell} font-normal`}>
+                  {name}
+                </th>
+                <td class={`${cell} whitespace-nowrap`}>
+                  {discounted ? (
+                    <>
+                      <s class="text-sound-navy/60">{usd(price)}</s>{" "}
+                      {salePrice(price)}
+                    </>
+                  ) : (
+                    usd(price)
+                  )}
+                </td>
+                <td class={cell}>{included}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Build Your Package</h2>
+    <p class={body}>
+      Start with a sponsorship package that fits your goals, then add speaking
+      opportunities, hands-on workshops, or branded experiences to expand your
+      reach. Whether you're showcasing a product, sharing technical expertise,
+      or building relationships with developers, CascadiaJS offers more
+      opportunities for meaningful engagement and more value from your
+      sponsorship investment.
+    </p>
+    <p class={`${body} mt-4! mb-6!`}>
+      Email Elise at <a href="mailto:elise@cascadiajs.com" class={link}
+        >elise@cascadiajs.com</a
+      >, or book a call.
+    </p>
+    <a href={BOOKING_URL} class={arrowLink}>Book a time to talk <Arrow /></a>
+  </section>
+
+  <TestimonialsSection
+    slot="after"
+    headingSize="interior"
+    testimonials={sponsorTestimonials as Testimonial[]}
+  />
+</InteriorLayout>

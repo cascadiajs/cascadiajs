@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import HomeNav from "@components/HomeNav.astro";
+import HomeNav, { type Props as HomeNavProps } from "@components/HomeNav.astro";
 import HomeFooter from "@components/HomeFooter.astro";
 import PageSubNav from "@components/PageSubNav.astro";
 import { getEventConfig } from "@shared/data/events";
@@ -10,6 +10,7 @@ import { getEventConfig } from "@shared/data/events";
  * laptop"): the sticky green nav, a section bar with links to the page's
  * sections, the page title, then the page's content (the default slot),
  * and HomeFooter. Each section the bar links to needs a matching `id`.
+ * The `after` slot holds full-width content that goes below the column.
  */
 interface Props {
   /** The page's h1, also the section bar's name and the start of <title>. */
@@ -28,6 +29,10 @@ interface Props {
    * shows its own title, like a Termly policy.
    */
   hideTitle?: boolean;
+  /** Options for the nav bar, such as the sponsor brochure's navy one. */
+  nav?: Omit<HomeNavProps, "sticky">;
+  /** A short line above the h1, like the home page's section eyebrows. */
+  eyebrow?: string;
 }
 
 const config = getEventConfig("2027");
@@ -37,6 +42,8 @@ const {
   description = config.ogDescription,
   ogImage = config.ogImage,
   hideTitle = false,
+  nav,
+  eyebrow,
 } = Astro.props;
 ---
 
@@ -46,15 +53,23 @@ const {
   ogImage={ogImage}
   displayNav={false}
   displayAlert={false}
+  background="mist"
 >
   <div
     class="bg-mist text-sound-navy [&_a:focus-visible]:outline-sound-navy font-normal [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-2"
   >
-    <HomeNav sticky />
+    <HomeNav sticky {...nav} />
     {sections.length > 0 && <PageSubNav title={title} links={sections} />}
 
     {/* A 1176px column, as in the mockup, 64px below the bars. */}
     <div class="mx-auto box-content max-w-294 px-4 pt-16 pb-16">
+      {
+        eyebrow && (
+          <p class="font-display m-0 mb-4 text-lg leading-none font-light">
+            {eyebrow}
+          </p>
+        )
+      }
       <h1
         class:list={[
           "font-display text-sound-navy m-0 mb-12 text-5xl leading-[0.95] font-light md:text-[72px]",
@@ -65,6 +80,8 @@ const {
       </h1>
       <slot />
     </div>
+    {/* Full-width content after the column, such as TestimonialsSection. */}
+    <slot name="after" />
   </div>
 
   <HomeFooter slot="footer" />

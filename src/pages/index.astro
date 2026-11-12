@@ -6,10 +6,8 @@ import Arrow from "@components/Arrow.astro";
 import HomeHeroVideo from "@components/HomeHeroVideo.astro";
 import HomeGallery from "@components/HomeGallery.astro";
 import HomeSpeakers from "@components/HomeSpeakers.astro";
-import Testimonials from "@components/Testimonials.astro";
-import { Image } from "astro:assets";
-import type { ImageMetadata } from "astro";
-import { getCollection } from "astro:content";
+import PastSponsors from "@components/PastSponsors.astro";
+import TestimonialsSection from "@components/TestimonialsSection.astro";
 import { getEventConfig } from "@shared/data/events";
 // A stand-in photo until the one in the Figma mockup is added: the hero
 // video's poster.
@@ -17,54 +15,6 @@ import heroPhoto from "@assets/images/cjs19-family-photo.jpg";
 
 // The 2027 home page, built from the Figma "Home - laptop" frame.
 const config = getEventConfig("2027");
-
-// No 2027 Sponsors yet, so show the past Sponsors people in tech know best.
-const PAST_SPONSOR_IDS = [
-  "atlassian",
-  "auth0",
-  "aws",
-  "bluesky",
-  "circleci",
-  "cloudflare",
-  "datadog",
-  "elastic",
-  "github",
-  "google",
-  "langchain",
-  "netlify",
-  "new-relic",
-  "postman",
-  "pulumi",
-  "retool",
-  "sentry",
-  "tmobile",
-  "twilio",
-  "uber",
-];
-const pastSponsors = (await getCollection("sponsors"))
-  .map((entry) => entry.data)
-  .filter((sponsor) => PAST_SPONSOR_IDS.includes(sponsor.id))
-  .sort((a, b) => a.name.localeCompare(b.name));
-// Logos the home page shows in place of a Sponsor's own: GitHub as its
-// lockup. The Sponsor record keeps the logo its event pages use.
-const HOME_LOGOS: Record<string, { logo: string; name: string }> = {
-  github: { logo: "github-lockup.svg", name: "GitHub" },
-};
-const sponsorImages = import.meta.glob<{ default: ImageMetadata }>(
-  "@assets/images/sponsors/*.{jpg,png,svg,jpeg}",
-  { eager: false, base: "/src/assets/images/sponsors" },
-);
-// The logos run left, centre, right across each row of three.
-const sponsorAlign = ["justify-start", "justify-center", "justify-end"];
-// The logo grid with its "Past sponsors" badge (null) in the middle cell.
-// With 3 columns that cell is the exact center only for an even number of
-// logos in an odd number of rows (20 logos make 3×7 with the badge).
-const half = Math.floor(pastSponsors.length / 2);
-const sponsorCells = [
-  ...pastSponsors.slice(0, half),
-  null,
-  ...pastSponsors.slice(half),
-];
 
 // Sizes and spacing are the Figma "Home - laptop" frame's own values: a
 // 1176px content column, 64px between sections, and Figma's "Auto" line
@@ -84,6 +34,7 @@ const arrowLink =
   ogImage={config.ogImage}
   displayNav={false}
   displayAlert={false}
+  background="mist"
 >
   <div
     class="bg-mist text-sound-navy [&_a:focus-visible]:outline-sound-navy font-normal [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-2"
@@ -168,64 +119,13 @@ const arrowLink =
         <a href="/sponsor" class={arrowLink}>See sponsor brochure <Arrow /></a>
       </div>
       <div class="mt-12 md:col-start-3 md:mt-0">
-        <ul
-          aria-label="Past sponsors"
-          class="@container m-0 grid list-none grid-cols-3 items-center gap-x-6 gap-y-10 p-0"
-        >
-          {
-            sponsorCells.map((sponsor, i) =>
-              sponsor ? (
-                <li
-                  class={`flex h-7 min-w-0 items-center md:h-10 ${sponsorAlign[i % 3]}`}
-                >
-                  <Image
-                    src={sponsorImages[
-                      `./${HOME_LOGOS[sponsor.id]?.logo ?? sponsor.logo}`
-                    ]()}
-                    alt={`${HOME_LOGOS[sponsor.id]?.name ?? sponsor.name} logo`}
-                    height={80}
-                    class="h-auto max-h-full w-auto max-w-full"
-                  />
-                </li>
-              ) : (
-                /* A badge like the Past speakers one on the CFP grid, in navy
-                   to stand out on the page's mist background. The list's
-                   label says the same to screen readers. It's sized to the grid. */
-                <li
-                  aria-hidden="true"
-                  class="flex h-7 items-center justify-center md:h-10"
-                >
-                  <span class="font-display bg-sound-navy text-mist rounded-[0.4em] px-[0.8em] py-[0.5em] text-[clamp(13px,4.6cqw,25px)] leading-none font-light whitespace-nowrap">
-                    Past sponsors
-                  </span>
-                </li>
-              ),
-            )
-          }
-        </ul>
+        <PastSponsors />
       </div>
     </section>
 
     <HomeGallery />
 
-    <section id="testimonials" class={`${container} pt-16 pb-16`}>
-      <h2 class={`${heading} md:mb-16`}>Testimonials</h2>
-      {
-        /* Each embed is a fixed 300px column, so four need 1264px; as in the
-           mockup, the row runs 88px past the content's right edge, but only
-           from 1352px up, where the window has room for it. Narrower, they
-           wrap. */
-      }
-      <div class="min-[1352px]:-mr-22">
-        <Testimonials show={4} />
-      </div>
-      {
-        /* Hidden until there's a page of testimonials to send people to:
-           <p class={`${arrowLink} mt-6 mb-0`}>
-             More love for CascadiaJS <Arrow />
-           </p> */
-      }
-    </section>
+    <TestimonialsSection />
   </div>
 
   <HomeFooter slot="footer" />
