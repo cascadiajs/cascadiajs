@@ -138,6 +138,23 @@ test.describe("the home page", () => {
       expect([...second].sort()).toEqual([...first].sort());
     });
 
+    test("keeps moving while hovered", async ({ page }) => {
+      await page.goto("/");
+      await expect.poll(() => playState(page)).toBe("running");
+      // Playwright won't hover a moving element, so move the mouse there.
+      await page
+        .locator(".cjs-home-gallery")
+        .evaluate((el) => el.scrollIntoView({ block: "center" }));
+      const box = (await page.locator(".cjs-home-gallery").boundingBox())!;
+      await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+      expect(
+        await page
+          .locator(".cjs-home-gallery")
+          .evaluate((el) => el.matches(":hover")),
+      ).toBe(true);
+      expect(await playState(page)).toBe("running");
+    });
+
     test("scrolls, and the button pauses and plays it", async ({ page }) => {
       await page.goto("/");
       await expect.poll(() => playState(page)).toBe("running");
@@ -329,12 +346,19 @@ test.describe("the home page", () => {
     const section = page.getByRole("region", { name: "What to Expect" });
     await expect(section).toBeVisible();
     await expect(section.locator("dt")).toHaveText([
+      "Developers",
       "Days",
       "Speakers",
       "Workshops",
       "Parties",
     ]);
-    await expect(section.locator("dd")).toHaveText(["2", "20+", "4", "2"]);
+    await expect(section.locator("dd")).toHaveText([
+      "600+",
+      "2",
+      "20+",
+      "4",
+      "2",
+    ]);
     const [expectTop, cfpTop] = await page.evaluate(() =>
       ["#what-to-expect", "#cfp"].map(
         (id) => document.querySelector(id)!.getBoundingClientRect().top,

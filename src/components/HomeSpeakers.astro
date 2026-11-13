@@ -80,25 +80,25 @@ const rotation = await Promise.all(
             alt=""
             widths={widths}
             sizes={sizes}
-            class="block aspect-square h-auto w-full object-cover group-data-overlay:grayscale motion-safe:transition-[filter] motion-safe:duration-700"
+            class="block aspect-square h-auto w-full object-cover group-data-overlay:grayscale motion-safe:transition-[filter] motion-safe:duration-600"
           />
           {/* The next Speaker's photo fades in here, over the current one. */}
           <img
             data-incoming
             alt=""
             sizes={sizes}
-            class="absolute inset-0 size-full object-cover opacity-0 group-data-overlay:grayscale data-shown:opacity-100 motion-safe:transition-[opacity,filter] motion-safe:duration-[1500ms] motion-safe:data-instant:transition-none"
+            class="absolute inset-0 size-full object-cover opacity-0 group-data-overlay:grayscale data-shown:opacity-100 motion-safe:transition-[opacity,filter] motion-safe:duration-[1200ms] motion-safe:data-instant:transition-none"
           />
           <span
             aria-hidden="true"
-            class="bg-sound-navy pointer-events-none absolute inset-0 opacity-0 mix-blend-screen group-data-overlay:opacity-100 motion-safe:transition-opacity motion-safe:duration-700"
+            class="bg-sound-navy pointer-events-none absolute inset-0 opacity-0 mix-blend-screen group-data-overlay:opacity-100 motion-safe:transition-opacity motion-safe:duration-600"
           />
           {/* Only a tile in full color shows its Speaker's name, sized to the
             tile. It sits at the bottom of the photo, high enough to clear the
             badge where the tiles meet. */}
           <span
             data-name
-            class="font-display from-sound-navy/85 absolute inset-x-0 bottom-0 bg-linear-to-t to-transparent px-[5cqw] pt-[16cqw] pb-[11cqw] text-[21cqw] leading-[0.9] font-light tracking-tight text-white group-data-overlay:translate-y-2 group-data-overlay:opacity-0 motion-safe:transition-[opacity,translate] motion-safe:duration-700"
+            class="font-display from-sound-navy/85 absolute inset-x-0 bottom-0 bg-linear-to-t to-transparent px-[5cqw] pt-[16cqw] pb-[11cqw] text-[21cqw] leading-[0.9] font-light tracking-tight text-white group-data-overlay:translate-y-2 group-data-overlay:opacity-0 motion-safe:transition-[opacity,translate] motion-safe:duration-600"
           >
             {name}
           </span>
@@ -126,10 +126,10 @@ const rotation = await Promise.all(
   const rotate = (list: HTMLElement) => {
     const speakers: Speaker[] = JSON.parse(list.dataset.speakers ?? "[]");
     const tiles = [...list.querySelectorAll<HTMLLIElement>(":scope > li")];
-    const COLOR_MS = 2600; // full color, from the start of its fade-in
-    const HOLD_MS = 400; // full color after the other tile's swap
-    const FADE_MS = 700; // matches the overlay's transition
-    const GAP_MS = 400; // all four under the overlay before the next one
+    const COLOR_MS = 2100; // full color, from the start of its fade-in
+    const HOLD_MS = 300; // full color after the other tile's swap
+    const FADE_MS = 600; // matches the overlay's transition
+    const GAP_MS = 300; // all four under the overlay before the next one
 
     const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
     const load = ({ src, srcset }: Speaker) => {
@@ -141,7 +141,7 @@ const rotation = await Promise.all(
     // Fades the tile from its current Speaker to the next one: the new
     // photo fades in over the old. The name is hidden under the overlay, so
     // it just changes.
-    const CROSSFADE_MS = 1500; // matches the incoming photo's transition
+    const CROSSFADE_MS = 1200; // matches the incoming photo's transition
     const show = async (tile: HTMLLIElement, speaker: Speaker) => {
       const current = tile.querySelector<HTMLImageElement>(
         "img:not([data-incoming])",
