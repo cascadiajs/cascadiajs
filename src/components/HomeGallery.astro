@@ -18,8 +18,8 @@ const photos = Object.entries(
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([, module]) => module.default);
 
-// Seconds per photo: about 39px a second at the mockup's 1512px width.
-const duration = `${photos.length * 16}s`;
+// Seconds per photo: about 48px a second at the mockup's 1512px width.
+const duration = `${photos.length * 13}s`;
 ---
 
 {
@@ -32,7 +32,7 @@ const duration = `${photos.length * 16}s`;
 
     The script starts the motion (data-playing) unless the visitor prefers
     reduced motion; without it the row stays still, as in the mockup. It
-    pauses while hovered, and the button pauses and plays it: moving content
+    doesn't pause on hover. The button pauses and plays it: moving content
     that runs longer than five seconds needs a way to stop it (WCAG 2.2.2).
     The photos are decoration, so screen readers skip them; the button
     stays reachable.
@@ -45,7 +45,7 @@ const duration = `${photos.length * 16}s`;
   <div
     aria-hidden="true"
     data-home-gallery-track
-    class="group-data-playing:animate-home-gallery ml-[calc(50%-min(68.59vw,1037px))] flex w-max group-hover:[animation-play-state:paused]! group-data-paused:[animation-play-state:paused]!"
+    class="group-data-playing:animate-home-gallery ml-[calc(50%-min(68.59vw,1037px))] flex w-max group-data-paused:[animation-play-state:paused]!"
   >
     {
       [...photos, ...photos].map((photo) => (

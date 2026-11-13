@@ -138,6 +138,23 @@ test.describe("the home page", () => {
       expect([...second].sort()).toEqual([...first].sort());
     });
 
+    test("keeps moving while hovered", async ({ page }) => {
+      await page.goto("/");
+      await expect.poll(() => playState(page)).toBe("running");
+      // Playwright won't hover a moving element, so move the mouse there.
+      await page
+        .locator(".cjs-home-gallery")
+        .evaluate((el) => el.scrollIntoView({ block: "center" }));
+      const box = (await page.locator(".cjs-home-gallery").boundingBox())!;
+      await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+      expect(
+        await page
+          .locator(".cjs-home-gallery")
+          .evaluate((el) => el.matches(":hover")),
+      ).toBe(true);
+      expect(await playState(page)).toBe("running");
+    });
+
     test("scrolls, and the button pauses and plays it", async ({ page }) => {
       await page.goto("/");
       await expect.poll(() => playState(page)).toBe("running");
@@ -183,15 +200,16 @@ test.describe("the home page", () => {
   test.describe("from 880px up, where the full nav fits on one line", () => {
     test.use({ viewport: { width: 1280, height: 900 } });
 
-    test("the nav takes no room: Call for presenters is 64px below the photo", async ({
+    test("the nav takes no room: What to Expect is 64px below the photo", async ({
       page,
     }) => {
       await page.goto("/");
       const gap = await page.evaluate(() => {
         const hero = document.querySelector("[data-home-nav-pin]")!;
-        const cfp = document.querySelector("#cfp")!.firstElementChild!;
+        const first = document.querySelector("#what-to-expect dl")!;
         return (
-          cfp.getBoundingClientRect().top - hero.getBoundingClientRect().bottom
+          first.getBoundingClientRect().top -
+          hero.getBoundingClientRect().bottom
         );
       });
       expect(Math.round(gap)).toBe(64);
@@ -229,15 +247,16 @@ test.describe("the home page", () => {
   test.describe("below 880px, the nav items collapse into a menu", () => {
     test.use({ viewport: { width: 375, height: 800 } });
 
-    test("the nav takes no room: Call for presenters is 64px below the video", async ({
+    test("the nav takes no room: What to Expect is 64px below the video", async ({
       page,
     }) => {
       await page.goto("/");
       const gap = await page.evaluate(() => {
         const hero = document.querySelector("[data-home-nav-pin]")!;
-        const cfp = document.querySelector("#cfp")!.firstElementChild!;
+        const first = document.querySelector("#what-to-expect dl")!;
         return (
-          cfp.getBoundingClientRect().top - hero.getBoundingClientRect().bottom
+          first.getBoundingClientRect().top -
+          hero.getBoundingClientRect().bottom
         );
       });
       expect(Math.round(gap)).toBe(64);
@@ -318,6 +337,34 @@ test.describe("the home page", () => {
     await expect(nav.getByRole("button", { name: "Menu" })).toBeHidden();
     await expect(nav.getByRole("link", { name: "CFP" })).toBeVisible();
     expect(Math.round((await nav.boundingBox())!.height)).toBe(75);
+  });
+
+  test("What to Expect shows the conference at a glance, above the CFP", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const section = page.getByRole("region", { name: "What to Expect" });
+    await expect(section).toBeVisible();
+    await expect(section.locator("dt")).toHaveText([
+      "Developers",
+      "Days",
+      "Speakers",
+      "Workshops",
+      "Parties",
+    ]);
+    await expect(section.locator("dd")).toHaveText([
+      "600+",
+      "2",
+      "20+",
+      "4",
+      "2",
+    ]);
+    const [expectTop, cfpTop] = await page.evaluate(() =>
+      ["#what-to-expect", "#cfp"].map(
+        (id) => document.querySelector(id)!.getBoundingClientRect().top,
+      ),
+    );
+    expect(expectTop).toBeLessThan(cfpTop);
   });
 
   test("the CFP section rotates past speakers through four tiles", async ({
