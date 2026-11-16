@@ -654,6 +654,25 @@ test.describe("the attendee next steps page", () => {
       );
     }
   });
+
+  test("starts with Book Travel & Lodging, linking to /travel", async ({
+    page,
+  }) => {
+    await page.goto("/next-steps/attendees");
+    await expect(page.locator("main section h2").first()).toHaveText(
+      "Book Travel & Lodging",
+    );
+    await expect(
+      page
+        .getByRole("navigation", { name: "Next Steps sections" })
+        .getByRole("link", { name: "Book Travel & Lodging" }),
+    ).toHaveAttribute("href", "#book-travel-and-lodging");
+    await expect(
+      page
+        .locator("#book-travel-and-lodging")
+        .getByRole("link", { name: "Travel Guide" }),
+    ).toHaveAttribute("href", "/travel");
+  });
 });
 
 /**
