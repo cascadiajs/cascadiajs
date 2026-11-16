@@ -4,8 +4,8 @@ import iconBlue from "@assets/events/2027/images/cjs-icon-blue.svg";
 import iconGreen from "@assets/events/2027/images/cjs-icon-green.svg";
 
 /**
- * The 2027 green nav bar (Figma "Home - laptop"). Trainings and Attend have
- * no page yet, so they show as plain text, not links.
+ * The 2027 green nav bar (Figma "Home - laptop"). Trainings has no page
+ * yet, so it shows as plain text, not a link.
  *
  * `sticky` is for pages without a hero photo, such as /tickets: the bar sits
  * at the top of the window and stays there as you scroll, at every width.
@@ -49,11 +49,11 @@ const position = sticky
 const links = (
   [
     { label: "CFP", href: "https://cfp.cascadiajs.com" },
-    { label: "Sponsor", href: "/sponsor" },
+    { label: "Attend", href: "/attend" },
     { label: "Trainings", hidden: true },
     { label: "Schedule", href: "/schedule", hidden: true },
-    { label: "Attend", hidden: true },
     { label: "About", href: "/about" },
+    { label: "Sponsor", href: "/sponsor" },
   ] as { label: string; href?: string; hidden?: boolean }[]
 ).filter((link) => !link.hidden);
 ---

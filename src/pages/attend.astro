@@ -1,0 +1,88 @@
+---
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+import Arrow from "@components/Arrow.astro";
+import { Image } from "astro:assets";
+import summitBuilding from "@assets/images/cjs27-seattle-convention-center-summit.webp";
+
+// What attendees need to know, on the interior page template
+// (InteriorLayout). Based on the 2026 attend page
+// (src/content/markdown/2026/attend.mdx); its other sections (preparing,
+// meals, Cascadia Connect) come later. Add each new section to `sections`
+// too, so the section bar links to it.
+const sections = [
+  { label: "Code of Conduct", href: "#code-of-conduct" },
+  { label: "Venue", href: "#venue" },
+  { label: "Travel & Lodging", href: "#travel" },
+];
+
+// The /buy-tickets page's sizes: 64px between sections, 16px from a heading
+// to its text, and a 700px text measure.
+const heading =
+  "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
+const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
+const link = "text-sound-navy underline";
+const arrowLink =
+  "text-sound-navy border-emerald-city-green hover:border-sound-navy mt-4 inline-block border-b-3 pb-[3px] text-xl leading-[27px] font-bold no-underline";
+---
+
+<InteriorLayout
+  title="Attend"
+  sections={sections}
+  description="What to know before you come to CascadiaJS: the Code of Conduct, the venue, and travel and lodging."
+>
+  <section id="code-of-conduct" class="scroll-mt-8">
+    <h2 class={heading}>Code of Conduct</h2>
+    <p class={body}>
+      All attendees (including speakers, sponsors and staff) agree to abide by
+      our <a href="/code-of-conduct" class={link}>Code of Conduct</a>. Please
+      make sure to review this before you arrive, and please understand that we
+      take it very seriously. Anyone who violates our conduct policies will be
+      asked to leave the venue.
+    </p>
+  </section>
+
+  {
+    /* The address and a photo of the building, side by side from 768px up
+       (the text first, in its 700px measure); stacked on phones, photo
+       last. */
+  }
+  <section
+    id="venue"
+    class="mt-16 grid scroll-mt-8 items-start gap-8 md:grid-cols-2 md:gap-12"
+  >
+    <div>
+      <h2 class={heading}>Venue</h2>
+      <p class={body}>
+        Seattle Convention Center, Summit Building<br />
+        4th Floor<br />
+        900 Pine St<br />
+        Seattle, WA 98101
+      </p>
+      <p class={`${body} mt-4!`}>
+        Visit the <a href="https://www.seattlecc.com/" class={link}
+          >Seattle Convention Center website</a
+        > for information on getting there, parking and accessibility.
+      </p>
+    </div>
+    <Image
+      src={summitBuilding}
+      alt="The Seattle Convention Center's Summit Building, a glass and steel building on a downtown Seattle street corner"
+      widths={[600, 1200]}
+      sizes="(min-width: 768px) 50vw, calc(100vw - 32px)"
+      class="block h-auto w-full rounded-[5px]"
+    />
+  </section>
+
+  <section id="travel" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Travel &amp; Lodging</h2>
+    <p class={body}>
+      There are many ways to get to and from Seattle, so please check out our
+      Travel Guide for information, including our partner hotel.
+    </p>
+    <p class={`${body} mt-4!`}>
+      If you are coming from Portland, OR or Vancouver, BC you should definitely
+      check out this year's Hacker Train!
+    </p>
+    <a href="/travel" class={arrowLink}>Travel Guide <Arrow /></a>
+  </section>
+</InteriorLayout>

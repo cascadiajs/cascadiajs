@@ -1,0 +1,270 @@
+---
+import InteriorLayout from "@layouts/InteriorLayout.astro";
+import Arrow from "@components/Arrow.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import grandHyattRoom from "@assets/images/cjs27-grand-hyatt-seattle.webp";
+
+// Travel info, on the interior page template (InteriorLayout). The content
+// comes from the 2026 travel page (src/content/markdown/2026/travel.mdx),
+// updated for 2027 where we have the details. Lodging comes first: it's
+// the section with a deadline, and the one most visitors need.
+const sections = [
+  { label: "Lodging", href: "#lodging" },
+  { label: "Getting Here", href: "#getting-here" },
+  { label: "Traveling to the USA", href: "#to-usa" },
+];
+
+// The Hacker Train (or Bus) runs the day before the conference.
+const trains = [
+  {
+    from: "Coming from Portland, OR",
+    stops: [
+      "Depart from Portland Union Station",
+      "June 6 at 2:10pm",
+      "Amtrak Cascades 518 Train",
+      "Arriving in Seattle King St Station at 5:37pm",
+    ],
+  },
+  {
+    from: "Coming from Vancouver, BC",
+    stops: [
+      "Depart from Vancouver Pacific Central Station",
+      "June 6 at 11:30am",
+      "8909 Connecting Bus",
+      "Arriving in Seattle King St Station at 3:30pm",
+    ],
+  },
+];
+
+// The partner hotel, with a discounted group rate. Add `deadline` (the
+// last day to book at the group rate) and `details` (the rate, the walk to
+// the venue) as they're confirmed; each shows only once it's set.
+const hotel: {
+  name: string;
+  photo: ImageMetadata;
+  alt: string;
+  about: string;
+  href: string;
+  deadline?: string;
+  details?: string[];
+} = {
+  name: "Grand Hyatt Seattle",
+  photo: grandHyattRoom,
+  alt: "A guest room at the Grand Hyatt Seattle, with a king bed and a window onto downtown",
+  about:
+    "Centrally located in downtown Seattle, just a block away from the Seattle Convention Center. Amenities include complimentary access to gym/fitness center and free wifi. Destination Fee has been waived for the group.",
+  deadline: "May 18th, 2027",
+  details: [
+    "$279 USD per night + taxes and fees",
+    "2 min walk to venue",
+    "4 min walk to Westlake Station (Link light rail)",
+  ],
+  href: "https://www.hyatt.com/events/en-US/group-booking/SEAGH/35805055/G-CDJS",
+};
+
+// Each trip is from the station to the Seattle Convention Center, by the
+// 1 Line to Westlake Station and on foot from there; shortest first.
+const lightRailStations = [
+  {
+    name: "Northgate",
+    href: "https://maps.app.goo.gl/D9qDicWdB85CUdyk7",
+    trip: "19 min trip to venue",
+  },
+  {
+    name: "Lynnwood",
+    href: "https://maps.app.goo.gl/owvWeSKwKZmWiZDLA",
+    trip: "35 min trip to venue",
+  },
+  {
+    name: "Tukwila International Blvd",
+    href: "https://maps.app.goo.gl/2JVNj7cRezShFE7a9",
+    trip: "36 min trip to venue",
+  },
+  {
+    name: "SeaTac/Airport",
+    href: "https://maps.app.goo.gl/wqCkznCYG9cnXWtU9",
+    trip: "43 min trip to venue",
+  },
+];
+
+// The /buy-tickets page's sizes: 64px between sections, 16px from a heading
+// to its text, and a 700px text measure. Subsections are 40px apart. The
+// headings are all the serif: 48px (h2), 32px (h3) and 24px (h4).
+const heading =
+  "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
+const subheading =
+  "m-0 mt-10 mb-3 font-serif text-[32px] leading-tight font-semibold";
+const minorHeading =
+  "m-0 mt-6 mb-2 font-serif text-2xl leading-tight font-semibold";
+const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
+const list = `${body} list-disc pl-[1.5em]`;
+const link = "text-sound-navy underline";
+const arrowLink =
+  "text-sound-navy border-emerald-city-green hover:border-sound-navy mt-4 inline-block border-b-3 pb-[3px] text-xl leading-[27px] font-bold no-underline";
+---
+
+<InteriorLayout
+  title="Travel"
+  sections={sections}
+  description="How to get to CascadiaJS and where to stay while you're here."
+>
+  <section id="lodging" class="scroll-mt-8">
+    <h2 class={heading}>Lodging</h2>
+    <p class={body}>
+      We've partnered with the {hotel.name} to secure a discount for your stay in
+      Seattle during CascadiaJS. Book through the link below to get the group rate.
+    </p>
+
+    <article class="mt-10 max-w-[700px]">
+      <h3 class={`${subheading} mt-0!`}>{hotel.name}</h3>
+      <Image
+        src={hotel.photo}
+        alt={hotel.alt}
+        widths={[700, 1400]}
+        sizes="(min-width: 732px) 700px, calc(100vw - 32px)"
+        class="mt-2 mb-4 block h-auto w-full rounded-[5px]"
+      />
+      <p class={body}>{hotel.about}</p>
+      {
+        (hotel.deadline || hotel.details?.length) && (
+          <ul class={`${list} mt-4!`}>
+            {hotel.deadline && (
+              <li>
+                Deadline to book:{" "}
+                <span class="bg-emerald-city-green rounded-[3px] px-2 font-bold">
+                  {hotel.deadline}
+                </span>
+              </li>
+            )}
+            {hotel.details?.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+        )
+      }
+      <a href={hotel.href} class={arrowLink}>
+        Book {hotel.name}
+        <Arrow />
+      </a>
+    </article>
+
+    <h3 class={subheading}>Hotels Near Link Light Rail Stations</h3>
+    <p class={body}>
+      You might also find hotels within your budget near these light rail
+      stations:
+    </p>
+    <ul class={`${list} mt-2!`}>
+      {
+        lightRailStations.map(({ name, href, trip }) => (
+          <li>
+            <a href={href} class={link}>{`${name}`}</a>
+            {` (${trip})`}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="getting-here" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Getting to CascadiaJS in Seattle, WA</h2>
+    <p class={body}>
+      There are lots of ways to get to Seattle, WA, let's review.
+    </p>
+
+    <h3 class={subheading}>Take the Hacker Train (or Bus)</h3>
+    <p class={body}>
+      Choo! Choo! All aboard the Hacker Train! If you live in Portland, OR or
+      Vancouver, BC (or any Amtrak spot in between) there is <strong
+        class="font-semibold">no better way</strong
+      > to get to CascadiaJS than to join your fellow devs on the Hacker Train (or
+      Bus). Here are the options we recommend:
+    </p>
+    {
+      /* One card per route, side by side from 640px up and stacked on
+         phones, in the white cards /sponsorships uses for its add-ons. */
+    }
+    <ul class="m-0 mt-6 grid max-w-[760px] list-none gap-6 p-0 sm:grid-cols-2">
+      {
+        trains.map(({ from, stops }) => (
+          <li class="border-sound-navy/20 rounded-md border bg-white px-6 py-5">
+            <h4 class={`${minorHeading} mt-0!`}>{from}</h4>
+            <ul class={`${list} text-base!`}>
+              {stops.map((stop) => (
+                <li>{stop}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+    <p class={`${body} mt-6!`}>
+      After you purchase your tickets, please <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdDBvKcL1rlCH4Sthj_bBUtLvEAdssb2UMIhjRmuvKPjBPILg/viewform"
+        target="_blank"
+        rel="noopener"
+        class={link}
+        >RSVP here<span class="sr-only"> (opens in a new window)</span></a
+      > so we know who's coming and can get you all connected!
+    </p>
+    <a href="https://www.amtrak.com/home.html" class={arrowLink}
+      >Buy Train or Bus Ticket <Arrow /></a
+    >
+
+    <h3 class={subheading}>Fly to Seatac</h3>
+    <p class={body}>
+      The closest airport to Seattle is <a
+        href="https://www.portseattle.org/sea-tac"
+        class={link}>Seatac (SEA)</a
+      >. Once you arrive, the cheapest and easiest way to get to Seattle is on
+      the <a
+        href="https://www.soundtransit.org/ride-with-us/stops-stations/seatac-airport-station"
+        class={link}>Light Rail</a
+      >. Just take 1 Line north to downtown.
+    </p>
+
+    <h3 class={subheading}>Fly to Paine Field</h3>
+    <p class={body}>
+      Another nearby airport is <a
+        href="https://www.painefield.com/"
+        class={link}>Paine Field (PAE)</a
+      >. Options for getting to Seattle from Paine Field include <a
+        href="https://flypainefield.com/about/location"
+        class={link}>rental cars, taxis, rideshare, and shuttles</a
+      >.
+    </p>
+  </section>
+
+  <section id="to-usa" class="mt-16 scroll-mt-8">
+    <h2 class={heading}>Traveling to the USA</h2>
+    <p class={body}>
+      Traveling to the United States isn't as easy as it used to be, and that's
+      unfortunate. Here are some guides on how to get here and get home safely.
+    </p>
+    <ul class={`${list} mt-4!`}>
+      <li>
+        <a href="https://travel.gc.ca/destinations/united-states" class={link}
+          >Travel from Canada to the United States</a
+        >
+      </li>
+      <li>
+        <a href="https://www.usa.gov/from-canada-mexico-caribbean" class={link}
+          >Entering the U.S. from Canada, Mexico, the Caribbean, and Bermuda</a
+        >
+      </li>
+    </ul>
+    <p class={`${body} mt-4!`}>
+      In our experience, the most important advice we give people is to be clear
+      they:
+    </p>
+    <ul class={`${list} mt-2!`}>
+      <li>Are traveling for an educational conference</li>
+      <li>Have proof of lodging</li>
+      <li>Have a defined return date</li>
+    </ul>
+    <p class={`${body} mt-4!`}>
+      <a href="mailto:info@cascadiajs.com" class={link}>Contact us</a> if you need
+      a visa invitation letter.
+    </p>
+  </section>
+</InteriorLayout>

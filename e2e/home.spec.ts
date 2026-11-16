@@ -53,10 +53,27 @@ test.describe("the home page", () => {
     );
   });
 
+  test("Attend links to the Attend page; the order is CFP, Attend, About, Sponsor", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const nav = page.getByRole("navigation", { name: "Main" });
+    await expect(nav.getByRole("link", { name: "Attend" })).toHaveAttribute(
+      "href",
+      "/attend",
+    );
+    await expect(nav.getByRole("listitem")).toHaveText([
+      "CFP",
+      "Attend",
+      "About",
+      "Sponsor",
+    ]);
+  });
+
   test("leaves out the items hidden for now", async ({ page }) => {
     await page.goto("/");
     const nav = page.getByRole("navigation", { name: "Main" });
-    for (const label of ["Trainings", "Schedule", "Attend"]) {
+    for (const label of ["Trainings", "Schedule"]) {
       await expect(nav.getByText(label, { exact: true })).toHaveCount(0);
     }
     for (const label of ["CFP", "Sponsor", "Tickets"]) {
@@ -803,6 +820,82 @@ test.describe("the about page", () => {
   });
 });
 
+/** /travel, on the interior page template, with the 2026 travel content. */
+test.describe("the travel page", () => {
+  test("has the green nav, section bar, sections and the partner hotel", async ({
+    page,
+  }) => {
+    await page.goto("/travel");
+    await expect(page.locator(".cjs-home-footer")).toHaveCount(1);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Travel" }),
+    ).toBeVisible();
+    const sectionBar = page.getByRole("navigation", {
+      name: "Travel sections",
+    });
+    for (const name of ["Lodging", "Getting Here", "Traveling to the USA"]) {
+      await expect(sectionBar.getByRole("link", { name })).toBeVisible();
+    }
+    for (const name of [
+      "Traveling to the USA",
+      "Getting to CascadiaJS in Seattle, WA",
+      "Lodging",
+    ]) {
+      await expect(page.getByRole("heading", { level: 2, name })).toBeVisible();
+    }
+    await expect(
+      page.getByRole("heading", { level: 3, name: "Grand Hyatt Seattle" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Book Grand Hyatt Seattle" }),
+    ).toHaveAttribute(
+      "href",
+      "https://www.hyatt.com/events/en-US/group-booking/SEAGH/35805055/G-CDJS",
+    );
+  });
+
+  test("doesn't scroll sideways at 375px", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto("/travel");
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+    expect(overflow).toBe(0);
+  });
+});
+
+/** /attend, on the interior page template. */
+test.describe("the attend page", () => {
+  test("has the green nav, section bar and sections, and links to /travel", async ({
+    page,
+  }) => {
+    await page.goto("/attend");
+    await expect(page.locator(".cjs-home-footer")).toHaveCount(1);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Attend" }),
+    ).toBeVisible();
+    const sectionBar = page.getByRole("navigation", {
+      name: "Attend sections",
+    });
+    for (const name of ["Code of Conduct", "Venue", "Travel & Lodging"]) {
+      await expect(sectionBar.getByRole("link", { name })).toBeVisible();
+      await expect(page.getByRole("heading", { level: 2, name })).toBeVisible();
+    }
+    await expect(
+      page.getByRole("link", { name: "Travel Guide" }),
+    ).toHaveAttribute("href", "/travel");
+  });
+
+  test("doesn't scroll sideways at 375px", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto("/attend");
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+    expect(overflow).toBe(0);
+  });
+});
+
 /**
  * The 2027 pages are mist behind everything, so a short one has no band of
  * the older pages' cream between its content and the footer.
@@ -811,7 +904,7 @@ test.describe("the page background", () => {
   const bodyBackground = (page: Page) =>
     page.evaluate(() => getComputedStyle(document.body).backgroundColor);
 
-  for (const path of ["/", "/tickets", "/about"]) {
+  for (const path of ["/", "/tickets", "/about", "/travel", "/attend"]) {
     test(`${path} is mist`, async ({ page }) => {
       await page.goto(path);
       expect(await bodyBackground(page)).toBe("rgb(245, 250, 248)");
