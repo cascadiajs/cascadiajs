@@ -21,17 +21,8 @@ import { personImages } from "@shared/person-images";
  * logo with a transparent background works. Leave `logo` out to show the
  * company's name in its place, or nothing for someone with no company.
  */
+// In alphabetical order by last name.
 const featured: { ref: PersonRef; logo?: string }[] = [
-  {
-    ref: {
-      id: "kevin-whinnery",
-      overrides: {
-        title: "Developer Experience Engineer",
-        location: "Minneapolis, MN",
-      },
-    },
-    logo: "openai.svg",
-  },
   {
     ref: {
       id: "josh-goldberg",
@@ -44,15 +35,35 @@ const featured: { ref: PersonRef; logo?: string }[] = [
   },
   {
     ref: {
-      id: "laurie-voss",
-      overrides: { title: "Devrel Leader", location: "San Francisco, CA" },
+      id: "andrea-griffiths",
+      overrides: {
+        title: "Senior Developer Advocate",
+        location: "Bradenton, FL",
+      },
     },
+    logo: "github-lockup.svg",
   },
   {
     ref: {
       id: "shruti-kapoor",
       overrides: { title: "Tech Educator", location: "Seattle, WA" },
     },
+  },
+  {
+    ref: {
+      id: "laurie-voss",
+      overrides: { title: "Devrel Leader", location: "San Francisco, CA" },
+    },
+  },
+  {
+    ref: {
+      id: "kevin-whinnery",
+      overrides: {
+        title: "Developer Experience Engineer",
+        location: "Minneapolis, MN",
+      },
+    },
+    logo: "openai.svg",
   },
 ];
 
@@ -90,6 +101,12 @@ const speakers = await Promise.all(
     };
   }),
 );
+
+// The default slot (a note such as "More speakers to be announced soon.")
+// fills the rest of the last row: beside the last card, or a row of its
+// own when the last row is full. Two columns on phones, four from 768px.
+const rest = (columns: number) =>
+  columns - (speakers.length % columns || columns) || columns;
 
 const sizes = "(min-width: 1024px) 276px, (min-width: 768px) 25vw, 50vw";
 ---
@@ -149,5 +166,16 @@ const sizes = "(min-width: 1024px) 276px, (min-width: 768px) 25vw, 50vw";
         </span>
       </li>
     ))
+  }
+  {
+    Astro.slots.has("default") && (
+      <li
+        role="none"
+        class="col-span-(--rest) flex items-center pl-2 md:col-span-(--rest-md) md:pl-6"
+        style={`--rest: ${rest(2)}; --rest-md: ${rest(4)}`}
+      >
+        <slot />
+      </li>
+    )
   }
 </ul>

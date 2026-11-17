@@ -126,12 +126,13 @@ const arrowLink =
     <section id="speakers" class={`${container} pt-16`}>
       <h2 class={heading}>Speakers</h2>
       <div class="mt-8">
-        <HomeFeaturedSpeakers />
+        <HomeFeaturedSpeakers>
+          {/* The eyebrows' font and size, beside the last card. */}
+          <p class="font-display m-0 text-lg leading-tight font-light">
+            More speakers to be announced soon.
+          </p>
+        </HomeFeaturedSpeakers>
       </div>
-      {/* The eyebrows' font and size. */}
-      <p class="font-display mt-8 mb-0 text-lg leading-tight font-light">
-        More speakers to be announced soon.
-      </p>
     </section>
 
     <div class={`${container} pt-16`}>
