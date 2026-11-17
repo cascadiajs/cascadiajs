@@ -1,9 +1,11 @@
 ---
 import InteriorLayout from "@layouts/InteriorLayout.astro";
+import Arrow from "@components/Arrow.astro";
 
 // What to do after buying a 2027 ticket. More sections are coming; add each
 // one to `sections` too, so the section bar links to it.
 const sections = [
+  { label: "Book Travel & Lodging", href: "#book-travel-and-lodging" },
   { label: "Connect With Our Community", href: "#connect-with-our-community" },
 ];
 
@@ -13,10 +15,22 @@ const heading =
   "m-0 mb-4 font-serif text-5xl leading-[0.95] font-semibold text-sound-navy";
 const body = "m-0 max-w-[700px] text-lg leading-[1.5]";
 const link = "text-sound-navy underline";
+const arrowLink =
+  "text-sound-navy border-emerald-city-green hover:border-sound-navy inline-block border-b-3 pb-[3px] text-xl leading-[27px] font-bold no-underline";
 ---
 
 <InteriorLayout title="Next Steps" sections={sections}>
-  <section id="connect-with-our-community" class="scroll-mt-8">
+  <section id="book-travel-and-lodging" class="scroll-mt-8">
+    <h2 class={heading}>Book Travel &amp; Lodging</h2>
+    <p class={`${body} mb-4!`}>
+      Traveling to Seattle and need a place to stay while you’re in town? Look
+      no further than our Travel Guide for the scoop on hotel discounts and the
+      best way to get to Seattle.
+    </p>
+    <a href="/travel" class={arrowLink}>Travel Guide <Arrow /></a>
+  </section>
+
+  <section id="connect-with-our-community" class="mt-16 scroll-mt-8">
     <h2 class={heading}>Connect With Our Community</h2>
     <p class={`${body} mb-4!`}>
       You don’t have to wait until the conference to start enjoying CascadiaJS!
