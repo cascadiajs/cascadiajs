@@ -567,5 +567,35 @@
     "title": "Volunteer",
     "location": "Seattle, WA USA",
     "roles": ["organizer"]
+  },
+  {
+    "id": "kevin-whinnery",
+    "name": "Kevin Whinnery",
+    "image": "/people/kevin-whinnery.jpg",
+    "company": "OpenAI",
+    "location": "Minneapolis, MN USA",
+    "roles": ["speaker"]
+  },
+  {
+    "id": "josh-goldberg",
+    "name": "Josh Goldberg",
+    "image": "/people/josh-goldberg.jpg",
+    "company": "Sentry",
+    "location": "Somerville, MA USA",
+    "roles": ["speaker"]
+  },
+  {
+    "id": "laurie-voss",
+    "name": "Laurie Voss",
+    "image": "/people/laurie-voss.jpg",
+    "location": "San Francisco, CA USA",
+    "roles": ["speaker"]
+  },
+  {
+    "id": "shruti-kapoor",
+    "name": "Shruti Kapoor",
+    "image": "/people/shruti-kapoor.jpg",
+    "location": "Seattle, WA USA",
+    "roles": ["speaker"]
   }
 ]

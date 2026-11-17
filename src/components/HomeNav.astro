@@ -48,6 +48,7 @@ const position = sticky
 // one again.
 const links = (
   [
+    { label: "Speakers", href: "/#speakers" },
     { label: "CFP", href: "https://cfp.cascadiajs.com" },
     { label: "Attend", href: "/attend" },
     { label: "Trainings", hidden: true },
@@ -250,6 +251,13 @@ const links = (
         setOpen(false);
       }
     });
+    // A link in the menu may jump within the page (Speakers), so close the
+    // menu rather than leave it over the section it jumped to.
+    nav.addEventListener("click", (event) => {
+      if ((event.target as Element).closest("a")) {
+        setOpen(false);
+      }
+    });
     wide.addEventListener("change", () => setOpen(false));
   }
 </script>
@@ -257,8 +265,12 @@ const links = (
 <style is:global>
   /* While the nav is pinned (75px tall at every width), keep in-page
      scrolls and keyboard focus from landing underneath it. A global rule
-     because it has to reach <html>. */
-  html:has(.cjs-home-nav[data-pinned]) {
+     because it has to reach <html>. On a page with the pin (the home page)
+     it applies before the nav pins too: every section a link jumps to
+     (like #speakers) is below the pin, so the nav will be pinned by the
+     time the jump lands. */
+  html:has(.cjs-home-nav[data-pinned]),
+  html:has([data-home-nav-pin]) {
     scroll-padding-top: 75px;
   }
   /* The sticky bar is 75px tall at every width. */

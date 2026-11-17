@@ -53,7 +53,7 @@ test.describe("the home page", () => {
     );
   });
 
-  test("Attend links to the Attend page; the order is CFP, Attend, About, Sponsor", async ({
+  test("Attend links to the Attend page; the order is Speakers, CFP, Attend, About, Sponsor", async ({
     page,
   }) => {
     await page.goto("/");
@@ -63,11 +63,44 @@ test.describe("the home page", () => {
       "/attend",
     );
     await expect(nav.getByRole("listitem")).toHaveText([
+      "Speakers",
       "CFP",
       "Attend",
       "About",
       "Sponsor",
     ]);
+  });
+
+  test("Speakers jumps to the Speakers section", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto("/");
+    const nav = page.getByRole("navigation", { name: "Main" });
+    const speakers = nav.getByRole("link", { name: "Speakers" });
+    await expect(speakers).toHaveAttribute("href", "/#speakers");
+    // From the top of the page, where the nav is away until it has focus.
+    await speakers.focus();
+    await page.keyboard.press("Enter");
+    await expect(page).toHaveURL(/#speakers$/);
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Speakers" }),
+    ).toBeInViewport();
+  });
+
+  test("on phones, Speakers in the menu jumps there and closes the menu", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/");
+    await scrollPastHero(page);
+    const nav = page.getByRole("navigation", { name: "Main" });
+    const menu = nav.getByRole("button", { name: "Menu" });
+    await menu.click();
+    await nav.getByRole("link", { name: "Speakers" }).click();
+    await expect(page).toHaveURL(/#speakers$/);
+    await expect(menu).toHaveAttribute("aria-expanded", "false");
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Speakers" }),
+    ).toBeInViewport();
   });
 
   test("leaves out the items hidden for now", async ({ page }) => {
@@ -382,6 +415,49 @@ test.describe("the home page", () => {
       ),
     );
     expect(expectTop).toBeLessThan(cfpTop);
+  });
+
+  test("Speakers features four Speakers, above the CFP", async ({ page }) => {
+    await page.goto("/");
+    const section = page.locator("#speakers");
+    await expect(
+      section.getByRole("heading", { level: 2, name: "Speakers" }),
+    ).toBeVisible();
+    const cards = section.getByRole("listitem");
+    await expect(cards).toHaveCount(4);
+    await expect(cards.first()).toContainText("Kevin Whinnery");
+    await expect(cards.first()).toContainText("Developer Experience Engineer");
+    await expect(
+      cards.first().getByRole("img", { name: "OpenAI" }),
+    ).toBeVisible();
+    // A logo where there is one; nothing for someone with no company.
+    await expect(
+      cards.nth(1).getByRole("img", { name: "Sentry" }),
+    ).toBeVisible();
+    await expect(cards.nth(2)).not.toContainText("Independent");
+    // No modal yet: the cards aren't buttons or links.
+    await expect(section.getByRole("button")).toHaveCount(0);
+    await expect(cards.nth(3)).toContainText("Shruti Kapoor");
+    await expect(
+      section.getByRole("link", { name: "Submit to our CFP" }),
+    ).toHaveAttribute("href", "https://cfp.cascadiajs.com");
+    const [speakersTop, cfpTop] = await page.evaluate(() =>
+      ["#speakers", "#cfp"].map(
+        (id) => document.querySelector(id)!.getBoundingClientRect().top,
+      ),
+    );
+    expect(speakersTop).toBeLessThan(cfpTop);
+  });
+
+  test("a Speaker card turns navy on hover, from green", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto("/");
+    const card = page.locator("#speakers").getByRole("listitem").first();
+    const panel = card.locator(":scope > span").last();
+    const navy = "rgb(17, 35, 120)";
+    await expect(panel).not.toHaveCSS("background-color", navy);
+    await card.hover();
+    await expect(panel).toHaveCSS("background-color", navy);
   });
 
   test("the CFP section rotates past speakers through four tiles", async ({
