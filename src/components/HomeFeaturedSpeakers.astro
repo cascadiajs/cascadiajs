@@ -1,0 +1,153 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
+import { resolvePerson, type PersonRef } from "@shared/people";
+import { personImages } from "@shared/person-images";
+
+/**
+ * The home page's "Speakers" row, from the Figma "Home - laptop" frame:
+ * one card per featured Speaker, with their photo above a panel of their
+ * name, title, company logo and location. By default the photo is under a
+ * navy overlay (black and white, screen blend) over a green panel; on
+ * hover it's in full color over a navy panel. The cards don't link
+ * anywhere yet: a dialog with each Speaker's details is still to be
+ * designed.
+ *
+ * A Speaker's name, company and photo come from people.json. Here
+ * each one adds the title and location to show (as Event overrides) and
+ * their company's logo, a file in src/assets/images/sponsors. The logo is
+ * drawn in one color (the panel's text color) through a CSS mask, so any
+ * logo with a transparent background works. Leave `logo` out to show the
+ * company's name in its place, or nothing for someone with no company.
+ */
+const featured: { ref: PersonRef; logo?: string }[] = [
+  {
+    ref: {
+      id: "kevin-whinnery",
+      overrides: {
+        title: "Developer Experience Engineer",
+        location: "Minneapolis, MN",
+      },
+    },
+    logo: "openai.svg",
+  },
+  {
+    ref: {
+      id: "josh-goldberg",
+      overrides: {
+        title: "Senior Frontend Developer",
+        location: "Somerville, MA",
+      },
+    },
+    logo: "sentry.svg",
+  },
+  {
+    ref: {
+      id: "laurie-voss",
+      overrides: { title: "Devrel Leader", location: "San Francisco, CA" },
+    },
+  },
+  {
+    ref: {
+      id: "shruti-kapoor",
+      overrides: { title: "Tech Educator", location: "Seattle, WA" },
+    },
+  },
+];
+
+const registry = (await getCollection("people")).map((entry) => entry.data);
+
+const logos = import.meta.glob<{ default: ImageMetadata }>(
+  "@assets/images/sponsors/*.{svg,png}",
+  { eager: true },
+);
+const logoFor = (file: string) => {
+  const match = Object.entries(logos).find(([path]) =>
+    path.endsWith(`/sponsors/${file}`),
+  );
+  if (!match) {
+    throw new Error(`No logo in src/assets/images/sponsors/ named ${file}`);
+  }
+  return match[1].default;
+};
+
+const speakers = await Promise.all(
+  featured.map(async ({ ref, logo }) => {
+    const person = resolvePerson(registry, ref);
+    const imageModule = personImages[`.${person.image}`];
+    if (!imageModule) {
+      throw new Error(`HomeFeaturedSpeakers: no image at ${person.image}`);
+    }
+    const logoImage = logo ? logoFor(logo) : undefined;
+    return {
+      person,
+      photo: (await imageModule()).default,
+      logo: logoImage && {
+        url: logoImage.src,
+        ratio: logoImage.width / logoImage.height,
+      },
+    };
+  }),
+);
+
+const sizes = "(min-width: 1024px) 276px, (min-width: 768px) 25vw, 50vw";
+---
+
+<ul
+  class="cjs-featured-speakers m-0 grid list-none grid-cols-2 gap-4 p-0 md:grid-cols-4 lg:gap-6"
+>
+  {
+    speakers.map(({ person, photo, logo }) => (
+      <li class="group text-sound-navy @container flex flex-col">
+        <span class="relative block overflow-hidden">
+          <Image
+            src={photo}
+            alt=""
+            widths={[320, 640]}
+            sizes={sizes}
+            class="block aspect-square h-auto w-full object-cover grayscale group-hover:grayscale-0 motion-safe:transition-[filter] motion-safe:duration-300"
+          />
+          <span
+            aria-hidden="true"
+            class="bg-sound-navy pointer-events-none absolute inset-0 mix-blend-screen group-hover:opacity-0 motion-safe:transition-opacity motion-safe:duration-300"
+          />
+        </span>
+        {/* The panel is the same height on every card (84cqw, the
+              mockup's 231px on a 276px card), so the logos and locations
+              line up when a name wraps. */}
+        <span class="bg-emerald-city-green group-hover:bg-sound-navy flex min-h-[84cqw] grow flex-col px-[6cqw] pt-[5cqw] pb-[5.5cqw] group-hover:text-white motion-safe:transition-colors motion-safe:duration-300">
+          <span class="block font-serif text-[max(18px,13cqw)] leading-[1.05] font-semibold">
+            {person.name}
+          </span>
+          <span class="font-display mt-[2cqw] block text-[max(11px,7.3cqw)] leading-tight font-light uppercase">
+            {person.title}
+          </span>
+          <span class="mt-auto block pt-[6cqw]">
+            {logo ? (
+              <span
+                role="img"
+                aria-label={person.company}
+                class="block h-[12cqw] max-w-full bg-current [mask-size:contain] [mask-position:left_center] [mask-repeat:no-repeat]"
+                style={`aspect-ratio: ${logo.ratio}; mask-image: url("${logo.url}")`}
+              />
+            ) : (
+              // Keeps its height when empty, so the location lines up
+              // with the other cards'.
+              <span class="font-display flex h-[12cqw] items-end text-[max(13px,9cqw)] leading-none font-light">
+                {person.company}
+              </span>
+            )}
+          </span>
+          <span
+            aria-hidden="true"
+            class="mt-[8cqw] block h-0.5 w-[10.5cqw] bg-current"
+          />
+          <span class="font-display mt-[3cqw] block text-[max(11px,7.3cqw)] leading-tight font-light uppercase">
+            {person.location}
+          </span>
+        </span>
+      </li>
+    ))
+  }
+</ul>

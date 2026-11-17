@@ -6,6 +6,7 @@ import Arrow from "@components/Arrow.astro";
 import HomeHeroVideo from "@components/HomeHeroVideo.astro";
 import HomeGallery from "@components/HomeGallery.astro";
 import HomeSpeakers from "@components/HomeSpeakers.astro";
+import HomeFeaturedSpeakers from "@components/HomeFeaturedSpeakers.astro";
 import PastSponsors from "@components/PastSponsors.astro";
 import TestimonialsSection from "@components/TestimonialsSection.astro";
 import { getEventConfig } from "@shared/data/events";
@@ -116,6 +117,27 @@ const arrowLink =
           ))
         }
       </dl>
+    </section>
+
+    <div class={`${container} pt-16`}>
+      <hr class="border-sound-navy/10 m-0 border-t" />
+    </div>
+
+    <section id="speakers" class={`${container} pt-16`}>
+      <h2 class={heading}>Speakers</h2>
+      <div class="mt-8">
+        <HomeFeaturedSpeakers />
+      </div>
+      {
+        /* The eyebrows' font and size, with room between lines for when it
+           wraps on phones. */
+      }
+      <p class="font-display mt-8 mb-0 text-lg leading-tight font-light">
+        More speakers to be announced soon. <a
+          href="https://cfp.cascadiajs.com"
+          class="text-sound-navy underline">Submit to our CFP</a
+        > and you could be one of them.
+      </p>
     </section>
 
     <div class={`${container} pt-16`}>
