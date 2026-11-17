@@ -438,9 +438,11 @@ test.describe("the home page", () => {
     // No modal yet: the cards aren't buttons or links.
     await expect(section.getByRole("button")).toHaveCount(0);
     await expect(cards.nth(3)).toContainText("Shruti Kapoor");
-    await expect(
-      section.getByRole("link", { name: "Submit to our CFP" }),
-    ).toHaveAttribute("href", "https://cfp.cascadiajs.com");
+    await expect(section).toContainText("More speakers to be announced soon.");
+    await expect(section.getByRole("link")).toHaveCount(0);
+    await expect(page.locator("#cfp")).toContainText(
+      "Passionate about the web + AI space? Tell your story",
+    );
     const [speakersTop, cfpTop] = await page.evaluate(() =>
       ["#speakers", "#cfp"].map(
         (id) => document.querySelector(id)!.getBoundingClientRect().top,
