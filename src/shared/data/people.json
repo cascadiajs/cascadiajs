@@ -597,5 +597,13 @@
     "image": "/people/shruti-kapoor.jpg",
     "location": "Seattle, WA USA",
     "roles": ["speaker"]
+  },
+  {
+    "id": "andrea-griffiths",
+    "name": "Andrea Griffiths",
+    "image": "/people/andrea-griffiths.jpg",
+    "company": "GitHub",
+    "location": "Bradenton, FL USA",
+    "roles": ["speaker"]
   }
 ]

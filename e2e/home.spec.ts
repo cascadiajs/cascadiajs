@@ -417,27 +417,36 @@ test.describe("the home page", () => {
     expect(expectTop).toBeLessThan(cfpTop);
   });
 
-  test("Speakers features four Speakers, above the CFP", async ({ page }) => {
+  test("Speakers features five Speakers, above the CFP", async ({ page }) => {
     await page.goto("/");
     const section = page.locator("#speakers");
     await expect(
       section.getByRole("heading", { level: 2, name: "Speakers" }),
     ).toBeVisible();
     const cards = section.getByRole("listitem");
-    await expect(cards).toHaveCount(4);
-    await expect(cards.first()).toContainText("Kevin Whinnery");
-    await expect(cards.first()).toContainText("Developer Experience Engineer");
-    await expect(
-      cards.first().getByRole("img", { name: "OpenAI" }),
-    ).toBeVisible();
+    // In alphabetical order by last name.
+    await expect(cards.locator("span.font-serif")).toHaveText([
+      "Josh Goldberg",
+      "Andrea Griffiths",
+      "Shruti Kapoor",
+      "Laurie Voss",
+      "Kevin Whinnery",
+    ]);
+    await expect(cards.nth(4)).toContainText("Developer Experience Engineer");
     // A logo where there is one; nothing for someone with no company.
     await expect(
-      cards.nth(1).getByRole("img", { name: "Sentry" }),
+      cards.nth(0).getByRole("img", { name: "Sentry" }),
     ).toBeVisible();
+    await expect(
+      cards.nth(1).getByRole("img", { name: "GitHub" }),
+    ).toBeVisible();
+    await expect(
+      cards.nth(4).getByRole("img", { name: "OpenAI" }),
+    ).toBeVisible();
+    await expect(cards.nth(2).getByRole("img")).toHaveCount(0);
     await expect(cards.nth(2)).not.toContainText("Independent");
     // No modal yet: the cards aren't buttons or links.
     await expect(section.getByRole("button")).toHaveCount(0);
-    await expect(cards.nth(3)).toContainText("Shruti Kapoor");
     await expect(section).toContainText("More speakers to be announced soon.");
     await expect(section.getByRole("link")).toHaveCount(0);
     await expect(page.locator("#cfp")).toContainText(
@@ -449,6 +458,32 @@ test.describe("the home page", () => {
       ),
     );
     expect(speakersTop).toBeLessThan(cfpTop);
+  });
+
+  test("the note sits beside the last card, in the rest of its row", async ({
+    page,
+  }) => {
+    for (const width of [375, 1280]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto("/");
+      const [card, note] = await page
+        .locator(".cjs-featured-speakers > li")
+        .evaluateAll((items) =>
+          items.slice(-2).map((item) => {
+            const { top, left, right } = item.getBoundingClientRect();
+            return { top, left, right };
+          }),
+        );
+      const row = await page
+        .locator(".cjs-featured-speakers")
+        .evaluate((list) => list.getBoundingClientRect().right);
+      expect(note.top).toBe(card.top);
+      expect(note.left).toBeGreaterThan(card.right);
+      expect(Math.round(note.right)).toBe(Math.round(row));
+    }
+    await expect(page.locator("#speakers")).toContainText(
+      "More speakers to be announced soon.",
+    );
   });
 
   test("a Speaker card turns navy on hover, from green", async ({ page }) => {
