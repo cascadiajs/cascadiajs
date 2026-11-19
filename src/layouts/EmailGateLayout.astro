@@ -21,9 +21,17 @@ interface Props {
   uid: string;
   /** Where people who already submitted the form are sent. */
   next: string;
+  /** `false` hides the alert banner above the nav, as on /tickets. */
+  displayAlert?: boolean;
 }
 
-const { heading, title = heading, uid, next } = Astro.props;
+const {
+  heading,
+  title = heading,
+  uid,
+  next,
+  displayAlert = true,
+} = Astro.props;
 const config = getEventConfig("2027");
 ---
 
@@ -32,7 +40,7 @@ const config = getEventConfig("2027");
   description={config.ogDescription}
   ogImage={config.ogImage}
   displayNav={false}
-  displayAlert={false}
+  displayAlert={displayAlert}
   background="mist"
 >
   <script slot="head" is:inline define:vars={{ uid, next }}>

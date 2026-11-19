@@ -15,6 +15,13 @@ export const DEFAULT_DESCRIPTION =
 export const FEATURED_EVENT = "2027" as const;
 
 /**
+ * When Blind Bird ends and ticket prices go up: midnight Pacific at the end
+ * of Nov 22, 2026 (the date /buy-tickets gives). The alert banner counts
+ * down to it and disappears once it passes.
+ */
+export const PRICE_INCREASE_AT = "2026-11-23T00:00:00-08:00";
+
+/**
  * Legacy analytics IDs, kept so reporting carries on across the migration.
  * Emitted on every page (ADR-0014).
  */
