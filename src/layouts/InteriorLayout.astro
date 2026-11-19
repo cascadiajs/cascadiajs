@@ -33,6 +33,8 @@ interface Props {
   nav?: Omit<HomeNavProps, "sticky">;
   /** A short line above the h1, like the home page's section eyebrows. */
   eyebrow?: string;
+  /** `false` hides the alert banner above the nav, as on /buy-tickets. */
+  displayAlert?: boolean;
 }
 
 const config = getEventConfig("2027");
@@ -44,6 +46,7 @@ const {
   hideTitle = false,
   nav,
   eyebrow,
+  displayAlert = true,
 } = Astro.props;
 ---
 
@@ -52,7 +55,7 @@ const {
   description={description}
   ogImage={ogImage}
   displayNav={false}
-  displayAlert={false}
+  displayAlert={displayAlert}
   background="mist"
 >
   <div

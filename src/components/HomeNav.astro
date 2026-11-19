@@ -219,6 +219,22 @@ const links = (
     update();
   }
 
+  // The sticky bar is fixed to the top of the window, so above it the alert
+  // banner (when it's showing) would be hidden underneath. Keep the bar just
+  // below the banner until the banner has scrolled away. The banner shows
+  // before this runs, so its height is known here.
+  const banner = document.querySelector<HTMLElement>(
+    ".cjs-alert-banner:not([hidden])",
+  );
+  if (nav?.dataset.sticky !== undefined && banner) {
+    const follow = () => {
+      nav.style.top = `${Math.max(0, banner.getBoundingClientRect().bottom)}px`;
+    };
+    addEventListener("scroll", follow, { passive: true });
+    addEventListener("resize", follow);
+    follow();
+  }
+
   // The menu button, below the nav breakpoint.
   const toggle = nav?.querySelector<HTMLButtonElement>(
     "[data-home-nav-toggle]",

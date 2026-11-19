@@ -1,5 +1,5 @@
 ---
-import { FEATURED_EVENT } from "@shared/site-defaults";
+import { FEATURED_EVENT, PRICE_INCREASE_AT } from "@shared/site-defaults";
 
 interface Props {
   displayNav?: boolean;
@@ -10,14 +10,44 @@ const { displayNav = true, displayAlert = true } = Astro.props;
 ---
 
 <header class="cjs-site-header font-extralight">
-  <!-- Alert banner -->
   {
+    /* Alert banner: a countdown to the next ticket price increase. It's
+       hidden in the HTML; the script right after it fills in the days left
+       from the visitor's clock and shows it, before the page first paints,
+       so the page doesn't jump down when it appears. Once prices have gone
+       up it stays hidden. */
     displayAlert && (
-      <div class="cjs-alert-banner bg-madrona-yellow text-sound-navy font-display p-2 text-center text-xl">
-        <a href="/">Blind Bird tickets are on sale now for CascadiaJS 2027!</a>
+      <div
+        class="cjs-alert-banner bg-madrona-yellow text-sound-navy px-4 py-2 text-center font-sans text-lg leading-snug font-medium"
+        data-price-alert
+        hidden
+      >
+        Last chance for Blind Bird tickets! Prices go up{" "}
+        <span data-price-alert-when>soon</span>.{" "}
+        <a
+          href="/tickets"
+          class="bg-sound-navy ml-1 inline-block rounded-[5px] px-3 py-0.5 font-sans text-base font-bold whitespace-nowrap text-white no-underline hover:bg-[color-mix(in_srgb,var(--color-sound-navy),black_30%)]"
+        >
+          Save $100
+        </a>
       </div>
     )
   }
+  {/* Does nothing on a page without the banner. */}
+  <script is:inline define:vars={{ priceIncreaseAt: PRICE_INCREASE_AT }}>
+    (() => {
+      const banner = document.querySelector("[data-price-alert]");
+      const days = Math.ceil(
+        (Date.parse(priceIncreaseAt) - Date.now()) / 86400000,
+      );
+      if (!banner || !(days > 0)) {
+        return;
+      }
+      banner.querySelector("[data-price-alert-when]").textContent =
+        days === 1 ? "tonight" : `in ${days} days`;
+      banner.hidden = false;
+    })();
+  </script>
 
   <!-- Primary nav -->
   {

@@ -208,13 +208,15 @@ describe("TalkBody", () => {
 });
 
 describe("alert banner", () => {
-  test("holds a link", async () => {
+  test("holds a link to /tickets, hidden until its script shows it", async () => {
     const html = await render(SiteHeader, { props: { displayAlert: true } });
     const banner = html.match(
-      /<div class="cjs-alert-banner[^"]*">([\s\S]*?)<\/div>/,
+      /<div class="cjs-alert-banner[^"]*"([^>]*)>([\s\S]*?)<\/div>/,
     );
     expect(banner).not.toBeNull();
-    expect(tags(banner![1], "a")).toHaveLength(1);
+    expect(banner![1]).toContain("hidden");
+    expect(tags(banner![2], "a")).toHaveLength(1);
+    expect(banner![2]).toContain('href="/tickets"');
   });
 
   test("is absent when the alert is off", async () => {
