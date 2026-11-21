@@ -617,6 +617,12 @@ test.describe("the tickets page", () => {
  * details.
  */
 test.describe("the buy-tickets page", () => {
+  // During Blind Bird, unless a test sets its own time, so the release on
+  // sale doesn't depend on the day the suite runs.
+  test.beforeEach(async ({ page }) => {
+    await page.clock.setFixedTime(new Date("2026-11-20T10:00:00-08:00"));
+  });
+
   test("has the green nav, section bar and ticket details", async ({
     page,
   }) => {
@@ -674,6 +680,28 @@ test.describe("the buy-tickets page", () => {
       )
       .toBeGreaterThanOrEqual(122);
     await expect(page.locator("#luma-checkout")).toBeInViewport();
+  });
+
+  test("switches to Early Bird when Blind Bird ends, with no redeploy", async ({
+    page,
+  }) => {
+    const onSaleRows = page.getByRole("row", { name: /On sale now/ });
+
+    // The last minute of Blind Bird.
+    await page.clock.setFixedTime(new Date("2026-11-22T23:59:00-08:00"));
+    await page.goto("/buy-tickets");
+    await expect(page.getByRole("term")).toHaveText(["Blind Bird", "Indie"]);
+    await expect(page.getByRole("definition")).toHaveText(["$499", "$299"]);
+    await expect(onSaleRows).toHaveCount(1);
+    await expect(onSaleRows).toHaveAccessibleName(/^Blind Bird/);
+
+    // Midnight Pacific: Early Bird.
+    await page.clock.setFixedTime(new Date("2026-11-23T00:00:00-08:00"));
+    await page.reload();
+    await expect(page.getByRole("term")).toHaveText(["Early Bird", "Indie"]);
+    await expect(page.getByRole("definition")).toHaveText(["$599", "$399"]);
+    await expect(onSaleRows).toHaveCount(1);
+    await expect(onSaleRows).toHaveAccessibleName(/^Early Bird/);
   });
 
   test("a section link lands below both bars", async ({ page }) => {
